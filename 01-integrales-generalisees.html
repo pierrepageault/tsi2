@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>1&nbsp; Intégrales généralisées – Mathématiques en TSI2</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./colles.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-452fedebf206357581fb8f02f36bbb8c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-integrales-generalisees.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intégrales généralisées</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Mathématiques en TSI2</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Recherche"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-integrales-generalisees.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intégrales généralisées</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./colles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programmes de colle</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table des matières</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#sec-convergence" id="toc-sec-convergence" class="nav-link" data-scroll-target="#sec-convergence"><span class="header-section-number">1.1</span> Convergence d’un intégrale généralisée</a>
+  <ul class="collapse">
+  <li><a href="#intégrales-généralisées" id="toc-intégrales-généralisées" class="nav-link" data-scroll-target="#intégrales-généralisées"><span class="header-section-number">1.1.1</span> Intégrales généralisées</a></li>
+  <li><a href="#convergence-dune-intégrale-généralisée" id="toc-convergence-dune-intégrale-généralisée" class="nav-link" data-scroll-target="#convergence-dune-intégrale-généralisée"><span class="header-section-number">1.1.2</span> Convergence d’une intégrale généralisée</a></li>
+  <li><a href="#sec-integrale-faussement-generalisee" id="toc-sec-integrale-faussement-generalisee" class="nav-link" data-scroll-target="#sec-integrale-faussement-generalisee"><span class="header-section-number">1.1.3</span> Intégrales faussement généralisées</a></li>
+  </ul></li>
+  <li><a href="#sec-comparaison" id="toc-sec-comparaison" class="nav-link" data-scroll-target="#sec-comparaison"><span class="header-section-number">1.2</span> Les théorèmes de comparaison</a>
+  <ul class="collapse">
+  <li><a href="#le-théorème-de-comparaison-pour-les-fonctions-positives" id="toc-le-théorème-de-comparaison-pour-les-fonctions-positives" class="nav-link" data-scroll-target="#le-théorème-de-comparaison-pour-les-fonctions-positives"><span class="header-section-number">1.2.1</span> Le théorème de comparaison pour les fonctions positives</a></li>
+  <li><a href="#intégrales-absolument-convergentes-et-fonctions-intégrables" id="toc-intégrales-absolument-convergentes-et-fonctions-intégrables" class="nav-link" data-scroll-target="#intégrales-absolument-convergentes-et-fonctions-intégrables"><span class="header-section-number">1.2.2</span> Intégrales absolument convergentes et fonctions intégrables</a></li>
+  <li><a href="#intégrales-et-fonctions-intégrables-de-références" id="toc-intégrales-et-fonctions-intégrables-de-références" class="nav-link" data-scroll-target="#intégrales-et-fonctions-intégrables-de-références"><span class="header-section-number">1.2.3</span> Intégrales et fonctions intégrables de références</a></li>
+  </ul></li>
+  <li><a href="#sec-calculer" id="toc-sec-calculer" class="nav-link" data-scroll-target="#sec-calculer"><span class="header-section-number">1.3</span> Calculer avec des intégrales convergentes</a>
+  <ul class="collapse">
+  <li><a href="#propriétés-des-intégrales-convergentes" id="toc-propriétés-des-intégrales-convergentes" class="nav-link" data-scroll-target="#propriétés-des-intégrales-convergentes"><span class="header-section-number">1.3.1</span> Propriétés des intégrales convergentes</a></li>
+  <li><a href="#intégrations-pas-parties-et-changement-de-variable" id="toc-intégrations-pas-parties-et-changement-de-variable" class="nav-link" data-scroll-target="#intégrations-pas-parties-et-changement-de-variable"><span class="header-section-number">1.3.2</span> Intégrations pas parties et changement de variable</a></li>
+  </ul></li>
+  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices"><span class="header-section-number">1.4</span> Exercices</a>
+  <ul class="collapse">
+  <li><a href="#convergence-dune-intégrale-généralisée-1" id="toc-convergence-dune-intégrale-généralisée-1" class="nav-link" data-scroll-target="#convergence-dune-intégrale-généralisée-1"><span class="header-section-number">1.4.1</span> Convergence d’une intégrale généralisée</a></li>
+  <li><a href="#calculer-avec-des-intégrales-convergentes" id="toc-calculer-avec-des-intégrales-convergentes" class="nav-link" data-scroll-target="#calculer-avec-des-intégrales-convergentes"><span class="header-section-number">1.4.2</span> Calculer avec des intégrales convergentes</a></li>
+  <li><a href="#les-théorèmes-de-comparaison" id="toc-les-théorèmes-de-comparaison" class="nav-link" data-scroll-target="#les-théorèmes-de-comparaison"><span class="header-section-number">1.4.3</span> Les théorèmes de comparaison</a></li>
+  <li><a href="#divers" id="toc-divers" class="nav-link" data-scroll-target="#divers"><span class="header-section-number">1.4.4</span> Divers</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intégrales généralisées</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Le but de ce chapitre est de généralisée la théorie de l’intégration vue en première année à des intervalles <em>quelconques</em> et plus seulement des segments. On donnera en particulier un sens à des intégrales comme <span class="math inline">\(\displaystyle\int_{1}^{\infty}\frac{dx}{x^{2}}\)</span> ou <span class="math inline">\(\displaystyle\int_{0}^{1}\ln(x)dx\)</span>.</p>
+<p>La théorie de l’intégration vue en première année est héritée de Riemann<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> qui l’introduit dans son article fondateur « Über die Darstellbarkeit einer Function durch eine trigonometrische Reihe » (Sur la représentabilité d’une fonction par une série trigonométrique) en 1854.</p>
+<p>L’intégrale y est définie via des <em>sommes</em>, qui portent aujourd’hui le nom de <em>sommes de Riemann</em>.</p>
+<div id="fig-somme-riemann" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-somme-riemann-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./png/somme-riemann.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-somme-riemann-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: La définition initiale de Riemann à l’aide de sommes.
+</figcaption>
+</figure>
+</div>
+<p>L’énoncé moderne correspondant est le suivant:</p>
+<div id="def-somme-riemann" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 1.1 (Sommes de Riemann)</strong></span> Soit <span class="math inline">\(f:[a,b] \to \mathbb{R}\)</span> une fonction continue sur <span class="math inline">\([a,b]\)</span>, avec <span class="math inline">\(a,b \in
+\mathbb{R}\)</span>, <span class="math inline">\(a \leqslant b\)</span>. Pour tout <span class="math inline">\(n \geqslant 1\)</span>, on définit</p>
+<p><span class="math display">\[
+    U_{n} = \frac{b-a}{n}\sum_{k=0}^{n-1}f \left(a + k \frac{b-a}{n}\right)
+\]</span></p>
+<p>et</p>
+<p><span class="math display">\[
+   V_{n} = \frac{b-a}{n} \sum_{k=1}^{n} f \left(a+ k \frac{b-a}{n}\right).
+\]</span></p>
+<p>Alors les suites <span class="math inline">\((U_{n})\)</span> et <span class="math inline">\((V_{n})\)</span> convergent vers une limite commune appelée intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\([a,b]\)</span> et notée <span class="math inline">\(\int_a^b f(t)dt\)</span>.</p>
+</div>
+<p>On peut alors montrer que la fonction <span class="math inline">\(x \mapsto \int_a^x f(t)dt\)</span> est une <em>primitive</em> de <span class="math inline">\(f\)</span> sur <span class="math inline">\([a,b]\)</span> et aboutir à la définition usuelle donnée en première année : pour toute primitive <span class="math inline">\(F\)</span> de <span class="math inline">\(f\)</span> sur <span class="math inline">\([a,b]\)</span>,</p>
+<p><span class="math display">\[
+    \int_{a}^{b}f(t)dt = F(b)-F(a).
+\]</span></p>
+<p>Puisque qu’une telle primitive <span class="math inline">\(F\)</span> est nécessairement continue sur <span class="math inline">\([a,b]\)</span> (elle y est de classe <span class="math inline">\(C^{1}\)</span>), on a en particulier</p>
+<p><span class="math display">\[
+    \int_{a}^{b}f(t)dt = \lim_{x \to b^-} \int_{a}^{x}f(t)dt.
+\]</span></p>
+<p>Cette relation présente l’avantage de garder éventuellement un sens lorsque <span class="math inline">\(f\)</span> n’est pas définie en <span class="math inline">\(b\)</span>, par exemple lorque <span class="math inline">\(b=+\infty\)</span> ; on parlera alors d’intégrale <em>généralisée</em> de <span class="math inline">\(f\)</span> sur <span class="math inline">\([a,b[\)</span>.</p>
+<p>Les intégrales généralisées seront donc définies comme des <em>limites</em> d’intégrales usuelles, à condition que ces limites existent ! Contrairement aux intégrales usuelles, les intégrales généralisées ne seront donc pas toujours bien définies, et il faudra prendre plus de précaution lors de leurs manipulations.</p>
+<p>Ces précautions étant prises, les intégrales généralisées se comporteront essentiellement de la même manière que les intégrales usuelles.</p>
+<p>Elles sont d’un usuage constant en mathématiques et en physique (transformée de Laplace, de Fourier, fonction <span class="math inline">\(\Gamma\)</span> d’Euler, intégrale de Gauss,…)</p>
+</section>
+<section id="sec-convergence" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="sec-convergence"><span class="header-section-number">1.1</span> Convergence d’un intégrale généralisée</h2>
+<p>Dans tout ce chapitre, <span class="math inline">\(I\)</span> désigne un intervalle non vide de <span class="math inline">\(\mathbb{R}\)</span>, d’extrémités <span class="math inline">\(a,b \in \mathbb{R}\cup \left\{ \pm \infty\right\}\)</span>, avec <span class="math inline">\(a
+\leqslant b\)</span>, et <span class="math inline">\(\mathbb{K}\)</span> désigne <span class="math inline">\(\mathbb{R}\)</span> ou <span class="math inline">\(\mathbb{C}\)</span>.</p>
+<section id="intégrales-généralisées" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="intégrales-généralisées"><span class="header-section-number">1.1.1</span> Intégrales généralisées</h3>
+<div id="def-integrale-generalisee" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 1.2</strong></span> Soit <span class="math inline">\(f:I \to \mathbb{K}\)</span> une fonction <em>continue</em> sur <span class="math inline">\(I\)</span> et <span class="math inline">\(\alpha\)</span> une extrémité de <span class="math inline">\(I\)</span>. On dit que l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> est <strong>généralisée en <span class="math inline">\(\boldsymbol{\alpha}\)</span></strong> si <span class="math inline">\(I\)</span> est <em>ouvert</em> en <span class="math inline">\(\alpha\)</span>. On dit que l’intérgrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> est <strong>généralisée</strong> si elle est généralisée en au moins une des extrémités de <span class="math inline">\(I\)</span>.</p>
+</div>
+<div id="nte-ambiguite" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;1.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>“L’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span>” s’abrège usuellement <span class="math inline">\(\int_{I}f\)</span>, <span class="math inline">\(\int_{I}f(t)dt\)</span> ou <span class="math inline">\(\int_{a}^{b}f(t)dt\)</span>. Il faut noter l’<em>ambiguité</em> de cette dernière notation (qui est pourtant la plus utilisée) car elle ne précise pas si les bornes <span class="math inline">\(a\)</span> et <span class="math inline">\(b\)</span> sont inclues ou exclues. C’est justement à vous que revient de lever cette ambiguité pour étudier l’aspect généralisé ou non de l’intégrale.</p>
+</div>
+</div>
+<div id="exm-simplement-generalisee-1" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.1</strong></span> L’intégrale <span class="math inline">\(\int_{1}^{+\infty}\frac{dx}{x^2}\)</span> est généralisée en <span class="math inline">\(+\infty\)</span> uniquement car la fonction <span class="math inline">\(x \mapsto \frac{1}{x^{2}}\)</span> est continue sur <span class="math inline">\([1,+\infty[\)</span>.</p>
+</div>
+<div id="exm-simplement-generalisee-3" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.2</strong></span> L’intégrale <span class="math inline">\(\int_{0}^{1}\frac{\ln(t)}{1-t}dt\)</span> est généralisée en <span class="math inline">\(0\)</span> et en <span class="math inline">\(1\)</span> car la fonction <span class="math inline">\(t \mapsto \frac{\ln(t)}{1-t}\)</span> est continue sur <span class="math inline">\(]0,1[\)</span>. On dit qu’elle est <em>doublement</em> généralisée.</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>L’aspect généralisée d’une intégrale se lit sur le <em>domaine</em> de la fonction intégrée.</p>
+</div>
+</div>
+<p>Que dire maintenant de l’intégrale de la fonction <span class="math inline">\(x \mapsto x^{2}\)</span> sur l’intervalle <span class="math inline">\(]0,1]\)</span> ? Certe l’extrémité gauche est ouverte mais la fonction <span class="math inline">\(x
+\mapsto x^{2}\)</span> est continue sur <span class="math inline">\([0,1]\)</span>… On peut de même se poser la question de l’intégrale de la fonction <span class="math inline">\(x \mapsto x\ln(x)\)</span> sur l’intervalle <span class="math inline">\(]0,1]\)</span> qui se <em>prolonge par continuité</em> en <span class="math inline">\(0\)</span>. Ces situations correspondent au cas des intégrales <em>faussement généralisées</em>, étudiées plus en détail dans la <a href="#sec-integrale-faussement-generalisee" class="quarto-xref"><span>Section 1.1.3</span></a>.</p>
+</section>
+<section id="convergence-dune-intégrale-généralisée" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="convergence-dune-intégrale-généralisée"><span class="header-section-number">1.1.2</span> Convergence d’une intégrale généralisée</h3>
+<p>Jusqu’à présent, on s’est seulement entendu sur le sens de la phrase “l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> est généralisée”. Nous pas attribué de <em>valeur numérique</em> à cette “intégrale”. C’est ici qu’intervient la notion de <em>convergence</em>.</p>
+<div id="def-cv-integrale-intervalle-semi-ouvert" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 1.3 (Cas d’un intervalle semi ouvert à droite)</strong></span> Soit <span class="math inline">\(f:[a,b[ \to \mathbb{K}\)</span> une fonction continue. On dit que l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\([a,b[\)</span> <strong>converge</strong> si l’intégrale partielle <span class="math inline">\(\int_{a}^{x}f(t)dt\)</span> admet une limite <em>finie</em> quand <span class="math inline">\(x \to b^-\)</span>. On pose alors <span class="math display">\[
+\boxed{
+    \int_{a}^{b}f(t)dt \underset{\small \mathrm{def}}{=}\lim_{x \to b^-}
+\int_{a}^{x}f(t)dt}
+\]</span> Dans le cas contraire, on dit que l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> <strong>diverge</strong>. La convergence ou la divergence d’une intégrale s’appelle sa <strong>nature</strong>.</p>
+</div>
+<div id="fig-integrale-partielle-droite" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-integrale-partielle-droite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./tikz/svg/01-1a.svg" id="fig-integrale-partielle-droite" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-integrale-partielle-droite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.2: Intégrale partielle et généralisée dans le cas <span class="math inline">\(b=+\infty\)</span>.
+</figcaption>
+</figure>
+</div>
+<div id="nte-existe" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;1.2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On dit aussi qu’une intégrale généralisée <strong>bien définie</strong> ou <strong>existe</strong> (en référence à la limite qui la définie) pour signifier qu’elle <em>converge</em> ; ce sont des synonymes.</p>
+</div>
+</div>
+<div id="exm-riemann-1" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.3</strong></span> L’intégrale <span class="math inline">\(\int_{1}^{+\infty}\frac{dx}{x^{2}}\)</span> converge et vaut <span class="math inline">\(1\)</span>.</p>
+<details>
+<div>
+<p>Pour tout <span class="math inline">\(X \geqslant 1\)</span>, on a</p>
+<p><span class="math display">\[
+    \int_{1}^{X}\frac{dx}{x^{2}} = 1- \frac{1}{X} \underset{X \to +\infty}{\longrightarrow} 1.
+\]</span></p>
+<p>Donc l’intégrale <span class="math inline">\(\int_{1}^{+\infty}\frac{dx}{x^{2}}\)</span> converge et vaut <span class="math inline">\(1\)</span>.</p>
+</div>
+</details>
+</div>
+<div id="exm-riemann-3" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.4</strong></span> L’intégrale <span class="math inline">\(\int_{1}^{+\infty}\frac{dx}{x}\)</span> diverge.</p>
+<details>
+<div>
+<p>Pour tout <span class="math inline">\(X \geqslant 1\)</span>, on a</p>
+<p><span class="math display">\[
+    \int_{1}^{X}\frac{dx}{x} = \ln(X) \underset{X \to +\infty}{\longrightarrow} +\infty,
+\]</span></p>
+<p>donc l’intégrale <span class="math inline">\(\int_{1}^{+\infty}\frac{dx}{x}\)</span> diverge.</p>
+</div>
+</details>
+</div>
+<div id="rem-convergence-integrande" class="proof remark">
+<p><span class="proof-title"><em>Remarque 1.1</em>. </span>Les exemples précédents montrent qu’il ne faut pas confondre la convergence de l’<em>intégrale</em> et de la <em>fonction intégrée</em> (l’intégrande). Par exemple, la fonction <span class="math inline">\(x \mapsto 1/x\)</span> admet une limite en <span class="math inline">\(+\infty\)</span>, mais l’intégrale <span class="math inline">\(\int_{1}^{+\infty}\frac{dx}{x}\)</span> diverge.</p>
+</div>
+<div id="fig-riemann-2" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-riemann-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="./tikz/svg/01-5a.svg" class="img-fluid figure-img"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="./tikz/svg/01-5b.svg" class="img-fluid figure-img"></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-riemann-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.3: Des fonctions peuvent avoir des graphes similaires mais des intégrales de nature tout à fait différente.
+</figcaption>
+</figure>
+</div>
+<div id="wrn-convergence-integrande" class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Avertissement&nbsp;1.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Il ne pas confondre la convergence de l’<em>intégrale</em> et de la fonction intégrée (l’<em>intégrande</em>).</p>
+</div>
+</div>
+<p>Voici un dernier exemple classique d’intégrale convergente.</p>
+<div id="exm-exponentielle" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.5</strong></span> L’intégrale <span class="math inline">\(\int_{0}^{+\infty}e^{-t}dt\)</span> converge et vaut <span class="math inline">\(1\)</span>.</p>
+<details>
+<div>
+<p>Pour tout <span class="math inline">\(x \geqslant 0\)</span>, on</p>
+<p><span class="math display">\[
+    \int_{0}^{x}e^{-t}dt = 1-e^{-x} \underset{x \to +\infty}{\longrightarrow} 1.
+\]</span></p>
+<p>Donc l’intégrale <span class="math inline">\(\int_{0}^{+\infty}e^{-t}dt\)</span> converge et vaut <span class="math inline">\(1\)</span>.</p>
+</div>
+</details>
+</div>
+<div id="rem-semi-ouvert-a-gauche" class="proof remark">
+<p><span class="proof-title"><em>Remarque 1.2</em>. </span>On définit de même la convergence d’une intégrale sur un intervalle semi ouvert à gauche <span class="math inline">\(]a,b]\)</span> en considérant les intégrales partielles <span class="math inline">\(\int_{x}^{b}f(t)dt\)</span> quand <span class="math inline">\(x \to a^{+}\)</span> et en posant, en cas de convergence</p>
+<p><span class="math display">\[
+\boxed{
+    \int_{a}^{b}f(t)dt \underset{\small \mathrm{def}}{=}\lim_{x \to a^+}
+\int_{x}^{b}f(t)dt}
+\]</span></p>
+</div>
+<div id="fig-convergence-ouvert-gauche" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-convergence-ouvert-gauche-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./tikz/svg/01-1b.svg" id="fig-integrale-partielle-gauche" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-convergence-ouvert-gauche-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.4: Intégrale partielle et intégrable généralisée dans le cas <span class="math inline">\(a=0\)</span>.
+</figcaption>
+</figure>
+</div>
+<div id="exm-riemann-2" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.6</strong></span> L’intégrale <span class="math inline">\(\int_{0}^{1}\frac{dx}{x^{2}}\)</span> diverge.</p>
+<details>
+<div>
+<p>Pour tout <span class="math inline">\(\varepsilon&gt;0\)</span>, on a</p>
+<p><span class="math display">\[
+    \int_{\varepsilon}^{1}\frac{dx}{x^{2}} = \frac{1}{\varepsilon}-1 \underset{\varepsilon \to 0^{+}}{\longrightarrow} +\infty.
+\]</span></p>
+<p>Donc l’intégrale <span class="math inline">\(\int_{0}^{1}\frac{dx}{x^{2}}\)</span> diverge.</p>
+</div>
+</details>
+</div>
+<p>On vient d’associer à certaine intégrales une valeur numérique. On va donc pouvoir commencer à <em>calculer</em> avec des intégrales généralisées. Ce point sera abordé plus en détail dans la <a href="#sec-calculer" class="quarto-xref"><span>Section 1.3</span></a> mais nous énonçons dès maintenant la <em>relation de Chasles</em>, attendue de toute théorie satisfaisante de l’intégration.</p>
+<div id="prp-Chasles-semi-ouvert-droite" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1.1 (Relation de Chasles sur un intervalle semi ouvert)</strong></span> Soit <span class="math inline">\(f:[a,b[ \to \mathbb{K}\)</span> une fonction continue. Alors pour tout point <span class="math inline">\(c \in [a,b[\)</span>, les intégrales <span class="math inline">\(\int_{a}^{b}f(t)dt\)</span> et <span class="math inline">\(\int_{c}^{b}f(t)dt\)</span> ont <em>même nature</em> et, <em>en cas de convergence</em>, on a <span class="math display">\[
+\int_{a}^{b}f(t)dt = \int_{a}^{c}f(t)dt + \int_{c}^{b}f(t)dt.
+\]</span></p>
+</div>
+<div id="tip-chasles" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce&nbsp;1.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si elles sont généralisées uniquement en <span class="math inline">\(b\)</span>, les intégrales <span class="math inline">\(\int_{a}^{b}f(t)dt\)</span> et <span class="math inline">\(\int_{c}^{b}f(t)dt\)</span> ont <em>même nature</em>.</p>
+</div>
+</div>
+<div id="rem-version-semi-ouvert-gauche" class="proof remark">
+<p><span class="proof-title"><em>Remarque 1.3</em>. </span>La <a href="#prp-Chasles-semi-ouvert-droite" class="quarto-xref">Proposition&nbsp;<span>1.1</span></a> et le <a href="#tip-chasles" class="quarto-xref">Tip&nbsp;<span>1.1</span></a> se généralisent naturellement au cas d’un intervalle semi ouvert à gauche <span class="math inline">\(]a,b]\)</span>.</p>
+</div>
+<p>Une fois la convergence définie dans le cas d’intervalles semi ouverts, la relation de Chasles – que l’on veut valide pour les intégrales généralisées – suggère la définition suivante dans le cas d’un intervalle ouvert.</p>
+<div id="def-cv-intervalle-ouvert" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 1.4 (Cas d’un intervalle ouvert)</strong></span> Soit <span class="math inline">\(f:]a,b[ \to \mathbb{K}\)</span> une fonction continue. On dit que l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(]a,b[\)</span> <strong>converge</strong> si elle converge <strong>en <span class="math inline">\(\boldsymbol{a}\)</span></strong> <em>et</em> en <strong>en <span class="math inline">\(\boldsymbol{b}\)</span></strong>, c.à.d s’il existe un réel <span class="math inline">\(c \in ]a,b[\)</span>, tel que les <em>deux</em> intégrales <span class="math inline">\(\int_{a}^{c}f(t)dt\)</span> et <span class="math inline">\(\int_{c}^{b}f(t)dt\)</span> convergent. On pose alors</p>
+<p><span class="math display">\[
+\int_{a}^{b}f(t)dt \underset{\mathrm{def}}{=}
+\int_{a}^{c}f(t)dt + \int_{c}^{b}f(t)dt.
+\]</span></p>
+<p>Dans le cas contraire, on dit que l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(]a,b[\)</span> <strong>diverge</strong>. La convergence ou la divergence d’une intégrale s’appelle sa <strong>nature</strong>.</p>
+</div>
+<div id="rem-chasles" class="proof remark">
+<p><span class="proof-title"><em>Remarque 1.4</em>. </span>Cette définition et la valeur de l’intégrale ne dépendent pas du point <span class="math inline">\(c\)</span> utilisé par la relation de Chasles satisfaite par les intégrales généralisées sur un intervalle semi ouvert (<a href="#prp-Chasles-semi-ouvert-droite" class="quarto-xref">Proposition&nbsp;<span>1.1</span></a>).</p>
+</div>
+<div id="exm-ouvert-convergente" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.7</strong></span> L’intégrale <span class="math inline">\(\int_{-\infty}^{+\infty}\frac{dx}{1+x^{2}}\)</span> converge et vaut <span class="math inline">\(\pi\)</span>.</p>
+<details>
+<div>
+<p>Pour tout <span class="math inline">\(w \geqslant 0\)</span>, on a</p>
+<p><span class="math display">\[
+    \int_{0}^{x}\frac{dt}{1+t^{2}}= \arctan(x) \underset{x \to+\infty}{\longrightarrow} \frac{\pi}{2}.
+\]</span></p>
+<p>Donc l’intégrale <span class="math inline">\(\int_{0}^{+\infty}\frac{dx}{1+x^{2}}\)</span> converge et vaut <span class="math inline">\(\pi/2\)</span>.</p>
+<p>De même, pour tout <span class="math inline">\(x \leqslant 0\)</span>, on a</p>
+<p><span class="math display">\[
+    \int_{x}^{0}\frac{dt}{1+t^{2}} = - \arctan(x) \underset{x \to -\infty}{\longrightarrow} \frac{\pi}{2}.
+\]</span></p>
+<p>Donc par <em>définition</em> l’intégrale <span class="math inline">\(\int_{-\infty}^{+\infty}\frac{dx}{1+x^{2}}\)</span> converge et vaut <span class="math inline">\(\pi\)</span>.</p>
+</div>
+</details>
+</div>
+<div id="exm-ouvert-divergente" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.8</strong></span> L’intégrale <span class="math inline">\(\int_{0}^{+\infty}\frac{dx}{x^{2}}\)</span> diverge car elle diverge en <span class="math inline">\(0\)</span>.</p>
+</div>
+</section>
+<section id="sec-integrale-faussement-generalisee" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="sec-integrale-faussement-generalisee"><span class="header-section-number">1.1.3</span> Intégrales faussement généralisées</h3>
+<p>Nous traitons ici le cas des intégrales dites <em>faussement généralisées</em>, comme <span class="math inline">\(\int_{]0,1]}x^{2}dx\)</span> ou <span class="math inline">\(\int_{]0,1]}x\ln(x)dx\)</span>, très fréquentes en pratique.</p>
+<p>L’intuition voudrait que ces intégrales soient convergentes, et que la valeur de l’intégrale ne dépende pas de l’inclusion ou de l’exclusion des bornes de l’intégrale car “il n’y a pas d’aire sous un point”. La <a href="#prp-integrale-faussement-generalisee" class="quarto-xref">Proposition&nbsp;<span>1.2</span></a> montre que c’est effectivement le cas.</p>
+<div id="def-faussement-generalisee" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 1.5</strong></span> Soit <span class="math inline">\(f:I \to \mathbb{K}\)</span> une fonction continue et <span class="math inline">\(\alpha\)</span> une extrémité ouverte de <span class="math inline">\(I\)</span>. On dit que l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> est <strong>faussement généralisée en <span class="math inline">\(\boldsymbol{\alpha}\)</span></strong> si <span class="math inline">\(f\)</span> se prolonge par continuité en <span class="math inline">\(\alpha\)</span>. On dit que l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> est <strong>faussement généralisée</strong> si <span class="math inline">\(f\)</span> se prolonge par continuité en chaque extrémité ouverte de <span class="math inline">\(I\)</span>.</p>
+</div>
+<p>La note suivante est à comparer au <a href="#wrn-convergence-integrande" class="quarto-xref">Warning&nbsp;<span>1.1</span></a>.</p>
+<div id="nte-borne-finie" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;1.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Le prolongement par continuité est réservé aux extrémités <em>finies</em> de <span class="math inline">\(I\)</span>. On ne peut donc par parler d’intégrales “faussement généralisées en <span class="math inline">\(\pm\infty\)</span>” lorsque la fonction intégrée admet une limite finie en <span class="math inline">\(\pm \infty\)</span>.</p>
+</div>
+</div>
+<div id="exm-integrale-faussement-generalisee" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.9</strong></span> Les intégrales <span class="math inline">\(\int_{]0,1]}x^{2}dx\)</span> et <span class="math inline">\(\int_{]0,1]}x\ln(x)dx\)</span> sont toutes les deux faussement généralisées en <span class="math inline">\(0\)</span> car <span class="math inline">\(x^{2} \to 0\)</span> quand <span class="math inline">\(x \to
+0^{+}\)</span> et <span class="math inline">\(x\ln(x) \to 0\)</span> quand <span class="math inline">\(x \to 0^{+}\)</span> par <em>croissance comparée</em>.</p>
+</div>
+<div id="prp-integrale-faussement-generalisee" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1.2 (Convergence des intégrales faussement généralisées)</strong></span> Si l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> est faussement généralisée, elle est convergente et</p>
+<p><span class="math display">\[
+\int_I f = \int_{\bar{I}} f.
+\]</span></p>
+</div>
+<div id="nte-adherence" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;1.4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ici, <span class="math inline">\(\bar{I}\)</span> désigne l’<em>adhérence</em> de l’intervalle <span class="math inline">\(I\)</span> ; il s’agit du même intervalle dans lequel on a refermé toutes les bornes ouvertes différentes de <span class="math inline">\(\pm \infty\)</span>.</p>
+</div>
+</div>
+<div id="exm-faussement-generalisee" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.10</strong></span> Les intégrales <span class="math inline">\(\int_{]0,1]}x^{2}dx\)</span> et <span class="math inline">\(\int_{]0,1]}x\ln(x)dx\)</span> sont toutes les deux convergentes et on peut noter sans ambiguité leur valeur <span class="math inline">\(\int_{0}^{1}x^{2}dx\)</span> et <span class="math inline">\(\int_{0}^{1}x\ln(x)dx\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="sec-comparaison" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="sec-comparaison"><span class="header-section-number">1.2</span> Les théorèmes de comparaison</h2>
+<p>Les seules intégrales réellement intéressantes sont les intégrales convergentes. Actuellement, nous disposons essentiellement d’un seul outil<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> pour montrer la convergence d’une intégrale généralisée : revenir à une intégrale partielle et espérer être capable de la calculer pour étudier sa limite.</p>
+<p>Malheureusement, peu d’intégrales sont effectivement calculables car il est difficile de calculer des primitives, voir impossible<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+<p>Face à ce constat, il est nécessaire de développer des outils permettant de montrer qu’une intégrale converge sans pour autant calculer explicitement une primitive de la fonction intégrée ; c’est le rôle des théorèmes de comparaison.</p>
+<section id="le-théorème-de-comparaison-pour-les-fonctions-positives" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="le-théorème-de-comparaison-pour-les-fonctions-positives"><span class="header-section-number">1.2.1</span> Le théorème de comparaison pour les fonctions positives</h3>
+<p>Tous les théorèmes de comparaison que nous allons démontrer sont basés sur le théorème suivant, lui même conséquence du théorème de la limite monotone, qui est un théorème abstrait d’existence de <em>limites</em>.</p>
+<div id="thm-comparaison-relation-leqslant" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 1.1 (Comparaison à l’aide de la relation <span class="math inline">\(\leqslant\)</span> pour les fonctions positives)</strong></span> Soient <span class="math inline">\(f,g:I\to \mathbb{R}\)</span> des fonctions continues sur <span class="math inline">\(I\)</span>. On suppose que</p>
+<ol type="1">
+<li><span class="math inline">\(\forall t \in I,\ 0 \leqslant f(t) \leqslant g(t),\)</span></li>
+<li>l’intégrale de <span class="math inline">\(g\)</span> sur <span class="math inline">\(I\)</span> converge.</li>
+</ol>
+<p>Alors l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> converge.</p>
+</div>
+<div id="exm-comparaison-fonction-positive" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.11</strong></span> Nature de l’intégrale <span class="math inline">\(\int_{0}^{+\infty}\frac{1- \cos(t)}{t^{2}}dt\)</span>.</p>
+<details>
+<div>
+<p>L’intégrale proposée est généralisée en <span class="math inline">\(0\)</span> et en <span class="math inline">\(+\infty\)</span> car la fonction <span class="math inline">\(t
+\mapsto \frac{1- \cos(t)}{t^{2}}\)</span> est continue sur <span class="math inline">\(]0,+\infty[\)</span>. Un développement limité montre que cette intégrale est faussement généralisée en <span class="math inline">\(0\)</span> car</p>
+<p><span class="math display">\[
+    \frac{1- \cos(t)}{t^{2}} = \frac{t^{2}/2 + o(t^{2)}}{t^{2}} \sim \frac{1}{2}
+\underset{t \to 0^{+}}{\longrightarrow} \frac{1}{2}.
+\]</span></p>
+<p>De plus, on a</p>
+<p><span class="math display">\[
+    \forall t \geqslant 1,\ 0 \leqslant \frac{1- \cos(t)}{t^{2}} \leqslant
+\frac{2}{t^{2}}\tag{1},
+\]</span></p>
+<p>et l’intégrale <span class="math inline">\(\int_{1}^{+\infty}\frac{dt}{t^{2}}\)</span> converge. Donc par compraison de fonctions <em>positives</em>, l’intégrale <span class="math inline">\(\int_{0}^{+\infty}\frac{1 - \cos(t)}{t^{2}}dt\)</span> converge en <span class="math inline">\(+\infty\)</span><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. Donc par définition l’intégrale converge.</p>
+<p><em>Attention, on ne peut pas utiliser directement la majoration <span class="math inline">\((1)\)</span> et le <a href="#thm-comparaison-relation-leqslant" class="quarto-xref">Théorème&nbsp;<span>1.1</span></a> sur l’intervalle <span class="math inline">\(]0,+\infty[\)</span> car l’intégrale <span class="math inline">\(\int_{0}^{+\infty}\frac{dt}{t^{2}}\)</span> diverge.</em></p>
+</div>
+</details>
+</div>
+<div id="rem-contraposee" class="proof remark">
+<p><span class="proof-title"><em>Remarque 1.5</em>. </span>On peut aussi utiliser la <em>contraposée</em> de ce théorème ; si l’intégrale de <span class="math inline">\(f\)</span> du <span class="math inline">\(I\)</span> diverge, alors l’intégrale de <span class="math inline">\(g\)</span> sur <span class="math inline">\(I\)</span> diverge. On utilisera ce résulat en TD pour montrer la divergence de l’intégrale de Dirichlet.</p>
+</div>
+</section>
+<section id="intégrales-absolument-convergentes-et-fonctions-intégrables" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="intégrales-absolument-convergentes-et-fonctions-intégrables"><span class="header-section-number">1.2.2</span> Intégrales absolument convergentes et fonctions intégrables</h3>
+<p>Le théorème de comparaison pour les fonctions positives permet déja de démontrer la convergence (ou la divergence) de beaucoup d’intégrales, mais il ne s’applique qu’à des fonctions à valeurs <em>positives</em> ; il ne permet pas de traiter les fonctions à valeurs complexes, ou les fonctions dont le signe alterne. La notion d’intégrales <em>absolument convergentes</em> et de fonctions <em>intégrables</em> vient pallier efficacement cet inconvénient.</p>
+<div id="def-integrale-absolument-convergente" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 1.6</strong></span> On dit que l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> est <strong>absolument convergente</strong> si l’intégrale de <span class="math inline">\(|f|\)</span> sur <span class="math inline">\(I\)</span> converge.</p>
+</div>
+<div id="prp-absolue-convergence" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1.3</strong></span> Si l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> converge absolument, alors elle converge.</p>
+</div>
+<div id="rem-contre-exemple" class="proof remark">
+<p><span class="proof-title"><em>Remarque 1.6</em>. </span>On verra en TD avec l’exemple de l’intégrale de Dirichlet que la réciproque est fausse.</p>
+</div>
+<p>Cette propoosition est fondamentale car elle permet de montrer la convergence d’une intégrale en se ramenant à l’intégrale d’une fonction <em>positive</em> à laquel on peut appliquer le théorème de comparaison.</p>
+<div id="exm-convergence-absolue" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.12</strong></span> Nature de l’intégrale <span class="math inline">\(\int_{0}^{+\infty}\sin(t)e^{-t}dt\)</span>.</p>
+<details>
+<div>
+<p>On a</p>
+<p><span class="math display">\[
+    \forall t \geqslant 0,\ 0 \leqslant \left|\sin(t)e^{-t}\right|
+\leqslant e^{-t}.
+\]</span></p>
+<p>De plus, l’intégrale <span class="math inline">\(\int_{0}^{+\infty}e^{-t}dt\)</span> converge. Donc par comparaison de fonctions positives, l’intégrale proposée converge <em>absolument</em>, donc converge.</p>
+</div>
+</details>
+</div>
+<div id="rem-positivite" class="proof remark">
+<p><span class="proof-title"><em>Remarque 1.11</em>. </span>Si <span class="math inline">\(f\)</span> est de <em>signe constant</em> sur <span class="math inline">\(I\)</span>, il n’y a pas de différence entre la convergence absolue et la convergence de l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span>.</p>
+</div>
+<p>Une fonction dont l’intégrale sur <span class="math inline">\(I\)</span> est absolument convergente est dite <em>intégrable</em> sur <span class="math inline">\(I\)</span>.</p>
+<div id="def-fonction-integrable" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 1.7</strong></span> On dit qu’une fonction continue <span class="math inline">\(f:I \to \mathbb{K}\)</span> est <strong>intégrable</strong> sur <span class="math inline">\(I\)</span> si l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> est absolument convergente.</p>
+</div>
+<div id="wrn-integrable" class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Avertissement&nbsp;1.2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>L’intégrabilité signifie plus que la simple <em>existence</em> de l’intégrale.</p>
+</div>
+</div>
+<p>Lorsqu’une fonction est intégrable, on dispose d’une généralisation de l’inégalité triangulaire usuelle qui stipule que <em>la valeur absolue d’une somme est plus petite que la somme des valeurs absolues</em>. C’est une inégalité très utile en analyse pour <em>majorer en valeur absolue</em> une intégrale.</p>
+<div id="prp-inegalite-triangulaire" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1.4</strong></span> Si <span class="math inline">\(f\)</span> est intégrable sur <span class="math inline">\(I\)</span> alors</p>
+<p><span class="math display">\[
+    \left|\int_If\right|\leqslant \int_I |f|.
+\]</span></p>
+</div>
+<p>Le résultat suivant est une manière commode de dire que les fonctions intégrables sont stable par <em>combinaison linéaire</em>.</p>
+<div id="prp-espace-vectoriel-fonction-integrable" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1.5</strong></span> L’ensemble des fonctions intégrables sur <span class="math inline">\(I\)</span> est un sous-espace vectoriel du <span class="math inline">\(\mathbb{K}\)</span>-espace vectoriel des fonctions continues de <span class="math inline">\(I\)</span> dans <span class="math inline">\(\mathbb{K}\)</span>.</p>
+</div>
+<div id="rem-espace-norme" class="proof remark">
+<p><span class="proof-title"><em>Remarque 1.8</em>. </span>L’application <span class="math inline">\(f \mapsto N(f) = \int_I|f|\)</span> munit cet ensemble d’une structure d’<em>espace vectoriel normé</em>. Cette notion, fondamentale en analyse, dépasse le cadre de ce cours. C’est elle qui justifie l’intérêt de la notion d’intégrabilité.</p>
+</div>
+<p>On énonce maintenant les théorèmes de comparaison pour les fonctions intégrables. Ce sont eux que l’on utilisera le plus souvent en pratique pour montrer qu’une intégrale converge.</p>
+<div id="thm-theoreme-de-comparaison-o" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 1.2 (Comparaison à l’aide des relations <span class="math inline">\(o\)</span> et <span class="math inline">\(O\)</span>)</strong></span> Soient <span class="math inline">\(f,g:I \to \mathbb{K}\)</span> deux fonctions continues sur <span class="math inline">\(I\)</span> et soit <span class="math inline">\(\alpha\)</span> une extremité ouverte de <span class="math inline">\(I\)</span>. On suppose que <span class="math inline">\(g\)</span> est intégrable au voisinage de <span class="math inline">\(\alpha\)</span> et que <span class="math inline">\(f = o_{\alpha}(g)\)</span> ou <span class="math inline">\(f=O_{\alpha}(g)\)</span>. Alors <span class="math inline">\(f\)</span> est intégrable au voisinage de <span class="math inline">\(\alpha\)</span>.</p>
+</div>
+<div id="thm-theorem-comparaison-equiv" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 1.3 (Comparaison à l’aide de la relation <span class="math inline">\(\sim\)</span>)</strong></span> Soient <span class="math inline">\(f,g:I \to \mathbb{K}\)</span> deux fonctions continues sur <span class="math inline">\(I\)</span> et soit <span class="math inline">\(\alpha\)</span> une extrémité ouverte de <span class="math inline">\(I\)</span>. On suppose que <span class="math inline">\(f \underset{\alpha}{\sim} g\)</span>. Alors <span class="math inline">\(f\)</span> est intégrable au voisinage de <span class="math inline">\(\alpha\)</span> ssi <span class="math inline">\(g\)</span> est intégrable au voisinage de <span class="math inline">\(\alpha\)</span>.</p>
+</div>
+<div id="nte-voisinage" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;1.5: Voisinages
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Soit <span class="math inline">\(\alpha\)</span> une extrémité ouverte de <span class="math inline">\(I\)</span>. Un <strong>voisinage</strong> de <span class="math inline">\(\alpha\)</span> dans <span class="math inline">\(I\)</span> est un intervalle non vide <span class="math inline">\(V\)</span> du type <span class="math inline">\([c,\alpha[\)</span> (ou <span class="math inline">\(]\alpha,c]\)</span>) avec <span class="math inline">\(c \in
+I\)</span>.</p>
+<p>Si <span class="math inline">\(f:I \to \mathbb{K}\)</span> est une fonction de <span class="math inline">\(I\)</span> dans <span class="math inline">\(\mathbb{K}\)</span>, on dit qu’une propriété de <span class="math inline">\(f\)</span> est satisfaite <strong>au voisinage de <span class="math inline">\(\boldsymbol{\alpha}\)</span></strong> s’il existe un voisinage <span class="math inline">\(V\)</span> de <span class="math inline">\(\alpha\)</span> dans <span class="math inline">\(I\)</span> sur lequel la propriété est effectivement satisfaite.</p>
+</div>
+</div>
+<div id="nte-relation-comparaison" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;1.6: Rappels sur les relations de comparaison
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Soient <span class="math inline">\(f,g:I \to \mathbb{K}\)</span> et <span class="math inline">\(\alpha\)</span> une extrémité ouverte de <span class="math inline">\(I\)</span>. On suppose que <span class="math inline">\(f\)</span> et <span class="math inline">\(g\)</span> ne s’annulent pas au voisinage de <span class="math inline">\(\alpha\)</span>. On dit que</p>
+<ol type="1">
+<li>la fonction <span class="math inline">\(f\)</span> est <strong>négligeable</strong> devant <span class="math inline">\(g\)</span> au voisinage de <span class="math inline">\(\alpha\)</span>, et on note <span class="math inline">\(f = o_{\alpha}(g)\)</span>, si <span class="math display">\[
+\left|\frac{f(t)}{g(t)}\right|\underset{\substack{t \to \alpha \\ t \in I}}{\longrightarrow} 0,
+\]</span></li>
+<li>la fonction <span class="math inline">\(f\)</span> est <strong>dominée</strong> par <span class="math inline">\(g\)</span> au voisinage de <span class="math inline">\(\alpha\)</span>, et on note <span class="math inline">\(f = O_{\alpha}(g)\)</span>, si le quotient <span class="math inline">\(f/g\)</span> est borné au voisinage de <span class="math inline">\(\alpha\)</span> i.e.&nbsp;s’il existe un voisinage <span class="math inline">\(V\)</span> de <span class="math inline">\(\alpha\)</span> dans <span class="math inline">\(I\)</span> et une constante <span class="math inline">\(M \geqslant 0\)</span> tels que<br>
+<span class="math display">\[
+\forall t \in V,\ \left|\frac{f(t)}{g(t)}\right|\leqslant M
+\]</span></li>
+<li>la fonction <span class="math inline">\(f\)</span> est <strong>équivalente</strong> à <span class="math inline">\(g\)</span> en <span class="math inline">\(\alpha\)</span>, et on note <span class="math inline">\(f
+  \underset{\alpha}{\sim}g\)</span>, si <span class="math display">\[
+\left|\frac{f(t)}{g(t)}\right|\underset{\substack{t \to \alpha \\ t \in I}}{\longrightarrow} 1.
+\]</span></li>
+</ol>
+</div>
+</div>
+<div id="tip-quotient" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce&nbsp;1.2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Les relations <span class="math inline">\(o,O\)</span> et <span class="math inline">\(\sim\)</span> se lisent sur le <em>quotient</em> <span class="math inline">\(f/g\)</span> qui, respectivement, <em>tend vers <span class="math inline">\(0\)</span>, est borné, ou tend vers <span class="math inline">\(1\)</span></em>.</p>
+</div>
+</div>
+<div id="rem-lien-relation" class="proof remark">
+<p><span class="proof-title"><em>Remarque 1.9</em>. </span>La relation <span class="math inline">\(\sim\)</span> est <em>symétrique</em> i.e.&nbsp;<span class="math inline">\(f \underset{\alpha}{\sim} g\)</span> ssi <span class="math inline">\(g
+\underset{\alpha}{\sim} f\)</span>. C’est cette propriété qui est responsable de l’<em>équivalence</em> du <a href="#thm-theorem-comparaison-equiv" class="quarto-xref">Théorème&nbsp;<span>1.3</span></a> . De plus <span class="math inline">\(o \Rightarrow O\)</span> et <span class="math inline">\(\sim  \Rightarrow O\)</span></p>
+</div>
+</section>
+<section id="intégrales-et-fonctions-intégrables-de-références" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="intégrales-et-fonctions-intégrables-de-références"><span class="header-section-number">1.2.3</span> Intégrales et fonctions intégrables de références</h3>
+<p>Maintenant que l’on dispose de théorèmes de comparaison, il reste à se constituer une collection de fonctions intégrables dites de <em>références</em>, suffisament riches pour être comparées aux fonctions rencontrées en pratique ; en l’occurence les fonctions puissances, la fonction logarithme et les exponentielles décroissantes.</p>
+<div id="thm-riemann" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 1.4 (Intégrales de Riemann)</strong></span> Soit <span class="math inline">\(\alpha \in \mathbb{R}\)</span>. Alors</p>
+<ol type="1">
+<li>la fonction <span class="math inline">\(t \mapsto 1/t^{\alpha}\)</span> est intégrable au voisinage de <span class="math inline">\(0\)</span> ssi <span class="math inline">\(\alpha&lt;1\)</span>,</li>
+<li>la fonction <span class="math inline">\(t \mapsto 1/t^{\alpha}\)</span> est intégrable au voisinage de <span class="math inline">\(+\infty\)</span> ssi <span class="math inline">\(\alpha&gt;1\)</span>.</li>
+</ol>
+</div>
+<div id="fig-riemann" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-riemann-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./tikz/svg/01-2a.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-riemann-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.5: La différence ténue de convergence des intégrales de Riemann.
+</figcaption>
+</figure>
+</div>
+<div id="nte-fonction-puissance" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;1.7: Rappels sur les fonctions puissances
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Pour <span class="math inline">\(\alpha \in \mathbb{R}\)</span>, la fonction <span class="math inline">\(f_{\alpha}:t \mapsto t^{\alpha}\)</span> est définie sur <span class="math inline">\(]0,+\infty[\)</span> par</p>
+<p><span class="math display">\[
+    \forall t &gt;0,\ t^{\alpha} = e^{\alpha \ln(t)}.
+\]</span></p>
+<p>La fonction <span class="math inline">\(f_{\alpha}\)</span> est de classe <span class="math inline">\(C^{\infty}\)</span> sur <span class="math inline">\(]0,+\infty[\)</span> et</p>
+<p><span class="math display">\[
+    \forall t&gt;0,\ (t^{\alpha})' = \alpha t^{\alpha-1}.
+\]</span></p>
+<p>Une primitive de <span class="math inline">\(f_{\alpha}\)</span> sur <span class="math inline">\(]0,+\infty[\)</span> est donnée par</p>
+<p><span class="math display">\[
+    \begin{cases}
+        t \mapsto \frac{t^{\alpha +1}}{\alpha +1}&amp; \text{si $\alpha \neq 1$},\\
+    t \mapsto \ln(t) &amp; \text{si $\alpha =1$}.
+    \end{cases}
+\]</span></p>
+</div>
+</div>
+<div id="fig-fonction-puissance" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fonction-puissance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./tikz/svg/01-4.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fonction-puissance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.6: Graphes des fonctions puissances
+</figcaption>
+</figure>
+</div>
+<div id="exm-In" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.13</strong></span> Pour tout <span class="math inline">\(n \in \mathbb{N}\)</span>, l’intégrale <span class="math inline">\(I_{n}=\int_{0}^{\infty}t^{n}e^{-t}dt\)</span> converge.</p>
+<details>
+<div>
+<p>Soit <span class="math inline">\(n \in \mathbb{N}\)</span>. Par croissance comparée, on a</p>
+<p><span class="math display">\[
+  \frac{t^{n}e^{-t}}{1/t^{2}} = t^{n+2}e^{-t} \underset{t \to
++\infty}{\longrightarrow} 0,
+\]</span></p>
+<p>donc <span class="math inline">\(t^{n}e^{-t}=o_{+\infty}\left(\frac{1}{t^{2}}\right)\)</span>. De plus la fonction <span class="math inline">\(t \mapsto \frac{1}{t^{2}}\)</span> est intégrable au voisinage de <span class="math inline">\(+ \infty\)</span>. Donc par comparaison, la fonction <span class="math inline">\(t \mapsto t^{n}e^{-t}\)</span> est intégrable au voisinage de <span class="math inline">\(+\infty\)</span>. Donc l’intégrale <span class="math inline">\(I_{n}\)</span> est (absolument) convergente.</p>
+</div>
+</details>
+</div>
+<div id="tip-exp-decroissante" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce&nbsp;1.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La présence d’une <em>exponentielle décroissante</em> permet souvent de comparer la fonction intégrée à la fonction <span class="math inline">\(t \mapsto \frac{1}{t^{2}}\)</span> via une <em>croissance comparée</em>.</p>
+</div>
+</div>
+<div id="thm-exponentielle" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 1.5 (Fonctions exponentielles)</strong></span> Soit <span class="math inline">\(a \in \mathbb{R}\)</span>. La fonction <span class="math inline">\(t \mapsto e^{\alpha t}\)</span> est intégrable au voisinage de <span class="math inline">\(+\infty\)</span> ssi <span class="math inline">\(a&lt;0\)</span>.</p>
+</div>
+<div id="exm-bornee" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.14</strong></span> Si <span class="math inline">\(f:[0,+\infty[ \to \mathbb{C}\)</span> est bornée, alors pour tout <span class="math inline">\(p&gt;0\)</span>, la fonction <span class="math inline">\(t \mapsto f(t)e^{-pt}\)</span> est intégrable sur <span class="math inline">\([0,+\infty[\)</span><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
+<details>
+<div>
+<p>Soit <span class="math inline">\(p&gt;0\)</span>. Par définition, il existe <span class="math inline">\(M \geqslant 0\)</span> tel que</p>
+<p><span class="math display">\[
+    \forall t \geqslant 0,\ |f(t)|\leqslant M,
+\]</span></p>
+<p>donc <span class="math inline">\(f(t)e^{-pt}=O_{+\infty}(e^{-pt})\)</span>. Puisque <span class="math inline">\(p&gt;0\)</span>, la fonction <span class="math inline">\(t \mapsto
+e^{-pt}\)</span> est intégrable au voisinage de <span class="math inline">\(+\infty\)</span>. Donc par comparaison, la fonction <span class="math inline">\(t \mapsto f(t)e^{-pt}\)</span> l’est aussi.</p>
+</div>
+</details>
+</div>
+<div id="thm-logarithme" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 1.6 (Fonction logarithme)</strong></span> La fonction <span class="math inline">\(\ln\)</span> est intégrable au voisinage de <span class="math inline">\(0\)</span>.</p>
+</div>
+<div id="rem-fonction-réciproque" class="proof remark">
+<p><span class="proof-title"><em>Remarque 1.10</em>. </span>La convergence (et la valeur) de l’intégrale de <span class="math inline">\(\ln\)</span> sur <span class="math inline">\(]0,1]\)</span> était prévisible au vu de l’<a href="#exm-exponentielle" class="quarto-xref">Exemple&nbsp;<span>1.5</span></a> : les fonctions <span class="math inline">\(\ln\)</span> et <span class="math inline">\(\exp\)</span> sont <em>réciproques</em> l’une de l’autre, donc leur graphe sont symétriques par rapport à la première bisectrice.</p>
+</div>
+<div id="fig-ln" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ln-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-ln" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-exp-ln" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-exp-ln-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./tikz/svg/01-3.svg" class="img-fluid figure-img" data-ref-parent="fig-ln">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-exp-ln-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Fonctions exponentielle et logarithme
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-ln" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-exp-" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-exp--caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./tikz/svg/01-3b.svg" class="img-fluid figure-img" data-ref-parent="fig-ln">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-exp--caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Graphes des fonctions <span class="math inline">\(t \mapsto e^{t}\)</span> et <span class="math inline">\(t \mapsto e^{-t}\)</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ln-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.7: Convergence de l’intégrale <span class="math inline">\(\int_{0}^{1}\ln(t)dt\)</span>.
+</figcaption>
+</figure>
+</div>
+<div id="exm-comparaison-ln" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.15</strong></span> Nature de l’intégrale <span class="math inline">\(\int_{0}^{1}\frac{\ln(t)}{1-t}dt\)</span>.</p>
+<details>
+<div>
+<p>L’intégrale est généralisée en <span class="math inline">\(0\)</span> et en <span class="math inline">\(1\)</span> car la fonction <span class="math inline">\(t \mapsto
+\frac{\ln(t)}{1-t}\)</span> est continue sur <span class="math inline">\(]0,1[\)</span>.</p>
+<p>Au voisinage de <span class="math inline">\(0^{+}\)</span>, on a</p>
+<p><span class="math display">\[
+    \frac{\ln(t)}{1-t} \sim \frac{\ln(t}{1} = \ln(t)
+\]</span></p>
+<p>et la fonction <span class="math inline">\(t \mapsto \ln(t)\)</span> est intégrable au voisinage de <span class="math inline">\(0\)</span>. Donc par comparaison, l’intégrale <span class="math inline">\(\int_{0}^{1}\frac{\ln(t)}{1-t}dt\)</span> converge en <span class="math inline">\(0\)</span>.</p>
+</div>
+</details>
+</div>
+</section>
+</section>
+<section id="sec-calculer" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="sec-calculer"><span class="header-section-number">1.3</span> Calculer avec des intégrales convergentes</h2>
+<section id="propriétés-des-intégrales-convergentes" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="propriétés-des-intégrales-convergentes"><span class="header-section-number">1.3.1</span> Propriétés des intégrales convergentes</h3>
+<p>Les intégrales convergentes héritent de toutes les propriétés préservées par passage à la limite (égalités, inégalités larges,…). La philosophie générale est la suivante :</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>Sous réserve de convergence</em>, les propriétés des intégrales généralisées sont les mêmes que celles des intégrales classiques.</p>
+</div>
+</div>
+<p>On pourra donc manipuler des intégrales généralisées de la même manière que l’on manipule des intégrales classiques, à condition de s’assurer que les quantités manipulées existent !</p>
+<div id="prp-proprietes-integrale-generalise" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1.6 (Propriétés des intégrales convergentes)</strong></span> Soient <span class="math inline">\(f,g:I \to \mathbb{K}\)</span> des fonctions continues sur <span class="math inline">\(I\)</span>. On suppose que les intégrales de <span class="math inline">\(f\)</span> et <span class="math inline">\(g\)</span> sur <span class="math inline">\(I\)</span> <em>convergent</em>. Alors</p>
+<ol type="1">
+<li>pour tout <span class="math inline">\(\lambda \in \mathbb{K}\)</span>, l’intégrale de <span class="math inline">\(f+\lambda g\)</span> sur <span class="math inline">\(I\)</span> converge et <span class="math display">\[
+\int_I (f + \lambda g) = \int_I f + \lambda \int_I g, \quad \textit{(linéarité
+de l'intégrale)}
+\]</span></li>
+<li>la <em>relation de Chasles</em> est vérifiée pour tout point <span class="math inline">\(c\)</span> de <span class="math inline">\(I\)</span>, <span class="math inline">\(\quad
+  \textit{(relation de Chasles)}\)</span></li>
+<li>si <span class="math inline">\(\mathbb{K}=\mathbb{R}\)</span> et si <span class="math inline">\(f \leqslant g\)</span> sur <span class="math inline">\(I\)</span>, alors <span class="math display">\[
+\int_I f \leqslant \int_I g, \quad \textit{(croissance de
+l'intégrale)}.
+\]</span></li>
+</ol>
+</div>
+<div id="rem-positivite" class="proof remark">
+<p><span class="proof-title"><em>Remarque 1.11</em>. </span>On dit aussi que l’intégrale est <em>positive</em><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> : si <span class="math inline">\(f \geqslant 0\)</span> sur <span class="math inline">\(I\)</span>, alors <span class="math inline">\(\int_If \geqslant 0\)</span>. Cette propriété est équivalente à la croissance de l’intégrale par linéarité.</p>
+</div>
+<div id="exm-linearite" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.16</strong></span> En admettant (voir <a href="#exm-In" class="quarto-xref">Exemple&nbsp;<span>1.13</span></a>) que pour tout <span class="math inline">\(n \in \mathbb{N}\)</span>, l’intégrale <span class="math inline">\(I_{n}=\int_{0}^{+\infty}P(t)e^{-t}dt\)</span> converge, alors pour tout <span class="math inline">\(P \in
+\mathbb{R}[X]\)</span>, l’intégrale <span class="math inline">\(\int_{0}^{+\infty}P(t)e^{-t}dt\)</span> converge comme combinaison linéaire d’intégrales convergentes.</p>
+</div>
+<div id="exm-majoration" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.17</strong></span> Si l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\([a,+\infty[\)</span> converge et si <span class="math inline">\(f \geqslant 0\)</span> sur <span class="math inline">\([a,+\infty[\)</span>, alors la relation de Chalses et la positivité de l’intégrale montre que</p>
+<p><span class="math display">\[
+    \forall x \geqslant a,\ \int_{a}^{x}f(t)dt \leqslant \int_{a}^{+\infty}f(t)dt.
+\]</span></p>
+<p>Cette propiétée est par ailleurs claire graphiquement, <a href="#fig-integrale-partielle-droite" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>.</p>
+</div>
+<div id="exm-contrapose" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.18</strong></span> Si l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> converge, et si l’intégrale de <span class="math inline">\(g\)</span> sur <span class="math inline">\(I\)</span> diverge, alors l’intégrale de <span class="math inline">\(f+g\)</span> sur <span class="math inline">\(I\)</span> diverge<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>. Sinon, par différence d”intégrales convergentes, l’intégrale de <span class="math inline">\(g\)</span> sur <span class="math inline">\(I\)</span> serai convergente.</p>
+</div>
+<p>En pratique, ces propriétés permettent de <em>calculer</em> avec des intégrales généralisées. Il faut leur ajouter deux outils d’usage constant: le théorème d’<em>intégration par parties</em> et le <em>théorème de changement de variable</em>.</p>
+</section>
+<section id="intégrations-pas-parties-et-changement-de-variable" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="intégrations-pas-parties-et-changement-de-variable"><span class="header-section-number">1.3.2</span> Intégrations pas parties et changement de variable</h3>
+<p>Concernant l’intégration pas parties, il n’y a pas (en TSI) d’énoncé propre aux intégrales généralisées. Il faudra systématiquement :</p>
+<ol type="1">
+<li>revenir à une intégrale partielle,</li>
+<li>effectuer une intégration par parties classique,</li>
+<li>passer à la limite pour obtenir un résultat sur des intégrales généralisées.</li>
+</ol>
+<div id="exm-xlnx" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.19</strong></span> A l’aide d’une intégration par partie, montrer que l’intégrale <span class="math inline">\(I=\int_{0}^{1}x\ln(x)dx\)</span> converge<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>, et calculer sa valeur.</p>
+<details>
+<div>
+<p>Soit <span class="math inline">\(0&lt;\varepsilon&lt;1\)</span>. Les fonctions <span class="math inline">\(x \mapsto \ln(x)\)</span> et <span class="math inline">\(x \mapsto x^{2}/2\)</span> sont de classe <span class="math inline">\(C^{1}\)</span> sur <span class="math inline">\(]\varepsilon,1[\)</span>. Par intégration par parties, on a donc</p>
+<p><span class="math display">\[\begin{equation}\tag{$\star$}
+    \int_{\varepsilon}^{1}x \ln(x)dx = \left[\frac{x^{2}}{2}\ln(x)\right]_{\varepsilon}^{1} - \int_{\varepsilon}^{1}\frac{x}{2}dx.
+\end{equation}\]</span></p>
+<p>Le crochet tend vers <span class="math inline">\(0\)</span> quand <span class="math inline">\(\varepsilon \to
+0^{+}\)</span> par <em>croissance comparée</em>. L’intégrale de droite tend vers <span class="math inline">\(\int_{0}^{1}\frac{x}{2}dx
+= \frac{1}{4}\)</span> quand <span class="math inline">\(\varepsilon \to 0^+\)</span> (cette intégrale n’est pas généralisée). Donc l’intégrale <span class="math inline">\(\int_{0}^{1}x \ln(x)dx\)</span> converge et, en passant à la limite dans l’égalité <span class="math inline">\((\star)\)</span>, on obtient</p>
+<p><span class="math display">\[
+    \int_{0}^{1}x \ln(x) dx = -\frac{1}{4}.
+\]</span></p>
+</div>
+</details>
+</div>
+<p>On utilise souvent une intégration par parties pour établir une <em>relation</em> entre deux intégrales, par exemple une relation de récurrence.</p>
+<div id="exm-recurrence" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.20</strong></span> On admet que pour tout <span class="math inline">\(n \in \mathbb{N}\)</span>, l’intégrale <span class="math inline">\(I_{n}=\int_{0}^{+\infty}t^{n}e^{-t}dt\)</span> converge (voir <a href="#exm-In" class="quarto-xref">Exemple&nbsp;<span>1.13</span></a>). A l’aide d’une intégration par parties, montrer que</p>
+<p><span class="math display">\[
+    \forall n \in \mathbb{N},\ I_{n+1}=n I_{n}.
+\]</span></p>
+<details>
+<div>
+<p>Soit <span class="math inline">\(x \geqslant 0\)</span> et <span class="math inline">\(n \geqslant 0\)</span>. Les fonctions <span class="math inline">\(t \mapsto t^{n+1}\)</span> et <span class="math inline">\(t \mapsto -e^{-t}\)</span> sont de classe <span class="math inline">\(C^{1}\)</span> sur <span class="math inline">\([0,x]\)</span>. Par intégration par parties, on obtient</p>
+<p><span class="math display">\[
+\int_{0}^{x}t^{n+1}e^{-t}dt = \left[-t^{n+1}e^{-t}\right]_0^{x}
+    + (n+1) \int_{0}^{x}t^{n}e^{-t}dt.
+\]</span></p>
+<p>Le crochet tends vers <span class="math inline">\(0\)</span> quand <span class="math inline">\(n \to +\infty\)</span> par croissance comparée. Les deux intégrales étant convergentes, on obtient en passant à la limite dans l’égalité précédente</p>
+<p><span class="math display">\[
+I_{n+1}= n I_{n}.
+\]</span></p>
+</div>
+</details>
+</div>
+<div id="wrn-passage-limite" class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Avertissement&nbsp;1.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Pour pouvoir <em>passer à la limite</em>, il faut d’<em>abord</em> s’assurer que toutes les quantités en jeu convergent.</p>
+</div>
+</div>
+<div id="thm-changement-de-variable" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 1.7 (Changement de variable)</strong></span> Soit <span class="math inline">\(\varphi:I \to J\)</span> une bijection de classe <span class="math inline">\(C^{1}\)</span> entre deux intervalles <span class="math inline">\(I\)</span> et <span class="math inline">\(J\)</span> de <span class="math inline">\(\mathbb{R}\)</span>. Soit <span class="math inline">\(f:J \to \mathbb{R}\)</span> une fonction continue. Alors</p>
+<ol type="1">
+<li>les intégrales <span class="math inline">\(\int_{J}f(x)dx\)</span> et <span class="math inline">\(\int_{I}f\bigl(\varphi(t)\bigr)|\varphi'(t)|dt\)</span> ont <em>même nature</em>,</li>
+<li>elles sont <em>égales</em> en cas de convergence.</li>
+</ol>
+</div>
+<div id="nte-changement-de-variable" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;1.8
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On dit qu’on a effectué le changement de variable <span class="math inline">\(x=\varphi(t)\)</span>, pour lequel <span class="math inline">\(dx = |\varphi'(t)|dt\)</span>.</p>
+</div>
+</div>
+<div id="rem-valeur-absolue" class="proof remark">
+<p><span class="proof-title"><em>Remarque 1.12</em>. </span>La présence de la valeur absolue dans le calcul du <span class="math inline">\(dx\)</span> évite de préciser la <em>monotonie</em> du changement de variable <span class="math inline">\(\varphi\)</span> ; les bornes des intégrales sont toujours rangées. Cette approche est à privilégier car c’est elle qui se généralise au cas des fonctions de plusieurs variables.</p>
+</div>
+<p>Selon les cas, on disposera de l’espace de <em>départ</em> de <span class="math inline">\(\varphi\)</span>, de l’espace d’<em>arrivée</em>, ou des deux. De manière générale, l’inversion de <span class="math inline">\(\varphi\)</span> n’est jamais nécessaire.</p>
+<div id="exm-egalite-integrales" class="theorem example" data-collapse="true">
+<p><span class="theorem-title"><strong>Exemple 1.21 (On connait les espaces de départ et d’arrivée)</strong></span> On admet que l’intégrale</p>
+<p><span class="math display">\[
+I = \int_{0}^{1}\frac{dt}{\sqrt{t(1-t)}}dt
+\]</span></p>
+<p>converge. A l’aide du changement de variable <span class="math inline">\(t=\frac{1}{1+s}=\varphi(s)\)</span>, montrer que</p>
+<p><span class="math display">\[
+    I = \int_{0}^{+\infty}\frac{ds}{\sqrt{s}(1+s)}.
+\]</span></p>
+<details>
+<div>
+<p>C’est le cas d’utilisation le plus courant ; un changement de variable est utilisé pour donner une autre expression d’une intégrale que l’on sait convergente. C’est le cas le plus simple car on connait les espaces de départ et d’arrivée, aux extrémités près (<a href="#nte-ambiguite" class="quarto-xref">Note&nbsp;<span>1.1</span></a>).</p>
+<p>Dans notre cas:</p>
+<p>L’intégrale <span class="math inline">\(I\)</span> est généralisée en <span class="math inline">\(0\)</span> et en <span class="math inline">\(1\)</span>. La fonction <span class="math inline">\(\varphi\)</span> est une bijection de classe <span class="math inline">\(C^{1}\)</span> de <span class="math inline">\(]0,+\infty[\)</span> dans <span class="math inline">\(]0,1[\)</span>. De plus</p>
+<p><span class="math display">\[
+    \forall s \in ]0,+\infty[,\ \varphi'(s) = -\frac{1}{(1+s)^{2}}
+\]</span></p>
+<p>et</p>
+<p><span class="math display">\[
+    \forall s \in ]0,+\infty[,\ \frac{1}{\sqrt{\varphi(s)\bigr(1- \varphi(s)\bigr)}}=\frac{1+s}{\sqrt{s}}
+\]</span></p>
+<p>donc par changement de variable</p>
+<p><span class="math display">\[
+  I =\int_{0}^{+\infty} \frac{1}{\sqrt{\varphi(s)\bigr(1- \varphi(s)\bigr)}}|\varphi'(s)|ds = \int_{0}^{+\infty}\frac{ds}{\sqrt{s}(1+s)}.
+\]</span></p>
+</div>
+</details>
+</div>
+<div id="exm-espace-arrivee" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.22 (On connait l’espace d’arrivée)</strong></span> Déterminer la nature et la valeur de l’intégrale <span class="math inline">\(\int_{-1}^{1}\frac{dx}{\sqrt{1-x^{2}}}\)</span> à l’aide du changement de variable <span class="math inline">\(x=\cos(t)\)</span>.</p>
+<details>
+<div>
+<p>L’intégrale <span class="math inline">\(\int_{-1}^{1}\frac{dx}{\sqrt{1-x^{2}}}\)</span> est généralisée en <span class="math inline">\(-1\)</span> et en <span class="math inline">\(1\)</span>. On connait ici l’intervalle d’arrivée <span class="math inline">\(J=]-1,1[\)</span> de la fonction <span class="math inline">\(\varphi:t \mapsto \cos(t)\)</span>. C’est à nous de déterminer l’espace de départ de <span class="math inline">\(\varphi\)</span> de telle sorte qu’elle soit bijective et de classe <span class="math inline">\(C^{1}\)</span>. Par exemple, <span class="math inline">\(I=]0,\pi[\)</span> convient.</p>
+<p>La rédaction finale devient:</p>
+<p>La fonction <span class="math inline">\(\cos\)</span> est une bijection de classe <span class="math inline">\(C^{1}\)</span> de <span class="math inline">\(]0,\pi[\)</span> dans <span class="math inline">\(]-1,1[\)</span>.</p>
+<p>De plus,</p>
+<p><span class="math display">\[
+    \forall t \in ]0,\pi[,\ \cos'(t) = -\sin(t)
+\]</span></p>
+<p>et</p>
+<p><span class="math display">\[
+  \forall t \in ]0,\pi[,\ \frac{1}{\sqrt{1- \cos(t)^{2}}}=
+\frac{1}{\sqrt{\sin(t)^{2}}}=\frac{1}{|\sin(t)|}.   
+\]</span></p>
+<p>Par changement de variable, l’intégrale proposée a donc même nature que l’intégrale</p>
+<p><span class="math display">\[
+    \int_{0}^{\pi}\frac{|\sin(t)|dt}{\sqrt{1-\cos(t)^{2}}}=\int_{0}^{\pi}dt=\pi.
+\]</span></p>
+<p>Notez que cette intégrale a lieu sur l’intervalle <em>ouvert</em> <span class="math inline">\(]0,\pi[\)</span>: elle est clairement convergente car (doublement) faussement généralisée et sa valeur ne dépend pas de l’inclusion ou de l’exclusion de ses bornes (<a href="#prp-integrale-faussement-generalisee" class="quarto-xref">Proposition&nbsp;<span>1.2</span></a>).</p>
+<p>Donc l’intégrale <span class="math inline">\(\int_{-1}^{1}\frac{dx}{\sqrt{1-x^{2}}}\)</span> converge et vaut <span class="math inline">\(\pi\)</span>.</p>
+</div>
+</details>
+</div>
+<div id="exm-espace-depart-arrivee" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 1.23 (On connait l’espace de départ)</strong></span> A l’aide du changement de variable <span class="math inline">\(x=\tan(t)\)</span>, calculer <span class="math inline">\(\int_{0}^{\pi/2}\frac{dt}{1+\sin(t)^{2}}\)</span>.</p>
+<details>
+<div>
+<p>Cette intégrale n’est pas généralisée car l’intégrande est continue sur <span class="math inline">\([0,\pi/2]\)</span>. Elle est donc convergente.</p>
+<p>On connait l’espace de départ du changement de variable <span class="math inline">\(x=\tan(t)\)</span>, au extrémités près. Il faut les choisir de telle sorte que celui-ci soit bijectif et de classe <span class="math inline">\(C^{1}\)</span> sur son image. En l’occurence, bien que les extrémités <span class="math inline">\(0\)</span> et <span class="math inline">\(\pi/2\)</span> soient incluses dans l’intégrale, on va choisir d’exclure <span class="math inline">\(\pi/2\)</span> (on utilise implicitement à nouveau la <a href="#prp-integrale-faussement-generalisee" class="quarto-xref">Proposition&nbsp;<span>1.2</span></a>).</p>
+<p>La rédaction devient:</p>
+<p>La fonction <span class="math inline">\(\tan\)</span> est une bijection de classe <span class="math inline">\(C^{1}\)</span> de <span class="math inline">\([0,\pi/2[\)</span> dans <span class="math inline">\([0,+\infty[\)</span>. De plus</p>
+<p><span class="math display">\[
+    \forall t \in [0,\pi/2[,\ \tan'(t) = 1+\tan(t)^{2} = \frac{1}{\cos(t)^{2}}.
+\]</span></p>
+<p>Donc<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
+<p><span class="math display">\[
+    \forall t \in [0,\pi/2[,\ \frac{1}{1+\sin(t)^{2}}
+=\frac{1/\cos(t)^{2}}{1/\cos(t)^{2} + \tan(t)^{2}}=\frac{|\tan'(t)|}{1+2
+\tan(t)^{2}}.
+\]</span></p>
+<p>Par changement de variable,</p>
+<p><span class="math display">\[
+    \int_{0}^{\pi/2}\frac{dt}{1+\sin(t)^2} = \int_{0}^{+\infty}\frac{dx}{1+2x^{2}}.
+\]</span></p>
+<p>Une primitive de la fonction <span class="math inline">\(x \mapsto \frac{1}{1+2x^{2}}\)</span> sur <span class="math inline">\([0,+\infty[\)</span> est <span class="math inline">\(x \mapsto \frac{1}{\sqrt{2}}\arctan(\sqrt{2}x)\)</span>. Donc</p>
+<p><span class="math display">\[
+    \forall X \geqslant 0,\ \int_{0}^{X}\frac{dx}{1+2x^{2}}=
+\frac{1}{\sqrt{2}}\left(\arctan(X)-0\right) \underset{x \to +\infty}{\longrightarrow}
+\frac{\pi}{2\sqrt{2}}.
+\]</span></p>
+<p>Donc <span class="math inline">\(\int_{0}^{\pi/2}\frac{dt}{1+\sin(t)^{2}}=\frac{\pi}{2 \sqrt{2}}\)</span>.</p>
+</div>
+</details>
+</div>
+<div id="tip-depart-arrive-varphi" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce&nbsp;1.4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Lorsque l’on effectue un changement de variable, il faut <em>donner un nom</em> au changement de variable et préciser avec soin les espaces de <em>départ</em> et d’<em>arrivée</em> pour vérifier les hypothèses du théorème de changement de variable.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="exercices" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="exercices"><span class="header-section-number">1.4</span> Exercices</h2>
+<section id="convergence-dune-intégrale-généralisée-1" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="convergence-dune-intégrale-généralisée-1"><span class="header-section-number">1.4.1</span> Convergence d’une intégrale généralisée</h3>
+<div id="exr-01-calcul-decomposition-elements-simples" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.1</strong></span> (Décomposition en éléments simples).</p>
+<ol type="1">
+<li><p>Déterminer trois réels <span class="math inline">\(a,b\)</span> et <span class="math inline">\(c\)</span> tels que <span class="math display">\[\forall t\geqslant 0,\quad \frac{t-1}{t^3+1}=\frac{at+b}{t^2-t+1}+\frac{c}{1+t}.\]</span></p></li>
+<li><p>En déduire la convergence et la valeur de l’intégrale <span class="math inline">\(I = \displaystyle\int_1^{+\infty}\dfrac{t-1}{t^3+1}dt\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-01-calcul-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.2</strong></span> (Calculs de primitives). Déterminer la nature et préciser la valeur, en cas de convergence, des intégrales suivantes :</p>
+<p><span class="math display">\[
+I = \displaystyle\int_0^{+\infty}e^{-t}dt,\quad J = \displaystyle\int_0^{+\infty}\frac{dt}{1+t^2},\quad K = \displaystyle\int_e^{+\infty}\frac{dt}{t\ln(t)}.
+\]</span></p>
+</div>
+<div id="exr-01-0001" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.3</strong></span> (Un calcul d’intégrale). Soit <span class="math inline">\(f\)</span> la fonction définie sur <span class="math inline">\(]0,+\infty[\)</span> par <span class="math display">\[f(x)=\ln\left(\frac{e^x-1}{e^x+1}\right).\]</span></p>
+<ol type="1">
+<li><p>Exprimer la dérivée de <span class="math inline">\(f\)</span> sur <span class="math inline">\(]0,+\infty[\)</span>.</p></li>
+<li><p>En déduire la convergence puis la valeur de l’intégrale <span class="math inline">\(\displaystyle\int_1^{+\infty}\frac{dx}{e^x-e^{-x}}\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-01-0002" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.4 (<span class="math inline">\(\star\)</span>)</strong></span> (Nombres complexes). Calculer <span class="math inline">\(\displaystyle\int_0^{+\infty}e^{-at}\cos(bt)dt\)</span> pour <span class="math inline">\(a&gt;0\)</span> et <span class="math inline">\(b\in\mathbb{R}\)</span>.</p>
+</div>
+</section>
+<section id="calculer-avec-des-intégrales-convergentes" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="calculer-avec-des-intégrales-convergentes"><span class="header-section-number">1.4.2</span> Calculer avec des intégrales convergentes</h3>
+<div id="exr-01-ipp" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.5</strong></span> (Intégrations par parties). A l’aide d’intégrations pas parties, calculer les intégrales suivantes :</p>
+<p><span class="math display">\[
+\displaystyle\int_0^1 t\ln(t)dt,\quad \displaystyle\int_0^{+\infty} te^{-t}dt,\quad \displaystyle\int_1^{+\infty}\frac{\ln(t)}{t^3}dt.
+\]</span></p>
+</div>
+<div id="exr-01-0004" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.6</strong></span> (Fonctions paires). Soit <span class="math inline">\(f:\mathbb{R}\to \mathbb{R}\)</span> une fonction continue. On suppose que <span class="math inline">\(f\)</span> est paire. Montrer que <span class="math inline">\(\int_{-\infty}^{+\infty}f(x)dx\)</span> converge si et seulement si <span class="math inline">\(\int_{0}^{+\infty}f(x)dx\)</span> converge et que, dans ce cas, <span class="math display">\[\int_{-\infty}^{+\infty}f(x)dx = 2\int_{0}^{+\infty}f(x)dx.\]</span></p>
+</div>
+<div id="exr-01-ipp-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.7</strong></span> (Relations de récurrence). Pour <span class="math inline">\((n,k)\in\mathbb{N}^*\times\mathbb{N}\)</span>, on pose <span class="math display">\[\displaystyle I_{n,k} = \int_0^1x^n(\ln(x)^k)dx.\]</span></p>
+<ol type="1">
+<li><p>Justifier que, pour tout <span class="math inline">\((n,k)\in\mathbb{N}^{*}\times\mathbb{N}\)</span>, l’intégrale <span class="math inline">\(I_{n,k}\)</span> est convergente.</p></li>
+<li><p>Calculer <span class="math inline">\(I_{n,0}\)</span> pour tout <span class="math inline">\(n\in\mathbb{N}^{*}\)</span>.</p></li>
+<li><p>A l’aide d’une intégration par parties, montrer que <span class="math display">\[\forall k\in\mathbb{N}^*,\ I_{n,k} = -\frac{k}{n+1}I_{n,k-1}.\]</span></p></li>
+<li><p>En déduire que <span class="math inline">\(I_{n,k} = \dfrac{(-1)^kk!}{(n+1)^{k+1}}\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-01-cht-var-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.8</strong></span> On admet que l’intégrale <span class="math inline">\(I = \displaystyle \int_0^{+\infty}\frac{\ln(t)}{1+t^2}dt\)</span> converge. A l’aide du changement de variable <span class="math inline">\(u=1/t\)</span>, montrer que <span class="math inline">\(I=0\)</span>.</p>
+</div>
+<div id="exr-01-cht-var-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.9 (<span class="math inline">\(\star\)</span>)</strong></span> (Formules de l’arc moitié).</p>
+<ol type="1">
+<li>Pour <span class="math inline">\(\theta \in [0,\pi[\)</span>, on pose <span class="math inline">\(t=\tan(\theta/2)\)</span>. Montrer que</li>
+</ol>
+<p><span class="math display">\[
+\sin(\theta) = \frac{2t}{1+t^{2}}\quad \text{et}\quad \cos(\theta)=\frac{1-t^{2}}{1+t^{2}}.
+\]</span></p>
+<ol start="2" type="1">
+<li>Calculer l’intégrale <span class="math inline">\(\displaystyle\int_0^\pi\frac{d\theta}{1+\sin(\theta)}\)</span> à l’aide du changement de variable <span class="math inline">\(t=\tan(\theta/2)\)</span>.</li>
+</ol>
+</div>
+<div id="exr-01-ln" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.10 (<span class="math inline">\(\star\)</span>)</strong></span> (Une expression de la fonction <span class="math inline">\(\ln\)</span>). Pour <span class="math inline">\(x&gt;0\)</span>, on pose <span class="math display">\[f(x) = \int_0^{+\infty}\frac{e^{-t}-e^{-xt}}{t}dt.\]</span></p>
+<ol type="1">
+<li><p>Justifier que la fonction <span class="math inline">\(f\)</span> est bien définie.</p></li>
+<li><p>Pour <span class="math inline">\(0&lt;a&lt;b\)</span>, montrer que <span class="math display">\[\int_a^b \frac{e^{-t}-e^{-xt}}{t}dt = \int_a^{ax}\frac{e^{-t}}{t}dt - \int_b^{bx}\frac{e^{-t}}{t}dt.\]</span></p></li>
+<li><p>En distinguant les cas <span class="math inline">\(x\geqslant 1\)</span> et <span class="math inline">\(0&lt;x&lt;1\)</span>, montrer que pour tout réel <span class="math inline">\(u&gt;0\)</span>, on a <span class="math display">\[e^{-xu}\ln(x)\leqslant \int_u^{xu} \frac{e^{-t}}{t}dt\leqslant e^{-u}\ln(x).\]</span></p></li>
+<li><p>En déduire que pour tout <span class="math inline">\(x&gt;0\)</span>, <span class="math inline">\(f(x) = \ln(x)\)</span>.</p></li>
+</ol>
+</div>
+</section>
+<section id="les-théorèmes-de-comparaison" class="level3" data-number="1.4.3">
+<h3 data-number="1.4.3" class="anchored" data-anchor-id="les-théorèmes-de-comparaison"><span class="header-section-number">1.4.3</span> Les théorèmes de comparaison</h3>
+<div id="exr-01-0003" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.11</strong></span> (Comparaison de fonctions positives). A l’aide du théorème de comparaison pour les fonctions positives, montrer que l’intégrale <span class="math inline">\(\displaystyle\int_0^{+\infty}e^{-t^2}dt\)</span> converge.</p>
+</div>
+<div id="exr-01-comparaison" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.12</strong></span> (Théorèmes de comparaisons). Déterminer la nature des intégrales suivantes.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ol type="1">
+<li><span class="math inline">\(\displaystyle \int_0^{+\infty}\frac{e^{-t}\sin(t)}{t}dt\)</span></li>
+<li><span class="math inline">\(\displaystyle \int_0^{+\infty}\frac{dt}{(1+t)\sqrt{t}}\)</span></li>
+<li><span class="math inline">\(\displaystyle \int_0^1\frac{\ln(t)}{1-t}dt\)</span></li>
+</ol>
+</div><div class="column" style="width:50%;">
+<ol start="4" type="1">
+<li><span class="math inline">\(\displaystyle \int_1^{+\infty}\left(\frac{1}{t}-\ln\left(1 + \frac{1}{t}\right)\right)dt\)</span></li>
+<li><span class="math inline">\(\displaystyle \int_1^{+\infty}t^2e^{-t}dt\)</span></li>
+<li><span class="math inline">\(\displaystyle \int_0^{1}\frac{e^t-1}{t}dt\)</span></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="exr-01-bertrand" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.13</strong></span> (Une intégrale de Bertrand). Montrer que l’intégrale <span class="math inline">\(I = \displaystyle \int_0^{+\infty}\frac{\ln(t)}{1+t^2}dt\)</span> converge.</p>
+</div>
+<div id="exr-01-integrable" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.14</strong></span> (Une fonction intégrable). Montrer que la fonction <span class="math inline">\(x\mapsto e^{-x}\ln(x)\)</span> est intégrable sur <span class="math inline">\(]0,+\infty[\)</span>.</p>
+</div>
+<div id="exr-01-integrable-fourier" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.15</strong></span> (Un calcul de transformée de Fourier). Soit <span class="math inline">\(a&gt;0\)</span>.</p>
+<ol type="1">
+<li><p>Montrer que la fonction <span class="math inline">\(f(x) = e^{-a|x|}\)</span> est intégrable sur <span class="math inline">\(\mathbb{R}\)</span>.</p></li>
+<li><p>Soit <span class="math inline">\(t\in\mathbb{R}\)</span>. Montrer que la fonction <span class="math inline">\(x\mapsto e^{-ixt}f(x)\)</span> est intégrable sur <span class="math inline">\(\mathbb{R}\)</span> et calculer <span class="math inline">\(\displaystyle \int_{-\infty}^{+\infty}e^{-ixt}f(x)dx\)</span>.</p></li>
+</ol>
+</div>
+</section>
+<section id="divers" class="level3" data-number="1.4.4">
+<h3 data-number="1.4.4" class="anchored" data-anchor-id="divers"><span class="header-section-number">1.4.4</span> Divers</h3>
+<div id="exr-01-dirichlet" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.16 (<span class="math inline">\(\star\)</span>)</strong></span> (Intégrale de Dirichlet). On pose <span class="math display">\[I = \int_0^{+\infty}\frac{\sin(t)}{t}dt.\]</span></p>
+<ol type="1">
+<li><p>A l’aide d’une intégration par partie, montrer que <span class="math inline">\(I\)</span> converge en <span class="math inline">\(+\infty\)</span>.</p></li>
+<li><p>En déduire que <span class="math inline">\(I\)</span> converge.</p></li>
+<li><p>En utilisant la minoration, que l’on montrera soigneusement, <span class="math display">\[\forall t\geqslant 0,\ |\sin(t)|\geqslant \sin^2(t) = \frac{1-\cos(2t)}{2},\]</span> montrer que l’intégrale <span class="math inline">\(I\)</span> n’est pas absolument convergente.</p></li>
+</ol>
+</div>
+<div id="exr-01-gamma" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.17 (<span class="math inline">\(\star\)</span>)</strong></span> (Fonction <span class="math inline">\(\Gamma\)</span> d’Euler). Pour <span class="math inline">\(x&gt;0\)</span>, on pose <span class="math display">\[\Gamma(x)= \int_0^{+\infty}t^{x-1}e^{-t}dt.\]</span></p>
+<ol type="1">
+<li><p>Montrer que la fonction <span class="math inline">\(\Gamma\)</span> est bien définie.</p></li>
+<li><p>Montrer que <span class="math display">\[\forall x&gt;0,\ \Gamma(x+1) = x\Gamma(x)\]</span></p></li>
+<li><p>Calculer <span class="math inline">\(\Gamma(1)\)</span> et en déduire la valeur de <span class="math inline">\(\Gamma(n)\)</span> pour tout <span class="math inline">\(n\in\mathbb{N}^*\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-01-beta" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.18 (<span class="math inline">\(\star\)</span>)</strong></span> (Fonction <span class="math inline">\(\beta\)</span> d’Euler). Soient <span class="math inline">\(x\)</span> et <span class="math inline">\(y\)</span> deux réels.</p>
+<ol type="1">
+<li><p>Montrer que l’intégrale <span class="math display">\[\beta(x,y)=\int_0^{+\infty}\frac{t^{x-1}}{(1+t)^{x+y}}dt\]</span> existe si et seulement si <span class="math inline">\(x\)</span> et <span class="math inline">\(y\)</span> sont strictement positifs.</p></li>
+<li><p>Soient <span class="math inline">\(x\)</span> et <span class="math inline">\(y\)</span> deux réels strictement positifs.</p>
+<ol type="a">
+<li><p>Montrer que <span class="math inline">\(\beta(x+1,y)=\dfrac{x}{x+y}\beta(x,y)\)</span>.</p></li>
+<li><p>À l’aide du changement de variable <span class="math inline">\(x = \dfrac{1}{1+t}\)</span>, montrer que <span class="math display">\[\beta(x,y)=\int_0^1(1-t)^{x-1}t^{y-1}dt.\]</span> et en déduire que <span class="math inline">\(\beta(x,y)=\beta(y,x)\)</span>.</p></li>
+</ol></li>
+<li><p>Soit <span class="math inline">\(a\)</span> un réel strictement positif.</p>
+<ol type="a">
+<li><p>Pour tout <span class="math inline">\(n\in\mathbb{N}\)</span>, déterminer la valeur de <span class="math inline">\(\beta(n+1,a)\)</span>.</p></li>
+<li><p>Soit <span class="math inline">\(n\in\mathbb{N}^*\)</span>. Justifier que l’intégrale <span class="math display">\[I_n(a)=\int_0^n\left(1-\frac{t}{n}\right)^nt^{a-1}dt\]</span> est convergente, puis déterminer sa valeur.</p></li>
+</ol></li>
+</ol>
+</div>
+
+
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Georg Friedrich Bernhard Riemann, mathématicien Allemand né le 17 septembre 1826 à Breselenz, et mort le 20 juillet 1866 à Selasca, en Italie.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Il y en a d’autres ; les intégrales faussement généralisées, la linéarité des intégrales convergentes et le théorème de changement de variable.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Un théorème de Liouville affirme par exemple qu’il n’existe pas de primitive de la fonction <span class="math inline">\(t \mapsto e^{-t^{2}}\)</span> exprimable à l’aide de fonctions usuelles (polynômes, exponentielles, logarithmes, trigonométriques).<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>On utilise ici implicitement la linéarité de l’intégrale convergente : si l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> converge, alors l’intégrale de <span class="math inline">\(\lambda f\)</span> sur <span class="math inline">\(I\)</span> converge pour tout <span class="math inline">\(\lambda \in \mathbb{K}\)</span>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>L’intégrale <span class="math inline">\(\int_{0}^{+\infty}f(t)e^{-pt}dt\)</span> est donc convergente ; on reconnait la <em>transformée de Laplace</em> de <span class="math inline">\(f\)</span>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>On affinera cette propriété dans le cours sur les espaces préhilbertiens en démontrant que l’intégrale est même <em>définie positive</em>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>On retrouve une propriété usuelle des limites : <em>“convergent plus divergent égale divergent”</em><a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>On pourrait également remarquer que cette intégrale est faussement généralisée en <span class="math inline">\(0\)</span> (<a href="#exm-faussement-generalisee" class="quarto-xref">Exemple&nbsp;<span>1.10</span></a>).<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>A ce stade, on essaye d’écrire l’intégrande sous la forme <span class="math inline">\(f\bigl(\varphi(t)\bigr)|\varphi'(t)|\)</span>.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copié");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copié");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./colles.html" class="pagination-link" aria-label="Programmes de colle">
+        <span class="nav-page-text">Programmes de colle</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
