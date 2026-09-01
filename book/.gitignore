@@ -1,3 +1,5 @@
 /.quarto/
 _book
 tikz/svg/
+
+**/*.quarto_ipynb

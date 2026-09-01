@@ -1014,12 +1014,19 @@ d'*intégration par parties* et le *théorème de changement de variable*.
 
 ### Intégrations pas parties et changement de variable
 
+::: {#nte-ipp .callout-note}
+
+#### Intégration par parties
+
 Concernant l'intégration pas parties, il n'y a pas (en TSI) d'énoncé propre aux
 intégrales généralisées. Il faudra systématiquement :
 
 1. revenir à une intégrale partielle,
 2. effectuer une intégration par parties classique,
 3. passer à la limite pour obtenir un résultat sur des intégrales généralisées.
+
+:::
+
 
 ::: {#exm-xlnx}
 
