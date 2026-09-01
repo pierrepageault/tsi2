@@ -20,7 +20,7 @@ aujourd'hui le nom de *sommes de Riemann*.
 
 ::: {#fig-somme-riemann}
 
-![](./somme-riemann.png)
+![](./png/somme-riemann.png)
 
 La définition initiale de Riemann à l'aide de sommes.
 :::
@@ -1303,4 +1303,4 @@ d'*arrivée* pour vérifier les hypothèses du théorème de changement de varia
 
 ## Exercices
 
-{{< include ./td/01.qmd >}}
+{{< include ./td/01.md >}}
