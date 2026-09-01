@@ -1,0 +1,32 @@
+project:
+  type: book
+
+lang: fr
+
+book:
+  title: "Mathématiques en TSI2"
+  author: "Pierre Pageault"
+  date: today 
+  chapters:
+    - index.md
+    - 01-integrales-generalisees.md
+    - colles.md
+  downloads: [pdf, epub]
+
+filters:
+    - cours
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    default-image-extension: svg
+    css: style.css
+
+  pdf:
+    documentclass: scrreprt
+    default-image-extension: svg
+
