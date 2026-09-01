@@ -22,7 +22,7 @@ aujourd'hui le nom de *sommes de Riemann*.
 
 ![](./png/somme-riemann.png)
 
-La définition initiale de Riemann à l'aide de sommes.
+La définition initiale de l'intégrale de Riemann à l'aide de sommes.
 :::
 
 L'énoncé moderne correspondant est le suivant:
