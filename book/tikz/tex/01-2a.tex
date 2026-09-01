@@ -1,0 +1,56 @@
+\documentclass[tikz,border=5pt]{standalone}
+\input{./style/style.tex}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+        axes,
+    xmin=0.1, xmax=5,
+    ymin=0, ymax=5,
+    xlabel={$t$},
+    domain=0.1:5,
+    xtick={1},
+    ytick={1},
+]
+
+% Aire hachurée sous 1/t^2 entre 1 et 5 (bleu)
+\addplot[domain=1:5, hachure] {1/x^1.2} \closedcycle;
+
+% Courbes nommées pour la zone entre les deux
+\addplot[name path=A, draw=none, domain=1:5, samples=100, forget plot] {1/x^0.8};
+\addplot[name path=B, draw=none, domain=1:5, samples=100, forget plot] {1/x^1.2};
+
+% Aire hachurée entre 1/t et 1/t^2 (noir, même sens que le bleu)
+\addplot[hachure=monGris]
+    fill between[of=A and B];
+
+% Courbe de t -> 1/\sqrt{t}
+\addplot[courbe,monGris] {1/x^0.8};
+
+% Courbe de t -> 1/t
+\addplot[courbe,dashed] {1/x};
+
+% Courbe de t -> 1/t^2
+\addplot[courbe] {1/x^1.2};
+
+% Etiquettes des courbes sur l'axe des y (à droite de l'axe)
+\node[monGris] at (axis cs:0.75,3.8) {$\dfrac{1}{\sqrt{t}}$};
+\node at (axis cs:0.55,4.5) {$\dfrac{1}{t^2}$};
+
+% Trait pointillé en x=1
+\draw[dashed] (axis cs:1,0) -- (axis cs:1,1);
+
+% Point d'intersection des deux courbes en (1,1)
+\fill[black] (axis cs:1,1) circle (1.5pt);
+
+% Résultats des intégrales, alignés, en haut à droite (légèrement décalés)
+\node at (axis cs:3.4,4.1) {
+$\displaystyle\int_{1}^{+\infty}\dfrac{dt}{t^2}=1$ 
+};
+\node[monGris] at (axis cs:3.6,3.1) {
+$\displaystyle\int_{1}^{+\infty}\dfrac{dt}{\sqrt{t}}\ \text{diverge}$ 
+};
+
+\end{axis}
+\end{tikzpicture}
+\end{document}

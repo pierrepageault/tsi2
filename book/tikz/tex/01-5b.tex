@@ -1,0 +1,37 @@
+\documentclass[tikz,border=5pt]{standalone}
+\input{./style/style.tex}
+
+
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    axes,
+    xmin=0.1, xmax=5,
+    ymin=0, ymax=5,
+    domain=0.1:5,
+    xlabel={$t$},
+    xtick={1},
+    ytick={1},
+]
+
+% Aire hachurée sous 1/t entre 1 et 5 (bleu)
+\addplot[domain=1:5, hachure] {1/x} \closedcycle;
+
+% Courbe de t -> 1/t
+\addplot[courbe] {1/x};
+
+% Etiquettes des courbes sur l'axe des y (à droite de l'axe)
+\node at (axis cs:0.65,4.5) {$\dfrac{1}{t}$};
+
+% Trait pointillé en x=1
+\draw[dashed] (axis cs:1,0) -- (axis cs:1,1);
+
+% Valeurs de l'intégrale
+\node at (axis cs:3.4,3.1) {
+\guillemotleft$\displaystyle\int_{1}^{+\infty}\dfrac{dt}{t}=+\infty$ \guillemotright
+};
+
+\end{axis}
+\end{tikzpicture}
+\end{document}

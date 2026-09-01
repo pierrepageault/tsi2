@@ -1,0 +1,50 @@
+% ============================================================
+%  style.tex
+%  Style commun pour les graphes de fonctions et d'intégrales
+%  Usage : \input{style.tex}  (à placer après \documentclass)
+% ============================================================
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usetikzlibrary{patterns}
+\usepgfplotslibrary{fillbetween}
+
+% ---- Couleurs standard ----
+\colorlet{monGris}{black!45}   
+\colorlet{monBleu}{blue!60}  
+
+% ============================================================
+%  Styles TikZ (\tikzset) : tout ce qui touche à l'apparence
+%  (couleurs, épaisseurs, hachures, position des étiquettes...)
+%  -> utilisables aussi bien sur \node, \draw, \addplot, etc.
+% ============================================================
+\tikzset{
+  % Courbe "secondaire" en nuance de gris (tracé + étiquette)
+  courbe/.style={thick},
+  % Hachures
+  hachure/.style={
+    pattern=north east lines,
+    pattern color=#1,
+    draw=none,
+    samples=100,
+    /pgfplots/forget plot,
+  },
+  hachure/.default=black,
+}
+
+% ============================================================
+%  Style pgfplots (\pgfplotsset) : options propres à l'environnement axis
+%  (repère orthonormé, ticks, épaisseur des axes...)
+%  -> ces clés n'existent que dans /pgfplots/, \tikzset ne peut pas les définir.
+% ============================================================
+\pgfplotsset{
+    axes/.style={
+    axis lines=middle,
+    axis equal image,               % repère orthonormé
+    thick,                          % épaisseur des axes et courbes
+    samples=200,
+  }
+}

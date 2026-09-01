@@ -1,0 +1,36 @@
+\documentclass[tikz,border=5pt]{standalone}
+\input{./style/style.tex}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    axes,
+    xmin=-3, xmax=3,
+    ymin=-2.5, ymax=4.5,
+    xlabel={$t$},
+    xtick={1},
+    ytick={1},
+]
+
+% Aire hachurée sous exp(t) entre -infty (représenté par xmin) et 0 (noir)
+\addplot[domain=-3:0, hachure=monGris] {exp(x)} -- (0,0) -- (-3,0) -- cycle;
+
+% Aire hachurée sous exp(-t) entre 0 et +infty (représenté par xmax) (bleu)
+\addplot[domain=0:3, hachure] {exp(-x)} -- (3,0) -- (0,0) -- cycle;
+
+% Courbe de t -> exp(t)
+\addplot[courbe, monGris, domain=-3:2] {exp(x)};
+
+% Courbe de t -> exp(-t)
+\addplot[courbe, domain=-2:3] {exp(-x)};
+
+% Etiquettes des courbes (placées hors de la trajectoire des courbes)
+\node[monGris] at (axis cs:2.0,3.5) {$\exp(t)$};
+\node[black] at (axis cs:-2,3.0) {$\exp(-t)$};
+
+% Origine
+\node[below left] at (axis cs:0,0) {$0$};
+
+\end{axis}
+\end{tikzpicture}
+\end{document}
