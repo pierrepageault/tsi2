@@ -189,8 +189,8 @@ window.Quarto = {
   <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices"><span class="header-section-number">1.4</span> Exercices</a>
   <ul class="collapse">
   <li><a href="#convergence-dune-intégrale-généralisée-1" id="toc-convergence-dune-intégrale-généralisée-1" class="nav-link" data-scroll-target="#convergence-dune-intégrale-généralisée-1"><span class="header-section-number">1.4.1</span> Convergence d’une intégrale généralisée</a></li>
-  <li><a href="#calculer-avec-des-intégrales-convergentes" id="toc-calculer-avec-des-intégrales-convergentes" class="nav-link" data-scroll-target="#calculer-avec-des-intégrales-convergentes"><span class="header-section-number">1.4.2</span> Calculer avec des intégrales convergentes</a></li>
-  <li><a href="#les-théorèmes-de-comparaison" id="toc-les-théorèmes-de-comparaison" class="nav-link" data-scroll-target="#les-théorèmes-de-comparaison"><span class="header-section-number">1.4.3</span> Les théorèmes de comparaison</a></li>
+  <li><a href="#les-théorèmes-de-comparaison" id="toc-les-théorèmes-de-comparaison" class="nav-link" data-scroll-target="#les-théorèmes-de-comparaison"><span class="header-section-number">1.4.2</span> Les théorèmes de comparaison</a></li>
+  <li><a href="#calculer-avec-des-intégrales-convergentes" id="toc-calculer-avec-des-intégrales-convergentes" class="nav-link" data-scroll-target="#calculer-avec-des-intégrales-convergentes"><span class="header-section-number">1.4.3</span> Calculer avec des intégrales convergentes</a></li>
   <li><a href="#divers" id="toc-divers" class="nav-link" data-scroll-target="#divers"><span class="header-section-number">1.4.4</span> Divers</a></li>
   </ul></li>
   </ul>
@@ -229,7 +229,7 @@ window.Quarto = {
 <img src="./png/somme-riemann.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-somme-riemann-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.1: La définition initiale de Riemann à l’aide de sommes.
+Figure&nbsp;1.1: La définition initiale de l’intégrale de Riemann à l’aide de sommes.
 </figcaption>
 </figure>
 </div>
@@ -1124,58 +1124,13 @@ I = \displaystyle\int_0^{+\infty}e^{-t}dt,\quad J = \displaystyle\int_0^{+\infty
 <p><span class="theorem-title"><strong>Exercice 1.4 (<span class="math inline">\(\star\)</span>)</strong></span> (Nombres complexes). Calculer <span class="math inline">\(\displaystyle\int_0^{+\infty}e^{-at}\cos(bt)dt\)</span> pour <span class="math inline">\(a&gt;0\)</span> et <span class="math inline">\(b\in\mathbb{R}\)</span>.</p>
 </div>
 </section>
-<section id="calculer-avec-des-intégrales-convergentes" class="level3" data-number="1.4.2">
-<h3 data-number="1.4.2" class="anchored" data-anchor-id="calculer-avec-des-intégrales-convergentes"><span class="header-section-number">1.4.2</span> Calculer avec des intégrales convergentes</h3>
-<div id="exr-01-ipp" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 1.5</strong></span> (Intégrations par parties). A l’aide d’intégrations pas parties, calculer les intégrales suivantes :</p>
-<p><span class="math display">\[
-\displaystyle\int_0^1 t\ln(t)dt,\quad \displaystyle\int_0^{+\infty} te^{-t}dt,\quad \displaystyle\int_1^{+\infty}\frac{\ln(t)}{t^3}dt.
-\]</span></p>
-</div>
-<div id="exr-01-0004" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 1.6</strong></span> (Fonctions paires). Soit <span class="math inline">\(f:\mathbb{R}\to \mathbb{R}\)</span> une fonction continue. On suppose que <span class="math inline">\(f\)</span> est paire. Montrer que <span class="math inline">\(\int_{-\infty}^{+\infty}f(x)dx\)</span> converge si et seulement si <span class="math inline">\(\int_{0}^{+\infty}f(x)dx\)</span> converge et que, dans ce cas, <span class="math display">\[\int_{-\infty}^{+\infty}f(x)dx = 2\int_{0}^{+\infty}f(x)dx.\]</span></p>
-</div>
-<div id="exr-01-ipp-2" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 1.7</strong></span> (Relations de récurrence). Pour <span class="math inline">\((n,k)\in\mathbb{N}^*\times\mathbb{N}\)</span>, on pose <span class="math display">\[\displaystyle I_{n,k} = \int_0^1x^n(\ln(x)^k)dx.\]</span></p>
-<ol type="1">
-<li><p>Justifier que, pour tout <span class="math inline">\((n,k)\in\mathbb{N}^{*}\times\mathbb{N}\)</span>, l’intégrale <span class="math inline">\(I_{n,k}\)</span> est convergente.</p></li>
-<li><p>Calculer <span class="math inline">\(I_{n,0}\)</span> pour tout <span class="math inline">\(n\in\mathbb{N}^{*}\)</span>.</p></li>
-<li><p>A l’aide d’une intégration par parties, montrer que <span class="math display">\[\forall k\in\mathbb{N}^*,\ I_{n,k} = -\frac{k}{n+1}I_{n,k-1}.\]</span></p></li>
-<li><p>En déduire que <span class="math inline">\(I_{n,k} = \dfrac{(-1)^kk!}{(n+1)^{k+1}}\)</span>.</p></li>
-</ol>
-</div>
-<div id="exr-01-cht-var-1" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 1.8</strong></span> On admet que l’intégrale <span class="math inline">\(I = \displaystyle \int_0^{+\infty}\frac{\ln(t)}{1+t^2}dt\)</span> converge. A l’aide du changement de variable <span class="math inline">\(u=1/t\)</span>, montrer que <span class="math inline">\(I=0\)</span>.</p>
-</div>
-<div id="exr-01-cht-var-2" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 1.9 (<span class="math inline">\(\star\)</span>)</strong></span> (Formules de l’arc moitié).</p>
-<ol type="1">
-<li>Pour <span class="math inline">\(\theta \in [0,\pi[\)</span>, on pose <span class="math inline">\(t=\tan(\theta/2)\)</span>. Montrer que</li>
-</ol>
-<p><span class="math display">\[
-\sin(\theta) = \frac{2t}{1+t^{2}}\quad \text{et}\quad \cos(\theta)=\frac{1-t^{2}}{1+t^{2}}.
-\]</span></p>
-<ol start="2" type="1">
-<li>Calculer l’intégrale <span class="math inline">\(\displaystyle\int_0^\pi\frac{d\theta}{1+\sin(\theta)}\)</span> à l’aide du changement de variable <span class="math inline">\(t=\tan(\theta/2)\)</span>.</li>
-</ol>
-</div>
-<div id="exr-01-ln" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 1.10 (<span class="math inline">\(\star\)</span>)</strong></span> (Une expression de la fonction <span class="math inline">\(\ln\)</span>). Pour <span class="math inline">\(x&gt;0\)</span>, on pose <span class="math display">\[f(x) = \int_0^{+\infty}\frac{e^{-t}-e^{-xt}}{t}dt.\]</span></p>
-<ol type="1">
-<li><p>Justifier que la fonction <span class="math inline">\(f\)</span> est bien définie.</p></li>
-<li><p>Pour <span class="math inline">\(0&lt;a&lt;b\)</span>, montrer que <span class="math display">\[\int_a^b \frac{e^{-t}-e^{-xt}}{t}dt = \int_a^{ax}\frac{e^{-t}}{t}dt - \int_b^{bx}\frac{e^{-t}}{t}dt.\]</span></p></li>
-<li><p>En distinguant les cas <span class="math inline">\(x\geqslant 1\)</span> et <span class="math inline">\(0&lt;x&lt;1\)</span>, montrer que pour tout réel <span class="math inline">\(u&gt;0\)</span>, on a <span class="math display">\[e^{-xu}\ln(x)\leqslant \int_u^{xu} \frac{e^{-t}}{t}dt\leqslant e^{-u}\ln(x).\]</span></p></li>
-<li><p>En déduire que pour tout <span class="math inline">\(x&gt;0\)</span>, <span class="math inline">\(f(x) = \ln(x)\)</span>.</p></li>
-</ol>
-</div>
-</section>
-<section id="les-théorèmes-de-comparaison" class="level3" data-number="1.4.3">
-<h3 data-number="1.4.3" class="anchored" data-anchor-id="les-théorèmes-de-comparaison"><span class="header-section-number">1.4.3</span> Les théorèmes de comparaison</h3>
+<section id="les-théorèmes-de-comparaison" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="les-théorèmes-de-comparaison"><span class="header-section-number">1.4.2</span> Les théorèmes de comparaison</h3>
 <div id="exr-01-0003" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 1.11</strong></span> (Comparaison de fonctions positives). A l’aide du théorème de comparaison pour les fonctions positives, montrer que l’intégrale <span class="math inline">\(\displaystyle\int_0^{+\infty}e^{-t^2}dt\)</span> converge.</p>
+<p><span class="theorem-title"><strong>Exercice 1.5</strong></span> (Comparaison de fonctions positives). A l’aide du théorème de comparaison pour les fonctions positives, montrer que l’intégrale <span class="math inline">\(\displaystyle\int_0^{+\infty}e^{-t^2}dt\)</span> converge.</p>
 </div>
 <div id="exr-01-comparaison" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 1.12</strong></span> (Théorèmes de comparaisons). Déterminer la nature des intégrales suivantes.</p>
+<p><span class="theorem-title"><strong>Exercice 1.6</strong></span> (Théorèmes de comparaisons). Déterminer la nature des intégrales suivantes.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ol type="1">
@@ -1193,16 +1148,62 @@ I = \displaystyle\int_0^{+\infty}e^{-t}dt,\quad J = \displaystyle\int_0^{+\infty
 </div>
 </div>
 <div id="exr-01-bertrand" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 1.13</strong></span> (Une intégrale de Bertrand). Montrer que l’intégrale <span class="math inline">\(I = \displaystyle \int_0^{+\infty}\frac{\ln(t)}{1+t^2}dt\)</span> converge.</p>
+<p><span class="theorem-title"><strong>Exercice 1.7</strong></span> (Une intégrale de Bertrand). Montrer que l’intégrale <span class="math inline">\(I = \displaystyle \int_0^{+\infty}\frac{\ln(t)}{1+t^2}dt\)</span> converge.</p>
 </div>
 <div id="exr-01-integrable" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 1.14</strong></span> (Une fonction intégrable). Montrer que la fonction <span class="math inline">\(x\mapsto e^{-x}\ln(x)\)</span> est intégrable sur <span class="math inline">\(]0,+\infty[\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercice 1.8</strong></span> (Une fonction intégrable). Montrer que la fonction <span class="math inline">\(x\mapsto e^{-x}\ln(x)\)</span> est intégrable sur <span class="math inline">\(]0,+\infty[\)</span>.</p>
 </div>
 <div id="exr-01-integrable-fourier" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 1.15</strong></span> (Un calcul de transformée de Fourier). Soit <span class="math inline">\(a&gt;0\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercice 1.9</strong></span> (Un calcul de transformée de Fourier). Soit <span class="math inline">\(a&gt;0\)</span>.</p>
 <ol type="1">
 <li><p>Montrer que la fonction <span class="math inline">\(f(x) = e^{-a|x|}\)</span> est intégrable sur <span class="math inline">\(\mathbb{R}\)</span>.</p></li>
 <li><p>Soit <span class="math inline">\(t\in\mathbb{R}\)</span>. Montrer que la fonction <span class="math inline">\(x\mapsto e^{-ixt}f(x)\)</span> est intégrable sur <span class="math inline">\(\mathbb{R}\)</span> et calculer <span class="math inline">\(\displaystyle \int_{-\infty}^{+\infty}e^{-ixt}f(x)dx\)</span>.</p></li>
+</ol>
+</div>
+</section>
+<section id="calculer-avec-des-intégrales-convergentes" class="level3" data-number="1.4.3">
+<h3 data-number="1.4.3" class="anchored" data-anchor-id="calculer-avec-des-intégrales-convergentes"><span class="header-section-number">1.4.3</span> Calculer avec des intégrales convergentes</h3>
+<div id="exr-01-ipp" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.10</strong></span> (Intégrations par parties). A l’aide d’intégrations pas parties, calculer les intégrales suivantes :</p>
+<p><span class="math display">\[
+\displaystyle\int_0^1 t\ln(t)dt,\quad \displaystyle\int_0^{+\infty} te^{-t}dt,\quad \displaystyle\int_1^{+\infty}\frac{\ln(t)}{t^3}dt.
+\]</span></p>
+</div>
+<div id="exr-01-0004" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.11</strong></span> (Fonctions paires). Soit <span class="math inline">\(f:\mathbb{R}\to \mathbb{R}\)</span> une fonction continue. On suppose que <span class="math inline">\(f\)</span> est paire. Montrer que <span class="math inline">\(\int_{-\infty}^{+\infty}f(x)dx\)</span> converge si et seulement si <span class="math inline">\(\int_{0}^{+\infty}f(x)dx\)</span> converge et que, dans ce cas, <span class="math display">\[\int_{-\infty}^{+\infty}f(x)dx = 2\int_{0}^{+\infty}f(x)dx.\]</span></p>
+</div>
+<div id="exr-01-ipp-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.12</strong></span> (Relations de récurrence). Pour <span class="math inline">\((n,k)\in\mathbb{N}^*\times\mathbb{N}\)</span>, on pose <span class="math display">\[\displaystyle I_{n,k} = \int_0^1x^n(\ln(x)^k)dx.\]</span></p>
+<ol type="1">
+<li><p>Justifier que, pour tout <span class="math inline">\((n,k)\in\mathbb{N}^{*}\times\mathbb{N}\)</span>, l’intégrale <span class="math inline">\(I_{n,k}\)</span> est convergente.</p></li>
+<li><p>Calculer <span class="math inline">\(I_{n,0}\)</span> pour tout <span class="math inline">\(n\in\mathbb{N}^{*}\)</span>.</p></li>
+<li><p>A l’aide d’une intégration par parties, montrer que <span class="math display">\[\forall k\in\mathbb{N}^*,\ I_{n,k} = -\frac{k}{n+1}I_{n,k-1}.\]</span></p></li>
+<li><p>En déduire que <span class="math inline">\(I_{n,k} = \dfrac{(-1)^kk!}{(n+1)^{k+1}}\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-01-cht-var-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.13</strong></span> Montrer que l’intégrale <span class="math inline">\(I = \displaystyle
+\int_0^{+\infty}\frac{\ln(t)}{1+t^2}dt\)</span> converge puis, à l’aide du changement de variable <span class="math inline">\(u=1/t\)</span>, montrer que <span class="math inline">\(I=0\)</span>.</p>
+</div>
+<div id="exr-01-cht-var-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.14 (<span class="math inline">\(\star\)</span>)</strong></span> (Formules de l’arc moitié).</p>
+<ol type="1">
+<li>Pour <span class="math inline">\(\theta \in [0,\pi[\)</span>, on pose <span class="math inline">\(t=\tan(\theta/2)\)</span>. Montrer que</li>
+</ol>
+<p><span class="math display">\[
+\sin(\theta) = \frac{2t}{1+t^{2}}\quad \text{et}\quad \cos(\theta)=\frac{1-t^{2}}{1+t^{2}}.
+\]</span></p>
+<ol start="2" type="1">
+<li>Calculer l’intégrale <span class="math inline">\(\displaystyle\int_0^\pi\frac{d\theta}{1+\sin(\theta)}\)</span> à l’aide du changement de variable <span class="math inline">\(t=\tan(\theta/2)\)</span>.</li>
+</ol>
+</div>
+<div id="exr-01-ln" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 1.15 (<span class="math inline">\(\star\)</span>)</strong></span> (Une expression de la fonction <span class="math inline">\(\ln\)</span>). Pour <span class="math inline">\(x&gt;0\)</span>, on pose <span class="math display">\[f(x) = \int_0^{+\infty}\frac{e^{-t}-e^{-xt}}{t}dt.\]</span></p>
+<ol type="1">
+<li><p>Justifier que la fonction <span class="math inline">\(f\)</span> est bien définie.</p></li>
+<li><p>Pour <span class="math inline">\(0&lt;a&lt;b\)</span>, montrer que <span class="math display">\[\int_a^b \frac{e^{-t}-e^{-xt}}{t}dt = \int_a^{ax}\frac{e^{-t}}{t}dt - \int_b^{bx}\frac{e^{-t}}{t}dt.\]</span></p></li>
+<li><p>En distinguant les cas <span class="math inline">\(x\geqslant 1\)</span> et <span class="math inline">\(0&lt;x&lt;1\)</span>, montrer que pour tout réel <span class="math inline">\(u&gt;0\)</span>, on a <span class="math display">\[e^{-xu}\ln(x)\leqslant \int_u^{xu} \frac{e^{-t}}{t}dt\leqslant e^{-u}\ln(x).\]</span></p></li>
+<li><p>En déduire que pour tout <span class="math inline">\(x&gt;0\)</span>, <span class="math inline">\(f(x) = \ln(x)\)</span>.</p></li>
 </ol>
 </div>
 </section>
