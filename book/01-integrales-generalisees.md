@@ -3,10 +3,11 @@
 
 ## Introduction {.unnumbered}
 
-Le but de ce chapitre est de généralisée la théorie de l'intégration
-vue en première année à des intervalles *quelconques* et plus seulement des
-segments. On donnera en particulier un sens à des intégrales comme $\displaystyle\int_{1}^{\infty}\frac{dx}{x^{2}}$
-ou $\displaystyle\int_{0}^{1}\ln(x)dx$.
+Le but de ce chapitre est de généralisée la théorie de l'intégration vue en
+première année -- qui se limite à des segments -- à des intervalles
+*quelconques* . On donnera par exemple un sens à des intégrales comme
+$\displaystyle\int_{1}^{\infty}\frac{dx}{x^{2}}$ ou
+$\displaystyle\int_{0}^{1}\ln(x)dx$.
 
 La théorie de l'intégration vue en première année est héritée de Riemann^[Georg
 Friedrich Bernhard Riemann, mathématicien Allemand né le 17 septembre 1826 à
@@ -22,7 +23,7 @@ aujourd'hui le nom de *sommes de Riemann*.
 
 ![](./png/somme-riemann.png)
 
-La définition initiale de l'intégrale de Riemann à l'aide de sommes.
+La définition initiale de Riemann de l'intégrale à l'aide de sommes.
 :::
 
 L'énoncé moderne correspondant est le suivant:
@@ -48,9 +49,10 @@ Alors les suites $(U_{n})$ et $(V_{n})$ convergent vers une limite commune
 appelée intégrale de $f$ sur $[a,b]$ et notée $\int_a^b f(t)dt$.
 :::
 
-On peut alors montrer que la fonction $x \mapsto \int_a^x f(t)dt$ est une
-*primitive* de $f$ sur $[a,b]$ et aboutir à la définition usuelle donnée
-en première année : pour toute primitive $F$ de $f$ sur $[a,b]$, 
+On peut montrer alors que la fonction $x \mapsto \int_a^x f(t)dt$ est une
+*primitive* de $f$ sur $[a,b]$ et on aboutit à la définition usuelle de
+l'intégrale donnée en première année : pour toute primitive $F$ de $f$ sur
+$[a,b]$, 
 
 $$
     \int_{a}^{b}f(t)dt = F(b)-F(a).
@@ -68,15 +70,16 @@ n'est pas définie en $b$, par exemple lorque $b=+\infty$ ; on parlera alors
 d'intégrale *généralisée* de $f$ sur $[a,b[$. 
 
 Les intégrales généralisées seront donc définies comme des *limites*
-d'intégrales usuelles, à condition que ces limites existent ! Contrairement aux
+d'intégrales usuelles -- à condition que ces limites existent ! Contrairement aux
 intégrales usuelles, les intégrales généralisées ne seront donc pas toujours bien
 définies, et il faudra prendre plus de précaution lors de leurs manipulations.
 
 Ces précautions étant prises, les intégrales généralisées se comporteront
 essentiellement de la même manière que les intégrales usuelles. 
 
-Elles sont d'un usuage constant en mathématiques et en physique (transformée de
-Laplace, de Fourier, fonction $\Gamma$ d'Euler, intégrale de Gauss,...)
+Les intégrales généralisées sont d'un usuage constant en mathématiques et en
+physique (transformée de Laplace, de Fourier, fonction $\Gamma$ d'Euler,
+intégrale de Gauss,...)
 
 
 
@@ -99,11 +102,14 @@ moins une des extrémités de $I$.
 :::
 
 ::: {#nte-ambiguite .callout-note}
-"L'intégrale de $f$ sur $I$" s'abrège usuellement $\int_{I}f$, $\int_{I}f(t)dt$
-ou $\int_{a}^{b}f(t)dt$. Il faut noter l'*ambiguité* de cette dernière notation
-(qui est pourtant la plus utilisée) car elle ne précise pas si les bornes $a$
-et $b$ sont inclues ou exclues. C'est justement à vous que revient de lever
-cette ambiguité pour étudier l'aspect généralisé ou non de l'intégrale. 
+
+La phrase "l'intégrale de $f$ sur $I$" s'abrège usuellement $\int_{I}f$,
+$\int_{I}f(t)dt$ ou $\int_{a}^{b}f(t)dt$. Il faut noter l'*ambiguité* de cette
+dernière notation (qui est pourtant la plus utilisée) car elle ne précise pas
+si les bornes $a$ et $b$ sont inclues ou exclues. C'est justement à vous que
+revient de lever cette ambiguité pour étudier l'aspect généralisé ou non de
+l'intégrale. 
+
 :::
 
 ::: {#exm-simplement-generalisee-1}
@@ -138,8 +144,7 @@ intégrales *faussement généralisées*, étudiées plus en détail dans la
 
 Jusqu'à présent, on s'est seulement entendu sur le sens de la phrase
 "l'intégrale de $f$ sur $I$ est généralisée". Nous pas attribué de *valeur
-numérique* à cette "intégrale". C'est ici qu'intervient la notion de
-*convergence*.
+numérique* à cette "intégrale". C'est le rôle de la notion de *convergence*.
 
 ::: {#def-cv-integrale-intervalle-semi-ouvert} 
 
@@ -211,10 +216,10 @@ donc l'intégrale $\int_{1}^{+\infty}\frac{dx}{x}$ diverge.
 
 ::: {#rem-convergence-integrande}
 
-Les exemples précédents montrent qu'il ne faut pas confondre la convergence de
-l'*intégrale* et de la *fonction intégrée* (l'intégrande). Par exemple, la
-fonction $x \mapsto 1/x$ admet une limite en $+\infty$, mais l'intégrale
-$\int_{1}^{+\infty}\frac{dx}{x}$ diverge. 
+Les exemples précédents montrent qu'il ne faut pas confondre la convergence en
+$+\infty$ de l'*intégrale* et de la *fonction intégrée* (l'intégrande). Par
+exemple, la fonction $x \mapsto 1/x$ admet une limite en $+\infty$, mais
+l'intégrale $\int_{1}^{+\infty}\frac{dx}{x}$ diverge. 
 
 :::
 
@@ -229,12 +234,12 @@ Des fonctions peuvent avoir des graphes similaires mais des intégrales de natur
 
 ::: {#wrn-convergence-integrande .callout-warning}
 
-Il ne pas confondre la convergence de l'*intégrale* et de la
-fonction intégrée (l'*intégrande*). 
+Il ne pas confondre la convergence de l'*intégrale* en $\pm \infty$ et la
+convergence de la fonction intégrée (l'*intégrande*). 
 
 :::
 
-Voici un dernier exemple classique d'intégrale convergente.
+Voici un autre exemple classique d'intégrale convergente.
 
 ::: {#exm-exponentielle}
 
@@ -388,6 +393,13 @@ L'intégrale $\int_{0}^{+\infty}\frac{dx}{x^{2}}$ diverge car elle diverge en $0
 
 :::
 
+::: {#tip-ouvert .callout-tip}
+
+Montrer la convergence d'une intégrale sur un espace *ouvert*, c'est montrer la
+convergence de *deux* intégrales "simplement" généralisées.
+
+:::
+
 
 ### Intégrales faussement généralisées {#sec-integrale-faussement-generalisee}
 
@@ -451,6 +463,23 @@ $\pm \infty$.
 
 :::
 
+::: {#nte-prolongement .callout-note}
+
+Dans le théorème précédent, le prolongement par continuité de $f$ à $\bar{I}$
+est encore noté $f$. La rigueur voudrait qu'on le note d'une autre manière,
+mais l'usage prévaut. 
+
+C'est l'occasion de rappeler qu'en mathématiques, une fonction vient toujours
+avec un espace de *départ* et un espace d'*arrivée*, dont dépendent ses propriétés
+(injectivité, surjectivité, régularité,...). Les changer, c'est
+changer de fonction. 
+
+Bien souvent, on "oublie" ces espaces pour ne préciser que
+l'*action* de $f$ ; ils sont alors présents de manière *sous-jaccente*.
+
+:::
+
+
 ::: {#exm-faussement-generalisee}
 
 Les intégrales $\int_{]0,1]}x^{2}dx$ et $\int_{]0,1]}x\ln(x)dx$ sont toutes les
@@ -463,24 +492,19 @@ $\int_{0}^{1}x^{2}dx$ et $\int_{0}^{1}x\ln(x)dx$.
 ## Les théorèmes de comparaison {#sec-comparaison}
 
 Les seules intégrales réellement intéressantes sont les intégrales
-convergentes. Actuellement, nous disposons essentiellement d'un seul outil[^1] pour
+convergentes. Actuellement, nous disposons d'un seul outil pour
 montrer la convergence d'une intégrale généralisée : revenir à une intégrale
 partielle et espérer être capable de la calculer pour étudier sa limite. 
 
 Malheureusement, peu d'intégrales sont effectivement calculables car il est
-difficile de calculer des primitives, voir impossible[^2].
+difficile de calculer des primitives, voir impossible^[Un théorème de Liouville
+affirme par exemple qu'il n'existe pas de primitive de la fonction $t \mapsto
+e^{-t^{2}}$ exprimable à l'aide de fonctions usuelles (polynômes,
+exponentielles, logarithmes, trigonométriques).].
 
 Face à ce constat, il est nécessaire de développer des outils permettant de
 montrer qu'une intégrale converge sans pour autant calculer explicitement une
 primitive de la fonction intégrée ; c'est le rôle des théorèmes de comparaison. 
-
-[^1]: Il y en a d'autres ; les intégrales faussement généralisées, la linéarité
-des intégrales convergentes et le théorème de changement de variable.
-
-[^2]: Un théorème de Liouville affirme par exemple qu'il n'existe pas de primitive
-de la fonction $t \mapsto e^{-t^{2}}$ exprimable à l'aide de
-fonctions usuelles (polynômes, exponentielles, logarithmes,
-trigonométriques).
 
 ### Le théorème de comparaison pour les fonctions positives
 
@@ -499,6 +523,13 @@ suppose que
 2. l'intégrale de $g$ sur $I$ converge. 
 
 Alors l'intégrale de $f$ sur $I$ converge. 
+:::
+
+::: {#rem-transfert-technique}
+
+Le théorème de comparaison permet donc un *transfert de technicité*; on passe d'un calcul de
+*primitive* à une *majoration* (ce qui n'est pas non plus évident).
+
 :::
 
 
@@ -645,7 +676,7 @@ $$
 :::
 
 Le résultat suivant est une manière commode de dire que les fonctions
-intégrables sont stable par *combinaison linéaire*.
+intégrables sont stables par *combinaison linéaire*.
 
 ::: {#prp-espace-vectoriel-fonction-integrable}
 
