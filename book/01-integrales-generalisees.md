@@ -528,7 +528,7 @@ Alors l'intégrale de $f$ sur $I$ converge.
 ::: {#rem-transfert-technique}
 
 Le théorème de comparaison permet donc un *transfert de technicité*; on passe d'un calcul de
-*primitive* à une *majoration* (ce qui n'est pas non plus évident).
+*primitive* à une *majoration*.
 
 :::
 
