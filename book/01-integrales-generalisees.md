@@ -1112,6 +1112,12 @@ voisinage de $\alpha$.
 Dans ces théorèmes, les signes de $f$ et $g$ sont sans
 importance; c'est l'intérêt de la notion d'*intégrabilité*.
 
+::: {#rem-signe}
+
+Dans ces théorèmes, les signes de $f$ et $g$ ne sont pas important ; c'est
+l'intérêt de la notion d'*intégrabilité*.
+>>>>>>> e73e57a (04-09-2026 11:22)
+
 :::
 
 
@@ -1195,6 +1201,16 @@ Soit $\alpha \in \mathbb{R}$. Alors la fonction $t \mapsto
 
 :::
 
+::: {#rem-integrale-riemann}
+
+Les intégrales $\int_{0}^{1}\frac{dt}{t^{\alpha}}$ et
+$\int_{1}^{+\infty}\frac{dt}{t^{\alpha}}$ portent le nom d'*intégrales de
+Riemann*.
+
+:::
+
+
+
 ::: {#fig-riemann}
 
 ![](./tikz/svg/01-2a.svg)
@@ -1249,6 +1265,7 @@ Graphes des fonctions puissances
 :::
 
 ::: {#tip-primitive .callout-tip}
+
 
 Si $\alpha \neq1$, une primitive de $\frac{u'}{u^{\alpha}}$ est
 $\frac{u^{-\alpha +1}}{-\alpha +1}$.
@@ -1755,8 +1772,6 @@ d'*arrivée* pour vérifier les hypothèses du théorème de changement de varia
 
 \newpage
 
-=======
->>>>>>> 37517b7 (04-09-2026 11:00)
 ## Exercices
 
 {{< include ./td/01.md >}}
