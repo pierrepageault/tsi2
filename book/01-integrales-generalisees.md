@@ -184,10 +184,10 @@ L'intégrale $\int_{1}^{+\infty}\frac{dx}{x^{2}}$ converge et vaut $1$.
 
 ::: {.details}
 
-Pour tout $X \geqslant 1$, on a 
+Pour tout $x \geqslant 1$, on a 
 
 $$
-    \int_{1}^{X}\frac{dx}{x^{2}} = 1- \frac{1}{X} \underset{X \to +\infty}{\longrightarrow} 1.
+    \int_{1}^{x}\frac{dt}{t^{2}} = 1- \frac{1}{x} \underset{x \to +\infty}{\longrightarrow} 1.
 $$
 
 Donc l'intégrale $\int_{1}^{+\infty}\frac{dx}{x^{2}}$ converge et vaut $1$.
@@ -202,10 +202,10 @@ L'intégrale $\int_{1}^{+\infty}\frac{dx}{x}$ diverge.
 
 ::: {.details}
 
-Pour tout $X \geqslant 1$, on a 
+Pour tout $x \geqslant 1$, on a 
 
 $$
-    \int_{1}^{X}\frac{dx}{x} = \ln(X) \underset{X \to +\infty}{\longrightarrow} +\infty,
+    \int_{1}^{x}\frac{dt}{t} = \ln(x) \underset{x \to +\infty}{\longrightarrow} +\infty,
 $$
 
 donc l'intégrale $\int_{1}^{+\infty}\frac{dx}{x}$ diverge.
@@ -1106,6 +1106,14 @@ voisinage de $\alpha$.
 
 :::
 
+::: {#rem-signe}
+
+Dans ces théorèmes, les signes de $f$ et $g$ ne sont pas important ; c'est
+l'intérêt de la notion d'*intégrabilité*.
+
+:::
+
+
 ::: {#nte-voisinage .callout-note}
 
 #### Voisinages
@@ -1178,14 +1186,22 @@ exponentielles décroissantes.
 
 #### Intégrales de Riemann 
 
-Soit $\alpha \in \mathbb{R}$. Alors
+Soit $\alpha \in \mathbb{R}$. Alors la fonction $t \mapsto \frac{1}{t^{\alpha}}$ est 
 
-1. la fonction $t \mapsto 1/t^{\alpha}$ est intégrable au voisinage de $0$ ssi
-	 $\alpha<1$,
-2. la fonction $t \mapsto 1/t^{\alpha}$ est intégrable au voisinage de $+\infty$
-	 ssi $\alpha>1$.
+1. intégrable au voisinage de $0$ ssi $\alpha<1$,
+2. intégrable au voisinage de $+\infty$ ssi $\alpha>1$.
 
 :::
+
+::: {#rem-integrale-riemann}
+
+Les intégrales $\int_{0}^{1}\frac{dt}{t^{\alpha}}$ et
+$\int_{1}^{+\infty}\frac{dt}{t^{\alpha}}$ portent le nom d'*intégrales de
+Riemann*.
+
+:::
+
+
 
 ::: {#fig-riemann}
 
@@ -1229,6 +1245,13 @@ $$
 ![](./tikz/svg/01-4.svg)
 
 Graphes des fonctions puissances
+
+:::
+
+::: {#tip-primitive .callout-tip}
+
+Si $\alpha \neq 1$, une primitive de la fonction $\frac{u'}{u^{\alpha}}$ est
+$\frac{u^{-\alpha + 1}}{-\alpha +1}$.
 
 :::
 
@@ -1344,6 +1367,15 @@ comparaison, l'intégrale $\int_{0}^{1}\frac{\ln(t)}{1-t}dt$ converge en $0$.
 :::
 
 :::
+
+::: {#rem-valeurs}
+
+En cas de convergence, il est bon de connaitre la valeurs des intégrales
+$\int_{0}^{1}\frac{dt}{t^{\alpha}}$, $\int_{1}^{+\infty}\frac{dt}{t^{\alpha}}$,
+$\int_{0}^{+\infty}e^{-at}dt$ et $\int_{0}^{1}\ln(t)dt$.
+
+:::
+
 
 ## Exercices
 
