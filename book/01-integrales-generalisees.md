@@ -184,10 +184,10 @@ L'intégrale $\int_{1}^{+\infty}\frac{dx}{x^{2}}$ converge et vaut $1$.
 
 ::: {.details}
 
-Pour tout $X \geqslant 1$, on a 
+Pour tout $x \geqslant 1$, on a 
 
 $$
-    \int_{1}^{X}\frac{dx}{x^{2}} = 1- \frac{1}{X} \underset{X \to +\infty}{\longrightarrow} 1.
+    \int_{1}^{x}\frac{dt}{t^{2}} = 1- \frac{1}{x} \underset{x \to +\infty}{\longrightarrow} 1.
 $$
 
 Donc l'intégrale $\int_{1}^{+\infty}\frac{dx}{x^{2}}$ converge et vaut $1$.
@@ -202,10 +202,10 @@ L'intégrale $\int_{1}^{+\infty}\frac{dx}{x}$ diverge.
 
 ::: {.details}
 
-Pour tout $X \geqslant 1$, on a 
+Pour tout $x \geqslant 1$, on a 
 
 $$
-    \int_{1}^{X}\frac{dx}{x} = \ln(X) \underset{X \to +\infty}{\longrightarrow} +\infty,
+    \int_{1}^{x}\frac{dt}{t} = \ln(x) \underset{x \to +\infty}{\longrightarrow} +\infty,
 $$
 
 donc l'intégrale $\int_{1}^{+\infty}\frac{dx}{x}$ diverge.
@@ -720,6 +720,14 @@ voisinage de $\alpha$.
 
 :::
 
+::: {#rem-signe} 
+
+Dans ces théorèmes, les signes de $f$ et $g$ sont sans
+importance; c'est l'intérêt de la notion d'*intégrabilité*.
+
+:::
+
+
 ::: {#nte-voisinage .callout-note}
 
 #### Voisinages
@@ -792,12 +800,11 @@ exponentielles décroissantes.
 
 #### Intégrales de Riemann 
 
-Soit $\alpha \in \mathbb{R}$. Alors
+Soit $\alpha \in \mathbb{R}$. Alors la fonction $t \mapsto
+\frac{1}{t^{\alpha}}$ est 
 
-1. la fonction $t \mapsto 1/t^{\alpha}$ est intégrable au voisinage de $0$ ssi
-	 $\alpha<1$,
-2. la fonction $t \mapsto 1/t^{\alpha}$ est intégrable au voisinage de $+\infty$
-	 ssi $\alpha>1$.
+1. intégrable au voisinage de $0$ ssi $\alpha<1$,
+2. intégrable au voisinage de $+\infty$ ssi $\alpha>1$.
 
 :::
 
@@ -806,6 +813,14 @@ Soit $\alpha \in \mathbb{R}$. Alors
 ![](./tikz/svg/01-2a.svg)
 
 La différence ténue de convergence des intégrales de Riemann.
+
+:::
+
+::: {#rem-integrale-riemann}
+
+Les intégrales $\int_{0}^{1}\frac{dt}{t^{\alpha}}$ et
+$\int_{1}^{+\infty}\frac{dt}{t^{\alpha}}$ sont connues sous le nom d'*intégrales
+de Riemann*.
 
 :::
 
@@ -843,6 +858,13 @@ $$
 ![](./tikz/svg/01-4.svg)
 
 Graphes des fonctions puissances
+
+:::
+
+::: {#tip-primitive .callout-tip}
+
+Si $\alpha \neq1$, une primitive de $\frac{u'}{u^{\alpha}}$ est
+$\frac{u^{-\alpha +1}}{-\alpha +1}$.
 
 :::
 
@@ -959,6 +981,16 @@ comparaison, l'intégrale $\int_{0}^{1}\frac{\ln(t)}{1-t}dt$ converge en $0$.
 
 :::
 
+::: {#rem-valeurs}
+
+En cas de convergence, il est bon de connaitre les valeurs des intégrales
+$\int_{0}^{1}\frac{dt}{t^{\alpha}}$, $\int_{1}^{+\infty}\frac{dt}{t^{\alpha}}$,
+$\int_{0}^{+\infty}e^{-at}dt$ et $\int_{0}^{1}\ln(t)dt$, ou d'être capable de
+les retrouver rapidement. 
+
+:::
+
+
 ## Calculer avec des intégrales convergentes {#sec-calculer}
 
 ### Propriétés des intégrales convergentes
@@ -967,10 +999,8 @@ Les intégrales convergentes héritent de toutes les propriétés préservées p
 passage à la limite (égalités, inégalités larges,...). La philosophie générale
 est la suivante :
 
-::: {.callout-tip}
-*Sous réserve de convergence*, les propriétés des intégrales généralisées sont
-les mêmes que celles des intégrales classiques.
-:::
+::: {.callout-tip} *Sous réserve de convergence*, les propriétés des intégrales
+généralisées sont les mêmes que celles des intégrales classiques. :::
  
 On pourra donc manipuler des intégrales généralisées de la même manière que
 l'on manipule des intégrales classiques, à condition de s'assurer que les
@@ -983,18 +1013,13 @@ quantités manipulées existent !
 Soient $f,g:I \to \mathbb{K}$ des fonctions continues sur $I$. On suppose que
 les intégrales de $f$ et $g$ sur $I$ *convergent*. Alors
 
-1. pour tout $\lambda \in \mathbb{K}$, l'intégrale de $f+\lambda g$ sur $I$ converge et 
-$$
-	\int_I (f + \lambda g) = \int_I f + \lambda \int_I g, \quad \textit{(linéarité
-de l'intégrale)}
-$$
+1. pour tout $\lambda \in \mathbb{K}$, l'intégrale de $f+\lambda g$ sur $I$
+   converge et $$ \int_I (f + \lambda g) = \int_I f + \lambda \int_I g, \quad
+   \textit{(linéarité de l'intégrale)} $$
 2. la *relation de Chasles* est vérifiée pour tout point $c$ de $I$, $\quad
-	 \textit{(relation de Chasles)}$
-3. si $\mathbb{K}=\mathbb{R}$ et si $f \leqslant g$ sur $I$, alors 
-$$
-	\int_I f \leqslant \int_I g, \quad \textit{(croissance de
-l'intégrale)}.
-$$
+   \textit{(relation de Chasles)}$
+3. si $\mathbb{K}=\mathbb{R}$ et si $f \leqslant g$ sur $I$, alors $$ \int_I f
+   \leqslant \int_I g, \quad \textit{(croissance de l'intégrale)}. $$
 
 :::
 
