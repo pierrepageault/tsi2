@@ -489,10 +489,396 @@ $\int_{0}^{1}x^{2}dx$ et $\int_{0}^{1}x\ln(x)dx$.
 :::
 
 
+## Calculer avec des intégrales convergentes {#sec-calculer}
+
+### Propriétés des intégrales convergentes
+
+Les intégrales convergentes héritent de toutes les propriétés préservées par
+passage à la limite (égalités, inégalités larges,...). La philosophie générale
+est la suivante :
+
+::: {.callout-tip}
+*Sous réserve de convergence*, les propriétés des intégrales généralisées sont
+les mêmes que celles des intégrales classiques.
+:::
+ 
+On pourra donc manipuler des intégrales généralisées de la même manière que
+l'on manipule des intégrales classiques, à condition de s'assurer que les
+quantités manipulées existent ! 
+
+::: {#prp-proprietes-integrale-generalise}
+
+#### Propriétés des intégrales convergentes
+
+Soient $f,g:I \to \mathbb{K}$ des fonctions continues sur $I$. On suppose que
+les intégrales de $f$ et $g$ sur $I$ *convergent*. Alors
+
+1. pour tout $\lambda \in \mathbb{K}$, l'intégrale de $f+\lambda g$ sur $I$ converge et 
+$$
+	\int_I (f + \lambda g) = \int_I f + \lambda \int_I g, \quad \textit{(linéarité
+de l'intégrale)}
+$$
+2. la *relation de Chasles* est vérifiée pour tout point $c$ de $I$, $\quad
+	 \textit{(relation de Chasles)}$
+3. si $\mathbb{K}=\mathbb{R}$ et si $f \leqslant g$ sur $I$, alors 
+$$
+	\int_I f \leqslant \int_I g, \quad \textit{(croissance de
+l'intégrale)}.
+$$
+
+:::
+
+::: {#rem-positivite} 
+
+On dit aussi que l'intégrale est *positive*^[On affinera cette propriété dans
+le cours sur les espaces préhilbertiens en démontrant que l'intégrale est même
+*définie positive*.] : si $f \geqslant 0$ sur $I$, alors $\int_If \geqslant 0$.
+Cette propriété est équivalente à la croissance de l'intégrale par linéarité.
+
+:::
+
+::: {#exm-linearite}
+
+En admettant (voir @exm-In) que pour tout $n \in \mathbb{N}$, l'intégrale
+$I_{n}=\int_{0}^{+\infty}P(t)e^{-t}dt$ converge, alors pour tout $P \in
+\mathbb{R}[X]$, l'intégrale $\int_{0}^{+\infty}P(t)e^{-t}dt$ converge comme
+combinaison linéaire d'intégrales convergentes.
+
+:::
+
+::: {#exm-majoration}
+
+Si l'intégrale de $f$ sur $[a,+\infty[$ converge et si $f \geqslant 0$ sur
+$[a,+\infty[$, alors la relation de Chalses et la positivité de l'intégrale
+montre que 
+
+$$
+	\forall x \geqslant a,\ \int_{a}^{x}f(t)dt \leqslant \int_{a}^{+\infty}f(t)dt.
+$$
+
+Cette propiétée est par ailleurs claire graphiquement, @fig-integrale-partielle-droite.
+:::
+
+::: {#exm-contrapose}
+
+Si l'intégrale de $f$ sur $I$ converge, et si l'intégrale de $g$ sur $I$
+diverge, alors l'intégrale de $f+g$ sur $I$ diverge^[On retrouve une propriété
+usuelle des limites : *"convergent plus divergent égale divergent"*]. Sinon, par différence
+d"intégrales convergentes, l'intégrale de $g$ sur $I$ serai convergente.
+
+:::
+
+
+En pratique, ces propriétés permettent de *calculer* avec des intégrales
+généralisées. Il faut leur ajouter deux outils d'usage constant: le théorème
+d'*intégration par parties* et le *théorème de changement de variable*.
+
+### Intégrations pas parties et changement de variable
+
+::: {#nte-ipp .callout-note}
+
+#### Intégration par parties
+
+Concernant l'intégration pas parties, il n'y a pas (en TSI) d'énoncé propre aux
+intégrales généralisées. Il faudra systématiquement :
+
+1. revenir à une intégrale partielle,
+2. effectuer une intégration par parties classique,
+3. passer à la limite pour obtenir un résultat sur des intégrales généralisées.
+
+:::
+
+::: {#wrn-crochet .callout-warning}
+
+Toute écriture du type $\left[ \cdots\right]_a^{+\infty}$ est à
+proscrire.
+
+:::
+
+::: {#exm-xlnx}
+
+A l'aide d'une intégration par partie, montrer que l'intégrale
+$I=\int_{0}^{1}x\ln(x)dx$ converge^[On pourrait également remarquer que cette
+intégrale est faussement généralisée en $0$ (@exm-faussement-generalisee).], et calculer sa valeur.
+
+:::{.details}
+
+Soit $0<\varepsilon<1$. Les fonctions $x \mapsto \ln(x)$ et $x \mapsto x^{2}/2$
+sont de classe $C^{1}$ sur $]\varepsilon,1[$. Par intégration par parties, on
+a donc
+
+\begin{equation}\tag{$\star$}
+	\int_{\varepsilon}^{1}x \ln(x)dx = \left[\frac{x^{2}}{2}\ln(x)\right]_{\varepsilon}^{1} - \int_{\varepsilon}^{1}\frac{x}{2}dx.
+\end{equation}
+
+Le crochet tend vers $0$  quand $\varepsilon \to
+0^{+}$ par *croissance comparée*. L'intégrale de droite tend vers $\int_{0}^{1}\frac{x}{2}dx
+= \frac{1}{4}$ quand $\varepsilon \to 0^+$ (cette intégrale n'est pas
+généralisée). Donc l'intégrale $\int_{0}^{1}x \ln(x)dx$ converge et, en passant
+à la limite dans l'égalité $(\star)$, on obtient
+
+$$
+	\int_{0}^{1}x \ln(x) dx = -\frac{1}{4}.
+$$
+
+:::
+
+:::
+
+On utilise souvent une intégration par parties pour établir une *relation*
+entre deux intégrales, par exemple une relation de récurrence.
+
+::: {#exm-recurrence}
+
+On admet que pour tout $n \in \mathbb{N}$, l'intégrale
+$I_{n}=\int_{0}^{+\infty}t^{n}e^{-t}dt$ converge (voir @exm-In). A l'aide d'une
+intégration par parties, montrer que 
+ 
+$$
+	\forall n \in \mathbb{N},\ I_{n+1}=n I_{n}.
+$$
+
+::: {.details}
+
+Soit $x \geqslant 0$ et $n \geqslant 0$. Les fonctions $t \mapsto t^{n+1}$ et $t \mapsto -e^{-t}$
+sont de classe $C^{1}$ sur $[0,x]$. Par intégration par parties, on obtient
+
+$$
+\int_{0}^{x}t^{n+1}e^{-t}dt = \left[-t^{n+1}e^{-t}\right]_0^{x}
+	+ (n+1) \int_{0}^{x}t^{n}e^{-t}dt.
+$$
+
+Le crochet tends vers $0$ quand $n \to +\infty$ par croissance comparée. Les
+deux intégrales étant convergentes, on obtient en passant à la limite dans
+l'égalité précédente
+
+$$
+I_{n+1}= n I_{n}.
+$$
+
+:::
+
+:::
+
+
+
+
+::: {#wrn-passage-limite .callout-warning}
+
+Pour pouvoir *passer à la limite*, il faut d'*abord* s'assurer que toutes les
+quantités en jeu convergent. 
+
+:::
+
+::: {#thm-changement-de-variable}
+
+#### Changement de variable
+
+Soit $\varphi:I \to J$ une bijection de classe $C^{1}$ entre deux intervalles
+$I$ et $J$ de $\mathbb{R}$. Soit $f:J \to \mathbb{R}$ une fonction continue.
+Alors 
+
+1. les intégrales $\int_{J}f(x)dx$ et
+	 $\int_{I}f\bigl(\varphi(t)\bigr)|\varphi'(t)|dt$ ont
+	 *même nature*,
+2. elles sont *égales* en cas de convergence.
+
+:::
+
+::: {#nte-changement-de-variable .callout-note}
+
+On dit qu'on a effectué le changement de variable $x=\varphi(t)$, pour lequel 
+$dx = |\varphi'(t)|dt$.
+
+:::
+
+::: {#rem-valeur-absolue}
+
+La présence de la valeur absolue dans le calcul du $dx$ évite de préciser la
+*monotonie* du changement de variable $\varphi$ ; les bornes des intégrales
+sont toujours rangées. Cette approche est à privilégier car c'est elle qui se
+généralise au cas des fonctions de plusieurs variables.
+
+:::
+
+
+Selon les cas, on disposera de l'espace de *départ* de $\varphi$, de l'espace
+d'*arrivée*, ou des deux. De manière générale, l'inversion de $\varphi$ n'est
+jamais nécessaire.
+
+::: {#exm-egalite-integrales collapse="true"}
+
+#### On connait les espaces de départ et d'arrivée
+
+On admet que l'intégrale 
+
+$$
+I = \int_{0}^{1}\frac{dt}{\sqrt{t(1-t)}}dt
+$$
+
+converge. A l'aide du changement de variable $t=\frac{1}{1+s}=\varphi(s)$, montrer que 
+
+$$
+	I = \int_{0}^{+\infty}\frac{ds}{\sqrt{s}(1+s)}.
+$$
+
+::: {.details}
+
+C'est le cas d'utilisation le plus courant ; un changement de variable est
+utilisé pour donner une autre expression d'une intégrale que l'on sait
+convergente. C'est le cas le plus simple car on connait les espaces de départ
+et d'arrivée, aux extrémités près (@nte-ambiguite). 
+
+Dans notre cas:
+
+L'intégrale $I$ est généralisée en $0$ et en $1$. La fonction $\varphi$ est une
+bijection de classe $C^{1}$ de $]0,+\infty[$ dans $]0,1[$. De plus 
+
+$$
+	\forall s \in ]0,+\infty[,\ \varphi'(s) = -\frac{1}{(1+s)^{2}}
+$$
+
+et 
+
+$$
+	\forall s \in ]0,+\infty[,\ \frac{1}{\sqrt{\varphi(s)\bigr(1- \varphi(s)\bigr)}}=\frac{1+s}{\sqrt{s}}
+$$
+
+donc par changement de variable
+
+$$
+  I =\int_{0}^{+\infty} \frac{1}{\sqrt{\varphi(s)\bigr(1- \varphi(s)\bigr)}}|\varphi'(s)|ds = \int_{0}^{+\infty}\frac{ds}{\sqrt{s}(1+s)}. 
+$$
+
+:::
+
+:::
+
+::: {#exm-espace-arrivee}
+
+#### On connait l'espace d'arrivée  
+
+Déterminer la nature et la valeur de l'intégrale
+$\int_{-1}^{1}\frac{dx}{\sqrt{1-x^{2}}}$ à l'aide du changement de variable
+$x=\cos(t)$.
+
+::: {.details}
+
+L'intégrale $\int_{-1}^{1}\frac{dx}{\sqrt{1-x^{2}}}$ est généralisée en $-1$ et
+en $1$. On connait ici l'intervalle d'arrivée $J=]-1,1[$ de la fonction
+$\varphi:t \mapsto \cos(t)$. C'est à nous de déterminer l'espace de départ de
+$\varphi$ de telle sorte qu'elle soit bijective et de classe $C^{1}$. Par
+exemple, $I=]0,\pi[$ convient.
+
+La rédaction finale devient:
+
+La fonction $\cos$  est une bijection de classe $C^{1}$ de $]0,\pi[$ dans
+$]-1,1[$. 
+
+De plus,
+
+$$
+	\forall t \in ]0,\pi[,\ \cos'(t) = -\sin(t) 
+$$
+
+et 
+
+$$
+  \forall t \in ]0,\pi[,\ \frac{1}{\sqrt{1- \cos(t)^{2}}}=
+\frac{1}{\sqrt{\sin(t)^{2}}}=\frac{1}{|\sin(t)|}.	
+$$
+
+Par changement de variable, l'intégrale proposée a donc même nature que l'intégrale
+
+$$
+	\int_{0}^{\pi}\frac{|\sin(t)|dt}{\sqrt{1-\cos(t)^{2}}}=\int_{0}^{\pi}dt=\pi.
+$$
+
+Notez que cette intégrale a lieu sur l'intervalle *ouvert* $]0,\pi[$: elle est
+clairement convergente car (doublement) faussement généralisée et sa valeur ne
+dépend pas de l'inclusion ou de l'exclusion de ses bornes
+(@prp-integrale-faussement-generalisee). 
+ 
+Donc l'intégrale $\int_{-1}^{1}\frac{dx}{\sqrt{1-x^{2}}}$
+converge et vaut $\pi$.
+
+:::
+
+:::
+
+::: {#exm-espace-depart-arrivee}
+
+#### On connait l'espace de départ
+
+A l'aide du changement de variable $x=\tan(t)$, calculer $\int_{0}^{\pi/2}\frac{dt}{1+\sin(t)^{2}}$.
+
+::: {.details}
+
+Cette intégrale n'est pas généralisée car l'intégrande est continue sur
+$[0,\pi/2]$. Elle est donc convergente. 
+
+On connait l'espace de départ du changement de variable $x=\tan(t)$, au
+extrémités près. Il faut les choisir de telle sorte que celui-ci soit bijectif
+et de classe $C^{1}$ sur son image. En l'occurence, bien que les extrémités $0$
+et $\pi/2$ soient incluses dans l'intégrale, on va choisir d'exclure $\pi/2$
+(on utilise implicitement à nouveau la @prp-integrale-faussement-generalisee).
+
+La rédaction devient:
+
+La fonction $\tan$ est une bijection de classe $C^{1}$ de $[0,\pi/2[$ dans
+$[0,+\infty[$. De plus
+
+$$
+	\forall t \in [0,\pi/2[,\ \tan'(t) = 1+\tan(t)^{2} = \frac{1}{\cos(t)^{2}}.
+$$
+
+Donc[^3]
+
+[^3]: A ce stade, on essaye d'écrire l'intégrande sous la forme $f\bigl(\varphi(t)\bigr)|\varphi'(t)|$.
+
+$$
+	\forall t \in [0,\pi/2[,\ \frac{1}{1+\sin(t)^{2}}
+=\frac{1/\cos(t)^{2}}{1/\cos(t)^{2} + \tan(t)^{2}}=\frac{|\tan'(t)|}{1+2
+\tan(t)^{2}}.
+$$
+
+Par changement de variable,
+
+$$
+	\int_{0}^{\pi/2}\frac{dt}{1+\sin(t)^2} = \int_{0}^{+\infty}\frac{dx}{1+2x^{2}}.
+$$
+
+Une primitive de la fonction $x \mapsto \frac{1}{1+2x^{2}}$ sur $[0,+\infty[$
+est $x \mapsto \frac{1}{\sqrt{2}}\arctan(\sqrt{2}x)$. Donc
+
+$$
+	\forall X \geqslant 0,\ \int_{0}^{X}\frac{dx}{1+2x^{2}}=
+\frac{1}{\sqrt{2}}\left(\arctan(X)-0\right) \underset{x \to +\infty}{\longrightarrow}
+\frac{\pi}{2\sqrt{2}}.
+$$
+
+Donc $\int_{0}^{\pi/2}\frac{dt}{1+\sin(t)^{2}}=\frac{\pi}{2 \sqrt{2}}$.
+
+:::
+
+:::
+
+
+
+::: {#tip-depart-arrive-varphi .callout-tip}
+
+Lorsque l'on effectue un changement de variable, il faut *donner un nom* au
+changement de variable et préciser avec soin les espaces de *départ* et
+d'*arrivée* pour vérifier les hypothèses du théorème de changement de variable.
+
+:::
+
+\newpage
+
 ## Les théorèmes de comparaison {#sec-comparaison}
 
 Les seules intégrales réellement intéressantes sont les intégrales
-convergentes. Actuellement, nous disposons d'un seul outil pour
+convergentes. Actuellement, nous disposons essentiellement[^Il y en a d'autres : la linéarité, les intégrales faussement généralisées et le théorème de changement de variable.]d'un seul outil pour
 montrer la convergence d'une intégrale généralisée : revenir à une intégrale
 partielle et espérer être capable de la calculer pour étudier sa limite. 
 
@@ -958,386 +1344,6 @@ comparaison, l'intégrale $\int_{0}^{1}\frac{\ln(t)}{1-t}dt$ converge en $0$.
 :::
 
 :::
-
-## Calculer avec des intégrales convergentes {#sec-calculer}
-
-### Propriétés des intégrales convergentes
-
-Les intégrales convergentes héritent de toutes les propriétés préservées par
-passage à la limite (égalités, inégalités larges,...). La philosophie générale
-est la suivante :
-
-::: {.callout-tip}
-*Sous réserve de convergence*, les propriétés des intégrales généralisées sont
-les mêmes que celles des intégrales classiques.
-:::
- 
-On pourra donc manipuler des intégrales généralisées de la même manière que
-l'on manipule des intégrales classiques, à condition de s'assurer que les
-quantités manipulées existent ! 
-
-::: {#prp-proprietes-integrale-generalise}
-
-#### Propriétés des intégrales convergentes
-
-Soient $f,g:I \to \mathbb{K}$ des fonctions continues sur $I$. On suppose que
-les intégrales de $f$ et $g$ sur $I$ *convergent*. Alors
-
-1. pour tout $\lambda \in \mathbb{K}$, l'intégrale de $f+\lambda g$ sur $I$ converge et 
-$$
-	\int_I (f + \lambda g) = \int_I f + \lambda \int_I g, \quad \textit{(linéarité
-de l'intégrale)}
-$$
-2. la *relation de Chasles* est vérifiée pour tout point $c$ de $I$, $\quad
-	 \textit{(relation de Chasles)}$
-3. si $\mathbb{K}=\mathbb{R}$ et si $f \leqslant g$ sur $I$, alors 
-$$
-	\int_I f \leqslant \int_I g, \quad \textit{(croissance de
-l'intégrale)}.
-$$
-
-:::
-
-::: {#rem-positivite} 
-
-On dit aussi que l'intégrale est *positive*^[On affinera cette propriété dans
-le cours sur les espaces préhilbertiens en démontrant que l'intégrale est même
-*définie positive*.] : si $f \geqslant 0$ sur $I$, alors $\int_If \geqslant 0$.
-Cette propriété est équivalente à la croissance de l'intégrale par linéarité.
-
-:::
-
-::: {#exm-linearite}
-
-En admettant (voir @exm-In) que pour tout $n \in \mathbb{N}$, l'intégrale
-$I_{n}=\int_{0}^{+\infty}P(t)e^{-t}dt$ converge, alors pour tout $P \in
-\mathbb{R}[X]$, l'intégrale $\int_{0}^{+\infty}P(t)e^{-t}dt$ converge comme
-combinaison linéaire d'intégrales convergentes.
-
-:::
-
-::: {#exm-majoration}
-
-Si l'intégrale de $f$ sur $[a,+\infty[$ converge et si $f \geqslant 0$ sur
-$[a,+\infty[$, alors la relation de Chalses et la positivité de l'intégrale
-montre que 
-
-$$
-	\forall x \geqslant a,\ \int_{a}^{x}f(t)dt \leqslant \int_{a}^{+\infty}f(t)dt.
-$$
-
-Cette propiétée est par ailleurs claire graphiquement, @fig-integrale-partielle-droite.
-:::
-
-::: {#exm-contrapose}
-
-Si l'intégrale de $f$ sur $I$ converge, et si l'intégrale de $g$ sur $I$
-diverge, alors l'intégrale de $f+g$ sur $I$ diverge^[On retrouve une propriété
-usuelle des limites : *"convergent plus divergent égale divergent"*]. Sinon, par différence
-d"intégrales convergentes, l'intégrale de $g$ sur $I$ serai convergente.
-
-:::
-
-
-En pratique, ces propriétés permettent de *calculer* avec des intégrales
-généralisées. Il faut leur ajouter deux outils d'usage constant: le théorème
-d'*intégration par parties* et le *théorème de changement de variable*.
-
-### Intégrations pas parties et changement de variable
-
-::: {#nte-ipp .callout-note}
-
-#### Intégration par parties
-
-Concernant l'intégration pas parties, il n'y a pas (en TSI) d'énoncé propre aux
-intégrales généralisées. Il faudra systématiquement :
-
-1. revenir à une intégrale partielle,
-2. effectuer une intégration par parties classique,
-3. passer à la limite pour obtenir un résultat sur des intégrales généralisées.
-
-:::
-
-
-::: {#exm-xlnx}
-
-A l'aide d'une intégration par partie, montrer que l'intégrale
-$I=\int_{0}^{1}x\ln(x)dx$ converge^[On pourrait également remarquer que cette
-intégrale est faussement généralisée en $0$ (@exm-faussement-generalisee).], et calculer sa valeur.
-
-:::{.details}
-
-Soit $0<\varepsilon<1$. Les fonctions $x \mapsto \ln(x)$ et $x \mapsto x^{2}/2$
-sont de classe $C^{1}$ sur $]\varepsilon,1[$. Par intégration par parties, on
-a donc
-
-\begin{equation}\tag{$\star$}
-	\int_{\varepsilon}^{1}x \ln(x)dx = \left[\frac{x^{2}}{2}\ln(x)\right]_{\varepsilon}^{1} - \int_{\varepsilon}^{1}\frac{x}{2}dx.
-\end{equation}
-
-Le crochet tend vers $0$  quand $\varepsilon \to
-0^{+}$ par *croissance comparée*. L'intégrale de droite tend vers $\int_{0}^{1}\frac{x}{2}dx
-= \frac{1}{4}$ quand $\varepsilon \to 0^+$ (cette intégrale n'est pas
-généralisée). Donc l'intégrale $\int_{0}^{1}x \ln(x)dx$ converge et, en passant
-à la limite dans l'égalité $(\star)$, on obtient
-
-$$
-	\int_{0}^{1}x \ln(x) dx = -\frac{1}{4}.
-$$
-
-:::
-
-:::
-
-On utilise souvent une intégration par parties pour établir une *relation*
-entre deux intégrales, par exemple une relation de récurrence.
-
-::: {#exm-recurrence}
-
-On admet que pour tout $n \in \mathbb{N}$, l'intégrale
-$I_{n}=\int_{0}^{+\infty}t^{n}e^{-t}dt$ converge (voir @exm-In). A l'aide d'une
-intégration par parties, montrer que 
- 
-$$
-	\forall n \in \mathbb{N},\ I_{n+1}=n I_{n}.
-$$
-
-::: {.details}
-
-Soit $x \geqslant 0$ et $n \geqslant 0$. Les fonctions $t \mapsto t^{n+1}$ et $t \mapsto -e^{-t}$
-sont de classe $C^{1}$ sur $[0,x]$. Par intégration par parties, on obtient
-
-$$
-\int_{0}^{x}t^{n+1}e^{-t}dt = \left[-t^{n+1}e^{-t}\right]_0^{x}
-	+ (n+1) \int_{0}^{x}t^{n}e^{-t}dt.
-$$
-
-Le crochet tends vers $0$ quand $n \to +\infty$ par croissance comparée. Les
-deux intégrales étant convergentes, on obtient en passant à la limite dans
-l'égalité précédente
-
-$$
-I_{n+1}= n I_{n}.
-$$
-
-:::
-
-:::
-
-
-
-
-::: {#wrn-passage-limite .callout-warning}
-
-Pour pouvoir *passer à la limite*, il faut d'*abord* s'assurer que toutes les
-quantités en jeu convergent. 
-
-:::
-
-::: {#thm-changement-de-variable}
-
-#### Changement de variable
-
-Soit $\varphi:I \to J$ une bijection de classe $C^{1}$ entre deux intervalles
-$I$ et $J$ de $\mathbb{R}$. Soit $f:J \to \mathbb{R}$ une fonction continue.
-Alors 
-
-1. les intégrales $\int_{J}f(x)dx$ et
-	 $\int_{I}f\bigl(\varphi(t)\bigr)|\varphi'(t)|dt$ ont
-	 *même nature*,
-2. elles sont *égales* en cas de convergence.
-
-:::
-
-::: {#nte-changement-de-variable .callout-note}
-
-On dit qu'on a effectué le changement de variable $x=\varphi(t)$, pour lequel 
-$dx = |\varphi'(t)|dt$.
-
-:::
-
-::: {#rem-valeur-absolue}
-
-La présence de la valeur absolue dans le calcul du $dx$ évite de préciser la
-*monotonie* du changement de variable $\varphi$ ; les bornes des intégrales
-sont toujours rangées. Cette approche est à privilégier car c'est elle qui se
-généralise au cas des fonctions de plusieurs variables.
-
-:::
-
-
-Selon les cas, on disposera de l'espace de *départ* de $\varphi$, de l'espace
-d'*arrivée*, ou des deux. De manière générale, l'inversion de $\varphi$ n'est
-jamais nécessaire.
-
-::: {#exm-egalite-integrales collapse="true"}
-
-#### On connait les espaces de départ et d'arrivée
-
-On admet que l'intégrale 
-
-$$
-I = \int_{0}^{1}\frac{dt}{\sqrt{t(1-t)}}dt
-$$
-
-converge. A l'aide du changement de variable $t=\frac{1}{1+s}=\varphi(s)$, montrer que 
-
-$$
-	I = \int_{0}^{+\infty}\frac{ds}{\sqrt{s}(1+s)}.
-$$
-
-::: {.details}
-
-C'est le cas d'utilisation le plus courant ; un changement de variable est
-utilisé pour donner une autre expression d'une intégrale que l'on sait
-convergente. C'est le cas le plus simple car on connait les espaces de départ
-et d'arrivée, aux extrémités près (@nte-ambiguite). 
-
-Dans notre cas:
-
-L'intégrale $I$ est généralisée en $0$ et en $1$. La fonction $\varphi$ est une
-bijection de classe $C^{1}$ de $]0,+\infty[$ dans $]0,1[$. De plus 
-
-$$
-	\forall s \in ]0,+\infty[,\ \varphi'(s) = -\frac{1}{(1+s)^{2}}
-$$
-
-et 
-
-$$
-	\forall s \in ]0,+\infty[,\ \frac{1}{\sqrt{\varphi(s)\bigr(1- \varphi(s)\bigr)}}=\frac{1+s}{\sqrt{s}}
-$$
-
-donc par changement de variable
-
-$$
-  I =\int_{0}^{+\infty} \frac{1}{\sqrt{\varphi(s)\bigr(1- \varphi(s)\bigr)}}|\varphi'(s)|ds = \int_{0}^{+\infty}\frac{ds}{\sqrt{s}(1+s)}. 
-$$
-
-:::
-
-:::
-
-::: {#exm-espace-arrivee}
-
-#### On connait l'espace d'arrivée  
-
-Déterminer la nature et la valeur de l'intégrale
-$\int_{-1}^{1}\frac{dx}{\sqrt{1-x^{2}}}$ à l'aide du changement de variable
-$x=\cos(t)$.
-
-::: {.details}
-
-L'intégrale $\int_{-1}^{1}\frac{dx}{\sqrt{1-x^{2}}}$ est généralisée en $-1$ et
-en $1$. On connait ici l'intervalle d'arrivée $J=]-1,1[$ de la fonction
-$\varphi:t \mapsto \cos(t)$. C'est à nous de déterminer l'espace de départ de
-$\varphi$ de telle sorte qu'elle soit bijective et de classe $C^{1}$. Par
-exemple, $I=]0,\pi[$ convient.
-
-La rédaction finale devient:
-
-La fonction $\cos$  est une bijection de classe $C^{1}$ de $]0,\pi[$ dans
-$]-1,1[$. 
-
-De plus,
-
-$$
-	\forall t \in ]0,\pi[,\ \cos'(t) = -\sin(t) 
-$$
-
-et 
-
-$$
-  \forall t \in ]0,\pi[,\ \frac{1}{\sqrt{1- \cos(t)^{2}}}=
-\frac{1}{\sqrt{\sin(t)^{2}}}=\frac{1}{|\sin(t)|}.	
-$$
-
-Par changement de variable, l'intégrale proposée a donc même nature que l'intégrale
-
-$$
-	\int_{0}^{\pi}\frac{|\sin(t)|dt}{\sqrt{1-\cos(t)^{2}}}=\int_{0}^{\pi}dt=\pi.
-$$
-
-Notez que cette intégrale a lieu sur l'intervalle *ouvert* $]0,\pi[$: elle est
-clairement convergente car (doublement) faussement généralisée et sa valeur ne
-dépend pas de l'inclusion ou de l'exclusion de ses bornes
-(@prp-integrale-faussement-generalisee). 
- 
-Donc l'intégrale $\int_{-1}^{1}\frac{dx}{\sqrt{1-x^{2}}}$
-converge et vaut $\pi$.
-
-:::
-
-:::
-
-::: {#exm-espace-depart-arrivee}
-
-#### On connait l'espace de départ
-
-A l'aide du changement de variable $x=\tan(t)$, calculer $\int_{0}^{\pi/2}\frac{dt}{1+\sin(t)^{2}}$.
-
-::: {.details}
-
-Cette intégrale n'est pas généralisée car l'intégrande est continue sur
-$[0,\pi/2]$. Elle est donc convergente. 
-
-On connait l'espace de départ du changement de variable $x=\tan(t)$, au
-extrémités près. Il faut les choisir de telle sorte que celui-ci soit bijectif
-et de classe $C^{1}$ sur son image. En l'occurence, bien que les extrémités $0$
-et $\pi/2$ soient incluses dans l'intégrale, on va choisir d'exclure $\pi/2$
-(on utilise implicitement à nouveau la @prp-integrale-faussement-generalisee).
-
-La rédaction devient:
-
-La fonction $\tan$ est une bijection de classe $C^{1}$ de $[0,\pi/2[$ dans
-$[0,+\infty[$. De plus
-
-$$
-	\forall t \in [0,\pi/2[,\ \tan'(t) = 1+\tan(t)^{2} = \frac{1}{\cos(t)^{2}}.
-$$
-
-Donc[^3]
-
-[^3]: A ce stade, on essaye d'écrire l'intégrande sous la forme $f\bigl(\varphi(t)\bigr)|\varphi'(t)|$.
-
-$$
-	\forall t \in [0,\pi/2[,\ \frac{1}{1+\sin(t)^{2}}
-=\frac{1/\cos(t)^{2}}{1/\cos(t)^{2} + \tan(t)^{2}}=\frac{|\tan'(t)|}{1+2
-\tan(t)^{2}}.
-$$
-
-Par changement de variable,
-
-$$
-	\int_{0}^{\pi/2}\frac{dt}{1+\sin(t)^2} = \int_{0}^{+\infty}\frac{dx}{1+2x^{2}}.
-$$
-
-Une primitive de la fonction $x \mapsto \frac{1}{1+2x^{2}}$ sur $[0,+\infty[$
-est $x \mapsto \frac{1}{\sqrt{2}}\arctan(\sqrt{2}x)$. Donc
-
-$$
-	\forall X \geqslant 0,\ \int_{0}^{X}\frac{dx}{1+2x^{2}}=
-\frac{1}{\sqrt{2}}\left(\arctan(X)-0\right) \underset{x \to +\infty}{\longrightarrow}
-\frac{\pi}{2\sqrt{2}}.
-$$
-
-Donc $\int_{0}^{\pi/2}\frac{dt}{1+\sin(t)^{2}}=\frac{\pi}{2 \sqrt{2}}$.
-
-:::
-
-:::
-
-
-
-::: {#tip-depart-arrive-varphi .callout-tip}
-
-Lorsque l'on effectue un changement de variable, il faut *donner un nom* au
-changement de variable et préciser avec soin les espaces de *départ* et
-d'*arrivée* pour vérifier les hypothèses du théorème de changement de variable.
-
-:::
-
-\newpage
 
 ## Exercices
 
