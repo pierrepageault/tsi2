@@ -21,14 +21,13 @@ finie. On note alors
 
 $$
 \sum_{n=n_0}^{+\infty}u_n = \lim_{n\to +\infty} \sum_{k=n_0}^{n}u_k.
-
 $$ 
 
 Le scalaire $\displaystyle \sum_{n=n_0}^{+\infty}u_n$ s'appelle la
 **somme** de la série $\displaystyle\sum_{n\geqslant n_0}u_n$.
 
 Dans le cas contraire, on dit que la série $\displaystyle\sum_{n\geqslant
-n_0}u_n$ **diverge**. La convergence ou la divergence d'une séries'appelle
+n_0}u_n$ **diverge**. La convergence ou la divergence d'une série s'appelle
 sa **nature**. 
 
 :::
@@ -43,7 +42,7 @@ et sa somme vaut $1$.
 Soit $n \geqslant 1$. On a 
 
 $$
-    \sum_{k=0}^{n} \frac{1}{2^{k}} = \frac{1-1/2^{n+1}}{1-1/2} \underset{n to + \infty}{\longrightarrow} =2.
+    \sum_{k=0}^{n} \frac{1}{2^{k}} = \frac{1-1/2^{n+1}}{1-1/2} \underset{n \to + \infty}{\longrightarrow} =2.
 $$
 
 Donc la série de terme général $(1/2^{n})_{n\in \mathbb{N}}$ converge et
@@ -85,7 +84,7 @@ n_0$, les séries $\sum_{n\geqslant n_0}u_n$ et $\sum_{n\geqslant m}u_n$ ont
 *même nature* et, en cas de convergence, on a 
 
 $$
-\sum_{n=n_0}^{+\infty} u_n = \sum_{n=n_0}^{m_0} u_n + \sum_{n=m_0+1}^{+\infty} u_n.
+\sum_{n=n_0}^{+\infty} u_n = \sum_{n=n_0}^{m} u_n + \sum_{n=m_0+1}^{+\infty} u_n.
 $$
 
 :::
@@ -93,13 +92,13 @@ $$
 ::: {#nte-independance-premier-terme .callout-note}
 
 On résume le résultat précédent en disant que *la nature d'une série ne dépend
-pas de ses premiers*. Ainsi, tant qu'on ne parle que la *nature* d'une série,
+pas de ses premiers termes*. Ainsi, tant qu'on ne parle que la *nature* d'une série,
 on peut se contenter de la noter $\sum u_n$, sans préciser son point de départ.  
 
 :::
 
 Pour les séries, il existe un lien simple entre la convergence de la série et
-la convergence de son terme général qui fourni un condition *nécessaire* de
+la convergence de son terme général qui fournit une condition *nécessaire* de
 convergence.
 
 ::: {#prp-condition-necessaire}
@@ -128,22 +127,24 @@ tend pas vers $0$.
 
 ::: {#exm-n}
 
-La série $\sum n$ étudié dans l'@exm-nature-divergente est grossièrement
-divergente (le calul explicite de ses sommes partielles n'est donc même pas
+La série $\sum n$ étudiée dans l'@exm-nature-divergente est grossièrement
+divergente (le calcul explicite de ses sommes partielles n'est donc même pas
 nécessaire).
 
 :::
 
 
 Sauf dans quelques cas -- notamment pour les séries géométriques --, il est
-difficile de calculer explicitement la somme partielle d'une série car on ne
-dispose pas de la notion de *primitive* utilisée pour calculer certaines
-intégrales partielles. Il est donc nécessaire de développer des théorèmes de
-comparaison ; c'est l'objectif de la @sec-serie-terme-positif.
+très rare de pouvoir calculer explicitement les sommes partielles d'une série
+(on ne dispose même de la notion de *primitive* utilisée en calcul intégrale).
+Il est donc tout autant nécessaire de développer des théorèmes de comparaison
+pour les séries; c'est l'objectif de la @sec-serie-terme-positif.
 
 On peut néanmoins facilement *approximer* la somme d'une série convergente via
-sa somme partielle qui elle est calculable, au moins numériquement (c'est une
-somme finie). L'erreur commise porte le nom de *reste*.
+ses sommes partielle quis, elles, sont calculables (au moins numériquement). La
+différence entre la somme totale et une somme partielle porte le nom de
+*reste*. Cette notion n'a bien sur de sens que dans le cas des séries
+convergentes.
 
 ::: {#def-reste}
 
@@ -159,7 +160,7 @@ $$
 
 ::: {#prp-reste}
 
-Le reste d'une série convergent tend vers $0$.
+Le reste d'une série convergente tend vers $0$.
 
 :::
 
@@ -175,13 +176,14 @@ $$
           & = \frac{1}{2^{n+1}} \to 0.
 \end{aligned}
 $$
+:::
 
 ::: {#nte-reste .callout-note}
 
-Le reste $R_{n}$ représente l'*erreur* commise en approximant $S$ par $S_n$. Il
-est donc intéressant d'être capable de *majorer* explicitement $R_{n}$, même si
-on est pas capable de le calculer explicitement. Un exemple emblématique est
-donné par les séries alternées.
+Le reste $R_{n}$ représente l'*erreur* algébrique (i.e. avec signe) commise en
+approximant $S$ par $S_n$. Il est donc intéressant de pouvoir  *majorer*
+explicitement $R_{n}$, à défault d'être capable de le calculer explicitement
+(les séries alternées sont remarquables sur ce point).
 
 :::
 
@@ -214,7 +216,7 @@ alors
 
 $$
     \sum_{k=n_{0}}^{+\infty} u_{n} \leqslant\sum_{k=n_{0}}^{+\infty}
-v_{n},\quad \textit{(Croissance de la somme)}
+v_{n},\quad \textit{(croissance de la somme)}
 $$
 3. la relation de Chasles est satisfaite pour les séries convergentes.
 
@@ -222,9 +224,9 @@ $$
 
 ### Séries géométriques et séries télescopiques
 
-Dans cette section, on étudie deux types de séries très importantes pour
-lesquelles ont est capable de calculer explicitement les sommes partielles et
-la somme en cas de convergence.
+Dans cette section, on étudie deux types de séries importantes pour lesquelles
+ont est capable de calculer explicitement les sommes partielles et la somme en
+cas de convergence.
 
 ::: {#def-serie-geometrique}
 
@@ -241,7 +243,7 @@ $$
     \sum_{k=0}^{n}q^{k} = \frac{1-q^{n+1}}{1-q},
 $$
 
-2. la série $\sum q^{n}$ converge ssi $|q|<1$ et, dans cas,
+2. la série $\sum q^{n}$ converge ssi $|q|<1$ et, dans ce cas,
 
 $$
     \sum_{n=0}^{+\infty} q^{n} = \frac{1}{1-q}.
@@ -253,15 +255,16 @@ $$
 
 Le cas $q=1$ est simple ; la série est grossièrement divergente et 
 $$
-    \forall n \in \mathbb{N},\quad \sum_{k=0}^{n}q^{n} = \sum_{k=0}^{n} = n+1.
+    \forall n \in \mathbb{N},\quad \sum_{k=0}^{n}q^{k} = \sum_{k=0}^{n}1 = n+1.
 $$
 
 :::
 
 ::: {#tip-autre-resultat-geometrique .callout-tip}
 
-On retrouve tous les autres résultats relatifs aux séries géométriques ne
-commençant pas à $0$ en *mettant en facteur par le premier terme de la somme*.
+On retrouve tous les autres résultats relatifs aux séries géométriques dont le
+premier terme n'est pas égal à $q^{0}=1$ en *mettant en facteur par le premier
+terme de la somme*.
 
 :::
 
@@ -270,7 +273,7 @@ commençant pas à $0$ en *mettant en facteur par le premier terme de la somme*.
 Si $q \neq 1$, on a 
 
 $$
-    \forall n \geqslant 1,\quad \sum_{k=1}^{n}q^{k} = q \sum_{k=0}^{n-1} = q \frac{1-q^{n}}{1-q}.
+    \forall n \geqslant 1,\quad \sum_{k=1}^{n}q^{k} = q \sum_{k=0}^{n-1}q^{k} = q \frac{1-q^{n}}{1-q}.
 $$
 
 Plus généralement, pour tout $n \geqslant m$, on a 
@@ -294,7 +297,7 @@ q^{n+1}\sum_{k=0}^{+\infty} q^{k} = \frac{q^{n+1}}{1-q}. $$
 
 :::
 
-Les deux exemples précédent ne sont pas à connaitre par coeur, mais il faut
+Les deux exemples précédents ne sont pas à connaître par coeur, mais il faut
 être capable de les retrouver très rapidement. 
 
 ::: {#exm-exponentielle-decroissante}
@@ -317,29 +320,30 @@ $$
 :::
 
 Les séries géométriques font parties des rares séries pour lesquelles on est
-capable de calculer explicitement les sommes partielles. Les séries dites
+capable de calculer explicitement les sommes partielles. Les séries
 *telescopiques* en sont un autre exemple, très fréquent en pratique. 
+
 ::: {#def-serie-telescopique}
 
-Une **série telescopique** est une série de la forme $\sum u_{n+1}-u_n$, où
+Une **série telescopique** est une série de la forme $\sum (u_{n+1}-u_n)$, où
 $(u_{n})$ est une suite de $\mathbb{K}$.
 
 :::
 
 ::: {#thm-serie-telescopique}
 
-La série telescopique $\sum u_{n+1}-u_{n}$ converge ssi la *suite* $(u_{n})_{n
+La série telescopique $\sum (u_{n+1}-u_{n})$ converge ssi la *suite* $(u_{n})_{n
 \in \mathbb{N}}$ converge. 
 
 :::
 
 ::: {#rem-nouvel-outil}
 
-Mine de rien, ce théorème est un nouvel outil pour étudier la convergence d'une
-*suite* ; pour montrer qu'une suite converge, on pourra s'intéresser à la série
-de ses *différences*. C'est une approche souvent très fructueuse car on
-disposera
-de théorèmes très puissants pour montrer la convergence d'une série. 
+Ce théorème est un nouvel outil pour étudier la convergence d'une *suite* ;
+pour montrer qu'une *suite* converge, on pourra s'intéresser à la *série* de
+ses *différences*. C'est une approche souvent très fructueuse car on dispose de
+théorèmes très puissants pour montrer la convergence d'une série. 
+
 :::
 
 ::: {#exm-telescopique}
@@ -398,7 +402,7 @@ que l'intégration par parties est aux intégrales.
 
 Dans cette section, on démontre le théorème de comparaisons pour les séries.
 De même que dans le cas des intégrales, ces théorèmes permettront de démontrer
-la convergence d'un série sans avoir à calculer explicitement ses sommes partielles.
+la convergence d'une série sans avoir à calculer explicitement ses sommes partielles.
 
 A noter une différence importante avec les intégrales généralisées ; la notion
 d'intégrabilité n'est pas au programme pour les suites. Il faudra donc
@@ -427,6 +431,7 @@ partielles sont *majorées*.
 ::: {#thm-comparaison-serie-terme-positif}
 
 Soient $\sum u_{n}$ et $\sum v_{n}$ deux séries à termes *positifs*. Alors 
+
 1. si  $u_{n} \leqslant Av_{n}$ avec $A \geqslant 0$, et si la série $\sum v_{n}$
    converge, alors $\sum u_{n}$ converge,
 2. si $u_{n}=o(v_{n})$ et si $\sum v_{n}$ converge, alors $\sum u_{n}$
@@ -438,9 +443,8 @@ Soient $\sum u_{n}$ et $\sum v_{n}$ deux séries à termes *positifs*. Alors
 
 ::: {#nte-voisinage}
 
-Puisque la natude d'une série ne dépend pas de ses premiers termes, il suffit
-que les hypothèse du théorème soient satisfaites *pour $n$ asez grand* c.à.d
-pour tout $n$ supérieur à un certain $N$ fixé.
+Puisque la nature d'une série ne dépend pas de ses premiers termes, il suffit
+que les hypothèses du théorème soient satisfaites *pour $n$ assez grand*.
 
 Rappelons à cette occasion que les équivalents *préseservent les signes* .
 Ainsi, si $u_{n} \sim v_{n}$ et si $u_{n} \geqslant 0$ pour $n$ assez grand,
@@ -481,7 +485,7 @@ cas des intégrales via le résultat suivant.
 
 ::: {#thm-comparaison-integrale}
 
-Si $f:[n_0,+\infty[\to \R$ est une fonction positive, continue et décroissante, alors la série $\displaystyle \sum_{n\geqslant n_0} f(n)$ et l'intégrale $\int_{n_0}^{+\infty}f(t)dt$ ont même nature.  
+Si $f:[n_0,+\infty[\to \mathbb{R}$ est une fonction positive, continue et décroissante, alors la série $\displaystyle \sum_{n\geqslant n_0} f(n)$ et l'intégrale $\int_{n_0}^{+\infty}f(t)dt$ ont même nature.  
 
 :::
 
@@ -527,12 +531,12 @@ La série *harmonique* $\sum \frac{1}{n}$ diverge, mais la série $\sum
 :::
 
 Comme pour le théorème de comparaison de fonctions positives, les théorèmes de
-comparaison pour les séries à termes positifs restent incapables de traiter les  
-séries à termes complexes, ou dont le signe n'est pas constant à partir d'un
-certain rang. 
+comparaison pour les séries à termes positifs restent incapables de traiter les
+séries à termes complexes, ou les séries dont le terme général n'est pas de
+signe constant au voisinage de $+\infty$.
 
 Le remède est le même que pour les intégrales, via la notion
-de séries *absolument convergente*. 
+de séries *absolument convergentes*. 
 
 ::: {#def-serie-absolument-convergente}
 
