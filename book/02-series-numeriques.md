@@ -134,14 +134,15 @@ nécessaire).
 :::
 
 
-Sauf dans quelques cas -- notamment pour les séries géométriques --, il est
-très rare de pouvoir calculer explicitement les sommes partielles d'une série
-(on ne dispose même de la notion de *primitive* utilisée en calcul intégrale).
-Il est donc tout autant nécessaire de développer des théorèmes de comparaison
-pour les séries; c'est l'objectif de la @sec-serie-terme-positif.
+Sauf exception -- essentiellement dans le cas des séries géométriques ou des
+séries télescopique -- il n'est pas possible de calculer *explicitement* les
+sommes partielles d'une série (on ne dispose même de la notion de *primitive*
+utilisée en calcul intégrale). Il est donc tout aussi nécessaire de développer
+des théorèmes de comparaison pour les séries; c'est l'objectif de la
+@sec-serie-terme-positif.
 
 On peut néanmoins facilement *approximer* la somme d'une série convergente via
-ses sommes partielle quis, elles, sont calculables (au moins numériquement). La
+ses sommes partielles qui, elles, sont calculables (au moins numériquement). La
 différence entre la somme totale et une somme partielle porte le nom de
 *reste*. Cette notion n'a bien sur de sens que dans le cas des séries
 convergentes.
@@ -180,18 +181,18 @@ $$
 
 ::: {#nte-reste .callout-note}
 
-Le reste $R_{n}$ représente l'*erreur* algébrique (i.e. avec signe) commise en
-approximant $S$ par $S_n$. Il est donc intéressant de pouvoir  *majorer*
-explicitement $R_{n}$, à défault d'être capable de le calculer explicitement
-(les séries alternées sont remarquables sur ce point).
+Le reste $R_{n}$ représente l'*erreur algébrique* (i.e. avec signe) commise en
+approximant $S$ par $S_n$. Il est donc intéressant de *majorer* $R_{n}$, à
+défault d'être capable de le calculer explicitement (les séries alternées sont
+remarquables sur ce point).
 
 :::
 
 ### Calculer avec des séries convergentes
 
 On s'intéresse maintenant aux propriétés qui permettent de *calculer* avec des
-séries des séries convergentes. Comme pour les intégrales généralisées, ce sont
-les mêmes que celles de la somme usuelle *sous réserve de convergence*.
+séries convergentes. Comme pour les intégrales généralisées, ce sont les mêmes
+que celles de la somme usuelle, *sous réserve de convergence*.
 
 ::: {#prp-propriete-somme}
 
@@ -225,7 +226,7 @@ $$
 ### Séries géométriques et séries télescopiques
 
 Dans cette section, on étudie deux types de séries importantes pour lesquelles
-ont est capable de calculer explicitement les sommes partielles et la somme en
+on est capable de calculer explicitement les sommes partielles et la somme en
 cas de convergence.
 
 ::: {#def-serie-geometrique}
@@ -319,9 +320,8 @@ $$
 
 :::
 
-Les séries géométriques font parties des rares séries pour lesquelles on est
-capable de calculer explicitement les sommes partielles. Les séries
-*telescopiques* en sont un autre exemple, très fréquent en pratique. 
+Les *séries telescopiques* sont un autre exemple -- fréquent en pratique -- de
+séries dont on sait calculer les sommes parielles. 
 
 ::: {#def-serie-telescopique}
 
@@ -339,10 +339,10 @@ La série telescopique $\sum (u_{n+1}-u_{n})$ converge ssi la *suite* $(u_{n})_{
 
 ::: {#rem-nouvel-outil}
 
-Ce théorème est un nouvel outil pour étudier la convergence d'une *suite* ;
-pour montrer qu'une *suite* converge, on pourra s'intéresser à la *série* de
-ses *différences*. C'est une approche souvent très fructueuse car on dispose de
-théorèmes très puissants pour montrer la convergence d'une série. 
+Ce théorème est un nouvel outil pour étudier la convergence d'une suite: pour
+montrer qu'une *suite* converge, on pourra s'intéresser à la *série* de ses
+*différences*. C'est une approche souvent très fructueuse car on dispose de
+théorèmes efficaces pour montrer la convergence d'une série. 
 
 :::
 
@@ -360,7 +360,7 @@ $$
 $$
 
 La série $\sum_{n \geqslant 1}\frac{1}{n(n+1)}$ est donc une série
-*télescopique*, qui converge car $\frac{1}{n+1}$ converge (vers $0$)lorsque $n
+*télescopique*, qui converge car $\frac{1}{n+1}$ converge lorsque $n
 \to +\infty$. De plus, par telescopage,
 
 $$
@@ -400,17 +400,18 @@ que l'intégration par parties est aux intégrales.
 
 ## Séries à termes positifs {#sec-serie-terme-positif}
 
-Dans cette section, on démontre le théorème de comparaisons pour les séries.
-De même que dans le cas des intégrales, ces théorèmes permettront de démontrer
-la convergence d'une série sans avoir à calculer explicitement ses sommes partielles.
+Dans cette section, on démontre le théorème de comparaison pour les séries à
+termes positifs. De même que dans le cas des intégrales, ce théorème permettra
+de démontrer la convergence d'une série sans avoir à calculer explicitement ses
+sommes partielles.
 
 A noter une différence importante avec les intégrales généralisées ; la notion
 d'intégrabilité n'est pas au programme pour les suites. Il faudra donc
 systématiquement se ramener à des séries *positives* ou au moins *de signe
 constant* au voisinage de $+\infty$.
 
-Comme pour les intégrales, le théorème de comparaison repose sur le théorème
-de la limite monotone, au travers du @lem-croissante-majore.
+Comme pour les intégrales, le théorème de comparaison que nous allons démontrer
+repose sur le théorème de la limite monotone, via le @lem-croissante-majore.
 
 ::: {#def-serie-terme-positif}
 
