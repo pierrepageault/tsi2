@@ -10,6 +10,7 @@ book:
   chapters:
     - index.md
     - 01-integrales-generalisees.md
+    - 02-series-numeriques.md
     - colles.md
     - dm.md
   downloads: [pdf, epub]
