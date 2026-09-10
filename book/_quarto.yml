@@ -11,6 +11,7 @@ book:
     - index.md
     - 01-integrales-generalisees.md
     - colles.md
+    - dm.md
   downloads: [pdf, epub]
 
 filters:

@@ -999,8 +999,12 @@ Les intégrales convergentes héritent de toutes les propriétés préservées p
 passage à la limite (égalités, inégalités larges,...). La philosophie générale
 est la suivante :
 
-::: {.callout-tip} *Sous réserve de convergence*, les propriétés des intégrales
-généralisées sont les mêmes que celles des intégrales classiques. :::
+::: {.callout-tip} 
+
+*Sous réserve de convergence*, les propriétés des intégrales
+généralisées sont les mêmes que celles des intégrales classiques.
+
+:::
  
 On pourra donc manipuler des intégrales généralisées de la même manière que
 l'on manipule des intégrales classiques, à condition de s'assurer que les
@@ -1080,6 +1084,20 @@ intégrales généralisées. Il faudra systématiquement :
 1. revenir à une intégrale partielle,
 2. effectuer une intégration par parties classique,
 3. passer à la limite pour obtenir un résultat sur des intégrales généralisées.
+
+:::
+
+::: {#thm-integration-par-parties}
+
+#### Intégration par parties
+
+Soit $u$ et $v$ des fonctions de classe $C^{1}$ sur un *segment* $[a,b]$, $a,b
+\in \mathbb{R}$. Alors 
+
+$$
+    \int_{a}^{b}u'(x)v(x)dx =
+    \left[u(x)v(x)\right]_a^{b}-\int_{a}^{b}u(x)v'(x)dx.
+$$
 
 :::
 
