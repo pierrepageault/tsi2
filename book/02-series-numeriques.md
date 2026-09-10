@@ -6,16 +6,16 @@
 
 ::: {#def-serie}
 
-Soit $(u_n)_{n\geqslant n_0}$ une suite de $\K$. On appelle \textbf{série de
-terme général $u_n$, $n\geqslant n_0$,} et on note $\displaystyle
-\sum_{n\geqslant n_0}u_n$ la suite $(S_n)_{n\geqslant n_0}$ des \textbf{sommes
-partielles} définies par
+Soit $(u_n)_{n\geqslant n_0}$ une suite de $\mathbb{K}$. On appelle **série de
+terme général $u_n$, $n\geqslant n_0$**, et on note $\displaystyle
+\sum_{n\geqslant n_0}u_n$ la suite $(S_n)_{n\geqslant n_0}$ des **sommes
+partielles** définies par
 
 $$
 \forall n\geqslant n_0,\quad S_n = \sum_{k=n_0}^{n}u_k.
 $$
 
-On dit que la série $\displaystyle \sum_{n\geqslant n_0}u_n$ \textbf{converge}
+On dit que la série $\displaystyle \sum_{n\geqslant n_0}u_n$ **converge**
 si la suite de ses sommes partielles $(S_n)_{n\geqslant n_0}$ admet une limite
 finie. On note alors
 
@@ -25,11 +25,11 @@ $$
 $$ 
 
 Le scalaire $\displaystyle \sum_{n=n_0}^{+\infty}u_n$ s'appelle la
-\textbf{somme} de la série $\displaystyle\sum_{n\geqslant n_0}u_n$.
+**somme** de la série $\displaystyle\sum_{n\geqslant n_0}u_n$.
 
 Dans le cas contraire, on dit que la série $\displaystyle\sum_{n\geqslant
-n_0}u_n$ \textbf{diverge}. La convergence ou la divergence d'une séries'appelle
-sa \textbf{nature}. 
+n_0}u_n$ **diverge**. La convergence ou la divergence d'une séries'appelle
+sa **nature**. 
 
 :::
 
@@ -80,7 +80,7 @@ numériques.
 #### Relation de Chasles
 
 
-Soit $(u_n)_{n\geqslant n_0}$ une suite de $\K$. Alors pour tout $m\geqslant
+Soit $(u_n)_{n\geqslant n_0}$ une suite de $\mathbb{K}$. Alors pour tout $m\geqslant
 n_0$, les séries $\sum_{n\geqslant n_0}u_n$ et $\sum_{n\geqslant m}u_n$ ont
 *même nature* et, en cas de convergence, on a 
 
@@ -297,13 +297,288 @@ q^{n+1}\sum_{k=0}^{+\infty} q^{k} = \frac{q^{n+1}}{1-q}. $$
 Les deux exemples précédent ne sont pas à connaitre par coeur, mais il faut
 être capable de les retrouver très rapidement. 
 
-<!-- séries numériques, convergence, reste, chasles, propriété des séries -->
-<!-- convergentes, série géométrique, série des différence -->
+::: {#exm-exponentielle-decroissante}
+
+Nature de la série $\sum e^{-\alpha n}$ pour $\alpha \in \mathbb{R}$.
+
+::: {.details}
+
+Il s'agit d'une série géométrique de raison $e^{-\alpha}$. Celle si converge
+ssi $|e^{-\alpha}| = e^{-\alpha}<1$ i.e. $\alpha>0$. 
+
+Dans ce cas, on a d'ailleurs
+
+$$
+    \sum_{n=0}^{+\infty}e^{-\alpha n}= \frac{1}{1- \alpha}.
+$$
+
+:::
+
+:::
+
+Les séries géométriques font parties des rares séries pour lesquelles on est
+capable de calculer explicitement les sommes partielles. Les séries dites
+*telescopiques* en sont un autre exemple, très fréquent en pratique. 
+::: {#def-serie-telescopique}
+
+Une **série telescopique** est une série de la forme $\sum u_{n+1}-u_n$, où
+$(u_{n})$ est une suite de $\mathbb{K}$.
+
+:::
+
+::: {#thm-serie-telescopique}
+
+La série telescopique $\sum u_{n+1}-u_{n}$ converge ssi la *suite* $(u_{n})_{n
+\in \mathbb{N}}$ converge. 
+
+:::
+
+::: {#rem-nouvel-outil}
+
+Mine de rien, ce théorème est un nouvel outil pour étudier la convergence d'une
+*suite* ; pour montrer qu'une suite converge, on pourra s'intéresser à la série
+de ses *différences*. C'est une approche souvent très fructueuse car on
+disposera
+de théorèmes très puissants pour montrer la convergence d'une série. 
+:::
+
+::: {#exm-telescopique}
+
+Convergence et somme de la série $\sum_{n\geqslant 1}\frac{1}{n(n+1)}$.
+
+::: {.details}
+
+On remarque que 
+
+$$
+    \forall n \in \mathbb{N}^{*},\ \frac{1}{n(n+1)} =
+\frac{1}{n}-\frac{1}{n+1}.
+$$
+
+La série $\sum_{n \geqslant 1}\frac{1}{n(n+1)}$ est donc une série
+*télescopique*, qui converge car $\frac{1}{n+1}$ converge (vers $0$)lorsque $n
+\to +\infty$. De plus, par telescopage,
+
+$$
+\forall n \geqslant 1,\ \sum_{k=0}^{n}\frac{1}{k(k+1)} = \frac{1}{n+1}-
+1 \to 1 \quad \text{quand $n \to +\infty$.}
+$$
+
+Donc $\displaystyle\sum_{n=1}^{+\infty}\frac{1}{n(n+1)}=1$.
+
+:::
+
+:::
+
+::: {#nte-theorem-fondamental-analyse .callout-note}
+
+On peut voir dans l'égalité
+
+$$
+    \sum_{k=0}^{n} (u_{k+1}-u_{k}) = u_{n+1}-u_0
+$$
+
+un cas particulier discret du théorème fondamentale de l'analyse qui affirme
+que si $f$ est une fonction de classe $C^{1}$ sur $[a,b]$, alors 
+
+$$
+    \int_{a}^{b}f'(t)dt = f(b)-f(a),
+$$
+
+la différence $u_{n+1}-u_{n}$ jouant le rôle de la dérivée de $f$
+; dans les deux cas, le calcul de la somme partielle est immédiat ! 
+
+On reverra
+ce type d'analogie en TD avec la transformation d'Abel, qui est aux sommes ce
+que l'intégration par parties est aux intégrales. 
+
+:::
 
 ## Séries à termes positifs {#sec-serie-terme-positif}
 
-theoreme de comparaison pour les series à termes positifs, comparaison à une
-intégrale, séries absolument convergentes
+Dans cette section, on démontre le théorème de comparaisons pour les séries.
+De même que dans le cas des intégrales, ces théorèmes permettront de démontrer
+la convergence d'un série sans avoir à calculer explicitement ses sommes partielles.
+
+A noter une différence importante avec les intégrales généralisées ; la notion
+d'intégrabilité n'est pas au programme pour les suites. Il faudra donc
+systématiquement se ramener à des séries *positives* ou au moins *de signe
+constant* au voisinage de $+\infty$.
+
+Comme pour les intégrales, le théorème de comparaison repose sur le théorème
+de la limite monotone, au travers du @lem-croissante-majore.
+
+::: {#def-serie-terme-positif}
+
+On dit qu'une série est à **termes positifs** si son terme général est positif
+ou nul. 
+
+:::
+
+
+::: {#lem-croissante-majore}
+
+Si la serie $\sum u_{n}$ est à termes *positifs*, la suite de ses sommes
+partielles est *croissante*. La série $\sum u_{n}$ est donc convergente ssi ses sommes
+partielles sont *majorées*.
+
+:::
+
+::: {#thm-comparaison-serie-terme-positif}
+
+Soient $\sum u_{n}$ et $\sum v_{n}$ deux séries à termes *positifs*. Alors 
+1. si  $u_{n} \leqslant Av_{n}$ avec $A \geqslant 0$, et si la série $\sum v_{n}$
+   converge, alors $\sum u_{n}$ converge,
+2. si $u_{n}=o(v_{n})$ et si $\sum v_{n}$ converge, alors $\sum u_{n}$
+   converge,
+3. si $u_{n} \sim v_{n}$, alors les séries $\sum u_{n}$ et $\sum v_{n}$ ont
+   même nature.
+
+:::
+
+::: {#nte-voisinage}
+
+Puisque la natude d'une série ne dépend pas de ses premiers termes, il suffit
+que les hypothèse du théorème soient satisfaites *pour $n$ asez grand* c.à.d
+pour tout $n$ supérieur à un certain $N$ fixé.
+
+Rappelons à cette occasion que les équivalents *préseservent les signes* .
+Ainsi, si $u_{n} \sim v_{n}$ et si $u_{n} \geqslant 0$ pour $n$ assez grand,
+alors $v_{n}$ sera également positive ou nulle au voisinage de $+\infty$.
+
+:::
+
+::: {#exm-comparaison-1} 
+
+Nature de la série $\sum \ln \left(1+\frac{1}{2^{n}}\right)$.
+
+::: {.details}
+
+Puisque $\frac{1}{2^{n}}\to 0$ quand $n \to +\infty$, on a 
+
+$$
+    \ln \left(1+\frac{1}{2^{n}}\right) \sim \frac{1}{2^{n}} \geqslant 0.
+$$
+
+ 
+De plus, la série $\sum \frac{1}{2^{n}}$ est une série géométrique convergente
+car $\left|\frac{1}{2}\right|<1$.
+
+Donc par comparaison, la série $\sum \ln\frac{1}{2^{n}}$ converge.
+
+:::
+
+:::
+
+
+Pour pouvoir appliquer efficacement les théorèmes de comparaison, il faut un
+certain nombre de séries de référence. Les séries géométriques et télescopiques
+ne permettent pas de couvrir suffisamment de cas en pratique. Il faut pouvoir
+dire quelque chose de la nature des séries de Riemann de la forme $\sum
+\frac{1}{n^\alpha}$. Contrairement au cas des intégrales de Riemann, on ne peux
+pas calculer explicitement les sommes partielles de ces séries. On se ramène au
+cas des intégrales via le résultat suivant. 
+
+::: {#thm-comparaison-integrale}
+
+Si $f:[n_0,+\infty[\to \R$ est une fonction positive, continue et décroissante, alors la série $\displaystyle \sum_{n\geqslant n_0} f(n)$ et l'intégrale $\int_{n_0}^{+\infty}f(t)dt$ ont même nature.  
+
+:::
+
+::: {#nte-comparaison-integrale .callout-note}
+
+Le coeur de la démonstration repose sur l'encadrement 
+$$
+   \forall k \geqslant n_{0}+1,\ \int_{k}^{k+1} f(t)dt \leqslant f(k) \leqslant \int_{k-1}^{k}f(t)dt,
+$$
+
+ou, de manière équivalente,
+
+$$
+    \forall k \geqslant n_{0},\ f(k) \leqslant \int_{k}^{k+1}f(t)dt \leqslant f(k+1).
+$$
+
+Ces deux encadrements sont très clairs graphiquement (???).
+
+Il faut  être capable de les *redémontrer* rapidement en utilisant la
+*monotonie* de la fonction $f$, et de les adapter au cas d'une fonction
+*croissante*. 
+
+C'est une technique usuelle et très efficace pour étudier les restes des séries
+convergentes, ou les sommes partielles des séries divergentes. De nombreux
+exemples seront vus en TD. 
+
+:::
+
+::: {#prp-serie-riemann}
+
+#### Séries de Riemann
+
+Soit $\alpha \in \mathbb{R}$. Alors la série $\sum \frac{1}{n^{\alpha}}$
+converge ssi $\alpha>1$.
+
+:::
+
+::: {#exm-harmonique}
+
+La série *harmonique* $\sum \frac{1}{n}$ diverge, mais la série $\sum
+\frac{1}{n^{2}}$ converge.
+
+:::
+
+Comme pour le théorème de comparaison de fonctions positives, les théorèmes de
+comparaison pour les séries à termes positifs restent incapables de traiter les  
+séries à termes complexes, ou dont le signe n'est pas constant à partir d'un
+certain rang. 
+
+Le remède est le même que pour les intégrales, via la notion
+de séries *absolument convergente*. 
+
+::: {#def-serie-absolument-convergente}
+
+On dit que la série $\sum u_{n}$ est **absolument convergente** si a série
+$\sum |u_{n}|$ converge.
+
+:::
+
+::: {#prp-absolue-convergence}
+
+Si une série est absolument convergente, elle est convergente.
+
+:::
+
+Ce résultat, combiné au théorème de comparaison de séries à termes
+positifs, permet de résoudre la pluspart des cas rencontrés en pratique.
+
+::: {#exm-abolue-convergence}
+
+Nature de la série $\sum \frac{\cos n}{n^{2}}$.
+
+::: {.details}
+
+On a 
+
+$$
+    \forall n \geqslant 1,\ \left|\frac{\cos n}{n^{2}}\right| \leqslant
+\frac{1}{n^{2}}.
+$$
+
+De plus, la série $\sum \frac{1}{n^{2}}$ est une série de Riemann convergente.
+Donc par comparaison de séries à termes positifs, la série $\sum \frac{\cos
+n}{n^{2}}$ converge *absoluement*, donc converge.
+
+:::
+
+:::
+
+::: {#rem-integrable}
+
+Contrairement au cas des fonctions, on ne dispose pas en TSI de la notion de suite
+*intégrable*. La situation est donc comparativement plus simple ; on se ramenera
+systématiquement à la notion d'absolue convergence, au travers *un seul* théorème de
+comparaison.
+
+:::
 
 
 ## Autres résultats de convergence
