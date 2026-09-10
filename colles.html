@@ -33,6 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./dm.html" rel="next">
 <link href="./01-integrales-generalisees.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -72,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -147,6 +177,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Programmes de colle</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">DM</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -188,6 +224,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="programme-1---du-1409-au-1809">Programme 1 - du 14/09 au 18/09</h2>
 <p><a href="01-integrales-generalisees.html#sec-convergence" class="quarto-xref"><span>Convergence d’un intégrale généralisée</span></a></p>
 <p><a href="01-integrales-generalisees.html#sec-comparaison" class="quarto-xref"><span>Les théorèmes de comparaison</span></a></p>
+<p>Les étudiants devront connaîtrent les développements limités des fonctions usuelles à l’ordre <span class="math inline">\(2\)</span>.</p>
 
 
 </section>
@@ -600,6 +637,9 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./dm.html" class="pagination-link" aria-label="DM">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">DM</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
