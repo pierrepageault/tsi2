@@ -7,3 +7,6 @@ Les liens font référence aux sections des différents chapitres.
 @sec-convergence
 
 @sec-comparaison
+
+Les étudiants devront connaîtrent les développements limités des fonctions usuelles à l'ordre $2$.
+

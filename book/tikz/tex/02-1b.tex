@@ -1,0 +1,45 @@
+\documentclass[tikz,border=5pt]{standalone}
+\input{./style/style.tex}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    axes,
+    xmin=0.1, xmax=5,
+    ymin=0, ymax=3.1,
+    xlabel={$t$},
+    ylabel={$f(t)$},
+    domain=0.4:4.5,
+    samples=200,
+    xtick={1,2},
+    xticklabels={$k$,$k{+}1$},
+    ytick={1,0.5},
+    yticklabels={$f(k)$,$f(k+1)$},
+]
+
+% --- Courbe f(t) = 1/t ---
+\addplot[courbe] {1/x};
+
+% --- Aire sous la courbe de k à k+1 ---
+\addplot[domain=1:2, hachure] {1/x} \closedcycle;
+
+% --- Lignes verticales pointillées (jusqu'à la courbe) ---
+\draw[dashed] (axis cs:1,0) -- (axis cs:1,1);
+\draw[dashed] (axis cs:2,0) -- (axis cs:2,1/2);
+
+% --- Traits pleins horizontaux ---
+\draw (axis cs:1,1) -- (axis cs:2,1);  % à hauteur f(k+1) ≈ 0.333
+\draw (axis cs:1,0.5) -- (axis cs:2,0.5);   % à hauteur f(k) = 0.5
+
+% --- Traits pleins verticaux (pour compléter les rectangles) ---
+\draw (axis cs:1,0) -- (axis cs:1,1);   % gauche des rectangles
+\draw (axis cs:2,0) -- (axis cs:2,1);   % droite des rectangles
+
+% --- Traits pointillé horizontaux
+\draw[dashed] (axis cs:0,1) -- (axis cs:1,1);
+\draw[dashed] (axis cs:0,0.5) -- (axis cs:1,1/2);
+
+
+\end{axis}
+\end{tikzpicture}
+\end{document}
