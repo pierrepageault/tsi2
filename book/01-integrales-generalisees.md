@@ -1103,6 +1103,13 @@ $$
 :::
 
 
+::: {#wrn-crochet .callout-warning}
+
+Toute écriture du type $\left[ \cdots\right]_a^{+\infty}$ est à
+proscrire.
+
+:::
+
 ::: {#exm-xlnx}
 
 A l'aide d'une intégration par partie, montrer que l'intégrale
