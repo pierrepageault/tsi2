@@ -97,11 +97,20 @@ on peut se contenter de la noter $\sum u_n$, sans préciser son point de départ
 
 :::
 
-Pour les séries, il existe un lien simple entre la convergence de la série et
-la convergence de son terme général qui fournit une condition *nécessaire* de
-convergence.
+Dans le cas des séries, il existe un lien simple entre le terme général et les
+sommes partielles, qui s'obtient par *telescopage*^[On peut de même
+reconstruire l'intégrande par *dérivation* de l'intégrale partielle; c'est
+l'analogue continue de ce résultat.]: 
+
+$$
+    \forall n > n_{0}, u_{n} = \sum_{k=n_{0}}^{n} - \sum_{k=n_{0}}^{n-1}.
+$$
+
+Cette égalité mène la condition *nécessaire* de convergence suivante.
 
 ::: {#prp-condition-necessaire}
+
+#### Une condition nécessaire de convergence
 
 Le terme général d'une série convergente tend nécessairement vers $0$.
 
@@ -144,8 +153,7 @@ des théorèmes de comparaison pour les séries; c'est l'objectif de la
 On peut néanmoins facilement *approximer* la somme d'une série convergente via
 ses sommes partielles qui, elles, sont calculables (au moins numériquement). La
 différence entre la somme totale et une somme partielle porte le nom de
-*reste*. Cette notion n'a bien sur de sens que dans le cas des séries
-convergentes.
+*reste*. Cette notion de sens que pour les séries convergentes.
 
 ::: {#def-reste}
 
@@ -158,6 +166,8 @@ R_n = S - S_n = \sum_{k=n+1}^{+\infty}u_k.
 $$
 
 :::
+
+DESSIN
 
 ::: {#prp-reste}
 
@@ -173,8 +183,8 @@ Pour tout $n \geqslant  0$, son reste d'ordre $n$ est donné par
 $$
 \begin{aligned}
     R_{n} & = 2 - \sum_{k=0}^{n}\frac{1}{2^{k}}\\
-          & = 2 - 2\left(1 - \frac{1}{2^{n}}\right)\\
-          & = \frac{1}{2^{n+1}} \to 0.
+          & = 2 - 2\left(1 - \frac{1}{2^{n+1}}\right)\\
+          & = \frac{1}{2^{n}} \to 0.
 \end{aligned}
 $$
 :::
@@ -225,9 +235,9 @@ $$
 
 ### Séries géométriques et séries télescopiques
 
-Dans cette section, on étudie deux types de séries importantes pour lesquelles
-on est capable de calculer explicitement les sommes partielles et la somme en
-cas de convergence.
+Dans cette section, on étudie deux types de séries très importantes pour
+lesquelles on est capable de calculer explicitement les sommes partielles et la
+somme en cas de convergence. 
 
 ::: {#def-serie-geometrique}
 
@@ -235,13 +245,29 @@ On appelle *série géométrique* de *raison* $q \in \mathbb{K}$ la série de te
 
 :::
 
-::: {#prp-serie-geometrique}
-Soit $q \in \mathbb{K}$ avec $q \neq 1$. Alors 
+::: {#exm-serie-geometrique} 
 
-1. pour tout $n \in \mathbb{N}$, 
+La série $\sum \frac{1}{2^{n}}$ est une série géométrique de raison $\frac{1}{2}$.
+
+:::
+
+Les séries exponentielles sont englobées dans les séries
+géométriques.
+
+::: {#exm-serie-geometrique-2}
+
+Pour tout $\alpha \in \mathbb{R}$, la série $\sum e^{-\alpha n}$ est une série
+géométrique de raison $e^{-\alpha}$.
+
+:::
+
+::: {#prp-serie-geometrique}
+Soit $q \in \mathbb{K}$. Alors 
+
+1. si $q \neq 1$, on a  
 
 $$
-    \sum_{k=0}^{n}q^{k} = \frac{1-q^{n+1}}{1-q},
+    \forall n \geqslant 0,\ \sum_{k=0}^{n}q^{k} = \frac{1-q^{n+1}}{1-q},
 $$
 
 2. la série $\sum q^{n}$ converge ssi $|q|<1$ et, dans ce cas,
@@ -392,9 +418,8 @@ $$
 la différence $u_{n+1}-u_{n}$ jouant le rôle de la dérivée de $f$
 ; dans les deux cas, le calcul de la somme partielle est immédiat ! 
 
-On reverra
-ce type d'analogie en TD avec la transformation d'Abel, qui est aux sommes ce
-que l'intégration par parties est aux intégrales. 
+On reverra ce type d'analogie en TD avec la transformation d'Abel, qui est aux
+sommes ce que l'intégration par parties est aux intégrales. 
 
 :::
 
@@ -512,6 +537,16 @@ Il faut  être capable de les *redémontrer* rapidement en utilisant la
 C'est une technique usuelle et très efficace pour étudier les restes des séries
 convergentes, ou les sommes partielles des séries divergentes. De nombreux
 exemples seront vus en TD. 
+
+::: {#fig-encadrement layout-ncol=2}
+
+![](./tikz/svg/02-1a.svg)
+
+![](./tikz/svg/02-1b.svg)
+
+Les deux versions de l'encadrement.
+:::
+
 
 :::
 

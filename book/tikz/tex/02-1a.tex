@@ -1,0 +1,49 @@
+\documentclass[tikz,border=5pt]{standalone}
+\input{./style/style.tex}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    axes,
+    xmin=0.1, xmax=5,
+    ymin=0, ymax=3.1,
+    xlabel={$t$},
+    ylabel={$f(t)$},
+    domain=0.4:4.5,
+    samples=200,
+    xtick={1,2,3},
+    xticklabels={$k{-}1$,$k$,$k{+}1$},
+    ytick={0.5},
+    yticklabels={$f(k)$},
+]
+
+% --- Courbe f(t) = 1/t ---
+\addplot[courbe] {1/x};
+
+% --- Aire sous la courbe de k à k+1 (intégrale "inférieure") ---
+\addplot[domain=2:3, hachure] {1/x} \closedcycle;
+
+% --- Aire sous la courbe de k-1 à k (intégrale "supérieure") ---
+\addplot[domain=1:2, hachure=monGris] {1/x} \closedcycle;
+
+% --- Traits pleins horizontaux à hauteur f(k) ---
+\draw (axis cs:1,0.5) -- (axis cs:2,0.5);  % entre (k-1, f(k)) et (k, f(k))
+\draw (axis cs:2,0.5) -- (axis cs:3,0.5);  % entre (k, f(k)) et (k+1, f(k))
+
+
+% --- Traits pleins verticaux (pour compléter les rectangles) ---
+\draw (axis cs:1,0) -- (axis cs:1,0.5);  % gauche du rectangle [k-1, k]
+\draw (axis cs:2,0) -- (axis cs:2,0.5);  % droite du rectangle [k-1, k] / gauche du rectangle [k, k+1]
+\draw (axis cs:3,0) -- (axis cs:3,0.5);  % droite du rectangle [k, k+1]
+
+% --- Lignes verticales pointillées ---
+\draw[dashed] (axis cs:1,0) -- (axis cs:1,1/1);
+\draw[dashed] (axis cs:2,0) -- (axis cs:2,1/2);
+\draw[dashed] (axis cs:0,0.5) -- (axis cs:2,1/2);
+
+% --- Point f(k) = f(2) = 1/2 ---
+\fill[black] (axis cs:2,0.5) circle (1.5pt);
+
+\end{axis}
+\end{tikzpicture}
+\end{document}
