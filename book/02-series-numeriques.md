@@ -540,9 +540,9 @@ exemples seront vus en TD.
 
 ::: {#fig-encadrement layout-ncol=2}
 
-![](./tikz/svg/02-1a.svg)
+![L'encadrement $\int_{k}^{k+1} f(t)dt \leqslant f(k) \leqslant \int_{k-1}^{k}f(t)dt$](./tikz/svg/02-1a.svg)
 
-![](./tikz/svg/02-1b.svg)
+![f(k) \leqslant \int_{k}^{k+1}f(t)dt \leqslant f(k+1)](./tikz/svg/02-1b.svg)
 
 Les deux versions de l'encadrement.
 :::
