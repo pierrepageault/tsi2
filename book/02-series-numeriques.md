@@ -547,7 +547,6 @@ exemples seront vus en TD.
 Les deux versions de l'encadrement.
 :::
 
-
 :::
 
 ::: {#prp-serie-riemann}
