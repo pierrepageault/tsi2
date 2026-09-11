@@ -3,14 +3,14 @@
 
 ## Introduction {.unnumbered}
 
-Le but de ce chapitre est de généralisée la théorie de l'intégration vue en
+Le but de ce chapitre est de généraliser la théorie de l'intégration vue en
 première année -- qui se limite à des segments -- à des intervalles
-*quelconques* . On donnera par exemple un sens à des intégrales comme
+*quelconques*. On donnera par exemple un sens à des intégrales comme
 $\displaystyle\int_{1}^{\infty}\frac{dx}{x^{2}}$ ou
 $\displaystyle\int_{0}^{1}\ln(x)dx$.
 
 La théorie de l'intégration vue en première année est héritée de Riemann^[Georg
-Friedrich Bernhard Riemann, mathématicien Allemand né le 17 septembre 1826 à
+Friedrich Bernhard Riemann, mathématicien allemand né le 17 septembre 1826 à
 Breselenz, et mort le 20 juillet 1866 à Selasca, en Italie.] qui l'introduit
 dans son article fondateur « Über die Darstellbarkeit einer Function durch eine
 trigonometrische Reihe » (Sur la représentabilité d'une fonction par une série
@@ -58,7 +58,7 @@ $$
     \int_{a}^{b}f(t)dt = F(b)-F(a).
 $$
 
-Puisque qu'une telle primitive $F$ est nécessairement continue sur $[a,b]$
+Puisqu'une telle primitive $F$ est nécessairement continue sur $[a,b]$
 (elle y est de classe $C^{1}$), on a en particulier
 
 $$
@@ -66,7 +66,7 @@ $$
 $$
 
 Cette relation présente l'avantage de garder éventuellement un sens lorsque $f$
-n'est pas définie en $b$, par exemple lorque $b=+\infty$ ; on parlera alors
+n'est pas définie en $b$, par exemple lorsque $b=+\infty$ ; on parlera alors
 d'intégrale *généralisée* de $f$ sur $[a,b[$. 
 
 Les intégrales généralisées seront donc définies comme des *limites*
@@ -77,13 +77,13 @@ définies, et il faudra prendre plus de précaution lors de leurs manipulations.
 Ces précautions étant prises, les intégrales généralisées se comporteront
 essentiellement de la même manière que les intégrales usuelles. 
 
-Les intégrales généralisées sont d'un usuage constant en mathématiques et en
+Les intégrales généralisées sont d'un usage constant en mathématiques et en
 physique (transformée de Laplace, de Fourier, fonction $\Gamma$ d'Euler,
 intégrale de Gauss,...)
 
 
 
-## Convergence d'un intégrale généralisée {#sec-convergence}
+## Convergence d'une intégrale généralisée {#sec-convergence}
 
 Dans tout ce chapitre, $I$ désigne un intervalle non vide de $\mathbb{R}$,
 d'extrémités $a,b \in \mathbb{R}\cup \left\{ \pm \infty\right\}$, avec $a
@@ -96,7 +96,7 @@ d'extrémités $a,b \in \mathbb{R}\cup \left\{ \pm \infty\right\}$, avec $a
 Soit $f:I \to \mathbb{K}$ une fonction *continue* sur $I$ et $\alpha$ une
 extrémité de $I$. On dit que l'intégrale de $f$ sur $I$ est **généralisée en
 $\boldsymbol{\alpha}$** si $I$ est *ouvert* en $\alpha$. On dit que
-l'intérgrale de $f$ sur $I$ est **généralisée** si elle est généralisée en au
+l'intégrale de $f$ sur $I$ est **généralisée** si elle est généralisée en au
 moins une des extrémités de $I$. 
 
 :::
@@ -133,7 +133,7 @@ fonction intégrée.
 :::
 
 Que dire maintenant de l'intégrale de la fonction $x \mapsto x^{2}$ sur
-l'intervalle $]0,1]$ ? Certe l'extrémité gauche est ouverte mais la fonction $x
+l'intervalle $]0,1]$ ? Certes l'extrémité gauche est ouverte mais la fonction $x
 \mapsto x^{2}$ est continue sur $[0,1]$... On peut de même se poser la question
 de l'intégrale de la fonction $x \mapsto x\ln(x)$ sur l'intervalle $]0,1]$ qui
 se *prolonge par continuité* en $0$. Ces situations correspondent au cas des
@@ -143,8 +143,9 @@ intégrales *faussement généralisées*, étudiées plus en détail dans la
 ### Convergence d'une intégrale généralisée
 
 Jusqu'à présent, on s'est seulement entendu sur le sens de la phrase
-"l'intégrale de $f$ sur $I$ est généralisée". Nous pas attribué de *valeur
-numérique* à cette "intégrale". C'est le rôle de la notion de *convergence*.
+"l'intégrale de $f$ sur $I$ est généralisée". Nous n'avons pas attribué de
+*valeur numérique* à cette "intégrale". C'est le rôle de la notion de
+*convergence*.
 
 ::: {#def-cv-integrale-intervalle-semi-ouvert} 
 
@@ -234,7 +235,7 @@ Des fonctions peuvent avoir des graphes similaires mais des intégrales de natur
 
 ::: {#wrn-convergence-integrande .callout-warning}
 
-Il ne pas confondre la convergence de l'*intégrale* en $\pm \infty$ et la
+Il ne faut pas confondre la convergence de l'*intégrale* en $\pm \infty$ et la
 convergence de la fonction intégrée (l'*intégrande*). 
 
 :::
@@ -335,7 +336,7 @@ suggère la définition suivante dans le cas d'un intervalle ouvert.
 
 Soit $f:]a,b[ \to \mathbb{K}$ une fonction continue. On dit que l'intégrale de
 $f$ sur $]a,b[$ **converge** si elle converge **en $\boldsymbol{a}$** *et* en
-**en $\boldsymbol{b}$**, c.à.d s'il existe un  réel $c \in ]a,b[$, tel que les *deux*
+**en $\boldsymbol{b}$**, c.-à.d s'il existe un  réel $c \in ]a,b[$, tel que les *deux*
 intégrales $\int_{a}^{c}f(t)dt$ et $\int_{c}^{b}f(t)dt$ convergent. On pose
 alors
 
@@ -428,7 +429,7 @@ La note suivante est à comparer au @wrn-convergence-integrande.
 ::: {#nte-borne-finie .callout-note}
 
 Le prolongement par continuité est réservé aux extrémités *finies* de $I$. On
-ne peut donc par parler d'intégrales "faussement généralisées en $\pm\infty$"
+ne peut donc pas parler d'intégrales "faussement généralisées en $\pm\infty$"
 lorsque la fonction intégrée admet une limite finie en $\pm \infty$.
 
 :::
@@ -475,7 +476,7 @@ avec un espace de *départ* et un espace d'*arrivée*, dont dépendent ses propr
 changer de fonction. 
 
 Bien souvent, on "oublie" ces espaces pour ne préciser que
-l'*action* de $f$ ; ils sont alors présents de manière *sous-jaccente*.
+l'*action* de $f$ ; ils sont alors présents de manière *sous-jacente*.
 
 :::
 
@@ -582,7 +583,7 @@ résulat en TD pour montrer la divergence de l'intégrale de Dirichlet.
 
 ### Intégrales absolument convergentes et fonctions intégrables
 
-Le théorème de comparaison pour les fonctions positives permet déja de
+Le théorème de comparaison pour les fonctions positives permet déjà de
 démontrer la convergence (ou la divergence) de beaucoup d'intégrales, mais il
 ne s'applique qu'à des fonctions à valeurs *positives* ; il ne permet pas de
 traiter les fonctions à valeurs complexes, ou les fonctions dont le signe
@@ -609,9 +610,9 @@ fausse.
 
 :::
 
-Cette propoosition est fondamentale car elle permet de montrer la convergence
+Cette proposition est fondamentale car elle permet de montrer la convergence
 d'une intégrale en se ramenant à l'intégrale d'une fonction *positive*
-à laquel on peut appliquer le théorème de comparaison. 
+à laquelle on peut appliquer le théorème de comparaison. 
 
 ::: {#exm-convergence-absolue}
 
@@ -791,7 +792,7 @@ $\sim  \Rightarrow O$
 
 Maintenant que l'on dispose de théorèmes de comparaison, il reste à se
 constituer une collection de fonctions intégrables dites de *références*,
-suffisament riches pour être comparées aux fonctions rencontrées en pratique
+suffisamment riches pour être comparées aux fonctions rencontrées en pratique
 ; en l'occurence les fonctions puissances, la fonction logarithme et les
 exponentielles décroissantes.
 
@@ -983,7 +984,7 @@ comparaison, l'intégrale $\int_{0}^{1}\frac{\ln(t)}{1-t}dt$ converge en $0$.
 
 ::: {#rem-valeurs}
 
-En cas de convergence, il est bon de connaitre les valeurs des intégrales
+En cas de convergence, il est bon de connaître les valeurs des intégrales
 $\int_{0}^{1}\frac{dt}{t^{\alpha}}$, $\int_{1}^{+\infty}\frac{dt}{t^{\alpha}}$,
 $\int_{0}^{+\infty}e^{-at}dt$ et $\int_{0}^{1}\ln(t)dt$, ou d'être capable de
 les retrouver rapidement. 
@@ -1055,7 +1056,7 @@ $$
 	\forall x \geqslant a,\ \int_{a}^{x}f(t)dt \leqslant \int_{a}^{+\infty}f(t)dt.
 $$
 
-Cette propiétée est par ailleurs claire graphiquement, @fig-integrale-partielle-droite.
+Cette propriétée est par ailleurs claire graphiquement, @fig-integrale-partielle-droite.
 :::
 
 ::: {#exm-contrapose}
@@ -1063,7 +1064,7 @@ Cette propiétée est par ailleurs claire graphiquement, @fig-integrale-partiell
 Si l'intégrale de $f$ sur $I$ converge, et si l'intégrale de $g$ sur $I$
 diverge, alors l'intégrale de $f+g$ sur $I$ diverge^[On retrouve une propriété
 usuelle des limites : *"convergent plus divergent égale divergent"*]. Sinon, par différence
-d"intégrales convergentes, l'intégrale de $g$ sur $I$ serai convergente.
+d"intégrales convergentes, l'intégrale de $g$ sur $I$ serait convergente.
 
 :::
 
