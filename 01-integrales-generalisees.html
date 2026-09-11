@@ -33,7 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./colles.html" rel="next">
+<link href="./02-series-numeriques.html" rel="next">
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -173,6 +173,12 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./02-series-numeriques.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Séries numériques</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./colles.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Programmes de colle</span></a>
   </div>
@@ -194,7 +200,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#sec-convergence" id="toc-sec-convergence" class="nav-link" data-scroll-target="#sec-convergence"><span class="header-section-number">1.1</span> Convergence d’un intégrale généralisée</a>
+  <li><a href="#sec-convergence" id="toc-sec-convergence" class="nav-link" data-scroll-target="#sec-convergence"><span class="header-section-number">1.1</span> Convergence d’une intégrale généralisée</a>
   <ul class="collapse">
   <li><a href="#intégrales-généralisées" id="toc-intégrales-généralisées" class="nav-link" data-scroll-target="#intégrales-généralisées"><span class="header-section-number">1.1.1</span> Intégrales généralisées</a></li>
   <li><a href="#convergence-dune-intégrale-généralisée" id="toc-convergence-dune-intégrale-généralisée" class="nav-link" data-scroll-target="#convergence-dune-intégrale-généralisée"><span class="header-section-number">1.1.2</span> Convergence d’une intégrale généralisée</a></li>
@@ -245,7 +251,7 @@ window.Quarto = {
 
 <section id="introduction" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Le but de ce chapitre est de généralisée la théorie de l’intégration vue en première année – qui se limite à des segments – à des intervalles <em>quelconques</em> . On donnera par exemple un sens à des intégrales comme <span class="math inline">\(\displaystyle\int_{1}^{\infty}\frac{dx}{x^{2}}\)</span> ou <span class="math inline">\(\displaystyle\int_{0}^{1}\ln(x)dx\)</span>.</p>
+<p>Le but de ce chapitre est de généraliser la théorie de l’intégration vue en première année – qui se limite à des segments – à des intervalles <em>quelconques</em>. On donnera par exemple un sens à des intégrales comme <span class="math inline">\(\displaystyle\int_{1}^{\infty}\frac{dx}{x^{2}}\)</span> ou <span class="math inline">\(\displaystyle\int_{0}^{1}\ln(x)dx\)</span>.</p>
 <p>La théorie de l’intégration vue en première année est héritée de Riemann<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> qui l’introduit dans son article fondateur « Über die Darstellbarkeit einer Function durch eine trigonometrische Reihe » (Sur la représentabilité d’une fonction par une série trigonométrique) en 1854.</p>
 <p>L’intégrale y est définie via des <em>sommes</em>, qui portent aujourd’hui le nom de <em>sommes de Riemann</em>.</p>
 <div id="fig-somme-riemann" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -275,23 +281,23 @@ Figure&nbsp;1.1: La définition initiale de Riemann de l’intégrale à l’aid
 <p><span class="math display">\[
     \int_{a}^{b}f(t)dt = F(b)-F(a).
 \]</span></p>
-<p>Puisque qu’une telle primitive <span class="math inline">\(F\)</span> est nécessairement continue sur <span class="math inline">\([a,b]\)</span> (elle y est de classe <span class="math inline">\(C^{1}\)</span>), on a en particulier</p>
+<p>Puisqu’une telle primitive <span class="math inline">\(F\)</span> est nécessairement continue sur <span class="math inline">\([a,b]\)</span> (elle y est de classe <span class="math inline">\(C^{1}\)</span>), on a en particulier</p>
 <p><span class="math display">\[
     \int_{a}^{b}f(t)dt = \lim_{x \to b^-} \int_{a}^{x}f(t)dt.
 \]</span></p>
-<p>Cette relation présente l’avantage de garder éventuellement un sens lorsque <span class="math inline">\(f\)</span> n’est pas définie en <span class="math inline">\(b\)</span>, par exemple lorque <span class="math inline">\(b=+\infty\)</span> ; on parlera alors d’intégrale <em>généralisée</em> de <span class="math inline">\(f\)</span> sur <span class="math inline">\([a,b[\)</span>.</p>
+<p>Cette relation présente l’avantage de garder éventuellement un sens lorsque <span class="math inline">\(f\)</span> n’est pas définie en <span class="math inline">\(b\)</span>, par exemple lorsque <span class="math inline">\(b=+\infty\)</span> ; on parlera alors d’intégrale <em>généralisée</em> de <span class="math inline">\(f\)</span> sur <span class="math inline">\([a,b[\)</span>.</p>
 <p>Les intégrales généralisées seront donc définies comme des <em>limites</em> d’intégrales usuelles – à condition que ces limites existent ! Contrairement aux intégrales usuelles, les intégrales généralisées ne seront donc pas toujours bien définies, et il faudra prendre plus de précaution lors de leurs manipulations.</p>
 <p>Ces précautions étant prises, les intégrales généralisées se comporteront essentiellement de la même manière que les intégrales usuelles.</p>
-<p>Les intégrales généralisées sont d’un usuage constant en mathématiques et en physique (transformée de Laplace, de Fourier, fonction <span class="math inline">\(\Gamma\)</span> d’Euler, intégrale de Gauss,…)</p>
+<p>Les intégrales généralisées sont d’un usage constant en mathématiques et en physique (transformée de Laplace, de Fourier, fonction <span class="math inline">\(\Gamma\)</span> d’Euler, intégrale de Gauss,…)</p>
 </section>
 <section id="sec-convergence" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="sec-convergence"><span class="header-section-number">1.1</span> Convergence d’un intégrale généralisée</h2>
+<h2 data-number="1.1" class="anchored" data-anchor-id="sec-convergence"><span class="header-section-number">1.1</span> Convergence d’une intégrale généralisée</h2>
 <p>Dans tout ce chapitre, <span class="math inline">\(I\)</span> désigne un intervalle non vide de <span class="math inline">\(\mathbb{R}\)</span>, d’extrémités <span class="math inline">\(a,b \in \mathbb{R}\cup \left\{ \pm \infty\right\}\)</span>, avec <span class="math inline">\(a
 \leqslant b\)</span>, et <span class="math inline">\(\mathbb{K}\)</span> désigne <span class="math inline">\(\mathbb{R}\)</span> ou <span class="math inline">\(\mathbb{C}\)</span>.</p>
 <section id="intégrales-généralisées" class="level3" data-number="1.1.1">
 <h3 data-number="1.1.1" class="anchored" data-anchor-id="intégrales-généralisées"><span class="header-section-number">1.1.1</span> Intégrales généralisées</h3>
 <div id="def-integrale-generalisee" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 1.2</strong></span> Soit <span class="math inline">\(f:I \to \mathbb{K}\)</span> une fonction <em>continue</em> sur <span class="math inline">\(I\)</span> et <span class="math inline">\(\alpha\)</span> une extrémité de <span class="math inline">\(I\)</span>. On dit que l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> est <strong>généralisée en <span class="math inline">\(\boldsymbol{\alpha}\)</span></strong> si <span class="math inline">\(I\)</span> est <em>ouvert</em> en <span class="math inline">\(\alpha\)</span>. On dit que l’intérgrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> est <strong>généralisée</strong> si elle est généralisée en au moins une des extrémités de <span class="math inline">\(I\)</span>.</p>
+<p><span class="theorem-title"><strong>Définition 1.2</strong></span> Soit <span class="math inline">\(f:I \to \mathbb{K}\)</span> une fonction <em>continue</em> sur <span class="math inline">\(I\)</span> et <span class="math inline">\(\alpha\)</span> une extrémité de <span class="math inline">\(I\)</span>. On dit que l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> est <strong>généralisée en <span class="math inline">\(\boldsymbol{\alpha}\)</span></strong> si <span class="math inline">\(I\)</span> est <em>ouvert</em> en <span class="math inline">\(\alpha\)</span>. On dit que l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> est <strong>généralisée</strong> si elle est généralisée en au moins une des extrémités de <span class="math inline">\(I\)</span>.</p>
 </div>
 <div id="nte-ambiguite" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -325,12 +331,12 @@ Astuce
 <p>L’aspect généralisée d’une intégrale se lit sur le <em>domaine</em> de la fonction intégrée.</p>
 </div>
 </div>
-<p>Que dire maintenant de l’intégrale de la fonction <span class="math inline">\(x \mapsto x^{2}\)</span> sur l’intervalle <span class="math inline">\(]0,1]\)</span> ? Certe l’extrémité gauche est ouverte mais la fonction <span class="math inline">\(x
+<p>Que dire maintenant de l’intégrale de la fonction <span class="math inline">\(x \mapsto x^{2}\)</span> sur l’intervalle <span class="math inline">\(]0,1]\)</span> ? Certes l’extrémité gauche est ouverte mais la fonction <span class="math inline">\(x
 \mapsto x^{2}\)</span> est continue sur <span class="math inline">\([0,1]\)</span>… On peut de même se poser la question de l’intégrale de la fonction <span class="math inline">\(x \mapsto x\ln(x)\)</span> sur l’intervalle <span class="math inline">\(]0,1]\)</span> qui se <em>prolonge par continuité</em> en <span class="math inline">\(0\)</span>. Ces situations correspondent au cas des intégrales <em>faussement généralisées</em>, étudiées plus en détail dans la <a href="#sec-integrale-faussement-generalisee" class="quarto-xref"><span>Section 1.1.3</span></a>.</p>
 </section>
 <section id="convergence-dune-intégrale-généralisée" class="level3" data-number="1.1.2">
 <h3 data-number="1.1.2" class="anchored" data-anchor-id="convergence-dune-intégrale-généralisée"><span class="header-section-number">1.1.2</span> Convergence d’une intégrale généralisée</h3>
-<p>Jusqu’à présent, on s’est seulement entendu sur le sens de la phrase “l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> est généralisée”. Nous pas attribué de <em>valeur numérique</em> à cette “intégrale”. C’est le rôle de la notion de <em>convergence</em>.</p>
+<p>Jusqu’à présent, on s’est seulement entendu sur le sens de la phrase “l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> est généralisée”. Nous n’avons pas attribué de <em>valeur numérique</em> à cette “intégrale”. C’est le rôle de la notion de <em>convergence</em>.</p>
 <div id="def-cv-integrale-intervalle-semi-ouvert" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 1.3 (Cas d’un intervalle semi ouvert à droite)</strong></span> Soit <span class="math inline">\(f:[a,b[ \to \mathbb{K}\)</span> une fonction continue. On dit que l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\([a,b[\)</span> <strong>converge</strong> si l’intégrale partielle <span class="math inline">\(\int_{a}^{x}f(t)dt\)</span> admet une limite <em>finie</em> quand <span class="math inline">\(x \to b^-\)</span>. On pose alors <span class="math display">\[
 \boxed{
@@ -415,7 +421,7 @@ Avertissement&nbsp;1.1
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Il ne pas confondre la convergence de l’<em>intégrale</em> en <span class="math inline">\(\pm \infty\)</span> et la convergence de la fonction intégrée (l’<em>intégrande</em>).</p>
+<p>Il ne faut pas confondre la convergence de l’<em>intégrale</em> en <span class="math inline">\(\pm \infty\)</span> et la convergence de la fonction intégrée (l’<em>intégrande</em>).</p>
 </div>
 </div>
 <p>Voici un autre exemple classique d’intégrale convergente.</p>
@@ -485,7 +491,7 @@ Astuce&nbsp;1.1
 </div>
 <p>Une fois la convergence définie dans le cas d’intervalles semi ouverts, la relation de Chasles – que l’on veut valide pour les intégrales généralisées – suggère la définition suivante dans le cas d’un intervalle ouvert.</p>
 <div id="def-cv-intervalle-ouvert" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 1.4 (Cas d’un intervalle ouvert)</strong></span> Soit <span class="math inline">\(f:]a,b[ \to \mathbb{K}\)</span> une fonction continue. On dit que l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(]a,b[\)</span> <strong>converge</strong> si elle converge <strong>en <span class="math inline">\(\boldsymbol{a}\)</span></strong> <em>et</em> en <strong>en <span class="math inline">\(\boldsymbol{b}\)</span></strong>, c.à.d s’il existe un réel <span class="math inline">\(c \in ]a,b[\)</span>, tel que les <em>deux</em> intégrales <span class="math inline">\(\int_{a}^{c}f(t)dt\)</span> et <span class="math inline">\(\int_{c}^{b}f(t)dt\)</span> convergent. On pose alors</p>
+<p><span class="theorem-title"><strong>Définition 1.4 (Cas d’un intervalle ouvert)</strong></span> Soit <span class="math inline">\(f:]a,b[ \to \mathbb{K}\)</span> une fonction continue. On dit que l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(]a,b[\)</span> <strong>converge</strong> si elle converge <strong>en <span class="math inline">\(\boldsymbol{a}\)</span></strong> <em>et</em> en <strong>en <span class="math inline">\(\boldsymbol{b}\)</span></strong>, c.-à.d s’il existe un réel <span class="math inline">\(c \in ]a,b[\)</span>, tel que les <em>deux</em> intégrales <span class="math inline">\(\int_{a}^{c}f(t)dt\)</span> et <span class="math inline">\(\int_{c}^{b}f(t)dt\)</span> convergent. On pose alors</p>
 <p><span class="math display">\[
 \int_{a}^{b}f(t)dt \underset{\mathrm{def}}{=}
 \int_{a}^{c}f(t)dt + \int_{c}^{b}f(t)dt.
@@ -547,7 +553,7 @@ Note&nbsp;1.3
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Le prolongement par continuité est réservé aux extrémités <em>finies</em> de <span class="math inline">\(I\)</span>. On ne peut donc par parler d’intégrales “faussement généralisées en <span class="math inline">\(\pm\infty\)</span>” lorsque la fonction intégrée admet une limite finie en <span class="math inline">\(\pm \infty\)</span>.</p>
+<p>Le prolongement par continuité est réservé aux extrémités <em>finies</em> de <span class="math inline">\(I\)</span>. On ne peut donc pas parler d’intégrales “faussement généralisées en <span class="math inline">\(\pm\infty\)</span>” lorsque la fonction intégrée admet une limite finie en <span class="math inline">\(\pm \infty\)</span>.</p>
 </div>
 </div>
 <div id="exm-integrale-faussement-generalisee" class="theorem example">
@@ -585,7 +591,7 @@ Note&nbsp;1.5
 <div class="callout-body-container callout-body">
 <p>Dans le théorème précédent, le prolongement par continuité de <span class="math inline">\(f\)</span> à <span class="math inline">\(\bar{I}\)</span> est encore noté <span class="math inline">\(f\)</span>. La rigueur voudrait qu’on le note d’une autre manière, mais l’usage prévaut.</p>
 <p>C’est l’occasion de rappeler qu’en mathématiques, une fonction vient toujours avec un espace de <em>départ</em> et un espace d’<em>arrivée</em>, dont dépendent ses propriétés (injectivité, surjectivité, régularité,…). Les changer, c’est changer de fonction.</p>
-<p>Bien souvent, on “oublie” ces espaces pour ne préciser que l’<em>action</em> de <span class="math inline">\(f\)</span> ; ils sont alors présents de manière <em>sous-jaccente</em>.</p>
+<p>Bien souvent, on “oublie” ces espaces pour ne préciser que l’<em>action</em> de <span class="math inline">\(f\)</span> ; ils sont alors présents de manière <em>sous-jacente</em>.</p>
 </div>
 </div>
 <div id="exm-faussement-generalisee" class="theorem example">
@@ -638,7 +644,7 @@ Note&nbsp;1.5
 </section>
 <section id="intégrales-absolument-convergentes-et-fonctions-intégrables" class="level3" data-number="1.2.2">
 <h3 data-number="1.2.2" class="anchored" data-anchor-id="intégrales-absolument-convergentes-et-fonctions-intégrables"><span class="header-section-number">1.2.2</span> Intégrales absolument convergentes et fonctions intégrables</h3>
-<p>Le théorème de comparaison pour les fonctions positives permet déja de démontrer la convergence (ou la divergence) de beaucoup d’intégrales, mais il ne s’applique qu’à des fonctions à valeurs <em>positives</em> ; il ne permet pas de traiter les fonctions à valeurs complexes, ou les fonctions dont le signe alterne. La notion d’intégrales <em>absolument convergentes</em> et de fonctions <em>intégrables</em> vient pallier efficacement cet inconvénient.</p>
+<p>Le théorème de comparaison pour les fonctions positives permet déjà de démontrer la convergence (ou la divergence) de beaucoup d’intégrales, mais il ne s’applique qu’à des fonctions à valeurs <em>positives</em> ; il ne permet pas de traiter les fonctions à valeurs complexes, ou les fonctions dont le signe alterne. La notion d’intégrales <em>absolument convergentes</em> et de fonctions <em>intégrables</em> vient pallier efficacement cet inconvénient.</p>
 <div id="def-integrale-absolument-convergente" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 1.6</strong></span> On dit que l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> est <strong>absolument convergente</strong> si l’intégrale de <span class="math inline">\(|f|\)</span> sur <span class="math inline">\(I\)</span> converge.</p>
 </div>
@@ -648,7 +654,7 @@ Note&nbsp;1.5
 <div id="rem-contre-exemple" class="proof remark">
 <p><span class="proof-title"><em>Remarque 1.7</em>. </span>On verra en TD avec l’exemple de l’intégrale de Dirichlet que la réciproque est fausse.</p>
 </div>
-<p>Cette propoosition est fondamentale car elle permet de montrer la convergence d’une intégrale en se ramenant à l’intégrale d’une fonction <em>positive</em> à laquel on peut appliquer le théorème de comparaison.</p>
+<p>Cette proposition est fondamentale car elle permet de montrer la convergence d’une intégrale en se ramenant à l’intégrale d’une fonction <em>positive</em> à laquelle on peut appliquer le théorème de comparaison.</p>
 <div id="exm-convergence-absolue" class="theorem example">
 <p><span class="theorem-title"><strong>Exemple 1.12</strong></span> Nature de l’intégrale <span class="math inline">\(\int_{0}^{+\infty}\sin(t)e^{-t}dt\)</span>.</p>
 <details>
@@ -767,7 +773,7 @@ Astuce&nbsp;1.3
 </section>
 <section id="intégrales-et-fonctions-intégrables-de-références" class="level3" data-number="1.2.3">
 <h3 data-number="1.2.3" class="anchored" data-anchor-id="intégrales-et-fonctions-intégrables-de-références"><span class="header-section-number">1.2.3</span> Intégrales et fonctions intégrables de références</h3>
-<p>Maintenant que l’on dispose de théorèmes de comparaison, il reste à se constituer une collection de fonctions intégrables dites de <em>références</em>, suffisament riches pour être comparées aux fonctions rencontrées en pratique ; en l’occurence les fonctions puissances, la fonction logarithme et les exponentielles décroissantes.</p>
+<p>Maintenant que l’on dispose de théorèmes de comparaison, il reste à se constituer une collection de fonctions intégrables dites de <em>références</em>, suffisamment riches pour être comparées aux fonctions rencontrées en pratique ; en l’occurence les fonctions puissances, la fonction logarithme et les exponentielles décroissantes.</p>
 <div id="thm-riemann" class="theorem">
 <p><span class="theorem-title"><strong>Théorème 1.4 (Intégrales de Riemann)</strong></span> Soit <span class="math inline">\(\alpha \in \mathbb{R}\)</span>. Alors la fonction <span class="math inline">\(t \mapsto
 \frac{1}{t^{\alpha}}\)</span> est</p>
@@ -937,7 +943,7 @@ Figure&nbsp;1.7: Convergence de l’intégrale <span class="math inline">\(\int_
 </details>
 </div>
 <div id="rem-valeurs" class="proof remark">
-<p><span class="proof-title"><em>Remarque 1.14</em>. </span>En cas de convergence, il est bon de connaitre les valeurs des intégrales <span class="math inline">\(\int_{0}^{1}\frac{dt}{t^{\alpha}}\)</span>, <span class="math inline">\(\int_{1}^{+\infty}\frac{dt}{t^{\alpha}}\)</span>, <span class="math inline">\(\int_{0}^{+\infty}e^{-at}dt\)</span> et <span class="math inline">\(\int_{0}^{1}\ln(t)dt\)</span>, ou d’être capable de les retrouver rapidement.</p>
+<p><span class="proof-title"><em>Remarque 1.14</em>. </span>En cas de convergence, il est bon de connaître les valeurs des intégrales <span class="math inline">\(\int_{0}^{1}\frac{dt}{t^{\alpha}}\)</span>, <span class="math inline">\(\int_{1}^{+\infty}\frac{dt}{t^{\alpha}}\)</span>, <span class="math inline">\(\int_{0}^{+\infty}e^{-at}dt\)</span> et <span class="math inline">\(\int_{0}^{1}\ln(t)dt\)</span>, ou d’être capable de les retrouver rapidement.</p>
 </div>
 </section>
 </section>
@@ -983,10 +989,10 @@ Astuce
 <p><span class="math display">\[
     \forall x \geqslant a,\ \int_{a}^{x}f(t)dt \leqslant \int_{a}^{+\infty}f(t)dt.
 \]</span></p>
-<p>Cette propiétée est par ailleurs claire graphiquement, <a href="#fig-integrale-partielle-droite" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>.</p>
+<p>Cette propriétée est par ailleurs claire graphiquement, <a href="#fig-integrale-partielle-droite" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>.</p>
 </div>
 <div id="exm-contrapose" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 1.18</strong></span> Si l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> converge, et si l’intégrale de <span class="math inline">\(g\)</span> sur <span class="math inline">\(I\)</span> diverge, alors l’intégrale de <span class="math inline">\(f+g\)</span> sur <span class="math inline">\(I\)</span> diverge<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Sinon, par différence d”intégrales convergentes, l’intégrale de <span class="math inline">\(g\)</span> sur <span class="math inline">\(I\)</span> serai convergente.</p>
+<p><span class="theorem-title"><strong>Exemple 1.18</strong></span> Si l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> converge, et si l’intégrale de <span class="math inline">\(g\)</span> sur <span class="math inline">\(I\)</span> diverge, alors l’intégrale de <span class="math inline">\(f+g\)</span> sur <span class="math inline">\(I\)</span> diverge<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Sinon, par différence d”intégrales convergentes, l’intégrale de <span class="math inline">\(g\)</span> sur <span class="math inline">\(I\)</span> serait convergente.</p>
 </div>
 <p>En pratique, ces propriétés permettent de <em>calculer</em> avec des intégrales généralisées. Il faut leur ajouter deux outils d’usage constant: le théorème d’<em>intégration par parties</em> et le <em>théorème de changement de variable</em>.</p>
 </section>
@@ -1346,7 +1352,7 @@ I = \displaystyle\int_0^{+\infty}te^{-t^{2}}dt,\quad J = \displaystyle\int_0^{+\
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Georg Friedrich Bernhard Riemann, mathématicien Allemand né le 17 septembre 1826 à Breselenz, et mort le 20 juillet 1866 à Selasca, en Italie.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Georg Friedrich Bernhard Riemann, mathématicien allemand né le 17 septembre 1826 à Breselenz, et mort le 20 juillet 1866 à Selasca, en Italie.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Un théorème de Liouville affirme par exemple qu’il n’existe pas de primitive de la fonction <span class="math inline">\(t \mapsto
 e^{-t^{2}}\)</span> exprimable à l’aide de fonctions usuelles (polynômes, exponentielles, logarithmes, trigonométriques).<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>On utilise ici implicitement la linéarité de l’intégrale convergente : si l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> converge, alors l’intégrale de <span class="math inline">\(\lambda f\)</span> sur <span class="math inline">\(I\)</span> converge pour tout <span class="math inline">\(\lambda \in \mathbb{K}\)</span>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
@@ -1766,8 +1772,8 @@ e^{-t^{2}}\)</span> exprimable à l’aide de fonctions usuelles (polynômes, ex
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./colles.html" class="pagination-link" aria-label="Programmes de colle">
-        <span class="nav-page-text">Programmes de colle</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./02-series-numeriques.html" class="pagination-link" aria-label="Séries numériques">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Séries numériques</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

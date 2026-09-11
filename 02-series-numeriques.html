@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; Séries numériques – Mathématiques en TSI2</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./colles.html" rel="next">
+<link href="./01-integrales-generalisees.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-452fedebf206357581fb8f02f36bbb8c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-series-numeriques.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Séries numériques</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Mathématiques en TSI2</a> 
+        <div class="sidebar-tools-main">
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Mathématiques-en-TSI2.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Mathématiques-en-TSI2.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Recherche"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-integrales-generalisees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intégrales généralisées</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-series-numeriques.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Séries numériques</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./colles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programmes de colle</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DM</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table des matières</h2>
+   
+  <ul>
+  <li><a href="#convergence-dune-série-numérique" id="toc-convergence-dune-série-numérique" class="nav-link active" data-scroll-target="#convergence-dune-série-numérique"><span class="header-section-number">2.1</span> Convergence d’une série numérique</a>
+  <ul class="collapse">
+  <li><a href="#définitions" id="toc-définitions" class="nav-link" data-scroll-target="#définitions"><span class="header-section-number">2.1.1</span> Définitions</a></li>
+  <li><a href="#calculer-avec-des-séries-convergentes" id="toc-calculer-avec-des-séries-convergentes" class="nav-link" data-scroll-target="#calculer-avec-des-séries-convergentes"><span class="header-section-number">2.1.2</span> Calculer avec des séries convergentes</a></li>
+  <li><a href="#séries-géométriques-et-séries-télescopiques" id="toc-séries-géométriques-et-séries-télescopiques" class="nav-link" data-scroll-target="#séries-géométriques-et-séries-télescopiques"><span class="header-section-number">2.1.3</span> Séries géométriques et séries télescopiques</a></li>
+  </ul></li>
+  <li><a href="#sec-serie-terme-positif" id="toc-sec-serie-terme-positif" class="nav-link" data-scroll-target="#sec-serie-terme-positif"><span class="header-section-number">2.2</span> Séries à termes positifs</a></li>
+  <li><a href="#autres-résultats-de-convergence" id="toc-autres-résultats-de-convergence" class="nav-link" data-scroll-target="#autres-résultats-de-convergence"><span class="header-section-number">2.3</span> Autres résultats de convergence</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Séries numériques</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="convergence-dune-série-numérique" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="convergence-dune-série-numérique"><span class="header-section-number">2.1</span> Convergence d’une série numérique</h2>
+<section id="définitions" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="définitions"><span class="header-section-number">2.1.1</span> Définitions</h3>
+<div id="def-serie" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 2.1</strong></span> Soit <span class="math inline">\((u_n)_{n\geqslant n_0}\)</span> une suite de <span class="math inline">\(\mathbb{K}\)</span>. On appelle <strong>série de terme général <span class="math inline">\(u_n\)</span>, <span class="math inline">\(n\geqslant n_0\)</span></strong>, et on note <span class="math inline">\(\displaystyle
+\sum_{n\geqslant n_0}u_n\)</span> la suite <span class="math inline">\((S_n)_{n\geqslant n_0}\)</span> des <strong>sommes partielles</strong> définies par</p>
+<p><span class="math display">\[
+\forall n\geqslant n_0,\quad S_n = \sum_{k=n_0}^{n}u_k.
+\]</span></p>
+<p>On dit que la série <span class="math inline">\(\displaystyle \sum_{n\geqslant n_0}u_n\)</span> <strong>converge</strong> si la suite de ses sommes partielles <span class="math inline">\((S_n)_{n\geqslant n_0}\)</span> admet une limite finie. On note alors</p>
+<p><span class="math display">\[
+\sum_{n=n_0}^{+\infty}u_n = \lim_{n\to +\infty} \sum_{k=n_0}^{n}u_k.
+\]</span></p>
+<p>Le scalaire <span class="math inline">\(\displaystyle \sum_{n=n_0}^{+\infty}u_n\)</span> s’appelle la <strong>somme</strong> de la série <span class="math inline">\(\displaystyle\sum_{n\geqslant n_0}u_n\)</span>.</p>
+<p>Dans le cas contraire, on dit que la série <span class="math inline">\(\displaystyle\sum_{n\geqslant
+n_0}u_n\)</span> <strong>diverge</strong>. La convergence ou la divergence d’une série s’appelle sa <strong>nature</strong>.</p>
+</div>
+<div id="exm-nature-convergente" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 2.1</strong></span> La série de terme général <span class="math inline">\((\frac{1}{2^{n}})_{n \geqslant 0}\)</span> est convergente et sa somme vaut <span class="math inline">\(1\)</span>.</p>
+<details>
+<div>
+<p>Soit <span class="math inline">\(n \geqslant 1\)</span>. On a</p>
+<p><span class="math display">\[
+    \sum_{k=0}^{n} \frac{1}{2^{k}} = \frac{1-1/2^{n+1}}{1-1/2} \underset{n \to + \infty}{\longrightarrow} =2.
+\]</span></p>
+<p>Donc la série de terme général <span class="math inline">\((1/2^{n})_{n\in \mathbb{N}}\)</span> converge et <span class="math inline">\(\sum_{n=0}^{+\infty}\frac{1}{2^{n}}=2\)</span>.</p>
+</div>
+</details>
+</div>
+<div id="exm-nature-divergente" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 2.2</strong></span> La série de terme général <span class="math inline">\((n)_{n \in \mathbb{N}}\)</span> diverge.</p>
+<details>
+<div>
+<p>Pour <span class="math inline">\(n \geqslant 0\)</span>, on a</p>
+<p><span class="math display">\[
+    \sum_{k=0}^{n} k = \frac{n(n+1)}{2} \to +\infty \quad \text{quand $n
+\to +\infty$}.
+\]</span></p>
+<p>Donc la série de terme général <span class="math inline">\((n)_{n \in \mathbb{N}}\)</span> diverge.</p>
+</div>
+</details>
+</div>
+<p>Comme pour les intégrales, on dispose d’une relation de Chasle pour les séries numériques.</p>
+<div id="prp-chasles" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 2.1 (Relation de Chasles)</strong></span> Soit <span class="math inline">\((u_n)_{n\geqslant n_0}\)</span> une suite de <span class="math inline">\(\mathbb{K}\)</span>. Alors pour tout <span class="math inline">\(m\geqslant
+n_0\)</span>, les séries <span class="math inline">\(\sum_{n\geqslant n_0}u_n\)</span> et <span class="math inline">\(\sum_{n\geqslant m}u_n\)</span> ont <em>même nature</em> et, en cas de convergence, on a</p>
+<p><span class="math display">\[
+\sum_{n=n_0}^{+\infty} u_n = \sum_{n=n_0}^{m} u_n + \sum_{n=m_0+1}^{+\infty} u_n.
+\]</span></p>
+</div>
+<div id="nte-independance-premier-terme" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;2.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On résume le résultat précédent en disant que <em>la nature d’une série ne dépend pas de ses premiers termes</em>. Ainsi, tant qu’on ne parle que la <em>nature</em> d’une série, on peut se contenter de la noter <span class="math inline">\(\sum u_n\)</span>, sans préciser son point de départ.</p>
+</div>
+</div>
+<p>Pour les séries, il existe un lien simple entre la convergence de la série et la convergence de son terme général qui fournit une condition <em>nécessaire</em> de convergence.</p>
+<div id="prp-condition-necessaire" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 2.2</strong></span> Le terme général d’une série convergente tend nécessairement vers <span class="math inline">\(0\)</span>.</p>
+</div>
+<div id="wrn-reciproque" class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Avertissement&nbsp;2.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La réciproque est fausse ; ce n’est pas parce que le terme général d’un série tend vers <span class="math inline">\(0\)</span> que celle-ci converge.</p>
+<p>On montrera par exemple que la série harmonique <span class="math inline">\(\sum \frac{1}{n}\)</span> <em>diverge</em>, bien que <span class="math inline">\(\frac{1}{n}\)</span> tende vers <span class="math inline">\(0\)</span>.</p>
+</div>
+</div>
+<div id="def-grosierement-divergente" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 2.2</strong></span> On dit que qu’une série est <em>grossièrement divergente</em> si son terme général ne tend pas vers <span class="math inline">\(0\)</span>.</p>
+</div>
+<div id="exm-n" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 2.3</strong></span> La série <span class="math inline">\(\sum n\)</span> étudiée dans l’<a href="#exm-nature-divergente" class="quarto-xref">Exemple&nbsp;<span>2.2</span></a> est grossièrement divergente (le calcul explicite de ses sommes partielles n’est donc même pas nécessaire).</p>
+</div>
+<p>Sauf exception – essentiellement dans le cas des séries géométriques ou des séries télescopique – il n’est pas possible de calculer <em>explicitement</em> les sommes partielles d’une série (on ne dispose même de la notion de <em>primitive</em> utilisée en calcul intégrale). Il est donc tout aussi nécessaire de développer des théorèmes de comparaison pour les séries; c’est l’objectif de la <a href="#sec-serie-terme-positif" class="quarto-xref"><span>Section 2.2</span></a>.</p>
+<p>On peut néanmoins facilement <em>approximer</em> la somme d’une série convergente via ses sommes partielles qui, elles, sont calculables (au moins numériquement). La différence entre la somme totale et une somme partielle porte le nom de <em>reste</em>. Cette notion n’a bien sur de sens que dans le cas des séries convergentes.</p>
+<div id="def-reste" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 2.3</strong></span> Soit <span class="math inline">\(\sum_{n\geqslant n_0} u_n\)</span> une série convergente, de somme <span class="math inline">\(S\)</span>. Pour tout <span class="math inline">\(n \geqslant n_{0}\)</span>, on appelle <em>reste d’ordre <span class="math inline">\(n\)</span></em> de la série <span class="math inline">\(\sum_{n\geqslant n_0}u_n\)</span> la quantité</p>
+<p><span class="math display">\[
+R_n = S - S_n = \sum_{k=n+1}^{+\infty}u_k.
+\]</span></p>
+</div>
+<div id="prp-reste" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 2.3</strong></span> Le reste d’une série convergente tend vers <span class="math inline">\(0\)</span>.</p>
+</div>
+<div id="exm-reste-geometrique" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 2.4</strong></span> On a vu que la série <span class="math inline">\(\sum_{n \geqslant 0}\frac{1}{2^{n}}\)</span> était convergente. Pour tout <span class="math inline">\(n \geqslant  0\)</span>, son reste d’ordre <span class="math inline">\(n\)</span> est donné par</p>
+<p><span class="math display">\[
+\begin{aligned}
+    R_{n} &amp; = 2 - \sum_{k=0}^{n}\frac{1}{2^{k}}\\
+          &amp; = 2 - 2\left(1 - \frac{1}{2^{n}}\right)\\
+          &amp; = \frac{1}{2^{n+1}} \to 0.
+\end{aligned}
+\]</span></p>
+</div>
+<div id="nte-reste" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;2.2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Le reste <span class="math inline">\(R_{n}\)</span> représente l’<em>erreur algébrique</em> (i.e.&nbsp;avec signe) commise en approximant <span class="math inline">\(S\)</span> par <span class="math inline">\(S_n\)</span>. Il est donc intéressant de <em>majorer</em> <span class="math inline">\(R_{n}\)</span>, à défault d’être capable de le calculer explicitement (les séries alternées sont remarquables sur ce point).</p>
+</div>
+</div>
+</section>
+<section id="calculer-avec-des-séries-convergentes" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="calculer-avec-des-séries-convergentes"><span class="header-section-number">2.1.2</span> Calculer avec des séries convergentes</h3>
+<p>On s’intéresse maintenant aux propriétés qui permettent de <em>calculer</em> avec des séries convergentes. Comme pour les intégrales généralisées, ce sont les mêmes que celles de la somme usuelle, <em>sous réserve de convergence</em>.</p>
+<div id="prp-propriete-somme" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 2.4 (Propriétés de la somme)</strong></span> On suppose que les séries <span class="math inline">\(\sum_{n \geqslant n_{0}} u_{n}\)</span> et <span class="math inline">\(\sum_{n \geqslant n_{0}} v_n\)</span> convergent. Alors</p>
+<ol type="1">
+<li><p>pour tout <span class="math inline">\(\lambda \in \mathbb{K}\)</span>, la série <span class="math inline">\(\sum (u_{n}+\lambda v_{n})\)</span> converge et</p>
+<p><span class="math display">\[
+\sum_{k=n_{0}}^{+\infty} (u_{n}+ \lambda v_{n}) = \sum_{k=n_{0}}^{+\infty}
+u_{n} + \lambda\sum_{k=n_{0}}^{+\infty} v_{n},\quad \textit{(linéarité de la
+somme)}
+\]</span></p></li>
+<li><p>si <span class="math inline">\(\mathbb{K}=\mathbb{R}\)</span> et si</p></li>
+</ol>
+<p><span class="math display">\[
+    \forall n \geqslant n_{0},\quad u_{n}\leqslant v_{n},
+\]</span> alors</p>
+<p><span class="math display">\[
+    \sum_{k=n_{0}}^{+\infty} u_{n} \leqslant\sum_{k=n_{0}}^{+\infty}
+v_{n},\quad \textit{(croissance de la somme)}
+\]</span> 3. la relation de Chasles est satisfaite pour les séries convergentes.</p>
+</div>
+</section>
+<section id="séries-géométriques-et-séries-télescopiques" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="séries-géométriques-et-séries-télescopiques"><span class="header-section-number">2.1.3</span> Séries géométriques et séries télescopiques</h3>
+<p>Dans cette section, on étudie deux types de séries importantes pour lesquelles on est capable de calculer explicitement les sommes partielles et la somme en cas de convergence.</p>
+<div id="def-serie-geometrique" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 2.4</strong></span> On appelle <em>série géométrique</em> de <em>raison</em> <span class="math inline">\(q \in \mathbb{K}\)</span> la série de terme général <span class="math inline">\(q^{n}\)</span>.</p>
+</div>
+<div id="prp-serie-geometrique" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 2.5</strong></span> Soit <span class="math inline">\(q \in \mathbb{K}\)</span> avec <span class="math inline">\(q \neq 1\)</span>. Alors</p>
+<ol type="1">
+<li>pour tout <span class="math inline">\(n \in \mathbb{N}\)</span>,</li>
+</ol>
+<p><span class="math display">\[
+    \sum_{k=0}^{n}q^{k} = \frac{1-q^{n+1}}{1-q},
+\]</span></p>
+<ol start="2" type="1">
+<li>la série <span class="math inline">\(\sum q^{n}\)</span> converge ssi <span class="math inline">\(|q|&lt;1\)</span> et, dans ce cas,</li>
+</ol>
+<p><span class="math display">\[
+    \sum_{n=0}^{+\infty} q^{n} = \frac{1}{1-q}.
+\]</span></p>
+</div>
+<div id="rem-cas-q-egal-un" class="proof remark">
+<p><span class="proof-title"><em>Remarque 2.1</em>. </span>Le cas <span class="math inline">\(q=1\)</span> est simple ; la série est grossièrement divergente et <span class="math display">\[
+    \forall n \in \mathbb{N},\quad \sum_{k=0}^{n}q^{k} = \sum_{k=0}^{n}1 = n+1.
+\]</span></p>
+</div>
+<div id="tip-autre-resultat-geometrique" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce&nbsp;2.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On retrouve tous les autres résultats relatifs aux séries géométriques dont le premier terme n’est pas égal à <span class="math inline">\(q^{0}=1\)</span> en <em>mettant en facteur par le premier terme de la somme</em>.</p>
+</div>
+</div>
+<div id="exm-depart" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 2.5</strong></span> Si <span class="math inline">\(q \neq 1\)</span>, on a</p>
+<p><span class="math display">\[
+    \forall n \geqslant 1,\quad \sum_{k=1}^{n}q^{k} = q \sum_{k=0}^{n-1}q^{k} = q \frac{1-q^{n}}{1-q}.
+\]</span></p>
+<p>Plus généralement, pour tout <span class="math inline">\(n \geqslant m\)</span>, on a <span class="math display">\[
+    \begin{aligned}
+        \sum_{k=m}^{n}q^{k} = q^{m} \sum_{k=0}^{n-m}q^{k} = q^{m}\frac{1-q^{n-m}}{1-q}.
+    \end{aligned}
+\]</span></p>
+</div>
+<p>Cette technique permet aussi de calculer explicitement les restes des séries géométriques convergentes:</p>
+<div id="exm-reste-geometrique" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 2.6</strong></span> Soit <span class="math inline">\(q \in \mathbb{K}\)</span> avec <span class="math inline">\(|q|&lt;1\)</span>. Alors</p>
+<p><span class="math display">\[ \forall n \geqslant 0, \sum_{k=n+1}^{+\infty} q^{k} =
+q^{n+1}\sum_{k=0}^{+\infty} q^{k} = \frac{q^{n+1}}{1-q}. \]</span></p>
+</div>
+<p>Les deux exemples précédents ne sont pas à connaître par coeur, mais il faut être capable de les retrouver très rapidement.</p>
+<div id="exm-exponentielle-decroissante" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 2.7</strong></span> Nature de la série <span class="math inline">\(\sum e^{-\alpha n}\)</span> pour <span class="math inline">\(\alpha \in \mathbb{R}\)</span>.</p>
+<details>
+<div>
+<p>Il s’agit d’une série géométrique de raison <span class="math inline">\(e^{-\alpha}\)</span>. Celle si converge ssi <span class="math inline">\(|e^{-\alpha}| = e^{-\alpha}&lt;1\)</span> i.e.&nbsp;<span class="math inline">\(\alpha&gt;0\)</span>.</p>
+<p>Dans ce cas, on a d’ailleurs</p>
+<p><span class="math display">\[
+    \sum_{n=0}^{+\infty}e^{-\alpha n}= \frac{1}{1- \alpha}.
+\]</span></p>
+</div>
+</details>
+</div>
+<p>Les <em>séries telescopiques</em> sont un autre exemple – fréquent en pratique – de séries dont on sait calculer les sommes parielles.</p>
+<div id="def-serie-telescopique" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 2.5</strong></span> Une <strong>série telescopique</strong> est une série de la forme <span class="math inline">\(\sum (u_{n+1}-u_n)\)</span>, où <span class="math inline">\((u_{n})\)</span> est une suite de <span class="math inline">\(\mathbb{K}\)</span>.</p>
+</div>
+<div id="thm-serie-telescopique" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 2.1</strong></span> La série telescopique <span class="math inline">\(\sum (u_{n+1}-u_{n})\)</span> converge ssi la <em>suite</em> <span class="math inline">\((u_{n})_{n
+\in \mathbb{N}}\)</span> converge.</p>
+</div>
+<div id="rem-nouvel-outil" class="proof remark">
+<p><span class="proof-title"><em>Remarque 2.2</em>. </span>Ce théorème est un nouvel outil pour étudier la convergence d’une suite: pour montrer qu’une <em>suite</em> converge, on pourra s’intéresser à la <em>série</em> de ses <em>différences</em>. C’est une approche souvent très fructueuse car on dispose de théorèmes efficaces pour montrer la convergence d’une série.</p>
+</div>
+<div id="exm-telescopique" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 2.8</strong></span> Convergence et somme de la série <span class="math inline">\(\sum_{n\geqslant 1}\frac{1}{n(n+1)}\)</span>.</p>
+<details>
+<div>
+<p>On remarque que</p>
+<p><span class="math display">\[
+    \forall n \in \mathbb{N}^{*},\ \frac{1}{n(n+1)} =
+\frac{1}{n}-\frac{1}{n+1}.
+\]</span></p>
+<p>La série <span class="math inline">\(\sum_{n \geqslant 1}\frac{1}{n(n+1)}\)</span> est donc une série <em>télescopique</em>, qui converge car <span class="math inline">\(\frac{1}{n+1}\)</span> converge lorsque <span class="math inline">\(n
+\to +\infty\)</span>. De plus, par telescopage,</p>
+<p><span class="math display">\[
+\forall n \geqslant 1,\ \sum_{k=0}^{n}\frac{1}{k(k+1)} = \frac{1}{n+1}-
+1 \to 1 \quad \text{quand $n \to +\infty$.}
+\]</span></p>
+<p>Donc <span class="math inline">\(\displaystyle\sum_{n=1}^{+\infty}\frac{1}{n(n+1)}=1\)</span>.</p>
+</div>
+</details>
+</div>
+<div id="nte-theorem-fondamental-analyse" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;2.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On peut voir dans l’égalité</p>
+<p><span class="math display">\[
+    \sum_{k=0}^{n} (u_{k+1}-u_{k}) = u_{n+1}-u_0
+\]</span></p>
+<p>un cas particulier discret du théorème fondamentale de l’analyse qui affirme que si <span class="math inline">\(f\)</span> est une fonction de classe <span class="math inline">\(C^{1}\)</span> sur <span class="math inline">\([a,b]\)</span>, alors</p>
+<p><span class="math display">\[
+    \int_{a}^{b}f'(t)dt = f(b)-f(a),
+\]</span></p>
+<p>la différence <span class="math inline">\(u_{n+1}-u_{n}\)</span> jouant le rôle de la dérivée de <span class="math inline">\(f\)</span> ; dans les deux cas, le calcul de la somme partielle est immédiat !</p>
+<p>On reverra ce type d’analogie en TD avec la transformation d’Abel, qui est aux sommes ce que l’intégration par parties est aux intégrales.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-serie-terme-positif" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sec-serie-terme-positif"><span class="header-section-number">2.2</span> Séries à termes positifs</h2>
+<p>Dans cette section, on démontre le théorème de comparaison pour les séries à termes positifs. De même que dans le cas des intégrales, ce théorème permettra de démontrer la convergence d’une série sans avoir à calculer explicitement ses sommes partielles.</p>
+<p>A noter une différence importante avec les intégrales généralisées ; la notion d’intégrabilité n’est pas au programme pour les suites. Il faudra donc systématiquement se ramener à des séries <em>positives</em> ou au moins <em>de signe constant</em> au voisinage de <span class="math inline">\(+\infty\)</span>.</p>
+<p>Comme pour les intégrales, le théorème de comparaison que nous allons démontrer repose sur le théorème de la limite monotone, via le <a href="#lem-croissante-majore" class="quarto-xref">Lemme&nbsp;<span>2.1</span></a>.</p>
+<div id="def-serie-terme-positif" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 2.6</strong></span> On dit qu’une série est à <strong>termes positifs</strong> si son terme général est positif ou nul.</p>
+</div>
+<div id="lem-croissante-majore" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemme 2.1</strong></span> Si la serie <span class="math inline">\(\sum u_{n}\)</span> est à termes <em>positifs</em>, la suite de ses sommes partielles est <em>croissante</em>. La série <span class="math inline">\(\sum u_{n}\)</span> est donc convergente ssi ses sommes partielles sont <em>majorées</em>.</p>
+</div>
+<div id="thm-comparaison-serie-terme-positif" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 2.2</strong></span> Soient <span class="math inline">\(\sum u_{n}\)</span> et <span class="math inline">\(\sum v_{n}\)</span> deux séries à termes <em>positifs</em>. Alors</p>
+<ol type="1">
+<li>si <span class="math inline">\(u_{n} \leqslant Av_{n}\)</span> avec <span class="math inline">\(A \geqslant 0\)</span>, et si la série <span class="math inline">\(\sum v_{n}\)</span> converge, alors <span class="math inline">\(\sum u_{n}\)</span> converge,</li>
+<li>si <span class="math inline">\(u_{n}=o(v_{n})\)</span> et si <span class="math inline">\(\sum v_{n}\)</span> converge, alors <span class="math inline">\(\sum u_{n}\)</span> converge,</li>
+<li>si <span class="math inline">\(u_{n} \sim v_{n}\)</span>, alors les séries <span class="math inline">\(\sum u_{n}\)</span> et <span class="math inline">\(\sum v_{n}\)</span> ont même nature.</li>
+</ol>
+</div>
+<div id="nte-voisinage">
+<p>Puisque la nature d’une série ne dépend pas de ses premiers termes, il suffit que les hypothèses du théorème soient satisfaites <em>pour <span class="math inline">\(n\)</span> assez grand</em>.</p>
+<p>Rappelons à cette occasion que les équivalents <em>préseservent les signes</em> . Ainsi, si <span class="math inline">\(u_{n} \sim v_{n}\)</span> et si <span class="math inline">\(u_{n} \geqslant 0\)</span> pour <span class="math inline">\(n\)</span> assez grand, alors <span class="math inline">\(v_{n}\)</span> sera également positive ou nulle au voisinage de <span class="math inline">\(+\infty\)</span>.</p>
+</div>
+<div id="exm-comparaison-1" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 2.9</strong></span> Nature de la série <span class="math inline">\(\sum \ln \left(1+\frac{1}{2^{n}}\right)\)</span>.</p>
+<details>
+<div>
+<p>Puisque <span class="math inline">\(\frac{1}{2^{n}}\to 0\)</span> quand <span class="math inline">\(n \to +\infty\)</span>, on a</p>
+<p><span class="math display">\[
+    \ln \left(1+\frac{1}{2^{n}}\right) \sim \frac{1}{2^{n}} \geqslant 0.
+\]</span></p>
+<p>De plus, la série <span class="math inline">\(\sum \frac{1}{2^{n}}\)</span> est une série géométrique convergente car <span class="math inline">\(\left|\frac{1}{2}\right|&lt;1\)</span>.</p>
+<p>Donc par comparaison, la série <span class="math inline">\(\sum \ln\frac{1}{2^{n}}\)</span> converge.</p>
+</div>
+</details>
+</div>
+<p>Pour pouvoir appliquer efficacement les théorèmes de comparaison, il faut un certain nombre de séries de référence. Les séries géométriques et télescopiques ne permettent pas de couvrir suffisamment de cas en pratique. Il faut pouvoir dire quelque chose de la nature des séries de Riemann de la forme <span class="math inline">\(\sum
+\frac{1}{n^\alpha}\)</span>. Contrairement au cas des intégrales de Riemann, on ne peux pas calculer explicitement les sommes partielles de ces séries. On se ramène au cas des intégrales via le résultat suivant.</p>
+<div id="thm-comparaison-integrale" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 2.3</strong></span> Si <span class="math inline">\(f:[n_0,+\infty[\to \mathbb{R}\)</span> est une fonction positive, continue et décroissante, alors la série <span class="math inline">\(\displaystyle \sum_{n\geqslant n_0} f(n)\)</span> et l’intégrale <span class="math inline">\(\int_{n_0}^{+\infty}f(t)dt\)</span> ont même nature.</p>
+</div>
+<div id="nte-comparaison-integrale" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;2.4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Le coeur de la démonstration repose sur l’encadrement <span class="math display">\[
+   \forall k \geqslant n_{0}+1,\ \int_{k}^{k+1} f(t)dt \leqslant f(k) \leqslant \int_{k-1}^{k}f(t)dt,
+\]</span></p>
+<p>ou, de manière équivalente,</p>
+<p><span class="math display">\[
+    \forall k \geqslant n_{0},\ f(k) \leqslant \int_{k}^{k+1}f(t)dt \leqslant f(k+1).
+\]</span></p>
+<p>Ces deux encadrements sont très clairs graphiquement (???).</p>
+<p>Il faut être capable de les <em>redémontrer</em> rapidement en utilisant la <em>monotonie</em> de la fonction <span class="math inline">\(f\)</span>, et de les adapter au cas d’une fonction <em>croissante</em>.</p>
+<p>C’est une technique usuelle et très efficace pour étudier les restes des séries convergentes, ou les sommes partielles des séries divergentes. De nombreux exemples seront vus en TD.</p>
+</div>
+</div>
+<div id="prp-serie-riemann" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 2.6 (Séries de Riemann)</strong></span> Soit <span class="math inline">\(\alpha \in \mathbb{R}\)</span>. Alors la série <span class="math inline">\(\sum \frac{1}{n^{\alpha}}\)</span> converge ssi <span class="math inline">\(\alpha&gt;1\)</span>.</p>
+</div>
+<div id="exm-harmonique" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 2.10</strong></span> La série <em>harmonique</em> <span class="math inline">\(\sum \frac{1}{n}\)</span> diverge, mais la série <span class="math inline">\(\sum
+\frac{1}{n^{2}}\)</span> converge.</p>
+</div>
+<p>Comme pour le théorème de comparaison de fonctions positives, les théorèmes de comparaison pour les séries à termes positifs restent incapables de traiter les séries à termes complexes, ou les séries dont le terme général n’est pas de signe constant au voisinage de <span class="math inline">\(+\infty\)</span>.</p>
+<p>Le remède est le même que pour les intégrales, via la notion de séries <em>absolument convergentes</em>.</p>
+<div id="def-serie-absolument-convergente" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 2.7</strong></span> On dit que la série <span class="math inline">\(\sum u_{n}\)</span> est <strong>absolument convergente</strong> si a série <span class="math inline">\(\sum |u_{n}|\)</span> converge.</p>
+</div>
+<div id="prp-absolue-convergence" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 2.7</strong></span> Si une série est absolument convergente, elle est convergente.</p>
+</div>
+<p>Ce résultat, combiné au théorème de comparaison de séries à termes positifs, permet de résoudre la pluspart des cas rencontrés en pratique.</p>
+<div id="exm-abolue-convergence" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 2.11</strong></span> Nature de la série <span class="math inline">\(\sum \frac{\cos n}{n^{2}}\)</span>.</p>
+<details>
+<div>
+<p>On a</p>
+<p><span class="math display">\[
+    \forall n \geqslant 1,\ \left|\frac{\cos n}{n^{2}}\right| \leqslant
+\frac{1}{n^{2}}.
+\]</span></p>
+<p>De plus, la série <span class="math inline">\(\sum \frac{1}{n^{2}}\)</span> est une série de Riemann convergente. Donc par comparaison de séries à termes positifs, la série <span class="math inline">\(\sum \frac{\cos
+n}{n^{2}}\)</span> converge <em>absoluement</em>, donc converge.</p>
+</div>
+</details>
+</div>
+<div id="rem-integrable" class="proof remark">
+<p><span class="proof-title"><em>Remarque 2.3</em>. </span>Contrairement au cas des fonctions, on ne dispose pas en TSI de la notion de suite <em>intégrable</em>. La situation est donc comparativement plus simple ; on se ramenera systématiquement à la notion d’absolue convergence, au travers <em>un seul</em> théorème de comparaison.</p>
+</div>
+</section>
+<section id="autres-résultats-de-convergence" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="autres-résultats-de-convergence"><span class="header-section-number">2.3</span> Autres résultats de convergence</h2>
+<p>critère de d’Alembert, série alternée</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copié");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copié");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./01-integrales-generalisees.html" class="pagination-link" aria-label="Intégrales généralisées">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intégrales généralisées</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./colles.html" class="pagination-link" aria-label="Programmes de colle">
+        <span class="nav-page-text">Programmes de colle</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
