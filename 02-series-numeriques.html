@@ -206,7 +206,16 @@ window.Quarto = {
   <li><a href="#séries-géométriques-et-séries-télescopiques" id="toc-séries-géométriques-et-séries-télescopiques" class="nav-link" data-scroll-target="#séries-géométriques-et-séries-télescopiques"><span class="header-section-number">2.1.3</span> Séries géométriques et séries télescopiques</a></li>
   </ul></li>
   <li><a href="#sec-serie-terme-positif" id="toc-sec-serie-terme-positif" class="nav-link" data-scroll-target="#sec-serie-terme-positif"><span class="header-section-number">2.2</span> Séries à termes positifs</a></li>
-  <li><a href="#autres-résultats-de-convergence" id="toc-autres-résultats-de-convergence" class="nav-link" data-scroll-target="#autres-résultats-de-convergence"><span class="header-section-number">2.3</span> Autres résultats de convergence</a></li>
+  <li><a href="#autres-résultats-de-convergence" id="toc-autres-résultats-de-convergence" class="nav-link" data-scroll-target="#autres-résultats-de-convergence"><span class="header-section-number">2.3</span> Autres résultats de convergence</a>
+  <ul class="collapse">
+  <li><a href="#le-critère-de-dalembert" id="toc-le-critère-de-dalembert" class="nav-link" data-scroll-target="#le-critère-de-dalembert"><span class="header-section-number">2.3.1</span> Le critère de d’Alembert</a></li>
+  </ul></li>
+  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
+  <ul class="collapse">
+  <li><a href="#convergence-dune-série-numérique-1" id="toc-convergence-dune-série-numérique-1" class="nav-link" data-scroll-target="#convergence-dune-série-numérique-1"><span class="header-section-number">2.3.2</span> Convergence d’une série numérique</a></li>
+  <li><a href="#séries-à-termes-positifs" id="toc-séries-à-termes-positifs" class="nav-link" data-scroll-target="#séries-à-termes-positifs"><span class="header-section-number">2.3.3</span> Séries à termes positifs</a></li>
+  <li><a href="#autres-résultats-de-convergence-1" id="toc-autres-résultats-de-convergence-1" class="nav-link" data-scroll-target="#autres-résultats-de-convergence-1"><span class="header-section-number">2.3.4</span> Autres résultats de convergence</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -296,9 +305,13 @@ Note&nbsp;2.1
 <p>On résume le résultat précédent en disant que <em>la nature d’une série ne dépend pas de ses premiers termes</em>. Ainsi, tant qu’on ne parle que la <em>nature</em> d’une série, on peut se contenter de la noter <span class="math inline">\(\sum u_n\)</span>, sans préciser son point de départ.</p>
 </div>
 </div>
-<p>Pour les séries, il existe un lien simple entre la convergence de la série et la convergence de son terme général qui fournit une condition <em>nécessaire</em> de convergence.</p>
+<p>Dans le cas des séries, il existe un lien simple entre le terme général et les sommes partielles, qui s’obtient par <em>telescopage</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>:</p>
+<p><span class="math display">\[
+    \forall n &gt; n_{0}, u_{n} = \sum_{k=n_{0}}^{n} - \sum_{k=n_{0}}^{n-1}.
+\]</span></p>
+<p>Cette égalité mène la condition <em>nécessaire</em> de convergence suivante.</p>
 <div id="prp-condition-necessaire" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 2.2</strong></span> Le terme général d’une série convergente tend nécessairement vers <span class="math inline">\(0\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 2.2 (Une condition nécessaire de convergence)</strong></span> Le terme général d’une série convergente tend nécessairement vers <span class="math inline">\(0\)</span>.</p>
 </div>
 <div id="wrn-reciproque" class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -321,12 +334,22 @@ Avertissement&nbsp;2.1
 <p><span class="theorem-title"><strong>Exemple 2.3</strong></span> La série <span class="math inline">\(\sum n\)</span> étudiée dans l’<a href="#exm-nature-divergente" class="quarto-xref">Exemple&nbsp;<span>2.2</span></a> est grossièrement divergente (le calcul explicite de ses sommes partielles n’est donc même pas nécessaire).</p>
 </div>
 <p>Sauf exception – essentiellement dans le cas des séries géométriques ou des séries télescopique – il n’est pas possible de calculer <em>explicitement</em> les sommes partielles d’une série (on ne dispose même de la notion de <em>primitive</em> utilisée en calcul intégrale). Il est donc tout aussi nécessaire de développer des théorèmes de comparaison pour les séries; c’est l’objectif de la <a href="#sec-serie-terme-positif" class="quarto-xref"><span>Section 2.2</span></a>.</p>
-<p>On peut néanmoins facilement <em>approximer</em> la somme d’une série convergente via ses sommes partielles qui, elles, sont calculables (au moins numériquement). La différence entre la somme totale et une somme partielle porte le nom de <em>reste</em>. Cette notion n’a bien sur de sens que dans le cas des séries convergentes.</p>
+<p>On peut néanmoins facilement <em>approximer</em> la somme d’une série convergente via ses sommes partielles qui, elles, sont calculables (au moins numériquement). La différence entre la somme totale et une somme partielle porte le nom de <em>reste</em>. Cette notion de sens que pour les séries convergentes.</p>
 <div id="def-reste" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 2.3</strong></span> Soit <span class="math inline">\(\sum_{n\geqslant n_0} u_n\)</span> une série convergente, de somme <span class="math inline">\(S\)</span>. Pour tout <span class="math inline">\(n \geqslant n_{0}\)</span>, on appelle <em>reste d’ordre <span class="math inline">\(n\)</span></em> de la série <span class="math inline">\(\sum_{n\geqslant n_0}u_n\)</span> la quantité</p>
 <p><span class="math display">\[
 R_n = S - S_n = \sum_{k=n+1}^{+\infty}u_k.
 \]</span></p>
+<div id="fig-reste" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-reste-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./tikz/svg/02-2a.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reste-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: Le reste d’une série convergente, définit par <span class="math inline">\(S = S_{n} + R_{n}\)</span>.
+</figcaption>
+</figure>
+</div>
 </div>
 <div id="prp-reste" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 2.3</strong></span> Le reste d’une série convergente tend vers <span class="math inline">\(0\)</span>.</p>
@@ -336,8 +359,8 @@ R_n = S - S_n = \sum_{k=n+1}^{+\infty}u_k.
 <p><span class="math display">\[
 \begin{aligned}
     R_{n} &amp; = 2 - \sum_{k=0}^{n}\frac{1}{2^{k}}\\
-          &amp; = 2 - 2\left(1 - \frac{1}{2^{n}}\right)\\
-          &amp; = \frac{1}{2^{n+1}} \to 0.
+          &amp; = 2 - 2\left(1 - \frac{1}{2^{n+1}}\right)\\
+          &amp; = \frac{1}{2^{n}} \to 0.
 \end{aligned}
 \]</span></p>
 </div>
@@ -380,17 +403,24 @@ v_{n},\quad \textit{(croissance de la somme)}
 </section>
 <section id="séries-géométriques-et-séries-télescopiques" class="level3" data-number="2.1.3">
 <h3 data-number="2.1.3" class="anchored" data-anchor-id="séries-géométriques-et-séries-télescopiques"><span class="header-section-number">2.1.3</span> Séries géométriques et séries télescopiques</h3>
-<p>Dans cette section, on étudie deux types de séries importantes pour lesquelles on est capable de calculer explicitement les sommes partielles et la somme en cas de convergence.</p>
+<p>Dans cette section, on étudie deux types de séries très importantes pour lesquelles on est capable de calculer explicitement les sommes partielles et la somme en cas de convergence.</p>
 <div id="def-serie-geometrique" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 2.4</strong></span> On appelle <em>série géométrique</em> de <em>raison</em> <span class="math inline">\(q \in \mathbb{K}\)</span> la série de terme général <span class="math inline">\(q^{n}\)</span>.</p>
 </div>
+<div id="exm-serie-geometrique" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 2.5</strong></span> La série <span class="math inline">\(\sum \frac{1}{2^{n}}\)</span> est une série géométrique de raison <span class="math inline">\(\frac{1}{2}\)</span>.</p>
+</div>
+<p>Les séries exponentielles sont englobées dans les séries géométriques.</p>
+<div id="exm-serie-geometrique-2" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 2.6</strong></span> Pour tout <span class="math inline">\(\alpha \in \mathbb{R}\)</span>, la série <span class="math inline">\(\sum e^{-\alpha n}\)</span> est une série géométrique de raison <span class="math inline">\(e^{-\alpha}\)</span>.</p>
+</div>
 <div id="prp-serie-geometrique" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 2.5</strong></span> Soit <span class="math inline">\(q \in \mathbb{K}\)</span> avec <span class="math inline">\(q \neq 1\)</span>. Alors</p>
+<p><span class="theorem-title"><strong>Proposition 2.5</strong></span> Soit <span class="math inline">\(q \in \mathbb{K}\)</span>. Alors</p>
 <ol type="1">
-<li>pour tout <span class="math inline">\(n \in \mathbb{N}\)</span>,</li>
+<li>si <span class="math inline">\(q \neq 1\)</span>, on a</li>
 </ol>
 <p><span class="math display">\[
-    \sum_{k=0}^{n}q^{k} = \frac{1-q^{n+1}}{1-q},
+    \forall n \geqslant 0,\ \sum_{k=0}^{n}q^{k} = \frac{1-q^{n+1}}{1-q},
 \]</span></p>
 <ol start="2" type="1">
 <li>la série <span class="math inline">\(\sum q^{n}\)</span> converge ssi <span class="math inline">\(|q|&lt;1\)</span> et, dans ce cas,</li>
@@ -418,7 +448,7 @@ Astuce&nbsp;2.1
 </div>
 </div>
 <div id="exm-depart" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 2.5</strong></span> Si <span class="math inline">\(q \neq 1\)</span>, on a</p>
+<p><span class="theorem-title"><strong>Exemple 2.7</strong></span> Si <span class="math inline">\(q \neq 1\)</span>, on a</p>
 <p><span class="math display">\[
     \forall n \geqslant 1,\quad \sum_{k=1}^{n}q^{k} = q \sum_{k=0}^{n-1}q^{k} = q \frac{1-q^{n}}{1-q}.
 \]</span></p>
@@ -430,13 +460,13 @@ Astuce&nbsp;2.1
 </div>
 <p>Cette technique permet aussi de calculer explicitement les restes des séries géométriques convergentes:</p>
 <div id="exm-reste-geometrique" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 2.6</strong></span> Soit <span class="math inline">\(q \in \mathbb{K}\)</span> avec <span class="math inline">\(|q|&lt;1\)</span>. Alors</p>
+<p><span class="theorem-title"><strong>Exemple 2.8</strong></span> Soit <span class="math inline">\(q \in \mathbb{K}\)</span> avec <span class="math inline">\(|q|&lt;1\)</span>. Alors</p>
 <p><span class="math display">\[ \forall n \geqslant 0, \sum_{k=n+1}^{+\infty} q^{k} =
 q^{n+1}\sum_{k=0}^{+\infty} q^{k} = \frac{q^{n+1}}{1-q}. \]</span></p>
 </div>
 <p>Les deux exemples précédents ne sont pas à connaître par coeur, mais il faut être capable de les retrouver très rapidement.</p>
 <div id="exm-exponentielle-decroissante" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 2.7</strong></span> Nature de la série <span class="math inline">\(\sum e^{-\alpha n}\)</span> pour <span class="math inline">\(\alpha \in \mathbb{R}\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemple 2.9</strong></span> Nature de la série <span class="math inline">\(\sum e^{-\alpha n}\)</span> pour <span class="math inline">\(\alpha \in \mathbb{R}\)</span>.</p>
 <details>
 <div>
 <p>Il s’agit d’une série géométrique de raison <span class="math inline">\(e^{-\alpha}\)</span>. Celle si converge ssi <span class="math inline">\(|e^{-\alpha}| = e^{-\alpha}&lt;1\)</span> i.e.&nbsp;<span class="math inline">\(\alpha&gt;0\)</span>.</p>
@@ -459,7 +489,7 @@ q^{n+1}\sum_{k=0}^{+\infty} q^{k} = \frac{q^{n+1}}{1-q}. \]</span></p>
 <p><span class="proof-title"><em>Remarque 2.2</em>. </span>Ce théorème est un nouvel outil pour étudier la convergence d’une suite: pour montrer qu’une <em>suite</em> converge, on pourra s’intéresser à la <em>série</em> de ses <em>différences</em>. C’est une approche souvent très fructueuse car on dispose de théorèmes efficaces pour montrer la convergence d’une série.</p>
 </div>
 <div id="exm-telescopique" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 2.8</strong></span> Convergence et somme de la série <span class="math inline">\(\sum_{n\geqslant 1}\frac{1}{n(n+1)}\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemple 2.10</strong></span> Convergence et somme de la série <span class="math inline">\(\sum_{n\geqslant 1}\frac{1}{n(n+1)}\)</span>.</p>
 <details>
 <div>
 <p>On remarque que</p>
@@ -525,7 +555,7 @@ Note&nbsp;2.3
 <p>Rappelons à cette occasion que les équivalents <em>préseservent les signes</em> . Ainsi, si <span class="math inline">\(u_{n} \sim v_{n}\)</span> et si <span class="math inline">\(u_{n} \geqslant 0\)</span> pour <span class="math inline">\(n\)</span> assez grand, alors <span class="math inline">\(v_{n}\)</span> sera également positive ou nulle au voisinage de <span class="math inline">\(+\infty\)</span>.</p>
 </div>
 <div id="exm-comparaison-1" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 2.9</strong></span> Nature de la série <span class="math inline">\(\sum \ln \left(1+\frac{1}{2^{n}}\right)\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemple 2.11</strong></span> Nature de la série <span class="math inline">\(\sum \ln \left(1+\frac{1}{2^{n}}\right)\)</span>.</p>
 <details>
 <div>
 <p>Puisque <span class="math inline">\(\frac{1}{2^{n}}\to 0\)</span> quand <span class="math inline">\(n \to +\infty\)</span>, on a</p>
@@ -562,13 +592,40 @@ Note&nbsp;2.4
 <p>Ces deux encadrements sont très clairs graphiquement (???).</p>
 <p>Il faut être capable de les <em>redémontrer</em> rapidement en utilisant la <em>monotonie</em> de la fonction <span class="math inline">\(f\)</span>, et de les adapter au cas d’une fonction <em>croissante</em>.</p>
 <p>C’est une technique usuelle et très efficace pour étudier les restes des séries convergentes, ou les sommes partielles des séries divergentes. De nombreux exemples seront vus en TD.</p>
+<div id="fig-encadrement" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-encadrement-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./tikz/svg/02-1a.svg" class="img-fluid figure-img"></p>
+<figcaption>L’encadrement <span class="math inline">\(\int_{k}^{k+1} f(t)dt \leqslant f(k) \leqslant \int_{k-1}^{k}f(t)dt\)</span></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./tikz/svg/02-1b.svg" class="img-fluid figure-img"></p>
+<figcaption>f(k) _{k}^{k+1}f(t)dt f(k+1)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-encadrement-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: Les deux versions de l’encadrement.
+</figcaption>
+</figure>
+</div>
 </div>
 </div>
 <div id="prp-serie-riemann" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 2.6 (Séries de Riemann)</strong></span> Soit <span class="math inline">\(\alpha \in \mathbb{R}\)</span>. Alors la série <span class="math inline">\(\sum \frac{1}{n^{\alpha}}\)</span> converge ssi <span class="math inline">\(\alpha&gt;1\)</span>.</p>
 </div>
 <div id="exm-harmonique" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 2.10</strong></span> La série <em>harmonique</em> <span class="math inline">\(\sum \frac{1}{n}\)</span> diverge, mais la série <span class="math inline">\(\sum
+<p><span class="theorem-title"><strong>Exemple 2.12</strong></span> La série <em>harmonique</em> <span class="math inline">\(\sum \frac{1}{n}\)</span> diverge, mais la série <span class="math inline">\(\sum
 \frac{1}{n^{2}}\)</span> converge.</p>
 </div>
 <p>Comme pour le théorème de comparaison de fonctions positives, les théorèmes de comparaison pour les séries à termes positifs restent incapables de traiter les séries à termes complexes, ou les séries dont le terme général n’est pas de signe constant au voisinage de <span class="math inline">\(+\infty\)</span>.</p>
@@ -581,7 +638,7 @@ Note&nbsp;2.4
 </div>
 <p>Ce résultat, combiné au théorème de comparaison de séries à termes positifs, permet de résoudre la pluspart des cas rencontrés en pratique.</p>
 <div id="exm-abolue-convergence" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 2.11</strong></span> Nature de la série <span class="math inline">\(\sum \frac{\cos n}{n^{2}}\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemple 2.13</strong></span> Nature de la série <span class="math inline">\(\sum \frac{\cos n}{n^{2}}\)</span>.</p>
 <details>
 <div>
 <p>On a</p>
@@ -600,9 +657,284 @@ n}{n^{2}}\)</span> converge <em>absoluement</em>, donc converge.</p>
 </section>
 <section id="autres-résultats-de-convergence" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="autres-résultats-de-convergence"><span class="header-section-number">2.3</span> Autres résultats de convergence</h2>
-<p>critère de d’Alembert, série alternée</p>
+<p>Les deux résultats présentés dans cette section sont propres aux séries. Le premier sera surtout utilisé dans le chapitre sur les séries entières. Le second permet d’étudier les séries dont le signe du terme général <em>alterne</em>. Il est surtout intéressant pour l’encadrement explicite qu’il fournit de la somme à l’aide des sommes partielles.</p>
+<section id="le-critère-de-dalembert" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="le-critère-de-dalembert"><span class="header-section-number">2.3.1</span> Le critère de d’Alembert</h3>
+<p>Le critère de d’Alembert s’applique aux séries à termes <em>strictement</em> positifs. Il est particulièrement adapté aux séries dont le terme général s’exprime à l’aide de <em>quotients</em> et de <em>produits</em>.</p>
+<div id="thm-critere-alembert" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 2.4 (Critère de d’Alembert)</strong></span> Soit <span class="math inline">\((u_{n})\)</span> une suite de réels <em>strictement positifs</em>. On suppose que le quotient <span class="math inline">\(\frac{u_{n+1}}{u_{n}}\)</span> tend vers une limite finie <span class="math inline">\(\lambda \geqslant
+0\)</span>. Alors</p>
+<ol type="1">
+<li>si <span class="math inline">\(\lambda &gt; 1\)</span>, la série <span class="math inline">\(\sum u_{n}\)</span> diverge grossièrement,</li>
+<li>si <span class="math inline">\(0 \leqslant \lambda &lt; 1\)</span>, la série <span class="math inline">\(\sum u_{n}\)</span> converge,</li>
+<li>si <span class="math inline">\(\lambda = 1\)</span>, le critère de d’Alembert ne permet pas de conclure.</li>
+</ol>
+</div>
+<div id="rem-signe-quelconque" class="proof remark">
+<p><span class="proof-title"><em>Remarque 2.4</em>. </span>Si une suite <span class="math inline">\((u_{n})\)</span> ne s’annule pas, on peut toujours appliquer le critère de d’Alembert à la suite <span class="math inline">\((|u_{n}|)\)</span>, pour montrer l’<em>absolue</em> convergence de la série <span class="math inline">\(\sum u_{n}\)</span>.</p>
+</div>
+<div id="exm-factoriel" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 2.14</strong></span> Nature de la série <span class="math inline">\(\sum \frac{n^{n}}{n!}\)</span>.</p>
+<details>
+<div>
+<p>Posons, pour tout <span class="math inline">\(n \in \mathbb{N}\)</span>, <span class="math inline">\(u_{n}=\frac{n^{n}}{n!}\)</span>. On a alors <span class="math inline">\(u_{n}&gt;0\)</span> et</p>
+<p><span class="math display">\[
+\begin{aligned}
+    \forall n \in \mathbb{N},\ \frac{u_{n+1}}{u_{n}} &amp; = \frac{1}{n+1}\frac{(n+1)^{n+1}}{n^{n}}\\
+                                                     &amp; = \left(1+\frac{1}{n}\right)^{n}.
+\end{aligned}
+\]</span></p>
+<p>En passant sous forme exponentielle, on a par ailleurs</p>
+<p><span class="math display">\[
+    \left(1+\frac{1}{n}\right)^{n}=e^{n \ln
+    \left(1+\frac{1}{n}\right)}=e^{1+o(1)} \to e&gt;1.
+\]</span></p>
+<p>Donc la série <span class="math inline">\(\sum \frac{n^{n}}{n!}\)</span> est grossièrement divergente.</p>
+</div>
+</details>
+</div>
+<p>Le critère suivant permet d’étudier les séries dont le signe du terme général <em>alterne</em>, d’où sont nom. Plus que le résultat de convergence, il faut retenir le cas échaant l’encadrement de la somme par ses sommes partielles.</p>
+<div id="thm-alterne" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 2.5 (Critère des séries alternées)</strong></span> Soit <span class="math inline">\((u_{n})\)</span> une suite réelle <em>monotone</em> de <em>limite nulle</em>. Alors la série <span class="math inline">\(\sum (-1)^{n}u_{n}\)</span> <em>converge</em> et sa somme <span class="math inline">\(S\)</span> est encadrée par les sommes partielles d’indices pairs et impairs, qui forment deux suites <em>adjacentes</em>. En particulier, le reste <span class="math inline">\(R_{n}\)</span> de la série <span class="math inline">\(\sum (-1)^{n} u_{n}\)</span> est du signe de son <em>premier terme</em>, et <span class="math inline">\(|R_{n}|\leqslant |u_{n+1}|\)</span>.</p>
+</div>
+<div id="exm-serie-alterne" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 2.15</strong></span> Montrer que la série <span class="math inline">\(\sum_{n \geqslant 0} \frac{(-1)^{n}}{n+1}\)</span> converge et donner une approximation à <span class="math inline">\(10^{-3}\)</span> près de sa somme.</p>
+<details>
+<div>
+<p>Le critère des séries alternées s’applique car <span class="math inline">\(\frac{1}{n+1}\)</span> tend vers <span class="math inline">\(0\)</span> en décroissant. La série <span class="math inline">\(\sum \frac{(-1)^{n}}{n+1}\)</span> est donc convergente. De plus <span class="math inline">\(R_{999}\)</span> est <em>positif</em> et</p>
+<p><span class="math display">\[
+    0 \leqslant R_{999} \leqslant \frac{1}{1000}.
+\]</span></p>
+<p>Donc <span class="math inline">\(S_{999}\)</span> est une approximation à <span class="math inline">\(10^{-3}\)</span> près par <em>défaut</em> de <span class="math inline">\(S\)</span>.</p>
+<div id="fig-approximation" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-approximation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./tikz/svg/02-2b.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-approximation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.3: <span class="math inline">\(S_{999}\)</span> est une approximation par <em>défaut</em> de <span class="math inline">\(S\)</span>.
+</figcaption>
+</figure>
+</div>
+<p>On obtient numériquement</p>
+<p><span class="math display">\[
+S_{999} = 0.6926...
+\]</span></p>
+<p>Donc une approximation<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> à <span class="math inline">\(10^{-3}\)</span> près de <span class="math inline">\(S\)</span> est <span class="math inline">\(0,693\)</span> (on a arrondit par <em>excès</em> pour se rapprocher de <span class="math inline">\(S\)</span>).</p>
+</div>
+</details>
+</div>
+</section>
+</section>
+<section id="exercices" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercices">Exercices</h2>
+<section id="convergence-dune-série-numérique-1" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="convergence-dune-série-numérique-1"><span class="header-section-number">2.3.2</span> Convergence d’une série numérique</h3>
+<div id="exr-02-0001" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 2.1</strong></span> (Une série grossièrement divergente). Montrer que la série <span class="math inline">\(\sum \left(1 - \frac{1}{n}\right)^n\)</span> est grossièrement divergente.</p>
+</div>
+<div id="exr-02-harmo" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 2.2</strong></span> (Série harmonique).</p>
+<ol type="1">
+<li><p>Soit <span class="math inline">\(k\geqslant 2\)</span>. Montrer que</p>
+<p><span class="math display">\[
+\int_k^{k+1} \frac{dt}{t}\leqslant \frac{1}{k} \leqslant \int_{k-1}^k \frac{dt}{t}.
+\]</span></p></li>
+<li><p>En déduire que <span class="math inline">\(\displaystyle
+\sum_{k=1}^n\frac{1}{k}\underset{+\infty}{\sim} \ln(n)\)</span>.</p></li>
+<li><p>En déduire la nature de la série <span class="math inline">\(\sum \dfrac{1}{n}\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-02-poisson" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 2.3</strong></span> (Noyau de Poisson). Soit <span class="math inline">\(r\in]0,1[\)</span> et <span class="math inline">\(\theta\in \mathbb{R}\)</span>.</p>
+<ol type="1">
+<li><p>Montrer que la série <span class="math inline">\(\sum_{n\geqslant 0} r^ne^{in\theta}\)</span> converge et, déterminer la valeur de sa somme.</p></li>
+<li><p>En déduire que la série de terme général <span class="math inline">\(r^n\cos(n\theta)\)</span> converge et, que l’on a <span class="math display">\[\sum_{n=0}^{+\infty}r^n\cos(n\theta) = \frac{1-r\cos(\theta)}{1-2r\cos(\theta)+r^2}.\]</span></p></li>
+</ol>
+</div>
+<div id="exr-02-dirichlet" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 2.4 (<span class="math inline">\(\star\)</span>)</strong></span> (Noyau de Dirichlet). Pour tout <span class="math inline">\(n\in\mathbb{N}^*\)</span> et <span class="math inline">\(x\in\mathbb{R}\)</span>, on pose</p>
+<p><span class="math display">\[
+D_n(x) = \sum_{k=-n}^ne^{ikx}.
+\]</span></p>
+<ol type="1">
+<li><p>Montrer que <span class="math inline">\(D_n(x) = 1 + 2\sum_{k=1}^n\cos(kx)\)</span>.</p></li>
+<li><p>Montrer que <span class="math display">\[D_n(x) =\left\{
+    \begin{array}{cc}
+         \dfrac{\sin\left(\left(n+\frac{1}{2}\right)x\right)}{\sin\left(\frac{x}{2}\right)} &amp;\text{si $x\notin 2\pi\mathbb{Z}$},  \\
+         2n+1&amp; \text{si $x\in 2\pi\mathbb{Z}$.}
+    \end{array}
+    \right.\]</span></p></li>
+<li><p>Montrer que <span class="math inline">\(D_n\)</span> est <span class="math inline">\(2\pi\)</span>-périodique et de classe <span class="math inline">\(C^\infty\)</span> sur <span class="math inline">\(\mathbb{R}\)</span>.</p></li>
+</ol>
+</div>
+</section>
+<section id="séries-à-termes-positifs" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="séries-à-termes-positifs"><span class="header-section-number">2.3.3</span> Séries à termes positifs</h3>
+<div id="exr-02-comp" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 2.5</strong></span> (Comparaison). Déterminer la nature des séries de terme général</p>
+<p><span class="math display">\[
+\begin{array}{ll}
+a_n = \frac{n+3}{2(n+1)(n^2-3)},        &amp; b_n = \sin\left(\frac{1}{n}\right) - \ln\left(1+\frac{1}{n}\right),\\
+c_n = \left(\frac{n}{n+1}\right)^{n^2}, &amp; d_n =ne^{-n},\\
+e_n =\frac{\ln(n)}{n^2},                &amp; f_{n}=\frac{(-1)^{n}}{2n^{2}+1}.
+\end{array}
+\]</span></p>
+</div>
+<div id="exr-02-0002" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 2.6</strong></span> (Une comparaison série-intégrale). En utilisant le théorème de comparaison série/intégrale, déterminer la nature de la série <span class="math inline">\(\sum_{n&gt;1}\frac{1}{n\ln(n)^2}\)</span>.</p>
+</div>
+<div id="exr-02-0003" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 2.7</strong></span> (Equivalent d’une somme partielle). Déterminer un équivalent de <span class="math inline">\(\sum_{k=1}^n\sqrt{k}\)</span> quand <span class="math inline">\(n\to +\infty\)</span>.</p>
+</div>
+<div id="exr-02-0004" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 2.8 (<span class="math inline">\(\star\)</span>)</strong></span> (Divergence de l’intégrale de Dirichlet).</p>
+<ol type="1">
+<li><p>Montrer que <span class="math display">\[\forall n\geqslant 2,\quad \int_{\pi}^{n\pi}\frac{|\sin(t)|}{t}dt\geqslant \sum_{k=2}^n\frac{1}{k\pi}\int_{(k-1)\pi}^{k\pi}|\sin(t)|dt.\]</span></p></li>
+<li><p>Montrer que <span class="math display">\[\forall k\geqslant 2,\ \int_{(k-1)\pi}^{k\pi}|\sin(t)|dt = 2.\]</span></p></li>
+<li><p>En déduire que <span class="math inline">\(\displaystyle\int_{1}^{+\infty}\dfrac{|\sin(t)|}{t}dt\)</span> diverge.</p></li>
+</ol>
+</div>
+<div id="exr-02-reste-riem" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 2.9 (<span class="math inline">\(\star\)</span>)</strong></span> (Reste des séries de Riemann). Soit <span class="math inline">\(\alpha &gt;1\)</span>.</p>
+<ol type="1">
+<li><p>Pour tout <span class="math inline">\(k\geqslant 2\)</span>, montrer que <span class="math display">\[\int_{k}^{k+1}\frac{dt}{t^\alpha}\leqslant\frac{1}{k^\alpha}\leqslant\int_{k-1}^k\frac{dt}{t^\alpha}.\]</span></p></li>
+<li><p>En déduire un équivalent du reste <span class="math inline">\(\displaystyle
+R_n=\sum_{k=n+1}^{+\infty}\frac{1}{k^{\alpha}}\)</span> de la serie <span class="math inline">\(\displaystyle\sum \frac{1}{n^\alpha}\)</span>.</p></li>
+<li><p>La série de terme général <span class="math inline">\(R_n\)</span> est elle convergente ? <em>(On distinguera suivant les valeurs de <span class="math inline">\(\alpha\)</span>)</em>.</p></li>
+</ol>
+</div>
+<div id="exr-02-dev-serie-harmo" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 2.10</strong></span> (Développement asymptotique de la série harmonique). Pour <span class="math inline">\(n\geqslant 1\)</span>, on pose <span class="math display">\[\Delta_n = \sum_{k=1}^n \frac{1}{k} - \ln(n).\]</span></p>
+<ol type="1">
+<li><p>Déterminer un équivalent de <span class="math inline">\(\Delta_{n+1} - \Delta_n\)</span> lorsque <span class="math inline">\(n\to +\infty\)</span>.</p></li>
+<li><p>En déduire que la suite <span class="math inline">\((\Delta_n)\)</span> converge vers une constante <span class="math inline">\(\gamma\)</span> que l’on ne cherchera pas à déterminer<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p></li>
+<li><p>Montrer que <span class="math inline">\(\sum_{k=1}^n\frac{1}{k} = \ln(n) + \gamma + o(1)\)</span>.</p></li>
+</ol>
+</div>
+</section>
+<section id="autres-résultats-de-convergence-1" class="level3" data-number="2.3.4">
+<h3 data-number="2.3.4" class="anchored" data-anchor-id="autres-résultats-de-convergence-1"><span class="header-section-number">2.3.4</span> Autres résultats de convergence</h3>
+<div id="exr-02-alembert-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 2.21</strong></span> (Critère de d’Alembert). Etudier la nature de la série <span class="math inline">\(\displaystyle\sum = \frac{(1+i)^n}{n!}\)</span>.</p>
+<div id="exr-02-alembert" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 2.11</strong></span> (Critère de d’Alembert). Discuter, selon la nature de <span class="math inline">\(a\)</span>, de la nature de la série de terme général <span class="math inline">\(u_n= \frac{n!}{n^{an}}\)</span>, <span class="math inline">\(a\in\mathbb{R}\)</span>.</p>
+</div>
+<div id="exr-02-harmo-alt" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 2.12</strong></span> (Série harmonique alternée).</p>
+<ol type="1">
+<li><p>Justifier que la série <span class="math inline">\(\sum \frac{(-1)^{n-1}}{n}\)</span> converge.</p></li>
+<li><p>Montrer que pour tout <span class="math inline">\(x\neq -1\)</span> et <span class="math inline">\(n\geqslant 1\)</span> on a <span class="math display">\[\sum_{k=0}^{n-1}(-1)^kx^k = \frac{1 - (-1)^nx^n}{1+x}.\]</span></p></li>
+<li><p>En déduire que <span class="math inline">\(\displaystyle\sum_{k=1}^n \frac{(-1)^{k-1}}{k}=\int_0^1 \frac{1-(-1)^nx^n}{1+x}dx\)</span>.</p></li>
+<li><p>Montrer que, pour tout <span class="math inline">\(n\in\mathbb{N}\)</span>, <span class="math display">\[0\leqslant \int_0^1\frac{x^n}{1+x}dx\leqslant \frac{1}{n+1}.\]</span></p></li>
+<li><p>En déduire que <span class="math inline">\(\displaystyle\int_0^1\frac{x^n}{1+x}dx\)</span> tend vers <span class="math inline">\(0\)</span> quand <span class="math inline">\(n\to +\infty\)</span>.</p></li>
+<li><p>En déduire <span class="math inline">\(\sum_{n=1}^{+\infty}\frac{(-1)^{n-1}}{n}\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-02-alt-ccinp" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 2.20</strong></span> (Critère des séries alternées). Pour tout <span class="math inline">\(n\geqslant 1\)</span>, on pose <span class="math display">\[u_n = \frac{(-1)^n}{(n!)^{1/n}}\quad \text{et}\quad a_n = \ln((n!)^{1/n}).\]</span></p>
+<div id="exr-02-serie-tel" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 2.19 (<span class="math inline">\(\star\)</span>)</strong></span> Pour tout <span class="math inline">\(n\in\mathbb{N}\)</span>, on pose <span class="math display">\[u_n = \frac{(2n)!}{(n!)^22^{2n}}.\]</span></p>
+<ol type="1">
+<li><p>Le critère de d’Alembert permet-il ici de conclure ?</p></li>
+<li><p>Montrer que <span class="math display">\[\frac{u_{n+1}}{u_n} = 1 - \frac{1}{2n} + \frac{1}{2n^2} + o\left(\frac{1}{n^2}\right)\]</span></p></li>
+<li><p>Déterminer <span class="math inline">\(\lambda\in\mathbb{R}\)</span> tel que <span class="math inline">\(\dfrac{(n+1)^{\lambda}u_{n+1}}{n^\lambda u_{n}} = 1 + \frac{1}{8n^2} + o\left(\frac{1}{n^2}\right)\)</span>.</p></li>
+<li><p>Montrer que la série <span class="math inline">\(\displaystyle \sum \ln\left(\frac{(n+1)^{\lambda}u_{n+1}}{n^\lambda u_{n}}\right)\)</span> converge.</p></li>
+<li><p>En déduire que la suite <span class="math inline">\(n^\lambda u_n\)</span> converge vers une constante <span class="math inline">\(C&gt;0\)</span> et conclure quand à la nature de la série <span class="math inline">\(\sum u_n\)</span>.</p></li>
+</ol>
+<div id="exr-02-alt-CCINP" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 2.13</strong></span> (Une série alternée).</p>
+<ol type="1">
+<li><p>Montrer que <span class="math inline">\(\displaystyle a_n \geqslant\frac{1}{n}\int_1^n \ln(x)dx\)</span> et en déduire la limite de la suite <span class="math inline">\((u_n)\)</span>.</p></li>
+<li><ol type="a">
+<li><p>Soit <span class="math inline">\((x_n)_{n\geqslant 1}\)</span> une suite croissante. Montrer que <span class="math display">\[\frac{1}{n}\sum_{k=1}^n x_k \leqslant \frac{1}{n+1}\sum_{k=1}^{n+1}x_k\]</span> <em>On pourra poser <span class="math inline">\(m_n = \frac{1}{n}\sum_{k=1}^{n}x_k\)</span>.</em></p></li>
+<li><p>En déduire que la suite <span class="math inline">\((a_n)_{n\geqslant 1}\)</span> est croissante.</p></li>
+</ol></li>
+<li><p>En déduire la nature de la série <span class="math inline">\(\sum u_n\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-02-eta" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 2.14</strong></span> (Fonction <span class="math inline">\(eta\)</span> de Dirichlet). Pour <span class="math inline">\(x&gt;0\)</span> on pose</p>
+<p><span class="math display">\[
+\eta(x) = \sum_{n=1}^{+\infty}\frac{(-1)^{n-1}}{n^x}.
+\]</span></p>
+<ol type="1">
+<li><p>Montrer que la fonction <span class="math inline">\(\eta\)</span> est bien définie.</p></li>
+<li><p>Montrer que <span class="math display">\[\forall x&gt;0,\ 1-\frac{1}{2^x}\leqslant\eta(x)\leqslant 1\]</span></p></li>
+<li><p>En déduire la limite de <span class="math inline">\(\eta\)</span> en <span class="math inline">\(+\infty\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-02-0005" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 2.15</strong></span> (Un contre exemple).</p>
+<ol type="1">
+<li><p>Montrer que la série <span class="math inline">\(\sum \frac{(-1)^n}{\sqrt{n}}\)</span> converge.</p></li>
+<li><p>Montrer que <span class="math inline">\(\frac{(-1)^n}{\sqrt{n}} + 1/n\sim \frac{(-1)^n}{\sqrt{n}}\)</span>.</p></li>
+<li><p>Quelle est la nature de la série <span class="math inline">\(\sum \left(\frac{(-1)^n}{\sqrt{n}}+\frac{1}{n}\right)\)</span> ?</p></li>
+</ol>
+</div>
+<section id="divers" class="level3" data-number="2.3.5">
+<h3 data-number="2.3.5" class="anchored" data-anchor-id="divers"><span class="header-section-number">2.3.5</span> Divers</h3>
+<div id="exr-02-serie-tel" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 2.16 (<span class="math inline">\(\star\)</span>)</strong></span> (Cas d’ambiguité dans le critère de d’Alembert). Pour tout <span class="math inline">\(n\in\mathbb{N}\)</span>, on pose <span class="math display">\[u_n = \frac{(2n)!}{(n!)^22^{2n}}.\]</span></p>
+<ol type="1">
+<li><p>Le critère de d’Alembert permet-il ici de conclure ?</p></li>
+<li><p>Montrer que <span class="math display">\[\frac{u_{n+1}}{u_n} = 1 - \frac{1}{2n} + \frac{1}{2n^2} + o\left(\frac{1}{n^2}\right)\]</span></p></li>
+<li><p>Déterminer <span class="math inline">\(\lambda\in\mathbb{R}\)</span> tel que <span class="math inline">\(\dfrac{(n+1)^{\lambda}u_{n+1}}{n^\lambda u_{n}} = 1 + \frac{1}{8n^2} + o\left(\frac{1}{n^2}\right)\)</span>.</p></li>
+<li><p>Montrer que la série <span class="math inline">\(\displaystyle \sum \ln\left(\frac{(n+1)^{\lambda}u_{n+1}}{n^\lambda u_{n}}\right)\)</span> converge.</p></li>
+<li><p>En déduire que la suite <span class="math inline">\(n^\lambda u_n\)</span> converge vers une constante <span class="math inline">\(C&gt;0\)</span> et conclure quand à la nature de la série <span class="math inline">\(\sum u_n\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-02-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 2.17 (<span class="math inline">\(\star\)</span>)</strong></span> (Un critère de convergence). Soient <span class="math inline">\(0&lt;a&lt;b\)</span> deux réels. On considère une suite <span class="math inline">\((u_n)_{n\in\mathbb{N}}\)</span> de réels strictement positifs tels que</p>
+<p><span class="math display">\[
+\forall n\in\mathbb{N},\
+\frac{u_{n+1}}{u_n} = \frac{n+a}{n+b}.
+\]</span></p>
+<ol type="1">
+<li><ol type="a">
+<li><p>Montrer que la série de terme général <span class="math inline">\(\ln\left(\frac{u_{n+1}}{u_n}\right)\)</span> diverge.</p></li>
+<li><p>En déduire que la suite <span class="math inline">\((u_n)_{n\in\mathbb{N}}\)</span> converge vers <span class="math inline">\(0\)</span>.</p></li>
+</ol></li>
+<li><p>On suppose que <span class="math inline">\(b\leqslant a+1\)</span>.</p>
+<ol type="a">
+<li><p>Montrer que <span class="math inline">\(u_n\geqslant \frac{au_0}{n+a}\)</span>.</p></li>
+<li><p>En déduire la nature de la série <span class="math inline">\(\sum u_n\)</span>.</p></li>
+</ol></li>
+<li><p>On suppose que <span class="math inline">\(b&gt;a+1\)</span>.</p>
+<ol type="a">
+<li><p>Montrer que <span class="math inline">\((b-a-1)\sum_{k=0}^n u_k = (b-1)u_0 - (n+a)u_n\)</span>.</p></li>
+<li><p>Montrer que la suite <span class="math inline">\(((n+a)u_n)_{n\in\mathbb{N}}\)</span> est décroissante.</p></li>
+<li><p>En déduire la nature de la série <span class="math inline">\(\sum u_n\)</span> et calculer sa somme.</p></li>
+</ol></li>
+<li><p>Étudier le cas <span class="math inline">\(u_n = \int_0^{\pi/2}\cos^{2n}(t)dt\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-02-abel" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 2.18 (<span class="math inline">\(\star\)</span>)</strong></span> (Transformation d’Abel). Soient <span class="math inline">\((a_n)_{n\in\mathbb{N}}\)</span> et <span class="math inline">\((b_n)_{n\in\mathbb{N}}\)</span> deux suites de <span class="math inline">\(\mathbb{K}\)</span>. On pose</p>
+<p><span class="math display">\[
+\forall n\in\mathbb{N},\quad S_n = \sum_{k=0}^n a_kb_k,\quad B_n = \sum_{k=0}^n b_k.
+\]</span></p>
+<ol type="1">
+<li><p>Montrer que <span class="math display">\[\forall n\in\mathbb{N}^*,\quad S_n = a_nB_n - \sum_{k=0}^{n-1}B_k(a_{k+1}-a_k).\]</span></p></li>
+<li><p>On suppose que <span class="math inline">\(a_n\to 0\)</span> quand <span class="math inline">\(n\to +\infty\)</span>, que <span class="math inline">\((B_n)\)</span> est bornée et que la série <span class="math inline">\(\sum (a_{k+1}-a_k)\)</span> est absolument convergente. Montrer alors que la série <span class="math inline">\(\sum a_nb_n\)</span> converge.</p></li>
+<li><p><em>Application :</em> montrer que la série <span class="math inline">\(\displaystyle\sum_{n\geqslant 1} \dfrac{\sin n}{n}\)</span> converge.</p></li>
+</ol>
+</div>
 
 
+</section>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>On peut de même reconstruire l’intégrande par <em>dérivation</em> de l’intégrale partielle; c’est l’analogue continue de ce résultat.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>On calculera la valeur exacte de cette somme en TD.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Il s’agit de la constante gamma d’Euler, qui vaut <span class="math inline">\(0,5772...\)</span><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
