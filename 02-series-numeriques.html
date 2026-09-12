@@ -216,6 +216,7 @@ window.Quarto = {
   <li><a href="#convergence-dune-série-numérique-1" id="toc-convergence-dune-série-numérique-1" class="nav-link" data-scroll-target="#convergence-dune-série-numérique-1"><span class="header-section-number">2.3.3</span> Convergence d’une série numérique</a></li>
   <li><a href="#séries-à-termes-positifs" id="toc-séries-à-termes-positifs" class="nav-link" data-scroll-target="#séries-à-termes-positifs"><span class="header-section-number">2.3.4</span> Séries à termes positifs</a></li>
   <li><a href="#autres-résultats-de-convergence-1" id="toc-autres-résultats-de-convergence-1" class="nav-link" data-scroll-target="#autres-résultats-de-convergence-1"><span class="header-section-number">2.3.5</span> Autres résultats de convergence</a></li>
+  <li><a href="#divers" id="toc-divers" class="nav-link" data-scroll-target="#divers"><span class="header-section-number">2.3.6</span> Divers</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -591,7 +592,7 @@ Avertissement&nbsp;2.2
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Le théorème de comparaison est faux si les séries ne sont pas à terme positifs (ou au moins de signe constant au voisinage de <span class="math inline">\(+\infty\)</span> pour la relation <span class="math inline">\(\sim\)</span>). Des exemples seront vus en TD.</p>
+<p>Le théorème de comparaison est faux si les séries ne sont pas à termes positifs (ou au moins de signe constant au voisinage de <span class="math inline">\(+\infty\)</span> pour la relation <span class="math inline">\(\sim\)</span>). Des exemples seront vus en TD.</p>
 </div>
 </div>
 <p>Pour pouvoir appliquer efficacement les théorèmes de comparaison, il faut un certain nombre de séries de référence. Les séries géométriques et télescopiques ne permettent pas de couvrir suffisamment de cas en pratique; il faut pouvoir dire quelque chose de la nature des <em>séries de Riemann</em> de la forme <span class="math inline">\(\sum
@@ -844,12 +845,13 @@ R_n=\sum_{k=n+1}^{+\infty}\frac{1}{k^{\alpha}}\)</span> de la serie <span class=
 <section id="autres-résultats-de-convergence-1" class="level3" data-number="2.3.5">
 <h3 data-number="2.3.5" class="anchored" data-anchor-id="autres-résultats-de-convergence-1"><span class="header-section-number">2.3.5</span> Autres résultats de convergence</h3>
 <div id="exr-02-alembert-1" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 2.21</strong></span> (Critère de d’Alembert). Etudier la nature de la série <span class="math inline">\(\displaystyle\sum = \frac{(1+i)^n}{n!}\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercice 2.11</strong></span> (Critère de d’Alembert). Etudier la nature de la série <span class="math inline">\(\displaystyle\sum = \frac{(1+i)^n}{n!}\)</span>.</p>
+</div>
 <div id="exr-02-alembert" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 2.11</strong></span> (Critère de d’Alembert). Discuter, selon la nature de <span class="math inline">\(a\)</span>, de la nature de la série de terme général <span class="math inline">\(u_n= \frac{n!}{n^{an}}\)</span>, <span class="math inline">\(a\in\mathbb{R}\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercice 2.12</strong></span> (Critère de d’Alembert). Discuter, selon la nature de <span class="math inline">\(a\)</span>, de la nature de la série de terme général <span class="math inline">\(u_n= \frac{n!}{n^{an}}\)</span>, <span class="math inline">\(a\in\mathbb{R}\)</span>.</p>
 </div>
 <div id="exr-02-harmo-alt" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 2.12</strong></span> (Série harmonique alternée).</p>
+<p><span class="theorem-title"><strong>Exercice 2.13</strong></span> (Série harmonique alternée).</p>
 <ol type="1">
 <li><p>Justifier que la série <span class="math inline">\(\sum \frac{(-1)^{n-1}}{n}\)</span> converge.</p></li>
 <li><p>Montrer que pour tout <span class="math inline">\(x\neq -1\)</span> et <span class="math inline">\(n\geqslant 1\)</span> on a <span class="math display">\[\sum_{k=0}^{n-1}(-1)^kx^k = \frac{1 - (-1)^nx^n}{1+x}.\]</span></p></li>
@@ -860,9 +862,10 @@ R_n=\sum_{k=n+1}^{+\infty}\frac{1}{k^{\alpha}}\)</span> de la serie <span class=
 </ol>
 </div>
 <div id="exr-02-alt-ccinp" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 2.20</strong></span> (Critère des séries alternées). Pour tout <span class="math inline">\(n\geqslant 1\)</span>, on pose <span class="math display">\[u_n = \frac{(-1)^n}{(n!)^{1/n}}\quad \text{et}\quad a_n = \ln((n!)^{1/n}).\]</span></p>
+<p><span class="theorem-title"><strong>Exercice 2.14</strong></span> (Critère des séries alternées). Pour tout <span class="math inline">\(n\geqslant 1\)</span>, on pose <span class="math display">\[u_n = \frac{(-1)^n}{(n!)^{1/n}}\quad \text{et}\quad a_n = \ln((n!)^{1/n}).\]</span></p>
+</div>
 <div id="exr-02-serie-tel" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 2.19 (<span class="math inline">\(\star\)</span>)</strong></span> Pour tout <span class="math inline">\(n\in\mathbb{N}\)</span>, on pose <span class="math display">\[u_n = \frac{(2n)!}{(n!)^22^{2n}}.\]</span></p>
+<p><span class="theorem-title"><strong>Exercice 2.15 (<span class="math inline">\(\star\)</span>)</strong></span> Pour tout <span class="math inline">\(n\in\mathbb{N}\)</span>, on pose <span class="math display">\[u_n = \frac{(2n)!}{(n!)^22^{2n}}.\]</span></p>
 <ol type="1">
 <li><p>Le critère de d’Alembert permet-il ici de conclure ?</p></li>
 <li><p>Montrer que <span class="math display">\[\frac{u_{n+1}}{u_n} = 1 - \frac{1}{2n} + \frac{1}{2n^2} + o\left(\frac{1}{n^2}\right)\]</span></p></li>
@@ -870,8 +873,9 @@ R_n=\sum_{k=n+1}^{+\infty}\frac{1}{k^{\alpha}}\)</span> de la serie <span class=
 <li><p>Montrer que la série <span class="math inline">\(\displaystyle \sum \ln\left(\frac{(n+1)^{\lambda}u_{n+1}}{n^\lambda u_{n}}\right)\)</span> converge.</p></li>
 <li><p>En déduire que la suite <span class="math inline">\(n^\lambda u_n\)</span> converge vers une constante <span class="math inline">\(C&gt;0\)</span> et conclure quand à la nature de la série <span class="math inline">\(\sum u_n\)</span>.</p></li>
 </ol>
+</div>
 <div id="exr-02-alt-CCINP" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 2.13</strong></span> (Une série alternée).</p>
+<p><span class="theorem-title"><strong>Exercice 2.16</strong></span> (Une série alternée).</p>
 <ol type="1">
 <li><p>Montrer que <span class="math inline">\(\displaystyle a_n \geqslant\frac{1}{n}\int_1^n \ln(x)dx\)</span> et en déduire la limite de la suite <span class="math inline">\((u_n)\)</span>.</p></li>
 <li><ol type="a">
@@ -882,7 +886,7 @@ R_n=\sum_{k=n+1}^{+\infty}\frac{1}{k^{\alpha}}\)</span> de la serie <span class=
 </ol>
 </div>
 <div id="exr-02-eta" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 2.14</strong></span> (Fonction <span class="math inline">\(eta\)</span> de Dirichlet). Pour <span class="math inline">\(x&gt;0\)</span> on pose</p>
+<p><span class="theorem-title"><strong>Exercice 2.17</strong></span> (Fonction <span class="math inline">\(eta\)</span> de Dirichlet). Pour <span class="math inline">\(x&gt;0\)</span> on pose</p>
 <p><span class="math display">\[
 \eta(x) = \sum_{n=1}^{+\infty}\frac{(-1)^{n-1}}{n^x}.
 \]</span></p>
@@ -893,17 +897,18 @@ R_n=\sum_{k=n+1}^{+\infty}\frac{1}{k^{\alpha}}\)</span> de la serie <span class=
 </ol>
 </div>
 <div id="exr-02-0005" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 2.15</strong></span> (Un contre exemple).</p>
+<p><span class="theorem-title"><strong>Exercice 2.18</strong></span> (Un contre exemple).</p>
 <ol type="1">
 <li><p>Montrer que la série <span class="math inline">\(\sum \frac{(-1)^n}{\sqrt{n}}\)</span> converge.</p></li>
 <li><p>Montrer que <span class="math inline">\(\frac{(-1)^n}{\sqrt{n}} + 1/n\sim \frac{(-1)^n}{\sqrt{n}}\)</span>.</p></li>
 <li><p>Quelle est la nature de la série <span class="math inline">\(\sum \left(\frac{(-1)^n}{\sqrt{n}}+\frac{1}{n}\right)\)</span> ?</p></li>
 </ol>
 </div>
+</section>
 <section id="divers" class="level3" data-number="2.3.6">
 <h3 data-number="2.3.6" class="anchored" data-anchor-id="divers"><span class="header-section-number">2.3.6</span> Divers</h3>
 <div id="exr-02-serie-tel" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 2.16 (<span class="math inline">\(\star\)</span>)</strong></span> (Cas d’ambiguité dans le critère de d’Alembert). Pour tout <span class="math inline">\(n\in\mathbb{N}\)</span>, on pose <span class="math display">\[u_n = \frac{(2n)!}{(n!)^22^{2n}}.\]</span></p>
+<p><span class="theorem-title"><strong>Exercice 2.19 (<span class="math inline">\(\star\)</span>)</strong></span> (Cas d’ambiguité dans le critère de d’Alembert). Pour tout <span class="math inline">\(n\in\mathbb{N}\)</span>, on pose <span class="math display">\[u_n = \frac{(2n)!}{(n!)^22^{2n}}.\]</span></p>
 <ol type="1">
 <li><p>Le critère de d’Alembert permet-il ici de conclure ?</p></li>
 <li><p>Montrer que <span class="math display">\[\frac{u_{n+1}}{u_n} = 1 - \frac{1}{2n} + \frac{1}{2n^2} + o\left(\frac{1}{n^2}\right)\]</span></p></li>
@@ -913,7 +918,7 @@ R_n=\sum_{k=n+1}^{+\infty}\frac{1}{k^{\alpha}}\)</span> de la serie <span class=
 </ol>
 </div>
 <div id="exr-02-1" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 2.17 (<span class="math inline">\(\star\)</span>)</strong></span> (Un critère de convergence). Soient <span class="math inline">\(0&lt;a&lt;b\)</span> deux réels. On considère une suite <span class="math inline">\((u_n)_{n\in\mathbb{N}}\)</span> de réels strictement positifs tels que</p>
+<p><span class="theorem-title"><strong>Exercice 2.20 (<span class="math inline">\(\star\)</span>)</strong></span> (Un critère de convergence). Soient <span class="math inline">\(0&lt;a&lt;b\)</span> deux réels. On considère une suite <span class="math inline">\((u_n)_{n\in\mathbb{N}}\)</span> de réels strictement positifs tels que</p>
 <p><span class="math display">\[
 \forall n\in\mathbb{N},\
 \frac{u_{n+1}}{u_n} = \frac{n+a}{n+b}.
@@ -938,7 +943,7 @@ R_n=\sum_{k=n+1}^{+\infty}\frac{1}{k^{\alpha}}\)</span> de la serie <span class=
 </ol>
 </div>
 <div id="exr-02-abel" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 2.18 (<span class="math inline">\(\star\)</span>)</strong></span> (Transformation d’Abel). Soient <span class="math inline">\((a_n)_{n\in\mathbb{N}}\)</span> et <span class="math inline">\((b_n)_{n\in\mathbb{N}}\)</span> deux suites de <span class="math inline">\(\mathbb{K}\)</span>. On pose</p>
+<p><span class="theorem-title"><strong>Exercice 2.21 (<span class="math inline">\(\star\)</span>)</strong></span> (Transformation d’Abel). Soient <span class="math inline">\((a_n)_{n\in\mathbb{N}}\)</span> et <span class="math inline">\((b_n)_{n\in\mathbb{N}}\)</span> deux suites de <span class="math inline">\(\mathbb{K}\)</span>. On pose</p>
 <p><span class="math display">\[
 \forall n\in\mathbb{N},\quad S_n = \sum_{k=0}^n a_kb_k,\quad B_n = \sum_{k=0}^n b_k.
 \]</span></p>
@@ -950,10 +955,6 @@ R_n=\sum_{k=n+1}^{+\infty}\frac{1}{k^{\alpha}}\)</span> de la serie <span class=
 </div>
 
 
-</section>
-</div>
-</div>
-</div>
 </section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
