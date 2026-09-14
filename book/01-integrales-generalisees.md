@@ -573,11 +573,11 @@ Cette opération est fréquente quand on manipule des fonctions trigonamétrique
 ::: {#prp-complexe}
 
 Soit $f:I \to \mathbb{C}$. Alors l'intégrale de $f$ sur $I$ converge ssi les
-deux intégrales $\int_I \mathrm{Re}f$ et $\int_I\mathrm{Im}f$ converge et, dans
+deux intégrales $\int_I \mathrm{Re}\ f$ et $\int_I\mathrm{Im}\ f$ converge et, dans
 ce cas, on a 
 
 $$
-    \int_I f = \int_I \mathrm{Re}f + i \int_{I}\mathrm{Im}f.
+    \int_I f = \int_I \mathrm{Re}\ f + i \int_{I}\mathrm{Im}\ f.
 $$
 
 :::

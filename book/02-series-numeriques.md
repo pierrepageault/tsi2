@@ -240,6 +240,19 @@ $$
 
 :::
 
+::: {#prp-complexe}
+
+Soit $(u_{n})$ une suite de $\mathbb{C}$. Alors la série de terme général
+$u_{n}$ converge ssi les séries $\sum \mathrm{Re}\ u_{n}$ et $\sum \mathrm{Im}\ 
+u_{n}$ converge et, dans ce cas, 
+
+$$
+    \sum_{n=0}^{+\infty}u_{n}= \sum_{n=0}^{+\infty}\mathrm{Re}\ u_{n} + i \sum_{n=0}^{+\infty} \mathrm{Im}\ u_{n}.
+$$
+
+:::
+
+
 ### Séries géométriques et séries télescopiques
 
 Dans cette section, on étudie deux types de séries très importantes pour
