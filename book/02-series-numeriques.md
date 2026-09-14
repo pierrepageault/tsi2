@@ -481,7 +481,7 @@ partielles sont *majorées*.
 
 Soient $\sum u_{n}$ et $\sum v_{n}$ deux séries à termes *positifs*. Alors 
 
-1. si  $u_{n} \leqslant Av_{n}$ avec $A \geqslant 0$, et si la série $\sum v_{n}$
+1. si  $u_{n} \leqslant v_{n}$, et si la série $\sum v_{n}$
    converge, alors $\sum u_{n}$ converge,
 2. si $u_{n}=o(v_{n})$ et si $\sum v_{n}$ converge, alors $\sum u_{n}$
    converge,
