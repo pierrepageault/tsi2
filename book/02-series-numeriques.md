@@ -103,7 +103,7 @@ reconstruire l'intégrande par *dérivation* de l'intégrale partielle; c'est
 l'analogue continue de ce résultat.]: 
 
 $$
-    \forall n > n_{0}, u_{n} = \sum_{k=n_{0}}^{n} - \sum_{k=n_{0}}^{n-1}.
+    \forall n > n_{0},\ u_{n} = \sum_{k=n_{0}}^{n} - \sum_{k=n_{0}}^{n-1}.
 $$
 
 Cette égalité mène la condition *nécessaire* de convergence suivante.
@@ -143,8 +143,8 @@ nécessaire).
 :::
 
 
-Sauf exception -- essentiellement dans le cas des séries géométriques ou des
-séries télescopique -- il n'est pas possible de calculer *explicitement* les
+Sauf exception -- essentiellement dans le cas des séries géométriques et des
+séries télescopiques -- il n'est pas possible de calculer *explicitement* les
 sommes partielles d'une série (on ne dispose même de la notion de *primitive*
 utilisée en calcul intégrale). Il est donc tout aussi nécessaire de développer
 des théorèmes de comparaison pour les séries; c'est l'objectif de la
@@ -167,7 +167,13 @@ $$
 
 :::
 
-DESSIN
+::: {#fig-reste}
+
+![](./tikz/svg/02-2a.svg)
+
+Le reste d'une série convergente, définit par $S = S_{n} + R_{n}$. 
+
+:::
 
 ::: {#prp-reste}
 
@@ -187,6 +193,7 @@ $$
           & = \frac{1}{2^{n}} \to 0.
 \end{aligned}
 $$
+
 :::
 
 ::: {#nte-reste .callout-note}
@@ -262,6 +269,7 @@ géométrique de raison $e^{-\alpha}$.
 :::
 
 ::: {#prp-serie-geometrique}
+
 Soit $q \in \mathbb{K}$. Alors 
 
 1. si $q \neq 1$, on a  
@@ -456,6 +464,8 @@ partielles sont *majorées*.
 
 ::: {#thm-comparaison-serie-terme-positif}
 
+### Comparaison des séries à termes positifs
+
 Soient $\sum u_{n}$ et $\sum v_{n}$ deux séries à termes *positifs*. Alors 
 
 1. si  $u_{n} \leqslant Av_{n}$ avec $A \geqslant 0$, et si la série $\sum v_{n}$
@@ -467,7 +477,7 @@ Soient $\sum u_{n}$ et $\sum v_{n}$ deux séries à termes *positifs*. Alors
 
 :::
 
-::: {#nte-voisinage}
+::: {#rem-voisinage}
 
 Puisque la nature d'une série ne dépend pas de ses premiers termes, il suffit
 que les hypothèses du théorème soient satisfaites *pour $n$ assez grand*.
@@ -477,6 +487,15 @@ Ainsi, si $u_{n} \sim v_{n}$ et si $u_{n} \geqslant 0$ pour $n$ assez grand,
 alors $v_{n}$ sera également positive ou nulle au voisinage de $+\infty$.
 
 :::
+
+::: {#tip-equivalent .callout-tip}
+
+Dans le cas de la relation $\sim$, on peut remplacer l'hypothèse de positivité
+par l'hypothèse plus faible : $u_{n}$ (ou $v_{n}$) est de *signe constant* au
+voisinage de $+\infty$.
+
+:::
+
 
 ::: {#exm-comparaison-1} 
 
@@ -500,18 +519,30 @@ Donc par comparaison, la série $\sum \ln\frac{1}{2^{n}}$ converge.
 
 :::
 
+::: {#wrn-signe .callout-warning}
+
+Le théorème de comparaison est faux si les séries ne sont pas à termes positifs
+(ou au moins de signe constant au voisinage de $+\infty$ pour la relation
+$\sim$). Des exemples seront vus en TD.
+
+:::
+
 
 Pour pouvoir appliquer efficacement les théorèmes de comparaison, il faut un
 certain nombre de séries de référence. Les séries géométriques et télescopiques
-ne permettent pas de couvrir suffisamment de cas en pratique. Il faut pouvoir
-dire quelque chose de la nature des séries de Riemann de la forme $\sum
-\frac{1}{n^\alpha}$. Contrairement au cas des intégrales de Riemann, on ne peux
-pas calculer explicitement les sommes partielles de ces séries. On se ramène au
-cas des intégrales via le résultat suivant. 
+ne permettent pas de couvrir suffisamment de cas en pratique; il faut pouvoir
+dire quelque chose de la nature des *séries de Riemann* de la forme $\sum
+\frac{1}{n^\alpha}$. 
+
+Contrairement au cas des intégrales, on ne peux pas calculer explicitement les
+sommes partielles de ces séries. On se ramène au cas des intégrales de Riemann
+via le résultat suivant. 
 
 ::: {#thm-comparaison-integrale}
 
-Si $f:[n_0,+\infty[\to \mathbb{R}$ est une fonction positive, continue et décroissante, alors la série $\displaystyle \sum_{n\geqslant n_0} f(n)$ et l'intégrale $\int_{n_0}^{+\infty}f(t)dt$ ont même nature.  
+Si $f:[n_0,+\infty[\to \mathbb{R}$ est une fonction *positive*, *continue* et
+*décroissante*, alors la série $\displaystyle \sum_{n\geqslant n_0} f(n)$ et
+l'intégrale $\int_{n_0}^{+\infty}f(t)dt$ ont même nature.  
 
 :::
 
@@ -528,7 +559,7 @@ $$
     \forall k \geqslant n_{0},\ f(k) \leqslant \int_{k}^{k+1}f(t)dt \leqslant f(k+1).
 $$
 
-Ces deux encadrements sont très clairs graphiquement (???).
+Ces deux encadrements sont très clairs graphiquement (@fig-encadrement).
 
 Il faut  être capable de les *redémontrer* rapidement en utilisant la
 *monotonie* de la fonction $f$, et de les adapter au cas d'une fonction
@@ -540,11 +571,13 @@ exemples seront vus en TD.
 
 ::: {#fig-encadrement layout-ncol=2}
 
-![L'encadrement $\int_{k}^{k+1} f(t)dt \leqslant f(k) \leqslant \int_{k-1}^{k}f(t)dt$](./tikz/svg/02-1a.svg)
+![$\int_{k}^{k+1} f(t)dt \leqslant f(k) \leqslant \int_{k-1}^{k}f(t)dt$](./tikz/svg/02-1a.svg)
 
-![f(k) \leqslant \int_{k}^{k+1}f(t)dt \leqslant f(k+1)](./tikz/svg/02-1b.svg)
+![$f(k) \leqslant \int_{k}^{k+1}f(t)dt \leqslant f(k+1)$](./tikz/svg/02-1b.svg)
 
-Les deux versions de l'encadrement.
+Les deux versions de l'encadrement fondamental utilisé dans les comparaison
+séries-intégrales.
+
 :::
 
 :::
@@ -570,8 +603,7 @@ comparaison pour les séries à termes positifs restent incapables de traiter le
 séries à termes complexes, ou les séries dont le terme général n'est pas de
 signe constant au voisinage de $+\infty$.
 
-Le remède est le même que pour les intégrales, via la notion
-de séries *absolument convergentes*. 
+Le remède est le même que pour les intégrales; les séries *absolument convergentes*. 
 
 ::: {#def-serie-absolument-convergente}
 
@@ -587,7 +619,7 @@ Si une série est absolument convergente, elle est convergente.
 :::
 
 Ce résultat, combiné au théorème de comparaison de séries à termes
-positifs, permet de résoudre la pluspart des cas rencontrés en pratique.
+positifs, permet de résoudre la plupart des cas rencontrés en pratique.
 
 ::: {#exm-abolue-convergence}
 
@@ -614,11 +646,130 @@ n}{n^{2}}$ converge *absoluement*, donc converge.
 
 Contrairement au cas des fonctions, on ne dispose pas en TSI de la notion de suite
 *intégrable*. La situation est donc comparativement plus simple ; on se ramenera
-systématiquement à la notion d'absolue convergence, au travers *un seul* théorème de
+systématiquement à la notion d'absolue convergence, avec *un seul* théorème de
 comparaison.
 
 :::
 
-
 ## Autres résultats de convergence
-critère de d'Alembert, série alternée
+
+Les deux résultats présentés dans cette section sont propres aux séries. Le
+premier sera surtout utilisé dans le chapitre sur les séries entières. Le
+second permet d'étudier les séries dont le signe du terme général *alterne*. Il
+est surtout intéressant pour l'encadrement explicite qu'il fournit de la somme
+à l'aide de ses sommes partielles d'indices pairs et impairs. 
+
+### Le critère de d'Alembert
+
+Le critère de d'Alembert s'applique aux séries $\sum u_{n}$ à termes
+*strictement* positifs. Si ce n'est pas le cas, on peut toujours envisager de
+l'appliquer à la série $\sum |u_{n}|$. Il est particulièrement adapté aux
+séries dont le terme général s'exprime à l'aide de *quotients* et de
+*produits*.
+
+::: {#thm-critere-alembert}
+
+#### Critère de d'Alembert
+
+Soit $(u_{n})$ une suite de réels *strictement positifs*. On suppose que le
+quotient $\frac{u_{n+1}}{u_{n}}$ tend vers une limite finie $\lambda \geqslant
+0$. Alors
+
+1. si $\lambda > 1$, la série $\sum u_{n}$ diverge grossièrement,
+2. si $0 \leqslant \lambda < 1$, la série $\sum u_{n}$ converge,
+3. si $\lambda = 1$, le critère de d'Alembert ne permet pas de conclure.
+
+:::
+
+::: {#exm-factoriel}
+
+Nature de la série $\sum \frac{n^{n}}{n!}$. 
+
+::: {.details}
+
+Posons, pour tout $n \in \mathbb{N}$, $u_{n}=\frac{n^{n}}{n!}$. On a alors
+$u_{n}>0$ et
+
+$$
+\begin{aligned}
+    \forall n \in \mathbb{N},\ \frac{u_{n+1}}{u_{n}} & = \frac{1}{n+1}\frac{(n+1)^{n+1}}{n^{n}}\\
+                                                     & = \left(1+\frac{1}{n}\right)^{n}.
+\end{aligned}
+$$
+
+En passant sous forme exponentielle, on a par ailleurs
+
+$$
+    \left(1+\frac{1}{n}\right)^{n}=e^{n \ln
+    \left(1+\frac{1}{n}\right)}=e^{1+o(1)} \to e>1.
+$$
+
+Donc la série $\sum \frac{n^{n}}{n!}$ est grossièrement divergente.
+
+:::
+
+:::
+
+### Critère des séries alternées
+
+Le critère des séries alternées permet d'étudier les séries dont le signe du
+terme général *alterne*, d'où sont nom. Plus que le résultat de convergence, il
+faut retenir l'encadrement de la somme par ses sommes partielles en cas de
+convergence.
+
+::: {#thm-alterne}
+
+#### Critère des séries alternées
+
+Soit $(u_{n})$ une suite réelle *monotone* de *limite nulle*. Alors la série
+$\sum (-1)^{n}u_{n}$ *converge* et sa somme $S$ est encadrée par les sommes
+partielles d'indices pairs et impairs, qui forment deux suites *adjacentes*. En
+particulier, le reste $R_{n}$ de la série $\sum (-1)^{n} u_{n}$ est du signe de
+son *premier terme*, et $|R_{n}|\leqslant |u_{n+1}|$.
+
+:::
+
+::: {#exm-serie-alterne}
+
+Montrer que la série $\sum_{n \geqslant 0} \frac{(-1)^{n}}{n+1}$ converge et donner une
+approximation à $10^{-3}$ près de sa somme. 
+
+::: {.details}
+
+Le critère des séries alternées s'applique car $\frac{1}{n+1}$ tend vers
+$0$ en décroissant. La série $\sum \frac{(-1)^{n}}{n+1}$ est donc convergente.
+De plus $R_{999}$ est *positif* et 
+
+$$
+    0 \leqslant R_{999} \leqslant \frac{1}{1000}.
+$$
+
+Donc $S_{999}$ est une approximation à $10^{-3}$ près par *défaut* de $S$.
+
+::: {#fig-approximation}
+
+![](./tikz/svg/02-2b.svg)
+
+$S_{999}$ est une approximation par *défaut* de $S$.
+
+:::
+
+On obtient numériquement
+
+$$
+S_{999} = 0.6926...
+$$
+
+Donc une approximation^[On calculera la valeur exacte de cette somme en TD.] à
+$10^{-3}$ près de $S$ est $0,693$ (on a arrondit par *excès* pour se rapprocher
+de $S$).
+
+:::
+
+:::
+
+\newpage
+
+## Exercices {.unnumbered}
+
+{{< include ./td/02.md >}}

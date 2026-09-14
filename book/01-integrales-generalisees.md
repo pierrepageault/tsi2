@@ -1390,6 +1390,6 @@ d'*arrivée* pour vérifier les hypothèses du théorème de changement de varia
 
 \newpage
 
-## Exercices
+## Exercices {.unnumbered}
 
 {{< include ./td/01.md >}}

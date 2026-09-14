@@ -1,0 +1,21 @@
+\documentclass[tikz,border=5pt]{standalone}
+\input{./style/style.tex}
+\usetikzlibrary{decorations.pathreplacing} % Pour les accolades
+
+\begin{document}
+\begin{tikzpicture}[thick]
+
+% --- Droite réelle (axe horizontal) ---
+\draw[->] (0,0) -- (6,0) node[right] {$\mathbb{R}$};
+
+% --- Points S et S_n ---
+\coordinate (S) at (3.5,0);
+\coordinate (Sn) at (2.5,0);
+
+% --- Points matérialisés ---
+\fill[black] (S) circle (1.5pt) node[above] {$S$};
+\fill[black] (Sn) circle (1.5pt) node[above] {$S_{999}$};
+
+
+\end{tikzpicture}
+\end{document}
