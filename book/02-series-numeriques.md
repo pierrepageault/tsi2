@@ -1,5 +1,30 @@
 # Séries numériques
 
+## Introduction {.unnumbered}
+
+Ce chapitre est le pendant *discret* du chapitre précédent : les intégrales
+deviennent des sommmes, les dérivées des différences, et il n'est plus question
+de faire tendre $n$ vers autre chose que $+\infty$. A ce sujet, Euler écrit 
+dans ses *Institutiones Calculi differentialis (1755)* :
+
+> [...], en devenant infiniement petites, les différences finissent par être des
+différentielles. De même alors les quantités que l'on appelait des sommes
+prennent le nom d'intégrales.
+
+L'architecture générale est très similaire : on définit la convergence d'une
+somme infinie (une *série*) via ses *sommes partielles*, on établit les
+propriétés de ces nouvelles sommes, on démontre des théorèmes de
+comparaison, et on donne des séries de référence.
+
+L'abscence de technique de calcul infinitésimal dans le cadre discret (on ne
+peut pas dériver ou primitiver une fonction définie sur $\mathbb{N}$) est
+compensé par des techniques d'*encadrement*.
+
+La plupart des résultats disposent de leur analogue continue, ce qui facilite
+leur apprentissage. D'autres sont propres aux séries ; c'est notamment le cas
+du *critère de d'Alembert* et du *critère des séries alternées*, qui sont traités
+dans une section à part.
+
 ## Convergence d'une série numérique
 
 ### Définitions
