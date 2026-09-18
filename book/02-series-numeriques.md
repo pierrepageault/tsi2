@@ -560,8 +560,8 @@ dire quelque chose de la nature des *séries de Riemann* de la forme $\sum
 \frac{1}{n^\alpha}$. 
 
 Contrairement au cas des intégrales, on ne peux pas calculer explicitement les
-sommes partielles de ces séries. On se ramène au cas des intégrales de Riemann
-via le résultat suivant. 
+sommes partielles de ces séries. On se ramène au cas des intégrales de via le
+résultat suivant. 
 
 ::: {#thm-comparaison-integrale}
 
@@ -628,7 +628,7 @@ comparaison pour les séries à termes positifs restent incapables de traiter le
 séries à termes complexes, ou les séries dont le terme général n'est pas de
 signe constant au voisinage de $+\infty$.
 
-Le remède est le même que pour les intégrales; les séries *absolument convergentes*. 
+Le remède est le même que pour les intégrales via la notion d'*absolue convergentes*. 
 
 ::: {#def-serie-absolument-convergente}
 
@@ -689,8 +689,8 @@ est surtout intéressant pour l'encadrement explicite qu'il fournit de la somme
 Le critère de d'Alembert s'applique aux séries $\sum u_{n}$ à termes
 *strictement* positifs. Si ce n'est pas le cas, on peut toujours envisager de
 l'appliquer à la série $\sum |u_{n}|$. Il est particulièrement adapté aux
-séries dont le terme général s'exprime à l'aide de *quotients* et de
-*produits*.
+séries dont le terme général s'exprime à l'aide de *quotients*, de
+*produits*, et de *puissances*.
 
 ::: {#thm-critere-alembert}
 
@@ -738,8 +738,8 @@ Donc la série $\sum \frac{n^{n}}{n!}$ est grossièrement divergente.
 ### Critère des séries alternées
 
 Le critère des séries alternées permet d'étudier les séries dont le signe du
-terme général *alterne*, d'où sont nom. Plus que le résultat de convergence, il
-faut retenir l'encadrement de la somme par ses sommes partielles en cas de
+terme général *alterne*, d'où son nom. En plus du résultat de *convergence*, il
+faut retenir l'*encadrement* de la somme par ses sommes partielles en cas de
 convergence.
 
 ::: {#thm-alterne}
