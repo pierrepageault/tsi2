@@ -199,7 +199,8 @@ window.Quarto = {
     <h2 id="toc-title">Table des matières</h2>
    
   <ul>
-  <li><a href="#convergence-dune-série-numérique" id="toc-convergence-dune-série-numérique" class="nav-link active" data-scroll-target="#convergence-dune-série-numérique"><span class="header-section-number">2.1</span> Convergence d’une série numérique</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#convergence-dune-série-numérique" id="toc-convergence-dune-série-numérique" class="nav-link" data-scroll-target="#convergence-dune-série-numérique"><span class="header-section-number">2.1</span> Convergence d’une série numérique</a>
   <ul class="collapse">
   <li><a href="#définitions" id="toc-définitions" class="nav-link" data-scroll-target="#définitions"><span class="header-section-number">2.1.1</span> Définitions</a></li>
   <li><a href="#calculer-avec-des-séries-convergentes" id="toc-calculer-avec-des-séries-convergentes" class="nav-link" data-scroll-target="#calculer-avec-des-séries-convergentes"><span class="header-section-number">2.1.2</span> Calculer avec des séries convergentes</a></li>
@@ -243,6 +244,16 @@ window.Quarto = {
 </header>
 
 
+<section id="introduction" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Ce chapitre est le pendant <em>discret</em> du chapitre précédent : les intégrales deviennent des sommmes, les dérivées des différences, et il n’est plus question de faire tendre <span class="math inline">\(n\)</span> vers autre chose que <span class="math inline">\(+\infty\)</span>. A ce sujet, Euler écrit dans ses <em>Institutiones Calculi differentialis (1755)</em> :</p>
+<blockquote class="blockquote">
+<p>[…], en devenant infiniement petites, les différences finissent par être des différentielles. De même alors les quantités que l’on appelait des sommes prennent le nom d’intégrales.</p>
+</blockquote>
+<p>L’architecture générale est très similaire : on définit la convergence d’une somme infinie (une <em>série</em>) via ses <em>sommes partielles</em>, on établit les propriétés de ces nouvelles sommes, on démontre des théorèmes de comparaison, et on donne des séries de référence.</p>
+<p>L’abscence de technique de calcul infinitésimal dans le cadre discret (on ne peut pas dériver ou primitiver une fonction définie sur <span class="math inline">\(\mathbb{N}\)</span>) est compensé par des techniques d’<em>encadrement</em>.</p>
+<p>La plupart des résultats disposent de leur analogue continue, ce qui facilite leur apprentissage. D’autres sont propres aux séries ; c’est notamment le cas du <em>critère de d’Alembert</em> et du <em>critère des séries alternées</em>, qui sont traités dans une section à part.</p>
+</section>
 <section id="convergence-dune-série-numérique" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="convergence-dune-série-numérique"><span class="header-section-number">2.1</span> Convergence d’une série numérique</h2>
 <section id="définitions" class="level3" data-number="2.1.1">
