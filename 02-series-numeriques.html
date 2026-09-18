@@ -608,7 +608,7 @@ Avertissement&nbsp;2.2
 </div>
 <p>Pour pouvoir appliquer efficacement les théorèmes de comparaison, il faut un certain nombre de séries de référence. Les séries géométriques et télescopiques ne permettent pas de couvrir suffisamment de cas en pratique; il faut pouvoir dire quelque chose de la nature des <em>séries de Riemann</em> de la forme <span class="math inline">\(\sum
 \frac{1}{n^\alpha}\)</span>.</p>
-<p>Contrairement au cas des intégrales, on ne peux pas calculer explicitement les sommes partielles de ces séries. On se ramène au cas des intégrales de Riemann via le résultat suivant.</p>
+<p>Contrairement au cas des intégrales, on ne peux pas calculer explicitement les sommes partielles de ces séries. On se ramène au cas des intégrales de via le résultat suivant.</p>
 <div id="thm-comparaison-integrale" class="theorem">
 <p><span class="theorem-title"><strong>Théorème 2.3</strong></span> Si <span class="math inline">\(f:[n_0,+\infty[\to \mathbb{R}\)</span> est une fonction <em>positive</em>, <em>continue</em> et <em>décroissante</em>, alors la série <span class="math inline">\(\displaystyle \sum_{n\geqslant n_0} f(n)\)</span> et l’intégrale <span class="math inline">\(\int_{n_0}^{+\infty}f(t)dt\)</span> ont même nature.</p>
 </div>
@@ -669,7 +669,7 @@ Figure&nbsp;2.2: Les deux versions de l’encadrement fondamental utilisé dans 
 \frac{1}{n^{2}}\)</span> converge.</p>
 </div>
 <p>Comme pour le théorème de comparaison de fonctions positives, les théorèmes de comparaison pour les séries à termes positifs restent incapables de traiter les séries à termes complexes, ou les séries dont le terme général n’est pas de signe constant au voisinage de <span class="math inline">\(+\infty\)</span>.</p>
-<p>Le remède est le même que pour les intégrales; les séries <em>absolument convergentes</em>.</p>
+<p>Le remède est le même que pour les intégrales via la notion d’<em>absolue convergentes</em>.</p>
 <div id="def-serie-absolument-convergente" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 2.7</strong></span> On dit que la série <span class="math inline">\(\sum u_{n}\)</span> est <strong>absolument convergente</strong> si a série <span class="math inline">\(\sum |u_{n}|\)</span> converge.</p>
 </div>
@@ -700,7 +700,7 @@ n}{n^{2}}\)</span> converge <em>absoluement</em>, donc converge.</p>
 <p>Les deux résultats présentés dans cette section sont propres aux séries. Le premier sera surtout utilisé dans le chapitre sur les séries entières. Le second permet d’étudier les séries dont le signe du terme général <em>alterne</em>. Il est surtout intéressant pour l’encadrement explicite qu’il fournit de la somme à l’aide de ses sommes partielles d’indices pairs et impairs.</p>
 <section id="le-critère-de-dalembert" class="level3" data-number="2.3.1">
 <h3 data-number="2.3.1" class="anchored" data-anchor-id="le-critère-de-dalembert"><span class="header-section-number">2.3.1</span> Le critère de d’Alembert</h3>
-<p>Le critère de d’Alembert s’applique aux séries <span class="math inline">\(\sum u_{n}\)</span> à termes <em>strictement</em> positifs. Si ce n’est pas le cas, on peut toujours envisager de l’appliquer à la série <span class="math inline">\(\sum |u_{n}|\)</span>. Il est particulièrement adapté aux séries dont le terme général s’exprime à l’aide de <em>quotients</em> et de <em>produits</em>.</p>
+<p>Le critère de d’Alembert s’applique aux séries <span class="math inline">\(\sum u_{n}\)</span> à termes <em>strictement</em> positifs. Si ce n’est pas le cas, on peut toujours envisager de l’appliquer à la série <span class="math inline">\(\sum |u_{n}|\)</span>. Il est particulièrement adapté aux séries dont le terme général s’exprime à l’aide de <em>quotients</em>, de <em>produits</em>, et de <em>puissances</em>.</p>
 <div id="thm-critere-alembert" class="theorem">
 <p><span class="theorem-title"><strong>Théorème 2.4 (Critère de d’Alembert)</strong></span> Soit <span class="math inline">\((u_{n})\)</span> une suite de réels <em>strictement positifs</em>. On suppose que le quotient <span class="math inline">\(\frac{u_{n+1}}{u_{n}}\)</span> tend vers une limite finie <span class="math inline">\(\lambda \geqslant
 0\)</span>. Alors</p>
@@ -733,7 +733,7 @@ n}{n^{2}}\)</span> converge <em>absoluement</em>, donc converge.</p>
 </section>
 <section id="critère-des-séries-alternées" class="level3" data-number="2.3.2">
 <h3 data-number="2.3.2" class="anchored" data-anchor-id="critère-des-séries-alternées"><span class="header-section-number">2.3.2</span> Critère des séries alternées</h3>
-<p>Le critère des séries alternées permet d’étudier les séries dont le signe du terme général <em>alterne</em>, d’où sont nom. Plus que le résultat de convergence, il faut retenir l’encadrement de la somme par ses sommes partielles en cas de convergence.</p>
+<p>Le critère des séries alternées permet d’étudier les séries dont le signe du terme général <em>alterne</em>, d’où son nom. En plus du résultat de <em>convergence</em>, il faut retenir l’<em>encadrement</em> de la somme par ses sommes partielles en cas de convergence.</p>
 <div id="thm-alterne" class="theorem">
 <p><span class="theorem-title"><strong>Théorème 2.5 (Critère des séries alternées)</strong></span> Soit <span class="math inline">\((u_{n})\)</span> une suite réelle <em>monotone</em> de <em>limite nulle</em>. Alors la série <span class="math inline">\(\sum (-1)^{n}u_{n}\)</span> <em>converge</em> et sa somme <span class="math inline">\(S\)</span> est encadrée par les sommes partielles d’indices pairs et impairs, qui forment deux suites <em>adjacentes</em>. En particulier, le reste <span class="math inline">\(R_{n}\)</span> de la série <span class="math inline">\(\sum (-1)^{n} u_{n}\)</span> est du signe de son <em>premier terme</em>, et <span class="math inline">\(|R_{n}|\leqslant |u_{n+1}|\)</span>.</p>
 </div>
