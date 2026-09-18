@@ -25,7 +25,7 @@ leur apprentissage. D'autres sont propres aux séries ; c'est notamment le cas
 du *critère de d'Alembert* et du *critère des séries alternées*, qui sont traités
 dans une section à part.
 
-## Convergence d'une série numérique
+## Convergence d'une série numérique {#sec-02-convergence}
 
 ### Définitions
 
@@ -456,7 +456,7 @@ sommes ce que l'intégration par parties est aux intégrales.
 
 :::
 
-## Séries à termes positifs {#sec-serie-terme-positif}
+## Séries à termes positifs {#sec-02-serie-terme-positif}
 
 Dans cette section, on démontre le théorème de comparaison pour les séries à
 termes positifs. De même que dans le cas des intégrales, ce théorème permettra
@@ -676,7 +676,7 @@ comparaison.
 
 :::
 
-## Autres résultats de convergence
+## Autres résultats de convergence {#sec-02-autre}
 
 Les deux résultats présentés dans cette section sont propres aux séries. Le
 premier sera surtout utilisé dans le chapitre sur les séries entières. Le

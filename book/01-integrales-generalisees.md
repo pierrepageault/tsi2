@@ -83,7 +83,7 @@ intégrale de Gauss,...)
 
 
 
-## Convergence d'une intégrale généralisée {#sec-convergence}
+## Convergence d'une intégrale généralisée {#sec-01-convergence}
 
 Dans tout ce chapitre, $I$ désigne un intervalle non vide de $\mathbb{R}$,
 d'extrémités $a,b \in \mathbb{R}\cup \left\{ \pm \infty\right\}$, avec $a
@@ -490,7 +490,7 @@ $\int_{0}^{1}x^{2}dx$ et $\int_{0}^{1}x\ln(x)dx$.
 :::
 
 
-## Les théorèmes de comparaison {#sec-comparaison}
+## Les théorèmes de comparaison {#sec-01-comparaison}
 
 Les seules intégrales réellement intéressantes sont les intégrales
 convergentes. Actuellement, nous disposons d'un seul outil pour
@@ -992,7 +992,7 @@ les retrouver rapidement.
 :::
 
 
-## Calculer avec des intégrales convergentes {#sec-calculer}
+## Calculer avec des intégrales convergentes {#sec-01-calculer}
 
 ### Propriétés des intégrales convergentes
 
