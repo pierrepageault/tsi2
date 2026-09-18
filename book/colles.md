@@ -14,4 +14,5 @@ Les étudiants devront connaîtrent les développements limités des fonctions u
 
 @sec-calculer
 
-Le programme est centré sur l'intégration par parties et le théorème de changement de variable. 
+Le programme est centré sur l'intégration par parties et le théorème de
+changement de variable. 

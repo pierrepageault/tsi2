@@ -872,7 +872,7 @@ $\frac{u^{-\alpha +1}}{-\alpha +1}$.
 
 ::: {#exm-In}
 
-Pour tout $n \in \mathbb{N}$, l'intégrale $I_{n}=\int_{0}^{\infty}t^{n}e^{-t}dt$ converge.
+Pour tout $n \in \mathbb{N}$, l'intégrale $I_{n}=\int_{0}^{+\infty}t^{n}e^{-t}dt$ converge.
 
 ::: {.details}
 
@@ -1040,7 +1040,7 @@ Cette propriété est équivalente à la croissance de l'intégrale par linéari
 ::: {#exm-linearite}
 
 En admettant (voir @exm-In) que pour tout $n \in \mathbb{N}$, l'intégrale
-$I_{n}=\int_{0}^{+\infty}P(t)e^{-t}dt$ converge, alors pour tout $P \in
+$I_{n}=\int_{0}^{+\infty}t^{n}e^{-t}dt$ converge, alors pour tout $P \in
 \mathbb{R}[X]$, l'intégrale $\int_{0}^{+\infty}P(t)e^{-t}dt$ converge comme
 combinaison linéaire d'intégrales convergentes.
 
