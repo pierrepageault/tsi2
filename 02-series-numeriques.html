@@ -33,7 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./colles.html" rel="next">
+<link href="./03-complements-algebre-lineaire.html" rel="next">
 <link href="./01-integrales-generalisees.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -179,6 +179,12 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./03-complements-algebre-lineaire.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Compléments d’algèbre linéaire</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./colles.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Programmes de colle</span></a>
   </div>
@@ -200,23 +206,23 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#convergence-dune-série-numérique" id="toc-convergence-dune-série-numérique" class="nav-link" data-scroll-target="#convergence-dune-série-numérique"><span class="header-section-number">2.1</span> Convergence d’une série numérique</a>
+  <li><a href="#sec-02-convergence" id="toc-sec-02-convergence" class="nav-link" data-scroll-target="#sec-02-convergence"><span class="header-section-number">2.1</span> Convergence d’une série numérique</a>
   <ul class="collapse">
   <li><a href="#définitions" id="toc-définitions" class="nav-link" data-scroll-target="#définitions"><span class="header-section-number">2.1.1</span> Définitions</a></li>
   <li><a href="#calculer-avec-des-séries-convergentes" id="toc-calculer-avec-des-séries-convergentes" class="nav-link" data-scroll-target="#calculer-avec-des-séries-convergentes"><span class="header-section-number">2.1.2</span> Calculer avec des séries convergentes</a></li>
   <li><a href="#séries-géométriques-et-séries-télescopiques" id="toc-séries-géométriques-et-séries-télescopiques" class="nav-link" data-scroll-target="#séries-géométriques-et-séries-télescopiques"><span class="header-section-number">2.1.3</span> Séries géométriques et séries télescopiques</a></li>
   </ul></li>
-  <li><a href="#sec-serie-terme-positif" id="toc-sec-serie-terme-positif" class="nav-link" data-scroll-target="#sec-serie-terme-positif"><span class="header-section-number">2.2</span> Séries à termes positifs</a></li>
-  <li><a href="#autres-résultats-de-convergence" id="toc-autres-résultats-de-convergence" class="nav-link" data-scroll-target="#autres-résultats-de-convergence"><span class="header-section-number">2.3</span> Autres résultats de convergence</a>
+  <li><a href="#sec-02-serie-terme-positif" id="toc-sec-02-serie-terme-positif" class="nav-link" data-scroll-target="#sec-02-serie-terme-positif"><span class="header-section-number">2.2</span> Séries à termes positifs</a></li>
+  <li><a href="#sec-02-autre" id="toc-sec-02-autre" class="nav-link" data-scroll-target="#sec-02-autre"><span class="header-section-number">2.3</span> Autres résultats de convergence</a>
   <ul class="collapse">
   <li><a href="#le-critère-de-dalembert" id="toc-le-critère-de-dalembert" class="nav-link" data-scroll-target="#le-critère-de-dalembert"><span class="header-section-number">2.3.1</span> Le critère de d’Alembert</a></li>
   <li><a href="#critère-des-séries-alternées" id="toc-critère-des-séries-alternées" class="nav-link" data-scroll-target="#critère-des-séries-alternées"><span class="header-section-number">2.3.2</span> Critère des séries alternées</a></li>
   </ul></li>
   <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
   <ul class="collapse">
-  <li><a href="#convergence-dune-série-numérique-1" id="toc-convergence-dune-série-numérique-1" class="nav-link" data-scroll-target="#convergence-dune-série-numérique-1"><span class="header-section-number">2.3.3</span> Convergence d’une série numérique</a></li>
+  <li><a href="#convergence-dune-série-numérique" id="toc-convergence-dune-série-numérique" class="nav-link" data-scroll-target="#convergence-dune-série-numérique"><span class="header-section-number">2.3.3</span> Convergence d’une série numérique</a></li>
   <li><a href="#séries-à-termes-positifs" id="toc-séries-à-termes-positifs" class="nav-link" data-scroll-target="#séries-à-termes-positifs"><span class="header-section-number">2.3.4</span> Séries à termes positifs</a></li>
-  <li><a href="#autres-résultats-de-convergence-1" id="toc-autres-résultats-de-convergence-1" class="nav-link" data-scroll-target="#autres-résultats-de-convergence-1"><span class="header-section-number">2.3.5</span> Autres résultats de convergence</a></li>
+  <li><a href="#autres-résultats-de-convergence" id="toc-autres-résultats-de-convergence" class="nav-link" data-scroll-target="#autres-résultats-de-convergence"><span class="header-section-number">2.3.5</span> Autres résultats de convergence</a></li>
   <li><a href="#divers" id="toc-divers" class="nav-link" data-scroll-target="#divers"><span class="header-section-number">2.3.6</span> Divers</a></li>
   </ul></li>
   </ul>
@@ -254,8 +260,8 @@ window.Quarto = {
 <p>L’abscence de technique de calcul infinitésimal dans le cadre discret (on ne peut pas dériver ou primitiver une fonction définie sur <span class="math inline">\(\mathbb{N}\)</span>) est compensé par des techniques d’<em>encadrement</em>.</p>
 <p>La plupart des résultats disposent de leur analogue continue, ce qui facilite leur apprentissage. D’autres sont propres aux séries ; c’est notamment le cas du <em>critère de d’Alembert</em> et du <em>critère des séries alternées</em>, qui sont traités dans une section à part.</p>
 </section>
-<section id="convergence-dune-série-numérique" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="convergence-dune-série-numérique"><span class="header-section-number">2.1</span> Convergence d’une série numérique</h2>
+<section id="sec-02-convergence" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sec-02-convergence"><span class="header-section-number">2.1</span> Convergence d’une série numérique</h2>
 <section id="définitions" class="level3" data-number="2.1.1">
 <h3 data-number="2.1.1" class="anchored" data-anchor-id="définitions"><span class="header-section-number">2.1.1</span> Définitions</h3>
 <div id="def-serie" class="theorem definition">
@@ -346,7 +352,7 @@ Avertissement&nbsp;2.1
 <div id="exm-n" class="theorem example">
 <p><span class="theorem-title"><strong>Exemple 2.3</strong></span> La série <span class="math inline">\(\sum n\)</span> étudiée dans l’<a href="#exm-nature-divergente" class="quarto-xref">Exemple&nbsp;<span>2.2</span></a> est grossièrement divergente (le calcul explicite de ses sommes partielles n’est donc même pas nécessaire).</p>
 </div>
-<p>Sauf exception – essentiellement dans le cas des séries géométriques et des séries télescopiques – il n’est pas possible de calculer <em>explicitement</em> les sommes partielles d’une série (on ne dispose même de la notion de <em>primitive</em> utilisée en calcul intégrale). Il est donc tout aussi nécessaire de développer des théorèmes de comparaison pour les séries; c’est l’objectif de la <a href="#sec-serie-terme-positif" class="quarto-xref"><span>Section 2.2</span></a>.</p>
+<p>Sauf exception – essentiellement dans le cas des séries géométriques et des séries télescopiques – il n’est pas possible de calculer <em>explicitement</em> les sommes partielles d’une série (on ne dispose même de la notion de <em>primitive</em> utilisée en calcul intégrale). Il est donc tout aussi nécessaire de développer des théorèmes de comparaison pour les séries; c’est l’objectif de la <span class="quarto-unresolved-ref">?sec-serie-terme-positif</span>.</p>
 <p>On peut néanmoins facilement <em>approximer</em> la somme d’une série convergente via ses sommes partielles qui, elles, sont calculables (au moins numériquement). La différence entre la somme totale et une somme partielle porte le nom de <em>reste</em>. Cette notion de sens que pour les séries convergentes.</p>
 <div id="def-reste" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 2.3</strong></span> Soit <span class="math inline">\(\sum_{n\geqslant n_0} u_n\)</span> une série convergente, de somme <span class="math inline">\(S\)</span>. Pour tout <span class="math inline">\(n \geqslant n_{0}\)</span>, on appelle <em>reste d’ordre <span class="math inline">\(n\)</span></em> de la série <span class="math inline">\(\sum_{n\geqslant n_0}u_n\)</span> la quantité</p>
@@ -544,8 +550,8 @@ Note&nbsp;2.3
 </div>
 </section>
 </section>
-<section id="sec-serie-terme-positif" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="sec-serie-terme-positif"><span class="header-section-number">2.2</span> Séries à termes positifs</h2>
+<section id="sec-02-serie-terme-positif" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sec-02-serie-terme-positif"><span class="header-section-number">2.2</span> Séries à termes positifs</h2>
 <p>Dans cette section, on démontre le théorème de comparaison pour les séries à termes positifs. De même que dans le cas des intégrales, ce théorème permettra de démontrer la convergence d’une série sans avoir à calculer explicitement ses sommes partielles.</p>
 <p>A noter une différence importante avec les intégrales généralisées ; la notion d’intégrabilité n’est pas au programme pour les suites. Il faudra donc systématiquement se ramener à des séries <em>positives</em> ou au moins <em>de signe constant</em> au voisinage de <span class="math inline">\(+\infty\)</span>.</p>
 <p>Comme pour les intégrales, le théorème de comparaison que nous allons démontrer repose sur le théorème de la limite monotone, via le <a href="#lem-croissante-majore" class="quarto-xref">Lemme&nbsp;<span>2.1</span></a>.</p>
@@ -695,8 +701,8 @@ n}{n^{2}}\)</span> converge <em>absoluement</em>, donc converge.</p>
 <p><span class="proof-title"><em>Remarque 2.4</em>. </span>Contrairement au cas des fonctions, on ne dispose pas en TSI de la notion de suite <em>intégrable</em>. La situation est donc comparativement plus simple ; on se ramenera systématiquement à la notion d’absolue convergence, avec <em>un seul</em> théorème de comparaison.</p>
 </div>
 </section>
-<section id="autres-résultats-de-convergence" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="autres-résultats-de-convergence"><span class="header-section-number">2.3</span> Autres résultats de convergence</h2>
+<section id="sec-02-autre" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="sec-02-autre"><span class="header-section-number">2.3</span> Autres résultats de convergence</h2>
 <p>Les deux résultats présentés dans cette section sont propres aux séries. Le premier sera surtout utilisé dans le chapitre sur les séries entières. Le second permet d’étudier les séries dont le signe du terme général <em>alterne</em>. Il est surtout intéressant pour l’encadrement explicite qu’il fournit de la somme à l’aide de ses sommes partielles d’indices pairs et impairs.</p>
 <section id="le-critère-de-dalembert" class="level3" data-number="2.3.1">
 <h3 data-number="2.3.1" class="anchored" data-anchor-id="le-critère-de-dalembert"><span class="header-section-number">2.3.1</span> Le critère de d’Alembert</h3>
@@ -768,8 +774,8 @@ S_{999} = 0.6926...
 </section>
 <section id="exercices" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="exercices">Exercices</h2>
-<section id="convergence-dune-série-numérique-1" class="level3" data-number="2.3.3">
-<h3 data-number="2.3.3" class="anchored" data-anchor-id="convergence-dune-série-numérique-1"><span class="header-section-number">2.3.3</span> Convergence d’une série numérique</h3>
+<section id="convergence-dune-série-numérique" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="convergence-dune-série-numérique"><span class="header-section-number">2.3.3</span> Convergence d’une série numérique</h3>
 <div id="exr-02-0001" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 2.1</strong></span> (Une série grossièrement divergente). Montrer que la série <span class="math inline">\(\sum \left(1 - \frac{1}{n}\right)^n\)</span> est grossièrement divergente.</p>
 </div>
@@ -853,8 +859,8 @@ R_n=\sum_{k=n+1}^{+\infty}\frac{1}{k^{\alpha}}\)</span> de la serie <span class=
 </ol>
 </div>
 </section>
-<section id="autres-résultats-de-convergence-1" class="level3" data-number="2.3.5">
-<h3 data-number="2.3.5" class="anchored" data-anchor-id="autres-résultats-de-convergence-1"><span class="header-section-number">2.3.5</span> Autres résultats de convergence</h3>
+<section id="autres-résultats-de-convergence" class="level3" data-number="2.3.5">
+<h3 data-number="2.3.5" class="anchored" data-anchor-id="autres-résultats-de-convergence"><span class="header-section-number">2.3.5</span> Autres résultats de convergence</h3>
 <div id="exr-02-alembert-1" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 2.11</strong></span> (Critère de d’Alembert). Etudier la nature de la série <span class="math inline">\(\displaystyle\sum = \frac{(1+i)^n}{n!}\)</span>.</p>
 </div>
@@ -1385,8 +1391,8 @@ R_n=\sum_{k=n+1}^{+\infty}\frac{1}{k^{\alpha}}\)</span> de la serie <span class=
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./colles.html" class="pagination-link" aria-label="Programmes de colle">
-        <span class="nav-page-text">Programmes de colle</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./03-complements-algebre-lineaire.html" class="pagination-link" aria-label="Compléments d'algèbre linéaire">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Compléments d’algèbre linéaire</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

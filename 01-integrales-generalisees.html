@@ -179,6 +179,12 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./03-complements-algebre-lineaire.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Compléments d’algèbre linéaire</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./colles.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Programmes de colle</span></a>
   </div>
@@ -200,19 +206,19 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#sec-convergence" id="toc-sec-convergence" class="nav-link" data-scroll-target="#sec-convergence"><span class="header-section-number">1.1</span> Convergence d’une intégrale généralisée</a>
+  <li><a href="#sec-01-convergence" id="toc-sec-01-convergence" class="nav-link" data-scroll-target="#sec-01-convergence"><span class="header-section-number">1.1</span> Convergence d’une intégrale généralisée</a>
   <ul class="collapse">
   <li><a href="#intégrales-généralisées" id="toc-intégrales-généralisées" class="nav-link" data-scroll-target="#intégrales-généralisées"><span class="header-section-number">1.1.1</span> Intégrales généralisées</a></li>
   <li><a href="#convergence-dune-intégrale-généralisée" id="toc-convergence-dune-intégrale-généralisée" class="nav-link" data-scroll-target="#convergence-dune-intégrale-généralisée"><span class="header-section-number">1.1.2</span> Convergence d’une intégrale généralisée</a></li>
   <li><a href="#sec-integrale-faussement-generalisee" id="toc-sec-integrale-faussement-generalisee" class="nav-link" data-scroll-target="#sec-integrale-faussement-generalisee"><span class="header-section-number">1.1.3</span> Intégrales faussement généralisées</a></li>
   </ul></li>
-  <li><a href="#sec-comparaison" id="toc-sec-comparaison" class="nav-link" data-scroll-target="#sec-comparaison"><span class="header-section-number">1.2</span> Les théorèmes de comparaison</a>
+  <li><a href="#sec-01-comparaison" id="toc-sec-01-comparaison" class="nav-link" data-scroll-target="#sec-01-comparaison"><span class="header-section-number">1.2</span> Les théorèmes de comparaison</a>
   <ul class="collapse">
   <li><a href="#le-théorème-de-comparaison-pour-les-fonctions-positives" id="toc-le-théorème-de-comparaison-pour-les-fonctions-positives" class="nav-link" data-scroll-target="#le-théorème-de-comparaison-pour-les-fonctions-positives"><span class="header-section-number">1.2.1</span> Le théorème de comparaison pour les fonctions positives</a></li>
   <li><a href="#intégrales-absolument-convergentes-et-fonctions-intégrables" id="toc-intégrales-absolument-convergentes-et-fonctions-intégrables" class="nav-link" data-scroll-target="#intégrales-absolument-convergentes-et-fonctions-intégrables"><span class="header-section-number">1.2.2</span> Intégrales absolument convergentes et fonctions intégrables</a></li>
   <li><a href="#intégrales-et-fonctions-intégrables-de-références" id="toc-intégrales-et-fonctions-intégrables-de-références" class="nav-link" data-scroll-target="#intégrales-et-fonctions-intégrables-de-références"><span class="header-section-number">1.2.3</span> Intégrales et fonctions intégrables de références</a></li>
   </ul></li>
-  <li><a href="#sec-calculer" id="toc-sec-calculer" class="nav-link" data-scroll-target="#sec-calculer"><span class="header-section-number">1.3</span> Calculer avec des intégrales convergentes</a>
+  <li><a href="#sec-01-calculer" id="toc-sec-01-calculer" class="nav-link" data-scroll-target="#sec-01-calculer"><span class="header-section-number">1.3</span> Calculer avec des intégrales convergentes</a>
   <ul class="collapse">
   <li><a href="#propriétés-des-intégrales-convergentes" id="toc-propriétés-des-intégrales-convergentes" class="nav-link" data-scroll-target="#propriétés-des-intégrales-convergentes"><span class="header-section-number">1.3.1</span> Propriétés des intégrales convergentes</a></li>
   <li><a href="#intégrations-pas-parties-et-changement-de-variable" id="toc-intégrations-pas-parties-et-changement-de-variable" class="nav-link" data-scroll-target="#intégrations-pas-parties-et-changement-de-variable"><span class="header-section-number">1.3.2</span> Intégrations pas parties et changement de variable</a></li>
@@ -290,8 +296,8 @@ Figure&nbsp;1.1: La définition initiale de Riemann de l’intégrale à l’aid
 <p>Ces précautions étant prises, les intégrales généralisées se comporteront essentiellement de la même manière que les intégrales usuelles.</p>
 <p>Les intégrales généralisées sont d’un usage constant en mathématiques et en physique (transformée de Laplace, de Fourier, fonction <span class="math inline">\(\Gamma\)</span> d’Euler, intégrale de Gauss,…)</p>
 </section>
-<section id="sec-convergence" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="sec-convergence"><span class="header-section-number">1.1</span> Convergence d’une intégrale généralisée</h2>
+<section id="sec-01-convergence" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="sec-01-convergence"><span class="header-section-number">1.1</span> Convergence d’une intégrale généralisée</h2>
 <p>Dans tout ce chapitre, <span class="math inline">\(I\)</span> désigne un intervalle non vide de <span class="math inline">\(\mathbb{R}\)</span>, d’extrémités <span class="math inline">\(a,b \in \mathbb{R}\cup \left\{ \pm \infty\right\}\)</span>, avec <span class="math inline">\(a
 \leqslant b\)</span>, et <span class="math inline">\(\mathbb{K}\)</span> désigne <span class="math inline">\(\mathbb{R}\)</span> ou <span class="math inline">\(\mathbb{C}\)</span>.</p>
 <section id="intégrales-généralisées" class="level3" data-number="1.1.1">
@@ -467,7 +473,7 @@ Figure&nbsp;1.4: Intégrale partielle et intégrable généralisée dans le cas 
 </div>
 </details>
 </div>
-<p>On vient d’associer à certaine intégrales une valeur numérique. On va donc pouvoir commencer à <em>calculer</em> avec des intégrales généralisées. Ce point sera abordé plus en détail dans la <a href="#sec-calculer" class="quarto-xref"><span>Section 1.3</span></a> mais nous énonçons dès maintenant la <em>relation de Chasles</em>, attendue de toute théorie satisfaisante de l’intégration.</p>
+<p>On vient d’associer à certaine intégrales une valeur numérique. On va donc pouvoir commencer à <em>calculer</em> avec des intégrales généralisées. Ce point sera abordé plus en détail dans la <span class="quarto-unresolved-ref">?sec-calculer</span> mais nous énonçons dès maintenant la <em>relation de Chasles</em>, attendue de toute théorie satisfaisante de l’intégration.</p>
 <div id="prp-Chasles-semi-ouvert-droite" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 1.1 (Relation de Chasles sur un intervalle semi ouvert)</strong></span> Soit <span class="math inline">\(f:[a,b[ \to \mathbb{K}\)</span> une fonction continue. Alors pour tout point <span class="math inline">\(c \in [a,b[\)</span>, les intégrales <span class="math inline">\(\int_{a}^{b}f(t)dt\)</span> et <span class="math inline">\(\int_{c}^{b}f(t)dt\)</span> ont <em>même nature</em> et, <em>en cas de convergence</em>, on a <span class="math display">\[
 \int_{a}^{b}f(t)dt = \int_{a}^{c}f(t)dt + \int_{c}^{b}f(t)dt.
@@ -599,8 +605,8 @@ Note&nbsp;1.5
 </div>
 </section>
 </section>
-<section id="sec-comparaison" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="sec-comparaison"><span class="header-section-number">1.2</span> Les théorèmes de comparaison</h2>
+<section id="sec-01-comparaison" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="sec-01-comparaison"><span class="header-section-number">1.2</span> Les théorèmes de comparaison</h2>
 <p>Les seules intégrales réellement intéressantes sont les intégrales convergentes. Actuellement, nous disposons d’un seul outil pour montrer la convergence d’une intégrale généralisée : revenir à une intégrale partielle et espérer être capable de la calculer pour étudier sa limite.</p>
 <p>Malheureusement, peu d’intégrales sont effectivement calculables car il est difficile de calculer des primitives, voir impossible<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
 <p>Face à ce constat, il est nécessaire de développer des outils permettant de montrer qu’une intégrale converge sans pour autant calculer explicitement une primitive de la fonction intégrée ; c’est le rôle des théorèmes de comparaison.</p>
@@ -947,8 +953,8 @@ Figure&nbsp;1.7: Convergence de l’intégrale <span class="math inline">\(\int_
 </div>
 </section>
 </section>
-<section id="sec-calculer" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="sec-calculer"><span class="header-section-number">1.3</span> Calculer avec des intégrales convergentes</h2>
+<section id="sec-01-calculer" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="sec-01-calculer"><span class="header-section-number">1.3</span> Calculer avec des intégrales convergentes</h2>
 <section id="propriétés-des-intégrales-convergentes" class="level3" data-number="1.3.1">
 <h3 data-number="1.3.1" class="anchored" data-anchor-id="propriétés-des-intégrales-convergentes"><span class="header-section-number">1.3.1</span> Propriétés des intégrales convergentes</h3>
 <p>Les intégrales convergentes héritent de toutes les propriétés préservées par passage à la limite (égalités, inégalités larges,…). La philosophie générale est la suivante :</p>
