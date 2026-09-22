@@ -396,11 +396,12 @@ linéaire $f$ de $E$ dans $E'$ tel que $f_{|F_{i}}=f_i$.
 
 Il faut comprendre cette proposition de deux manières :
 
-1. c'est un résultat d'*unicité* ; si deux applications linéaires coincident sur
-   chaque facteur d'une somme directe (c.-à.d si les restrictions sont les
-mêmes), elles sont *égales*,
-2. c'est une manière de *définir* une application linéaire : pour définir une application linéaire de $E$ dans $E'$, il suffit de la définir sur chaque facteur de la
-somme directe (ce qui est en général plus simple que de la définir partout). 
+1. c'est un résultat d'*unicité* ; si deux applications linéaires $f$ et $g$ coincident sur
+   chaque facteur d'une somme directe (c.-à.d si $f_{|F_{i}}=g_{|F_{i}}$ pour tout $i$), alors $f=g$,
+
+2. c'est un un résultat d'existence :  pour *définir*  une application linéaire
+   de $E$ dans $E'$, il suffit de la définir sur chaque facteur de la somme
+directe (ce qui est en général plus simple que de la définir partout). 
 
 :::
 
