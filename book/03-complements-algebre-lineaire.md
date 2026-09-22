@@ -184,9 +184,12 @@ souvent identifiés à tort.
 
 ## Sous-espaces vetoriels {#sec-03-sous-espaces-vectoriels}
 
-Pour nous, les sous-espacex vectoriel seront surtout un outil pour comprendre
-et définir des applications linéaires. On commence par rappeler les points
-essentiels du cours de première année.
+Pour nous, les sous espaces vectoriels seront surtout un outil pour comprendre
+et définir des applications linéaires, via les notions de *somme directe*
+
+On commence par quelques rappels de première année.
+
+### Sous espaces vectoriels
 
 ::: {#prp-caractérisation}
 
@@ -248,9 +251,11 @@ avec $J = \begin{pmatrix}
 
 :::
 
+### Somme de sous espaces vectoriels
+
 Les sous espaces vectoriels sont stables par intersection mais par par réunion
-(considérer la réunion de deux droites dans le plan). En algèbre linéaire, la
-réunion est remplacée par la *somme*. 
+(considérer par exemple la réunion de deux droites dans le plan, qui n'est clairement pas stable par somme). En algèbre linéaire, la
+réunion est remplacée par la notion de *somme*. 
 
 ::: {#def-somme}
 
@@ -260,7 +265,9 @@ $$
     F = \{v_1 + \cdots + v_{n}, v_{1}\in F_{1},\cdots, v_{n}\in F_{n}\}.
 $$
 
-On le note $F_{1}+ \dots + F_{n}$ ou $\displaystyle \sum_{i=1}^{n}F_{i}$. C'est le plus petit sous espace vectoriel de $E$ (au sens de l'inclusion) qui contient $F_{1},\dots,F_{n}$.
+On la note $F_{1}+ \dots + F_{n}$ ou $\displaystyle \sum_{i=1}^{n}F_{i}$. Les
+sous espaces vectoriels $F_{1},\dots,F_{n}$ s'appellent les *facteurs* de la
+somme. 
 
 :::
 
@@ -285,8 +292,118 @@ dit que la somme est *directe*.
 
 On dit que la somme $F = F_{1}+ \dots + F_{n}$ est **directe** si tout élément
 de $F$ s'écrit *de manière unique* comme somme d'éléments de
-$F_{1},\dots,F_{n}$.
+$F_{1},\dots,F_{n}$. On note alors $F = F_{1}\oplus \cdots \oplus F_{n}$.
 
 :::
+
+Les sommes directes jouent le même rôle que les familles libres. En
+particulier :
+
+::: {#prp-unicite-ecriture-zero}
+
+#### Unicité de l'écriture de zéro
+
+La somme $F = F_{1}+ \dots + F_{n}$ est directe ssi l'écriture de $0_{E}$ dans la
+somme $F$ est unique i.e. 
+
+$$
+    \forall v_{1} \in F_{1},\dots, v_{n} \in F_{n},\ v_{1}+\dots + v_{n} =
+0_{E} \Rightarrow v_{1}= \dots = v_{n}=0_{E}.
+$$
+
+:::
+
+Le cas particulier de deux facteurs est très fréquent (projecteur,
+symétrie,...). Il est aussi plus simple à traiter. 
+
+::: {#prp-deux-facteurs}
+
+Soit $F$ et $G$ deux sous espaces vectoriels de $E$. Alors la somme $F + G$ est
+directe ssi $F \cap G = \{0_E\}$.
+
+:::
+
+::: {#wrn-deux-facteur .callout-warning}
+
+Cette caractérisation est *fausse* pour trois facteurs ou plus (penser à $3$
+droites coplanaires).
+
+:::
+
+::: {#def-supplementaire}
+
+Deux sous espaces vectoriels $F$ et $G$ de $E$ sont **suplémentaires** dans $E$
+si $E=F \oplus G$. 
+
+:::
+
+::: {#prp-caracterisation-supplementaire}
+
+Soient $F$ et $G$ deux sous espaces vectoriels de $E$. Les propositions
+suivantes sont équivalentes :
+
+1. $E=F \oplus G$,
+2. $F \cap G =0_{E}$ et $E=F + G$,
+3. si $E$ est de dimension finie, $F \cap G = \{0_{E}\}$ et $\dim E = \dim F +
+   \dim G$.
+
+:::
+
+### Définir une application linéaire à l'aide d'une somme directe
+
+On sait qu'une application linéaire est entièrement
+définie par l'image d'une *base*, encodée par une *matrice* en
+dimension finie. 
+
+De même, nous allons voir qu'une application linéaire est entièrement
+déterminer par ses *restrictions* aux facteurs d'une somme directe, et 
+encodée par une matrice *par blocs*.
+
+::: {#def-restriction}
+
+Soit $F$ un sous espace vectoriel de $E$ et $f$ une application linéaire de $E$ dans $E'$.  
+**restriction** de $f$ à $F$ est l'application linéaire $f_{|F}:F to E'$ définie
+par
+
+$$
+\forall v \in F,\ f_{|F}(v) = f(v).
+$$
+
+:::
+
+::: {#nte-restriction .callout-note}
+
+Autrement dit, l'*action* de $f_{|F}$ est la même que $f$, mais l'*espace de
+départ* change. Or, changer l'espace de départ (ou d'arrivée) d'une fonction,
+c'est changer la
+fonction. Par exemple, réduire l'espace de départ (on dit *restreindre*) peut
+rendre une fonction injective. De même, reduire l'espace d'arriver (on dit
+*corestreindre*) peut rendre une fonction surjective. Dès lors, il est légitime
+de distinguer $f$ et $f_{|F}$.
+
+:::
+
+::: {#prp-definition-somme-directe}
+
+Soient $E$ et $E'$ deux $\mathbb{K}$-espace vectoriels. On suppose que
+$E=\bigoplus_{i=1}^{n}F_{i}$. On se donne, pour tout $i \in \{1,\dots,n\}$, une
+application linéaire $f_i:F_i \to E'$. Alors il existe une unique application
+linéaire $f$ de $E$ dans $E'$ tel que $f_{|F_{i}}=f_i$. 
+
+:::
+
+::: {#nte-definition-somme-directe .callout-note}
+
+Il faut comprendre cette proposition de deux manières :
+
+1. c'est un résultat d'*unicité* ; si deux applications linéaires coincident sur
+   chaque facteur d'une somme directe (c.-à.d si les restrictions sont les
+mêmes), elles sont *égales*,
+2. c'est une manière de *définir* une application linéaire : pour définir une application linéaire de $E$ dans $E'$, il suffit de la définir sur chaque facteur de la
+somme directe (ce qui est en général plus simple que de la définir partout). 
+
+:::
+
+
 
 
