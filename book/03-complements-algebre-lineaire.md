@@ -18,7 +18,7 @@ génératrices, les sous-espaces vectoriels, et les applications linéaires.
 Cette notion a été vue en première année dans le cas des familles *finies* de
 $E$ ; on les étend cette année au cas des familles quelconques. 
 
-## Familles quelconques de vecteurs
+## Familles quelconques de vecteurs {#sec-03-familles-quelconques-deè-vecteurs}
 
 Cette première section étend au cas des familles quelconques (finies ou
 infinies) les définitions vues en première année.  
@@ -181,4 +181,112 @@ Le premier cas engloble les cas $\mathcal{M}_{1,n}(\mathbb{K})=\mathbb{K}^{n}$
 souvent identifiés à tort. 
 
 :::
+
+## Sous-espaces vetoriels {#sec-03-sous-espaces-vectoriels}
+
+Pour nous, les sous-espacex vectoriel seront surtout un outil pour comprendre
+et définir des applications linéaires. On commence par rappeler les points
+essentiels du cours de première année.
+
+::: {#prp-caractérisation}
+
+Un sous-ensemble $F$ de $E$ est un sous espace vectoriel de $E$ si $F$ est non
+vide et si $F$ est stable par combinaisons linéaires, c-à-d 
+
+$$
+    \forall u,v \in F,\ \forall \lambda \in \mathbb{K}, u+\lambda v \in F.
+$$
+
+:::
+
+::: {#rem-non-vide}
+
+On montre toujours que $F$ est non vide en montrant que $0_{E}\in F$.
+
+:::
+
+::: {#def-sous-espace-engendre}
+
+#### Sous espace engendré par une partie
+
+Soit $\mathcal{G}$ une partie non vide de $E$. On note
+$\mathrm{Vect}(\mathcal{G})$ l'ensemble des combinaisons linéaires de
+$\mathcal{G}$. Alors $\mathrm{Vect}(\mathcal{G})$ est un sous espace vectoriel
+de $E$, dit **engendré** par $\mathcal{G}$, et $\mathcal{G}$ est une famille
+génératrice de $\mathrm{Vect}(\mathcal{G})$.
+
+:::
+
+::: {#tip-sous-espace-engendre .callout-tip}
+
+En pratique, on ne prend jamais la peine de rappeler que $\mathcal{G}$ est une
+famille génératrice de $\mathrm{Vect}(\mathcal{G})$ ; c'est implicite dans
+cette notation. En particulier, si la famille $\mathcal{G}$ est libre, c'est
+automatiquement une base de $F$.
+
+:::
+
+::: {#exm-famille-generatrice-1}
+
+La famille $\{1,X,\dots X^{n}\}$ est une famille génératrice de
+$\mathbb{R}_{n}[X]$.
+
+:::
+
+::: {#exm-famille-generatrice-2}
+
+On a 
+
+$$
+    F=\left\{ \begin{pmatrix}
+        a&b\\b&a
+    \end{pmatrix},\ a,b \in \mathbb{R}\right\} = \mathrm{Vect}(I_2,J),
+$$
+avec $J = \begin{pmatrix}
+    0&1\\1&0
+\end{pmatrix}$. Donc $F$ est un sous-espace vectoriel de $\mathcal{M}_{2}(\mathbb{R})$.
+
+:::
+
+Les sous espaces vectoriels sont stables par intersection mais par par réunion
+(considérer la réunion de deux droites dans le plan). En algèbre linéaire, la
+réunion est remplacée par la *somme*. 
+
+::: {#def-somme}
+
+Soient $F_{1},\dots,F_{n}$ des sous espaces vectoriel de $E$. On appelle **somme** des sous espaces $F_1,\dots,F_{n}$ le sous ensemble 
+
+$$
+    F = \{v_1 + \cdots + v_{n}, v_{1}\in F_{1},\cdots, v_{n}\in F_{n}\}.
+$$
+
+On le note $F_{1}+ \dots + F_{n}$ ou $\displaystyle \sum_{i=1}^{n}F_{i}$. C'est le plus petit sous espace vectoriel de $E$ (au sens de l'inclusion) qui contient $F_{1},\dots,F_{n}$.
+
+:::
+
+::: {#prp-somme}
+
+La somme $F_{1}+\dots +F_{n}$ est un sous espace vectoriel de $E$.
+
+:::
+
+::: {#rem-somme}
+
+La somme $F_{1}+ \dots + F_{n}$ est le plus petit sous espace vectoriel de $E$
+(au sens de l'inclusion) contenant $F_{1},\dots,F_{n}$.
+
+:::
+
+Par définition, tout élément de $F_{1}+ \dots + F_{n}$ s'écrit comme
+somme d'élément de $F_{1},\dots,F_{n}$. Lorsque cette écriture est unique, on
+dit que la somme est *directe*. 
+
+::: {#def-somme-directe}
+
+On dit que la somme $F = F_{1}+ \dots + F_{n}$ est **directe** si tout élément
+de $F$ s'écrit *de manière unique* comme somme d'éléments de
+$F_{1},\dots,F_{n}$.
+
+:::
+
 

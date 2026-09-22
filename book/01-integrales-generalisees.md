@@ -300,7 +300,7 @@ Donc l'intégrale $\int_{0}^{1}\frac{dx}{x^{2}}$ diverge.
 
 On vient d'associer à certaine intégrales une valeur numérique. On va donc
 pouvoir commencer à *calculer* avec des intégrales généralisées. Ce point sera
-abordé plus en détail dans la @sec-calculer mais nous énonçons dès maintenant la
+abordé plus en détail dans la @sec-01-calculer mais nous énonçons dès maintenant la
 *relation de Chasles*, attendue de toute théorie satisfaisante de
 l'intégration. 
 

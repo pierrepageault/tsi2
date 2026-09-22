@@ -173,7 +173,7 @@ séries télescopiques -- il n'est pas possible de calculer *explicitement* les
 sommes partielles d'une série (on ne dispose même de la notion de *primitive*
 utilisée en calcul intégrale). Il est donc tout aussi nécessaire de développer
 des théorèmes de comparaison pour les séries; c'est l'objectif de la
-@sec-serie-terme-positif.
+@sec-02-serie-terme-positif.
 
 On peut néanmoins facilement *approximer* la somme d'une série convergente via
 ses sommes partielles qui, elles, sont calculables (au moins numériquement). La
@@ -502,6 +502,26 @@ Soient $\sum u_{n}$ et $\sum v_{n}$ deux séries à termes *positifs*. Alors
 
 :::
 
+::: {#exm-comparaison-1}
+
+Nature de la série $\sum \frac{1}{2^{n}+1}$.
+
+::: {.details}
+
+On a 
+
+$$
+    \forall n \geqslant 0,\ 0 \leqslant \frac{1}{2^{n}+1}\leqslant \frac{1}{2^{n}}.
+$$
+
+De plus, la série $\sum \frac{1}{2^{n}}$ est une série géométrique convergente.
+Donc par comparaison de séries à termes positifs, la série $\sum
+\frac{1}{2^{n}+1}$ converge.
+
+:::
+
+:::
+
 ::: {#rem-voisinage}
 
 Puisque la nature d'une série ne dépend pas de ses premiers termes, il suffit
@@ -522,9 +542,9 @@ voisinage de $+\infty$.
 :::
 
 
-::: {#exm-comparaison-1} 
+::: {#exm-comparaison-2} 
 
-Nature de la série $\sum \ln \left(1+\frac{1}{2^{n}}\right)$.
+Nature de la série $\sum \ln \left(1-\frac{1}{2^{n}}\right)$.
 
 ::: {.details}
 
@@ -604,6 +624,14 @@ Les deux versions de l'encadrement fondamental utilisé dans les comparaison
 séries-intégrales.
 
 :::
+
+::: {#tip-encadrement .callout-tip}
+
+On retiendra l'idée générale suivante : une somme partielle ou un reste
+s'*encadre*.
+
+:::
+
 
 :::
 
@@ -792,6 +820,17 @@ de $S$).
 :::
 
 :::
+
+::: {#tip-serie-alterne .callout-tip}
+
+On retient le critère des séries alternées en se souvenant que :
+
+1. la somme est encadrée par les sommes partielles paires et impaires,
+2. toute l'information du reste (signe et taille) est donnée par son *premier
+   terme*.
+
+:::
+
 
 \newpage
 
