@@ -248,14 +248,14 @@ window.Quarto = {
 <h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Un espace vectoriel est essentiellement un ensemble dans lequel on est capable d’additionner les éléments et de les mutltiplier par un scalaire, avec les mêmes règles de distributivité et de commutativité que la multiplication et l’addition usuelles.</p>
 <p>La notion centrale de l’algèbre linéaire est donc celle de <em>combinaison linéaire</em>. C’est elle qui permet de définir les familles libres, les familles génératrices, les sous-espaces vectoriels, et les applications linéaires.</p>
-<p>Cette notion a été vue en première année dans le cas des familles <em>finies</em> de <span class="math inline">\(E\)</span> ; on les étend cette année au cas des familles quelconques.</p>
+<p>La notion de combinaison linéaire a été vue en première année dans le cas des familles <em>finies</em> de <span class="math inline">\(E\)</span> ; on l’étend cette année au cas des familles quelconques.</p>
 </section>
 <section id="sec-03-familles-quelconques-deè-vecteurs" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="sec-03-familles-quelconques-deè-vecteurs"><span class="header-section-number">3.1</span> Familles quelconques de vecteurs</h2>
 <p>Cette première section étend au cas des familles quelconques (finies ou infinies) les définitions vues en première année.</p>
 <section id="combinaisons-linéaires" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="combinaisons-linéaires"><span class="header-section-number">3.1.1</span> Combinaisons linéaires</h3>
-<p>Contrairement aux sommes infinies de l’analyse, toutes les sommes rencontrées en algèbre linéaire sont nécessairement <em>finies</em> (on ne dispose pas, à priori, de notion de convergence dans un espace vectoriel).</p>
+<p>Contrairement aux sommes infinies de l’analyse, les sommes rencontrées en algèbre linéaire seront <em>finies</em> (on ne dispose pas, à priori, de notion de convergence dans un espace vectoriel).</p>
 <p>Pour pouvoir envisager une combinaison linéaire d’un nombre infini de vecteurs, on est amené à introduire la notion de famille à support <em>fini</em>.</p>
 <div id="def-support-fini" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 3.1</strong></span> Le <strong>support</strong> d’une famille <span class="math inline">\((\lambda_{i})_{i \in I}\)</span> de <span class="math inline">\(\mathbb{K}\)</span> est l’ensemble des <span class="math inline">\(i \in I\)</span> pour lesquels <span class="math inline">\(\lambda_{i}\)</span> est non nul. On dit que la famille <span class="math inline">\((\lambda_{i})_{i \in I}\)</span> est à support <strong>fini</strong> si son support est un sous-ensemble <em>fini</em> de <span class="math inline">\(I\)</span>.</p>
@@ -340,12 +340,12 @@ i\,j\in\{1,\dots,j\}\}\)</span> où <span class="math inline">\(E_{ij}\)</span> 
 </section>
 <section id="sec-03-sous-espaces-vectoriels" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="sec-03-sous-espaces-vectoriels"><span class="header-section-number">3.2</span> Sous-espaces vetoriels</h2>
-<p>Pour nous, les sous espaces vectoriels seront surtout un outil pour comprendre et définir des applications linéaires, via les notions de <em>somme directe</em></p>
+<p>Pour nous, les sous espaces vectoriels seront surtout un outil pour comprendre et définir des applications linéaires, via les notions de <em>somme directe</em>.</p>
 <p>On commence par quelques rappels de première année.</p>
 <section id="sous-espaces-vectoriels" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="sous-espaces-vectoriels"><span class="header-section-number">3.2.1</span> Sous espaces vectoriels</h3>
 <div id="prp-caractérisation" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.4</strong></span> Un sous-ensemble <span class="math inline">\(F\)</span> de <span class="math inline">\(E\)</span> est un sous espace vectoriel de <span class="math inline">\(E\)</span> si <span class="math inline">\(F\)</span> est non vide et si <span class="math inline">\(F\)</span> est stable par combinaisons linéaires, c-à-d</p>
+<p><span class="theorem-title"><strong>Proposition 3.4 (Caractérisation des sous espaces vectoriels)</strong></span> Un sous-ensemble <span class="math inline">\(F\)</span> de <span class="math inline">\(E\)</span> est un sous espace vectoriel de <span class="math inline">\(E\)</span> si <span class="math inline">\(F\)</span> est non vide et si <span class="math inline">\(F\)</span> est stable par combinaisons linéaires, c-à-d</p>
 <p><span class="math display">\[
     \forall u,v \in F,\ \forall \lambda \in \mathbb{K}, u+\lambda v \in F.
 \]</span></p>
@@ -389,7 +389,7 @@ Astuce&nbsp;3.1
 <div id="def-somme" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 3.7</strong></span> Soient <span class="math inline">\(F_{1},\dots,F_{n}\)</span> des sous espaces vectoriel de <span class="math inline">\(E\)</span>. On appelle <strong>somme</strong> des sous espaces <span class="math inline">\(F_1,\dots,F_{n}\)</span> le sous ensemble</p>
 <p><span class="math display">\[
-    F = \{v_1 + \cdots + v_{n}, v_{1}\in F_{1},\cdots, v_{n}\in F_{n}\}.
+    F = \{v_1 + \cdots + v_{n}, v_{i} \in F_{i},\ i=1,\dots,n\}.
 \]</span></p>
 <p>On la note <span class="math inline">\(F_{1}+ \dots + F_{n}\)</span> ou <span class="math inline">\(\displaystyle \sum_{i=1}^{n}F_{i}\)</span>. Les sous espaces vectoriels <span class="math inline">\(F_{1},\dots,F_{n}\)</span> s’appellent les <em>facteurs</em> de la somme.</p>
 </div>
@@ -413,7 +413,7 @@ Astuce&nbsp;3.1
 </div>
 <p>Le cas particulier de deux facteurs est très fréquent (projecteur, symétrie,…). Il est aussi plus simple à traiter.</p>
 <div id="prp-deux-facteurs" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.7</strong></span> Soit <span class="math inline">\(F\)</span> et <span class="math inline">\(G\)</span> deux sous espaces vectoriels de <span class="math inline">\(E\)</span>. Alors la somme <span class="math inline">\(F + G\)</span> est directe ssi <span class="math inline">\(F \cap G = \{0_E\}\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 3.7 (Cas de deux facteurs)</strong></span> Soit <span class="math inline">\(F\)</span> et <span class="math inline">\(G\)</span> deux sous espaces vectoriels de <span class="math inline">\(E\)</span>. Alors la somme <span class="math inline">\(F + G\)</span> est directe ssi <span class="math inline">\(F \cap G = \{0_E\}\)</span>.</p>
 </div>
 <div id="wrn-deux-facteur" class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -432,7 +432,7 @@ Avertissement&nbsp;3.1
 <p><span class="theorem-title"><strong>Définition 3.9</strong></span> Deux sous espaces vectoriels <span class="math inline">\(F\)</span> et <span class="math inline">\(G\)</span> de <span class="math inline">\(E\)</span> sont <strong>suplémentaires</strong> dans <span class="math inline">\(E\)</span> si <span class="math inline">\(E=F \oplus G\)</span>.</p>
 </div>
 <div id="prp-caracterisation-supplementaire" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.8</strong></span> Soient <span class="math inline">\(F\)</span> et <span class="math inline">\(G\)</span> deux sous espaces vectoriels de <span class="math inline">\(E\)</span>. Les propositions suivantes sont équivalentes :</p>
+<p><span class="theorem-title"><strong>Proposition 3.8 (Caractérisation des supplémentaires)</strong></span> Soient <span class="math inline">\(F\)</span> et <span class="math inline">\(G\)</span> deux sous espaces vectoriels de <span class="math inline">\(E\)</span>. Les propositions suivantes sont équivalentes :</p>
 <ol type="1">
 <li><span class="math inline">\(E=F \oplus G\)</span>,</li>
 <li><span class="math inline">\(F \cap G =0_{E}\)</span> et <span class="math inline">\(E=F + G\)</span>,</li>
@@ -447,7 +447,7 @@ Avertissement&nbsp;3.1
 <p>De même, nous allons voir qu’une application linéaire est entièrement déterminer par ses <em>restrictions</em> aux facteurs d’une somme directe, et encodée par une matrice <em>par blocs</em>.</p>
 <div id="def-restriction" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 3.10</strong></span> Soit <span class="math inline">\(F\)</span> un sous espace vectoriel de <span class="math inline">\(E\)</span> et <span class="math inline">\(f\)</span> une application linéaire de <span class="math inline">\(E\)</span> dans <span class="math inline">\(E'\)</span>.<br>
-<strong>restriction</strong> de <span class="math inline">\(f\)</span> à <span class="math inline">\(F\)</span> est l’application linéaire <span class="math inline">\(f_{|F}:F to E'\)</span> définie par</p>
+<strong>restriction</strong> de <span class="math inline">\(f\)</span> à <span class="math inline">\(F\)</span> est l’application linéaire <span class="math inline">\(f_{|F}:F \to E'\)</span> définie par</p>
 <p><span class="math display">\[
 \forall v \in F,\ f_{|F}(v) = f(v).
 \]</span></p>
