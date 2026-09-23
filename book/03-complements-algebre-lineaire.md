@@ -18,7 +18,7 @@ génératrices, les sous-espaces vectoriels, et les applications linéaires.
 La notion de combinaison linéaire a été vue en première année dans le cas des familles *finies* de
 $E$ ; on l'étend cette année au cas des familles quelconques. 
 
-## Familles quelconques de vecteurs {#sec-03-familles-quelconques-deè-vecteurs}
+## Familles quelconques de vecteurs {#sec-03-familles-quelconques-de-vecteurs}
 
 Cette première section étend au cas des familles quelconques (finies ou
 infinies) les définitions vues en première année.  
@@ -615,7 +615,11 @@ On a un résultat analogue pour la stabilité de $G$ par $f$.
 
 :::
 
+\newpage
 
+## Exercices {.unnumbered}
+
+{{< include ./td/03.md >}}
 
 
 
