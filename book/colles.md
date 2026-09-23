@@ -20,8 +20,11 @@ variable sont à réserver à la semaine prochaine.
 Le programme est centré sur l'intégration par parties et le théorème de
 changement de variable. 
 
-<!-- ## Programme 03 - du 28/09 au 02/10 -->
-<!---->
-<!-- @sec-02-convergence -->
-<!---->
-<!-- @sec-02-serie-terme-positif -->
+## Programme 03 - du 28/09 au 02/10
+
+@sec-02-convergence
+
+@sec-02-serie-terme-positif
+
+Le critère de d'Alembert et le critère des séries alternées ne sont pas au
+programme cette semaine. 
