@@ -206,11 +206,17 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#familles-quelconques-de-vecteurs" id="toc-familles-quelconques-de-vecteurs" class="nav-link" data-scroll-target="#familles-quelconques-de-vecteurs"><span class="header-section-number">3.1</span> Familles quelconques de vecteurs</a>
+  <li><a href="#sec-03-familles-quelconques-deè-vecteurs" id="toc-sec-03-familles-quelconques-deè-vecteurs" class="nav-link" data-scroll-target="#sec-03-familles-quelconques-deè-vecteurs"><span class="header-section-number">3.1</span> Familles quelconques de vecteurs</a>
   <ul class="collapse">
   <li><a href="#combinaisons-linéaires" id="toc-combinaisons-linéaires" class="nav-link" data-scroll-target="#combinaisons-linéaires"><span class="header-section-number">3.1.1</span> Combinaisons linéaires</a></li>
   <li><a href="#familles-libres-génératrices" id="toc-familles-libres-génératrices" class="nav-link" data-scroll-target="#familles-libres-génératrices"><span class="header-section-number">3.1.2</span> Familles libres, génératrices</a></li>
   <li><a href="#bases" id="toc-bases" class="nav-link" data-scroll-target="#bases"><span class="header-section-number">3.1.3</span> Bases</a></li>
+  </ul></li>
+  <li><a href="#sec-03-sous-espaces-vectoriels" id="toc-sec-03-sous-espaces-vectoriels" class="nav-link" data-scroll-target="#sec-03-sous-espaces-vectoriels"><span class="header-section-number">3.2</span> Sous-espaces vetoriels</a>
+  <ul class="collapse">
+  <li><a href="#sous-espaces-vectoriels" id="toc-sous-espaces-vectoriels" class="nav-link" data-scroll-target="#sous-espaces-vectoriels"><span class="header-section-number">3.2.1</span> Sous espaces vectoriels</a></li>
+  <li><a href="#somme-de-sous-espaces-vectoriels" id="toc-somme-de-sous-espaces-vectoriels" class="nav-link" data-scroll-target="#somme-de-sous-espaces-vectoriels"><span class="header-section-number">3.2.2</span> Somme de sous espaces vectoriels</a></li>
+  <li><a href="#définir-une-application-linéaire-à-laide-dune-somme-directe" id="toc-définir-une-application-linéaire-à-laide-dune-somme-directe" class="nav-link" data-scroll-target="#définir-une-application-linéaire-à-laide-dune-somme-directe"><span class="header-section-number">3.2.3</span> Définir une application linéaire à l’aide d’une somme directe</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -244,8 +250,8 @@ window.Quarto = {
 <p>La notion centrale de l’algèbre linéaire est donc celle de <em>combinaison linéaire</em>. C’est elle qui permet de définir les familles libres, les familles génératrices, les sous-espaces vectoriels, et les applications linéaires.</p>
 <p>Cette notion a été vue en première année dans le cas des familles <em>finies</em> de <span class="math inline">\(E\)</span> ; on les étend cette année au cas des familles quelconques.</p>
 </section>
-<section id="familles-quelconques-de-vecteurs" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="familles-quelconques-de-vecteurs"><span class="header-section-number">3.1</span> Familles quelconques de vecteurs</h2>
+<section id="sec-03-familles-quelconques-deè-vecteurs" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="sec-03-familles-quelconques-deè-vecteurs"><span class="header-section-number">3.1</span> Familles quelconques de vecteurs</h2>
 <p>Cette première section étend au cas des familles quelconques (finies ou infinies) les définitions vues en première année.</p>
 <section id="combinaisons-linéaires" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="combinaisons-linéaires"><span class="header-section-number">3.1.1</span> Combinaisons linéaires</h3>
@@ -329,6 +335,155 @@ i\,j\in\{1,\dots,j\}\}\)</span> où <span class="math inline">\(E_{ij}\)</span> 
 </div>
 <div id="rem-cas-particulier" class="proof remark">
 <p><span class="proof-title"><em>Remarque 3.1</em>. </span>Le premier cas engloble les cas <span class="math inline">\(\mathcal{M}_{1,n}(\mathbb{K})=\mathbb{K}^{n}\)</span> (matrices lignes) et <span class="math inline">\(\mathcal{M}_{n,1}(\mathbb{K})\)</span> (matrices colonnes), souvent identifiés à tort.</p>
+</div>
+</section>
+</section>
+<section id="sec-03-sous-espaces-vectoriels" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="sec-03-sous-espaces-vectoriels"><span class="header-section-number">3.2</span> Sous-espaces vetoriels</h2>
+<p>Pour nous, les sous espaces vectoriels seront surtout un outil pour comprendre et définir des applications linéaires, via les notions de <em>somme directe</em></p>
+<p>On commence par quelques rappels de première année.</p>
+<section id="sous-espaces-vectoriels" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="sous-espaces-vectoriels"><span class="header-section-number">3.2.1</span> Sous espaces vectoriels</h3>
+<div id="prp-caractérisation" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.4</strong></span> Un sous-ensemble <span class="math inline">\(F\)</span> de <span class="math inline">\(E\)</span> est un sous espace vectoriel de <span class="math inline">\(E\)</span> si <span class="math inline">\(F\)</span> est non vide et si <span class="math inline">\(F\)</span> est stable par combinaisons linéaires, c-à-d</p>
+<p><span class="math display">\[
+    \forall u,v \in F,\ \forall \lambda \in \mathbb{K}, u+\lambda v \in F.
+\]</span></p>
+</div>
+<div id="rem-non-vide" class="proof remark">
+<p><span class="proof-title"><em>Remarque 3.2</em>. </span>On montre toujours que <span class="math inline">\(F\)</span> est non vide en montrant que <span class="math inline">\(0_{E}\in F\)</span>.</p>
+</div>
+<div id="def-sous-espace-engendre" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 3.6 (Sous espace engendré par une partie)</strong></span> Soit <span class="math inline">\(\mathcal{G}\)</span> une partie non vide de <span class="math inline">\(E\)</span>. On note <span class="math inline">\(\mathrm{Vect}(\mathcal{G})\)</span> l’ensemble des combinaisons linéaires de <span class="math inline">\(\mathcal{G}\)</span>. Alors <span class="math inline">\(\mathrm{Vect}(\mathcal{G})\)</span> est un sous espace vectoriel de <span class="math inline">\(E\)</span>, dit <strong>engendré</strong> par <span class="math inline">\(\mathcal{G}\)</span>, et <span class="math inline">\(\mathcal{G}\)</span> est une famille génératrice de <span class="math inline">\(\mathrm{Vect}(\mathcal{G})\)</span>.</p>
+</div>
+<div id="tip-sous-espace-engendre" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce&nbsp;3.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En pratique, on ne prend jamais la peine de rappeler que <span class="math inline">\(\mathcal{G}\)</span> est une famille génératrice de <span class="math inline">\(\mathrm{Vect}(\mathcal{G})\)</span> ; c’est implicite dans cette notation. En particulier, si la famille <span class="math inline">\(\mathcal{G}\)</span> est libre, c’est automatiquement une base de <span class="math inline">\(F\)</span>.</p>
+</div>
+</div>
+<div id="exm-famille-generatrice-1" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 3.6</strong></span> La famille <span class="math inline">\(\{1,X,\dots X^{n}\}\)</span> est une famille génératrice de <span class="math inline">\(\mathbb{R}_{n}[X]\)</span>.</p>
+</div>
+<div id="exm-famille-generatrice-2" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 3.7</strong></span> On a</p>
+<p><span class="math display">\[
+    F=\left\{ \begin{pmatrix}
+        a&amp;b\\b&amp;a
+    \end{pmatrix},\ a,b \in \mathbb{R}\right\} = \mathrm{Vect}(I_2,J),
+\]</span> avec <span class="math inline">\(J = \begin{pmatrix}
+    0&amp;1\\1&amp;0
+\end{pmatrix}\)</span>. Donc <span class="math inline">\(F\)</span> est un sous-espace vectoriel de <span class="math inline">\(\mathcal{M}_{2}(\mathbb{R})\)</span>.</p>
+</div>
+</section>
+<section id="somme-de-sous-espaces-vectoriels" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="somme-de-sous-espaces-vectoriels"><span class="header-section-number">3.2.2</span> Somme de sous espaces vectoriels</h3>
+<p>Les sous espaces vectoriels sont stables par intersection mais par par réunion (considérer par exemple la réunion de deux droites dans le plan, qui n’est clairement pas stable par somme). En algèbre linéaire, la réunion est remplacée par la notion de <em>somme</em>.</p>
+<div id="def-somme" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 3.7</strong></span> Soient <span class="math inline">\(F_{1},\dots,F_{n}\)</span> des sous espaces vectoriel de <span class="math inline">\(E\)</span>. On appelle <strong>somme</strong> des sous espaces <span class="math inline">\(F_1,\dots,F_{n}\)</span> le sous ensemble</p>
+<p><span class="math display">\[
+    F = \{v_1 + \cdots + v_{n}, v_{1}\in F_{1},\cdots, v_{n}\in F_{n}\}.
+\]</span></p>
+<p>On la note <span class="math inline">\(F_{1}+ \dots + F_{n}\)</span> ou <span class="math inline">\(\displaystyle \sum_{i=1}^{n}F_{i}\)</span>. Les sous espaces vectoriels <span class="math inline">\(F_{1},\dots,F_{n}\)</span> s’appellent les <em>facteurs</em> de la somme.</p>
+</div>
+<div id="prp-somme" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.5</strong></span> La somme <span class="math inline">\(F_{1}+\dots +F_{n}\)</span> est un sous espace vectoriel de <span class="math inline">\(E\)</span>.</p>
+</div>
+<div id="rem-somme" class="proof remark">
+<p><span class="proof-title"><em>Remarque 3.3</em>. </span>La somme <span class="math inline">\(F_{1}+ \dots + F_{n}\)</span> est le plus petit sous espace vectoriel de <span class="math inline">\(E\)</span> (au sens de l’inclusion) contenant <span class="math inline">\(F_{1},\dots,F_{n}\)</span>.</p>
+</div>
+<p>Par définition, tout élément de <span class="math inline">\(F_{1}+ \dots + F_{n}\)</span> s’écrit comme somme d’élément de <span class="math inline">\(F_{1},\dots,F_{n}\)</span>. Lorsque cette écriture est unique, on dit que la somme est <em>directe</em>.</p>
+<div id="def-somme-directe" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 3.8</strong></span> On dit que la somme <span class="math inline">\(F = F_{1}+ \dots + F_{n}\)</span> est <strong>directe</strong> si tout élément de <span class="math inline">\(F\)</span> s’écrit <em>de manière unique</em> comme somme d’éléments de <span class="math inline">\(F_{1},\dots,F_{n}\)</span>. On note alors <span class="math inline">\(F = F_{1}\oplus \cdots \oplus F_{n}\)</span>.</p>
+</div>
+<p>Les sommes directes jouent le même rôle que les familles libres. En particulier :</p>
+<div id="prp-unicite-ecriture-zero" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.6 (Unicité de l’écriture de zéro)</strong></span> La somme <span class="math inline">\(F = F_{1}+ \dots + F_{n}\)</span> est directe ssi l’écriture de <span class="math inline">\(0_{E}\)</span> dans la somme <span class="math inline">\(F\)</span> est unique i.e.&nbsp;</p>
+<p><span class="math display">\[
+    \forall v_{1} \in F_{1},\dots, v_{n} \in F_{n},\ v_{1}+\dots + v_{n} =
+0_{E} \Rightarrow v_{1}= \dots = v_{n}=0_{E}.
+\]</span></p>
+</div>
+<p>Le cas particulier de deux facteurs est très fréquent (projecteur, symétrie,…). Il est aussi plus simple à traiter.</p>
+<div id="prp-deux-facteurs" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.7</strong></span> Soit <span class="math inline">\(F\)</span> et <span class="math inline">\(G\)</span> deux sous espaces vectoriels de <span class="math inline">\(E\)</span>. Alors la somme <span class="math inline">\(F + G\)</span> est directe ssi <span class="math inline">\(F \cap G = \{0_E\}\)</span>.</p>
+</div>
+<div id="wrn-deux-facteur" class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Avertissement&nbsp;3.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Cette caractérisation est <em>fausse</em> pour trois facteurs ou plus (penser à <span class="math inline">\(3\)</span> droites coplanaires).</p>
+</div>
+</div>
+<div id="def-supplementaire" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 3.9</strong></span> Deux sous espaces vectoriels <span class="math inline">\(F\)</span> et <span class="math inline">\(G\)</span> de <span class="math inline">\(E\)</span> sont <strong>suplémentaires</strong> dans <span class="math inline">\(E\)</span> si <span class="math inline">\(E=F \oplus G\)</span>.</p>
+</div>
+<div id="prp-caracterisation-supplementaire" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.8</strong></span> Soient <span class="math inline">\(F\)</span> et <span class="math inline">\(G\)</span> deux sous espaces vectoriels de <span class="math inline">\(E\)</span>. Les propositions suivantes sont équivalentes :</p>
+<ol type="1">
+<li><span class="math inline">\(E=F \oplus G\)</span>,</li>
+<li><span class="math inline">\(F \cap G =0_{E}\)</span> et <span class="math inline">\(E=F + G\)</span>,</li>
+<li>si <span class="math inline">\(E\)</span> est de dimension finie, <span class="math inline">\(F \cap G = \{0_{E}\}\)</span> et <span class="math inline">\(\dim E = \dim F +
+\dim G\)</span>.</li>
+</ol>
+</div>
+</section>
+<section id="définir-une-application-linéaire-à-laide-dune-somme-directe" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="définir-une-application-linéaire-à-laide-dune-somme-directe"><span class="header-section-number">3.2.3</span> Définir une application linéaire à l’aide d’une somme directe</h3>
+<p>On sait qu’une application linéaire est entièrement définie par l’image d’une <em>base</em>, encodée par une <em>matrice</em> en dimension finie.</p>
+<p>De même, nous allons voir qu’une application linéaire est entièrement déterminer par ses <em>restrictions</em> aux facteurs d’une somme directe, et encodée par une matrice <em>par blocs</em>.</p>
+<div id="def-restriction" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 3.10</strong></span> Soit <span class="math inline">\(F\)</span> un sous espace vectoriel de <span class="math inline">\(E\)</span> et <span class="math inline">\(f\)</span> une application linéaire de <span class="math inline">\(E\)</span> dans <span class="math inline">\(E'\)</span>.<br>
+<strong>restriction</strong> de <span class="math inline">\(f\)</span> à <span class="math inline">\(F\)</span> est l’application linéaire <span class="math inline">\(f_{|F}:F to E'\)</span> définie par</p>
+<p><span class="math display">\[
+\forall v \in F,\ f_{|F}(v) = f(v).
+\]</span></p>
+</div>
+<div id="nte-restriction" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;3.2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Autrement dit, l’<em>action</em> de <span class="math inline">\(f_{|F}\)</span> est la même que <span class="math inline">\(f\)</span>, mais l’<em>espace de départ</em> change. Or, changer l’espace de départ (ou d’arrivée) d’une fonction, c’est changer la fonction. Par exemple, réduire l’espace de départ (on dit <em>restreindre</em>) peut rendre une fonction injective. De même, reduire l’espace d’arriver (on dit <em>corestreindre</em>) peut rendre une fonction surjective. Dès lors, il est légitime de distinguer <span class="math inline">\(f\)</span> et <span class="math inline">\(f_{|F}\)</span>.</p>
+</div>
+</div>
+<div id="prp-definition-somme-directe" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.9</strong></span> Soient <span class="math inline">\(E\)</span> et <span class="math inline">\(E'\)</span> deux <span class="math inline">\(\mathbb{K}\)</span>-espace vectoriels. On suppose que <span class="math inline">\(E=\bigoplus_{i=1}^{n}F_{i}\)</span>. On se donne, pour tout <span class="math inline">\(i \in \{1,\dots,n\}\)</span>, une application linéaire <span class="math inline">\(f_i:F_i \to E'\)</span>. Alors il existe une unique application linéaire <span class="math inline">\(f\)</span> de <span class="math inline">\(E\)</span> dans <span class="math inline">\(E'\)</span> tel que <span class="math inline">\(f_{|F_{i}}=f_i\)</span>.</p>
+</div>
+<div id="nte-definition-somme-directe" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;3.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Il faut comprendre cette proposition de deux manières :</p>
+<ol type="1">
+<li><p>c’est un résultat d’<em>unicité</em> ; si deux applications linéaires <span class="math inline">\(f\)</span> et <span class="math inline">\(g\)</span> coincident sur chaque facteur d’une somme directe (c.-à.d si <span class="math inline">\(f_{|F_{i}}=g_{|F_{i}}\)</span> pour tout <span class="math inline">\(i\)</span>), alors <span class="math inline">\(f=g\)</span>,</p></li>
+<li><p>c’est un un résultat d’existence : pour <em>définir</em> une application linéaire de <span class="math inline">\(E\)</span> dans <span class="math inline">\(E'\)</span>, il suffit de la définir sur chaque facteur de la somme directe (ce qui est en général plus simple que de la définir partout).</p></li>
+</ol>
+</div>
 </div>
 
 
