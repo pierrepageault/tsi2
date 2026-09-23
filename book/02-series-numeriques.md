@@ -730,19 +730,43 @@ terme général *alterne*, d'où sont nom. Plus que le résultat de convergence,
 faut retenir l'encadrement de la somme par ses sommes partielles en cas de
 convergence.
 
+::: {#def-serie-alterne}
+
+On dit qu'une série est **alternée** si le son terme général est de la forme
+$(-1)^{n}v_{n}$ ou $(-1)^{n+1}v_{n}$ avec $v_{n}\geqslant 0$.
+
+:::
+
+
+::: {#rem-serie-alterne}
+
+Par définition, le signe du terme générale d'une série alternée *alterne* ; on
+ne peut donc pas leur appliquer le théorème de comparaison, sauf à considérer
+l'absolue convergence. 
+
+:::
+
+::: {#exm-serie-alterne-1}
+
+La série $\sum_{n \geqslant 1} \frac{(-1)^{n}}{n+1}$ est alternée.
+
+:::
+
+
 ::: {#thm-alterne}
 
 #### Critère des séries alternées
 
-Soit $(u_{n})$ une suite réelle *monotone* de *limite nulle*. Alors la série
-$\sum (-1)^{n}u_{n}$ *converge* et sa somme $S$ est encadrée par les sommes
-partielles d'indices pairs et impairs, qui forment deux suites *adjacentes*. En
-particulier, le reste $R_{n}$ de la série $\sum (-1)^{n} u_{n}$ est du signe de
-son *premier terme*, et $|R_{n}|\leqslant |u_{n+1}|$.
+Soit $\sum u_{n}$ une série alternée. On suppose que $|u_{n}|$ tend vers $0$ en
+décroissant. Alors la série *converge* et sa somme $S$ est encadrée par ses
+sommes partielles d'indices pairs et impairs, qui forment deux suites
+*adjacentes*. De plus, le reste $R_{n}$ de la série est du signe de son premier
+terme et est majoré en valeur absolue par la valeur absolue de son premier
+terme. 
 
 :::
 
-::: {#exm-serie-alterne}
+::: {#exm-serie-alterne-2}
 
 Montrer que la série $\sum_{n \geqslant 0} \frac{(-1)^{n}}{n+1}$ converge et donner une
 approximation à $10^{-3}$ près de sa somme. 
