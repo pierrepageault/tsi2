@@ -15,8 +15,8 @@ La notion centrale de l'algèbre linéaire est donc celle de *combinaison
 linéaire*. C'est elle qui permet de définir les familles libres, les familles
 génératrices, les sous-espaces vectoriels, et les applications linéaires. 
 
-Cette notion a été vue en première année dans le cas des familles *finies* de
-$E$ ; on les étend cette année au cas des familles quelconques. 
+La notion de combinaison linéaire a été vue en première année dans le cas des familles *finies* de
+$E$ ; on l'étend cette année au cas des familles quelconques. 
 
 ## Familles quelconques de vecteurs {#sec-03-familles-quelconques-deè-vecteurs}
 
@@ -26,8 +26,8 @@ infinies) les définitions vues en première année.
 ### Combinaisons linéaires
 
 
-Contrairement aux sommes infinies de l'analyse, toutes les sommes rencontrées
-en algèbre linéaire sont nécessairement *finies* (on ne dispose pas, à priori, de
+Contrairement aux sommes infinies de l'analyse, les sommes rencontrées
+en algèbre linéaire seront *finies* (on ne dispose pas, à priori, de
 notion de convergence dans un espace vectoriel). 
 
 Pour pouvoir envisager une combinaison linéaire d'un nombre infini de vecteurs,
@@ -185,13 +185,15 @@ souvent identifiés à tort.
 ## Sous-espaces vetoriels {#sec-03-sous-espaces-vectoriels}
 
 Pour nous, les sous espaces vectoriels seront surtout un outil pour comprendre
-et définir des applications linéaires, via les notions de *somme directe*
+et définir des applications linéaires, via les notions de *somme directe*.
 
 On commence par quelques rappels de première année.
 
 ### Sous espaces vectoriels
 
 ::: {#prp-caractérisation}
+
+#### Caractérisation des sous espaces vectoriels
 
 Un sous-ensemble $F$ de $E$ est un sous espace vectoriel de $E$ si $F$ est non
 vide et si $F$ est stable par combinaisons linéaires, c-à-d 
@@ -262,7 +264,7 @@ réunion est remplacée par la notion de *somme*.
 Soient $F_{1},\dots,F_{n}$ des sous espaces vectoriel de $E$. On appelle **somme** des sous espaces $F_1,\dots,F_{n}$ le sous ensemble 
 
 $$
-    F = \{v_1 + \cdots + v_{n}, v_{1}\in F_{1},\cdots, v_{n}\in F_{n}\}.
+    F = \{v_1 + \cdots + v_{n}, v_{i} \in F_{i},\ i=1,\dots,n\}.
 $$
 
 On la note $F_{1}+ \dots + F_{n}$ ou $\displaystyle \sum_{i=1}^{n}F_{i}$. Les
@@ -318,6 +320,8 @@ symétrie,...). Il est aussi plus simple à traiter.
 
 ::: {#prp-deux-facteurs}
 
+#### Cas de deux facteurs
+
 Soit $F$ et $G$ deux sous espaces vectoriels de $E$. Alors la somme $F + G$ est
 directe ssi $F \cap G = \{0_E\}$.
 
@@ -338,6 +342,8 @@ si $E=F \oplus G$.
 :::
 
 ::: {#prp-caracterisation-supplementaire}
+
+#### Caractérisation des supplémentaires 
 
 Soient $F$ et $G$ deux sous espaces vectoriels de $E$. Les propositions
 suivantes sont équivalentes :
@@ -362,7 +368,7 @@ encodée par une matrice *par blocs*.
 ::: {#def-restriction}
 
 Soit $F$ un sous espace vectoriel de $E$ et $f$ une application linéaire de $E$ dans $E'$.  
-**restriction** de $f$ à $F$ est l'application linéaire $f_{|F}:F to E'$ définie
+**restriction** de $f$ à $F$ est l'application linéaire $f_{|F}:F \to E'$ définie
 par
 
 $$
