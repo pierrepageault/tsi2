@@ -358,18 +358,18 @@ suivantes sont équivalentes :
 ### Définir une application linéaire à l'aide d'une somme directe
 
 On sait qu'une application linéaire est entièrement
-définie par l'image d'une *base*, encodée par une *matrice* en
+définie par l'image d'une *base*, résumée par une *matrice* en
 dimension finie. 
 
 De même, nous allons voir qu'une application linéaire est entièrement
-déterminer par ses *restrictions* aux facteurs d'une somme directe, et 
-encodée par une matrice *par blocs*.
+déterminée par ses *restrictions* aux facteurs d'une somme directe, résumées
+par une matrice *par blocs*.
 
 ::: {#def-restriction}
 
-Soit $F$ un sous espace vectoriel de $E$ et $f$ une application linéaire de $E$ dans $E'$.  
-**restriction** de $f$ à $F$ est l'application linéaire $f_{|F}:F \to E'$ définie
-par
+Soit $F$ un sous espace vectoriel de $E$ et $f$ une application linéaire de $E$
+dans $E'$.  La **restriction** de $f$ à $F$ est l'application linéaire
+$f_{|F}:F \to E'$ définie par
 
 $$
 \forall v \in F,\ f_{|F}(v) = f(v).
@@ -379,11 +379,11 @@ $$
 
 ::: {#nte-restriction .callout-note}
 
-Autrement dit, l'*action* de $f_{|F}$ est la même que $f$, mais l'*espace de
-départ* change. Or, changer l'espace de départ (ou d'arrivée) d'une fonction,
+Autrement dit, l'*action* de $f_{|F}$ est la même que $f$, mais l'espace de
+*départ* change. Or, changer l'espace de départ (ou d'arrivée) d'une fonction,
 c'est changer la
 fonction. Par exemple, réduire l'espace de départ (on dit *restreindre*) peut
-rendre une fonction injective. De même, reduire l'espace d'arriver (on dit
+rendre une fonction injective. De même, reduire l'espace d'arrivée (on dit
 *corestreindre*) peut rendre une fonction surjective. Dès lors, il est légitime
 de distinguer $f$ et $f_{|F}$.
 
@@ -391,7 +391,9 @@ de distinguer $f$ et $f_{|F}$.
 
 ::: {#prp-definition-somme-directe}
 
-Soient $E$ et $E'$ deux $\mathbb{K}$-espace vectoriels. On suppose que
+#### Définition d'une application linéaire sur une somme directe
+
+Soient $E$ et $E'$ deux $\mathbb{K}$-espaces vectoriels. On suppose que
 $E=\bigoplus_{i=1}^{n}F_{i}$. On se donne, pour tout $i \in \{1,\dots,n\}$, une
 application linéaire $f_i:F_i \to E'$. Alors il existe une unique application
 linéaire $f$ de $E$ dans $E'$ tel que $f_{|F_{i}}=f_i$. 
@@ -410,6 +412,212 @@ Il faut comprendre cette proposition de deux manières :
 directe (ce qui est en général plus simple que de la définir partout). 
 
 :::
+
+::: {#def-base-adapte}
+
+#### Base adaptée
+
+Si $E=\bigoplus_{i=1}^{n} F_{i}$ et si $\mathcal{B}_i$ est une base de $F_{i}$
+pour $i=1,\dots,n$, alors la famille
+$\mathcal{B}=(\mathcal{B}_{1},\dots,\mathcal{B}_{n})$ obtenue en mettant bout à
+bout les bases $B_{1},\dots,\mathcal{B}_{n}$ est une base de $E$, dite
+**adaptée** à la somme directe $E=\bigoplus_{i=1}^{n}F_{i}$.
+
+:::
+
+La notion de base adaptée mêne à l'écriture des matrices d'applications
+linéaires par *blocs*, ce que nous expliquons maintenant. 
+
+::: {#def-matrice-par-bloc}
+
+#### Matrices par blocs
+
+Une **matrice par blocs** est une matrice partitionnée en sous matrices appelées *blocs*. 
+
+:::
+
+::: {#exm-blocs}
+
+La matrice 
+
+$$
+A = \begin{pmatrix}
+   1&2&2\\
+3 &5&5\\
+4 &5&5
+\end{pmatrix}
+$$
+
+peut s'écrire par blocs 
+
+$$
+    A = \begin{pmatrix}
+        \boldsymbol{A}_{11} & \boldsymbol{A}_{12}\\
+\boldsymbol{A}_{21} & \boldsymbol{A}_{22}
+    \end{pmatrix}
+$$
+
+avec $\boldsymbol{A}_{11} = (1)$, $\boldsymbol{A}_{12} = \begin{pmatrix}
+    2&2
+\end{pmatrix}$, $\boldsymbol{A}_{21} = \begin{pmatrix}
+    3\\4
+\end{pmatrix}$ et $\boldsymbol{A}_{22} = 5 I_{2}$.
+
+:::
+
+::: {#prp-multiplication}
+
+#### Multiplication des matrices par blocs
+
+Si la taille des blocs est compatible, on peut multiplier les matrices par
+blocs
+comme on multiplie les matrices scalaires. 
+
+:::
+
+::: {#exm-multiplication-par-bloc}
+
+Si  $A = \begin{pmatrix}
+        \boldsymbol{A}_{11} & \boldsymbol{A}_{12}\\
+\boldsymbol{A}_{21} & \boldsymbol{A}_{22}
+    \end{pmatrix}$ et $B =\begin{pmatrix}
+        \boldsymbol{B}_{11} & \boldsymbol{B}_{12}\\
+\boldsymbol{B}_{21} & \boldsymbol{B}_{22}
+    \end{pmatrix}$, et si la taille des blocs est compatible, alors 
+
+$$
+AB = \begin{pmatrix}
+\boldsymbol{A}_{11}\boldsymbol{B}_{11} + \boldsymbol{A}_{12}\boldsymbol{B}_{21} & \boldsymbol{A}_{11}\boldsymbol{B}_{12}+ \boldsymbol{A}_{21}\boldsymbol{B}_{22}\\
+\boldsymbol{A}_{21}\boldsymbol{B}_{11}+\boldsymbol{A}_{22}\boldsymbol{B}_{21} & \boldsymbol{A}_{21}\boldsymbol{B}_{12}+\boldsymbol{A}_{22}\boldsymbol{B}_{22}
+\end{pmatrix}.
+$$
+
+:::
+
+Si $E = \bigoplus_{i=1}^{n}F_{i}$ et si
+$\mathcal{B}=(\mathcal{B}_{1},\dots,\mathcal{B}_{n})$ est une base adaptée à
+cette somme directe, la matrice d'un endomorphisme $f$ de $E$ s'écrit
+naturellement par blocs :
+
+::: {#prp-matrice-par-bloc}
+
+Soit $\mathcal{B} = (\mathcal{B}_{1},\dots,\mathcal{B}_{n})$ une base adaptée à
+la somme  directe $E = \bigoplus_{i=1}^{n} F_{i}$, alors la matrice de $f \in
+\mathcal{L}(E)$ dans la base $\mathcal{B}$ s'écrit par blocs
+
+$$
+    \mathcal{M}_{\mathcal{B}}(f) = 
+$$
+
+:::
+
+
+### Sous espaces stables par un endomorphisme
+
+::: {#def-sous-espace-stable}
+
+#### Sous espace stable par un endomorphisme
+
+Soit $f \in \mathcal{L}(E)$ et $F$ un sous espace vectoriel de $E$. On dit que
+$F$ est **stable** par $f$ si 
+
+$$
+    \forall v \in F, f(v) \in F.
+$$
+
+:::
+
+::: {#exm-derivation}
+
+Le sous espace $\mathbb{R}_{n}[X]$ est stable par dérivation. 
+
+:::
+
+::: {#exm-rotation}
+
+L'axe d'une rotation $r$ de $\mathbb{R}^{3}$ est stable par $r$.
+
+
+:::
+
+::: {#exm-reflexion}
+Le plan d'une réflexion $s$ de $\mathbb{R}^{3}$ est stable par $s$.
+
+:::
+
+::: {#def-endomorphisme-induit}
+
+#### Endomorphisme induit par restriction
+
+Si $F$ est un sous espace vectoriel de $E$ stable par un endomorphisme $f$ de
+$E$, alors la restriction de $f$ à $F$ définit un endomorphisme de $F$. On
+l'appelle l'endomorphisme **induit par restriction** de $f$ à $F$.
+
+:::
+
+::: {#exm-derivation}
+
+Puisque $\mathbb{R}_{n}[X]$ est stable par dérivation, on peut restreindre la dérivation
+à $\mathbb{R}_{n}[X]$. On obtient ainsi un endomorphisme de $\mathbb{R}_{n}[X]$ définit par $P
+\mapsto P'$. 
+
+:::
+
+::: {#nte-restriction .callout-note}
+
+Restreindre un endomorphisme peut présenter plusieurs avantages, notamment :
+
+1. l'espace $F$ peut être de dimension *finie*,
+
+2. l'endomorphisme $f_{|F}$ peut-être plus simple que l'endomorphisme $f$.
+
+:::
+
+Lorsque l'on cherche à montrer qu'un sous espace est stable par un
+endomorphisme, on peut avantageusement utiliser une famille *génératrice*
+(notamment, une *base*) de $F$ : 
+
+::: {#prp-caractérisation-stabilite}
+
+#### Caractérisation de la stabilité à l'aide d'une famille génératrice
+
+Soit $F$ un sous espace vectoriel de $E$ et $f \in \mathcal{L}(E)$. Soit
+$\mathcal{G}$ ne famille génératrice de $F$. Alors $F$ est stable par $f$ ssi 
+
+$$
+    \forall v \in \mathcal{G}, f(v) \in F.
+$$
+
+:::
+
+Visuellement, la stabilité d'un sous espace par un endomorphisme se traduit sur
+sa matrice dans une base adaptée par des blocs de $0$. On l'illustre dans le
+cas d'une somme directe à *deux* facteurs.
+
+::: {#prp-stabilite-bloc}
+
+On suppose que $E=F \oplus G$. Soit $\mathcal{B}=(\mathcal{B}_{F},\mathcal{B}_{G})$ une base adaptée à cette somme directe et soit $f \in \mathcal{L}(E)$. Alors $F$ est stable par $f$ ssi la matrice par blocs de $f$ dans la base $\mathcal{B}$ est de la forme
+
+$$
+    \mathcal{M}_{\mathcal{B}}(f) = \begin{pmatrix}
+        \boldsymbol{A}_{11}& \boldsymbol{A}_{12}\\
+\boldsymbol{0}& \boldsymbol{A_{22}}
+    \end{pmatrix},
+$$
+
+et dans ce cas, $\boldsymbol{A}_{11} = \mathcal{M}_{\mathcal{B}_{F}}(f_{|F})$.
+
+:::
+
+::: {#rem-stabilite-bloc}
+
+On a un résultat analogue pour la stabilité de $G$ par $f$.
+
+:::
+
+
+
+
 
 
 
