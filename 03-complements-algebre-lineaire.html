@@ -206,7 +206,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#sec-03-familles-quelconques-deè-vecteurs" id="toc-sec-03-familles-quelconques-deè-vecteurs" class="nav-link" data-scroll-target="#sec-03-familles-quelconques-deè-vecteurs"><span class="header-section-number">3.1</span> Familles quelconques de vecteurs</a>
+  <li><a href="#sec-03-familles-quelconques-de-vecteurs" id="toc-sec-03-familles-quelconques-de-vecteurs" class="nav-link" data-scroll-target="#sec-03-familles-quelconques-de-vecteurs"><span class="header-section-number">3.1</span> Familles quelconques de vecteurs</a>
   <ul class="collapse">
   <li><a href="#combinaisons-linéaires" id="toc-combinaisons-linéaires" class="nav-link" data-scroll-target="#combinaisons-linéaires"><span class="header-section-number">3.1.1</span> Combinaisons linéaires</a></li>
   <li><a href="#familles-libres-génératrices" id="toc-familles-libres-génératrices" class="nav-link" data-scroll-target="#familles-libres-génératrices"><span class="header-section-number">3.1.2</span> Familles libres, génératrices</a></li>
@@ -217,6 +217,12 @@ window.Quarto = {
   <li><a href="#sous-espaces-vectoriels" id="toc-sous-espaces-vectoriels" class="nav-link" data-scroll-target="#sous-espaces-vectoriels"><span class="header-section-number">3.2.1</span> Sous espaces vectoriels</a></li>
   <li><a href="#somme-de-sous-espaces-vectoriels" id="toc-somme-de-sous-espaces-vectoriels" class="nav-link" data-scroll-target="#somme-de-sous-espaces-vectoriels"><span class="header-section-number">3.2.2</span> Somme de sous espaces vectoriels</a></li>
   <li><a href="#définir-une-application-linéaire-à-laide-dune-somme-directe" id="toc-définir-une-application-linéaire-à-laide-dune-somme-directe" class="nav-link" data-scroll-target="#définir-une-application-linéaire-à-laide-dune-somme-directe"><span class="header-section-number">3.2.3</span> Définir une application linéaire à l’aide d’une somme directe</a></li>
+  <li><a href="#sous-espaces-stables-par-un-endomorphisme" id="toc-sous-espaces-stables-par-un-endomorphisme" class="nav-link" data-scroll-target="#sous-espaces-stables-par-un-endomorphisme"><span class="header-section-number">3.2.4</span> Sous espaces stables par un endomorphisme</a></li>
+  </ul></li>
+  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
+  <ul class="collapse">
+  <li><a href="#familles-quelconques-de-vecteurs" id="toc-familles-quelconques-de-vecteurs" class="nav-link" data-scroll-target="#familles-quelconques-de-vecteurs"><span class="header-section-number">3.2.5</span> Familles quelconques de vecteurs</a></li>
+  <li><a href="#sous-espaces-vectoriels-1" id="toc-sous-espaces-vectoriels-1" class="nav-link" data-scroll-target="#sous-espaces-vectoriels-1"><span class="header-section-number">3.2.6</span> Sous espaces vectoriels</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -250,8 +256,8 @@ window.Quarto = {
 <p>La notion centrale de l’algèbre linéaire est donc celle de <em>combinaison linéaire</em>. C’est elle qui permet de définir les familles libres, les familles génératrices, les sous-espaces vectoriels, et les applications linéaires.</p>
 <p>La notion de combinaison linéaire a été vue en première année dans le cas des familles <em>finies</em> de <span class="math inline">\(E\)</span> ; on l’étend cette année au cas des familles quelconques.</p>
 </section>
-<section id="sec-03-familles-quelconques-deè-vecteurs" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="sec-03-familles-quelconques-deè-vecteurs"><span class="header-section-number">3.1</span> Familles quelconques de vecteurs</h2>
+<section id="sec-03-familles-quelconques-de-vecteurs" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="sec-03-familles-quelconques-de-vecteurs"><span class="header-section-number">3.1</span> Familles quelconques de vecteurs</h2>
 <p>Cette première section étend au cas des familles quelconques (finies ou infinies) les définitions vues en première année.</p>
 <section id="combinaisons-linéaires" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="combinaisons-linéaires"><span class="header-section-number">3.1.1</span> Combinaisons linéaires</h3>
@@ -443,11 +449,10 @@ Avertissement&nbsp;3.1
 </section>
 <section id="définir-une-application-linéaire-à-laide-dune-somme-directe" class="level3" data-number="3.2.3">
 <h3 data-number="3.2.3" class="anchored" data-anchor-id="définir-une-application-linéaire-à-laide-dune-somme-directe"><span class="header-section-number">3.2.3</span> Définir une application linéaire à l’aide d’une somme directe</h3>
-<p>On sait qu’une application linéaire est entièrement définie par l’image d’une <em>base</em>, encodée par une <em>matrice</em> en dimension finie.</p>
-<p>De même, nous allons voir qu’une application linéaire est entièrement déterminer par ses <em>restrictions</em> aux facteurs d’une somme directe, et encodée par une matrice <em>par blocs</em>.</p>
+<p>On sait qu’une application linéaire est entièrement définie par l’image d’une <em>base</em>, résumée par une <em>matrice</em> en dimension finie.</p>
+<p>De même, nous allons voir qu’une application linéaire est entièrement déterminée par ses <em>restrictions</em> aux facteurs d’une somme directe, résumées par une matrice <em>par blocs</em>.</p>
 <div id="def-restriction" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 3.10</strong></span> Soit <span class="math inline">\(F\)</span> un sous espace vectoriel de <span class="math inline">\(E\)</span> et <span class="math inline">\(f\)</span> une application linéaire de <span class="math inline">\(E\)</span> dans <span class="math inline">\(E'\)</span>.<br>
-<strong>restriction</strong> de <span class="math inline">\(f\)</span> à <span class="math inline">\(F\)</span> est l’application linéaire <span class="math inline">\(f_{|F}:F \to E'\)</span> définie par</p>
+<p><span class="theorem-title"><strong>Définition 3.10</strong></span> Soit <span class="math inline">\(F\)</span> un sous espace vectoriel de <span class="math inline">\(E\)</span> et <span class="math inline">\(f\)</span> une application linéaire de <span class="math inline">\(E\)</span> dans <span class="math inline">\(E'\)</span>. La <strong>restriction</strong> de <span class="math inline">\(f\)</span> à <span class="math inline">\(F\)</span> est l’application linéaire <span class="math inline">\(f_{|F}:F \to E'\)</span> définie par</p>
 <p><span class="math display">\[
 \forall v \in F,\ f_{|F}(v) = f(v).
 \]</span></p>
@@ -462,11 +467,11 @@ Note&nbsp;3.2
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Autrement dit, l’<em>action</em> de <span class="math inline">\(f_{|F}\)</span> est la même que <span class="math inline">\(f\)</span>, mais l’<em>espace de départ</em> change. Or, changer l’espace de départ (ou d’arrivée) d’une fonction, c’est changer la fonction. Par exemple, réduire l’espace de départ (on dit <em>restreindre</em>) peut rendre une fonction injective. De même, reduire l’espace d’arriver (on dit <em>corestreindre</em>) peut rendre une fonction surjective. Dès lors, il est légitime de distinguer <span class="math inline">\(f\)</span> et <span class="math inline">\(f_{|F}\)</span>.</p>
+<p>Autrement dit, l’<em>action</em> de <span class="math inline">\(f_{|F}\)</span> est la même que <span class="math inline">\(f\)</span>, mais l’espace de <em>départ</em> change. Or, changer l’espace de départ (ou d’arrivée) d’une fonction, c’est changer la fonction. Par exemple, réduire l’espace de départ (on dit <em>restreindre</em>) peut rendre une fonction injective. De même, reduire l’espace d’arrivée (on dit <em>corestreindre</em>) peut rendre une fonction surjective. Dès lors, il est légitime de distinguer <span class="math inline">\(f\)</span> et <span class="math inline">\(f_{|F}\)</span>.</p>
 </div>
 </div>
 <div id="prp-definition-somme-directe" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.9</strong></span> Soient <span class="math inline">\(E\)</span> et <span class="math inline">\(E'\)</span> deux <span class="math inline">\(\mathbb{K}\)</span>-espace vectoriels. On suppose que <span class="math inline">\(E=\bigoplus_{i=1}^{n}F_{i}\)</span>. On se donne, pour tout <span class="math inline">\(i \in \{1,\dots,n\}\)</span>, une application linéaire <span class="math inline">\(f_i:F_i \to E'\)</span>. Alors il existe une unique application linéaire <span class="math inline">\(f\)</span> de <span class="math inline">\(E\)</span> dans <span class="math inline">\(E'\)</span> tel que <span class="math inline">\(f_{|F_{i}}=f_i\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 3.9 (Définition d’une application linéaire sur une somme directe)</strong></span> Soient <span class="math inline">\(E\)</span> et <span class="math inline">\(E'\)</span> deux <span class="math inline">\(\mathbb{K}\)</span>-espaces vectoriels. On suppose que <span class="math inline">\(E=\bigoplus_{i=1}^{n}F_{i}\)</span>. On se donne, pour tout <span class="math inline">\(i \in \{1,\dots,n\}\)</span>, une application linéaire <span class="math inline">\(f_i:F_i \to E'\)</span>. Alors il existe une unique application linéaire <span class="math inline">\(f\)</span> de <span class="math inline">\(E\)</span> dans <span class="math inline">\(E'\)</span> tel que <span class="math inline">\(f_{|F_{i}}=f_i\)</span>.</p>
 </div>
 <div id="nte-definition-somme-directe" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -485,6 +490,486 @@ Note&nbsp;3.3
 </ol>
 </div>
 </div>
+<div id="def-base-adapte" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 3.11 (Base adaptée)</strong></span> Si <span class="math inline">\(E=\bigoplus_{i=1}^{n} F_{i}\)</span> et si <span class="math inline">\(\mathcal{B}_i\)</span> est une base de <span class="math inline">\(F_{i}\)</span> pour <span class="math inline">\(i=1,\dots,n\)</span>, alors la famille <span class="math inline">\(\mathcal{B}=(\mathcal{B}_{1},\dots,\mathcal{B}_{n})\)</span> obtenue en mettant bout à bout les bases <span class="math inline">\(B_{1},\dots,\mathcal{B}_{n}\)</span> est une base de <span class="math inline">\(E\)</span>, dite <strong>adaptée</strong> à la somme directe <span class="math inline">\(E=\bigoplus_{i=1}^{n}F_{i}\)</span>.</p>
+</div>
+<p>La notion de base adaptée mêne à l’écriture des matrices d’applications linéaires par <em>blocs</em>, ce que nous expliquons maintenant.</p>
+<div id="def-matrice-par-bloc" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 3.12 (Matrices par blocs)</strong></span> Une <strong>matrice par blocs</strong> est une matrice partitionnée en sous matrices appelées <em>blocs</em>.</p>
+</div>
+<div id="exm-blocs" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 3.8</strong></span> La matrice</p>
+<p><span class="math display">\[
+A = \begin{pmatrix}
+   1&amp;2&amp;2\\
+3 &amp;5&amp;5\\
+4 &amp;5&amp;5
+\end{pmatrix}
+\]</span></p>
+<p>peut s’écrire par blocs</p>
+<p><span class="math display">\[
+    A = \begin{pmatrix}
+        \boldsymbol{A}_{11} &amp; \boldsymbol{A}_{12}\\
+\boldsymbol{A}_{21} &amp; \boldsymbol{A}_{22}
+    \end{pmatrix}
+\]</span></p>
+<p>avec <span class="math inline">\(\boldsymbol{A}_{11} = (1)\)</span>, <span class="math inline">\(\boldsymbol{A}_{12} = \begin{pmatrix}
+    2&amp;2
+\end{pmatrix}\)</span>, <span class="math inline">\(\boldsymbol{A}_{21} = \begin{pmatrix}
+    3\\4
+\end{pmatrix}\)</span> et <span class="math inline">\(\boldsymbol{A}_{22} = 5 I_{2}\)</span>.</p>
+</div>
+<div id="prp-multiplication" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.10 (Multiplication des matrices par blocs)</strong></span> Si la taille des blocs est compatible, on peut multiplier les matrices par blocs comme on multiplie les matrices scalaires.</p>
+</div>
+<div id="exm-multiplication-par-bloc" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 3.9</strong></span> Si <span class="math inline">\(A = \begin{pmatrix}
+        \boldsymbol{A}_{11} &amp; \boldsymbol{A}_{12}\\
+\boldsymbol{A}_{21} &amp; \boldsymbol{A}_{22}
+    \end{pmatrix}\)</span> et <span class="math inline">\(B =\begin{pmatrix}
+        \boldsymbol{B}_{11} &amp; \boldsymbol{B}_{12}\\
+\boldsymbol{B}_{21} &amp; \boldsymbol{B}_{22}
+    \end{pmatrix}\)</span>, et si la taille des blocs est compatible, alors</p>
+<p><span class="math display">\[
+AB = \begin{pmatrix}
+\boldsymbol{A}_{11}\boldsymbol{B}_{11} + \boldsymbol{A}_{12}\boldsymbol{B}_{21} &amp; \boldsymbol{A}_{11}\boldsymbol{B}_{12}+ \boldsymbol{A}_{21}\boldsymbol{B}_{22}\\
+\boldsymbol{A}_{21}\boldsymbol{B}_{11}+\boldsymbol{A}_{22}\boldsymbol{B}_{21} &amp; \boldsymbol{A}_{21}\boldsymbol{B}_{12}+\boldsymbol{A}_{22}\boldsymbol{B}_{22}
+\end{pmatrix}.
+\]</span></p>
+</div>
+<p>Si <span class="math inline">\(E = \bigoplus_{i=1}^{n}F_{i}\)</span> et si <span class="math inline">\(\mathcal{B}=(\mathcal{B}_{1},\dots,\mathcal{B}_{n})\)</span> est une base adaptée à cette somme directe, la matrice d’un endomorphisme <span class="math inline">\(f\)</span> de <span class="math inline">\(E\)</span> s’écrit naturellement par blocs :</p>
+<div id="prp-matrice-par-bloc" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.11</strong></span> Soit <span class="math inline">\(\mathcal{B} = (\mathcal{B}_{1},\dots,\mathcal{B}_{n})\)</span> une base adaptée à la somme directe <span class="math inline">\(E = \bigoplus_{i=1}^{n} F_{i}\)</span>, alors la matrice de <span class="math inline">\(f \in
+\mathcal{L}(E)\)</span> dans la base <span class="math inline">\(\mathcal{B}\)</span> s’écrit par blocs</p>
+<p><span class="math display">\[
+    \mathcal{M}_{\mathcal{B}}(f) =
+\]</span></p>
+</div>
+</section>
+<section id="sous-espaces-stables-par-un-endomorphisme" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="sous-espaces-stables-par-un-endomorphisme"><span class="header-section-number">3.2.4</span> Sous espaces stables par un endomorphisme</h3>
+<div id="def-sous-espace-stable" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 3.13 (Sous espace stable par un endomorphisme)</strong></span> Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span> et <span class="math inline">\(F\)</span> un sous espace vectoriel de <span class="math inline">\(E\)</span>. On dit que <span class="math inline">\(F\)</span> est <strong>stable</strong> par <span class="math inline">\(f\)</span> si</p>
+<p><span class="math display">\[
+    \forall v \in F, f(v) \in F.
+\]</span></p>
+</div>
+<div id="exm-derivation" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 3.10</strong></span> Le sous espace <span class="math inline">\(\mathbb{R}_{n}[X]\)</span> est stable par dérivation.</p>
+</div>
+<div id="exm-rotation" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 3.11</strong></span> L’axe d’une rotation <span class="math inline">\(r\)</span> de <span class="math inline">\(\mathbb{R}^{3}\)</span> est stable par <span class="math inline">\(r\)</span>.</p>
+</div>
+<div id="exm-reflexion" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 3.12</strong></span> Le plan d’une réflexion <span class="math inline">\(s\)</span> de <span class="math inline">\(\mathbb{R}^{3}\)</span> est stable par <span class="math inline">\(s\)</span>.</p>
+</div>
+<div id="def-endomorphisme-induit" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 3.14 (Endomorphisme induit par restriction)</strong></span> Si <span class="math inline">\(F\)</span> est un sous espace vectoriel de <span class="math inline">\(E\)</span> stable par un endomorphisme <span class="math inline">\(f\)</span> de <span class="math inline">\(E\)</span>, alors la restriction de <span class="math inline">\(f\)</span> à <span class="math inline">\(F\)</span> définit un endomorphisme de <span class="math inline">\(F\)</span>. On l’appelle l’endomorphisme <strong>induit par restriction</strong> de <span class="math inline">\(f\)</span> à <span class="math inline">\(F\)</span>.</p>
+</div>
+<div id="exm-derivation" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 3.13</strong></span> Puisque <span class="math inline">\(\mathbb{R}_{n}[X]\)</span> est stable par dérivation, on peut restreindre la dérivation à <span class="math inline">\(\mathbb{R}_{n}[X]\)</span>. On obtient ainsi un endomorphisme de <span class="math inline">\(\mathbb{R}_{n}[X]\)</span> définit par <span class="math inline">\(P
+\mapsto P'\)</span>.</p>
+</div>
+<div id="nte-restriction" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;3.4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Restreindre un endomorphisme peut présenter plusieurs avantages, notamment :</p>
+<ol type="1">
+<li><p>l’espace <span class="math inline">\(F\)</span> peut être de dimension <em>finie</em>,</p></li>
+<li><p>l’endomorphisme <span class="math inline">\(f_{|F}\)</span> peut-être plus simple que l’endomorphisme <span class="math inline">\(f\)</span>.</p></li>
+</ol>
+</div>
+</div>
+<p>Lorsque l’on cherche à montrer qu’un sous espace est stable par un endomorphisme, on peut avantageusement utiliser une famille <em>génératrice</em> (notamment, une <em>base</em>) de <span class="math inline">\(F\)</span> :</p>
+<div id="prp-caractérisation-stabilite" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.12 (Caractérisation de la stabilité à l’aide d’une famille génératrice)</strong></span> Soit <span class="math inline">\(F\)</span> un sous espace vectoriel de <span class="math inline">\(E\)</span> et <span class="math inline">\(f \in \mathcal{L}(E)\)</span>. Soit <span class="math inline">\(\mathcal{G}\)</span> ne famille génératrice de <span class="math inline">\(F\)</span>. Alors <span class="math inline">\(F\)</span> est stable par <span class="math inline">\(f\)</span> ssi</p>
+<p><span class="math display">\[
+    \forall v \in \mathcal{G}, f(v) \in F.
+\]</span></p>
+</div>
+<p>Visuellement, la stabilité d’un sous espace par un endomorphisme se traduit sur sa matrice dans une base adaptée par des blocs de <span class="math inline">\(0\)</span>. On l’illustre dans le cas d’une somme directe à <em>deux</em> facteurs.</p>
+<div id="prp-stabilite-bloc" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.13</strong></span> On suppose que <span class="math inline">\(E=F \oplus G\)</span>. Soit <span class="math inline">\(\mathcal{B}=(\mathcal{B}_{F},\mathcal{B}_{G})\)</span> une base adaptée à cette somme directe et soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span>. Alors <span class="math inline">\(F\)</span> est stable par <span class="math inline">\(f\)</span> ssi la matrice par blocs de <span class="math inline">\(f\)</span> dans la base <span class="math inline">\(\mathcal{B}\)</span> est de la forme</p>
+<p><span class="math display">\[
+    \mathcal{M}_{\mathcal{B}}(f) = \begin{pmatrix}
+        \boldsymbol{A}_{11}&amp; \boldsymbol{A}_{12}\\
+\boldsymbol{0}&amp; \boldsymbol{A_{22}}
+    \end{pmatrix},
+\]</span></p>
+<p>et dans ce cas, <span class="math inline">\(\boldsymbol{A}_{11} = \mathcal{M}_{\mathcal{B}_{F}}(f_{|F})\)</span>.</p>
+</div>
+<div id="rem-stabilite-bloc" class="proof remark">
+<p><span class="proof-title"><em>Remarque 3.4</em>. </span>On a un résultat analogue pour la stabilité de <span class="math inline">\(G\)</span> par <span class="math inline">\(f\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="exercices" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercices">Exercices</h2>
+<section id="familles-quelconques-de-vecteurs" class="level3" data-number="3.2.5">
+<h3 data-number="3.2.5" class="anchored" data-anchor-id="familles-quelconques-de-vecteurs"><span class="header-section-number">3.2.5</span> Familles quelconques de vecteurs</h3>
+<div id="exr-03-base" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.1</strong></span> (Famille échelonnée en degré). Montrer que la famille <span class="math inline">\(H_k(X)\)</span>, <span class="math inline">\(k\in\{0,\dots,n\}\)</span>, définie par <span class="math inline">\(H_0(X)=1\)</span> et <span class="math display">\[\forall k\in\{1,\dots,n\},\
+H_k(X) = X(X-1)\cdots(X-k)\]</span> est une base de <span class="math inline">\(\mathbb{R}_n[X]\)</span>.</p>
+</div>
+<div id="exr-03-libre" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.2</strong></span> (Liberté d’une famille de polynômes). Montrer que les polynômes <span class="math inline">\(P=X(X-2)\)</span>, <span class="math inline">\(Q=X(X-1)\)</span> et <span class="math inline">\(R=(X-1)(X-2)\)</span> forment une famille libre de <span class="math inline">\(\mathbb{R}[X]\)</span>.</p>
+</div>
+<div id="exr-03-libre-inf" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.3</strong></span> (Un exemple de famille libre infinie). Montrer que la famille <span class="math inline">\(\{x\mapsto
+e^{kx},\ k\in\mathbb{N} \}\)</span> est une famille libre de l’espace vectoriel des fonctions de <span class="math inline">\(\mathbb{R}\)</span> dans <span class="math inline">\(\mathbb{R}\)</span>. <em>On pourra remarquer que <span class="math inline">\(e^{kx}=(e^x)^k\)</span>.</em></p>
+</div>
+</section>
+<section id="sous-espaces-vectoriels-1" class="level3" data-number="3.2.6">
+<h3 data-number="3.2.6" class="anchored" data-anchor-id="sous-espaces-vectoriels-1"><span class="header-section-number">3.2.6</span> Sous espaces vectoriels</h3>
+<div id="exr-03-vect" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.4</strong></span> (Espace de matrices à paramètres). Montrer que l’ensemble <span class="math inline">\(F = \left\{\begin{pmatrix}
+a&amp;c&amp;b\\
+c&amp;a+b&amp;c\\
+b&amp;c&amp;a
+\end{pmatrix},\ a,b,c\in\mathbb{R}\right\}\)</span> est un sous-espace vectoriel de <span class="math inline">\(\mathcal{M}_3(\mathbb{R})\)</span> et en donner une base.</p>
+</div>
+<div id="exr-03-supp" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.5</strong></span> (Deux sous espaces supplémentaires de <span class="math inline">\(\mathbb{R}^{3}\)</span>). On pose <span class="math inline">\(P = \{(x,y,z)\in\mathbb{R}^3,\ x+2y-z=0\}\)</span> et <span class="math inline">\(D =\{(x,y,z)\in\mathbb{R}^3,\ x=y=2z\}\)</span>.</p>
+<ol type="1">
+<li><p>Montrer que <span class="math inline">\(P\)</span> et <span class="math inline">\(D\)</span> sont supplémentaires dans <span class="math inline">\(\mathbb{R}^3\)</span> et déterminer une base <span class="math inline">\(\mathcal{B}\)</span> adaptée à cette décomposition.</p></li>
+<li><p>Montrer que l’endomorphisme <span class="math inline">\(f\)</span> dont la matrice dans la base canonique de <span class="math inline">\(\mathbb{R}^{3}\)</span> est</p></li>
+</ol>
+<p><span class="math display">\[
+\begin{pmatrix}
+    3&amp;-4&amp;2\\
+    -2&amp;1&amp;2\\
+    -1&amp;-2&amp;6
+\end{pmatrix}    
+\]</span></p>
+<p>laisse stable <span class="math inline">\(P\)</span> et <span class="math inline">\(D\)</span>, puis déterminer <span class="math inline">\(f_{|P}\)</span> et <span class="math inline">\(f_{|D}\)</span>.</p>
+<ol start="3" type="1">
+<li>Donner la matrice de <span class="math inline">\(f\)</span> dans la base <span class="math inline">\(\mathcal{B}\)</span>.</li>
+</ol>
+</div>
+<div id="exr-03-sev-carac-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.6</strong></span> (Caractéristion des sous espaces vectoriels). Montrer que l’ensemble des fonctions continues <span class="math inline">\(f:\mathbb{R} \to \mathbb{R}\)</span> s’annulant en <span class="math inline">\(0\)</span> forment un sous-espace vectoriel des fonctions continues de <span class="math inline">\(\mathbb{R}\)</span> dans <span class="math inline">\(\mathbb{R}\)</span>.</p>
+</div>
+<div id="exr-03-stabilite" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.7</strong></span> (Sous espace stable).</p>
+<ol type="1">
+<li><p>Montrer que l’application <span class="math inline">\(\varphi :\mathbb{R}[X] \to \mathbb{R}[X]\)</span> définie par</p>
+<p><span class="math display">\[
+\forall P \in \mathbb{R}[X],\ \varphi(P) = XP'
+\]</span></p>
+<p>est un endomorphisme de <span class="math inline">\(R[X]\)</span>.</p></li>
+<li><p>Montrer que pour tout <span class="math inline">\(n \in \mathbb{N}\)</span>, le sous-espace vectoriel <span class="math inline">\(\mathbb{R}_{n}[X]\)</span> est stable par <span class="math inline">\(\varphi\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-03-matrice-par-bloc" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.8</strong></span> (Matrice par blocs). On pose <span class="math inline">\(D=\begin{pmatrix}
+   1&amp;0&amp;0\\
+   0&amp;2&amp;0\\
+   0&amp;0&amp;2
+\end{pmatrix}\)</span>, <span class="math inline">\(N = \begin{pmatrix}
+    0&amp;0&amp;0\\
+    0&amp;0&amp;1\\
+    0&amp;0&amp;0
+\end{pmatrix}\)</span> et <span class="math inline">\(T = D+N\)</span>.</p>
+<ol type="1">
+<li><p>En utilisant des produits par blocs, montrer que <span class="math inline">\(N\)</span> et <span class="math inline">\(D\)</span> commutent et calculer <span class="math inline">\(D^{n}\)</span> pour tout <span class="math inline">\(n \geqslant 1\)</span>.</p></li>
+<li><p>Calculer <span class="math inline">\(N^{2}\)</span> et en déduire <span class="math inline">\(T^{n}\)</span> pour tout <span class="math inline">\(n \geqslant 1\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-03-sev-carac-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.9 (<span class="math inline">\(\star\)</span>)</strong></span> (Fonctions à croissance sous linéaire).</p>
+<p>Soit <span class="math inline">\(E = \mathcal{C}^{0}(\mathbb{R})\)</span> et</p>
+<p><span class="math display">\[
+    F=\{f \in E,\ \exists M \geqslant 0,\ \forall x \in \mathbb{R},\ |f(x)|\leqslant M(1+|x|)\}.
+\]</span></p>
+<p>Montrer que <span class="math inline">\(F\)</span> est un sous espace vectoriel de <span class="math inline">\(E\)</span>.</p>
+</div>
+<div id="exr-03-an-synt-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.10 (<span class="math inline">\(\star\)</span>)</strong></span> (Une somme directe en dimension infinie).</p>
+<ol type="1">
+<li><p>Montrer que l’ensemble <span class="math inline">\(H=\{P\in\mathbb{R}[X],\ \int_0^1P(x)dx=0\}\)</span> est un sous-espace vectoriel de <span class="math inline">\(\mathbb{R}[X]\)</span> et que <span class="math inline">\(\mathbb{R}[X] = H\oplus\mathbb{R}\)</span>.</p></li>
+<li><p>On note <span class="math inline">\(D\)</span> l’endormphisme de <span class="math inline">\(\mathbb{R}[X]\)</span> défini par</p>
+<p><span class="math display">\[
+\forall P \in \mathbb{R}[X],\ D(P)=P'.
+\]</span></p>
+<ol type="a">
+<li><p>L’endomorphisme <span class="math inline">\(D\)</span> est-il injectif ?</p></li>
+<li><p>Montrer que <span class="math inline">\(D_{|H}\)</span> est injectif.</p></li>
+</ol></li>
+</ol>
+</div>
+<div id="exr-03-an-synt-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.11 (<span class="math inline">\(\star\)</span>)</strong></span> (Fonctions paires et impaires). On note <span class="math inline">\(\mathcal{P}\)</span> (resp. <span class="math inline">\(\mathcal{I}\)</span>) l’ensemble des fonctions continues paires (resp. impaires) de <span class="math inline">\(\mathbb{R}\)</span> dans <span class="math inline">\(\mathbb{R}\)</span>. Montrer que <span class="math inline">\(\mathcal{P}\)</span> et <span class="math inline">\(\mathcal{I}\)</span> sont deux sous espaces vectoriels supplémentaires dans le <span class="math inline">\(\mathbb{R}\)</span>-espace vectoriel <span class="math inline">\(C^{0}(\mathbb{R})\)</span> des fonctions continues de <span class="math inline">\(\mathbb{R}\)</span> dans <span class="math inline">\(\mathbb{R}\)</span>.</p>
+</div>
+<!-- ##  -->
+<!---->
+<!-- ::: {#exr-03-0001} -->
+<!-- Soit $p$ un projecteur de $E$ et $u\in\mathcal{L}(E)$. Montrer que $p$ -->
+<!-- et $u$ commutent ssi $\mathrm{Im}(p)$ et $\ker(p)$ sont stables par $u$. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-03-sym} -->
+<!-- Soit $s$ une symétrie de $E$. Montrer que $\frac{Id + s}{2}$ est un -->
+<!-- projecteur de $E$ et le décrire. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-03-0003} -->
+<!-- Un projecteur est-il inversible ? Une symétrie ? -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-03-proj} -->
+<!-- On considère la matrice $\displaystyle A = \frac{1}{2}\begin{pmatrix} -->
+<!-- 1&1\\ -->
+<!-- 1&1 -->
+<!-- \end{pmatrix}$ et on note $f$ l'endomorphisme canoniquement associé à -->
+<!-- $A$. -->
+<!---->
+<!-- 1.  Montrer que $f$ est un projecteur. -->
+<!---->
+<!-- 2.  Justifier que $\mathcal{M}_{2,1}(\mathbb{R}) = \ker(f)\oplus\mathrm{Im}(f)$ et -->
+<!--     déterminer une base de chacun de ces sous-espaces. -->
+<!---->
+<!-- 3.  Calculer $A^n$ pour tout $n\in\mathbb{N}^*$. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-03-proj-2} -->
+<!-- Déterminer la matrice dans la base canonique du projecteur $p$ sur $F$ -->
+<!-- parallèlement à $G$, des espaces définis dans -->
+<!-- l'exercice [\[exo:3.2_supp\]](#exo:3.2_supp){reference-type="ref" -->
+<!-- reference="exo:3.2_supp"}. Même question avec la symétrie $s$ par -->
+<!-- rapport à $F$ parallèlement à $G$. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-03-sym-pol} -->
+<!-- ## $\star$ -->
+<!---->
+<!-- Montrer que $$\mathbb{R}_2[X] = \mathbb{R}\oplus\mathrm{Vect}\big((X-1)^2,X-1\big)$$ et -->
+<!-- déterminer le symétrique du polynôme $P=X^2 + 3X + 1$ par rapport à -->
+<!-- $\mathrm{Vect}\big((X-1)^2,X-1\big)$ parallèlement à $\mathbb{R}$. -->
+<!-- ::: -->
+<!---->
+<!-- ##  -->
+<!---->
+<!-- ::: {#exr-03-0003} -->
+<!-- Soit $f\in\mathcal{L}(E)$. Montrer que $\mathrm{Im}(f)$ et $\ker(f)$ -->
+<!-- sont stables par $f$. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-03-stable} -->
+<!-- On considère l'application $\Delta :\mathbb{R}[X]\to \mathbb{R}[X]$ définie par -->
+<!-- $$\Delta(P) = P(X+1) - P(X).$$ -->
+<!---->
+<!-- 1.  Montrer que $\Delta$ est un endomorphisme de $\mathbb{R}[X]$ et que -->
+<!--     $\mathbb{R}_n[X]$ est stable par $\Delta$ pour tout $n\in\mathbb{N}$. -->
+<!---->
+<!-- 2.  Donner la matrice dans la base canonique de l'endomorphisme -->
+<!--     $\Delta_2$ de $\mathbb{R}_2[X]$ induit par $\Delta$. -->
+<!-- ::: -->
+<!---->
+<!-- ##  -->
+<!---->
+<!-- ::: {#exr-03-trace} -->
+<!-- Montrer que l'ensemble $H = \{M\in \mathcal{M}_n(\mathbb{R}),\ \mathrm{Tr}(M)=0\}$ est un -->
+<!-- sous-espace vectoriel de $\mathcal{M}_n(\mathbb{R})$ et préciser sa dimension. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-03-0004} -->
+<!-- Soit $p$ un projecteur d'un espace vectoriel $E$ de dimension finie. -->
+<!-- Montrer que $\mathrm{rg}(p) = \mathrm{Tr}(p)$. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-03-trace-2} -->
+<!-- ## $\star$ -->
+<!---->
+<!-- 1.  Soit $A=(a_{ij})_{1\leqslant i,j\leqslant n}\in\mathcal{M}_{n}(\mathbb{R})$. -->
+<!--     Montrer que -->
+<!--     $$\mathrm{Tr}(A)=\sum_{i=1}^{n}\sum_{j=1}^{n}a_{i,j}^2.$$ -->
+<!---->
+<!-- 2.  Pour $A\in \mathcal{M}_{n}(\mathbb{R})$, on définit une application -->
+<!--     $\varphi_{A}$ sur $\mathcal{M}_{n}(\mathbb{R})$ par -->
+<!--     $\varphi\colon M\mapsto \mathrm{Tr}(A^{T}M)$. -->
+<!---->
+<!--     a.  Montrer que l'application $\varphi_{A}$ est une forme linéaire -->
+<!--         sur $\mathcal{M}_{n}(\mathbb{R})$. -->
+<!---->
+<!--     b.  Prouver que $A\mapsto \varphi_{A}$ est un isomorphisme de -->
+<!--         $\mathcal{M}_{n}(\mathbb{R})$ sur $\mathcal{L}(\mathcal{M}_{n}(\mathbb{R})),\mathbb{R}$. -->
+<!---->
+<!--     c.  Soit $\varphi$ une forme linéaire sur $\mathcal{M}_{n}(\mathbb{R})$. -->
+<!--         Prouver qu'il existe une unique matrice -->
+<!--         $A\in \mathcal{M}_{n}(\mathbb{R})$ telle que $\varphi=\varphi_{A}$. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-03-trace-3} -->
+<!-- Montrer que, pour tout $A,B\in\mathcal{M}_n(\mathbb{R})$, on a -->
+<!-- $\mathrm{Tr}(A^TB)=\mathrm{Tr}(AB^T)$. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-03-0005} -->
+<!-- Les matrices $A = \begin{pmatrix} -->
+<!--     1&2&-1\\ -->
+<!--     0&1&3\\ -->
+<!--     4&-2&1 -->
+<!-- \end{pmatrix}$ et $B = \begin{pmatrix} -->
+<!--     1&2&-1\\ -->
+<!--     0&1&2\\ -->
+<!--     -1&1&0 -->
+<!-- \end{pmatrix}$ sont-elles semblables ? -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-03-0006} -->
+<!-- Calculer les produits$\begin{pmatrix} -->
+<!--         1&-1&2 -->
+<!--     \end{pmatrix}\begin{pmatrix} -->
+<!--             1\\3\\5 -->
+<!--         \end{pmatrix}$ et $\begin{pmatrix} -->
+<!--             1\\3\\5 -->
+<!--         \end{pmatrix}\begin{pmatrix} -->
+<!--         1&-1&2 -->
+<!--     \end{pmatrix}$. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-03-0007} -->
+<!-- Soit $U,V\in\mathcal{M}_{n,1}(\mathbb{R})$ deux matrices colonnes non nulles. Montrer que -->
+<!-- la matrice $UV^T$ est une matrice de $\mathcal{M}_{n}(\mathbb{R})$ de rang $1$. -->
+<!-- Réciproquement, montrer que toute matrice de $\mathcal{M}_n(\mathbb{R})$ de rang $1$ est -->
+<!-- de cette forme. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-03-sn-2} -->
+<!-- Soit $A\in\mathcal{M}_{n,p(}\mathbb{R})$. Montrer que $AA^T\in \mathcal{S}_n(\mathbb{R})$. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-03-sn} -->
+<!-- Donner la décomposition de $\begin{pmatrix} -->
+<!--         1&-1\\ -->
+<!--         2&3 -->
+<!--     \end{pmatrix}$ comme somme d'une matrice symétrique et d'une matrice -->
+<!-- antisymétrique. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-03-pol-mat} -->
+<!-- On considère l'équation $$A^2 - A - 2I_n = 0 \quad\text{(E)}$$ -->
+<!-- d'inconnue $A\in\mathcal{M}_n(\mathbb{R})$. -->
+<!---->
+<!-- 1.  a.  Résoudre sur $\mathbb{R}$ l'équation -->
+<!--         $\lambda^2 - \lambda - 2 = 0$. On note $\lambda_1$ et -->
+<!--         $\lambda_2$ ses solutions avec $\lambda_1<\lambda_2$. -->
+<!---->
+<!--     b.  Donner un exemple de solution de $(E)$. -->
+<!---->
+<!-- Soit $A$ une solution de $(E)$. On pose: -->
+<!-- $$P=\frac{1}{\lambda_2-\lambda_1}(A-\lambda_1I_n),\quad Q  = -\frac{1}{\lambda_2-\lambda_1}(A-\lambda_2I_n).$$ -->
+<!---->
+<!-- 1.  a.  Montrer que $P^2 = P$ et $Q^2 = Q$. -->
+<!---->
+<!--     b.  Calculer $P+Q$, $PQ$ et $QP$. -->
+<!---->
+<!--     c.  Donner une combinaison linéaire de $A$ en fonction de $P$ et -->
+<!--         $Q$. -->
+<!---->
+<!-- 2.  Montrer que : -->
+<!--     $$\forall k\in\mathbb{N}^*, \quad A^k = \frac{1}{3}(2^k + (-1)^{k-1})A + \frac{2}{3}(2^{k-1} + (-1)^k)I_n.$$ -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-03-0008} -->
+<!-- ## $\star$ -->
+<!---->
+<!-- On considère l'équation $$M+M^T = \mathrm{Tr}(M)A\qquad (E)$$ d'inconnue -->
+<!-- $M\in\mathcal{M}_n(\mathbb{R})$ où $A$ est une matrice non-nulle fixée de -->
+<!-- $\mathcal{S}_n(\mathbb{R})$. -->
+<!---->
+<!-- 1.  Que peut-on dire de la trace d'une matrice antisymétrique ? -->
+<!---->
+<!-- 2.  Résoudre $(E)$ *(on distinguera les cas $\mathrm{Tr}(A)\neq2$ et -->
+<!--     $\mathrm{Tr}(A)=2$).* -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-03-pol-mat-2} -->
+<!-- On considère la matrice $B = \begin{pmatrix} -->
+<!-- 0&3&2\\ -->
+<!-- -2&5&2\\ -->
+<!-- 2&-3&0 -->
+<!-- \end{pmatrix}$. -->
+<!---->
+<!-- 1.  Montrer que la famille $(I_3,B,B^2)$ est liée. -->
+<!---->
+<!-- 2.  En déduire un polynôme annulateur de $B$. -->
+<!---->
+<!-- 3.  Montrer que $B$ est inversible et déterminer $B^{-1}$. -->
+<!-- ::: -->
+<!---->
+<!-- ## Problèmes divers {#problèmes-divers .unnumbered} -->
+<!---->
+<!-- ::: {#exr-03-sym} -->
+<!-- On considère l'application -->
+<!-- $\varphi:\mathcal{M}_{n}(\mathbb{R})\to \mathcal{M}_n(\mathbb{R})$ -->
+<!-- définie par -->
+<!-- $$\forall M\in\mathcal{M}_{n}(\mathbb{R}),\quad \varphi(M) = M - \frac{2}{n}\operatorname{Tr}(M)I_n.$$ -->
+<!---->
+<!-- 1.  Montrer que $\varphi$ est un isomorphisme de -->
+<!--     $\mathcal{M}_n(\mathbb{R})$. -->
+<!---->
+<!-- On note -->
+<!-- $H = \{M\in\mathcal{M}_n(\mathbb{R}),\quad \operatorname{Tr}(M) = 0\}$. -->
+<!---->
+<!-- 1.  Montrer que $H$ est un sous-espace vectoriel de $\mathcal{M}_n(\mathbb{R})$ et -->
+<!--     préciser sa dimension. -->
+<!---->
+<!-- 2.  Montrer que -->
+<!--     $\mathcal{M}_{n}(\mathbb{R}) = H\oplus \operatorname{Vect}(I_n)$. -->
+<!---->
+<!-- 3.  Montrer que $H$ est stable par $\varphi$ et préciser $\varphi_{|H}$. -->
+<!---->
+<!-- 4.  Préciser la matrice de $\varphi$ dans une base adaptée à la -->
+<!--     décomposition en somme directe $H\oplus \operatorname{Vect}(I_n)$. -->
+<!---->
+<!-- 5.  Reconnaître l'application $\varphi$. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-03-interp} -->
+<!-- ## $\star$ -->
+<!---->
+<!-- Soit $x_1,\dots,x_n$, $n\geqslant 1$, des réels deux à deux distincts et -->
+<!-- $\lambda_1,\dots,\lambda_n\in\mathbb{R}$. -->
+<!---->
+<!-- 1.  Montrer que l'application -->
+<!--     $\varphi : \mathbb{R}_{n-1}[X]\to \mathbb{R}^{n}$ définie par -->
+<!--     $$\forall P\in\mathbb{R}_{n-1}[X],\ \varphi(P) = (P(x_1),\dots,P(x_n)).$$ -->
+<!--     est un isomorphisme. -->
+<!---->
+<!-- 2.  En déduire qu'il existe un unique polynôme $P\in\mathbb{R}_{n-1}[X]$ -->
+<!--     tel que : $$\forall i\in\{1,\dots,n\},\quad P(x_i) = \lambda_i.$$ -->
+<!---->
+<!-- Pour tout $i\in\{1,\dots,n\}$, on pose -->
+<!-- $$L_{x_i}(X) = \frac{(X-x_1)\dots \widehat{(X-x_i)}\dots (X-x_n)}{(x_i-x_1)\dots \widehat{(x_i - x_i)} \dots (x_i - x_n)}$$ -->
+<!-- où le symbole $\widehat{}\ $ signifie que le terme correspondant est -->
+<!-- omis. Les polynômes $(L_{x_i})_{1\leqslant i\leqslant n}$ sont appelés -->
+<!-- *polynômes d'interpolation de Lagrange aux points $x_1,\dots,x_n$.* -->
+<!---->
+<!-- 1.  Vérifier que : -->
+<!--     $$\forall i,j\in\{1,\dots,n\},\ L_{x_i}(x_j) = \delta_{ij}$$ où -->
+<!--     $\delta_{ij}$ désigne le symbole de Kronecker, défini par -->
+<!--     $\delta_{ij} = \left\{\begin{array}{ll} -->
+<!--     1 &\mbox{ si $i=j$},\\ -->
+<!--     0&\mbox{ sinon}. -->
+<!--     \end{array}\right.$ -->
+<!---->
+<!-- 2.  Montrer que la famille $(L_{x_1},\dots,L_{x_n})$ est une base de -->
+<!--     $\mathbb{R}_{n-1}[X]$. -->
+<!---->
+<!-- 3.  Montrer que $P = \sum_{i=1}^n \lambda_i L_{x_i}$ -->
+<!---->
+<!-- 4.  *Application :* Déterminer l'unique polynôme $P$ de -->
+<!--     $\mathbb{R}_2[X]$ tel que $P(0) = -1$, $P(1) = \dfrac{1}{3}$ et -->
+<!--     $P(2) = 4$. -->
+<!-- ::: -->
 
 
 </section>
