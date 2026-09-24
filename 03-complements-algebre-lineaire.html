@@ -212,17 +212,25 @@ window.Quarto = {
   <li><a href="#familles-libres-génératrices" id="toc-familles-libres-génératrices" class="nav-link" data-scroll-target="#familles-libres-génératrices"><span class="header-section-number">3.1.2</span> Familles libres, génératrices</a></li>
   <li><a href="#bases" id="toc-bases" class="nav-link" data-scroll-target="#bases"><span class="header-section-number">3.1.3</span> Bases</a></li>
   </ul></li>
-  <li><a href="#sec-03-sous-espaces-vectoriels" id="toc-sec-03-sous-espaces-vectoriels" class="nav-link" data-scroll-target="#sec-03-sous-espaces-vectoriels"><span class="header-section-number">3.2</span> Sous-espaces vetoriels</a>
+  <li><a href="#sec-03-sous-espaces-vectoriels" id="toc-sec-03-sous-espaces-vectoriels" class="nav-link" data-scroll-target="#sec-03-sous-espaces-vectoriels"><span class="header-section-number">3.2</span> Sous-espaces vectoriels</a>
   <ul class="collapse">
   <li><a href="#sous-espaces-vectoriels" id="toc-sous-espaces-vectoriels" class="nav-link" data-scroll-target="#sous-espaces-vectoriels"><span class="header-section-number">3.2.1</span> Sous espaces vectoriels</a></li>
   <li><a href="#somme-de-sous-espaces-vectoriels" id="toc-somme-de-sous-espaces-vectoriels" class="nav-link" data-scroll-target="#somme-de-sous-espaces-vectoriels"><span class="header-section-number">3.2.2</span> Somme de sous espaces vectoriels</a></li>
   <li><a href="#définir-une-application-linéaire-à-laide-dune-somme-directe" id="toc-définir-une-application-linéaire-à-laide-dune-somme-directe" class="nav-link" data-scroll-target="#définir-une-application-linéaire-à-laide-dune-somme-directe"><span class="header-section-number">3.2.3</span> Définir une application linéaire à l’aide d’une somme directe</a></li>
   <li><a href="#sous-espaces-stables-par-un-endomorphisme" id="toc-sous-espaces-stables-par-un-endomorphisme" class="nav-link" data-scroll-target="#sous-espaces-stables-par-un-endomorphisme"><span class="header-section-number">3.2.4</span> Sous espaces stables par un endomorphisme</a></li>
   </ul></li>
+  <li><a href="#sec-03-projecteurs-et-symetries" id="toc-sec-03-projecteurs-et-symetries" class="nav-link" data-scroll-target="#sec-03-projecteurs-et-symetries"><span class="header-section-number">3.3</span> Projecteurs et symétries</a>
+  <ul class="collapse">
+  <li><a href="#projecteurs" id="toc-projecteurs" class="nav-link" data-scroll-target="#projecteurs"><span class="header-section-number">3.3.1</span> Projecteurs</a></li>
+  </ul></li>
+  <li><a href="#sec-03-matrices" id="toc-sec-03-matrices" class="nav-link" data-scroll-target="#sec-03-matrices"><span class="header-section-number">3.4</span> Matrices</a></li>
   <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
   <ul class="collapse">
-  <li><a href="#familles-quelconques-de-vecteurs" id="toc-familles-quelconques-de-vecteurs" class="nav-link" data-scroll-target="#familles-quelconques-de-vecteurs"><span class="header-section-number">3.2.5</span> Familles quelconques de vecteurs</a></li>
-  <li><a href="#sous-espaces-vectoriels-1" id="toc-sous-espaces-vectoriels-1" class="nav-link" data-scroll-target="#sous-espaces-vectoriels-1"><span class="header-section-number">3.2.6</span> Sous espaces vectoriels</a></li>
+  <li><a href="#familles-quelconques-de-vecteurs" id="toc-familles-quelconques-de-vecteurs" class="nav-link" data-scroll-target="#familles-quelconques-de-vecteurs"><span class="header-section-number">3.4.1</span> Familles quelconques de vecteurs</a></li>
+  <li><a href="#sous-espaces-vectoriels-1" id="toc-sous-espaces-vectoriels-1" class="nav-link" data-scroll-target="#sous-espaces-vectoriels-1"><span class="header-section-number">3.4.2</span> Sous espaces vectoriels</a></li>
+  <li><a href="#projecteurs-et-symétries" id="toc-projecteurs-et-symétries" class="nav-link" data-scroll-target="#projecteurs-et-symétries"><span class="header-section-number">3.4.3</span> Projecteurs et symétries</a></li>
+  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices"><span class="header-section-number">3.4.4</span> Matrices</a></li>
+  <li><a href="#divers" id="toc-divers" class="nav-link" data-scroll-target="#divers"><span class="header-section-number">3.4.5</span> Divers</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -345,7 +353,7 @@ i\,j\in\{1,\dots,j\}\}\)</span> où <span class="math inline">\(E_{ij}\)</span> 
 </section>
 </section>
 <section id="sec-03-sous-espaces-vectoriels" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="sec-03-sous-espaces-vectoriels"><span class="header-section-number">3.2</span> Sous-espaces vetoriels</h2>
+<h2 data-number="3.2" class="anchored" data-anchor-id="sec-03-sous-espaces-vectoriels"><span class="header-section-number">3.2</span> Sous-espaces vectoriels</h2>
 <p>Pour nous, les sous espaces vectoriels seront surtout un outil pour comprendre et définir des applications linéaires, via les notions de <em>somme directe</em>.</p>
 <p>On commence par quelques rappels de première année.</p>
 <section id="sous-espaces-vectoriels" class="level3" data-number="3.2.1">
@@ -495,7 +503,10 @@ Note&nbsp;3.3
 </div>
 <p>La notion de base adaptée mêne à l’écriture des matrices d’applications linéaires par <em>blocs</em>, ce que nous expliquons maintenant.</p>
 <div id="def-matrice-par-bloc" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 3.12 (Matrices par blocs)</strong></span> Une <strong>matrice par blocs</strong> est une matrice partitionnée en sous matrices appelées <em>blocs</em>.</p>
+<p><span class="theorem-title"><strong>Définition 3.12 (Matrices par blocs)</strong></span> Une matrice est dite écrite par <strong>blocs</strong> si elle est divisée en sous matrices figurées à l’aide de lignes horizontales et/ou verticales :</p>
+<!-- A = \begin{pNiceArray}{ccc}[first-row,last-col] -->
+<!-- A_{11}& \cdots & A_{1t}&\\ -->
+<!-- \end{pNiceArray} -->
 </div>
 <div id="exm-blocs" class="theorem example">
 <p><span class="theorem-title"><strong>Exemple 3.8</strong></span> La matrice</p>
@@ -610,10 +621,93 @@ Note&nbsp;3.4
 </div>
 </section>
 </section>
+<section id="sec-03-projecteurs-et-symetries" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="sec-03-projecteurs-et-symetries"><span class="header-section-number">3.3</span> Projecteurs et symétries</h2>
+<p>On applique les résultats de la section précédente à la définition des projecteurs et des symétries. Ce sont des endomorphismes de référence qui interviennent dans de nombreux domaines.</p>
+<section id="projecteurs" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="projecteurs"><span class="header-section-number">3.3.1</span> Projecteurs</h3>
+<div id="def-projecteur-sur-F-parallelement-a-G" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 3.15</strong></span> On suppose que <span class="math inline">\(E=F \oplus G\)</span>. On appelle projecteur sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> l’endomorphisme <span class="math inline">\(p\)</span> de <span class="math inline">\(E\)</span> défini par <span class="math inline">\(p_{|F}=\mathrm{Id}\)</span> et <span class="math inline">\(p_{|G}=0\)</span>.</p>
+</div>
+<div id="nte-projecteur" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;3.5
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Concrètement, si <span class="math inline">\(v=v_{F}+v_{G}\)</span> est la décomposition de <span class="math inline">\(v\)</span> dans la somme directe <span class="math inline">\(E=F \oplus G\)</span>, alors</p>
+<p><span class="math display">\[
+p(v) = p(v_{F}) + p(v_{G}) = v_{F}
+\]</span></p>
+<p>On dit que <span class="math inline">\(v_{F}\)</span> est la <em>composante suivant <span class="math inline">\(F\)</span></em> de <span class="math inline">\(v\)</span>.</p>
+<div id="fig-projecteur-F" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-projecteur-F-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./tikz/svg/03-1.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-projecteur-F-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="tip-projecteur-F" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce&nbsp;3.2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si <span class="math inline">\(E=F \oplus G\)</span> et si on note <span class="math inline">\(p\)</span> et <span class="math inline">\(q\)</span> les projecteurs sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> et inversement, alors <span class="math inline">\(p+q=\mathrm{Id}\)</span> ; connaitre un des deux projecteurs, c’est donc connaitre les deux.</p>
+</div>
+</div>
+<p>Concrètement, pour calculer la projection d’un vecteur <span class="math inline">\(v\)</span> sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(F\)</span>, on détermine la composante <span class="math inline">\(v_{F}\)</span> de <span class="math inline">\(v\)</span> dans la somme directe <span class="math inline">\(E=F \oplus G\)</span>. On utilise pour cela la caractérisation suivante :</p>
+<div id="prp-caracterisation-du-projete" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.14</strong></span> On suppose que <span class="math inline">\(E=F \oplus G\)</span> et on note <span class="math inline">\(p\)</span> le projecteur sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span>. Alors pour tout <span class="math inline">\(v \in E\)</span>, le projeté <span class="math inline">\(p(v)=u\)</span> de <span class="math inline">\(v\)</span> sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> est caractérisé par</p>
+<p><span class="math display">\[
+    \begin{cases}
+        u \in \in F,\\
+        v-u \in G.
+    \end{cases}
+\]</span></p>
+</div>
+<div id="exm-projection-F-1" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 3.14</strong></span> Dans <span class="math inline">\(\mathbb{R}^{3}\)</span>, déterminer la projection du vecteur <span class="math inline">\(v=(1,1,1)\)</span> sur le plan <span class="math inline">\(P\)</span> d’équation <span class="math inline">\(x+2y+z=0\)</span>, parallèlement à la droite engendrée par le vecteur <span class="math inline">\(u=(1,1,-1)\)</span>.</p>
+</div>
+<div id="tip-caracterisation" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce&nbsp;3.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suivant les cas (notamment si la dimension de <span class="math inline">\(G\)</span> est inférieure à celle de <span class="math inline">\(F\)</span>), il peux être plus simple de calculer <span class="math inline">\(v_G\)</span> et d’utiliser la relation <span class="math inline">\(v_{F}=v-v_{G}\)</span>.</p>
+</div>
+</div>
+<div id="exm-projecteur-F-2" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 3.15</strong></span> Dans l’exemple précédent, on a été amené à résoudre un système <span class="math inline">\(2\times 2\)</span> car on a projeté sur un plan. Il est plus simple de projeter sur la droite <span class="math inline">\(D\)</span> et d’utiliser la relation rappelée dans le <a href="#tip-caracterisation" class="quarto-xref">Tip&nbsp;<span>3.3</span></a> :</p>
+</div>
+</section>
+</section>
+<section id="sec-03-matrices" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="sec-03-matrices"><span class="header-section-number">3.4</span> Matrices</h2>
+
+</section>
 <section id="exercices" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="exercices">Exercices</h2>
-<section id="familles-quelconques-de-vecteurs" class="level3" data-number="3.2.5">
-<h3 data-number="3.2.5" class="anchored" data-anchor-id="familles-quelconques-de-vecteurs"><span class="header-section-number">3.2.5</span> Familles quelconques de vecteurs</h3>
+<section id="familles-quelconques-de-vecteurs" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="familles-quelconques-de-vecteurs"><span class="header-section-number">3.4.1</span> Familles quelconques de vecteurs</h3>
 <div id="exr-03-base" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 3.1</strong></span> (Famille échelonnée en degré). Montrer que la famille <span class="math inline">\(H_k(X)\)</span>, <span class="math inline">\(k\in\{0,\dots,n\}\)</span>, définie par <span class="math inline">\(H_0(X)=1\)</span> et <span class="math display">\[\forall k\in\{1,\dots,n\},\
 H_k(X) = X(X-1)\cdots(X-k)\]</span> est une base de <span class="math inline">\(\mathbb{R}_n[X]\)</span>.</p>
@@ -622,12 +716,12 @@ H_k(X) = X(X-1)\cdots(X-k)\]</span> est une base de <span class="math inline">\(
 <p><span class="theorem-title"><strong>Exercice 3.2</strong></span> (Liberté d’une famille de polynômes). Montrer que les polynômes <span class="math inline">\(P=X(X-2)\)</span>, <span class="math inline">\(Q=X(X-1)\)</span> et <span class="math inline">\(R=(X-1)(X-2)\)</span> forment une famille libre de <span class="math inline">\(\mathbb{R}[X]\)</span>.</p>
 </div>
 <div id="exr-03-libre-inf" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 3.3</strong></span> (Un exemple de famille libre infinie). Montrer que la famille <span class="math inline">\(\{x\mapsto
-e^{kx},\ k\in\mathbb{N} \}\)</span> est une famille libre de l’espace vectoriel des fonctions de <span class="math inline">\(\mathbb{R}\)</span> dans <span class="math inline">\(\mathbb{R}\)</span>. <em>On pourra remarquer que <span class="math inline">\(e^{kx}=(e^x)^k\)</span>.</em></p>
+<p><span class="theorem-title"><strong>Exercice 3.3 (<span class="math inline">\(\star\)</span>)</strong></span> (Un exemple de famille libre infinie). Montrer que la famille <span class="math inline">\(\{f_{\alpha}:x\mapsto
+e^{kx},\ k\in\mathbb{N} \}\)</span> est une famille libre de l’espace vectoriel des fonctions de <span class="math inline">\(\mathbb{R}\)</span> dans <span class="math inline">\(\mathbb{R}\)</span>. <em>On pourra remarquer que pour tout <span class="math inline">\(x \in \mathbb{R},\ e^{kx}=(e^x)^k\)</span>.</em></p>
 </div>
 </section>
-<section id="sous-espaces-vectoriels-1" class="level3" data-number="3.2.6">
-<h3 data-number="3.2.6" class="anchored" data-anchor-id="sous-espaces-vectoriels-1"><span class="header-section-number">3.2.6</span> Sous espaces vectoriels</h3>
+<section id="sous-espaces-vectoriels-1" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="sous-espaces-vectoriels-1"><span class="header-section-number">3.4.2</span> Sous espaces vectoriels</h3>
 <div id="exr-03-vect" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 3.4</strong></span> (Espace de matrices à paramètres). Montrer que l’ensemble <span class="math inline">\(F = \left\{\begin{pmatrix}
 a&amp;c&amp;b\\
@@ -635,8 +729,19 @@ c&amp;a+b&amp;c\\
 b&amp;c&amp;a
 \end{pmatrix},\ a,b,c\in\mathbb{R}\right\}\)</span> est un sous-espace vectoriel de <span class="math inline">\(\mathcal{M}_3(\mathbb{R})\)</span> et en donner une base.</p>
 </div>
+<div id="exr-03-sev-carac-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.5</strong></span> (Caractéristion des sous espaces vectoriels). Montrer que l’ensemble des fonctions continues <span class="math inline">\(f:\mathbb{R} \to \mathbb{R}\)</span> s’annulant en <span class="math inline">\(0\)</span> forment un sous-espace vectoriel de <span class="math inline">\(C^{0}(\mathbb{R})\)</span>.</p>
+</div>
+<div id="exr-03-sev-carac-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.6 (<span class="math inline">\(\star\)</span>)</strong></span> (Fonctions à croissance sous linéaire).</p>
+<p>Soit <span class="math inline">\(E = \mathcal{C}^{0}(\mathbb{R})\)</span> et</p>
+<p><span class="math display">\[
+    F=\{f \in E,\ \exists M \geqslant 0,\ \forall x \in \mathbb{R},\ |f(x)|\leqslant M(1+|x|)\}.
+\]</span></p>
+<p>Montrer que <span class="math inline">\(F\)</span> est un sous espace vectoriel de <span class="math inline">\(E\)</span>.</p>
+</div>
 <div id="exr-03-supp" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 3.5</strong></span> (Deux sous espaces supplémentaires de <span class="math inline">\(\mathbb{R}^{3}\)</span>). On pose <span class="math inline">\(P = \{(x,y,z)\in\mathbb{R}^3,\ x+2y-z=0\}\)</span> et <span class="math inline">\(D =\{(x,y,z)\in\mathbb{R}^3,\ x=y=2z\}\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercice 3.7</strong></span> (Deux sous espaces supplémentaires de <span class="math inline">\(\mathbb{R}^{3}\)</span>). On pose <span class="math inline">\(P = \{(x,y,z)\in\mathbb{R}^3,\ x+2y-z=0\}\)</span> et <span class="math inline">\(D =\{(x,y,z)\in\mathbb{R}^3,\ x=y=2z\}\)</span>.</p>
 <ol type="1">
 <li><p>Montrer que <span class="math inline">\(P\)</span> et <span class="math inline">\(D\)</span> sont supplémentaires dans <span class="math inline">\(\mathbb{R}^3\)</span> et déterminer une base <span class="math inline">\(\mathcal{B}\)</span> adaptée à cette décomposition.</p></li>
 <li><p>Montrer que l’endomorphisme <span class="math inline">\(f\)</span> dont la matrice dans la base canonique de <span class="math inline">\(\mathbb{R}^{3}\)</span> est</p></li>
@@ -650,48 +755,11 @@ b&amp;c&amp;a
 \]</span></p>
 <p>laisse stable <span class="math inline">\(P\)</span> et <span class="math inline">\(D\)</span>, puis déterminer <span class="math inline">\(f_{|P}\)</span> et <span class="math inline">\(f_{|D}\)</span>.</p>
 <ol start="3" type="1">
-<li>Donner la matrice de <span class="math inline">\(f\)</span> dans la base <span class="math inline">\(\mathcal{B}\)</span>.</li>
+<li>Donner la matrice de <span class="math inline">\(f\)</span> dans la base <span class="math inline">\(\mathcal{B}\)</span>. <em>On écrira cette matrice par blocs</em>.</li>
 </ol>
-</div>
-<div id="exr-03-sev-carac-1" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 3.6</strong></span> (Caractéristion des sous espaces vectoriels). Montrer que l’ensemble des fonctions continues <span class="math inline">\(f:\mathbb{R} \to \mathbb{R}\)</span> s’annulant en <span class="math inline">\(0\)</span> forment un sous-espace vectoriel des fonctions continues de <span class="math inline">\(\mathbb{R}\)</span> dans <span class="math inline">\(\mathbb{R}\)</span>.</p>
-</div>
-<div id="exr-03-stabilite" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 3.7</strong></span> (Sous espace stable).</p>
-<ol type="1">
-<li><p>Montrer que l’application <span class="math inline">\(\varphi :\mathbb{R}[X] \to \mathbb{R}[X]\)</span> définie par</p>
-<p><span class="math display">\[
-\forall P \in \mathbb{R}[X],\ \varphi(P) = XP'
-\]</span></p>
-<p>est un endomorphisme de <span class="math inline">\(R[X]\)</span>.</p></li>
-<li><p>Montrer que pour tout <span class="math inline">\(n \in \mathbb{N}\)</span>, le sous-espace vectoriel <span class="math inline">\(\mathbb{R}_{n}[X]\)</span> est stable par <span class="math inline">\(\varphi\)</span>.</p></li>
-</ol>
-</div>
-<div id="exr-03-matrice-par-bloc" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 3.8</strong></span> (Matrice par blocs). On pose <span class="math inline">\(D=\begin{pmatrix}
-   1&amp;0&amp;0\\
-   0&amp;2&amp;0\\
-   0&amp;0&amp;2
-\end{pmatrix}\)</span>, <span class="math inline">\(N = \begin{pmatrix}
-    0&amp;0&amp;0\\
-    0&amp;0&amp;1\\
-    0&amp;0&amp;0
-\end{pmatrix}\)</span> et <span class="math inline">\(T = D+N\)</span>.</p>
-<ol type="1">
-<li><p>En utilisant des produits par blocs, montrer que <span class="math inline">\(N\)</span> et <span class="math inline">\(D\)</span> commutent et calculer <span class="math inline">\(D^{n}\)</span> pour tout <span class="math inline">\(n \geqslant 1\)</span>.</p></li>
-<li><p>Calculer <span class="math inline">\(N^{2}\)</span> et en déduire <span class="math inline">\(T^{n}\)</span> pour tout <span class="math inline">\(n \geqslant 1\)</span>.</p></li>
-</ol>
-</div>
-<div id="exr-03-sev-carac-2" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 3.9 (<span class="math inline">\(\star\)</span>)</strong></span> (Fonctions à croissance sous linéaire).</p>
-<p>Soit <span class="math inline">\(E = \mathcal{C}^{0}(\mathbb{R})\)</span> et</p>
-<p><span class="math display">\[
-    F=\{f \in E,\ \exists M \geqslant 0,\ \forall x \in \mathbb{R},\ |f(x)|\leqslant M(1+|x|)\}.
-\]</span></p>
-<p>Montrer que <span class="math inline">\(F\)</span> est un sous espace vectoriel de <span class="math inline">\(E\)</span>.</p>
 </div>
 <div id="exr-03-an-synt-1" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 3.10 (<span class="math inline">\(\star\)</span>)</strong></span> (Une somme directe en dimension infinie).</p>
+<p><span class="theorem-title"><strong>Exercice 3.8 (<span class="math inline">\(\star\)</span>)</strong></span> (Une somme directe en dimension infinie).</p>
 <ol type="1">
 <li><p>Montrer que l’ensemble <span class="math inline">\(H=\{P\in\mathbb{R}[X],\ \int_0^1P(x)dx=0\}\)</span> est un sous-espace vectoriel de <span class="math inline">\(\mathbb{R}[X]\)</span> et que <span class="math inline">\(\mathbb{R}[X] = H\oplus\mathbb{R}\)</span>.</p></li>
 <li><p>On note <span class="math inline">\(D\)</span> l’endormphisme de <span class="math inline">\(\mathbb{R}[X]\)</span> défini par</p>
@@ -705,85 +773,159 @@ b&amp;c&amp;a
 </ol>
 </div>
 <div id="exr-03-an-synt-2" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 3.11 (<span class="math inline">\(\star\)</span>)</strong></span> (Fonctions paires et impaires). On note <span class="math inline">\(\mathcal{P}\)</span> (resp. <span class="math inline">\(\mathcal{I}\)</span>) l’ensemble des fonctions continues paires (resp. impaires) de <span class="math inline">\(\mathbb{R}\)</span> dans <span class="math inline">\(\mathbb{R}\)</span>. Montrer que <span class="math inline">\(\mathcal{P}\)</span> et <span class="math inline">\(\mathcal{I}\)</span> sont deux sous espaces vectoriels supplémentaires dans le <span class="math inline">\(\mathbb{R}\)</span>-espace vectoriel <span class="math inline">\(C^{0}(\mathbb{R})\)</span> des fonctions continues de <span class="math inline">\(\mathbb{R}\)</span> dans <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercice 3.9 (<span class="math inline">\(\star\)</span>)</strong></span> (Somme directe des fonctions paires et impaires). On note <span class="math inline">\(\mathcal{P}\)</span> (resp. <span class="math inline">\(\mathcal{I}\)</span>) l’ensemble des fonctions continues paires (resp. impaires) de <span class="math inline">\(\mathbb{R}\)</span> dans <span class="math inline">\(\mathbb{R}\)</span>. Montrer que <span class="math inline">\(\mathcal{P}\)</span> et <span class="math inline">\(\mathcal{I}\)</span> sont deux sous espaces vectoriels supplémentaires dans <span class="math inline">\(C^{0}(\mathbb{R})\)</span>.</p>
 </div>
-<!-- ##  -->
-<!---->
-<!-- ::: {#exr-03-0001} -->
-<!-- Soit $p$ un projecteur de $E$ et $u\in\mathcal{L}(E)$. Montrer que $p$ -->
-<!-- et $u$ commutent ssi $\mathrm{Im}(p)$ et $\ker(p)$ sont stables par $u$. -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-03-sym} -->
-<!-- Soit $s$ une symétrie de $E$. Montrer que $\frac{Id + s}{2}$ est un -->
-<!-- projecteur de $E$ et le décrire. -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-03-0003} -->
-<!-- Un projecteur est-il inversible ? Une symétrie ? -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-03-proj} -->
-<!-- On considère la matrice $\displaystyle A = \frac{1}{2}\begin{pmatrix} -->
-<!-- 1&1\\ -->
-<!-- 1&1 -->
-<!-- \end{pmatrix}$ et on note $f$ l'endomorphisme canoniquement associé à -->
-<!-- $A$. -->
-<!---->
-<!-- 1.  Montrer que $f$ est un projecteur. -->
-<!---->
-<!-- 2.  Justifier que $\mathcal{M}_{2,1}(\mathbb{R}) = \ker(f)\oplus\mathrm{Im}(f)$ et -->
-<!--     déterminer une base de chacun de ces sous-espaces. -->
-<!---->
-<!-- 3.  Calculer $A^n$ pour tout $n\in\mathbb{N}^*$. -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-03-proj-2} -->
-<!-- Déterminer la matrice dans la base canonique du projecteur $p$ sur $F$ -->
-<!-- parallèlement à $G$, des espaces définis dans -->
-<!-- l'exercice [\[exo:3.2_supp\]](#exo:3.2_supp){reference-type="ref" -->
-<!-- reference="exo:3.2_supp"}. Même question avec la symétrie $s$ par -->
-<!-- rapport à $F$ parallèlement à $G$. -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-03-sym-pol} -->
-<!-- ## $\star$ -->
-<!---->
-<!-- Montrer que $$\mathbb{R}_2[X] = \mathbb{R}\oplus\mathrm{Vect}\big((X-1)^2,X-1\big)$$ et -->
-<!-- déterminer le symétrique du polynôme $P=X^2 + 3X + 1$ par rapport à -->
-<!-- $\mathrm{Vect}\big((X-1)^2,X-1\big)$ parallèlement à $\mathbb{R}$. -->
-<!-- ::: -->
-<!---->
-<!-- ##  -->
-<!---->
-<!-- ::: {#exr-03-0003} -->
-<!-- Soit $f\in\mathcal{L}(E)$. Montrer que $\mathrm{Im}(f)$ et $\ker(f)$ -->
-<!-- sont stables par $f$. -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-03-stable} -->
-<!-- On considère l'application $\Delta :\mathbb{R}[X]\to \mathbb{R}[X]$ définie par -->
-<!-- $$\Delta(P) = P(X+1) - P(X).$$ -->
-<!---->
-<!-- 1.  Montrer que $\Delta$ est un endomorphisme de $\mathbb{R}[X]$ et que -->
-<!--     $\mathbb{R}_n[X]$ est stable par $\Delta$ pour tout $n\in\mathbb{N}$. -->
-<!---->
-<!-- 2.  Donner la matrice dans la base canonique de l'endomorphisme -->
-<!--     $\Delta_2$ de $\mathbb{R}_2[X]$ induit par $\Delta$. -->
-<!-- ::: -->
-<!---->
-<!-- ##  -->
-<!---->
-<!-- ::: {#exr-03-trace} -->
-<!-- Montrer que l'ensemble $H = \{M\in \mathcal{M}_n(\mathbb{R}),\ \mathrm{Tr}(M)=0\}$ est un -->
-<!-- sous-espace vectoriel de $\mathcal{M}_n(\mathbb{R})$ et préciser sa dimension. -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-03-0004} -->
-<!-- Soit $p$ un projecteur d'un espace vectoriel $E$ de dimension finie. -->
-<!-- Montrer que $\mathrm{rg}(p) = \mathrm{Tr}(p)$. -->
-<!-- ::: -->
-<!---->
+<div id="exr-03-stabilite" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.10</strong></span> (Sous espaces stables).</p>
+<ol type="1">
+<li><p>Montrer que l’application <span class="math inline">\(\varphi :\mathbb{R}[X] \to \mathbb{R}[X]\)</span> définie par</p>
+<p><span class="math display">\[
+\forall P \in \mathbb{R}[X],\ \varphi(P) = (X^{2}-1)P'' + 2XP'
+\]</span></p>
+<p>est un endomorphisme de <span class="math inline">\(\mathbb{R}[X]\)</span>.</p></li>
+<li><p>Montrer que pour tout <span class="math inline">\(n \in \mathbb{N}\)</span>, le sous-espace vectoriel <span class="math inline">\(\mathbb{R}_{n}[X]\)</span> est stable par <span class="math inline">\(\varphi\)</span>.</p></li>
+</ol>
+<p>On note <span class="math inline">\(\varphi_{n}\)</span> l’endomorphisme de <span class="math inline">\(\mathbb{R}_{n}[X]\)</span> induit par restriction de <span class="math inline">\(\varphi\)</span>.</p>
+<ol start="3" type="1">
+<li>Donner la matrice de <span class="math inline">\(\varphi_{2}\)</span> dans la base canonique de <span class="math inline">\(\mathbb{R}_[X]\)</span>.</li>
+</ol>
+</div>
+<div id="exr-03-matrice-par-bloc" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.11</strong></span> (Matrice par blocs). On pose <span class="math inline">\(D=\begin{pmatrix}
+   1&amp;0&amp;0\\
+   0&amp;2&amp;0\\
+   0&amp;0&amp;2
+\end{pmatrix}\)</span>, <span class="math inline">\(N = \begin{pmatrix}
+    0&amp;0&amp;0\\
+    0&amp;0&amp;1\\
+    0&amp;0&amp;0
+\end{pmatrix}\)</span> et <span class="math inline">\(T = D+N\)</span>.</p>
+<ol type="1">
+<li><p>En utilisant des produits par blocs, montrer que <span class="math inline">\(N\)</span> et <span class="math inline">\(D\)</span> commutent et calculer <span class="math inline">\(D^{n}\)</span> pour tout <span class="math inline">\(n \geqslant 1\)</span>.</p></li>
+<li><p>Calculer <span class="math inline">\(N^{2}\)</span> et en déduire <span class="math inline">\(T^{n}\)</span> pour tout <span class="math inline">\(n \geqslant 1\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-03-0003" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.12 (<span class="math inline">\(\star\)</span>)</strong></span> (Un résultat général de stabilité). Soit <span class="math inline">\(f\in\mathcal{L}(E)\)</span>. Montrer que <span class="math inline">\(\mathrm{Im}(f)\)</span> et <span class="math inline">\(\ker(f)\)</span> sont stables par <span class="math inline">\(f\)</span>.</p>
+</div>
+</section>
+<section id="projecteurs-et-symétries" class="level3" data-number="3.4.3">
+<h3 data-number="3.4.3" class="anchored" data-anchor-id="projecteurs-et-symétries"><span class="header-section-number">3.4.3</span> Projecteurs et symétries</h3>
+<div id="exr-03-proj-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.13</strong></span> (Matrices d’un projecteur et d’une symétrie de <span class="math inline">\(\mathbb{R}^{3}\)</span>).</p>
+<ol type="1">
+<li><p>Déterminer la matrice dans la base canonique de <span class="math inline">\(\mathbb{R}^{3}\)</span> du projecteur <span class="math inline">\(p\)</span> sur <span class="math inline">\(P\)</span> parallèlement à <span class="math inline">\(D\)</span>, où <span class="math inline">\(P\)</span> et <span class="math inline">\(D\)</span> sont les des espaces définis dans l’<a href="#exr-03-supp" class="quarto-xref">Exercice&nbsp;<span>3.7</span></a>.</p></li>
+<li><p>Même question avec la symétrie <span class="math inline">\(s\)</span> par rapport à <span class="math inline">\(P\)</span> parallèlement à <span class="math inline">\(D\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-03-proj" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.14</strong></span> (Un projecteur de <span class="math inline">\(\mathbb{R}^{2}\)</span>).</p>
+<ol type="1">
+<li><p>Montrer que l’endomorphisme canoniquement associé à la matrice <span class="math inline">\(\displaystyle A = \frac{1}{2}\begin{pmatrix}
+1&amp;1\\
+1&amp;1
+\end{pmatrix}\)</span> est un projecteur.</p></li>
+<li><p>Déterminer son image et son noyau.</p></li>
+</ol>
+</div>
+<div id="exr-03-0003" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.15</strong></span> (Inversibilité des projecteurs et des symétries). Un projecteur est-il inversible ? Même question pour une symétrie.</p>
+</div>
+<div id="exr-03-0001" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.16 (<span class="math inline">\(\star\)</span>)</strong></span> Soit <span class="math inline">\(p\)</span> un projecteur de <span class="math inline">\(E\)</span> et <span class="math inline">\(u\in\mathcal{L}(E)\)</span>. Montrer que <span class="math inline">\(p\)</span> et <span class="math inline">\(u\)</span> commutent ssi <span class="math inline">\(\mathrm{Im}(p)\)</span> et <span class="math inline">\(\ker(p)\)</span> sont stables par <span class="math inline">\(u\)</span>.</p>
+</div>
+<div id="exr-03-sym-pol" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.17 (<span class="math inline">\(\star\)</span>)</strong></span> (Une symétrie de <span class="math inline">\(\mathbb{R}_{2}[X]\)</span>). Montrer que <span class="math display">\[\mathbb{R}_2[X] = \mathbb{R}\oplus\mathrm{Vect}\big((X-1)^2,X-1\big)\]</span> et déterminer le symétrique du polynôme <span class="math inline">\(P=X^2 + 3X + 1\)</span> par rapport à <span class="math inline">\(\mathrm{Vect}\big((X-1)^2,X-1\big)\)</span> parallèlement à <span class="math inline">\(\mathbb{R}\)</span>.</p>
+</div>
+</section>
+<section id="matrices" class="level3" data-number="3.4.4">
+<h3 data-number="3.4.4" class="anchored" data-anchor-id="matrices"><span class="header-section-number">3.4.4</span> Matrices</h3>
+<div id="exr-03-0005" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.18</strong></span> (Invariant de similitude). Les matrices <span class="math inline">\(A = \begin{pmatrix}
+    1&amp;2&amp;-1\\
+    0&amp;1&amp;3\\
+    4&amp;-2&amp;1
+\end{pmatrix}\)</span> et <span class="math inline">\(B = \begin{pmatrix}
+    1&amp;2&amp;-1\\
+    0&amp;1&amp;2\\
+    -1&amp;1&amp;0
+\end{pmatrix}\)</span> sont-elles semblables ?</p>
+</div>
+<div id="exr-03-trace-3" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.19</strong></span> (Trace et transposée). Montrer que, pour tout <span class="math inline">\(A,B\in\mathcal{M}_n(\mathbb{R})\)</span>, on a <span class="math inline">\(\mathrm{Tr}(A^TB)=\mathrm{Tr}(AB^T)\)</span>.</p>
+</div>
+<div id="exr-03-sn-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.20</strong></span> (Un exemple de matrices symétriques). Soit <span class="math inline">\(A\in\mathcal{M}_{n,p(}\mathbb{R})\)</span>. Montrer que <span class="math inline">\(AA^T\in \mathcal{S}_n(\mathbb{R})\)</span>.</p>
+</div>
+<div id="exr-03-sn" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.21</strong></span> (Composantes symétrique et anti-symétrique). Donner la décomposition de <span class="math inline">\(\begin{pmatrix} 1&amp;-1\\ 2&amp;3 \end{pmatrix}\)</span> comme somme d’une matrice symétrique et d’une matrice antisymétrique.</p>
+</div>
+<div id="exr-03-0006" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.22</strong></span> (Produit de matrices lignes et colonnes). Calculer les produits</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+1&amp;-1&amp;2 \end{pmatrix}\begin{pmatrix} 1\\3\\5 \end{pmatrix}\quad \text{et}\quad \begin{pmatrix}
+1\\3\\5 \end{pmatrix}\begin{pmatrix} 1&amp;-1&amp;2 \end{pmatrix}.
+\]</span></p>
+</div>
+<div id="exr-03-0007" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.23 (<span class="math inline">\(\star\)</span>)</strong></span> (Matrices de rang <span class="math inline">\(1\)</span>). Soit <span class="math inline">\(U,V\in\mathcal{M}_{n,1}(\mathbb{R})\)</span> deux matrices colonnes non nulles. Montrer que la matrice <span class="math inline">\(UV^T\)</span> est une matrice de <span class="math inline">\(\mathcal{M}_{n}(\mathbb{R})\)</span> de rang <span class="math inline">\(1\)</span>. Réciproquement, montrer que toute matrice carrée de taille <span class="math inline">\(n\)</span> de rang <span class="math inline">\(1\)</span> est de cette forme.</p>
+</div>
+<div id="exr-03-0004" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.24 (<span class="math inline">\(\star\)</span>)</strong></span> (Rang d’un projecteur). Soit <span class="math inline">\(p\)</span> un projecteur d’un espace vectoriel <span class="math inline">\(E\)</span> de dimension finie. Montrer que <span class="math inline">\(\mathrm{rg}(p) = \mathrm{Tr}(p)\)</span>.</p>
+</div>
+<div id="exr-03-dual" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.25 (<span class="math inline">\(\star\)</span>)</strong></span> (Dual de <span class="math inline">\(\mathcal{M}_{n}(\mathbb{K})\)</span>). Pour tout <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span>, on définie l’application <span class="math inline">\(\varphi_{A}: \mathcal{M}_{n}(\mathbb{K}) \to \mathbb{K}\)</span> par</p>
+<p><span class="math display">\[
+   \forall M \in \mathcal{M}_{n}(\mathbb{K}),\ \varphi_A (M) = \mathrm{Tr}(AM).
+\]</span></p>
+<p>On note <span class="math inline">\(E_{ij}\)</span>, <span class="math inline">\(i,j =1,\dots,n\)</span>, la base canonique de <span class="math inline">\(\mathcal{M}_{n}(\mathbb{K})\)</span>.</p>
+<ol type="1">
+<li><p>Pour <span class="math inline">\(i,j \in \{1,\dots,n\}\)</span>, calculer <span class="math inline">\(AE_{ij}\)</span>.</p></li>
+<li><p>En déduire que si</p></li>
+</ol>
+<p><span class="math display">\[
+   \forall M \in \mathcal{M}_{n}(\mathbb{K}),\ \mathrm{Tr}(AM)=0,
+\]</span></p>
+<p>alors <span class="math inline">\(A = 0\)</span>.</p>
+<ol start="3" type="1">
+<li>En déduire que l’application <span class="math inline">\(A \mapsto \varphi_{A}\)</span> est un isomorphisme de <span class="math inline">\(\mathcal{M}_{n}(\mathbb{K})\)</span> dans <span class="math inline">\(\mathcal{L}(\mathcal{M}_{n}(\mathbb{K}),\mathbb{K})\)</span>.</li>
+</ol>
+</div>
+</section>
+<section id="divers" class="level3" data-number="3.4.5">
+<h3 data-number="3.4.5" class="anchored" data-anchor-id="divers"><span class="header-section-number">3.4.5</span> Divers</h3>
+<div id="exr-03-sym" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.26 (<span class="math inline">\(\star\)</span>)</strong></span> (Une symétrie de de <span class="math inline">\(M_{n}(\mathbb{R})\)</span>). On considère l’application <span class="math inline">\(\varphi:\mathcal{M}_{n}(\mathbb{R})\to \mathcal{M}_n(\mathbb{R})\)</span> définie par <span class="math display">\[\forall M\in\mathcal{M}_{n}(\mathbb{R}),\quad \varphi(M) = M - \frac{2}{n}\operatorname{Tr}(M)I_n.\]</span></p>
+<ol type="1">
+<li>Montrer que <span class="math inline">\(\varphi\)</span> est un isomorphisme de <span class="math inline">\(\mathcal{M}_n(\mathbb{R})\)</span>.</li>
+</ol>
+<p>On note <span class="math inline">\(H = \{M\in\mathcal{M}_n(\mathbb{R}),\quad \operatorname{Tr}(M) = 0\}\)</span>.</p>
+<ol type="1">
+<li><p>Montrer que <span class="math inline">\(H\)</span> est un sous-espace vectoriel de <span class="math inline">\(\mathcal{M}_n(\mathbb{R})\)</span> et préciser sa dimension.</p></li>
+<li><p>Montrer que <span class="math inline">\(\mathcal{M}_{n}(\mathbb{R}) = H\oplus \operatorname{Vect}(I_n)\)</span>.</p></li>
+<li><p>Montrer que <span class="math inline">\(H\)</span> est stable par <span class="math inline">\(\varphi\)</span> et préciser <span class="math inline">\(\varphi_{|H}\)</span>.</p></li>
+<li><p>Préciser la matrice de <span class="math inline">\(\varphi\)</span> dans une base adaptée à la décomposition en somme directe <span class="math inline">\(H\oplus \operatorname{Vect}(I_n)\)</span>.</p></li>
+<li><p>Reconnaître l’application <span class="math inline">\(\varphi\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-03-interp" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 3.27 (<span class="math inline">\(\star\)</span>)</strong></span> (Polynômes d’interpolation de Lagrange). Soit <span class="math inline">\(x_1,\dots,x_n\)</span>, <span class="math inline">\(n\geqslant 1\)</span>, des réels deux à deux distincts et <span class="math inline">\(\lambda_1,\dots,\lambda_n\in\mathbb{R}\)</span>.</p>
+<ol type="1">
+<li><p>Montrer que l’application <span class="math inline">\(\varphi : \mathbb{R}_{n-1}[X]\to \mathbb{R}^{n}\)</span> définie par <span class="math display">\[\forall P\in\mathbb{R}_{n-1}[X],\ \varphi(P) = (P(x_1),\dots,P(x_n)).\]</span> est un isomorphisme.</p></li>
+<li><p>En déduire qu’il existe un unique polynôme <span class="math inline">\(P\in\mathbb{R}_{n-1}[X]\)</span> tel que : <span class="math display">\[\forall i\in\{1,\dots,n\},\quad P(x_i) = \lambda_i.\]</span></p></li>
+</ol>
+<p>Pour tout <span class="math inline">\(i\in\{1,\dots,n\}\)</span>, on pose <span class="math display">\[L_{x_i}(X) = \frac{(X-x_1)\dots \widehat{(X-x_i)}\dots (X-x_n)}{(x_i-x_1)\dots \widehat{(x_i - x_i)} \dots (x_i - x_n)}\]</span> où le symbole <span class="math inline">\(\widehat{}\ \)</span> signifie que le terme correspondant est omis. Les polynômes <span class="math inline">\((L_{x_i})_{1\leqslant i\leqslant n}\)</span> sont appelés <em>polynômes d’interpolation de Lagrange aux points <span class="math inline">\(x_1,\dots,x_n\)</span>.</em></p>
+<ol type="1">
+<li><p>Vérifier que : <span class="math display">\[\forall i,j\in\{1,\dots,n\},\ L_{x_i}(x_j) = \delta_{ij}\]</span> où <span class="math inline">\(\delta_{ij}\)</span> désigne le symbole de Kronecker, défini par <span class="math inline">\(\delta_{ij} = \left\{\begin{array}{ll}
+1 &amp;\text{ si $i=j$},\\
+0&amp;\text{ sinon}.
+\end{array}\right.\)</span></p></li>
+<li><p>Montrer que la famille <span class="math inline">\((L_{x_1},\dots,L_{x_n})\)</span> est une base de <span class="math inline">\(\mathbb{R}_{n-1}[X]\)</span>.</p></li>
+<li><p>Montrer que <span class="math inline">\(P = \sum_{i=1}^n \lambda_i L_{x_i}\)</span></p></li>
+<li><p><em>Application :</em> Déterminer l’unique polynôme <span class="math inline">\(P\)</span> de <span class="math inline">\(\mathbb{R}_2[X]\)</span> tel que <span class="math inline">\(P(0) = -1\)</span>, <span class="math inline">\(P(1) = \dfrac{1}{3}\)</span> et <span class="math inline">\(P(2) = 4\)</span>.</p></li>
+</ol>
+</div>
 <!-- ::: {#exr-03-trace-2} -->
 <!-- ## $\star$ -->
 <!---->
@@ -806,53 +948,10 @@ b&amp;c&amp;a
 <!--         $A\in \mathcal{M}_{n}(\mathbb{R})$ telle que $\varphi=\varphi_{A}$. -->
 <!-- ::: -->
 <!---->
-<!-- ::: {#exr-03-trace-3} -->
-<!-- Montrer que, pour tout $A,B\in\mathcal{M}_n(\mathbb{R})$, on a -->
-<!-- $\mathrm{Tr}(A^TB)=\mathrm{Tr}(AB^T)$. -->
-<!-- ::: -->
 <!---->
-<!-- ::: {#exr-03-0005} -->
-<!-- Les matrices $A = \begin{pmatrix} -->
-<!--     1&2&-1\\ -->
-<!--     0&1&3\\ -->
-<!--     4&-2&1 -->
-<!-- \end{pmatrix}$ et $B = \begin{pmatrix} -->
-<!--     1&2&-1\\ -->
-<!--     0&1&2\\ -->
-<!--     -1&1&0 -->
-<!-- \end{pmatrix}$ sont-elles semblables ? -->
-<!-- ::: -->
 <!---->
-<!-- ::: {#exr-03-0006} -->
-<!-- Calculer les produits$\begin{pmatrix} -->
-<!--         1&-1&2 -->
-<!--     \end{pmatrix}\begin{pmatrix} -->
-<!--             1\\3\\5 -->
-<!--         \end{pmatrix}$ et $\begin{pmatrix} -->
-<!--             1\\3\\5 -->
-<!--         \end{pmatrix}\begin{pmatrix} -->
-<!--         1&-1&2 -->
-<!--     \end{pmatrix}$. -->
-<!-- ::: -->
 <!---->
-<!-- ::: {#exr-03-0007} -->
-<!-- Soit $U,V\in\mathcal{M}_{n,1}(\mathbb{R})$ deux matrices colonnes non nulles. Montrer que -->
-<!-- la matrice $UV^T$ est une matrice de $\mathcal{M}_{n}(\mathbb{R})$ de rang $1$. -->
-<!-- Réciproquement, montrer que toute matrice de $\mathcal{M}_n(\mathbb{R})$ de rang $1$ est -->
-<!-- de cette forme. -->
-<!-- ::: -->
 <!---->
-<!-- ::: {#exr-03-sn-2} -->
-<!-- Soit $A\in\mathcal{M}_{n,p(}\mathbb{R})$. Montrer que $AA^T\in \mathcal{S}_n(\mathbb{R})$. -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-03-sn} -->
-<!-- Donner la décomposition de $\begin{pmatrix} -->
-<!--         1&-1\\ -->
-<!--         2&3 -->
-<!--     \end{pmatrix}$ comme somme d'une matrice symétrique et d'une matrice -->
-<!-- antisymétrique. -->
-<!-- ::: -->
 <!---->
 <!-- ::: {#exr-03-pol-mat} -->
 <!-- On considère l'équation $$A^2 - A - 2I_n = 0 \quad\text{(E)}$$ -->
@@ -907,69 +1006,7 @@ b&amp;c&amp;a
 <!---->
 <!-- ## Problèmes divers {#problèmes-divers .unnumbered} -->
 <!---->
-<!-- ::: {#exr-03-sym} -->
-<!-- On considère l'application -->
-<!-- $\varphi:\mathcal{M}_{n}(\mathbb{R})\to \mathcal{M}_n(\mathbb{R})$ -->
-<!-- définie par -->
-<!-- $$\forall M\in\mathcal{M}_{n}(\mathbb{R}),\quad \varphi(M) = M - \frac{2}{n}\operatorname{Tr}(M)I_n.$$ -->
 <!---->
-<!-- 1.  Montrer que $\varphi$ est un isomorphisme de -->
-<!--     $\mathcal{M}_n(\mathbb{R})$. -->
-<!---->
-<!-- On note -->
-<!-- $H = \{M\in\mathcal{M}_n(\mathbb{R}),\quad \operatorname{Tr}(M) = 0\}$. -->
-<!---->
-<!-- 1.  Montrer que $H$ est un sous-espace vectoriel de $\mathcal{M}_n(\mathbb{R})$ et -->
-<!--     préciser sa dimension. -->
-<!---->
-<!-- 2.  Montrer que -->
-<!--     $\mathcal{M}_{n}(\mathbb{R}) = H\oplus \operatorname{Vect}(I_n)$. -->
-<!---->
-<!-- 3.  Montrer que $H$ est stable par $\varphi$ et préciser $\varphi_{|H}$. -->
-<!---->
-<!-- 4.  Préciser la matrice de $\varphi$ dans une base adaptée à la -->
-<!--     décomposition en somme directe $H\oplus \operatorname{Vect}(I_n)$. -->
-<!---->
-<!-- 5.  Reconnaître l'application $\varphi$. -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-03-interp} -->
-<!-- ## $\star$ -->
-<!---->
-<!-- Soit $x_1,\dots,x_n$, $n\geqslant 1$, des réels deux à deux distincts et -->
-<!-- $\lambda_1,\dots,\lambda_n\in\mathbb{R}$. -->
-<!---->
-<!-- 1.  Montrer que l'application -->
-<!--     $\varphi : \mathbb{R}_{n-1}[X]\to \mathbb{R}^{n}$ définie par -->
-<!--     $$\forall P\in\mathbb{R}_{n-1}[X],\ \varphi(P) = (P(x_1),\dots,P(x_n)).$$ -->
-<!--     est un isomorphisme. -->
-<!---->
-<!-- 2.  En déduire qu'il existe un unique polynôme $P\in\mathbb{R}_{n-1}[X]$ -->
-<!--     tel que : $$\forall i\in\{1,\dots,n\},\quad P(x_i) = \lambda_i.$$ -->
-<!---->
-<!-- Pour tout $i\in\{1,\dots,n\}$, on pose -->
-<!-- $$L_{x_i}(X) = \frac{(X-x_1)\dots \widehat{(X-x_i)}\dots (X-x_n)}{(x_i-x_1)\dots \widehat{(x_i - x_i)} \dots (x_i - x_n)}$$ -->
-<!-- où le symbole $\widehat{}\ $ signifie que le terme correspondant est -->
-<!-- omis. Les polynômes $(L_{x_i})_{1\leqslant i\leqslant n}$ sont appelés -->
-<!-- *polynômes d'interpolation de Lagrange aux points $x_1,\dots,x_n$.* -->
-<!---->
-<!-- 1.  Vérifier que : -->
-<!--     $$\forall i,j\in\{1,\dots,n\},\ L_{x_i}(x_j) = \delta_{ij}$$ où -->
-<!--     $\delta_{ij}$ désigne le symbole de Kronecker, défini par -->
-<!--     $\delta_{ij} = \left\{\begin{array}{ll} -->
-<!--     1 &\mbox{ si $i=j$},\\ -->
-<!--     0&\mbox{ sinon}. -->
-<!--     \end{array}\right.$ -->
-<!---->
-<!-- 2.  Montrer que la famille $(L_{x_1},\dots,L_{x_n})$ est une base de -->
-<!--     $\mathbb{R}_{n-1}[X]$. -->
-<!---->
-<!-- 3.  Montrer que $P = \sum_{i=1}^n \lambda_i L_{x_i}$ -->
-<!---->
-<!-- 4.  *Application :* Déterminer l'unique polynôme $P$ de -->
-<!--     $\mathbb{R}_2[X]$ tel que $P(0) = -1$, $P(1) = \dfrac{1}{3}$ et -->
-<!--     $P(2) = 4$. -->
-<!-- ::: -->
 
 
 </section>
