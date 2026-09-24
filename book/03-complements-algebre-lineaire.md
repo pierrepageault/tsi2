@@ -537,7 +537,6 @@ Le sous espace $\mathbb{R}_{n}[X]$ est stable par dérivation.
 
 L'axe d'une rotation $r$ de $\mathbb{R}^{3}$ est stable par $r$.
 
-
 :::
 
 ::: {#exm-reflexion}
@@ -694,7 +693,7 @@ $v_{F}=v-v_{G}$.
 
 Dans l'exemple précédent, on a été amené à résoudre un système $2\times 2$ car
 on a projeté sur un plan. Il est plus simple de projeter sur la droite $D$ et
-d'utiliser la relation rappelée dans le @tip-caractérisation :
+d'utiliser la relation rappelée dans le @tip-caracterisation :
 
 :::
 
@@ -706,9 +705,4 @@ d'utiliser la relation rappelée dans le @tip-caractérisation :
 ## Exercices {.unnumbered}
 
 {{< include ./td/03.md >}}
-
-
-
-
-
 
