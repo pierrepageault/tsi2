@@ -182,7 +182,7 @@ souvent identifiés à tort.
 
 :::
 
-## Sous-espaces vetoriels {#sec-03-sous-espaces-vectoriels}
+## Sous-espaces vectoriels {#sec-03-sous-espaces-vectoriels}
 
 Pour nous, les sous espaces vectoriels seront surtout un outil pour comprendre
 et définir des applications linéaires, via les notions de *somme directe*.
@@ -614,6 +614,92 @@ et dans ce cas, $\boldsymbol{A}_{11} = \mathcal{M}_{\mathcal{B}_{F}}(f_{|F})$.
 On a un résultat analogue pour la stabilité de $G$ par $f$.
 
 :::
+
+## Projecteurs et symétries {#sec-03-projecteurs-et-symetries}
+
+On applique les résultats de la section précédente à la définition des
+projecteurs et des symétries. Ce sont des endomorphismes de référence qui
+interviennent dans de nombreux domaines. 
+
+### Projecteurs
+
+::: {#def-projecteur-sur-F-parallelement-a-G}
+
+On suppose que $E=F \oplus G$. On appelle projecteur sur $F$ parallèlement à $G$ l'endomorphisme $p$ de $E$ défini par $p_{|F}=\mathrm{Id}$ et $p_{|G}=0$.
+
+:::
+
+::: {#nte-projecteur .callout-note}
+
+Concrètement, si $v=v_{F}+v_{G}$ est la décomposition de $v$ dans la somme
+directe $E=F \oplus G$, alors 
+
+$$
+p(v) = p(v_{F}) + p(v_{G}) = v_{F}
+$$
+
+On dit que $v_{F}$ est la *composante suivant $F$* de $v$.
+
+::: {#fig-projecteur-F}
+
+![](./tikz/svg/03-1.svg)
+
+:::
+
+:::
+
+::: {#tip-projecteur-F .callout-tip}
+
+Si $E=F \oplus G$ et si on note $p$ et $q$ les projecteurs sur $F$
+parallèlement à $G$ et inversement, alors $p+q=\mathrm{Id}$ ; connaitre un des
+deux projecteurs, c'est donc connaitre les deux.
+
+:::
+
+Concrètement, pour calculer la projection d'un vecteur $v$ sur $F$
+parallèlement à $F$, on détermine la composante $v_{F}$ de $v$ dans la somme directe $E=F \oplus G$. On utilise pour cela la caractérisation suivante :
+
+::: {#prp-caracterisation-du-projete}
+
+On suppose que $E=F \oplus G$ et on note $p$ le projecteur sur $F$
+parallèlement à $G$. Alors pour tout $v \in E$, le projeté $p(v)=u$ de $v$
+sur $F$ parallèlement à $G$ est caractérisé par 
+
+$$
+    \begin{cases}
+        u \in \in F,\\
+        v-u \in G.
+    \end{cases}
+$$
+
+:::
+
+::: {#exm-projection-F-1}
+
+Dans $\mathbb{R}^{3}$, déterminer la projection du vecteur $v=(1,1,1)$ sur le plan $P$ d'équation
+$x+2y+z=0$, parallèlement à la droite engendrée par le vecteur $u=(1,1,-1)$.
+
+:::
+
+
+::: {#tip-caracterisation .callout-tip}
+
+Suivant les cas (notamment si la dimension de $G$ est inférieure à celle de
+$F$), il peux être plus simple de calculer $v_G$ et d'utiliser la relation
+$v_{F}=v-v_{G}$.
+
+:::
+
+::: {#exm-projecteur-F-2}
+
+Dans l'exemple précédent, on a été amené à résoudre un système $2\times 2$ car
+on a projeté sur un plan. Il est plus simple de projeter sur la droite $D$ et
+d'utiliser la relation rappelée dans le @tip-caractérisation :
+
+:::
+
+## Matrices {#sec-03-matrices}
+
 
 \newpage
 
