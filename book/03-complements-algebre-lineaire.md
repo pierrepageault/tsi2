@@ -1,3 +1,5 @@
+{{< include _macros.md >}}
+
 # Compléments d'algèbre linéaire
 
 Dans tout ce chapitre, $E$ désigne un $\mathbb{K}$-espace vectoriel avec
@@ -646,20 +648,25 @@ interviennent dans de nombreux domaines.
 
 ::: {#def-projecteur-sur-F-parallelement-a-G}
 
-On suppose que $E=F \oplus G$. On appelle projecteur sur $F$ parallèlement à $G$ l'endomorphisme $p$ de $E$ défini par $p_{|F}=\mathrm{Id}$ et $p_{|G}=0$.
+On suppose que $E=F \oplus G$. On appelle projecteur sur $F$ parallèlement à $G$ l'endomorphisme $p_F$ de $E$ défini par ${p_{F}}_{|F}=\id$ et ${p_{F}}_{|G}=0$.
 
 :::
 
 ::: {#nte-projecteur .callout-note}
 
-Concrètement, si $v=v_{F}+v_{G}$ est la décomposition de $v$ dans la somme
-directe $E=F \oplus G$, alors 
+Concrètement, si les composante de $v$ suivant $F$ et $G$ sont notées $v_{F}$ et $v_{g}$ c.-à.d 
 
 $$
-p(v) = p(v_{F}) + p(v_{G}) = v_{F}
+v=v_{F}+v_{G}
+$$ 
+
+alors 
+
+$$
+p_F(v) = p_F(v_{F}) + p_F(v_{G}) = v_{F},
 $$
 
-On dit que $v_{F}$ est la *composante suivant $F$* de $v$.
+et $\im p_{F}=F$ et $\ker p_F = G$.
 
 ::: {#fig-projecteur-F}
 
@@ -672,7 +679,7 @@ On dit que $v_{F}$ est la *composante suivant $F$* de $v$.
 ::: {#tip-projecteur-F .callout-tip}
 
 Si $E=F \oplus G$ et si on note $p$ et $q$ les projecteurs sur $F$
-parallèlement à $G$ et inversement, alors $p+q=\mathrm{Id}$ ; connaitre un des
+parallèlement à $G$ et inversement, alors $p+q=\id$ ; connaitre un des
 deux projecteurs, c'est donc connaitre les deux.
 
 :::
@@ -682,14 +689,16 @@ parallèlement à $F$, on détermine la composante $v_{F}$ de $v$ dans la somme 
 
 ::: {#prp-caracterisation-du-projete}
 
+#### Caractérisation du projeté
+
 On suppose que $E=F \oplus G$ et on note $p$ le projecteur sur $F$
-parallèlement à $G$. Alors pour tout $v \in E$, le projeté $p(v)=u$ de $v$
-sur $F$ parallèlement à $G$ est caractérisé par 
+parallèlement à $G$. Alors pour tout $v \in E$, la composante $v_{F} = p_F(v)$ de $v$
+sur $F$ parallèlement à $G$ est caractérisée par 
 
 $$
     \begin{cases}
-        u \in \in F,\\
-        v-u \in G.
+        v_{F} \in F,\\
+        v-v_F \in G.
     \end{cases}
 $$
 
@@ -722,10 +731,12 @@ projeter sur la droite $D$.
 
 Remarquons maintenant que si $E = F \oplus G$ et si $p$ est le projecteur sur
 $F$ parallèlement à $G$ alors $p \circ p = p$. En effet, cette égalité est
-satisfaite sur $G$ car $p_{|G}=0$ et sur $F$ car $p_{|F}=\mathrm{id}$. Cette
+satisfaite sur $G$ car $p_{|G}=0$ et sur $F$ car $p_{|F}=\id$. Cette
 observation suggère la définition suivante : 
 
 ::: {#def-projecteur}
+
+#### Projecteur
 
 Un endomorphisme $p$ de $E$ est un **projecteur** si $p \circ p = p$.
 
@@ -741,10 +752,10 @@ La terminologie est justifiée par le théorème suivant :
 Si $p$ est un projecteur de $E$, alors 
 
 $$
-    E = \oplus \mathrm{Im}(p) \oplus \ker p
+    E = \im p \oplus \ker p
 $$
 
-et $p$ est le projecteur sur $\mathrm{Im}(p)$ parallèlement à $\ker p$.
+et $p$ est le projecteur sur $\im p$ parallèlement à $\ker p$.
 
 :::
 
@@ -752,12 +763,86 @@ et $p$ est le projecteur sur $\mathrm{Im}(p)$ parallèlement à $\ker p$.
 
 ::: {#def-symetrie-F-parallelement-G}
 
-On suppose que $E=F \oplus G$. La symétrie par rapport à $F$ parrallèlement à $G$ et l'endomorphisme $s$ de $E$ défini par
-$s_{|F}=\mathrm{id}$ et $s_{|G}=-\mathrm{id}$. 
+On suppose que $E=F \oplus G$. La symétrie par rapport à $F$ parallèlement à $G$ est l'endomorphisme $s_F$ de $E$ défini par
+${s_{F}}_{|F}=\id$ et ${s_F}_{|G}=-\id$. 
+
+:::
+
+::: {#nte-symetrie .callout-note}
+
+Concrètement, si $v=v_{F}+v_{G}$ est la décomposition de $v$ dans la somme
+directe $E=F \oplus G$ et si $s_F$ est la symétrie sur $F$ parallèlement à $G$, alors 
+
+$$
+s_F(v) = s_F(v_{F}) + s_F(v_{G}) = v_{F} - v_{G}.
+$$
+
+::: {#fig-symetrie-F}
+
+![](./tikz/svg/03-4.svg)
+
+:::
+
+De plus $F = \ker(s_{F}-\id)$ et $G = \ker(s_{F}+\id)$.
+
+:::
+
+::: {#tip-symetrie-F .callout-tip}
+
+Si $E=F \oplus G$ et si on note $p_F$ et $p_G$ les projecteurs sur $F$
+parallèlement à $G$ et inversement, $s_F$ et $s_G$ les symétries par rapport à
+$F$ parallèlement à $G$ et inversement, alors $s_F+s_G = 0$, $p_F+p_G = \id$ et
+$s_F=p_F-p_G$ ; connaitre *une* des quatre applications linéaires, c'est donc
+*toutes* les connaitre. 
+
+::: {#fig-projecteur-symetrie}
+
+![](./tikz/svg/03-5.svg)
 
 :::
 
 
+En particulier, on utilise souvent une des relations
+
+$$
+s_F = 2p_F - \id \quad \\text{ou}\quad s_{F} = \id -2p_{G}
+$$
+
+pour calculer une *symétrie*, car on sait calculer un *projecteur* via la @prp-caracterisation-du-projete.
+
+On en déduit en particulier que $\ker (s_F-\id) = \ker (p_{G}) = F$ et
+$\ker(s_{F}+\id) = \ker(p_F) = G$.
+:::
+
+Si $E = F \oplus G$ et si $s_F$ est la symétrie sur
+$F$ parallèlement à $G$ alors $s_F \circ s_F = s_F$. En effet, cette égalité est à nouveau 
+satisfaite sur $F$ et sur $G$ car c'est le cas de $\pm \id$. Ceci motive la
+définition suivante :
+
+::: {#def-symetrie}
+
+#### Symétrie
+
+Un endomorphisme $s$ est une **symétrie** de $E$ si $s \circ s = \id$.
+
+:::
+
+La terminologie est justifiée par le théorème suivant :
+
+
+::: {#thm-symetrie}
+
+#### Théorème fondamental des symétries
+
+Si $s$ est une symétrie de $E$, alors 
+
+$$
+    E = \ker(s-\id) \oplus \ker(s+\id),
+$$
+
+et $s$ est la symétrie sur $\ker (s-\id)$ parallèlement à $\ker(s+\id)$.
+
+:::
 
 ## Matrices {#sec-03-matrices}
 
@@ -902,9 +987,4 @@ est par définition égale à la trace de n'importe quelle matrice représentant
 ## Exercices {.unnumbered}
 
 {{< include ./td/03.md >}}
-
-
-
-
-
 

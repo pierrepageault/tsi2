@@ -1,8 +1,8 @@
 # 1. Dossier contenant les figures TikZ
-TIKZ_DIR = tex
+TIKZ_DIR = tikz/tex
 
 # 2. Dossier de sortie des fichiers SVG
-SVG_DIR = svg
+SVG_DIR = tikz/svg
 
 # 3. Lister tous les fichiers .tex dans le dossier source
 SRCS = $(wildcard $(TIKZ_DIR)/*.tex)

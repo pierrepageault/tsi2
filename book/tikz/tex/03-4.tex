@@ -15,6 +15,7 @@
   \coordinate (vF) at (3,0);    % composante suivant F
   \coordinate (vG) at (60:2);   % composante suivant G
   \coordinate (v)  at ($(vF)+(vG)$);
+  \coordinate (s)  at ($(vF)-(vG)$); % symetrique de v : v_F - v_G
 
   % Sous-espaces F et G (droites vectorielles)
   \draw[droite] (-3,0) -- (5.5,0) node[right] {$F$};
@@ -23,14 +24,16 @@
   % Parallelogramme (traits pointilles)
   \draw[dashed,thick] (vG) -- (v);
   \draw[dashed,thick] (vF) -- (v);
+  % Parallelogramme du symetrique
+  \draw[dashed,thick] (vF) -- (s);
 
   % Vecteurs
   \draw[vect] (O) -- (vF) node[below] {$v_F$};
   \draw[vect] (O) -- (vG) node[above left] {$v_G$};
   \draw[vect] (O) -- (v)  node[above right] {$v = v_F + v_G$};
+  \draw[vect] (O) -- (s)  node[below right] {$s_F(v) = v_F - v_G$};
 
   % Origine
-  \fill (O) circle (1.8pt);
+  \fill (O) circle (1.8pt) node[below right] {};
 \end{tikzpicture}
 \end{document}
-
