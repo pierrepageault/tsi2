@@ -998,6 +998,71 @@ R_n=\sum_{k=n+1}^{+\infty}\frac{1}{k^{\alpha}}\)</span> de la serie <span class=
 </ol></li>
 <li><p>Étudier le cas <span class="math inline">\(u_n = \int_0^{\pi/2}\cos^{2n}(t)dt\)</span>.</p></li>
 </ol>
+<details>
+<summary>Correction</summary>
+<div>
+<ol type="1">
+<li><ol type="a">
+<li><p>On a <span class="math display">\[
+\begin{aligned}
+     \frac{n+a}{n+b}&amp;=\frac{1+a/n}{1+b/n}\\
+                    &amp;=\left(1+\frac{a}{n}\right)\left(1-\frac{b}{n}+ o\left(\frac{1}{n}\right)\right)\\
+                    &amp;=1+\frac{a-b}{n}+o\left(\frac{1}{n}\right)
+\end{aligned}
+\]</span></p>
+<p>Donc</p>
+<p><span class="math display">\[
+     \ln\left(\frac{u_{n+1}}{u_{n}}\right)\sim \frac{a-b}{n}+o\left(\frac{1}{n}\right)\sim \frac{a-b}{n}&lt;0 \text{ car $a-b&lt;0$}
+\]</span></p>
+<p>De plus, la série de Riemann <span class="math inline">\(\sum \frac{1}{n}\)</span> diverge. Donc par comparaison de séries à termes positifs, la série de terme général <span class="math inline">\(-\ln\left(\frac{u_{n+1}}{u_{n}}\right)\)</span> diverge. Donc la série de terme général <span class="math inline">\(\ln\left(\frac{u_{n+1}}{u_{n}}\right)\)</span> diverge.</p></li>
+<li><p>Puisque, pour tout <span class="math inline">\(n\in\mathbb{N}\)</span>, on a <span class="math display">\[
+\ln\left(\frac{u_{n+1}}{u_{n}}\right)=\ln(u_{n+1})-\ln(u_{n})
+\]</span> la série <span class="math inline">\(\sum_{n\in\mathbb{N}}^{}\ln\left(\frac{u_{n+1}}{u_{n}}\right)\)</span> est une série télescopique. Elle a donc même nature que la suite <span class="math inline">\(\ln(u_{n})\)</span> ; elle diverge. Mais cette suite est décroissante car <span class="math display">\[
+\ln(u_{n+1})-\ln(u_{n})=\ln\left(\frac{u_{n+1}}{u_{n}}\right)=\ln\left(\frac{a+n}{b+n}\right)\leqslant \ln(1)=0.
+\]</span> Donc <span class="math inline">\(\lim_{n\to+\infty}\ln(u_{n})=-\infty\)</span>. En composant par l’exponentiel, on en déduit que <span class="math inline">\(u_{n}\to 0\)</span> quand <span class="math inline">\(n\to+\infty\)</span>.</p></li>
+</ol></li>
+<li><ol type="a">
+<li><p>On montre ce résultat par récurrence sur sur <span class="math inline">\(n\)</span>.</p></li>
+<li><p>On a <span class="math inline">\(\frac{1}{n+a}\sim\frac{1}{n}\geqslant0\)</span>. De plus la série <span class="math inline">\(\sum_{}^{}\frac{1}{n}\)</span> est une série de Riemann divergente. Donc par comparaison de séries à termes positifs, la série <span class="math inline">\(\sum_{}^{}\frac{1}{n+a}\)</span> diverge. On en déduit à nouveau par comparaison de séries à termes positifs que la série <span class="math inline">\(\sum_{}^{}u_n\)</span> diverge.</p></li>
+</ol></li>
+<li><ol type="a">
+<li><p>On a <span class="math display">\[
+\forall n\in\mathbb{N}, u_{n+1}(n+b)=u_{n}(n+a).
+\]</span> En sommant cette égalité pour <span class="math inline">\(k\)</span> variant de <span class="math inline">\(0\)</span> à <span class="math inline">\(n-1\)</span>, <span class="math inline">\(n\geqslant 1\)</span>, on obtient <span class="math display">\[
+\sum_{k=0}^{n-1}u_{k+1}(k+b)=\sum_{k=0}^{n-1}u_{k}(k+a).
+\]</span> Par changement d’indice, on a donc <span class="math display">\[
+\sum_{k=1}^{n}u_{k}(k-1+b)=\sum_{k=0}^{n-1}u_{k}(k+a).
+\]</span> En simplifiant de part et d’autre par <span class="math inline">\(\sum_{k=1}^{n-1}ku_k\)</span>, on obtient <span class="math display">\[
+(b-1)\sum_{k=1}^{n}u_{k} + u_{n}(n-1+b)=u_{0}a + a\sum_{k=0}^{n-1}u_{k}.
+\]</span> Donc <span class="math display">\[
+(b-a-1)\sum_{k=1}^{n-1}u_{k}= u_{0}a -u_{n}(n-1+b)
+\]</span> donc <span class="math display">\[
+\begin{aligned}
+(b-a-1)\sum_{k=0}^{n}u_{k}&amp;=u_{0}a -u_{n}(n-1+b)+(b-a-1)u_0 +(b-a-1)u_{n}\\
+&amp;=(b-1)u_{0}-(n+a)u_{n}.
+\end{aligned}
+\]</span></p></li>
+<li><p>En utilisant l’inégalité <span class="math inline">\(b&gt;a+1\)</span>, on obtient <span class="math display">\[
+\forall n \in \mathbb{N}, \frac{u_{n+1}}{u_{n}}=\frac{n+a}{n+b}\leqslant \frac{n+a}{n+a+1}
+\]</span> i.e <span class="math display">\[
+\forall n\in\mathbb{N}, u_{n+1}(n+1+a)\leqslant u_{n}(n+a).
+\]</span> La suite <span class="math inline">\(\big((n+a)u_{n}\big)\)</span> est donc bien décroissante.</p></li>
+<li><p>On montre facilement par récurrence que la suite <span class="math inline">\((u_{n})\)</span> est positive, donc minorée par <span class="math inline">\(0\)</span>. Étant décroissante, elle converge vers <span class="math inline">\(l\geqslant 0\)</span>. Par la question précédente, la suite des sommes partielles de la série <span class="math inline">\(\sum_{}^{}u_{n}\)</span> est donc convergente. Donc la série <span class="math inline">\(\sum_{}^{}u_{n}\)</span> converge par définition, et <span class="math display">\[
+\sum_{k=0}^{+\infty}u_{k}=(b-1)u_{0}+l.
+\]</span> Supposons par l’absurde que <span class="math inline">\(l&gt;0\)</span>. On alors <span class="math display">\[
+u_{n}\sim \frac{l}{n+a}\sim \frac{l}{n}&gt;0.
+\]</span> Par comparaison, la série <span class="math inline">\(\sum_{}^{}u_{n}\)</span> est donc divergente, ce qui est une contradiction. Donc <span class="math inline">\(l=0\)</span> et <span class="math display">\[
+\sum_{n=0}^{+\infty}u_{n}=u_{0}a.
+\]</span></p></li>
+</ol></li>
+<li>On montre à l’aide d’une intégration par parties (intégrales de Wallis) que <span class="math display">\[
+\forall n\in\mathbb{N}, \frac{u_{n+1}}{u_{n}}=\frac{2n+1}{2n+2}=\frac{n+1/2}{n+1}.
+\]</span> On applique ce qui précède avec <span class="math inline">\(a=1/2\)</span> et <span class="math inline">\(b=1\)</span>. La série <span class="math inline">\(\sum_{}^{}u_{n}\)</span> est donc convergente, et <span class="math display">\[
+\sum_{n=0}^{+\infty}u_{n}=\frac{\pi}{4}
+\]</span> car <span class="math inline">\(u_0=\frac{\pi}{2}\)</span>.</li>
+</ol>
+</div>
+</details>
 </div>
 <div id="exr-02-abel" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 2.20 (<span class="math inline">\(\star\)</span>)</strong></span> (Transformation d’Abel). Soient <span class="math inline">\((a_n)_{n\in\mathbb{N}}\)</span> et <span class="math inline">\((b_n)_{n\in\mathbb{N}}\)</span> deux suites de <span class="math inline">\(\mathbb{K}\)</span>. On pose</p>
