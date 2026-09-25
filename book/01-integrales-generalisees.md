@@ -117,6 +117,7 @@ l'intégrale.
 L'intégrale $\int_{1}^{+\infty}\frac{dx}{x^2}$ est généralisée en $+\infty$
 uniquement car la fonction $x \mapsto \frac{1}{x^{2}}$ est continue sur
 $[1,+\infty[$.
+
 :::
 
 ::: {#exm-simplement-generalisee-3}

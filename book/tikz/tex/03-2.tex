@@ -1,0 +1,34 @@
+\documentclass[tikz,border=5pt]{standalone}
+\input{./style/style.tex}
+\usetikzlibrary{calc}
+
+\begin{document}
+\begin{tikzpicture}[>=stealth]
+
+% ---- Sous-espace F vu en perspective (angle aigu) : arêtes du devant et de gauche seulement ----
+\draw[thick] (0,0) -- (5.4,0);
+\draw[thick] (0,0) -- (1.8,1.55);
+% ---- Arc d'angle et label F à l'intersection des deux arêtes ----
+\draw (0.55,0) arc[start angle=0, end angle=41.2, radius=0.55];
+\node at (0.75,0.35) {$F$};
+
+% ---- Petite boucle f : demi-cercle ouvert vers le bas, sens horaire ----
+% Arc de 180° : départ à gauche (180°), pointe à droite (0°), ouverture en bas.
+\draw[->,thick] (3.5,1.75) ++(180:0.35) arc[start angle=190, end angle=-10, radius=0.35];
+\node at (3.5,2.55) {$f$};
+
+
+% ---- Origine (point sans label) ----
+\coordinate (O) at (3.0,0.75);
+\fill (O) circle (1.5pt);
+
+% ---- Vecteur v dans F ----
+\coordinate (X) at ($(O)+(1.3,0.55)$);
+\draw[->,thick] (O) -- (X) node[midway,above left] {$v$};
+
+% ---- Image f(v), toujours dans F ----
+\coordinate (FX) at ($(O)+(2.6,0.2)$);
+\draw[->,thick] (O) -- (FX) node[midway,below=2pt] {$f(v)$};
+
+\end{tikzpicture}
+\end{document}

@@ -84,7 +84,7 @@ triviale i.e. pour toute famille $(\lambda_{i})_{i \in I}$ de $\mathbb{K}$ à
 support fini,  
 
 $$
-    \sum_{i \in I} \lambda_i v_{i} = 0_{E} \Rightarrow \forall i \in I,\
+    \sum_{i \in I} \lambda_i v_{i} = 0_{E} \mathbb{R}ightarrow \forall i \in I,\
 \lambda_{i}=0.
 $$
 
@@ -310,7 +310,7 @@ somme $F$ est unique i.e.
 
 $$
     \forall v_{1} \in F_{1},\dots, v_{n} \in F_{n},\ v_{1}+\dots + v_{n} =
-0_{E} \Rightarrow v_{1}= \dots = v_{n}=0_{E}.
+0_{E} \mathbb{R}ightarrow v_{1}= \dots = v_{n}=0_{E}.
 $$
 
 :::
@@ -432,7 +432,8 @@ linéaires par *blocs*, ce que nous expliquons maintenant.
 
 #### Matrices par blocs
 
-Une **matrice par blocs** est une matrice partitionnée en sous matrices appelées *blocs*. 
+Une matrice est dite écrite par **blocs** si elle est divisée en *sous matrices* (les blocs) 
+figurés à l'aide de lignes horizontales et/ou verticales.
 
 :::
 
@@ -449,6 +450,17 @@ A = \begin{pmatrix}
 $$
 
 peut s'écrire par blocs 
+
+$$
+A = \left(\begin{array}{c|cc}
+   1&2&2\\
+\hline
+3 &5&5\\
+4 &5&5
+\end{array}\right)
+$$
+
+On écrit alors 
 
 $$
     A = \begin{pmatrix}
@@ -469,9 +481,8 @@ avec $\boldsymbol{A}_{11} = (1)$, $\boldsymbol{A}_{12} = \begin{pmatrix}
 
 #### Multiplication des matrices par blocs
 
-Si la taille des blocs est compatible, on peut multiplier les matrices par
-blocs
-comme on multiplie les matrices scalaires. 
+Si les tailles des blocs sont compatibles, on peut multiplier les matrices par
+blocs comme on multiplie les matrices scalaires. 
 
 :::
 
@@ -505,9 +516,12 @@ Soit $\mathcal{B} = (\mathcal{B}_{1},\dots,\mathcal{B}_{n})$ une base adaptée �
 la somme  directe $E = \bigoplus_{i=1}^{n} F_{i}$, alors la matrice de $f \in
 \mathcal{L}(E)$ dans la base $\mathcal{B}$ s'écrit par blocs
 
-$$
-    \mathcal{M}_{\mathcal{B}}(f) = 
-$$
+::: {#fig-bloc}
+
+![](./svg/cropped.svg)
+
+:::
+
 
 :::
 
@@ -524,6 +538,14 @@ $F$ est **stable** par $f$ si
 $$
     \forall v \in F, f(v) \in F.
 $$
+
+::: {#fig-stable}
+
+![](./tikz/svg/03-2.svg)
+
+:::
+
+
 
 :::
 
@@ -685,24 +707,204 @@ $x+2y+z=0$, parallèlement à la droite engendrée par le vecteur $u=(1,1,-1)$.
 
 Suivant les cas (notamment si la dimension de $G$ est inférieure à celle de
 $F$), il peux être plus simple de calculer $v_G$ et d'utiliser la relation
-$v_{F}=v-v_{G}$.
+$v_{F}+v_{G}=v$.
 
 :::
 
 ::: {#exm-projecteur-F-2}
 
 Dans l'exemple précédent, on a été amené à résoudre un système $2\times 2$ car
-on a projeté sur un plan. Il est plus simple de projeter sur la droite $D$ et
-d'utiliser la relation rappelée dans le @tip-caracterisation :
+on a projeté sur un espace de dimension $2$ (un plan vectoriel). Il est en fait
+plus simple d'utiliser la relation rappelée dans le @tip-caracterisation et de
+projeter sur la droite $D$.
 
 :::
 
+Remarquons maintenant que si $E = F \oplus G$ et si $p$ est le projecteur sur
+$F$ parallèlement à $G$ alors $p \circ p = p$. En effet, cette égalité est
+satisfaite sur $G$ car $p_{|G}=0$ et sur $F$ car $p_{|F}=\mathrm{id}$. Cette
+observation suggère la définition suivante : 
+
+::: {#def-projecteur}
+
+Un endomorphisme $p$ de $E$ est un **projecteur** si $p \circ p = p$.
+
+:::
+
+La terminologie est justifiée par le théorème suivant :
+
+
+::: {#thm-projecteur}
+
+#### Théorème fondamental des projecteurs
+
+Si $p$ est un projecteur de $E$, alors 
+
+$$
+    E = \oplus \mathrm{Im}(p) \oplus \ker p
+$$
+
+et $p$ est le projecteur sur $\mathrm{Im}(p)$ parallèlement à $\ker p$.
+
+:::
+
+### Symétries
+
+::: {#def-symetrie-F-parallelement-G}
+
+On suppose que $E=F \oplus G$. La symétrie par rapport à $F$ parrallèlement à $G$ et l'endomorphisme $s$ de $E$ défini par
+$s_{|F}=\mathrm{id}$ et $s_{|G}=-\mathrm{id}$. 
+
+:::
+
+
+
 ## Matrices {#sec-03-matrices}
 
+Le but de cette section est d'introduire deux applications linéaires
+particulièrement importantes : la *trace* et la *transposition*. Ce sont des
+outils que nous utiliserons entre autre dans le cours sur la réduction des
+endomorphismes et dans le chapitre sur les espaces préhilbertiens réels. 
+
+### Transposée d'une matrice
+
+::: {#def-transpose}
+
+#### Transposée d'une matrice 
+
+Soit $A \in \mathcal{M}_{n,p}(\mathbb{R})$, $n,p \geqslant 1$. La
+**transposée** de $A$ est la matrice $A^{T}\in \mathcal{M}_{p,n}(\mathbb{R})$
+obtenue en échangeant les lignes et les colonnes de $A$ i.e. définie par 
+
+$$
+\forall i \in \{1,\dots,n\},\ \forall j \in \{1,\dots,p\}, \bigl( A^{T}\bigr)_{ji} = \bigl( A\bigr)_{ij}.
+$$
+
+:::
+
+::: {#prp-linearité-transpose}
+
+La transposition est une application linéaire de
+$\mathcal{M}_{n,p}(\mathbb{R})$ dans $\mathcal{M}_{p,n}(\mathbb{R})$.
+
+:::
+
+Certaines matrices jouissent de propriétés de symétries remarquables
+vis à vis de la
+transposition. Elles interviendront notamment dans l'énoncé du théorème
+spectral dans le cours sur les espaces préhilbertiens réels.  
+
+::: {#def-matrice-symetrique-antisymetrique}
+
+#### Matrices symétriques et anti symétriques
+
+Une matrice $A\in\mathcal{M}_n(\mathbb{R})$ est dite \textbf{symétrique} si $A^T=A$ et \textbf{anti symétrique} si $A^T=-A$. On note $\mathcal{S}_n(\mathbb{R})$ (resp. $\mathcal{A}_n(\mathbb{R})$) l'ensemble des matrices symétriques (resp. anti symétriques) de $\mathcal{M}_n(\mathbb{R})$.
+
+:::
+
+
+::: {#prp-matrice-symetrique-antisymetrique}
+
+#### Somme directe de $\mathcal{S}_{n}(\mathbb{R})$ et $\mathcal{A}_{n}(\mathbb{R})$
+
+Les sous-ensembles $\mathcal{S}_n(\mathbb{R})$ et $\mathcal{A}_n(\mathbb{R})$ sont des sous-espaces vectoriels de $\mathcal{M}_n(\mathbb{R})$, de dimension respective $\frac{n(n+1)}{2}$ et $\frac{n(n-1)}{2}$, et on a 
+
+$$
+\mathcal{M}_n(\mathbb{R}) = \mathcal{S}_n(\mathbb{R})\oplus \mathcal{A}_n(\mathbb{R}).
+$$
+
+:::
+
+::: {#nte-projete .callout-note}
+
+Il est bon de connaitre la décomposition d'une matrice quelconque comme
+somme (unique) d'une matrice symétrique et anti symétrique :
+
+$$
+    \forall A \in \mathcal{M}_{n}(\mathbb{R}),\ A = \frac{A+A^{T}}{2} +
+\frac{A-A^{T}}{2}.
+$$
+
+:::
+
+
+### Trace d'une matrice carrée, d'un endomorphisme
+
+::: {#def-trace}
+
+#### Trace d'une matrice carrée
+
+Soit $A = (a_{ij})_{1 \leqslant i,j \leqslant n}\in \mathcal{M}_{n}(\mathbb{K})$. La **trace** de $A$ est le scalaire 
+
+$$
+    \mathrm{Tr}(A) = \sum_{i=1}^{n} a_{ii}.
+$$
+
+:::
+
+::: {#prp-trace}
+
+La trace est une application linéaire de $\mathcal{M}_{n}(\mathbb{K})$ dans $\mathbb{K}$.
+
+:::
+
+::: {#nte-forme .callout-note}
+
+Si $E$ est un $\mathbb{K}$-espace vectoriel, une application linéraie de $E$
+dans $\mathbb{K}$ s'appelle une *forme linéaire* sur $E$. L'ensemble des formes
+linéaires sur $E$ (c'est à dire l'ensemble $\mathcal{L}(E,\mathbb{K})$) s'appelle le *dual* de $E$.
+
+:::
+
+::: {#prp-trace-transpose}
+
+#### Trace d'une transposée
+
+Une matrice (carrée) et sa transposée on même trace.
+
+:::
+
+Enfin, la trace ne fait pas la différence entreles produits $AB$ et $BA$ :
+
+::: {#prp-trace-produit}
+
+Pour toute matrice $A,B \in \mathcal{M}_{n}(\mathbb{K})$, on a 
+
+$$
+    \mathrm{Tr}(AB) = \mathrm{Tr}(BA).
+$$
+
+:::
+
+On déduit de cette propriété que la trace est un *invariant de similitude*,
+c'est à dire que deux matrices semblables ont même trace. 
+
+::: {#prp-matrice-semblbable}
+
+Deux matrices semblables ont même trace.
+
+:::
+
+Puisque les matrices d'un endomorphisme dans différentes bases sont toutes
+*semblables*, cette propriété permet donc (au moins en dimension finie), de
+définir la trace d'un *endomorphisme* comme la trace de n'importe quelle
+matrice le représentant.
+
+::: {#def-trace-endo}
+
+Si $E$ est de dimension finie et si $f \in \mathcal{L}(E)$, la **trace** de $f$
+est par définition égale à la trace de n'importe quelle matrice représentant $f$.
+
+:::
 
 \newpage
 
 ## Exercices {.unnumbered}
 
 {{< include ./td/03.md >}}
+
+
+
+
+
 
