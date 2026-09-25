@@ -222,15 +222,20 @@ window.Quarto = {
   <li><a href="#sec-03-projecteurs-et-symetries" id="toc-sec-03-projecteurs-et-symetries" class="nav-link" data-scroll-target="#sec-03-projecteurs-et-symetries"><span class="header-section-number">3.3</span> Projecteurs et symétries</a>
   <ul class="collapse">
   <li><a href="#projecteurs" id="toc-projecteurs" class="nav-link" data-scroll-target="#projecteurs"><span class="header-section-number">3.3.1</span> Projecteurs</a></li>
+  <li><a href="#symétries" id="toc-symétries" class="nav-link" data-scroll-target="#symétries"><span class="header-section-number">3.3.2</span> Symétries</a></li>
   </ul></li>
-  <li><a href="#sec-03-matrices" id="toc-sec-03-matrices" class="nav-link" data-scroll-target="#sec-03-matrices"><span class="header-section-number">3.4</span> Matrices</a></li>
+  <li><a href="#sec-03-matrices" id="toc-sec-03-matrices" class="nav-link" data-scroll-target="#sec-03-matrices"><span class="header-section-number">3.4</span> Matrices</a>
+  <ul class="collapse">
+  <li><a href="#transposée-dune-matrice" id="toc-transposée-dune-matrice" class="nav-link" data-scroll-target="#transposée-dune-matrice"><span class="header-section-number">3.4.1</span> Transposée d’une matrice</a></li>
+  <li><a href="#trace-dune-matrice-carrée-dun-endomorphisme" id="toc-trace-dune-matrice-carrée-dun-endomorphisme" class="nav-link" data-scroll-target="#trace-dune-matrice-carrée-dun-endomorphisme"><span class="header-section-number">3.4.2</span> Trace d’une matrice carrée, d’un endomorphisme</a></li>
+  </ul></li>
   <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
   <ul class="collapse">
-  <li><a href="#familles-quelconques-de-vecteurs" id="toc-familles-quelconques-de-vecteurs" class="nav-link" data-scroll-target="#familles-quelconques-de-vecteurs"><span class="header-section-number">3.4.1</span> Familles quelconques de vecteurs</a></li>
-  <li><a href="#sous-espaces-vectoriels-1" id="toc-sous-espaces-vectoriels-1" class="nav-link" data-scroll-target="#sous-espaces-vectoriels-1"><span class="header-section-number">3.4.2</span> Sous espaces vectoriels</a></li>
-  <li><a href="#projecteurs-et-symétries" id="toc-projecteurs-et-symétries" class="nav-link" data-scroll-target="#projecteurs-et-symétries"><span class="header-section-number">3.4.3</span> Projecteurs et symétries</a></li>
-  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices"><span class="header-section-number">3.4.4</span> Matrices</a></li>
-  <li><a href="#divers" id="toc-divers" class="nav-link" data-scroll-target="#divers"><span class="header-section-number">3.4.5</span> Divers</a></li>
+  <li><a href="#familles-quelconques-de-vecteurs" id="toc-familles-quelconques-de-vecteurs" class="nav-link" data-scroll-target="#familles-quelconques-de-vecteurs"><span class="header-section-number">3.4.3</span> Familles quelconques de vecteurs</a></li>
+  <li><a href="#sous-espaces-vectoriels-1" id="toc-sous-espaces-vectoriels-1" class="nav-link" data-scroll-target="#sous-espaces-vectoriels-1"><span class="header-section-number">3.4.4</span> Sous espaces vectoriels</a></li>
+  <li><a href="#projecteurs-et-symétries" id="toc-projecteurs-et-symétries" class="nav-link" data-scroll-target="#projecteurs-et-symétries"><span class="header-section-number">3.4.5</span> Projecteurs et symétries</a></li>
+  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices"><span class="header-section-number">3.4.6</span> Matrices</a></li>
+  <li><a href="#divers" id="toc-divers" class="nav-link" data-scroll-target="#divers"><span class="header-section-number">3.4.7</span> Divers</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -293,7 +298,7 @@ window.Quarto = {
 <div id="def-famille-libre" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 3.3</strong></span> Une famille <span class="math inline">\(\mathcal{F}=(v_{i})_{i \in I}\)</span> de <span class="math inline">\(E\)</span> est <strong>libre</strong> si la seule combinaison linéaire nulle de <span class="math inline">\(\mathcal{F}\)</span> est la combinaison linéaire triviale i.e.&nbsp;pour toute famille <span class="math inline">\((\lambda_{i})_{i \in I}\)</span> de <span class="math inline">\(\mathbb{K}\)</span> à support fini,</p>
 <p><span class="math display">\[
-    \sum_{i \in I} \lambda_i v_{i} = 0_{E} \Rightarrow \forall i \in I,\
+    \sum_{i \in I} \lambda_i v_{i} = 0_{E} \mathbb{R}ightarrow \forall i \in I,\
 \lambda_{i}=0.
 \]</span></p>
 </div>
@@ -422,7 +427,7 @@ Astuce&nbsp;3.1
 <p><span class="theorem-title"><strong>Proposition 3.6 (Unicité de l’écriture de zéro)</strong></span> La somme <span class="math inline">\(F = F_{1}+ \dots + F_{n}\)</span> est directe ssi l’écriture de <span class="math inline">\(0_{E}\)</span> dans la somme <span class="math inline">\(F\)</span> est unique i.e.&nbsp;</p>
 <p><span class="math display">\[
     \forall v_{1} \in F_{1},\dots, v_{n} \in F_{n},\ v_{1}+\dots + v_{n} =
-0_{E} \Rightarrow v_{1}= \dots = v_{n}=0_{E}.
+0_{E} \mathbb{R}ightarrow v_{1}= \dots = v_{n}=0_{E}.
 \]</span></p>
 </div>
 <p>Le cas particulier de deux facteurs est très fréquent (projecteur, symétrie,…). Il est aussi plus simple à traiter.</p>
@@ -503,10 +508,7 @@ Note&nbsp;3.3
 </div>
 <p>La notion de base adaptée mêne à l’écriture des matrices d’applications linéaires par <em>blocs</em>, ce que nous expliquons maintenant.</p>
 <div id="def-matrice-par-bloc" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 3.12 (Matrices par blocs)</strong></span> Une matrice est dite écrite par <strong>blocs</strong> si elle est divisée en sous matrices figurées à l’aide de lignes horizontales et/ou verticales :</p>
-<!-- A = \begin{pNiceArray}{ccc}[first-row,last-col] -->
-<!-- A_{11}& \cdots & A_{1t}&\\ -->
-<!-- \end{pNiceArray} -->
+<p><span class="theorem-title"><strong>Définition 3.12 (Matrices par blocs)</strong></span> Une matrice est dite écrite par <strong>blocs</strong> si elle est divisée en <em>sous matrices</em> (les blocs) figurés à l’aide de lignes horizontales et/ou verticales.</p>
 </div>
 <div id="exm-blocs" class="theorem example">
 <p><span class="theorem-title"><strong>Exemple 3.8</strong></span> La matrice</p>
@@ -518,6 +520,15 @@ A = \begin{pmatrix}
 \end{pmatrix}
 \]</span></p>
 <p>peut s’écrire par blocs</p>
+<p><span class="math display">\[
+A = \left(\begin{array}{c|cc}
+   1&amp;2&amp;2\\
+\hline
+3 &amp;5&amp;5\\
+4 &amp;5&amp;5
+\end{array}\right)
+\]</span></p>
+<p>On écrit alors</p>
 <p><span class="math display">\[
     A = \begin{pmatrix}
         \boldsymbol{A}_{11} &amp; \boldsymbol{A}_{12}\\
@@ -531,7 +542,7 @@ A = \begin{pmatrix}
 \end{pmatrix}\)</span> et <span class="math inline">\(\boldsymbol{A}_{22} = 5 I_{2}\)</span>.</p>
 </div>
 <div id="prp-multiplication" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.10 (Multiplication des matrices par blocs)</strong></span> Si la taille des blocs est compatible, on peut multiplier les matrices par blocs comme on multiplie les matrices scalaires.</p>
+<p><span class="theorem-title"><strong>Proposition 3.10 (Multiplication des matrices par blocs)</strong></span> Si les tailles des blocs sont compatibles, on peut multiplier les matrices par blocs comme on multiplie les matrices scalaires.</p>
 </div>
 <div id="exm-multiplication-par-bloc" class="theorem example">
 <p><span class="theorem-title"><strong>Exemple 3.9</strong></span> Si <span class="math inline">\(A = \begin{pmatrix}
@@ -552,9 +563,16 @@ AB = \begin{pmatrix}
 <div id="prp-matrice-par-bloc" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 3.11</strong></span> Soit <span class="math inline">\(\mathcal{B} = (\mathcal{B}_{1},\dots,\mathcal{B}_{n})\)</span> une base adaptée à la somme directe <span class="math inline">\(E = \bigoplus_{i=1}^{n} F_{i}\)</span>, alors la matrice de <span class="math inline">\(f \in
 \mathcal{L}(E)\)</span> dans la base <span class="math inline">\(\mathcal{B}\)</span> s’écrit par blocs</p>
-<p><span class="math display">\[
-    \mathcal{M}_{\mathcal{B}}(f) =
-\]</span></p>
+<div id="fig-bloc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bloc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./svg/cropped.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-bloc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1
+</figcaption>
+</figure>
+</div>
 </div>
 </section>
 <section id="sous-espaces-stables-par-un-endomorphisme" class="level3" data-number="3.2.4">
@@ -564,6 +582,16 @@ AB = \begin{pmatrix}
 <p><span class="math display">\[
     \forall v \in F, f(v) \in F.
 \]</span></p>
+<div id="fig-stable" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-stable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./tikz/svg/03-2.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-stable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.2
+</figcaption>
+</figure>
+</div>
 </div>
 <div id="exm-derivation" class="theorem example">
 <p><span class="theorem-title"><strong>Exemple 3.10</strong></span> Le sous espace <span class="math inline">\(\mathbb{R}_{n}[X]\)</span> est stable par dérivation.</p>
@@ -627,7 +655,7 @@ Note&nbsp;3.4
 <section id="projecteurs" class="level3" data-number="3.3.1">
 <h3 data-number="3.3.1" class="anchored" data-anchor-id="projecteurs"><span class="header-section-number">3.3.1</span> Projecteurs</h3>
 <div id="def-projecteur-sur-F-parallelement-a-G" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 3.15</strong></span> On suppose que <span class="math inline">\(E=F \oplus G\)</span>. On appelle projecteur sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> l’endomorphisme <span class="math inline">\(p\)</span> de <span class="math inline">\(E\)</span> défini par <span class="math inline">\(p_{|F}=\mathrm{Id}\)</span> et <span class="math inline">\(p_{|G}=0\)</span>.</p>
+<p><span class="theorem-title"><strong>Définition 3.15</strong></span> On suppose que <span class="math inline">\(E=F \oplus G\)</span>. On appelle projecteur sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> l’endomorphisme <span class="math inline">\(p_F\)</span> de <span class="math inline">\(E\)</span> défini par <span class="math inline">\({p_{F}}_{|F}=\operatorname{Id}\)</span> et <span class="math inline">\({p_{F}}_{|G}=0\)</span>.</p>
 </div>
 <div id="nte-projecteur" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -639,18 +667,22 @@ Note&nbsp;3.5
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Concrètement, si <span class="math inline">\(v=v_{F}+v_{G}\)</span> est la décomposition de <span class="math inline">\(v\)</span> dans la somme directe <span class="math inline">\(E=F \oplus G\)</span>, alors</p>
+<p>Concrètement, si les composante de <span class="math inline">\(v\)</span> suivant <span class="math inline">\(F\)</span> et <span class="math inline">\(G\)</span> sont notées <span class="math inline">\(v_{F}\)</span> et <span class="math inline">\(v_{g}\)</span> c.-à.d</p>
 <p><span class="math display">\[
-p(v) = p(v_{F}) + p(v_{G}) = v_{F}
+v=v_{F}+v_{G}
 \]</span></p>
-<p>On dit que <span class="math inline">\(v_{F}\)</span> est la <em>composante suivant <span class="math inline">\(F\)</span></em> de <span class="math inline">\(v\)</span>.</p>
+<p>alors</p>
+<p><span class="math display">\[
+p_F(v) = p_F(v_{F}) + p_F(v_{G}) = v_{F},
+\]</span></p>
+<p>et <span class="math inline">\(\operatorname{Im}p_{F}=F\)</span> et <span class="math inline">\(\ker p_F = G\)</span>.</p>
 <div id="fig-projecteur-F" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-projecteur-F-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./tikz/svg/03-1.svg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-projecteur-F-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.1
+Figure&nbsp;3.3
 </figcaption>
 </figure>
 </div>
@@ -666,16 +698,16 @@ Astuce&nbsp;3.2
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Si <span class="math inline">\(E=F \oplus G\)</span> et si on note <span class="math inline">\(p\)</span> et <span class="math inline">\(q\)</span> les projecteurs sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> et inversement, alors <span class="math inline">\(p+q=\mathrm{Id}\)</span> ; connaitre un des deux projecteurs, c’est donc connaitre les deux.</p>
+<p>Si <span class="math inline">\(E=F \oplus G\)</span> et si on note <span class="math inline">\(p\)</span> et <span class="math inline">\(q\)</span> les projecteurs sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> et inversement, alors <span class="math inline">\(p+q=\operatorname{Id}\)</span> ; connaitre un des deux projecteurs, c’est donc connaitre les deux.</p>
 </div>
 </div>
 <p>Concrètement, pour calculer la projection d’un vecteur <span class="math inline">\(v\)</span> sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(F\)</span>, on détermine la composante <span class="math inline">\(v_{F}\)</span> de <span class="math inline">\(v\)</span> dans la somme directe <span class="math inline">\(E=F \oplus G\)</span>. On utilise pour cela la caractérisation suivante :</p>
 <div id="prp-caracterisation-du-projete" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.14</strong></span> On suppose que <span class="math inline">\(E=F \oplus G\)</span> et on note <span class="math inline">\(p\)</span> le projecteur sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span>. Alors pour tout <span class="math inline">\(v \in E\)</span>, le projeté <span class="math inline">\(p(v)=u\)</span> de <span class="math inline">\(v\)</span> sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> est caractérisé par</p>
+<p><span class="theorem-title"><strong>Proposition 3.14 (Caractérisation du projeté)</strong></span> On suppose que <span class="math inline">\(E=F \oplus G\)</span> et on note <span class="math inline">\(p\)</span> le projecteur sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span>. Alors pour tout <span class="math inline">\(v \in E\)</span>, la composante <span class="math inline">\(v_{F} = p_F(v)\)</span> de <span class="math inline">\(v\)</span> sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> est caractérisée par</p>
 <p><span class="math display">\[
     \begin{cases}
-        u \in \in F,\\
-        v-u \in G.
+        v_{F} \in F,\\
+        v-v_F \in G.
     \end{cases}
 \]</span></p>
 </div>
@@ -692,22 +724,190 @@ Astuce&nbsp;3.3
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Suivant les cas (notamment si la dimension de <span class="math inline">\(G\)</span> est inférieure à celle de <span class="math inline">\(F\)</span>), il peux être plus simple de calculer <span class="math inline">\(v_G\)</span> et d’utiliser la relation <span class="math inline">\(v_{F}=v-v_{G}\)</span>.</p>
+<p>Suivant les cas (notamment si la dimension de <span class="math inline">\(G\)</span> est inférieure à celle de <span class="math inline">\(F\)</span>), il peux être plus simple de calculer <span class="math inline">\(v_G\)</span> et d’utiliser la relation <span class="math inline">\(v_{F}+v_{G}=v\)</span>.</p>
 </div>
 </div>
 <div id="exm-projecteur-F-2" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 3.15</strong></span> Dans l’exemple précédent, on a été amené à résoudre un système <span class="math inline">\(2\times 2\)</span> car on a projeté sur un plan. Il est plus simple de projeter sur la droite <span class="math inline">\(D\)</span> et d’utiliser la relation rappelée dans le <a href="#tip-caracterisation" class="quarto-xref">Tip&nbsp;<span>3.3</span></a> :</p>
+<p><span class="theorem-title"><strong>Exemple 3.15</strong></span> Dans l’exemple précédent, on a été amené à résoudre un système <span class="math inline">\(2\times 2\)</span> car on a projeté sur un espace de dimension <span class="math inline">\(2\)</span> (un plan vectoriel). Il est en fait plus simple d’utiliser la relation rappelée dans le <a href="#tip-caracterisation" class="quarto-xref">Tip&nbsp;<span>3.3</span></a> et de projeter sur la droite <span class="math inline">\(D\)</span>.</p>
+</div>
+<p>Remarquons maintenant que si <span class="math inline">\(E = F \oplus G\)</span> et si <span class="math inline">\(p\)</span> est le projecteur sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> alors <span class="math inline">\(p \circ p = p\)</span>. En effet, cette égalité est satisfaite sur <span class="math inline">\(G\)</span> car <span class="math inline">\(p_{|G}=0\)</span> et sur <span class="math inline">\(F\)</span> car <span class="math inline">\(p_{|F}=\operatorname{Id}\)</span>. Cette observation suggère la définition suivante :</p>
+<div id="def-projecteur" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 3.16 (Projecteur)</strong></span> Un endomorphisme <span class="math inline">\(p\)</span> de <span class="math inline">\(E\)</span> est un <strong>projecteur</strong> si <span class="math inline">\(p \circ p = p\)</span>.</p>
+</div>
+<p>La terminologie est justifiée par le théorème suivant :</p>
+<div id="thm-projecteur" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 3.1 (Théorème fondamental des projecteurs)</strong></span> Si <span class="math inline">\(p\)</span> est un projecteur de <span class="math inline">\(E\)</span>, alors</p>
+<p><span class="math display">\[
+    E = \operatorname{Im}p \oplus \ker p
+\]</span></p>
+<p>et <span class="math inline">\(p\)</span> est le projecteur sur <span class="math inline">\(\operatorname{Im}p\)</span> parallèlement à <span class="math inline">\(\ker p\)</span>.</p>
+</div>
+</section>
+<section id="symétries" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="symétries"><span class="header-section-number">3.3.2</span> Symétries</h3>
+<div id="def-symetrie-F-parallelement-G" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 3.17</strong></span> On suppose que <span class="math inline">\(E=F \oplus G\)</span>. La symétrie par rapport à <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> est l’endomorphisme <span class="math inline">\(s_F\)</span> de <span class="math inline">\(E\)</span> défini par <span class="math inline">\({s_{F}}_{|F}=\operatorname{Id}\)</span> et <span class="math inline">\({s_F}_{|G}=-\operatorname{Id}\)</span>.</p>
+</div>
+<div id="nte-symetrie" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;3.6
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Concrètement, si <span class="math inline">\(v=v_{F}+v_{G}\)</span> est la décomposition de <span class="math inline">\(v\)</span> dans la somme directe <span class="math inline">\(E=F \oplus G\)</span> et si <span class="math inline">\(s_F\)</span> est la symétrie sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span>, alors</p>
+<p><span class="math display">\[
+s_F(v) = s_F(v_{F}) + s_F(v_{G}) = v_{F} - v_{G}.
+\]</span></p>
+<div id="fig-symetrie-F" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-symetrie-F-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./tikz/svg/03-4.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-symetrie-F-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.4
+</figcaption>
+</figure>
+</div>
+<p>De plus <span class="math inline">\(F = \ker(s_{F}-\operatorname{Id})\)</span> et <span class="math inline">\(G = \ker(s_{F}+\operatorname{Id})\)</span>.</p>
+</div>
+</div>
+<div id="tip-symetrie-F" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce&nbsp;3.4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si <span class="math inline">\(E=F \oplus G\)</span> et si on note <span class="math inline">\(p_F\)</span> et <span class="math inline">\(p_G\)</span> les projecteurs sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> et inversement, <span class="math inline">\(s_F\)</span> et <span class="math inline">\(s_G\)</span> les symétries par rapport à <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> et inversement, alors <span class="math inline">\(s_F+s_G = 0\)</span>, <span class="math inline">\(p_F+p_G = \operatorname{Id}\)</span> et <span class="math inline">\(s_F=p_F-p_G\)</span> ; connaitre <em>une</em> des quatre applications linéaires, c’est donc <em>toutes</em> les connaitre.</p>
+<div id="fig-projecteur-symetrie" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-projecteur-symetrie-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./tikz/svg/03-5.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-projecteur-symetrie-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.5
+</figcaption>
+</figure>
+</div>
+<p>En particulier, on utilise souvent une des relations</p>
+<p><span class="math display">\[
+s_F = 2p_F - \operatorname{Id}\quad \\text{ou}\quad s_{F} = \operatorname{Id}-2p_{G}
+\]</span></p>
+<p>pour calculer une <em>symétrie</em>, car on sait calculer un <em>projecteur</em> via la <a href="#prp-caracterisation-du-projete" class="quarto-xref">Proposition&nbsp;<span>3.14</span></a>.</p>
+<p>On en déduit en particulier que <span class="math inline">\(\ker (s_F-\operatorname{Id}) = \ker (p_{G}) = F\)</span> et <span class="math inline">\(\ker(s_{F}+\operatorname{Id}) = \ker(p_F) = G\)</span>.</p>
+</div>
+</div>
+<p>Si <span class="math inline">\(E = F \oplus G\)</span> et si <span class="math inline">\(s_F\)</span> est la symétrie sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> alors <span class="math inline">\(s_F \circ s_F = s_F\)</span>. En effet, cette égalité est à nouveau satisfaite sur <span class="math inline">\(F\)</span> et sur <span class="math inline">\(G\)</span> car c’est le cas de <span class="math inline">\(\pm \operatorname{Id}\)</span>. Ceci motive la définition suivante :</p>
+<div id="def-symetrie" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 3.18 (Symétrie)</strong></span> Un endomorphisme <span class="math inline">\(s\)</span> est une <strong>symétrie</strong> de <span class="math inline">\(E\)</span> si <span class="math inline">\(s \circ s = \operatorname{Id}\)</span>.</p>
+</div>
+<p>La terminologie est justifiée par le théorème suivant :</p>
+<div id="thm-symetrie" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 3.2 (Théorème fondamental des symétries)</strong></span> Si <span class="math inline">\(s\)</span> est une symétrie de <span class="math inline">\(E\)</span>, alors</p>
+<p><span class="math display">\[
+    E = \ker(s-\operatorname{Id}) \oplus \ker(s+\operatorname{Id}),
+\]</span></p>
+<p>et <span class="math inline">\(s\)</span> est la symétrie sur <span class="math inline">\(\ker (s-\operatorname{Id})\)</span> parallèlement à <span class="math inline">\(\ker(s+\operatorname{Id})\)</span>.</p>
 </div>
 </section>
 </section>
 <section id="sec-03-matrices" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="sec-03-matrices"><span class="header-section-number">3.4</span> Matrices</h2>
-
+<p>Le but de cette section est d’introduire deux applications linéaires particulièrement importantes : la <em>trace</em> et la <em>transposition</em>. Ce sont des outils que nous utiliserons entre autre dans le cours sur la réduction des endomorphismes et dans le chapitre sur les espaces préhilbertiens réels.</p>
+<section id="transposée-dune-matrice" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="transposée-dune-matrice"><span class="header-section-number">3.4.1</span> Transposée d’une matrice</h3>
+<div id="def-transpose" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 3.19 (Transposée d’une matrice)</strong></span> Soit <span class="math inline">\(A \in \mathcal{M}_{n,p}(\mathbb{R})\)</span>, <span class="math inline">\(n,p \geqslant 1\)</span>. La <strong>transposée</strong> de <span class="math inline">\(A\)</span> est la matrice <span class="math inline">\(A^{T}\in \mathcal{M}_{p,n}(\mathbb{R})\)</span> obtenue en échangeant les lignes et les colonnes de <span class="math inline">\(A\)</span> i.e.&nbsp;définie par</p>
+<p><span class="math display">\[
+\forall i \in \{1,\dots,n\},\ \forall j \in \{1,\dots,p\}, \bigl( A^{T}\bigr)_{ji} = \bigl( A\bigr)_{ij}.
+\]</span></p>
+</div>
+<div id="prp-linearité-transpose" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.15</strong></span> La transposition est une application linéaire de <span class="math inline">\(\mathcal{M}_{n,p}(\mathbb{R})\)</span> dans <span class="math inline">\(\mathcal{M}_{p,n}(\mathbb{R})\)</span>.</p>
+</div>
+<p>Certaines matrices jouissent de propriétés de symétries remarquables vis à vis de la transposition. Elles interviendront notamment dans l’énoncé du théorème spectral dans le cours sur les espaces préhilbertiens réels.</p>
+<div id="def-matrice-symetrique-antisymetrique" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 3.20 (Matrices symétriques et anti symétriques)</strong></span> Une matrice <span class="math inline">\(A\in\mathcal{M}_n(\mathbb{R})\)</span> est dite si <span class="math inline">\(A^T=A\)</span> et si <span class="math inline">\(A^T=-A\)</span>. On note <span class="math inline">\(\mathcal{S}_n(\mathbb{R})\)</span> (resp. <span class="math inline">\(\mathcal{A}_n(\mathbb{R})\)</span>) l’ensemble des matrices symétriques (resp. anti symétriques) de <span class="math inline">\(\mathcal{M}_n(\mathbb{R})\)</span>.</p>
+</div>
+<div id="prp-matrice-symetrique-antisymetrique" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.16 (Somme directe de <span class="math inline">\(\mathcal{S}_{n}(\mathbb{R})\)</span> et <span class="math inline">\(\mathcal{A}_{n}(\mathbb{R})\)</span>)</strong></span> Les sous-ensembles <span class="math inline">\(\mathcal{S}_n(\mathbb{R})\)</span> et <span class="math inline">\(\mathcal{A}_n(\mathbb{R})\)</span> sont des sous-espaces vectoriels de <span class="math inline">\(\mathcal{M}_n(\mathbb{R})\)</span>, de dimension respective <span class="math inline">\(\frac{n(n+1)}{2}\)</span> et <span class="math inline">\(\frac{n(n-1)}{2}\)</span>, et on a</p>
+<p><span class="math display">\[
+\mathcal{M}_n(\mathbb{R}) = \mathcal{S}_n(\mathbb{R})\oplus \mathcal{A}_n(\mathbb{R}).
+\]</span></p>
+</div>
+<div id="nte-projete" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;3.7
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Il est bon de connaitre la décomposition d’une matrice quelconque comme somme (unique) d’une matrice symétrique et anti symétrique :</p>
+<p><span class="math display">\[
+    \forall A \in \mathcal{M}_{n}(\mathbb{R}),\ A = \frac{A+A^{T}}{2} +
+\frac{A-A^{T}}{2}.
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="trace-dune-matrice-carrée-dun-endomorphisme" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="trace-dune-matrice-carrée-dun-endomorphisme"><span class="header-section-number">3.4.2</span> Trace d’une matrice carrée, d’un endomorphisme</h3>
+<div id="def-trace" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 3.21 (Trace d’une matrice carrée)</strong></span> Soit <span class="math inline">\(A = (a_{ij})_{1 \leqslant i,j \leqslant n}\in \mathcal{M}_{n}(\mathbb{K})\)</span>. La <strong>trace</strong> de <span class="math inline">\(A\)</span> est le scalaire</p>
+<p><span class="math display">\[
+    \mathrm{Tr}(A) = \sum_{i=1}^{n} a_{ii}.
+\]</span></p>
+</div>
+<div id="prp-trace" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.17</strong></span> La trace est une application linéaire de <span class="math inline">\(\mathcal{M}_{n}(\mathbb{K})\)</span> dans <span class="math inline">\(\mathbb{K}\)</span>.</p>
+</div>
+<div id="nte-forme" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;3.8
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si <span class="math inline">\(E\)</span> est un <span class="math inline">\(\mathbb{K}\)</span>-espace vectoriel, une application linéraie de <span class="math inline">\(E\)</span> dans <span class="math inline">\(\mathbb{K}\)</span> s’appelle une <em>forme linéaire</em> sur <span class="math inline">\(E\)</span>. L’ensemble des formes linéaires sur <span class="math inline">\(E\)</span> (c’est à dire l’ensemble <span class="math inline">\(\mathcal{L}(E,\mathbb{K})\)</span>) s’appelle le <em>dual</em> de <span class="math inline">\(E\)</span>.</p>
+</div>
+</div>
+<div id="prp-trace-transpose" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.18 (Trace d’une transposée)</strong></span> Une matrice (carrée) et sa transposée on même trace.</p>
+</div>
+<p>Enfin, la trace ne fait pas la différence entreles produits <span class="math inline">\(AB\)</span> et <span class="math inline">\(BA\)</span> :</p>
+<div id="prp-trace-produit" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.19</strong></span> Pour toute matrice <span class="math inline">\(A,B \in \mathcal{M}_{n}(\mathbb{K})\)</span>, on a</p>
+<p><span class="math display">\[
+    \mathrm{Tr}(AB) = \mathrm{Tr}(BA).
+\]</span></p>
+</div>
+<p>On déduit de cette propriété que la trace est un <em>invariant de similitude</em>, c’est à dire que deux matrices semblables ont même trace.</p>
+<div id="prp-matrice-semblbable" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.20</strong></span> Deux matrices semblables ont même trace.</p>
+</div>
+<p>Puisque les matrices d’un endomorphisme dans différentes bases sont toutes <em>semblables</em>, cette propriété permet donc (au moins en dimension finie), de définir la trace d’un <em>endomorphisme</em> comme la trace de n’importe quelle matrice le représentant.</p>
+<div id="def-trace-endo" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 3.22</strong></span> Si <span class="math inline">\(E\)</span> est de dimension finie et si <span class="math inline">\(f \in \mathcal{L}(E)\)</span>, la <strong>trace</strong> de <span class="math inline">\(f\)</span> est par définition égale à la trace de n’importe quelle matrice représentant <span class="math inline">\(f\)</span>.</p>
+</div>
+</section>
 </section>
 <section id="exercices" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="exercices">Exercices</h2>
-<section id="familles-quelconques-de-vecteurs" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="familles-quelconques-de-vecteurs"><span class="header-section-number">3.4.1</span> Familles quelconques de vecteurs</h3>
+<section id="familles-quelconques-de-vecteurs" class="level3" data-number="3.4.3">
+<h3 data-number="3.4.3" class="anchored" data-anchor-id="familles-quelconques-de-vecteurs"><span class="header-section-number">3.4.3</span> Familles quelconques de vecteurs</h3>
 <div id="exr-03-base" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 3.1</strong></span> (Famille échelonnée en degré). Montrer que la famille <span class="math inline">\(H_k(X)\)</span>, <span class="math inline">\(k\in\{0,\dots,n\}\)</span>, définie par <span class="math inline">\(H_0(X)=1\)</span> et <span class="math display">\[\forall k\in\{1,\dots,n\},\
 H_k(X) = X(X-1)\cdots(X-k)\]</span> est une base de <span class="math inline">\(\mathbb{R}_n[X]\)</span>.</p>
@@ -720,8 +920,8 @@ H_k(X) = X(X-1)\cdots(X-k)\]</span> est une base de <span class="math inline">\(
 e^{kx},\ k\in\mathbb{N} \}\)</span> est une famille libre de l’espace vectoriel des fonctions de <span class="math inline">\(\mathbb{R}\)</span> dans <span class="math inline">\(\mathbb{R}\)</span>. <em>On pourra remarquer que pour tout <span class="math inline">\(x \in \mathbb{R},\ e^{kx}=(e^x)^k\)</span>.</em></p>
 </div>
 </section>
-<section id="sous-espaces-vectoriels-1" class="level3" data-number="3.4.2">
-<h3 data-number="3.4.2" class="anchored" data-anchor-id="sous-espaces-vectoriels-1"><span class="header-section-number">3.4.2</span> Sous espaces vectoriels</h3>
+<section id="sous-espaces-vectoriels-1" class="level3" data-number="3.4.4">
+<h3 data-number="3.4.4" class="anchored" data-anchor-id="sous-espaces-vectoriels-1"><span class="header-section-number">3.4.4</span> Sous espaces vectoriels</h3>
 <div id="exr-03-vect" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 3.4</strong></span> (Espace de matrices à paramètres). Montrer que l’ensemble <span class="math inline">\(F = \left\{\begin{pmatrix}
 a&amp;c&amp;b\\
@@ -809,8 +1009,8 @@ b&amp;c&amp;a
 <p><span class="theorem-title"><strong>Exercice 3.12 (<span class="math inline">\(\star\)</span>)</strong></span> (Un résultat général de stabilité). Soit <span class="math inline">\(f\in\mathcal{L}(E)\)</span>. Montrer que <span class="math inline">\(\mathrm{Im}(f)\)</span> et <span class="math inline">\(\ker(f)\)</span> sont stables par <span class="math inline">\(f\)</span>.</p>
 </div>
 </section>
-<section id="projecteurs-et-symétries" class="level3" data-number="3.4.3">
-<h3 data-number="3.4.3" class="anchored" data-anchor-id="projecteurs-et-symétries"><span class="header-section-number">3.4.3</span> Projecteurs et symétries</h3>
+<section id="projecteurs-et-symétries" class="level3" data-number="3.4.5">
+<h3 data-number="3.4.5" class="anchored" data-anchor-id="projecteurs-et-symétries"><span class="header-section-number">3.4.5</span> Projecteurs et symétries</h3>
 <div id="exr-03-proj-2" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 3.13</strong></span> (Matrices d’un projecteur et d’une symétrie de <span class="math inline">\(\mathbb{R}^{3}\)</span>).</p>
 <ol type="1">
@@ -838,8 +1038,8 @@ b&amp;c&amp;a
 <p><span class="theorem-title"><strong>Exercice 3.17 (<span class="math inline">\(\star\)</span>)</strong></span> (Une symétrie de <span class="math inline">\(\mathbb{R}_{2}[X]\)</span>). Montrer que <span class="math display">\[\mathbb{R}_2[X] = \mathbb{R}\oplus\mathrm{Vect}\big((X-1)^2,X-1\big)\]</span> et déterminer le symétrique du polynôme <span class="math inline">\(P=X^2 + 3X + 1\)</span> par rapport à <span class="math inline">\(\mathrm{Vect}\big((X-1)^2,X-1\big)\)</span> parallèlement à <span class="math inline">\(\mathbb{R}\)</span>.</p>
 </div>
 </section>
-<section id="matrices" class="level3" data-number="3.4.4">
-<h3 data-number="3.4.4" class="anchored" data-anchor-id="matrices"><span class="header-section-number">3.4.4</span> Matrices</h3>
+<section id="matrices" class="level3" data-number="3.4.6">
+<h3 data-number="3.4.6" class="anchored" data-anchor-id="matrices"><span class="header-section-number">3.4.6</span> Matrices</h3>
 <div id="exr-03-0005" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 3.18</strong></span> (Invariant de similitude). Les matrices <span class="math inline">\(A = \begin{pmatrix}
     1&amp;2&amp;-1\\
@@ -893,8 +1093,8 @@ b&amp;c&amp;a
 </ol>
 </div>
 </section>
-<section id="divers" class="level3" data-number="3.4.5">
-<h3 data-number="3.4.5" class="anchored" data-anchor-id="divers"><span class="header-section-number">3.4.5</span> Divers</h3>
+<section id="divers" class="level3" data-number="3.4.7">
+<h3 data-number="3.4.7" class="anchored" data-anchor-id="divers"><span class="header-section-number">3.4.7</span> Divers</h3>
 <div id="exr-03-sym" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 3.26 (<span class="math inline">\(\star\)</span>)</strong></span> (Une symétrie de de <span class="math inline">\(M_{n}(\mathbb{R})\)</span>). On considère l’application <span class="math inline">\(\varphi:\mathcal{M}_{n}(\mathbb{R})\to \mathcal{M}_n(\mathbb{R})\)</span> définie par <span class="math display">\[\forall M\in\mathcal{M}_{n}(\mathbb{R}),\quad \varphi(M) = M - \frac{2}{n}\operatorname{Tr}(M)I_n.\]</span></p>
 <ol type="1">
