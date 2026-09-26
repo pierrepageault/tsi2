@@ -1074,6 +1074,51 @@ u_{n}\sim \frac{l}{n+a}\sim \frac{l}{n}&gt;0.
 <li><p>On suppose que <span class="math inline">\(a_n\to 0\)</span> quand <span class="math inline">\(n\to +\infty\)</span>, que <span class="math inline">\((B_n)\)</span> est bornée et que la série <span class="math inline">\(\sum (a_{k+1}-a_k)\)</span> est absolument convergente. Montrer alors que la série <span class="math inline">\(\sum a_nb_n\)</span> converge.</p></li>
 <li><p><em>Application :</em> montrer que la série <span class="math inline">\(\displaystyle\sum_{n\geqslant 1} \dfrac{\sin n}{n}\)</span> converge.</p></li>
 </ol>
+<details>
+<summary>Correction</summary>
+<div>
+<ol type="1">
+<li><p><em>L’idée consiste à reconstruire <span class="math inline">\((b_n)\)</span> à l’aide de <span class="math inline">\((B_{n})\)</span>, comme dans la démonstration du théorème des séries télescopiques, puis de gérer les effets de bord.</em></p>
+<p>Pour <span class="math inline">\(n\geqslant 1\)</span>, on a <span class="math display">\[
+\begin{aligned}
+        S_n &amp;= a_0b_0 +\sum_{k=1}^na_k(\underbrace{B_{k}-B_{k-1}}_{b_k})\\
+        &amp;=a_0b_0 + \sum_{k=1}^n a_kB_{k} - \sum_{k=1}^n a_kB_{k-1} \\
+        &amp;= \sum_{k=0}^{n} a_{k}B_{k} - \sum_{k=0}^{n-1} a_{k+1}B_k\\
+        &amp;=  \sum_{k=0}^{n-1}B_k(a_k-a_{k+1}) + a_nB_n\\
+        &amp;=  \boxed{a_nB_n - \sum_{k=0}^{n-1} B_k(a_{k+1}-a_k).}
+\end{aligned}
+\]</span></p>
+<p><em>Cette égalité (transformation d’Abel) est l’équivalent, pour les séries, de l’intégration par parties : on a “dérivé” <span class="math inline">\((a_k)\)</span> et “intégré” <span class="math inline">\((b_k)\)</span> via une différence et une somme. On obtient l’équivalent d’un crochet (le produit) moins l’équivalent d’une intégrale (la somme).</em></p></li>
+<li><p>On va montrer que la série <span class="math inline">\(\sum a_nb_n\)</span> converge en montrant que la suite de ses sommes partielles convergent. Par hypothèse, il existe <span class="math inline">\(M\geqslant 0\)</span> tel que <span class="math display">\[\forall n\in\mathbb{N},\ |B_n|\leqslant M.\]</span> On a donc</p>
+<p><span class="math display">\[
+\forall k\geqslant 0,\ |B_k(a_{k+1}-a_k)|\leqslant M|a_{k+1}-a_k|.
+\]</span></p>
+<p>Par hypothèse, la série <span class="math inline">\(\sum|a_{k+1}-a_{k}|\)</span> converge. Par comparaison de série à termes positifs, la série <span class="math inline">\(\sum B_k(a_{k+1}-a_k)\)</span> est absolument convergente, donc convergente. Donc <span class="math inline">\(\sum_{k=0}^{n-1}B_k(a_{k+1}-a_k)\)</span> converge vers une limite finie (en tant que somme partielle d’une série convergente.) Par ailleurs, <span class="math inline">\((B_n)\)</span> est bornée et <span class="math inline">\(a_n\to 0\)</span>, donc <span class="math inline">\(a_nB_n\to 0\)</span>. Ainsi, <span class="math inline">\((S_n)\)</span> converge par différence i.e.&nbsp;<span class="math inline">\(\sum
+a_{n}b_{n}\)</span> <em>converge</em>.</p></li>
+<li><p>On va appliquer une transformation d’Abel aux suites <span class="math inline">\(\left(\frac{1}{n}\right)\)</span> et <span class="math inline">\((\sin n)\)</span> en dérivant la première et en intégrant la deuxième. On a</p>
+<p><span class="math display">\[ \begin{aligned} \forall n\geqslant 1,
+\frac{1}{n+1}-\frac{1}{n} &amp;= \frac{1}{n}\left(\frac{1}{1+1/n}-1\right)\\
+&amp;=\frac{1}{n}(1-1/n - 1 + o(1/n))\\ &amp;\sim -\frac{1}{n^2}. \end{aligned}
+\]</span></p>
+<p>De plus la série <span class="math inline">\(\sum\frac{1}{n^2}\)</span> est une série de Riemann convergente. Par comparaison de séries à termes positifs, la série <span class="math inline">\(\sum
+\left|\frac{1}{n+1}-\frac{1}{n}\right|\)</span> est donc convergente i.e.&nbsp;la série <span class="math inline">\(\sum \left(\frac{1}{n+1}-\frac{1}{n}\right)\)</span> est absolument convergente.</p>
+<p>Par ailleurs, on a</p>
+<p><span class="math display">\[
+\begin{aligned}
+            \forall n\geqslant 1,\ \sum_{k=1}^{n}\sin ker &amp;= \mathrm{Im}\left(\sum_{k=1}^n e^{ik}\right)\\
+            &amp;= \mathrm{Im}\left(\frac{1-e^{i(n+1)}}{1-e^i}\right),
+\end{aligned}
+\]</span> donc <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p><span class="math display">\[
+\begin{aligned}
+            \forall n\geqslant 1,\ \left|\sum_{k=1}^n\sin(k)\right|&amp;\leqslant \left|\frac{1-e^{i(n+1)}}{1-e^i}\right|\\
+            &amp;\leqslant \frac{2}{|1-e^{i}|},\quad \text{par inégalité triangulaire.}
+\end{aligned}
+\]</span></p>
+<p>Les conditions de la question (c) sont donc satisfaites ; la série <span class="math inline">\(\sum\frac{\sin(n)}{n}\)</span> est donc <em>convergente</em>.</p></li>
+</ol>
+</div>
+</details>
 </div>
 
 
@@ -1085,6 +1130,7 @@ u_{n}\sim \frac{l}{n+a}\sim \frac{l}{n}&gt;0.
 <li id="fn1"><p>On peut de même reconstruire l’intégrande par <em>dérivation</em> de l’intégrale partielle; c’est l’analogue continue de ce résultat.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>On calculera la valeur exacte de cette somme en TD.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>Il s’agit de la constante gamma d’Euler, qui vaut <span class="math inline">\(0,5772...\)</span><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Pour tout <span class="math inline">\(z\in\mathbb{C}\)</span>, on a <span class="math inline">\(|\mathrm{Re}(z)|\leqslant |z|\)</span> et <span class="math inline">\(|\mathrm{Im}(z)|\leqslant |z|\)</span>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
