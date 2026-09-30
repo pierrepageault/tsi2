@@ -17,8 +17,9 @@ La notion centrale de l'algèbre linéaire est donc celle de *combinaison
 linéaire*. C'est elle qui permet de définir les familles libres, les familles
 génératrices, les sous-espaces vectoriels, et les applications linéaires. 
 
-La notion de combinaison linéaire a été vue en première année dans le cas des familles *finies* de
-$E$ ; on l'étend cette année au cas des familles quelconques. 
+La notion de combinaison linéaire a été vue en première année dans le cas des
+familles *finies* de $E$ ; on l'étend cette année au cas des familles
+quelconques. 
 
 ## Familles quelconques de vecteurs {#sec-03-familles-quelconques-de-vecteurs}
 
@@ -116,7 +117,8 @@ $\mathcal{G}$.
 
 ::: {#exm-famille-generatrice}
 
-La famille $\{X^k,\ k\in \mathbb{N}\}$ est une famille génératrice de $E=\mathbb{K}[X]$.
+La famille $\{X^k,\ k\in \mathbb{N}\}$ est une famille génératrice de
+$E=\mathbb{K}[X]$.
 
 :::
 
@@ -249,21 +251,23 @@ $$
         a&b\\b&a
     \end{pmatrix},\ a,b \in \mathbb{R}\right\} = \mathrm{Vect}(I_2,J),
 $$
-avec $J = \begin{pmatrix}
-    0&1\\1&0
-\end{pmatrix}$. Donc $F$ est un sous-espace vectoriel de $\mathcal{M}_{2}(\mathbb{R})$.
+
+avec $J = \begin{pmatrix} 0&1\\1&0 \end{pmatrix}$. Donc $F$ est un sous-espace
+vectoriel de $\mathcal{M}_{2}(\mathbb{R})$.
 
 :::
 
 ### Somme de sous espaces vectoriels
 
 Les sous espaces vectoriels sont stables par intersection mais par par réunion
-(considérer par exemple la réunion de deux droites dans le plan, qui n'est clairement pas stable par somme). En algèbre linéaire, la
-réunion est remplacée par la notion de *somme*. 
+(considérer par exemple la réunion de deux droites dans le plan, qui n'est
+clairement pas stable par somme). En algèbre linéaire, la réunion est remplacée
+par la notion de *somme*. 
 
 ::: {#def-somme}
 
-Soient $F_{1},\dots,F_{n}$ des sous espaces vectoriel de $E$. On appelle **somme** des sous espaces $F_1,\dots,F_{n}$ le sous ensemble 
+Soient $F_{1},\dots,F_{n}$ des sous espaces vectoriel de $E$. On appelle
+**somme** des sous espaces $F_1,\dots,F_{n}$ le sous ensemble 
 
 $$
     F = \{v_1 + \cdots + v_{n}, v_{i} \in F_{i},\ i=1,\dots,n\}.
@@ -345,15 +349,11 @@ si $E=F \oplus G$.
 
 ::: {#prp-caracterisation-supplementaire}
 
-#### Caractérisation des supplémentaires 
+#### Caractérisation des supplémentaires en dimension finie
 
-Soient $F$ et $G$ deux sous espaces vectoriels de $E$. Les propositions
-suivantes sont équivalentes :
-
-1. $E=F \oplus G$,
-2. $F \cap G =0_{E}$ et $E=F + G$,
-3. si $E$ est de dimension finie, $F \cap G = \{0_{E}\}$ et $\dim E = \dim F +
-   \dim G$.
+Si $E$ est un $\mathbb{K}$-espace vectoriel de dimension *finie* et si $F$ et
+$G$ sont deux sous espaces vectoriels de $E$, alors $E=F \oplus G$ ssi $F \cap
+G = \{0_{E}\}$ et $\dim E = \dim F + \dim G$.
 
 :::
 
@@ -406,8 +406,9 @@ linéaire $f$ de $E$ dans $E'$ tel que $f_{|F_{i}}=f_i$.
 
 Il faut comprendre cette proposition de deux manières :
 
-1. c'est un résultat d'*unicité* ; si deux applications linéaires $f$ et $g$ coincident sur
-   chaque facteur d'une somme directe (c.-à.d si $f_{|F_{i}}=g_{|F_{i}}$ pour tout $i$), alors $f=g$,
+1. c'est un résultat d'*unicité* ; si deux applications linéaires $f$ et $g$
+   coincident sur chaque facteur d'une somme directe (c.-à.d si
+   $f_{|F_{i}}=g_{|F_{i}}$ pour tout $i$), alors $f=g$,
 
 2. c'est un un résultat d'existence :  pour *définir*  une application linéaire
    de $E$ dans $E'$, il suffit de la définir sur chaque facteur de la somme
@@ -434,8 +435,8 @@ linéaires par *blocs*, ce que nous expliquons maintenant.
 
 #### Matrices par blocs
 
-Une matrice est dite écrite par **blocs** si elle est divisée en *sous matrices* (les blocs) 
-figurés à l'aide de lignes horizontales et/ou verticales.
+Une matrice est dite écrite par **blocs** si elle est divisée en *sous
+matrices* (les blocs) figurés à l'aide de lignes horizontales et/ou verticales.
 
 :::
 
@@ -498,12 +499,13 @@ Si  $A = \begin{pmatrix}
 \boldsymbol{B}_{21} & \boldsymbol{B}_{22}
     \end{pmatrix}$, et si la taille des blocs est compatible, alors 
 
-$$
-AB = \begin{pmatrix}
-\boldsymbol{A}_{11}\boldsymbol{B}_{11} + \boldsymbol{A}_{12}\boldsymbol{B}_{21} & \boldsymbol{A}_{11}\boldsymbol{B}_{12}+ \boldsymbol{A}_{21}\boldsymbol{B}_{22}\\
-\boldsymbol{A}_{21}\boldsymbol{B}_{11}+\boldsymbol{A}_{22}\boldsymbol{B}_{21} & \boldsymbol{A}_{21}\boldsymbol{B}_{12}+\boldsymbol{A}_{22}\boldsymbol{B}_{22}
-\end{pmatrix}.
-$$
+$$ AB = \begin{pmatrix} \boldsymbol{A}_{11}\boldsymbol{B}_{11} +
+\boldsymbol{A}_{12}\boldsymbol{B}_{21} &
+\boldsymbol{A}_{11}\boldsymbol{B}_{12}+
+\boldsymbol{A}_{21}\boldsymbol{B}_{22}\\
+\boldsymbol{A}_{21}\boldsymbol{B}_{11}+\boldsymbol{A}_{22}\boldsymbol{B}_{21} &
+\boldsymbol{A}_{21}\boldsymbol{B}_{12}+\boldsymbol{A}_{22}\boldsymbol{B}_{22}
+\end{pmatrix}. $$
 
 :::
 
@@ -520,7 +522,7 @@ la somme  directe $E = \bigoplus_{i=1}^{n} F_{i}$, alors la matrice de $f \in
 
 ::: {#fig-bloc}
 
-![](./svg/cropped.svg)
+![](./svg/03-cropped-1.svg)
 
 :::
 
@@ -546,8 +548,6 @@ $$
 ![](./tikz/svg/03-2.svg)
 
 :::
-
-
 
 :::
 
@@ -580,9 +580,9 @@ l'appelle l'endomorphisme **induit par restriction** de $f$ à $F$.
 
 ::: {#exm-derivation}
 
-Puisque $\mathbb{R}_{n}[X]$ est stable par dérivation, on peut restreindre la dérivation
-à $\mathbb{R}_{n}[X]$. On obtient ainsi un endomorphisme de $\mathbb{R}_{n}[X]$ définit par $P
-\mapsto P'$. 
+Puisque $\mathbb{R}_{n}[X]$ est stable par dérivation, on peut restreindre la
+dérivation à $\mathbb{R}_{n}[X]$. On obtient ainsi un endomorphisme de
+$\mathbb{R}_{n}[X]$ définit par $P \mapsto P'$. 
 
 :::
 
@@ -619,7 +619,10 @@ cas d'une somme directe à *deux* facteurs.
 
 ::: {#prp-stabilite-bloc}
 
-On suppose que $E=F \oplus G$. Soit $\mathcal{B}=(\mathcal{B}_{F},\mathcal{B}_{G})$ une base adaptée à cette somme directe et soit $f \in \mathcal{L}(E)$. Alors $F$ est stable par $f$ ssi la matrice par blocs de $f$ dans la base $\mathcal{B}$ est de la forme
+On suppose que $E=F \oplus G$. Soit
+$\mathcal{B}=(\mathcal{B}_{F},\mathcal{B}_{G})$ une base adaptée à cette somme
+directe et soit $f \in \mathcal{L}(E)$. Alors $F$ est stable par $f$ ssi la
+matrice par blocs de $f$ dans la base $\mathcal{B}$ est de la forme
 
 $$
     \mathcal{M}_{\mathcal{B}}(f) = \begin{pmatrix}
@@ -648,13 +651,16 @@ interviennent dans de nombreux domaines.
 
 ::: {#def-projecteur-sur-F-parallelement-a-G}
 
-On suppose que $E=F \oplus G$. On appelle projecteur sur $F$ parallèlement à $G$ l'endomorphisme $p_F$ de $E$ défini par ${p_{F}}_{|F}=\id$ et ${p_{F}}_{|G}=0$.
+On suppose que $E=F \oplus G$. On appelle projecteur sur $F$ parallèlement à
+$G$ l'endomorphisme $p$ de $E$ défini par $p_{|F}=\id$ et
+$p_{|G}=0$.
 
 :::
 
 ::: {#nte-projecteur .callout-note}
 
-Concrètement, si les composante de $v$ suivant $F$ et $G$ sont notées $v_{F}$ et $v_{g}$ c.-à.d 
+Concrètement, si les composante de $v$ suivant $F$ et $G$ sont notées $v_{F}$
+et $v_{g}$ c.-à.d 
 
 $$
 v=v_{F}+v_{G}
@@ -663,16 +669,27 @@ $$
 alors 
 
 $$
-p_F(v) = p_F(v_{F}) + p_F(v_{G}) = v_{F},
+p(v) = p(v_{F}) + p(v_{G}) = v_{F},
 $$
 
-et $\im p_{F}=F$ et $\ker p_F = G$.
+et $\im p=F$ et $\ker p = G$.
 
 ::: {#fig-projecteur-F}
 
 ![](./tikz/svg/03-1.svg)
 
 :::
+
+La matrice de $p$ dans une base adaptée
+$\mathcal{B}=(\mathcal{B}_F,\mathcal{B}_G)$ s'écrit par blocs
+
+::: {#fig-matrice-projecteur}
+
+![](./svg/03-cropped-2.svg){width=30%}
+
+:::
+
+avec $n_1= \dim F$.
 
 :::
 
@@ -685,15 +702,15 @@ deux projecteurs, c'est donc connaitre les deux.
 :::
 
 Concrètement, pour calculer la projection d'un vecteur $v$ sur $F$
-parallèlement à $F$, on détermine la composante $v_{F}$ de $v$ dans la somme directe $E=F \oplus G$. On utilise pour cela la caractérisation suivante :
+parallèlement à $F$, on détermine la composante $v_{F}$ de $v$ dans la somme
+directe $E=F \oplus G$. On utilise pour cela la caractérisation suivante :
 
 ::: {#prp-caracterisation-du-projete}
 
 #### Caractérisation du projeté
 
-On suppose que $E=F \oplus G$ et on note $p$ le projecteur sur $F$
-parallèlement à $G$. Alors pour tout $v \in E$, la composante $v_{F} = p_F(v)$ de $v$
-sur $F$ parallèlement à $G$ est caractérisée par 
+On suppose que $E=F \oplus G$. Alors pour tout $v \in E$, le projeté $v_{F}$ de
+$v$ sur $F$ parallèlement à $G$ est caractérisée par 
 
 $$
     \begin{cases}
@@ -706,8 +723,9 @@ $$
 
 ::: {#exm-projection-F-1}
 
-Dans $\mathbb{R}^{3}$, déterminer la projection du vecteur $v=(1,1,1)$ sur le plan $P$ d'équation
-$x+2y+z=0$, parallèlement à la droite engendrée par le vecteur $u=(1,1,-1)$.
+Dans $\mathbb{R}^{3}$, déterminer la projection du vecteur $v=(1,1,1)$ sur le
+plan $P$ d'équation $x+2y+z=0$, parallèlement à la droite engendrée par le
+vecteur $u=(1,1,-1)$.
 
 :::
 
@@ -742,8 +760,9 @@ Un endomorphisme $p$ de $E$ est un **projecteur** si $p \circ p = p$.
 
 :::
 
-La terminologie est justifiée par le théorème suivant :
-
+Toute somme directe définie donc naturellement deux projecteurs, dont les
+images et les noyaux permettent de reconstituer les facteurs. Le théorème
+fondamental des projecteurs établit la réciproque. 
 
 ::: {#thm-projecteur}
 
@@ -763,18 +782,20 @@ et $p$ est le projecteur sur $\im p$ parallèlement à $\ker p$.
 
 ::: {#def-symetrie-F-parallelement-G}
 
-On suppose que $E=F \oplus G$. La symétrie par rapport à $F$ parallèlement à $G$ est l'endomorphisme $s_F$ de $E$ défini par
-${s_{F}}_{|F}=\id$ et ${s_F}_{|G}=-\id$. 
+On suppose que $E=F \oplus G$. La symétrie par rapport à $F$ parallèlement à
+$G$ est l'endomorphisme $s$ de $E$ défini par $s_{|F}=\id$ et
+$s_{|G}=-\id$. 
 
 :::
 
 ::: {#nte-symetrie .callout-note}
 
 Concrètement, si $v=v_{F}+v_{G}$ est la décomposition de $v$ dans la somme
-directe $E=F \oplus G$ et si $s_F$ est la symétrie sur $F$ parallèlement à $G$, alors 
+directe $E=F \oplus G$ et si $s$ est la symétrie sur $F$ parallèlement à $G$,
+alors 
 
 $$
-s_F(v) = s_F(v_{F}) + s_F(v_{G}) = v_{F} - v_{G}.
+s(v) = s(v_{F}) + s(v_{G}) = v_{F} - v_{G}.
 $$
 
 ::: {#fig-symetrie-F}
@@ -783,16 +804,25 @@ $$
 
 :::
 
-De plus $F = \ker(s_{F}-\id)$ et $G = \ker(s_{F}+\id)$.
+Dans une base adaptée $\mathcal{B}=(\mathcal{B}_{F},\mathcal{B}_{G})$, la
+matrice de $s$ s'écrit par blocs
+
+::: {#fig-matrice-symetrie}
+
+![](./svg/03-cropped-3.svg){width=30%}
+
+:::
+
+avec $n_{1}= \dim F$ et $n_{2}= \dim G$.
 
 :::
 
 ::: {#tip-symetrie-F .callout-tip}
 
-Si $E=F \oplus G$ et si on note $p_F$ et $p_G$ les projecteurs sur $F$
-parallèlement à $G$ et inversement, $s_F$ et $s_G$ les symétries par rapport à
-$F$ parallèlement à $G$ et inversement, alors $s_F+s_G = 0$, $p_F+p_G = \id$ et
-$s_F=p_F-p_G$ ; connaitre *une* des quatre applications linéaires, c'est donc
+Si $E=F \oplus G$ et si on note $p$ et $q$ les projecteurs sur $F$
+parallèlement à $G$ et inversement, $s$ et $t$ les symétries par rapport à
+$F$ parallèlement à $G$ et inversement, alors $s+t = 0$, $p+q = \id$ et
+$s=p-q$ ; connaitre *une* des quatre applications linéaires, c'est donc
 *toutes* les connaitre. 
 
 ::: {#fig-projecteur-symetrie}
@@ -805,30 +835,31 @@ $s_F=p_F-p_G$ ; connaitre *une* des quatre applications linéaires, c'est donc
 En particulier, on utilise souvent une des relations
 
 $$
-s_F = 2p_F - \id \quad \\text{ou}\quad s_{F} = \id -2p_{G}
+s = 2p - \id \quad \text{ou}\quad s = \id -2q
 $$
 
-pour calculer une *symétrie*, car on sait calculer un *projecteur* via la @prp-caracterisation-du-projete.
+pour calculer une *symétrie*, car on sait calculer un *projecteur* via la
+@prp-caracterisation-du-projete.
 
-On en déduit en particulier que $\ker (s_F-\id) = \ker (p_{G}) = F$ et
-$\ker(s_{F}+\id) = \ker(p_F) = G$.
+On en déduit également que $\ker (s-\id) = \ker (q) = F$ et
+$\ker(s+\id) = \ker(p) = G$.
 :::
 
-Si $E = F \oplus G$ et si $s_F$ est la symétrie sur
-$F$ parallèlement à $G$ alors $s_F \circ s_F = s_F$. En effet, cette égalité est à nouveau 
-satisfaite sur $F$ et sur $G$ car c'est le cas de $\pm \id$. Ceci motive la
-définition suivante :
+Si $E = F \oplus G$ et si $s$ est la symétrie sur $F$ parallèlement à $G$ alors
+$s \circ s = s$. En effet, cette égalité est à nouveau satisfaite sur $F$ et
+sur $G$ car c'est le cas de $\pm \id$. Ceci motive la définition suivante :
 
 ::: {#def-symetrie}
 
 #### Symétrie
 
-Un endomorphisme $s$ est une **symétrie** de $E$ si $s \circ s = \id$.
+Un endomorphisme $s$ de $E$ est une **symétrie** de $E$ si $s \circ s = \id$.
 
 :::
 
-La terminologie est justifiée par le théorème suivant :
-
+Toute somme directe donne donc naissance à deux symétries, qui permettent 
+d'exprimer les facteurs en terme de noyaux. Le théorème fondamental des
+symétries établit la réciproque.
 
 ::: {#thm-symetrie}
 
@@ -869,6 +900,8 @@ $$
 
 ::: {#prp-linearité-transpose}
 
+#### Linéarité de la transposée
+
 La transposition est une application linéaire de
 $\mathcal{M}_{n,p}(\mathbb{R})$ dans $\mathcal{M}_{p,n}(\mathbb{R})$.
 
@@ -881,9 +914,12 @@ spectral dans le cours sur les espaces préhilbertiens réels.
 
 ::: {#def-matrice-symetrique-antisymetrique}
 
-#### Matrices symétriques et anti symétriques
+#### Matrices symétriques et antisymétriques
 
-Une matrice $A\in\mathcal{M}_n(\mathbb{R})$ est dite \textbf{symétrique} si $A^T=A$ et \textbf{anti symétrique} si $A^T=-A$. On note $\mathcal{S}_n(\mathbb{R})$ (resp. $\mathcal{A}_n(\mathbb{R})$) l'ensemble des matrices symétriques (resp. anti symétriques) de $\mathcal{M}_n(\mathbb{R})$.
+Une matrice $A\in\mathcal{M}_n(\mathbb{R})$ est dite \textbf{symétrique} si
+$A^T=A$ et \textbf{antisymétrique} si $A^T=-A$. On note
+$\mathcal{S}_n(\mathbb{R})$ (resp. $\mathcal{A}_n(\mathbb{R})$) l'ensemble des
+matrices symétriques (resp. antisymétriques) de $\mathcal{M}_n(\mathbb{R})$.
 
 :::
 
@@ -892,7 +928,9 @@ Une matrice $A\in\mathcal{M}_n(\mathbb{R})$ est dite \textbf{symétrique} si $A^
 
 #### Somme directe de $\mathcal{S}_{n}(\mathbb{R})$ et $\mathcal{A}_{n}(\mathbb{R})$
 
-Les sous-ensembles $\mathcal{S}_n(\mathbb{R})$ et $\mathcal{A}_n(\mathbb{R})$ sont des sous-espaces vectoriels de $\mathcal{M}_n(\mathbb{R})$, de dimension respective $\frac{n(n+1)}{2}$ et $\frac{n(n-1)}{2}$, et on a 
+Les sous-ensembles $\mathcal{S}_n(\mathbb{R})$ et $\mathcal{A}_n(\mathbb{R})$
+sont des sous-espaces vectoriels de $\mathcal{M}_n(\mathbb{R})$, de dimension
+respective $\frac{n(n+1)}{2}$ et $\frac{n(n-1)}{2}$, et on a 
 
 $$
 \mathcal{M}_n(\mathbb{R}) = \mathcal{S}_n(\mathbb{R})\oplus \mathcal{A}_n(\mathbb{R}).
@@ -903,7 +941,7 @@ $$
 ::: {#nte-projete .callout-note}
 
 Il est bon de connaitre la décomposition d'une matrice quelconque comme
-somme (unique) d'une matrice symétrique et anti symétrique :
+somme (unique) d'une matrice symétrique et antisymétrique :
 
 $$
     \forall A \in \mathcal{M}_{n}(\mathbb{R}),\ A = \frac{A+A^{T}}{2} +
@@ -919,7 +957,8 @@ $$
 
 #### Trace d'une matrice carrée
 
-Soit $A = (a_{ij})_{1 \leqslant i,j \leqslant n}\in \mathcal{M}_{n}(\mathbb{K})$. La **trace** de $A$ est le scalaire 
+Soit $A = (a_{ij})_{1 \leqslant i,j \leqslant n}\in
+\mathcal{M}_{n}(\mathbb{K})$. La **trace** de $A$ est le scalaire 
 
 $$
     \mathrm{Tr}(A) = \sum_{i=1}^{n} a_{ii}.
@@ -929,7 +968,10 @@ $$
 
 ::: {#prp-trace}
 
-La trace est une application linéaire de $\mathcal{M}_{n}(\mathbb{K})$ dans $\mathbb{K}$.
+#### Linéarité de la trace
+
+La trace est une application linéaire de $\mathcal{M}_{n}(\mathbb{K})$ dans
+$\mathbb{K}$.
 
 :::
 
@@ -937,7 +979,8 @@ La trace est une application linéaire de $\mathcal{M}_{n}(\mathbb{K})$ dans $\m
 
 Si $E$ est un $\mathbb{K}$-espace vectoriel, une application linéraie de $E$
 dans $\mathbb{K}$ s'appelle une *forme linéaire* sur $E$. L'ensemble des formes
-linéaires sur $E$ (c'est à dire l'ensemble $\mathcal{L}(E,\mathbb{K})$) s'appelle le *dual* de $E$.
+linéaires sur $E$ (c'est à dire l'ensemble $\mathcal{L}(E,\mathbb{K})$)
+s'appelle le *dual* de $E$.
 
 :::
 
@@ -949,9 +992,11 @@ Une matrice (carrée) et sa transposée on même trace.
 
 :::
 
-Enfin, la trace ne fait pas la différence entreles produits $AB$ et $BA$ :
+Enfin, la trace ne fait pas la différence entre les produits $AB$ et $BA$ :
 
 ::: {#prp-trace-produit}
+
+#### Trace d'un produit
 
 Pour toute matrice $A,B \in \mathcal{M}_{n}(\mathbb{K})$, on a 
 
@@ -961,8 +1006,9 @@ $$
 
 :::
 
-On déduit de cette propriété que la trace est un *invariant de similitude*,
-c'est à dire que deux matrices semblables ont même trace. 
+Cette propriété est très importante car elle implique que la trace est un
+*invariant de similitude*, c'est à dire que deux matrices semblables ont même
+trace. 
 
 ::: {#prp-matrice-semblbable}
 
@@ -970,12 +1016,13 @@ Deux matrices semblables ont même trace.
 
 :::
 
-Puisque les matrices d'un endomorphisme dans différentes bases sont toutes
-*semblables*, cette propriété permet donc (au moins en dimension finie), de
-définir la trace d'un *endomorphisme* comme la trace de n'importe quelle
-matrice le représentant.
+Puisque deux matrices semblables ont même trace, cette propriété permet donc,
+en dimension finie, de définir la trace d'un *endomorphisme* comme la trace de
+n'importe quelle matrice le représentant.
 
 ::: {#def-trace-endo}
+
+#### Trace d'un endomorphisme
 
 Si $E$ est de dimension finie et si $f \in \mathcal{L}(E)$, la **trace** de $f$
 est par définition égale à la trace de n'importe quelle matrice représentant $f$.

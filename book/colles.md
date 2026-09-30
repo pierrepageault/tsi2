@@ -28,3 +28,15 @@ changement de variable.
 
 Le critère de d'Alembert et le critère des séries alternées ne sont pas au
 programme cette semaine. 
+
+## Programme 04 - du 05/09 au 09/09
+
+@sec-02-autre
+
+L'ensemble du cours sur les séries numériques est au programme, mais le
+programme de cette semaine se concentre sur le critère de l'Alembert et le
+critère des séries alternées. 
+
+L'encadrement de la somme d'une série alternée convergente et la majoration du
+reste doivent être connus. Une approximation numérique pourra être demandée
+(prévoir d'apporter votre calculatrice).  
