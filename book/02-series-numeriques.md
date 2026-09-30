@@ -627,8 +627,8 @@ séries-intégrales.
 
 ::: {#tip-encadrement .callout-tip}
 
-On retiendra l'idée générale suivante : une somme partielle ou un reste
-s'*encadre*.
+On retiendra l'idée générale suivante : une somme partielle (ou un reste)
+s'*encadre*, à defaut de se calculer.
 
 :::
 
