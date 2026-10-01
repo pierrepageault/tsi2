@@ -41,6 +41,6 @@ L'encadrement de la somme d'une série alternée convergente et la majoration du
 reste doivent être connus. Une approximation numérique pourra être demandée
 (prévoir d'apporter votre calculatrice).  
 
-*Errata : * suite aux évènements de la semaine dernière, certain étudiants
+*Errata : * suite aux évènements de la semaine dernière, certains étudiants
 n'auront pas eu de première colle sur les séries (programme 03). Dans ce cas,
 les attendus se concentrerons plutôt sur le programme 03.
