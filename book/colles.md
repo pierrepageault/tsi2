@@ -43,4 +43,4 @@ reste doivent être connus. Une approximation numérique pourra être demandée
 
 *Errata : * suite aux évènements de la semaine dernière, certains étudiants
 n'auront pas eu de première colle sur les séries (programme 03). Dans ce cas,
-les attendus se concentrerons plutôt sur le programme 03.
+les attendus se concentreront plutôt sur le programme 03.
