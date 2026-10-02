@@ -876,6 +876,19 @@ Note&nbsp;3.7
 \]</span></p>
 </div>
 </div>
+<p>On passe maintenant aux propriétés relatives au produit matriciel.</p>
+<div id="prp-transposee-produit" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.17 (Transposée d’un produit)</strong></span> Si <span class="math inline">\(A \in \mathcal{M}_{n,p}(\mathbb{R})\)</span> et <span class="math inline">\(B \in \mathcal{M}_{p,q}(\mathbb{R})\)</span> alors</p>
+<p><span class="math display">\[
+    (AB)^{T} = B^{T}A^{T}
+\]</span></p>
+</div>
+<div id="rem-sens" class="proof remark">
+<p><span class="proof-title"><em>Remarque 3.5</em>. </span>C’est le seul produit matriciel compatible !</p>
+</div>
+<div id="cor-inverse" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollaire 3.1 (Transposée d’une inverse)</strong></span> Si <span class="math inline">\(A\)</span> est inversible alors <span class="math inline">\(A^{T}\)</span> est également inversible et <span class="math inline">\((A^{T})^{-1}=(A^{-1})^{T}\)</span>.</p>
+</div>
 </section>
 <section id="trace-dune-matrice-carrée-dun-endomorphisme" class="level3" data-number="3.4.2">
 <h3 data-number="3.4.2" class="anchored" data-anchor-id="trace-dune-matrice-carrée-dun-endomorphisme"><span class="header-section-number">3.4.2</span> Trace d’une matrice carrée, d’un endomorphisme</h3>
@@ -887,7 +900,7 @@ Note&nbsp;3.7
 \]</span></p>
 </div>
 <div id="prp-trace" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.17 (Linéarité de la trace)</strong></span> La trace est une application linéaire de <span class="math inline">\(\mathcal{M}_{n}(\mathbb{K})\)</span> dans <span class="math inline">\(\mathbb{K}\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 3.18 (Linéarité de la trace)</strong></span> La trace est une application linéaire de <span class="math inline">\(\mathcal{M}_{n}(\mathbb{K})\)</span> dans <span class="math inline">\(\mathbb{K}\)</span>.</p>
 </div>
 <div id="nte-forme" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -903,18 +916,18 @@ Note&nbsp;3.8
 </div>
 </div>
 <div id="prp-trace-transpose" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.18 (Trace d’une transposée)</strong></span> Une matrice (carrée) et sa transposée on même trace.</p>
+<p><span class="theorem-title"><strong>Proposition 3.19 (Trace d’une transposée)</strong></span> Une matrice (carrée) et sa transposée on même trace.</p>
 </div>
 <p>Enfin, la trace ne fait pas la différence entre les produits <span class="math inline">\(AB\)</span> et <span class="math inline">\(BA\)</span> :</p>
 <div id="prp-trace-produit" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.19 (Trace d’un produit)</strong></span> Pour toute matrice <span class="math inline">\(A,B \in \mathcal{M}_{n}(\mathbb{K})\)</span>, on a</p>
+<p><span class="theorem-title"><strong>Proposition 3.20 (Trace d’un produit)</strong></span> Pour toute matrice <span class="math inline">\(A,B \in \mathcal{M}_{n}(\mathbb{K})\)</span>, on a</p>
 <p><span class="math display">\[
     \mathrm{Tr}(AB) = \mathrm{Tr}(BA).
 \]</span></p>
 </div>
 <p>Cette propriété est très importante car elle implique que la trace est un <em>invariant de similitude</em>, c’est à dire que deux matrices semblables ont même trace.</p>
-<div id="prp-matrice-semblbable" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.20</strong></span> Deux matrices semblables ont même trace.</p>
+<div id="prp-matrice-semblable" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.21</strong></span> Deux matrices semblables ont même trace.</p>
 </div>
 <p>Puisque deux matrices semblables ont même trace, cette propriété permet donc, en dimension finie, de définir la trace d’un <em>endomorphisme</em> comme la trace de n’importe quelle matrice le représentant.</p>
 <div id="def-trace-endo" class="theorem definition">
