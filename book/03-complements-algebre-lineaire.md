@@ -950,6 +950,39 @@ $$
 
 :::
 
+On passe maintenant aux propriétés relatives au produit matriciel.
+
+::: {#prp-transposee-produit}
+
+#### Transposée d'un produit
+
+Si $A \in \mathcal{M}_{n,p}(\mathbb{R})$ et $B \in \mathcal{M}_{p,q}(\mathbb{R})$ alors
+
+$$
+    (AB)^{T} = B^{T}A^{T}
+$$
+
+:::
+
+::: {#rem-sens}
+
+C'est le seul produit matriciel compatible !
+
+:::
+
+::: {#cor-inverse}
+
+#### Transposée d'une inverse
+
+Si $A$ est inversible alors $A^{T}$ est également inversible et
+$(A^{T})^{-1}=(A^{-1})^{T}$.
+
+:::
+
+
+
+
+
 
 ### Trace d'une matrice carrée, d'un endomorphisme
 
@@ -1010,7 +1043,7 @@ Cette propriété est très importante car elle implique que la trace est un
 *invariant de similitude*, c'est à dire que deux matrices semblables ont même
 trace. 
 
-::: {#prp-matrice-semblbable}
+::: {#prp-matrice-semblable}
 
 Deux matrices semblables ont même trace.
 
