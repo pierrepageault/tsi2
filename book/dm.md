@@ -4,3 +4,5 @@
 
 [DM 02 - Séries numériques](./pdf/dm/02.pdf)
 
+[DM 02 - Correction](./pdf/main.pdf)
+
