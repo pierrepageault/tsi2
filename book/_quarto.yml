@@ -12,6 +12,7 @@ book:
     - 01-integrales-generalisees.md
     - 02-series-numeriques.md
     - 03-complements-algebre-lineaire.md
+    - 04-determinants.md
     - colles.md
     - dm.md
   downloads: [pdf, epub]
