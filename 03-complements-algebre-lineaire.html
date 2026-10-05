@@ -33,7 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./colles.html" rel="next">
+<link href="./04-determinants.html" rel="next">
 <link href="./02-series-numeriques.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -181,6 +181,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./03-complements-algebre-lineaire.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Compléments d’algèbre linéaire</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-determinants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Déterminants</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -588,20 +594,23 @@ Figure&nbsp;3.2
 </figure>
 </div>
 </div>
+<div id="exm-homotethie" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 3.10</strong></span> Si <span class="math inline">\(F\)</span> est un sous-espace vectoriel de <span class="math inline">\(E\)</span>, alors <span class="math inline">\(F\)</span> est stable par n’importe quel multiple de l’identité i.e.&nbsp;pour tout <span class="math inline">\(\lambda \in \mathbb{K}\)</span>, <span class="math inline">\(F\)</span> est stable par <span class="math inline">\(\lambda \operatorname{Id}\)</span>. Cet exemple semble trivial, mais c’est pourtant la situation que nous rencontrerons le plus fréquement !</p>
+</div>
 <div id="exm-derivation" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 3.10</strong></span> Le sous espace <span class="math inline">\(\mathbb{R}_{n}[X]\)</span> est stable par dérivation.</p>
+<p><span class="theorem-title"><strong>Exemple 3.11</strong></span> Le sous espace <span class="math inline">\(\mathbb{R}_{n}[X]\)</span> est stable par dérivation.</p>
 </div>
 <div id="exm-rotation" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 3.11</strong></span> L’axe d’une rotation <span class="math inline">\(r\)</span> de <span class="math inline">\(\mathbb{R}^{3}\)</span> est stable par <span class="math inline">\(r\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemple 3.12</strong></span> L’axe d’une rotation <span class="math inline">\(r\)</span> de <span class="math inline">\(\mathbb{R}^{3}\)</span> est stable par <span class="math inline">\(r\)</span>.</p>
 </div>
 <div id="exm-reflexion" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 3.12</strong></span> Le plan d’une réflexion <span class="math inline">\(s\)</span> de <span class="math inline">\(\mathbb{R}^{3}\)</span> est stable par <span class="math inline">\(s\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemple 3.13</strong></span> Le plan d’une réflexion <span class="math inline">\(s\)</span> de <span class="math inline">\(\mathbb{R}^{3}\)</span> est stable par <span class="math inline">\(s\)</span>.</p>
 </div>
 <div id="def-endomorphisme-induit" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 3.14 (Endomorphisme induit par restriction)</strong></span> Si <span class="math inline">\(F\)</span> est un sous espace vectoriel de <span class="math inline">\(E\)</span> stable par un endomorphisme <span class="math inline">\(f\)</span> de <span class="math inline">\(E\)</span>, alors la restriction de <span class="math inline">\(f\)</span> à <span class="math inline">\(F\)</span> définit un endomorphisme de <span class="math inline">\(F\)</span>. On l’appelle l’endomorphisme <strong>induit par restriction</strong> de <span class="math inline">\(f\)</span> à <span class="math inline">\(F\)</span>.</p>
 </div>
 <div id="exm-derivation" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 3.13</strong></span> Puisque <span class="math inline">\(\mathbb{R}_{n}[X]\)</span> est stable par dérivation, on peut restreindre la dérivation à <span class="math inline">\(\mathbb{R}_{n}[X]\)</span>. On obtient ainsi un endomorphisme de <span class="math inline">\(\mathbb{R}_{n}[X]\)</span> définit par <span class="math inline">\(P \mapsto P'\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemple 3.14</strong></span> Puisque <span class="math inline">\(\mathbb{R}_{n}[X]\)</span> est stable par dérivation, on peut restreindre la dérivation à <span class="math inline">\(\mathbb{R}_{n}[X]\)</span>. On obtient ainsi un endomorphisme de <span class="math inline">\(\mathbb{R}_{n}[X]\)</span> définit par <span class="math inline">\(P \mapsto P'\)</span>.</p>
 </div>
 <div id="nte-restriction" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -718,7 +727,7 @@ Astuce&nbsp;3.2
 \]</span></p>
 </div>
 <div id="exm-projection-F-1" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 3.14</strong></span> Dans <span class="math inline">\(\mathbb{R}^{3}\)</span>, déterminer la projection du vecteur <span class="math inline">\(v=(1,1,1)\)</span> sur le plan <span class="math inline">\(P\)</span> d’équation <span class="math inline">\(x+2y+z=0\)</span>, parallèlement à la droite engendrée par le vecteur <span class="math inline">\(u=(1,1,-1)\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemple 3.15</strong></span> Dans <span class="math inline">\(\mathbb{R}^{3}\)</span>, déterminer la projection du vecteur <span class="math inline">\(v=(1,1,1)\)</span> sur le plan <span class="math inline">\(P\)</span> d’équation <span class="math inline">\(x+2y+z=0\)</span>, parallèlement à la droite engendrée par le vecteur <span class="math inline">\(u=(1,1,-1)\)</span>.</p>
 </div>
 <div id="tip-caracterisation" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -734,7 +743,7 @@ Astuce&nbsp;3.3
 </div>
 </div>
 <div id="exm-projecteur-F-2" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 3.15</strong></span> Dans l’exemple précédent, on a été amené à résoudre un système <span class="math inline">\(2\times 2\)</span> car on a projeté sur un espace de dimension <span class="math inline">\(2\)</span> (un plan vectoriel). Il est en fait plus simple d’utiliser la relation rappelée dans le <a href="#tip-caracterisation" class="quarto-xref">Tip&nbsp;<span>3.3</span></a> et de projeter sur la droite <span class="math inline">\(D\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemple 3.16</strong></span> Dans l’exemple précédent, on a été amené à résoudre un système <span class="math inline">\(2\times 2\)</span> car on a projeté sur un espace de dimension <span class="math inline">\(2\)</span> (un plan vectoriel). Il est en fait plus simple d’utiliser la relation rappelée dans le <a href="#tip-caracterisation" class="quarto-xref">Tip&nbsp;<span>3.3</span></a> et de projeter sur la droite <span class="math inline">\(D\)</span>.</p>
 </div>
 <p>Remarquons maintenant que si <span class="math inline">\(E = F \oplus G\)</span> et si <span class="math inline">\(p\)</span> est le projecteur sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> alors <span class="math inline">\(p \circ p = p\)</span>. En effet, cette égalité est satisfaite sur <span class="math inline">\(G\)</span> car <span class="math inline">\(p_{|G}=0\)</span> et sur <span class="math inline">\(F\)</span> car <span class="math inline">\(p_{|F}=\operatorname{Id}\)</span>. Cette observation suggère la définition suivante :</p>
 <div id="def-projecteur" class="theorem definition">
@@ -1651,8 +1660,8 @@ b&amp;c&amp;a
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./colles.html" class="pagination-link" aria-label="Programmes de colle">
-        <span class="nav-page-text">Programmes de colle</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./04-determinants.html" class="pagination-link" aria-label="Déterminants">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Déterminants</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
