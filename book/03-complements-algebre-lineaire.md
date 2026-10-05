@@ -555,7 +555,7 @@ $$
 
 Si $F$ est un sous-espace vectoriel de $E$, alors $F$ est stable par n'importe
 quel multiple de l'identité i.e. pour tout $\lambda \in \mathbb{K}$, $F$ est
-stable par $\lambda \oeratorname{Id}$. Cet exemple semble trivial, mais c'est
+stable par $\lambda \operatorname{Id}$. Cet exemple semble trivial, mais c'est
 pourtant la situation que nous rencontrerons le plus fréquement ! 
 
 :::
