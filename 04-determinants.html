@@ -218,6 +218,13 @@ window.Quarto = {
   <li><a href="#propriétés" id="toc-propriétés" class="nav-link" data-scroll-target="#propriétés"><span class="header-section-number">4.1.2</span> Propriétés</a></li>
   <li><a href="#calcul-pratique-dun-déterminant" id="toc-calcul-pratique-dun-déterminant" class="nav-link" data-scroll-target="#calcul-pratique-dun-déterminant"><span class="header-section-number">4.1.3</span> Calcul pratique d’un déterminant</a></li>
   </ul></li>
+  <li><a href="#déterminant-dune-famille-de-vecteurs-dun-endomorphisme" id="toc-déterminant-dune-famille-de-vecteurs-dun-endomorphisme" class="nav-link" data-scroll-target="#déterminant-dune-famille-de-vecteurs-dun-endomorphisme"><span class="header-section-number">4.2</span> Déterminant d’une famille de vecteurs, d’un endomorphisme</a></li>
+  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
+  <ul class="collapse">
+  <li><a href="#déterminant-dune-matrice-carrée-1" id="toc-déterminant-dune-matrice-carrée-1" class="nav-link" data-scroll-target="#déterminant-dune-matrice-carrée-1"><span class="header-section-number">4.2.1</span> Déterminant d’une matrice carrée</a></li>
+  <li><a href="#déterminant-dune-famille-de-vecteurs-dun-endomorphisme-1" id="toc-déterminant-dune-famille-de-vecteurs-dun-endomorphisme-1" class="nav-link" data-scroll-target="#déterminant-dune-famille-de-vecteurs-dun-endomorphisme-1"><span class="header-section-number">4.2.2</span> Déterminant d’une famille de vecteurs, d’un endomorphisme</a></li>
+  <li><a href="#divers" id="toc-divers" class="nav-link" data-scroll-target="#divers"><span class="header-section-number">4.2.3</span> Divers</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -509,6 +516,152 @@ Note&nbsp;4.3
 <div class="callout-body-container callout-body">
 <p>On ne peut pas développer naivement un déterminant de taille <span class="math inline">\(n\)</span> de proche en proche. En effet, le premier développement fait apparaitre <span class="math inline">\(n\)</span> déterminants de taille <span class="math inline">\(n-1\)</span>, qui font eux même apparaitre <span class="math inline">\(n-1\)</span> déterminants de taille <span class="math inline">\(n-2\)</span> etc. menant à une complexité <em>fatorielle</em> qui dépasse les capacités de n’importe quel ordinateur, même pour de “petites” valeurs de <span class="math inline">\(n\)</span>.</p>
 </div>
+</div>
+</section>
+</section>
+<section id="déterminant-dune-famille-de-vecteurs-dun-endomorphisme" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="déterminant-dune-famille-de-vecteurs-dun-endomorphisme"><span class="header-section-number">4.2</span> Déterminant d’une famille de vecteurs, d’un endomorphisme</h2>
+
+</section>
+<section id="exercices" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercices">Exercices</h2>
+<section id="déterminant-dune-matrice-carrée-1" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="déterminant-dune-matrice-carrée-1"><span class="header-section-number">4.2.1</span> Déterminant d’une matrice carrée</h3>
+<div id="exr-02-calcul" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 4.1</strong></span> (Calculs de déterminants). Calculer les déterminants des matrices suivantes :</p>
+<p><span class="math display">\[
+A=\begin{pmatrix}
+-2&amp;2&amp;3\\
+-1&amp;1&amp;3\\
+2&amp;0&amp;-1
+\end{pmatrix},\ B= \frac{1}{7}\begin{pmatrix}
+-1&amp;-4&amp;4&amp;-4\\
+-4&amp;5&amp;2&amp;-2\\
+4&amp;2&amp;5&amp;2\\
+-4&amp;-2&amp;2&amp;5
+\end{pmatrix}.
+\]</span></p>
+</div>
+<div id="exr-02-inv" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 4.2</strong></span> (Déterminant et inversibilité). Déterminer la ou les valeur(s) de <span class="math inline">\(\alpha\)</span> pour lesquelles la matrice</p>
+<p><span class="math display">\[
+M_\alpha = \begin{pmatrix}
+1&amp;3&amp;\alpha\\
+2&amp;-1&amp;1\\
+-1&amp;1&amp;0
+\end{pmatrix}
+\]</span> est inversible.</p>
+</div>
+<div id="exr-02-rec" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 4.3</strong></span> (Déterminant tridiagonal (1)). Pour <span class="math inline">\(n\in\mathbb{N}^*\)</span> et <span class="math inline">\(x\in\mathbb{K}\)</span>, on pose</p>
+<p><span class="math display">\[
+M_n(x) =
+\begin{pmatrix}
+1+x^2&amp;-x&amp;0&amp;\dots&amp;0\\
+-x&amp;1+x^2&amp;-x&amp;\ddots&amp;\vdots\\
+0&amp;-x&amp;1+x^2&amp;\ddots&amp;0\\
+\vdots&amp;\ddots&amp;\ddots&amp;\ddots&amp;-x\\
+0&amp;\dots&amp;0&amp;-x&amp;1+x^2
+\end{pmatrix}
+\]</span></p>
+<p>et on pose <span class="math inline">\(\Delta_n(x) = \det(M_n(x))\)</span>.</p>
+<ol type="1">
+<li><p>Calculer <span class="math inline">\(\Delta_1(x)\)</span> et <span class="math inline">\(\Delta_2(x)\)</span>.</p></li>
+<li><p>Déterminer une relation entre <span class="math inline">\(\Delta_{n+2}\)</span>, <span class="math inline">\(\Delta_{n+1}\)</span> et <span class="math inline">\(\Delta_n\)</span>.</p></li>
+<li><p>Montrer que <span class="math inline">\(\Delta_n(x) = 1 + x^2 + \dots + x^{2n}\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-02-rec-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 4.4 (<span class="math inline">\(\star\)</span>)</strong></span> (Déterminant tridiagonal (2)). Soit <span class="math inline">\(n\in\mathbb{N}^*\)</span> et <span class="math inline">\(\theta\in\mathbb{R}\)</span>. On pose</p>
+<p><span class="math display">\[
+\Delta_n(\theta) = \left|\begin{matrix}
+    2&amp;\cos(\theta) &amp;0&amp;\ldots&amp;0\\
+    \cos(\theta)&amp;2&amp;\ddots&amp;\ddots&amp;\vdots\\
+    0&amp;\ddots&amp;\ddots&amp;\ddots&amp;0\\
+    \vdots&amp;\ddots&amp;\ddots&amp;\ddots&amp;\cos(\theta)\\
+    0&amp;\ldots&amp;0&amp;\cos(\theta)&amp;2
+\end{matrix}\right|
+\]</span></p>
+<ol type="1">
+<li><p>Calculer <span class="math inline">\(\Delta_1(\theta)\)</span>, <span class="math inline">\(\Delta_2(\theta)\)</span> et <span class="math inline">\(\Delta_3(\theta)\)</span>.</p></li>
+<li><ol type="a">
+<li><p>Démontrer que</p>
+<p><span class="math display">\[
+\forall n\geqslant 3,\ \Delta_n(\theta) = 2\Delta_{n-1}(\theta) -\cos^2(\theta)\Delta_{n-2}(\theta).
+\]</span></p></li>
+<li><p>En déduire que pour tout <span class="math inline">\(n \geqslant 1\)</span>, <span class="math inline">\(\Delta_n(0) = n+1\)</span>.</p></li>
+<li><p>Montrer que les solutions de <span class="math inline">\(X^2-2X+\cos^2(\theta)=0\)</span> sont <span class="math inline">\(1+\sin\theta\)</span> et <span class="math inline">\(1-\sin\theta\)</span>.</p></li>
+<li><p>On suppose que <span class="math inline">\(\sin(\theta)\neq 0\)</span>. Montrer que</p></li>
+</ol>
+<p><span class="math display">\[
+\forall n \geqslant 1,\ \Delta_n(\theta)=\frac{(1+\sin\theta)^{n+1}-(1-\sin\theta)^{n+1}}{2\sin\theta}.
+\]</span></p></li>
+</ol>
+</div>
+</section>
+<section id="déterminant-dune-famille-de-vecteurs-dun-endomorphisme-1" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="déterminant-dune-famille-de-vecteurs-dun-endomorphisme-1"><span class="header-section-number">4.2.2</span> Déterminant d’une famille de vecteurs, d’un endomorphisme</h3>
+<div id="exr-02-0001" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 4.5 (<span class="math inline">\(\star\)</span>)</strong></span> (Déterminant d’un endomorphisme).</p>
+<ol type="1">
+<li><p>Donner une base du <span class="math inline">\(\mathbb{R}\)</span>-espace vectoriel <span class="math inline">\(\mathbb{C}\)</span>.</p></li>
+<li><p>Soit <span class="math inline">\(a,b\in\mathbb{C}\)</span>. On considère l’endomorphisme <span class="math inline">\(f\)</span> du <span class="math inline">\(\mathbb{R}\)</span>-espace vectoriel <span class="math inline">\(\mathbb{C}\)</span> défini par <span class="math display">\[\forall z\in\mathbb{C},\ f(z) = az + b\overline{z}\]</span> Calculer le déterminant de <span class="math inline">\(f\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-02-0002" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 4.6</strong></span> (Déterminant de la transposition). Calculer le déterminant de la transposition <span class="math inline">\(^{T}\colon \mathcal{M}_{n}(\mathbb{R})\to \mathcal{M}_{n}(\mathbb{R})\)</span>.</p>
+</div>
+<div id="exr-02-col" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 4.7</strong></span> (Equation cartésienne d’une droite). Donner une équation cartésienne de la droite passant par le point <span class="math inline">\(A(1,1)\)</span> et dirigée par le vecteur <span class="math inline">\(u=(-1,2)\)</span>.</p>
+</div>
+<div id="exr-02-col-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 4.8</strong></span> (Equation cartesienne d’un plan). Donner une équation cartésienne du plan <span class="math inline">\(P\)</span> de <span class="math inline">\(\mathbb{R}^3\)</span> engendré par les vecteurs <span class="math inline">\(u=(1,1,0)\)</span> et <span class="math inline">\(v=(-2,1,3)\)</span>.</p>
+</div>
+</section>
+<section id="divers" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="divers"><span class="header-section-number">4.2.3</span> Divers</h3>
+<div id="exr-02-vandermonde" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 4.9 (<span class="math inline">\(\star\)</span>)</strong></span> (Déterminant de Vandermonde). Soit <span class="math inline">\(n\geqslant 2\)</span> et <span class="math inline">\(\alpha_1,\dotsc,\alpha_n\)</span>, des éléments de <span class="math inline">\(\mathbb{K}\)</span>. On pose</p>
+<p><span class="math display">\[
+M = \begin{pmatrix}
+1&amp;\alpha_1&amp;\alpha_1^2&amp;\ldots&amp;\alpha_{1}^{n-1}\\
+1&amp;\alpha_2&amp;\alpha_2^2&amp;\ldots&amp;\alpha_{2}^{n-1}\\
+1&amp;\alpha_3&amp;\alpha_3^2&amp;\ldots&amp;\alpha_{3}^{n-1}\\
+\vdots&amp;\vdots&amp;\vdots&amp;&amp;\vdots\\
+1&amp;\alpha_n&amp;\alpha_n^2&amp;\dots&amp;\alpha_{n}^{n-1}\\
+\end{pmatrix}
+\]</span></p>
+<p>et on note <span class="math inline">\(V(\alpha_1,\dots,\alpha_n)\)</span> le déterminant de <span class="math inline">\(M\)</span>.</p>
+<ol type="1">
+<li><p>Montrer par récurrence sur <span class="math inline">\(n\)</span> que : <span class="math display">\[\forall \alpha_1,\dots,\alpha_n\in\mathbb{K},\quad  V(\alpha_1,\dots,\alpha_n) = \prod_{1\leqslant i&lt;j\leqslant n}(\alpha_j - \alpha_i).\]</span> <em>On pourra effectuer les opérations élémentaires <span class="math inline">\(C_i\gets C_i - \alpha_1 C_{i-1}\)</span> pour <span class="math inline">\(i\)</span> variant de <span class="math inline">\(n\)</span> à <span class="math inline">\(2\)</span></em>.</p></li>
+<li><p>En déduire que la matrice <span class="math inline">\(M\)</span> est inversible ssi les <span class="math inline">\(\alpha_i\)</span> sont deux à deux distincts.</p></li>
+</ol>
+</div>
+<div id="exr-02-0003" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 4.10 (<span class="math inline">\(\star\)</span>)</strong></span> (Calcul d’un déterminant). Soient <span class="math inline">\(a,b\in\mathbb{R}\)</span> et <span class="math inline">\(\alpha_{1},\dots,
+\alpha_{n} \in \mathbb{R}\)</span>. On pose</p>
+<p><span class="math display">\[
+D(\alpha_{1}, \dots, \alpha_{n})=\left| \begin{matrix}
+          \alpha_{1}&amp;b&amp;\ldots&amp;b\\
+          a&amp;\ddots&amp;\ddots&amp;\vdots\\
+          \vdots&amp;\ddots&amp;\ddots&amp;b\\
+          a&amp;\ldots&amp;a&amp;\alpha_{n}
+      \end{matrix} \right|.
+\]</span></p>
+<p>Pour tout <span class="math inline">\(x\in\mathbb{R}\)</span>, on pose</p>
+<p><span class="math display">\[
+D(x) =\left| \begin{matrix}
+          \alpha_{1}+x&amp;b+x&amp;\ldots&amp;b+x\\
+          a+x&amp;\ddots&amp;\ddots&amp;\vdots\\
+          \vdots&amp;\ddots&amp;\ddots&amp;b+x\\
+          a+x&amp;\ldots&amp;a+x&amp;\alpha_{n}+x
+      \end{matrix} \right|.
+\]</span></p>
+<ol type="1">
+<li><p>Montrer que <span class="math inline">\(x\mapsto D(x)\)</span> est une fonction affine.</p></li>
+<li><p>Calculer <span class="math inline">\(D(-a)\)</span> et <span class="math inline">\(D(-b)\)</span>.</p></li>
+<li><p>En déduire <span class="math inline">\(D(\alpha_{1},\dots, \alpha_{n})\)</span>.</p></li>
+</ol>
 </div>
 
 
