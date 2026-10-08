@@ -218,12 +218,16 @@ window.Quarto = {
   <li><a href="#propriétés" id="toc-propriétés" class="nav-link" data-scroll-target="#propriétés"><span class="header-section-number">4.1.2</span> Propriétés</a></li>
   <li><a href="#calcul-pratique-dun-déterminant" id="toc-calcul-pratique-dun-déterminant" class="nav-link" data-scroll-target="#calcul-pratique-dun-déterminant"><span class="header-section-number">4.1.3</span> Calcul pratique d’un déterminant</a></li>
   </ul></li>
-  <li><a href="#déterminant-dune-famille-de-vecteurs-dun-endomorphisme" id="toc-déterminant-dune-famille-de-vecteurs-dun-endomorphisme" class="nav-link" data-scroll-target="#déterminant-dune-famille-de-vecteurs-dun-endomorphisme"><span class="header-section-number">4.2</span> Déterminant d’une famille de vecteurs, d’un endomorphisme</a></li>
+  <li><a href="#déterminant-dune-famille-de-vecteurs-dun-endomorphisme" id="toc-déterminant-dune-famille-de-vecteurs-dun-endomorphisme" class="nav-link" data-scroll-target="#déterminant-dune-famille-de-vecteurs-dun-endomorphisme"><span class="header-section-number">4.2</span> Déterminant d’une famille de vecteurs, d’un endomorphisme</a>
+  <ul class="collapse">
+  <li><a href="#déterminant-dun-endomorphisme" id="toc-déterminant-dun-endomorphisme" class="nav-link" data-scroll-target="#déterminant-dun-endomorphisme"><span class="header-section-number">4.2.1</span> Déterminant d’un endomorphisme</a></li>
+  <li><a href="#déterminant-dune-famille-de-vecteurs" id="toc-déterminant-dune-famille-de-vecteurs" class="nav-link" data-scroll-target="#déterminant-dune-famille-de-vecteurs"><span class="header-section-number">4.2.2</span> Déterminant d’une famille de vecteurs</a></li>
+  </ul></li>
   <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
   <ul class="collapse">
-  <li><a href="#déterminant-dune-matrice-carrée-1" id="toc-déterminant-dune-matrice-carrée-1" class="nav-link" data-scroll-target="#déterminant-dune-matrice-carrée-1"><span class="header-section-number">4.2.1</span> Déterminant d’une matrice carrée</a></li>
-  <li><a href="#déterminant-dune-famille-de-vecteurs-dun-endomorphisme-1" id="toc-déterminant-dune-famille-de-vecteurs-dun-endomorphisme-1" class="nav-link" data-scroll-target="#déterminant-dune-famille-de-vecteurs-dun-endomorphisme-1"><span class="header-section-number">4.2.2</span> Déterminant d’une famille de vecteurs, d’un endomorphisme</a></li>
-  <li><a href="#divers" id="toc-divers" class="nav-link" data-scroll-target="#divers"><span class="header-section-number">4.2.3</span> Divers</a></li>
+  <li><a href="#déterminant-dune-matrice-carrée-1" id="toc-déterminant-dune-matrice-carrée-1" class="nav-link" data-scroll-target="#déterminant-dune-matrice-carrée-1"><span class="header-section-number">4.2.3</span> Déterminant d’une matrice carrée</a></li>
+  <li><a href="#déterminant-dune-famille-de-vecteurs-dun-endomorphisme-1" id="toc-déterminant-dune-famille-de-vecteurs-dun-endomorphisme-1" class="nav-link" data-scroll-target="#déterminant-dune-famille-de-vecteurs-dun-endomorphisme-1"><span class="header-section-number">4.2.4</span> Déterminant d’une famille de vecteurs, d’un endomorphisme</a></li>
+  <li><a href="#divers" id="toc-divers" class="nav-link" data-scroll-target="#divers"><span class="header-section-number">4.2.5</span> Divers</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -521,12 +525,89 @@ Note&nbsp;4.3
 </section>
 <section id="déterminant-dune-famille-de-vecteurs-dun-endomorphisme" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="déterminant-dune-famille-de-vecteurs-dun-endomorphisme"><span class="header-section-number">4.2</span> Déterminant d’une famille de vecteurs, d’un endomorphisme</h2>
-
+<section id="déterminant-dun-endomorphisme" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="déterminant-dun-endomorphisme"><span class="header-section-number">4.2.1</span> Déterminant d’un endomorphisme</h3>
+<p>Tout comme la trace, le déterminant est un invariant de similitude. Cette notion remonte donc aux endomorphismes.</p>
+<div id="prp-matrice-semblables" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 4.9</strong></span> Deux matrices semblables ont même déterminant.</p>
+</div>
+<div id="def-determinant-endomorphisme" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 4.2 (Déterminant d’un endomorphisme)</strong></span> Soit <span class="math inline">\(E\)</span> un espace vectoriel de dimension finie et <span class="math inline">\(f \in \mathcal{L}(E)\)</span>. Le <strong>déterminant</strong> de <span class="math inline">\(f\)</span>, noté <span class="math inline">\(\det f\)</span>, est le déterminant de n’importe quelle matrice représentant <span class="math inline">\(f\)</span> dans une base <span class="math inline">\(\mathcal{B}ns\)</span> de <span class="math inline">\(E\)</span>.</p>
+</div>
+<div id="cor-inversible" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollaire 4.1 (Déterminant et inversibilité)</strong></span> Si <span class="math inline">\(f\in \mathcal{L}(E)\)</span>, alors <span class="math inline">\(f \in \operatorname{GL}(E)\)</span> ssi <span class="math inline">\(\det f
+\neq 0\)</span>.</p>
+</div>
+<div id="cor-compo" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollaire 4.2 (Déterminant d’une composition)</strong></span> Pour tout <span class="math inline">\(f,g \in \mathcal{L}(E)\)</span>, <span class="math inline">\(\det f \circ g = \det f \cdot \det g\)</span>.</p>
+</div>
+</section>
+<section id="déterminant-dune-famille-de-vecteurs" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="déterminant-dune-famille-de-vecteurs"><span class="header-section-number">4.2.2</span> Déterminant d’une famille de vecteurs</h3>
+<p>Dans un espace vectoriel de dimension finie, la notion de <em>coordonnées</em> dans une base permet de se ramener à des tableaux de nombres (des matrices). On l’utilise pour définir le déterminant d’une famille de vecteurs.</p>
+<div id="def-famille" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 4.3 (Déterminant d’une famille de vecteurs dans une base)</strong></span> Soit <span class="math inline">\(E\)</span> un <span class="math inline">\(\mathbb{K}\)</span>-espace vectoriel de dimension finie <span class="math inline">\(n\)</span> et <span class="math inline">\(\mathcal{B}\)</span> une base de <span class="math inline">\(E\)</span>. Soient <span class="math inline">\((v_{1},\dots,v_{n})\)</span> une famille de <span class="math inline">\(n\)</span> vecteurs de <span class="math inline">\(E\)</span>. Le <strong>déterminant dans la base <span class="math inline">\(\mathcal{B}\)</span></strong> des vecteurs <span class="math inline">\(v_{1},\dots,v_{n}\)</span> est le déterminant de la matrice <span class="math inline">\((V_{1},\dots,V_{n})\)</span> des <em>coordonnées</em> des vecteurs <span class="math inline">\(v_{i}\)</span> dans la base <span class="math inline">\(\mathcal{B}\)</span>. On le note <span class="math inline">\(\det_{\mathcal{B}}(v_{1},\dots,v_{n})\)</span>.</p>
+</div>
+<div id="exm-R3" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 4.4</strong></span> On considère les vecteurs <span class="math inline">\(u=(1,1,0)\)</span>, <span class="math inline">\(v = (0,1,1)\)</span> et <span class="math inline">\(w = (1,1,1)\)</span> de <span class="math inline">\(\mathbb{R}^{3}\)</span>. Puisque <span class="math inline">\(u = 1 \cdot e_{1}+1 \cdot e_{2}\)</span>, les coordonnées de <span class="math inline">\(u\)</span> dans la base canonique de <span class="math inline">\(\mathbb{R}^{3}\)</span> sont <span class="math inline">\(u^{T}=\begin{pmatrix}
+    1\\1\\0
+\end{pmatrix}\)</span>, de même pour <span class="math inline">\(v\)</span> et <span class="math inline">\(w\)</span>. Donc</p>
+<p><span class="math display">\[
+\begin{aligned}
+\det_{\mathcal{B}_{\operatorname{can}}}(u,v,w) &amp;= \left|\begin{matrix}1&amp;0&amp;1\\1&amp;1&amp;1\\0&amp;1&amp;1\end{matrix}\right|\quad L_{2}\gets L_{2}-L_{3}\\
+&amp;= \left|\begin{matrix}1&amp;0&amp;1\\1&amp;0&amp;0\\0&amp;1&amp;1\end{matrix}\right|\quad \text{ligne
+$2$}\\
+&amp;= -(-1)=1.
+\end{aligned}
+\]</span></p>
+</div>
+<div id="exm-polynome" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 4.5</strong></span> On considère les polynômes <span class="math inline">\(P=X(X-1)\)</span>, <span class="math inline">\(Q=(X-1)(X-2)\)</span> et <span class="math inline">\(R=X(X-2)\)</span>. Puisque <span class="math inline">\(P
+= X^{2}-X\)</span>, les coordonnées de <span class="math inline">\(P\)</span> dans la base canonique <span class="math inline">\(\mathcal{B}_{\operatorname{can}} = (1,X,X^{2})\)</span> de <span class="math inline">\(\mathbb{R}_{2}[X]\)</span> sont <span class="math inline">\(\begin{pmatrix}
+    0\\-1\\1
+\end{pmatrix}\)</span>. On obtient de même</p>
+<p><span class="math display">\[
+    \det_{\mathcal{B}_{\operatorname{can}}}(P,Q,R) = \left|\begin{matrix}0&amp;2&amp;0\\-1&amp;-3&amp;-2\\1&amp;1&amp;1\end{matrix}\right| = -2 \quad \text{(première ligne).}
+\]</span></p>
+</div>
+<div id="prp-base" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 4.10 (Caractérisation des bases à l’aide du déterminant)</strong></span> On suppose que <span class="math inline">\(E\)</span> est de dimension finie <span class="math inline">\(n\)</span>. Alors une famille <span class="math inline">\((v_{1},\dots,v_{n})\)</span> de <span class="math inline">\(E\)</span> est une <em>base</em> de <span class="math inline">\(E\)</span> ssi son déterminant dans n’importe quelle base de <span class="math inline">\(E\)</span> est <em>non nul</em>.</p>
+</div>
+<div id="exm-retour" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 4.6</strong></span> Les familles <span class="math inline">\((u,v,w)\)</span> et <span class="math inline">\((P,Q,R)\)</span> des deux exemples précédents sont des bases respectives de <span class="math inline">\(\mathbb{R}^{3}\)</span> et <span class="math inline">\(\mathbb{R}^{2}[X]\)</span>.</p>
+</div>
+<div id="exm-base" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 4.7</strong></span> Si <span class="math inline">\(E\)</span> est un espace vectoriel de dimension <span class="math inline">\(n\)</span>, et si <span class="math inline">\((v_{1},\dots,v_{n})\)</span> est une base de <span class="math inline">\(E\)</span>, alors <span class="math inline">\((v_{1}+v_{2},\dots,v_{n-1}+ v_{n}, v_{n})\)</span> est encore une base de <span class="math inline">\(E\)</span>. En effet, la matrice de cette famille dans la <em>base</em> <span class="math inline">\((v_{1},\dots,v_{n})\)</span> est triangulaire (inférieure):</p>
+<p><span class="math display">\[
+M=\begin{pmatrix}
+    1&amp;0&amp;\ldots&amp;\ldots&amp;0\\
+    1&amp;1&amp;\ddots&amp;&amp;\vdots\\
+0&amp;1&amp;\ddots&amp;\ddots&amp;\vdots\\
+\vdots&amp;\ddots&amp;\ddots&amp;1&amp;0\\
+0&amp;\ldots&amp;0&amp;1&amp;1
+\end{pmatrix}.
+\]</span></p>
+<p>donc sont déterminant vaut <span class="math inline">\(1 \cdots 1 = 1\)</span>.</p>
+</div>
+<div id="nte-liaison" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;4.4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On utilise également la proposition précédente pour traduire la <em>liason</em> d’une famille de vecteurs. Des exemples seront vus en TD.</p>
+</div>
+</div>
+</section>
 </section>
 <section id="exercices" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="exercices">Exercices</h2>
-<section id="déterminant-dune-matrice-carrée-1" class="level3" data-number="4.2.1">
-<h3 data-number="4.2.1" class="anchored" data-anchor-id="déterminant-dune-matrice-carrée-1"><span class="header-section-number">4.2.1</span> Déterminant d’une matrice carrée</h3>
+<section id="déterminant-dune-matrice-carrée-1" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="déterminant-dune-matrice-carrée-1"><span class="header-section-number">4.2.3</span> Déterminant d’une matrice carrée</h3>
 <div id="exr-02-calcul" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 4.1</strong></span> (Calculs de déterminants). Calculer les déterminants des matrices suivantes :</p>
 <p><span class="math display">\[
@@ -599,8 +680,8 @@ M_n(x) =
 </ol>
 </div>
 </section>
-<section id="déterminant-dune-famille-de-vecteurs-dun-endomorphisme-1" class="level3" data-number="4.2.2">
-<h3 data-number="4.2.2" class="anchored" data-anchor-id="déterminant-dune-famille-de-vecteurs-dun-endomorphisme-1"><span class="header-section-number">4.2.2</span> Déterminant d’une famille de vecteurs, d’un endomorphisme</h3>
+<section id="déterminant-dune-famille-de-vecteurs-dun-endomorphisme-1" class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="déterminant-dune-famille-de-vecteurs-dun-endomorphisme-1"><span class="header-section-number">4.2.4</span> Déterminant d’une famille de vecteurs, d’un endomorphisme</h3>
 <div id="exr-02-0001" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 4.5 (<span class="math inline">\(\star\)</span>)</strong></span> (Déterminant d’un endomorphisme).</p>
 <ol type="1">
@@ -618,8 +699,8 @@ M_n(x) =
 <p><span class="theorem-title"><strong>Exercice 4.8</strong></span> (Equation cartesienne d’un plan). Donner une équation cartésienne du plan <span class="math inline">\(P\)</span> de <span class="math inline">\(\mathbb{R}^3\)</span> engendré par les vecteurs <span class="math inline">\(u=(1,1,0)\)</span> et <span class="math inline">\(v=(-2,1,3)\)</span>.</p>
 </div>
 </section>
-<section id="divers" class="level3" data-number="4.2.3">
-<h3 data-number="4.2.3" class="anchored" data-anchor-id="divers"><span class="header-section-number">4.2.3</span> Divers</h3>
+<section id="divers" class="level3" data-number="4.2.5">
+<h3 data-number="4.2.5" class="anchored" data-anchor-id="divers"><span class="header-section-number">4.2.5</span> Divers</h3>
 <div id="exr-02-vandermonde" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 4.9 (<span class="math inline">\(\star\)</span>)</strong></span> (Déterminant de Vandermonde). Soit <span class="math inline">\(n\geqslant 2\)</span> et <span class="math inline">\(\alpha_1,\dotsc,\alpha_n\)</span>, des éléments de <span class="math inline">\(\mathbb{K}\)</span>. On pose</p>
 <p><span class="math display">\[
