@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Pierre Pageault">
 
-<title>Mathématiques en TSI2</title>
+<title>5&nbsp; Réduction des endomorphismes – Mathématiques en TSI2</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-integrales-generalisees.html" rel="next">
+<link href="./colles.html" rel="next">
+<link href="./04-determinants.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -73,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -86,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-reduction-des-endomorphismes.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Réduction des endomorphismes</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
@@ -132,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -162,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-reduction-des-endomorphismes.html" class="sidebar-item-text sidebar-link">
+  <a href="./05-reduction-des-endomorphismes.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Réduction des endomorphismes</span></span></a>
   </div>
 </li>
@@ -188,7 +217,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table des matières</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#rappels-dalgèbre-linéaire" id="toc-rappels-dalgèbre-linéaire" class="nav-link" data-scroll-target="#rappels-dalgèbre-linéaire"><span class="header-section-number">5.1</span> Rappels d’algèbre linéaire</a></li>
+  <li><a href="#eléments-propres-dun-endomorphisme" id="toc-eléments-propres-dun-endomorphisme" class="nav-link" data-scroll-target="#eléments-propres-dun-endomorphisme"><span class="header-section-number">5.2</span> Eléments propres d’un endomorphisme</a>
+  <ul class="collapse">
+  <li><a href="#valeurs-propres-vecteurs-propres-sous-espaces-propres" id="toc-valeurs-propres-vecteurs-propres-sous-espaces-propres" class="nav-link" data-scroll-target="#valeurs-propres-vecteurs-propres-sous-espaces-propres"><span class="header-section-number">5.2.1</span> Valeurs propres, vecteurs propres, sous espaces propres</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -197,26 +231,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Mathématiques en TSI2</h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Réduction des endomorphismes</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Auteur·rice</div>
-    <div class="quarto-title-meta-contents">
-             <p>Pierre Pageault </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Date de publication</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">9 octobre 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -226,11 +248,160 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>Ce document contient les documents pédagogiques relatifs au cours de mathématiques de deuxième année dispensé en TSI2 au lycée Etienne Mimard de Saint Etienne.</p>
+<p>Dans ce chapitre, <span class="math inline">\(E\)</span> désigne un <span class="math inline">\(\mathbb{K}\)</span>-espace vectoriel de dimension finie.</p>
+<section id="introduction" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
+</section>
+<section id="rappels-dalgèbre-linéaire" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="rappels-dalgèbre-linéaire"><span class="header-section-number">5.1</span> Rappels d’algèbre linéaire</h2>
+<div id="def-matrice" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 5.1 (Matrice dans une base)</strong></span> Soit <span class="math inline">\(\mathcal{B}=(e_{1},\dots,e_{n})\)</span> une base de <span class="math inline">\(E\)</span> et <span class="math inline">\(f \in \mathcal{L}(E)\)</span>. La <strong>matrice de <span class="math inline">\(f\)</span> dans la base <span class="math inline">\(\mathcal{B}\)</span></strong> est la matrice dont les colonnes sont constituées de <em>coordonnées</em> des images <span class="math inline">\(f(e_{1}),\dots,f(e_{n}))\)</span> dans la base <span class="math inline">\(\mathcal{B}\)</span>.</p>
+<p><span class="math display">\[
+\mathcal{M}_{\mathcal{B}}(f) = \begin{array}{cccc}
+  f(e_{1}) &amp; \dots &amp; f(e_{n}) &amp; \\
+  \left( \begin{array}{c} * \\ \vdots \\ * \end{array} \right. &amp;
+  \begin{array}{c} \ldots \\ \\ \ldots \end{array} &amp;
+  \left. \begin{array}{c} * \\ \vdots \\ * \end{array} \right) &amp;
+  \begin{array}{c} e_{1} \\ \vdots \\ e_{n} \end{array}
+\end{array}
+\]</span></p>
+</div>
+<div id="def-matrice-passage" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 5.2 (Matrice de passage)</strong></span> Soit <span class="math inline">\(\mathcal{B}=(e_1,\dots,e_n)\)</span> et <span class="math inline">\(\mathcal{B}'=(\varepsilon_1,\dots,\varepsilon_n)\)</span> deux bases de <span class="math inline">\(E\)</span>. La <strong>matrice de passage</strong> de <span class="math inline">\(\mathcal{B}\)</span> à <span class="math inline">\(\mathcal{B}'\)</span> est la matrice <span class="math inline">\(P_{\mathcal{B}\to \mathcal{B}'}\)</span> dont les colonnes sont constituées des coordonnées des <em>nouveaux</em> vecteurs <span class="math inline">\((\varepsilon_1',\dots,\varepsilon_n')\)</span> dans l’<em>ancienne</em> base <span class="math inline">\((e_1,\dots,e_n)\)</span>.</p>
+<p><span class="math display">\[
+    P_{\mathcal{B}\to \mathcal{B}'} =
+\begin{array}{cccc}
+  \varepsilon_{1} &amp; \dots &amp; \varepsilon_{n} &amp; \\
+  \left( \begin{array}{c} * \\ \vdots \\ * \end{array} \right. &amp;
+  \begin{array}{c} \ldots \\ \\ \ldots \end{array} &amp;
+  \left. \begin{array}{c} * \\ \vdots \\ * \end{array} \right) &amp;
+  \begin{array}{c} e_{1} \\ \vdots \\ e_{n} \end{array}
+\end{array}
+\]</span></p>
+</div>
+<div id="tip-matrice-passage" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce&nbsp;5.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Matrice de passage : coordonnées des <em>nouveaux</em> dans l’<em>ancienne</em>.</p>
+</div>
+</div>
+<div id="prp-changement-base" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.1</strong></span> Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span> et soient <span class="math inline">\(\mathcal{B}\)</span> et <span class="math inline">\(\mathcal{B}'\)</span> deux base de <span class="math inline">\(E\)</span>. Alors</p>
+<p><span class="math display">\[
+    \mathcal{M}_{\mathcal{B}'}(f) = P^{-1}\mathcal{M}_{\mathcal{B}}(f)P
+\]</span></p>
+<p>où <span class="math inline">\(P = P_{\mathcal{B} \to \mathcal{B}'}\)</span>.</p>
+</div>
+<p>Pour retenir la formule de changement de base (qu’il faut absolument connaitre), on peut utiliser un moyen mnémotechnique “chronologique” :</p>
+<div id="tip-changement-base" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce&nbsp;5.2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La matrice de <span class="math inline">\(f\)</span> dans la <em>nouvelle</em> base, c’est <span class="math inline">\(P^{-1}\)</span> fois la matrice dans l’<em>ancienne</em> fois <span class="math inline">\(P\)</span> où <span class="math inline">\(P\)</span> est la matrice de passage de l’<em>ancienne</em> à la <em>nouvelle</em>.</p>
+</div>
+</div>
+<p>La relation apparaissant entre les matrices <span class="math inline">\(\mathcal{M}_{\mathcal{B}}(f)\)</span> et <span class="math inline">\(\mathcal{M}_{\mathcal{B}'}(f)\)</span> justifie la définition suivante :</p>
+<div id="def-matrice-semblable" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 5.3 (Matrices semblables)</strong></span> Deux matrices <span class="math inline">\(A,B \in \mathcal{M}_{n}(\mathbb{K})\)</span> sont dites <strong>semblables</strong> s’il existe une matrice inversible <span class="math inline">\(P \in \operatorname{GL}_{n}(\mathbb{K})\)</span> telle que</p>
+<p><span class="math display">\[
+    B =P^{-1}AP.
+\]</span></p>
+</div>
+<div id="nte-matrice-semblable" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;5.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Des matrices semblables sont donc des matrices représentant le <em>même</em> endomorphisme, dans des bases <em>différentes</em>. Elle hériterons de toutes les propriétés communes à l’<em>endomorphisme</em> sous jacent (rang,trace,déterminant,…).</p>
+</div>
+</div>
+<div id="prp-relation-equivalence" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.2</strong></span> La relation d’équivalence est</p>
+<ol type="1">
+<li><p><em>réflexive</em> ; <span class="math inline">\(A\)</span> est semblable à elle même,</p></li>
+<li><p><em>symétrique</em> ; si <span class="math inline">\(A\)</span> est semblable à <span class="math inline">\(B\)</span>, alors <span class="math inline">\(B\)</span> est semblable à <span class="math inline">\(A\)</span> et réciproquement,</p></li>
+<li><p><em>transitive</em> ; si <span class="math inline">\(A\)</span> est semblable à <span class="math inline">\(B\)</span> est si <span class="math inline">\(B\)</span> est semblable à <span class="math inline">\(C\)</span>, alos <span class="math inline">\(A\)</span> semblable à <span class="math inline">\(C\)</span>.</p></li>
+</ol>
+</div>
+<p>Etant donnée une matrice <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span>, on peut se poser la question suivante : existe t’il un endomorphisme <em>naturel</em> associé à <span class="math inline">\(A\)</span> ? La réponse est positive, et d’usage constant :</p>
+<div id="def-endomorphisme-canoniquement-associe" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 5.4 (Endomorphisme canoniquement associé à <span class="math inline">\(A\)</span>)</strong></span> Soit <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span>. L’endomorphisme <strong>canoniquement associé à <span class="math inline">\(A\)</span></strong> est l’endomorphisme</p>
+<p><span class="math display">\[
+\begin{array}{cccc}
+f_A : &amp;\mathcal{M}_{n,1}(\mathbb{K})&amp;\to&amp;\mathcal{M}_{n,1}(\mathbb{K})\\
+&amp;X &amp;\mapsto &amp; AX
+\end{array}
+\]</span></p>
+</div>
+<p>Autrement dit, l’endomorphisme canoniquement associé à <span class="math inline">\(A\)</span> est la <em>multiplication</em> par <span class="math inline">\(A\)</span>. C’est un endomorphisme de <span class="math inline">\(\mathcal{M}_{n,1}(\mathbb{K})\)</span> si <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span>.</p>
+<div id="prp-matrice-f_A" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.3 (Matrice dans la base canonique de <span class="math inline">\(f_{A}\)</span>)</strong></span> La matrice dans la base canonique de <span class="math inline">\(\mathcal{M}_{n}(\mathbb{K})\)</span> de <span class="math inline">\(f_A\)</span> est <span class="math inline">\(A\)</span>.</p>
+</div>
+</section>
+<section id="eléments-propres-dun-endomorphisme" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="eléments-propres-dun-endomorphisme"><span class="header-section-number">5.2</span> Eléments propres d’un endomorphisme</h2>
+<section id="valeurs-propres-vecteurs-propres-sous-espaces-propres" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="valeurs-propres-vecteurs-propres-sous-espaces-propres"><span class="header-section-number">5.2.1</span> Valeurs propres, vecteurs propres, sous espaces propres</h3>
+<div id="def-valeur-propre" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 5.5 (Valeurs propres)</strong></span> Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span> et <span class="math inline">\(\lambda \in \mathbb{K}\)</span>. On dit que <span class="math inline">\(\lambda\)</span> est une <strong>valeur propre</strong> de <span class="math inline">\(f\)</span> s’il existe un vecteur <em>non nul</em> v de <span class="math inline">\(E\)</span> tel que <span class="math inline">\(f(v) = \lambda v\)</span>.</p>
+</div>
+<div id="nte-non-null" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;5.2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La <em>non nullité</em> de <span class="math inline">\(v\)</span> est <em>essentielle</em> sinon tout scalaire <span class="math inline">\(\lambda \in \mathbb{K}\)</span> serait valeur propre de <span class="math inline">\(f\)</span> puisque <span class="math inline">\(f(0_{E}) = \lambda \cdot 0_{E}\)</span>. La valeur propre <span class="math inline">\(\lambda\)</span>, elle, peut tout à fait être nulle.</p>
+</div>
+</div>
+<div id="def-vecteur-propre" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 5.6 (Vecteurs propres)</strong></span> Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span>. On dit que <span class="math inline">\(v\)</span> est un <strong>vecteur propre</strong> de <span class="math inline">\(f\)</span> <em>associé</em> à la valeur propre <span class="math inline">\(\lambda \in \mathbb{K}\)</span> si</p>
+<ol type="1">
+<li><p><span class="math inline">\(v \neq 0_{E}\)</span>,\</p></li>
+<li><p><span class="math inline">\(f(v) = \lambda v\)</span>.</p></li>
+</ol>
+</div>
+<div id="def-spectre" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 5.7 (Spectre)</strong></span> Le <strong>spectre</strong> d’un endomorphisme <span class="math inline">\(f \in \mathcal{L}(E)\)</span> est l’ensemble de ses valeurs propres. On ne note <span class="math inline">\(\operatorname{Sp}f\)</span>.</p>
+</div>
+<div id="def-sous-espace-propre" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 5.8 (Sous espaces propres)</strong></span> Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span> et <span class="math inline">\(\lambda \in \operatorname{Sp}(f)\)</span>. Le <strong>sous espace propre</strong> associé à la valeur propre <span class="math inline">\(\lambda\)</span> est l’ensemble</p>
+<p><span class="math display">\[
+    E_{\lambda}(f) = \{v \in E,\ f(v) = \lambda v\} = \ker (f- \lambda
+\operatorname{Id}_E).
+\]</span></p>
+</div>
+<div id="prp-stabilite" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.4</strong></span> Si <span class="math inline">\(\lambda \in \mathbb{K}\)</span> est une valeur propre de <span class="math inline">\(f\)</span>, alors le sous-espace propre associé à la valeur propre <span class="math inline">\(\lambda\)</span> est <em>stable</em> par <span class="math inline">\(f\)</span> et <span class="math display">\[
+    f_{|E_{\lambda}(f)} = \lambda \operatorname{Id}_{E_{\lambda}(f)}.
+\]</span></p>
+</div>
+<p>Autremenent dit, chacun des sous espace propres de <span class="math inline">\(f\)</span> est stable par <span class="math inline">\(f\)</span>, et <span class="math inline">\(f\)</span> restreint à chacun de ses sous espace propre est une homothétie.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -636,10 +807,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./04-determinants.html" class="pagination-link" aria-label="Déterminants">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Déterminants</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-integrales-generalisees.html" class="pagination-link" aria-label="Intégrales généralisées">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intégrales généralisées</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./colles.html" class="pagination-link" aria-label="Programmes de colle">
+        <span class="nav-page-text">Programmes de colle</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
