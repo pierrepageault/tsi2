@@ -347,4 +347,149 @@ valeurs de $n$.
 
 :::
 
+## Déterminant d'une famille de vecteurs, d'un endomorphisme
 
+### Déterminant d'un endomorphisme
+
+Tout comme la trace, le déterminant est un invariant de similitude. Cette
+notion remonte donc aux endomorphismes. 
+
+::: {#prp-matrice-semblables}
+
+Deux matrices semblables ont même déterminant. 
+
+:::
+
+::: {#def-determinant-endomorphisme}
+
+#### Déterminant d'un endomorphisme
+
+Soit $E$ un espace vectoriel de dimension finie et $f \in \mathcal{L}(E)$. Le
+**déterminant** de $f$, noté $\det f$, est le déterminant de n'importe quelle
+matrice représentant $f$ dans une base $\mathcal{B}ns$ de $E$.
+
+:::
+
+::: {#cor-inversible}
+
+#### Déterminant et inversibilité
+
+Si $f\in \mathcal{L}(E)$, alors $f \in \operatorname{GL}(E)$ ssi $\det f
+\neq 0$. 
+
+:::
+
+::: {#cor-compo}
+
+#### Déterminant d'une composition
+
+Pour tout $f,g \in \mathcal{L}(E)$, $\det f \circ g = \det f \cdot \det g$.
+
+:::
+
+### Déterminant d'une famille de vecteurs
+
+Dans un espace vectoriel de dimension finie, la notion de *coordonnées* dans une
+base permet de se ramener à des tableaux de nombres (des matrices). On
+l'utilise pour définir le déterminant d'une famille de vecteurs. 
+
+::: {#def-famille}
+
+#### Déterminant d'une famille de vecteurs dans une base
+
+Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie $n$ et
+$\mathcal{B}$ une base de $E$. Soient $(v_{1},\dots,v_{n})$ une famille de $n$
+vecteurs de $E$. Le **déterminant dans la base $\mathcal{B}$** des vecteurs
+$v_{1},\dots,v_{n}$ est le déterminant de la matrice $(V_{1},\dots,V_{n})$ des
+*coordonnées* des vecteurs $v_{i}$ dans la base $\mathcal{B}$. On le note
+$\det_{\mathcal{B}}(v_{1},\dots,v_{n})$.
+
+:::
+
+::: {#exm-R3}
+
+On considère les vecteurs $u=(1,1,0)$, $v = (0,1,1)$ et $w = (1,1,1)$ de
+$\mathbb{R}^{3}$. Puisque $u = 1 \cdot e_{1}+1 \cdot e_{2}$, les coordonnées de
+$u$ dans la base canonique de $\mathbb{R}^{3}$ sont $u^{T}=\begin{pmatrix}
+    1\\1\\0
+\end{pmatrix}$, de même pour $v$
+et $w$. Donc 
+
+$$
+\begin{aligned}
+\det_{\mathcal{B}_{\operatorname{can}}}(u,v,w) &= \left|\begin{matrix}1&0&1\\1&1&1\\0&1&1\end{matrix}\right|\quad L_{2}\gets L_{2}-L_{3}\\
+&= \left|\begin{matrix}1&0&1\\1&0&0\\0&1&1\end{matrix}\right|\quad \text{ligne
+$2$}\\
+&= -(-1)=1.
+\end{aligned}
+$$
+
+:::
+
+::: {#exm-polynome}
+
+On considère les polynômes $P=X(X-1)$, $Q=(X-1)(X-2)$ et $R=X(X-2)$. Puisque $P
+= X^{2}-X$, les coordonnées de $P$ dans la base canonique $\mathcal{B}_{\operatorname{can}} = (1,X,X^{2})$ de $\mathbb{R}_{2}[X]$ sont $\begin{pmatrix}
+    0\\-1\\1
+\end{pmatrix}$. On obtient de même
+
+$$
+    \det_{\mathcal{B}_{\operatorname{can}}}(P,Q,R) = \left|\begin{matrix}0&2&0\\-1&-3&-2\\1&1&1\end{matrix}\right| = -2 \quad \text{(première ligne).}
+$$
+
+:::
+
+::: {#prp-base}
+
+#### Caractérisation des bases à l'aide du déterminant
+
+On suppose que $E$ est de dimension finie $n$. Alors une famille $(v_{1},\dots,v_{n})$ de $E$ est une *base* de $E$ ssi son déterminant dans n'importe quelle base de $E$ est *non nul*.
+
+:::
+
+::: {#exm-retour} 
+
+Les familles $(u,v,w)$ et $(P,Q,R)$ des deux exemples précédents sont des bases
+respectives de $\mathbb{R}^{3}$ et $\mathbb{R}^{2}[X]$.
+
+:::
+
+::: {#exm-base}
+
+Si $E$ est un espace vectoriel de dimension $n$, et si $(v_{1},\dots,v_{n})$
+est une base de $E$, alors $(v_{1}+v_{2},\dots,v_{n-1}+ v_{n}, v_{n})$ est
+encore une base de $E$. En effet, la matrice de cette famille dans la *base*
+$(v_{1},\dots,v_{n})$ est triangulaire (inférieure):
+
+$$
+M=\begin{pmatrix}
+    1&0&\ldots&\ldots&0\\
+    1&1&\ddots&&\vdots\\
+0&1&\ddots&\ddots&\vdots\\
+\vdots&\ddots&\ddots&1&0\\
+0&\ldots&0&1&1
+\end{pmatrix}.
+$$
+
+donc sont déterminant vaut $1 \cdots 1 = 1$.
+
+:::
+
+::: {#nte-liaison .callout-note}
+
+On utilise également la proposition précédente pour traduire la *liason* d'une
+famille de vecteurs. Des exemples seront vus en TD.
+
+:::
+
+
+
+
+
+
+
+\newpage
+
+## Exercices {.unnumbered}
+
+{{< include ./td/04.md >}}

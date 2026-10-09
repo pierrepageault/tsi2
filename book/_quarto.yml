@@ -13,6 +13,7 @@ book:
     - 02-series-numeriques.md
     - 03-complements-algebre-lineaire.md
     - 04-determinants.md
+    - 05-reduction-des-endomorphismes.md
     - colles.md
     - dm.md
   downloads: [pdf, epub]
