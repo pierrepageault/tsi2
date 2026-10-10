@@ -251,11 +251,17 @@ window.Quarto = {
 <p>Dans ce chapitre, <span class="math inline">\(E\)</span> désigne un <span class="math inline">\(\mathbb{K}\)</span>-espace vectoriel de dimension finie.</p>
 <section id="introduction" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
+<p>L’idée générale de la réduction d’un endomorphisme <span class="math inline">\(f \in \mathcal{L}(E)\)</span> est de trouver une décomposition en somme directe <span class="math inline">\(E = \bigoplus_{i=1}^{n}F_{i}\)</span> telle que la restriction de <span class="math inline">\(f\)</span> à chacun des <span class="math inline">\(F_i\)</span> soit la plus simple possible – idéalement un multiple de l’identité.</p>
+<p>On est donc naturellement amené à rechercher des sous espaces stables par <span class="math inline">\(f\)</span> sur lesquels <span class="math inline">\(f\)</span> se comporte comme un multiple de l’identité ; c’est la naissance des notions de vecteurs propres, de valeurs propres et de sous espace propres.</p>
+<p>Lorsqu’une telle décomposition est possible (on dira que l’endomorphisme est <em>diagonalisable</em>), de nombreux problèmes initialement difficiles (comme le calcul des puissance <span class="math inline">\(n\)</span> ème d’une matrice représentant <span class="math inline">\(f\)</span>) deviennent presque immédiats.</p>
+<p>Les deux prototypes d’endomorphismes pour lesquels une telle réduction est possible sont les symétries et les projecteurs. Les endomorphismes diagonalisables, en un sens, généraliserons cette situation.</p>
+<p>Lorqu’une telle décomposition n’existe pas, on peut à défault chercher une bas edans laquelle la matrice de l’endomorphisme est la plus simple possible ; c’est l’idée de la <em>trigonalisation</em>, abordée à la fin de ce chapitre.</p>
 </section>
 <section id="rappels-dalgèbre-linéaire" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="rappels-dalgèbre-linéaire"><span class="header-section-number">5.1</span> Rappels d’algèbre linéaire</h2>
 <div id="def-matrice" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 5.1 (Matrice dans une base)</strong></span> Soit <span class="math inline">\(\mathcal{B}=(e_{1},\dots,e_{n})\)</span> une base de <span class="math inline">\(E\)</span> et <span class="math inline">\(f \in \mathcal{L}(E)\)</span>. La <strong>matrice de <span class="math inline">\(f\)</span> dans la base <span class="math inline">\(\mathcal{B}\)</span></strong> est la matrice dont les colonnes sont constituées de <em>coordonnées</em> des images <span class="math inline">\(f(e_{1}),\dots,f(e_{n}))\)</span> dans la base <span class="math inline">\(\mathcal{B}\)</span>.</p>
+<p><span class="theorem-title"><strong>Définition 5.1 (Matrice dans une base)</strong></span> Soit <span class="math inline">\(\mathcal{B}=(e_{1},\dots,e_{n})\)</span> une base de <span class="math inline">\(E\)</span> et <span class="math inline">\(f \in
+\mathcal{L}(E)\)</span>. La <strong>matrice de <span class="math inline">\(f\)</span> dans la base <span class="math inline">\(\mathcal{B}\)</span></strong> est la matrice dont les colonnes sont constituées de <em>coordonnées</em> des images <span class="math inline">\(f(e_{1}),\dots,f(e_{n})\)</span> dans la base <span class="math inline">\(\mathcal{B}\)</span>.</p>
 <p><span class="math display">\[
 \mathcal{M}_{\mathcal{B}}(f) = \begin{array}{cccc}
   f(e_{1}) &amp; \dots &amp; f(e_{n}) &amp; \\
@@ -398,7 +404,7 @@ Note&nbsp;5.2
     f_{|E_{\lambda}(f)} = \lambda \operatorname{Id}_{E_{\lambda}(f)}.
 \]</span></p>
 </div>
-<p>Autremenent dit, chacun des sous espace propres de <span class="math inline">\(f\)</span> est stable par <span class="math inline">\(f\)</span>, et <span class="math inline">\(f\)</span> restreint à chacun de ses sous espace propre est une homothétie.</p>
+<p>Autremenent dit, chacun des sous espace propres de <span class="math inline">\(f\)</span> est stable par <span class="math inline">\(f\)</span>, et <span class="math inline">\(f\)</span> restreint à chacun de ses sous espace propre est un multiple de l’identité ; c’est le premier pas en direction de la <em>réduction</em> de l’endomorphisme <span class="math inline">\(f\)</span>.</p>
 
 
 </section>
