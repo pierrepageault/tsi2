@@ -280,6 +280,16 @@
     ]
   },
   {
+    "objectID": "05-reduction-des-endomorphismes.html#exercices",
+    "href": "05-reduction-des-endomorphismes.html#exercices",
+    "title": "5  Réduction des endomorphismes",
+    "section": "Exercices",
+    "text": "Exercices\n\n5.2.2 Elements propres d’un endomorphisme\n\nExercice 5.1 (Spectre réel et complexe).\n\nDéterminer les valeurs propres réelles, puis complexes de la matrice\n\n\\[\n    J = \\begin{pmatrix}\n        0&0&1\\\\\n        1&0&0\\\\\n        0&1&0\n    \\end{pmatrix}\n\\]\n\nDéterminer les sous espaces propres réels, puis complexes de \\(J\\).\n\n\n\nExercice 5.2 (Opérateur de Legendre).\n\nMontrer que l’application \\(\\varphi:P \\mapsto (X^{2}-1)P''+2XP'\\) définit un endomorphisme de \\(\\mathbb{R}[X]\\).\nMontrer que les polynômes \\(1\\), \\(X\\) et \\(3X^{2}-1\\) sont des vecteurs propres de \\(\\varphi\\), et préciser les valeurs propres associées.\n\n\n\nExercice 5.3 (Classe de similitude de l’identité).\nSoit \\(\\lambda\\in\\mathbb{K}\\). Montrer que la seule matrice semblable à \\(\\lambda I_n\\) est \\(\\lambda I_n\\).\n\n\nExercice 5.4 (Le cas de la valeur propre \\(0\\)).\nSoit \\(f\\) un endomorphisme de \\(E\\), supposé de dimension finie.\n\nMontrer que \\(0\\) est valeur propre de \\(f\\) ssi \\(f\\) n’est pas bijective. Quel est alors le nom usuel du sous espace propre \\(E_{0}(f)\\) ?\nQuelle est la version matricielle de ce résultat ?\n\n\n\nExercice 5.5 (\\(\\star\\)) Montrer que toute matrice réelle \\(3\\times 3\\) possède au moins une valeur propre réelle.\n\n\nExercice 5.6 (\\(\\star\\)) Soit \\(M\\in \\mathcal{M}_n(\\mathbb{R})\\). Montrer que \\(M\\) et \\(M^T\\) ont le même polynôme caractéristique. En déduire qu’elles ont les mêmes valeurs propres, aux mêmes ordres de multiplicité.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Réduction des endomorphismes</span>"
+    ]
+  },
+  {
     "objectID": "colles.html",
     "href": "colles.html",
     "title": "Programmes de colle",

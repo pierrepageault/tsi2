@@ -223,6 +223,10 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#valeurs-propres-vecteurs-propres-sous-espaces-propres" id="toc-valeurs-propres-vecteurs-propres-sous-espaces-propres" class="nav-link" data-scroll-target="#valeurs-propres-vecteurs-propres-sous-espaces-propres"><span class="header-section-number">5.2.1</span> Valeurs propres, vecteurs propres, sous espaces propres</a></li>
   </ul></li>
+  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
+  <ul class="collapse">
+  <li><a href="#elements-propres-dun-endomorphisme" id="toc-elements-propres-dun-endomorphisme" class="nav-link" data-scroll-target="#elements-propres-dun-endomorphisme"><span class="header-section-number">5.2.2</span> Elements propres d’un endomorphisme</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -765,6 +769,471 @@ Note&nbsp;5.5
 <!-- ## Trigonalisation {#sec-05-trigonalisation}  -->
 <!---->
 <!-- ## Application de la réduction {#sec-05-applications} -->
+</section>
+</section>
+<section id="exercices" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercices">Exercices</h2>
+<section id="elements-propres-dun-endomorphisme" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="elements-propres-dun-endomorphisme"><span class="header-section-number">5.2.2</span> Elements propres d’un endomorphisme</h3>
+<div id="exr-matrice-J" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.1</strong></span> (Spectre réel et complexe).</p>
+<ol type="1">
+<li>Déterminer les valeurs propres réelles, puis complexes de la matrice</li>
+</ol>
+<p><span class="math display">\[
+    J = \begin{pmatrix}
+        0&amp;0&amp;1\\
+        1&amp;0&amp;0\\
+        0&amp;1&amp;0
+    \end{pmatrix}
+\]</span></p>
+<ol start="2" type="1">
+<li>Déterminer les sous espaces propres réels, puis complexes de <span class="math inline">\(J\)</span>.</li>
+</ol>
+</div>
+<div id="exr-operateur-legendre" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.2</strong></span> (Opérateur de Legendre).</p>
+<ol type="1">
+<li><p>Montrer que l’application <span class="math inline">\(\varphi:P \mapsto (X^{2}-1)P''+2XP'\)</span> définit un endomorphisme de <span class="math inline">\(\mathbb{R}[X]\)</span>.</p></li>
+<li><p>Montrer que les polynômes <span class="math inline">\(1\)</span>, <span class="math inline">\(X\)</span> et <span class="math inline">\(3X^{2}-1\)</span> sont des vecteurs propres de <span class="math inline">\(\varphi\)</span>, et préciser les valeurs propres associées.</p></li>
+</ol>
+</div>
+<div id="exr-05-0001" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.3</strong></span> (Classe de similitude de l’identité).</p>
+<p>Soit <span class="math inline">\(\lambda\in\mathbb{K}\)</span>. Montrer que la seule matrice semblable à <span class="math inline">\(\lambda I_n\)</span> est <span class="math inline">\(\lambda I_n\)</span>.</p>
+</div>
+<div id="exr-05-valeur-propre-0" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.4</strong></span> (Le cas de la valeur propre <span class="math inline">\(0\)</span>).</p>
+<p>Soit <span class="math inline">\(f\)</span> un endomorphisme de <span class="math inline">\(E\)</span>, supposé de dimension finie.</p>
+<ol type="1">
+<li><p>Montrer que <span class="math inline">\(0\)</span> est valeur propre de <span class="math inline">\(f\)</span> ssi <span class="math inline">\(f\)</span> n’est pas bijective. Quel est alors le nom usuel du sous espace propre <span class="math inline">\(E_{0}(f)\)</span> ?</p></li>
+<li><p>Quelle est la version matricielle de ce résultat ?</p></li>
+</ol>
+</div>
+<div id="exr-05-0005" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.5 (<span class="math inline">\(\star\)</span>)</strong></span> Montrer que toute matrice réelle <span class="math inline">\(3\times 3\)</span> possède au moins une valeur propre réelle.</p>
+</div>
+<div id="exr-05-0006" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.6 (<span class="math inline">\(\star\)</span>)</strong></span> Soit <span class="math inline">\(M\in \mathcal{M}_n(\mathbb{R})\)</span>. Montrer que <span class="math inline">\(M\)</span> et <span class="math inline">\(M^T\)</span> ont le même polynôme caractéristique. En déduire qu’elles ont les mêmes valeurs propres, aux mêmes ordres de multiplicité.</p>
+</div>
+<!-- ### Endomorphismes et matrices diagonalisables  -->
+<!---->
+<!-- ::: {#exr-05-diag} -->
+<!---->
+<!-- Diagonaliser les matrices suivantes -->
+<!---->
+<!-- $$ -->
+<!-- \begin{pmatrix} -->
+<!--             -2&2\\ -->
+<!--             -2&3 -->
+<!--         \end{pmatrix}, \quad \begin{pmatrix} -->
+<!-- 4&-3&0\\-2&5&2\\6&-9&-2 -->
+<!-- \end{pmatrix} -->
+<!-- $$ -->
+<!---->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-05-cns} -->
+<!---->
+<!-- La matrice $A = \begin{pmatrix} -->
+<!--     2&1&-4\\ -->
+<!--     0&2&1\\ -->
+<!--     0&0&2 -->
+<!--     \end{pmatrix}$ est-elle diagonalisable ? -->
+<!---->
+<!-- Même question pour la matrice $B = \begin{pmatrix} -->
+<!--     1&1&-2\\ -->
+<!--     0&2&3\\ -->
+<!--     0&0&-4 -->
+<!--     \end{pmatrix}$. -->
+<!---->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-endo-matrice} -->
+<!---->
+<!-- #### Diagonalisation d'un endomorphisme de $\mathcal{M}_{2}(\mathbb{R})$. -->
+<!---->
+<!-- On pose $A = \begin{pmatrix} -->
+<!--     -2&2\\ -->
+<!--     -2&3 -->
+<!-- \end{pmatrix}$ et on considère l'endomorphisme -->
+<!---->
+<!-- $$ -->
+<!--     \varphi : \mathcal{M}_{2}(\mathbb{R}) \to \mathcal{M}_{2}(\mathbb{R}) -->
+<!-- $$ -->
+<!---->
+<!-- définit par  -->
+<!---->
+<!-- $$ -->
+<!--     \forall M \in \mathcal{M}_{2}(\mathbb{R}),\ \varphi(M) =AM. -->
+<!-- $$ -->
+<!---->
+<!-- 1. Montrer que la matrice $A$ est diagonalisable.  -->
+<!---->
+<!-- 2. Déterminer la matrice de $\varphi$ dans la base canonique de $\mathcal{M}_{2}(\mathbb{R})$. -->
+<!---->
+<!-- 2. Montrer que l'endomorphisme $\varphi$ est diagonalisable, et préciser une -->
+<!--    base de diagonalisation.  -->
+<!---->
+<!-- ::: -->
+<!---->
+<!---->
+<!-- ::: {#exr-05-pointille-2} -->
+<!---->
+<!-- #### $\star$ -->
+<!---->
+<!-- (Matrice circulante). On note $(e_1,\dots,e_n)$ la base canonique de $\mathbb{R}^n$. On définit un -->
+<!-- endomorphisme $u$ de $\mathbb{R}^n$ par $u(e_i) = e_{i-1}$ si -->
+<!-- $i\in\{2,\dots,n\}$ et $u(e_1) = e_n$. -->
+<!---->
+<!-- 1.  Déterminer la matrice $J_n$ de $u$ dans la base canonique de $\mathbb{R}^n$. -->
+<!---->
+<!-- 2. Calculer le polynome caractéristique de $J_{n}$.   -->
+<!---->
+<!-- 3. Soit $z$ un nombre complexe tel que $z^{n}=1$.  -->
+<!---->
+<!--     a. Montrer que le vecteur $U_z = \begin{pmatrix} -->
+<!--         1\\z\\ \vdots z^{n-1} -->
+<!--     \end{pmatrix}$ est un vecteur propre de $J_{n}$, et préciser la valeur -->
+<!--     propre associée. -->
+<!---->
+<!--     b. En déduire que $J_{n}$ est diagonalisable sur $\mathbb{C}$, et -->
+<!--     préciser une base de diagonalisation de $J_{n}$. -->
+<!---->
+<!-- ::: -->
+<!---->
+<!---->
+<!-- ::: {#exr-05-pol-mat} -->
+<!---->
+<!-- #### Diagonalisation d'un polynôme en $A$ -->
+<!---->
+<!-- Soit $A\in\M_n(\mathbb{K})$ et $Q\in GL_n(\mathbb{K})$. -->
+<!---->
+<!-- 1.  Montrer que $$\forall k\in\N,\ Q^{-1}A^kQ = (Q^{-1}AQ)^k$$ -->
+<!---->
+<!-- 2.  En déduire que $$\forall P\in\mathbb{K}[X],\ Q^{-1}P(A)Q = P(Q^{-1}AQ)$$ -->
+<!---->
+<!-- 3.  Pour $P\in\mathbb{K}[X]$, calculer $P(D)$ si $D$ est une matrice diagonale. -->
+<!---->
+<!-- 4.  En déduire que si $Q$ diagonalise $A$ alors $Q$ diagonalise -->
+<!--     également tout polynôme en $A$. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-05-stable} -->
+<!-- ## $\star$ -->
+<!---->
+<!-- Soit $f\in\mathcal{L}(E)$ et $v$ un élément non-nul de $E$. Montrer que -->
+<!-- $v$ est un vecteur propre de $f$ ssi la droite vectorielle engendrée par -->
+<!-- $v$ est stable par $f$. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-com} -->
+<!-- ## $\star$ -->
+<!---->
+<!-- Soient $f$ et $g$ deux endomorphisme de $E$ qui commutent. Montrer que -->
+<!-- les sous-espaces propres de $f$ sont stables par $g$, et réciproquement. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-05-0007} -->
+<!-- ## $\star$ -->
+<!---->
+<!-- Soit $f$ et $g$ deux endomorphismes qui commutent. On suppose que $f$ -->
+<!-- est diagonalisable et que $f$ possède des valeurs propres deux à deux -->
+<!-- distinctes. En utilisant les exercices -->
+<!-- [\[stable\]](#stable){reference-type="ref" reference="stable"} et -->
+<!-- [\[com\]](#com){reference-type="ref" reference="com"}, montrer que $g$ -->
+<!-- et diagonalisable, et que toute base de diagonalisation de $f$ est -->
+<!-- également une base de diagonalisation de $g$. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-05-0008} -->
+<!-- ## $\star$ -->
+<!---->
+<!-- Soient $A,B\in\M_n(\mathbb{K})$. On considère l'endomorphisme de $\M_n(\mathbb{K})$ -->
+<!-- $$\varphi :M\mapsto AMB$$ Expliquer comment construire un vecteur propre -->
+<!-- de $\varphi$ à partir d'un couple $(X,Y)$ de colonnes propres de $A$ et -->
+<!-- $B^T$. -->
+<!-- ::: -->
+<!---->
+<!-- ##  -->
+<!---->
+<!---->
+<!-- ::: {#exr-05-0009} -->
+<!-- La somme de deux matrices diagonalisables est-elle diagonalisable ? Si -->
+<!-- non, donner un contre-exemple. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-05-red-endo-mat} -->
+<!-- Montrer que l'endomorphisme $\varphi :\M_{2}(\mathbb{R})\to \M_{2}(\mathbb{R})$ défini -->
+<!-- par : $$\varphi(M) = AM-MA$$ avec $A = \begin{pmatrix} -->
+<!-- 1&1\\ -->
+<!-- 0&3 -->
+<!-- \end{pmatrix}$ est diagonalisable, et déterminer une base de -->
+<!-- diagonalisation de $\varphi$. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-05-red-endo-pol} -->
+<!-- On pose $E=\mathbb{R}_2[X]$ et on définit l'application $f$ de $E$ dans $E$ par -->
+<!-- : $$\forall P\in E,\ f(P) = 2XP - (X^2-1)P'$$ -->
+<!---->
+<!-- 1.  Montrer que $f$ est un endomorphisme de $E$ et que sa matrice dans -->
+<!--     la base canonique de $E$ est $C =  \begin{pmatrix} -->
+<!--     0&1&0\\ -->
+<!--     2&0&2\\ -->
+<!--     0&1&0 -->
+<!--     \end{pmatrix}$. -->
+<!---->
+<!-- 2.  Déterminer une matrice inversible $R$ dont les coefficients de la -->
+<!--     première ligne sont égaux à $1$ telle que -->
+<!--     $R^{-1}CR = \begin{pmatrix} -->
+<!--     -2&0&0\\ -->
+<!--     0&0&0\\ -->
+<!--     0&0&2 -->
+<!--     \end{pmatrix}$ -->
+<!---->
+<!-- 3.  En déduire que $f$ est diagonalisable, et donner une base de -->
+<!--     diagonalisation de $f$. -->
+<!-- ::: -->
+<!---->
+<!-- ##  -->
+<!---->
+<!-- ::: {#exr-05-sans-calc} -->
+<!-- On considère la matrice $$A=\begin{pmatrix} -->
+<!-- 4&-3&2\\6&-5&4\\4&-4&4 -->
+<!-- \end{pmatrix}$$ -->
+<!---->
+<!-- 1.  Montrer que le vecteur $\begin{pmatrix} -->
+<!--     1\\1\\0 -->
+<!--     \end{pmatrix}$ est un vecteur propre de $A$. Quelle est la valeur -->
+<!--     propre associée ? -->
+<!---->
+<!-- 2.  Déterminer le rang de $A$. En déduire que $0$ est valeur propre de -->
+<!--     $A$ et déterminer le sous-espace propre associé. -->
+<!---->
+<!-- 3.  Déterminer sans aucun calcul le polynôme caractéristique de $A$. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-05-sans-calc-2} -->
+<!-- Déterminer, avec le moins de calculs possible, les éléments propres des -->
+<!-- matrices :\ -->
+<!---->
+<!-- ::: enumerate* -->
+<!-- $A = \begin{pmatrix} -->
+<!--         1&1&1\\ -->
+<!--         1&1&1\\ -->
+<!--         1&1&1 -->
+<!--     \end{pmatrix}$, -->
+<!---->
+<!-- $B =\begin{pmatrix} -->
+<!--     1&0&0&-1\\ -->
+<!--     1&-2&0&-1\\ -->
+<!--     -1&0&0&1\\ -->
+<!--     1&0&0&-1 -->
+<!--     \end{pmatrix}.$ -->
+<!-- ::: -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-05-trig} -->
+<!-- ## $\star$ -->
+<!---->
+<!-- Soit $f$ un endomorphisme d'un $\mathbb{K}$-espace vectoriel $E$ de dimension -->
+<!-- $2$. On suppose que le polynôme caractéristique de $f$ est -->
+<!-- $(X-\lambda)^2$ avec $\lambda\in\mathbb{K}$.\ -->
+<!---->
+<!-- 1.  Montrer qu'il existe une base $\mathcal{B}$ de $E$ dans laquelle la -->
+<!--     matrice de $f$ est $\begin{pmatrix} -->
+<!--              \lambda&1\\ -->
+<!--              0&\lambda -->
+<!--             \end{pmatrix}$ ou $\begin{pmatrix} -->
+<!--                 \lambda&0\\ -->
+<!--                 0&\lambda -->
+<!--             \end{pmatrix}$. -->
+<!---->
+<!-- 2.  En déduire que toute matrice $A\in\mathcal{M}_2(\mathbb{K})$ possédant une -->
+<!--     seule valeur propre $\lambda$ est semblable à $\lambda I_2$ ou -->
+<!--     $\begin{pmatrix} -->
+<!--             \lambda&1\\ -->
+<!--             0&\lambda -->
+<!--         \end{pmatrix}$. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-05-trig} -->
+<!-- ## $\star$ -->
+<!---->
+<!-- On pose $A=\displaystyle\left(\begin{matrix} -->
+<!-- 5&-8&4\\ -->
+<!-- 1&0&0\\ -->
+<!-- 0&1&0 -->
+<!-- \end{matrix}\right)$. -->
+<!---->
+<!-- 1.  La matrice $A$ est elle diagonalisable ? -->
+<!---->
+<!-- 2.  Montrer que la matrice $A$ est semblable à la matrice -->
+<!--     $\displaystyle T=\left(\begin{matrix} -->
+<!--     1&0&0\\ -->
+<!--     0&2&1\\ -->
+<!--     0&0&2 -->
+<!--     \end{matrix}\right).$ -->
+<!---->
+<!-- 3.  Déterminer l'expression de $T^n$ pour tout $n\in\mathbb{N}$.\ -->
+<!--     *On pourra écrire $T$ sous la forme $D+N$ où $D$ une matrice -->
+<!--     diagonale et $N$ vérifie $N^2=0$*. -->
+<!-- ::: -->
+<!---->
+<!-- ##  -->
+<!---->
+<!-- ::: {#exr-05-syst} -->
+<!-- On considère le système $$\left\{ -->
+<!-- \begin{array}{l} -->
+<!-- u_{n+1} = -4u_n - 6v_n\\ -->
+<!-- v_{n+1} = 3u_n + 5v_n\\ -->
+<!-- w_{n+1} = 3u_n + 6v_n + 5w_n -->
+<!-- \end{array} -->
+<!-- \right.$$ Pour tout $n\in\N$, on pose $X_n = \begin{pmatrix} -->
+<!--     u_{n}\\v_n\\w_n -->
+<!-- \end{pmatrix}$. -->
+<!---->
+<!-- 1.  Montrer qu'il existe une matrice $A\in\M_3(\mathbb{R})$ telle que -->
+<!--     $$\forall n\in\N,\ X_{n+1}AX_n.$$ -->
+<!---->
+<!-- 2.  Montrer que la matrice $A$ est diagonalisable et déterminer une -->
+<!--     matrice $P\in GL_3(\mathbb{R})$ et une matrice diagonale $D\in\M_3(\mathbb{R})$ tels -->
+<!--     que $P^{-1}AP=D$. -->
+<!---->
+<!-- 3.  En déduire $u_n,v_n$ et $w_n$ en fonction de $u_0,v_0$ et $w_0$. -->
+<!---->
+<!-- 4.  A quelle condition nécessaire et suffisante sur $u_0,v_0$ et $w_0$ -->
+<!--     les suites $u_n$, $v_n$ et $w_n$ sont-elle bornées ? -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-05-0010} -->
+<!-- On considère la matrice $$A = \begin{pmatrix} -->
+<!-- 1&0&0&0\\ -->
+<!-- 2&3&2&0\\ -->
+<!-- -1&-1&0&0\\ -->
+<!-- 0&0&0&2 -->
+<!-- \end{pmatrix}$$ -->
+<!---->
+<!-- 1.  Déterminer les valeurs propres de $A$ et montrer que $A$ est -->
+<!--     diagonalisable. -->
+<!---->
+<!-- 2.  En déduire un polynôme annulateur de $A$ de degré $2$. -->
+<!---->
+<!-- 3.  A l'aide d'une division euclidienne, en déduire $A^n$ pour tout -->
+<!--     $n\in\N^*$. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-05-eq-mat} -->
+<!-- On considère la matrice $A =\begin{pmatrix} -->
+<!-- 3&0&-1\\ -->
+<!-- 2&4&2\\ -->
+<!-- -1&0&3 -->
+<!-- \end{pmatrix}$ -->
+<!---->
+<!-- 1.  Justifier qu'il existe $P\in GL_n(\mathbb{K})$ telle que $P^{-1}AP=D$ avec -->
+<!--     $D = \mathrm{diag}(2,4,4)$. -->
+<!---->
+<!-- 2.  En déduire, en fonction de $P$ et $P^{-1}$, des solutions à -->
+<!--     l'équation matricielle $M^2=A$ d'inconnue $M\in\M_3(\mathbb{R})$. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-05-suite-rec-2-const} -->
+<!-- Dans chacun des cas, déterminer $u_n$ pour tout $n$ : -->
+<!---->
+<!-- 1.  $u_{0}=1$, $u_1=3$, $\forall n\in \N$, $u_{n+2}  =3u_{n+1} - 2u_n$, -->
+<!---->
+<!-- 2.  $u_0=u_1=1$, $\forall n\geqslant 2$, $u_{n} = 4u_{n-1} - 4u_{n-2}$, -->
+<!---->
+<!-- 3.  $u_0=u_1=1$, $\forall n\in\N$, -->
+<!--     $u_{n+2} = 2\cos(\theta)u_{n+1} - u_n$, $\theta\in]0,\pi[$. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-05-suite-rec-3-const} -->
+<!-- ## $\star$ -->
+<!---->
+<!-- On considère la suite $(u_n)_{n\in\N}$ définie par $u_0=1$, $u_1=0$ et -->
+<!-- $u_2 = 2$ et -->
+<!-- $$\forall n\in\N,\ u_{n+3} = -\frac{1}{2}u_{n+2} + \frac{5}{2}u_{n+1}-u_n$$ -->
+<!-- En s'inspirant du cas des suites récurrentes linéaires d'ordre $2$, -->
+<!-- déterminer $u_n$, pour tout $n\in\N$. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-05-comm} -->
+<!-- On considère la matrice $A = \begin{pmatrix} -->
+<!-- 0&2&-1\\ -->
+<!-- 3&-2&0\\ -->
+<!-- -2&2&1 -->
+<!-- \end{pmatrix}$ -->
+<!---->
+<!-- 1.  Montrer que la matrice $A$ est diagonalisable dans $\M_3(\mathbb{R})$ et -->
+<!--     déterminer une matrice $P$ inversible telle que $P^{-1}AP = D$ avec -->
+<!--     $D$ diagonale. -->
+<!---->
+<!-- 2.  Montrer qu'une matrice $M'$ de $\M_3(\mathbb{R})$ commute avec $D$ ssi $M'$ -->
+<!--     est diagonale. -->
+<!---->
+<!-- 3.  Montrer que $M$ commute avec $A$ ssi $P^{-1}MP$ commute avec $D$. -->
+<!---->
+<!-- 4.  En déduire l'ensemble des matrices commutant avec $A$. On exprimera -->
+<!--     ces matrices à l'aide des matrices $P$ et $P^{-1}$ et de matrices de -->
+<!--     la base canonique de $\M_3(\mathbb{R})$. -->
+<!-- ::: -->
+<!---->
+<!-- ## Problèmes divers -->
+<!---->
+<!-- ::: {#exr-05-nil} -->
+<!-- ## $\star$ -->
+<!---->
+<!-- Une matrice non-nulle $N\in\M_n(\mathbb{R})$ est dite *nilpotente* s'il existe -->
+<!-- $k\in\N^*$ telle que $N^k = 0$. Dans la suite, $N$ désigne une matrice -->
+<!-- nilpotente de $\M_n(\mathbb{R})$. -->
+<!---->
+<!-- 1.  Montrer que la seule valeur propre possible d'une matrice nilpotente -->
+<!--     est  $0$. Étudier la réciproque. -->
+<!---->
+<!-- 2.  Montrer que $\det(I_n + N) = 1$. -->
+<!---->
+<!-- 3.  Montrer que $I_n -N$ est inversible et déterminer $(I_n-N)^{-1}$.\ -->
+<!--     *On pourra calculer le produit $(1-X)(1+X+\cdots+X^{k-1})$*. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-05-similitude} -->
+<!-- ## $\star$ -->
+<!---->
+<!-- Soit $M\in\mathcal{M}_2(\mathbb{R})$. On suppose que $M$ ne possède pas -->
+<!-- de valeurs propres réelles. On note $f$ l'endomorphisme canoniquement -->
+<!-- associé à $M$. -->
+<!---->
+<!-- 1.  Montrer que $M$ possède deux valeurs propres complexes conjuguées -->
+<!--     $\lambda = a + ib$ et $\overline{\lambda}=a-ib$. -->
+<!---->
+<!-- 2.  Si $Z\in\M_{2,1}(\mathbb{C})$ est un vecteur propre de $M$ associé à la -->
+<!--     valeur propre $\lambda$, montrer que $\overline{Z}$ est un vecteur -->
+<!--     propre de $M$ associé à la valeur propre $\overline{\lambda}$. -->
+<!---->
+<!-- 3.  En déduire que la famille $(Z,\overline{Z})$ est une base de -->
+<!--     $\M_{2,1}(\mathbb{C})$. -->
+<!---->
+<!-- 4.  Montrer que la famille -->
+<!--     $\mathcal{B} = \left(\frac{Z + \overline{Z}}{2},-\frac{Z - \overline{Z}}{2i}\right) = (\mathrm{Re}(Z),-\mathrm{Im}(Z))$ -->
+<!--     est une base de $\M_{2,1}(\mathbb{C})$ et préciser la matrice de $f$ dans -->
+<!--     cette base. -->
+<!---->
+<!-- 5.  En déduire que $M$ est semblable sur $\mathbb{R}$ à la matrice -->
+<!--     $S = \begin{pmatrix} -->
+<!--     a&-b\\ -->
+<!--     b&a -->
+<!--     \end{pmatrix}$. -->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exr-05-0002} -->
+<!---->
+<!-- #### Réduction des matrices de taille $2$  -->
+<!---->
+<!-- Soit $A\in\M_{2}(\mathbb{K})$. Montrer que -->
+<!-- $P_A(X) = X^2 - \mathrm{Tr}(A)X + \det(A)$. -->
+<!---->
+<!-- ::: -->
 
 
 </section>
