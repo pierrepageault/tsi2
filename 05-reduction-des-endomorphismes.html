@@ -255,7 +255,7 @@ window.Quarto = {
 <p>On est donc naturellement amené à rechercher des sous espaces stables par <span class="math inline">\(f\)</span> sur lesquels <span class="math inline">\(f\)</span> se comporte comme un multiple de l’identité ; c’est la naissance des notions de vecteurs propres, de valeurs propres et de sous espace propres.</p>
 <p>Lorsqu’une telle décomposition est possible (on dira que l’endomorphisme est <em>diagonalisable</em>), de nombreux problèmes initialement difficiles (comme le calcul des puissance <span class="math inline">\(n\)</span> ème d’une matrice représentant <span class="math inline">\(f\)</span>) deviennent presque immédiats.</p>
 <p>Les deux prototypes d’endomorphismes pour lesquels une telle réduction est possible sont les symétries et les projecteurs. Les endomorphismes diagonalisables, en un sens, généraliserons cette situation.</p>
-<p>Lorqu’une telle décomposition n’existe pas, on peut à défault chercher une bas edans laquelle la matrice de l’endomorphisme est la plus simple possible ; c’est l’idée de la <em>trigonalisation</em>, abordée à la fin de ce chapitre.</p>
+<p>Lorqu’une telle décomposition n’existe pas, on peut à défault chercher une bas e dans laquelle la matrice de l’endomorphisme est la plus simple possible ; c’est l’idée de la <em>trigonalisation</em>, abordée à la fin de ce chapitre.</p>
 </section>
 <section id="rappels-dalgèbre-linéaire" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="rappels-dalgèbre-linéaire"><span class="header-section-number">5.1</span> Rappels d’algèbre linéaire</h2>
@@ -361,13 +361,27 @@ f_A : &amp;\mathcal{M}_{n,1}(\mathbb{K})&amp;\to&amp;\mathcal{M}_{n,1}(\mathbb{K
 <div id="prp-matrice-f_A" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 5.3 (Matrice dans la base canonique de <span class="math inline">\(f_{A}\)</span>)</strong></span> La matrice dans la base canonique de <span class="math inline">\(\mathcal{M}_{n}(\mathbb{K})\)</span> de <span class="math inline">\(f_A\)</span> est <span class="math inline">\(A\)</span>.</p>
 </div>
+<div id="def-polynome" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 5.5 (Polynômes de matrices)</strong></span> Pour tout polynôme <span class="math inline">\(P= \sum_{k=0}^{n}a_{k}X^{k}\)</span> et toute matrice <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span>, on pose</p>
+<p><span class="math display">\[
+    P(A)= \sum_{k=0}^{n} a_{k}A^{k}
+\]</span></p>
+<p>où, par convention, <span class="math inline">\(A^{0}=\operatorname{I}_{n}\)</span>. On dit que la matrice <span class="math inline">\(P(A)\)</span> est un <strong>polynôme en <span class="math inline">\(A\)</span></strong>.</p>
+</div>
+<div id="prp-polynome" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.4</strong></span> Pour tout polyôme <span class="math inline">\(P,Q \in \mathbb{R}[X]\)</span>, toute matrice <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span>, et tout <span class="math inline">\(\lambda \in \mathbb{K}\)</span>, on a</p>
+<ol type="1">
+<li><p>(P+Q)(A)= P(A) + Q(A),</p></li>
+<li><p>(PQ)(A)= P(A)Q(A).</p></li>
+</ol>
+</div>
 </section>
 <section id="eléments-propres-dun-endomorphisme" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="eléments-propres-dun-endomorphisme"><span class="header-section-number">5.2</span> Eléments propres d’un endomorphisme</h2>
 <section id="valeurs-propres-vecteurs-propres-sous-espaces-propres" class="level3" data-number="5.2.1">
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="valeurs-propres-vecteurs-propres-sous-espaces-propres"><span class="header-section-number">5.2.1</span> Valeurs propres, vecteurs propres, sous espaces propres</h3>
 <div id="def-valeur-propre" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 5.5 (Valeurs propres)</strong></span> Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span> et <span class="math inline">\(\lambda \in \mathbb{K}\)</span>. On dit que <span class="math inline">\(\lambda\)</span> est une <strong>valeur propre</strong> de <span class="math inline">\(f\)</span> s’il existe un vecteur <em>non nul</em> v de <span class="math inline">\(E\)</span> tel que <span class="math inline">\(f(v) = \lambda v\)</span>.</p>
+<p><span class="theorem-title"><strong>Définition 5.6 (Valeurs propres)</strong></span> Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span> et <span class="math inline">\(\lambda \in \mathbb{K}\)</span>. On dit que <span class="math inline">\(\lambda\)</span> est une <strong>valeur propre</strong> de <span class="math inline">\(f\)</span> s’il existe un vecteur <em>non nul</em> v de <span class="math inline">\(E\)</span> tel que <span class="math inline">\(f(v) = \lambda v\)</span>.</p>
 </div>
 <div id="nte-non-null" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -383,28 +397,374 @@ Note&nbsp;5.2
 </div>
 </div>
 <div id="def-vecteur-propre" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 5.6 (Vecteurs propres)</strong></span> Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span>. On dit que <span class="math inline">\(v\)</span> est un <strong>vecteur propre</strong> de <span class="math inline">\(f\)</span> <em>associé</em> à la valeur propre <span class="math inline">\(\lambda \in \mathbb{K}\)</span> si</p>
+<p><span class="theorem-title"><strong>Définition 5.7 (Vecteurs propres)</strong></span> Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span>. On dit que <span class="math inline">\(v\)</span> est un <strong>vecteur propre</strong> de <span class="math inline">\(f\)</span> <em>associé</em> à la valeur propre <span class="math inline">\(\lambda \in \mathbb{K}\)</span> si</p>
 <ol type="1">
 <li><p><span class="math inline">\(v \neq 0_{E}\)</span>,\</p></li>
 <li><p><span class="math inline">\(f(v) = \lambda v\)</span>.</p></li>
 </ol>
 </div>
 <div id="def-spectre" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 5.7 (Spectre)</strong></span> Le <strong>spectre</strong> d’un endomorphisme <span class="math inline">\(f \in \mathcal{L}(E)\)</span> est l’ensemble de ses valeurs propres. On ne note <span class="math inline">\(\operatorname{Sp}f\)</span>.</p>
+<p><span class="theorem-title"><strong>Définition 5.8 (Spectre)</strong></span> Le <strong>spectre</strong> d’un endomorphisme <span class="math inline">\(f \in \mathcal{L}(E)\)</span> est l’ensemble de ses valeurs propres. On ne note <span class="math inline">\(\operatorname{Sp}f\)</span>.</p>
 </div>
 <div id="def-sous-espace-propre" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 5.8 (Sous espaces propres)</strong></span> Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span> et <span class="math inline">\(\lambda \in \operatorname{Sp}(f)\)</span>. Le <strong>sous espace propre</strong> associé à la valeur propre <span class="math inline">\(\lambda\)</span> est l’ensemble</p>
+<p><span class="theorem-title"><strong>Définition 5.9 (Sous espaces propres)</strong></span> Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span> et <span class="math inline">\(\lambda \in \operatorname{Sp}(f)\)</span>. Le <strong>sous espace propre</strong> associé à la valeur propre <span class="math inline">\(\lambda\)</span> est l’ensemble</p>
 <p><span class="math display">\[
     E_{\lambda}(f) = \{v \in E,\ f(v) = \lambda v\} = \ker (f- \lambda
 \operatorname{Id}_E).
 \]</span></p>
 </div>
+<div id="nte-sous-espace-propre" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;5.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>L’ensemble <span class="math inline">\(E_{\lambda}(f)\)</span>, lui, contient le vecteur nul, mais il n’est pas <em>réduit</em> au vecteur nul (par définition d’une valeur propre). Puisque c’est un sous espace vectoriel, il contient donc une <em>infinité</em> de vecteurs propres de <span class="math inline">\(f\)</span>, associés à la même valeur propre <span class="math inline">\(\lambda\)</span>.</p>
+</div>
+</div>
 <div id="prp-stabilite" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 5.4</strong></span> Si <span class="math inline">\(\lambda \in \mathbb{K}\)</span> est une valeur propre de <span class="math inline">\(f\)</span>, alors le sous-espace propre associé à la valeur propre <span class="math inline">\(\lambda\)</span> est <em>stable</em> par <span class="math inline">\(f\)</span> et <span class="math display">\[
+<p><span class="theorem-title"><strong>Proposition 5.5</strong></span> Si <span class="math inline">\(\lambda \in \mathbb{K}\)</span> est une valeur propre de <span class="math inline">\(f\)</span>, alors le sous-espace propre associé à la valeur propre <span class="math inline">\(\lambda\)</span> est <em>stable</em> par <span class="math inline">\(f\)</span> et <span class="math display">\[
     f_{|E_{\lambda}(f)} = \lambda \operatorname{Id}_{E_{\lambda}(f)}.
 \]</span></p>
 </div>
 <p>Autremenent dit, chacun des sous espace propres de <span class="math inline">\(f\)</span> est stable par <span class="math inline">\(f\)</span>, et <span class="math inline">\(f\)</span> restreint à chacun de ses sous espace propre est un multiple de l’identité ; c’est le premier pas en direction de la <em>réduction</em> de l’endomorphisme <span class="math inline">\(f\)</span>.</p>
+<div id="exm-projecteur" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 5.1 (Les projecteurs)</strong></span> Soit <span class="math inline">\(p\)</span> le projecteur sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> où <span class="math inline">\(F\)</span> et <span class="math inline">\(G\)</span> sont deux sous espaces vectoriels non triviaux supplémentaires dans <span class="math inline">\(E\)</span>. Alors <span class="math inline">\(0\)</span> et <span class="math inline">\(1\)</span> sont valeurs propres de <span class="math inline">\(p\)</span> et</p>
+<p><span class="math display">\[
+    \begin{cases}
+        E_{0}(p) = \ker (p - 0 \cdot \operatorname{Id}_E) = \ker p = G,\\
+        E_{1}(p) = \{v \in E,\ p(v)  = v\} = F.
+    \end{cases}
+\]</span></p>
+<p>Les scalaires <span class="math inline">\(0\)</span> et <span class="math inline">\(1\)</span> sont bien des valeurs propres de <span class="math inline">\(p\)</span> car <span class="math inline">\(F\)</span> et <span class="math inline">\(G\)</span> sont on triviaux, donc ils contiennent des éléments <em>non nuls</em>.</p>
+</div>
+<div id="exm-symetrie" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 5.2 (Les symétries)</strong></span> Soit <span class="math inline">\(s\)</span> la symétrie par rapport à <span class="math inline">\(F\)</span> parallèllement à <span class="math inline">\(G\)</span> où à nouveau <span class="math inline">\(F\)</span> et <span class="math inline">\(G\)</span> sont des sous espaces vectoriel supplémentaires de <span class="math inline">\(E\)</span>, non triviaux. Alors <span class="math inline">\(1\)</span> et <span class="math inline">\(-1\)</span> sont deux valeurs propres de <span class="math inline">\(s\)</span> et</p>
+<p><span class="math display">\[
+    \begin{cases}
+        E_{1}(s) = \ker (s- \operatorname{Id}_{E}) = F\\
+        E_{-1}(s) = \ker (s+ \operatorname{Id}_{E}) = G.
+    \end{cases}
+\]</span></p>
+<p>A nouveau, ces scalaires sont bien des valeurs propres car ni <span class="math inline">\(F\)</span> ni <span class="math inline">\(G\)</span> ne sont réduit à <span class="math inline">\(\{0_{E}\}\)</span>.</p>
+</div>
+<div id="exm-derivation" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 5.3</strong></span> La fonction <span class="math inline">\(\operatorname{exp}: x \mapsto e^{x}\)</span> est un vecteur propre de l’endomorphisme <span class="math inline">\(D: C^{\infty}(\mathbb{R}) \to C^{\infty}(\mathbb{R})\)</span> qui à une fonction <span class="math inline">\(f\)</span> associe sa dérivée <span class="math inline">\(f'\)</span>. En effet, la fonction <span class="math inline">\(\operatorname{exp}\)</span> n’est pas la fonction nulle, et</p>
+<p><span class="math display">\[
+    D(\operatorname{exp}) = \operatorname{exp} = 1 \cdot
+\operatorname{exp}
+\]</span></p>
+<p>Plus généralement, si <span class="math inline">\(\lambda \in \mathbb{R}\)</span>, la fonction <span class="math inline">\(x \mapsto
+\operatorname{exp}(\lambda x)\)</span> est un vecteur propre de la dérivation, associé à la valeur propre <span class="math inline">\(\lambda\)</span>. Donc <span class="math inline">\(\operatorname{Sp}(D) = \mathbb{R}\)</span>.</p>
+</div>
+<div id="nte-matrice" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;5.4: Le cas des matrices
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Quand ces notions sont appliquées à l’endomorphisme <span class="math inline">\(f_A\)</span> canoniquement associé à <span class="math inline">\(A\)</span>, on remplace par abus de langage l’endomorphisme <span class="math inline">\(f_A\)</span> par <span class="math inline">\(A\)</span>. Ainsi :</p>
+<ul>
+<li><p>une valeur propre de <span class="math inline">\(f_{A}\)</span>, c’est à dire un scalaire <span class="math inline">\(\lambda \in \mathbb{K}\)</span> pour lequel il existe un vecteur colonne non nul <span class="math inline">\(X \in
+\mathcal{M}_{n,1}(\mathbb{K})\)</span> tel que <span class="math inline">\(f_{A}(X) = AX = \lambda X\)</span>, s’appelle simplement une <em>valeur propre de <span class="math inline">\(A\)</span></em>,</p></li>
+<li><p>un vecteur propre de <span class="math inline">\(f_{A}\)</span>, c’est à dire une colonne non nulle <span class="math inline">\(X \in \mathcal{M}_{n,1}(\mathbb{K})\)</span> pour laquelle il existe <span class="math inline">\(\lambda \in \mathbb{K}\)</span> tel que</p></li>
+</ul>
+<p><span class="math display">\[
+    f_A(X) = AX = \lambda X,
+\]</span></p>
+<p>s’appelle simplement un <em>vecteur propre de <span class="math inline">\(A\)</span></em>.</p>
+<ul>
+<li><p>le spectre de <span class="math inline">\(f_A\)</span> s’appelle simplement le <em>spectre de <span class="math inline">\(A\)</span></em>,</p></li>
+<li><p>le sous espace propre <span class="math inline">\(E_{\lambda}(f_{A})\)</span>, c’est à dire</p></li>
+</ul>
+<p><span class="math display">\[
+    E_{\lambda}(f_A) =\{X \in \mathcal{M}_{n,1}(\mathbb{K}),\ AX = \lambda
+X\} = \ker (A - \lambda \operatorname{I}_{n}).
+\]</span></p>
+<p>se note simplement <span class="math inline">\(E_{\lambda}(A)\)</span> et s’appelle le <em>sous espace propre de <span class="math inline">\(A\)</span></em>, associé à la valeur propre <span class="math inline">\(\lambda\)</span>.</p>
+</div>
+</div>
+<div id="exm-matrice-A" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 5.4</strong></span> Considérons la matrice <span class="math inline">\(A = \begin{pmatrix}
+    1&amp;6\\
+1&amp;2
+\end{pmatrix}\)</span>.</p>
+<p>On a</p>
+<p><span class="math display">\[
+    A \begin{pmatrix}
+        -3\\1
+    \end{pmatrix} = \begin{pmatrix}
+        3\\-1
+    \end{pmatrix} = (-1)\cdot \begin{pmatrix}
+        -3\\1
+    \end{pmatrix}.
+\]</span></p>
+<p>De plus, le vecteur <span class="math inline">\(\begin{pmatrix}
+    -3\\1
+\end{pmatrix}\)</span> est non nul. Donc <span class="math inline">\(\begin{pmatrix}
+    -3\\1
+\end{pmatrix}\)</span> est un vecteur propre de <span class="math inline">\(A\)</span>, associé à la valeur propre <span class="math inline">\(-1\)</span>. De même, le vecteur <span class="math inline">\(\begin{pmatrix}
+    2\\1
+\end{pmatrix}\)</span> est un vecteur propre de <span class="math inline">\(A\)</span>, associé à la valeur propre <span class="math inline">\(4\)</span> car ce vecteur est non nul et</p>
+<p><span class="math display">\[
+    A \begin{pmatrix}
+        2\\1
+    \end{pmatrix} = \begin{pmatrix}
+        8\\4
+    \end{pmatrix} = 4 \begin{pmatrix}
+        2\\1
+    \end{pmatrix}.
+\]</span></p>
+<p>Donc <span class="math inline">\(\{-1,4\} \subset \operatorname{Sp}A\)</span>.</p>
+<p>Calculons maintenant les sous espaces propres associés. Par définition</p>
+<p><span class="math display">\[
+    E_{4}(A) = \ker (A - 4 \operatorname{I}_{2}).
+\]</span></p>
+<p>On a</p>
+<p><span class="math display">\[
+    A - 4 \operatorname{I}_{2} = \begin{pmatrix}
+        -3&amp;6\\
+        1&amp;-2
+    \end{pmatrix}.
+\]</span></p>
+<p>Soit <span class="math inline">\(X = \begin{pmatrix}
+    x\\y
+\end{pmatrix}\in \mathcal{M}_{2,1}(\mathbb{R})\)</span>. On a</p>
+<p><span class="math display">\[
+\begin{aligned}
+    X \in E_{4}(A) &amp;\Longleftrightarrow \begin{cases}
+        -3x + 6y = 0\\
+x -2y = 0
+    \end{cases}\\
+&amp; \Longleftrightarrow x=2y\\
+&amp; \Longleftrightarrow X  = \begin{pmatrix}
+    2y\\y
+\end{pmatrix} \in \operatorname{Vect}\begin{pmatrix}
+    2\\1
+\end{pmatrix}
+\end{aligned}
+\]</span></p>
+<p>Donc <span class="math inline">\(E_{4}(A) = \operatorname{Vect}\begin{pmatrix}
+    2\\1
+\end{pmatrix}\)</span>.</p>
+<p>De même, on obtient <span class="math inline">\(E_{-1}(A) = \operatorname{Vect}\begin{pmatrix}
+   -3\\1
+\end{pmatrix}\)</span>.</p>
+</div>
+<div id="rem-matrice-A" class="proof remark">
+<p><span class="proof-title"><em>Remarque 5.1</em>. </span>On retrouve en particulier le vecteur <span class="math inline">\(\begin{pmatrix}
+    2\\1
+\end{pmatrix}\)</span>, mais tous les multpiles <em>non nuls</em> de ce vecteurs sont encore des vecteurs propres de <span class="math inline">\(A\)</span> associé à la valeur propre <span class="math inline">\(4\)</span> (comparer à la <a href="#nte-sous-espace-propre" class="quarto-xref">Note&nbsp;<span>5.3</span></a>).</p>
+</div>
+<p>On continue maintenant à avancer dans la réduction de l’endomorphisme <span class="math inline">\(f\)</span> en montrant l’aspect <em>directe</em> d’une somme de sous espaces propres.</p>
+<div id="prp-somme-directe" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.6</strong></span> Toute somme de sous espace propres de <span class="math inline">\(f\)</span> associés à des valeurs propres deux à deux distinctes est <em>directe</em>.</p>
+</div>
+<div id="cor-liberte" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollaire 5.1</strong></span> Toute famille de vecteurs associés à des valeurs propres deux à deux distinctes de <span class="math inline">\(f\)</span> est <em>libre</em>.</p>
+</div>
+<div id="cor-cardinal-spectre" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollaire 5.2</strong></span> Si <span class="math inline">\(E\)</span> est dimension finie, alors tout endormophisme <span class="math inline">\(f\)</span> de <span class="math inline">\(E\)</span> possède au maximum <span class="math inline">\(\dim E\)</span> valeurs propres distinctes.</p>
+</div>
+<div id="nte-cardinal-spectre" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;5.5
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En particulier, toute matrice <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span> possède au plus <span class="math inline">\(n\)</span> valeurs propres distinctes car l’endomorphisme <span class="math inline">\(f_A\)</span> canoniquement associé à <span class="math inline">\(A\)</span> est un endomorphisme de <span class="math inline">\(\mathcal{M}_{n,1}(\mathbb{K})\)</span>, qui est de dimension <span class="math inline">\(n\)</span>.</p>
+</div>
+</div>
+<div id="exm-matrice-A-sp" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 5.5</strong></span> On a vu dans l’<a href="#exm-matrice-A" class="quarto-xref">Exemple&nbsp;<span>5.4</span></a> que <span class="math inline">\(-1\)</span> et <span class="math inline">\(4\)</span> étaient valeur propre de la matrice <span class="math inline">\(A = \begin{pmatrix}
+    1&amp;6\\
+1&amp;2
+\end{pmatrix}\)</span>. Donc <span class="math inline">\(\operatorname{Sp} A =\{-1,4\}\)</span> ; il n’y a pas d’autres valeurs propres possibles !</p>
+</div>
+<div id="rem-cardinal-spectre" class="proof remark">
+<p><span class="proof-title"><em>Remarque 5.2</em>. </span>Si <span class="math inline">\(E\)</span> est de dimension infinie, un endomorphisme peut tout à fait avoir une infinité de valeurs propres ; un exemple a été vu dans l’<a href="#exm-derivation" class="quarto-xref">Exemple&nbsp;<span>5.3</span></a>.</p>
+</div>
+<!-- ### Polynôme caractéristique -->
+<!---->
+<!-- Une question demeure ; comment trouver les valeurs propres d'un endomorphisme ? -->
+<!-- En dimension finie, une réponse est apportée par le *polynôme -->
+<!-- caractéristique*. Elle n'est pas miraculeuse car elle revient à chercher les -->
+<!-- racines d'un polynôme de degré égal à la dimension de $\dim E$ ; au dela du degré $4$ inclu, il n'existe malheureusement plus de -->
+<!-- formule par radicaux permettant de calculer systématiquement les racines d'un polynôme^[C'est un théorème du au mathématicien norvégien Niels Henrik Abel, en 1824].  -->
+<!---->
+<!-- Avant de donner la définition du polynôme caractéristique, on énonce un -->
+<!-- résultat prélimibaire très important.  -->
+<!---->
+<!-- ::: {#prp-caracterisation-rang} -->
+<!---->
+<!-- Soit $f\in\mathcal{L}(E)$ et $\lambda\in\mathbb{K}$. Alors $\lambda$ est valeur propre de $f$ ssi $f-\lambda \operatorname{Id}_E$ n'est pas de rang maximal. Dans ce cas, on a   -->
+<!---->
+<!-- $$ -->
+<!-- \dim(E_{\lambda}(f))=\dim(E) - \mathrm{rg}(f-\lambda \mathrm{Id}_E). -->
+<!-- $$ -->
+<!---->
+<!---->
+<!-- ::: -->
+<!---->
+<!---->
+<!-- ::: {#def-polynome-carctéristique} -->
+<!---->
+<!-- Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension $n$ et soit $f \in \mathcal{L}(E)$. Le **polynôme caractéristique** de $f$ est le -->
+<!-- polynôme unitaire de degré $n$ défini par  -->
+<!---->
+<!-- $$ -->
+<!-- P_{f}(X) = \det (X \operatorname{Id}_E-f). -->
+<!-- $$ -->
+<!---->
+<!-- ::: -->
+<!---->
+<!-- ::: {#prp-valeur-propre} -->
+<!---->
+<!-- Les valeurs propres de $f \in \mathcal{L}(E)$ sont exactement les racines de -->
+<!-- sont polynôme caractéristique.  -->
+<!---->
+<!-- ::: -->
+<!---->
+<!---->
+<!-- ::: {#rem-polynome-caracteristique} -->
+<!---->
+<!-- Concrètement, pour calculer le polynôme caractéristique d'un endomorphisme $f$ -->
+<!-- de $E$, on choisit une base $\mathcal{B}$ de $E$ et on utilise l'égalité  -->
+<!---->
+<!-- $$ -->
+<!--     \det (X \operatorname{Id} - f) = \det (\mathcal{M}_{\mathcal{B}}(X -->
+<!-- \operatorname{Id}_E - f)) = \det (X \operatorname{I}_{n}-\mathcal{M}_{\mathcal{B}}(f)) -->
+<!-- $$ -->
+<!---->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exm-polynome-caractéristique-projecteur} -->
+<!---->
+<!-- #### Polynôme caractéristique d'un projecteur -->
+<!---->
+<!-- On suppose que $F$ et $G$ sont deux espaces supplémentaires non triviaux de -->
+<!-- $E$. Si $p$ est le projecteur sur $F$ parallèlement à $G$, la matrice de $p$ -->
+<!-- dans une base adaptée à la somme directe est  -->
+<!---->
+<!-- $$ -->
+<!-- M = \begin{pmatrix} -->
+<!--     \boldsymbol{\operatorname{I_r}}&\boldsymbol{0}\\ -->
+<!-- \boldsymbol{0}&\boldsymbol{0} -->
+<!-- \end{pmatrix} -->
+<!-- $$ -->
+<!---->
+<!-- avec $r = \dim F$. Le polynôme caractéristique de $p$ est dont celui de $M$ -->
+<!-- i.e. (déterminant diagonal) -->
+<!---->
+<!-- $$ -->
+<!--     P_{p}(X)=(X-1)^{r}X^{n-r}. -->
+<!-- $$ -->
+<!---->
+<!-- Les seules valeurs propres d'un projecteur sont donc $1$ et -->
+<!-- $0$. -->
+<!---->
+<!-- ::: -->
+<!---->
+<!-- ::: {#nte-polynome-caracteristique-matrice .callout-note} -->
+<!---->
+<!-- #### Polynôme caractéristique d'une matrice $A \in \mathcal{M}_{n}(\mathbb{K})$ -->
+<!---->
+<!-- Dans le cas de l'endomorphisme $f_A$ canoniquement associé à une matrice $A \in -->
+<!-- \mathcal{M}_{n}(\mathbb{K})$, le polynôme caractéristique de $f_A$ sest -->
+<!-- simplement noté $P_{A}(X)$ et s'appelle -->
+<!-- le *polynôme caractéristique de $A$*.  -->
+<!---->
+<!-- Puisque la matrice de $f_A$ dans la base canonique de $f_A$ est $A$, on a en -->
+<!-- particulier -->
+<!---->
+<!-- $$ -->
+<!--     P_{A}(X) = \det (X \operatorname{I}_{n}-A). -->
+<!-- $$ -->
+<!---->
+<!-- C'est la formule que l'on utilise concrètement pour calculer le polynôme -->
+<!-- caractéristique d'une matrice. -->
+<!---->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exm-polynome-caracteristique-A} -->
+<!---->
+<!-- Le polynôme caractéristique de la matrice $A = \begin{pmatrix} -->
+<!--     1&6\\1&2 -->
+<!-- \end{pmatrix}$ est  -->
+<!---->
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!--     P_{A}(X) = \left|\begin{matrix}X-1&-6\\-1& X-2\end{matrix}\right|&= (X-1)(X-2)-6\\ -->
+<!-- &=X^{2}-3X-4\\ -->
+<!-- &=(X-1)(X-4). -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+<!---->
+<!-- Les valeurs propres de $A$ sont donc exactement $-1$ et $4$. -->
+<!---->
+<!-- ::: -->
+<!---->
+<!-- ::: {#nte-spectre-corps .callout-note} -->
+<!---->
+<!-- Le spectre d'un endomorphisme (ou d'une matrice) dépend du *corps* $\mathbb{K}$ sur lequel on se place. Par exemple, la matrice $A = \begin{pmatrix} -->
+<!--     0&1\\ -->
+<!--     -1&0 -->
+<!-- \end{pmatrix}$ n'a pas de valeur propre réelle, mais elle a deux valeurs propres complexes (conjuguées). -->
+<!---->
+<!-- ::: -->
+<!---->
+<!-- ::: {#def-multiplicite} -->
+<!---->
+<!-- #### Multiplicite algebrique d'une valeur propre -->
+<!---->
+<!-- Si $\lambda\in \operatorname{Sp}f$, l'**ordre de multiplicité** de $\lambda$ le plus grand entier $k\in\N^*$ tel que $(X-\lambda)^k$ divise $P_{f}(X)$. On la note $m(\lambda)$. -->
+<!---->
+<!-- ::: -->
+<!---->
+<!---->
+<!-- ::: {#exm-multiplicite-projecteur} -->
+<!---->
+<!-- Si $p$ est le projecteur sur $F$ parallèlement à $G$, alors $0$ est valeur -->
+<!-- propre d'ordre $\dim G$, et $0$ est valeur propre d'ordre $\dim F$.  -->
+<!---->
+<!---->
+<!-- ::: -->
+<!---->
+<!-- ::: {#exm-multiplicite-matrice} -->
+<!---->
+<!-- Les valeurs propres de $A = \begin{pmatrix} -->
+<!--     1&6\\1&2 -->
+<!-- \end{pmatrix}$ sont $-1$ et $4$, toute d'eux d'ordre $1$. On dit que ce sont -->
+<!-- des valeurs propres **simples**.  -->
+<!---->
+<!-- ::: -->
+<!-- Triangulaire -->
+<!---->
+<!-- encadrement multiplicité géom et alg. -->
+<!---->
+<!-- Cas particulier des valeurs propres simples. -->
+<!---->
+<!-- Invariants de similitude + réciproque fausse. -->
+<!---->
+<!-- Polynôme en $A$ est spectre.  -->
+<!---->
+<!-- ## Endomorphismes et matrices diagonalisables {#sec-05-diagonalisation} -->
+<!---->
+<!-- ## Trigonalisation {#sec-05-trigonalisation}  -->
+<!---->
+<!-- ## Application de la réduction {#sec-05-applications} -->
 
 
 </section>
