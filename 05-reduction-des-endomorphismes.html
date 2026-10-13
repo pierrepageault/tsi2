@@ -226,7 +226,11 @@ window.Quarto = {
   <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
   <ul class="collapse">
   <li><a href="#elements-propres-dun-endomorphisme" id="toc-elements-propres-dun-endomorphisme" class="nav-link" data-scroll-target="#elements-propres-dun-endomorphisme"><span class="header-section-number">5.2.2</span> Elements propres d’un endomorphisme</a></li>
+  <li><a href="#endomorphismes-et-matrices-diagonalisables" id="toc-endomorphismes-et-matrices-diagonalisables" class="nav-link" data-scroll-target="#endomorphismes-et-matrices-diagonalisables"><span class="header-section-number">5.2.3</span> Endomorphismes et matrices diagonalisables</a></li>
+  <li><a href="#trigonalisation" id="toc-trigonalisation" class="nav-link" data-scroll-target="#trigonalisation"><span class="header-section-number">5.2.4</span> Trigonalisation</a></li>
+  <li><a href="#applications-de-la-réduction" id="toc-applications-de-la-réduction" class="nav-link" data-scroll-target="#applications-de-la-réduction"><span class="header-section-number">5.2.5</span> Applications de la réduction</a></li>
   </ul></li>
+  <li><a href="#problèmes-divers" id="toc-problèmes-divers" class="nav-link" data-scroll-target="#problèmes-divers"><span class="header-section-number">5.3</span> Problèmes divers</a></li>
   </ul>
 </nav>
     </div>
@@ -255,11 +259,12 @@ window.Quarto = {
 <p>Dans ce chapitre, <span class="math inline">\(E\)</span> désigne un <span class="math inline">\(\mathbb{K}\)</span>-espace vectoriel de dimension finie.</p>
 <section id="introduction" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
-<p>L’idée générale de la réduction d’un endomorphisme <span class="math inline">\(f \in \mathcal{L}(E)\)</span> est de trouver une décomposition en somme directe <span class="math inline">\(E = \bigoplus_{i=1}^{n}F_{i}\)</span> telle que la restriction de <span class="math inline">\(f\)</span> à chacun des <span class="math inline">\(F_i\)</span> soit la plus simple possible – idéalement un multiple de l’identité.</p>
-<p>On est donc naturellement amené à rechercher des sous espaces stables par <span class="math inline">\(f\)</span> sur lesquels <span class="math inline">\(f\)</span> se comporte comme un multiple de l’identité ; c’est la naissance des notions de vecteurs propres, de valeurs propres et de sous espace propres.</p>
+<p>L’idée générale de la réduction d’un endomorphisme <span class="math inline">\(f \in \mathcal{L}(E)\)</span> consiste à chercher une décomposition en somme directe <span class="math inline">\(E =
+\bigoplus_{i=1}^{n}F_{i}\)</span> telle que la restriction de <span class="math inline">\(f\)</span> à chacun des <span class="math inline">\(F_i\)</span> soit la plus simple possible – idéalement un multiple de l’identité.</p>
+<p>On est donc naturellement amené à rechercher des sous espaces sur lesquels <span class="math inline">\(f\)</span> se comporte comme un multiple de l’identité ; c’est l’origine des notions de vecteurs propres, de valeurs propres et de sous espace propres.</p>
 <p>Lorsqu’une telle décomposition est possible (on dira que l’endomorphisme est <em>diagonalisable</em>), de nombreux problèmes initialement difficiles (comme le calcul des puissance <span class="math inline">\(n\)</span> ème d’une matrice représentant <span class="math inline">\(f\)</span>) deviennent presque immédiats.</p>
 <p>Les deux prototypes d’endomorphismes pour lesquels une telle réduction est possible sont les symétries et les projecteurs. Les endomorphismes diagonalisables, en un sens, généraliserons cette situation.</p>
-<p>Lorqu’une telle décomposition n’existe pas, on peut à défault chercher une bas e dans laquelle la matrice de l’endomorphisme est la plus simple possible ; c’est l’idée de la <em>trigonalisation</em>, abordée à la fin de ce chapitre.</p>
+<p>Lorqu’une telle décomposition n’est pas possible, on peut à défault chercher une base dans laquelle la matrice de l’endomorphisme est la plus simple possible ; c’est l’idée de la <em>trigonalisation</em>, abordée à la fin du ce chapitre.</p>
 </section>
 <section id="rappels-dalgèbre-linéaire" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="rappels-dalgèbre-linéaire"><span class="header-section-number">5.1</span> Rappels d’algèbre linéaire</h2>
@@ -299,7 +304,7 @@ Astuce&nbsp;5.1
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Matrice de passage : coordonnées des <em>nouveaux</em> dans l’<em>ancienne</em>.</p>
+<p>Coordonnées des <em>nouveaux</em> dans l’<em>ancien</em>.</p>
 </div>
 </div>
 <div id="prp-changement-base" class="theorem proposition">
@@ -320,10 +325,10 @@ Astuce&nbsp;5.2
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>La matrice de <span class="math inline">\(f\)</span> dans la <em>nouvelle</em> base, c’est <span class="math inline">\(P^{-1}\)</span> fois la matrice dans l’<em>ancienne</em> fois <span class="math inline">\(P\)</span> où <span class="math inline">\(P\)</span> est la matrice de passage de l’<em>ancienne</em> à la <em>nouvelle</em>.</p>
+<p>La matrice de <span class="math inline">\(f\)</span> dans la <em>nouvelle</em> base, c’est <span class="math inline">\(P^{-1}\)</span> fois la matrice dans l’<em>ancienne</em> base fois <span class="math inline">\(P\)</span> où <span class="math inline">\(P\)</span> est la matrice de passage de l’<em>ancienne</em> base à la <em>nouvelle</em>.</p>
 </div>
 </div>
-<p>La relation apparaissant entre les matrices <span class="math inline">\(\mathcal{M}_{\mathcal{B}}(f)\)</span> et <span class="math inline">\(\mathcal{M}_{\mathcal{B}'}(f)\)</span> justifie la définition suivante :</p>
+<p>La relation apparaissant entre les matrices <span class="math inline">\(\mathcal{M}_{\mathcal{B}}(f)\)</span> et <span class="math inline">\(\mathcal{M}_{\mathcal{B}'}(f)\)</span> motive la définition suivante :</p>
 <div id="def-matrice-semblable" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 5.3 (Matrices semblables)</strong></span> Deux matrices <span class="math inline">\(A,B \in \mathcal{M}_{n}(\mathbb{K})\)</span> sont dites <strong>semblables</strong> s’il existe une matrice inversible <span class="math inline">\(P \in \operatorname{GL}_{n}(\mathbb{K})\)</span> telle que</p>
 <p><span class="math display">\[
@@ -351,7 +356,7 @@ Note&nbsp;5.1
 <li><p><em>transitive</em> ; si <span class="math inline">\(A\)</span> est semblable à <span class="math inline">\(B\)</span> est si <span class="math inline">\(B\)</span> est semblable à <span class="math inline">\(C\)</span>, alos <span class="math inline">\(A\)</span> semblable à <span class="math inline">\(C\)</span>.</p></li>
 </ol>
 </div>
-<p>Etant donnée une matrice <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span>, on peut se poser la question suivante : existe t’il un endomorphisme <em>naturel</em> associé à <span class="math inline">\(A\)</span> ? La réponse est positive, et d’usage constant :</p>
+<p>Etant donnée une matrice <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span>, on peut réciproquement se poser la question suivante : existe t’il un endomorphisme <em>naturel</em> dont la matrice serait <span class="math inline">\(A\)</span> ? La réponse est positive, et d’usage constant :</p>
 <div id="def-endomorphisme-canoniquement-associe" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 5.4 (Endomorphisme canoniquement associé à <span class="math inline">\(A\)</span>)</strong></span> Soit <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span>. L’endomorphisme <strong>canoniquement associé à <span class="math inline">\(A\)</span></strong> est l’endomorphisme</p>
 <p><span class="math display">\[
@@ -361,33 +366,7 @@ f_A : &amp;\mathcal{M}_{n,1}(\mathbb{K})&amp;\to&amp;\mathcal{M}_{n,1}(\mathbb{K
 \end{array}
 \]</span></p>
 </div>
-<p>Autrement dit, l’endomorphisme canoniquement associé à <span class="math inline">\(A\)</span> est la <em>multiplication</em> par <span class="math inline">\(A\)</span>. C’est un endomorphisme de <span class="math inline">\(\mathcal{M}_{n,1}(\mathbb{K})\)</span> si <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span>.</p>
-<div id="prp-matrice-f_A" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 5.3 (Matrice dans la base canonique de <span class="math inline">\(f_{A}\)</span>)</strong></span> La matrice dans la base canonique de <span class="math inline">\(\mathcal{M}_{n}(\mathbb{K})\)</span> de <span class="math inline">\(f_A\)</span> est <span class="math inline">\(A\)</span>.</p>
-</div>
-<div id="def-polynome" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 5.5 (Polynômes de matrices)</strong></span> Pour tout polynôme <span class="math inline">\(P= \sum_{k=0}^{n}a_{k}X^{k}\)</span> et toute matrice <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span>, on pose</p>
-<p><span class="math display">\[
-    P(A)= \sum_{k=0}^{n} a_{k}A^{k}
-\]</span></p>
-<p>où, par convention, <span class="math inline">\(A^{0}=\operatorname{I}_{n}\)</span>. On dit que la matrice <span class="math inline">\(P(A)\)</span> est un <strong>polynôme en <span class="math inline">\(A\)</span></strong>.</p>
-</div>
-<div id="prp-polynome" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 5.4</strong></span> Pour tout polyôme <span class="math inline">\(P,Q \in \mathbb{R}[X]\)</span>, toute matrice <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span>, et tout <span class="math inline">\(\lambda \in \mathbb{K}\)</span>, on a</p>
-<ol type="1">
-<li><p>(P+Q)(A)= P(A) + Q(A),</p></li>
-<li><p>(PQ)(A)= P(A)Q(A).</p></li>
-</ol>
-</div>
-</section>
-<section id="eléments-propres-dun-endomorphisme" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="eléments-propres-dun-endomorphisme"><span class="header-section-number">5.2</span> Eléments propres d’un endomorphisme</h2>
-<section id="valeurs-propres-vecteurs-propres-sous-espaces-propres" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="valeurs-propres-vecteurs-propres-sous-espaces-propres"><span class="header-section-number">5.2.1</span> Valeurs propres, vecteurs propres, sous espaces propres</h3>
-<div id="def-valeur-propre" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 5.6 (Valeurs propres)</strong></span> Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span> et <span class="math inline">\(\lambda \in \mathbb{K}\)</span>. On dit que <span class="math inline">\(\lambda\)</span> est une <strong>valeur propre</strong> de <span class="math inline">\(f\)</span> s’il existe un vecteur <em>non nul</em> v de <span class="math inline">\(E\)</span> tel que <span class="math inline">\(f(v) = \lambda v\)</span>.</p>
-</div>
-<div id="nte-non-null" class="callout callout-style-default callout-note callout-titled">
+<div id="nte-endomorphisme-canoniquement-associe" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -397,21 +376,69 @@ Note&nbsp;5.2
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>Autrement dit, l’endomorphisme canoniquement associé à <span class="math inline">\(A\)</span> est la <em>multiplication</em> par <span class="math inline">\(A\)</span>. C’est un endomorphisme de <span class="math inline">\(\mathcal{M}_{n,1}(\mathbb{K})\)</span> si <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span>.</p>
+</div>
+</div>
+<div id="prp-matrice-f_A" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.3 (Matrice dans la base canonique de <span class="math inline">\(f_{A}\)</span>)</strong></span> La matrice dans la base canonique de <span class="math inline">\(\mathcal{M}_{n,1}(\mathbb{K})\)</span> de <span class="math inline">\(f_A\)</span> est <span class="math inline">\(A\)</span>.</p>
+</div>
+<!-- ::: {#def-polynome} -->
+<!---->
+<!-- #### Polynômes de matrices  -->
+<!---->
+<!-- Pour tout polynôme $P= \sum_{k=0}^{n}a_{k}X^{k}$ et toute matrice $A \in \mathcal{M}_{n}(\mathbb{K})$, on pose  -->
+<!---->
+<!-- $$ -->
+<!--     P(A)= \sum_{k=0}^{n} a_{k}A^{k} -->
+<!-- $$ -->
+<!---->
+<!-- où, par convention, $A^{0}=\operatorname{I}_{n}$. On dit que la matrice $P(A)$ -->
+<!-- est un **polynôme en $A$**. -->
+<!---->
+<!-- ::: -->
+<!---->
+<!-- ::: {#prp-polynome} -->
+<!---->
+<!-- Pour tout polyôme $P,Q \in \mathbb{R}[X]$, toute matrice $A \in \mathcal{M}_{n}(\mathbb{K})$, et tout $\lambda \in \mathbb{K}$, on a  -->
+<!---->
+<!-- 1. $(P+\lambda Q)(A)= P(A) + \lambda Q(A)$, -->
+<!---->
+<!-- 2. $(PQ)(A)= P(A)Q(A)$. -->
+<!---->
+<!-- ::: -->
+</section>
+<section id="eléments-propres-dun-endomorphisme" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="eléments-propres-dun-endomorphisme"><span class="header-section-number">5.2</span> Eléments propres d’un endomorphisme</h2>
+<section id="valeurs-propres-vecteurs-propres-sous-espaces-propres" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="valeurs-propres-vecteurs-propres-sous-espaces-propres"><span class="header-section-number">5.2.1</span> Valeurs propres, vecteurs propres, sous espaces propres</h3>
+<div id="def-valeur-propre" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 5.5 (Valeurs propres)</strong></span> Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span> et <span class="math inline">\(\lambda \in \mathbb{K}\)</span>. On dit que <span class="math inline">\(\lambda\)</span> est une <strong>valeur propre</strong> de <span class="math inline">\(f\)</span> s’il existe un vecteur <em>non nul</em> v de <span class="math inline">\(E\)</span> tel que <span class="math inline">\(f(v) = \lambda v\)</span>.</p>
+</div>
+<div id="nte-non-null" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;5.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>La <em>non nullité</em> de <span class="math inline">\(v\)</span> est <em>essentielle</em> sinon tout scalaire <span class="math inline">\(\lambda \in \mathbb{K}\)</span> serait valeur propre de <span class="math inline">\(f\)</span> puisque <span class="math inline">\(f(0_{E}) = \lambda \cdot 0_{E}\)</span>. La valeur propre <span class="math inline">\(\lambda\)</span>, elle, peut tout à fait être nulle.</p>
 </div>
 </div>
 <div id="def-vecteur-propre" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 5.7 (Vecteurs propres)</strong></span> Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span>. On dit que <span class="math inline">\(v\)</span> est un <strong>vecteur propre</strong> de <span class="math inline">\(f\)</span> <em>associé</em> à la valeur propre <span class="math inline">\(\lambda \in \mathbb{K}\)</span> si</p>
+<p><span class="theorem-title"><strong>Définition 5.6 (Vecteurs propres)</strong></span> Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span>. On dit que <span class="math inline">\(v\)</span> est un <strong>vecteur propre</strong> de <span class="math inline">\(f\)</span> <em>associé</em> à la valeur propre <span class="math inline">\(\lambda \in \mathbb{K}\)</span> si</p>
 <ol type="1">
-<li><p><span class="math inline">\(v \neq 0_{E}\)</span>,\</p></li>
+<li><p><span class="math inline">\(v \neq 0_{E}\)</span>,</p></li>
 <li><p><span class="math inline">\(f(v) = \lambda v\)</span>.</p></li>
 </ol>
 </div>
 <div id="def-spectre" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 5.8 (Spectre)</strong></span> Le <strong>spectre</strong> d’un endomorphisme <span class="math inline">\(f \in \mathcal{L}(E)\)</span> est l’ensemble de ses valeurs propres. On ne note <span class="math inline">\(\operatorname{Sp}f\)</span>.</p>
+<p><span class="theorem-title"><strong>Définition 5.7 (Spectre)</strong></span> Le <strong>spectre</strong> d’un endomorphisme <span class="math inline">\(f \in \mathcal{L}(E)\)</span> est l’ensemble de ses valeurs propres. On ne note <span class="math inline">\(\operatorname{Sp}f\)</span>.</p>
 </div>
 <div id="def-sous-espace-propre" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 5.9 (Sous espaces propres)</strong></span> Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span> et <span class="math inline">\(\lambda \in \operatorname{Sp}(f)\)</span>. Le <strong>sous espace propre</strong> associé à la valeur propre <span class="math inline">\(\lambda\)</span> est l’ensemble</p>
+<p><span class="theorem-title"><strong>Définition 5.8 (Sous espaces propres)</strong></span> Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span> et <span class="math inline">\(\lambda \in \operatorname{Sp}(f)\)</span>. Le <strong>sous espace propre</strong> associé à la valeur propre <span class="math inline">\(\lambda\)</span> est l’ensemble</p>
 <p><span class="math display">\[
     E_{\lambda}(f) = \{v \in E,\ f(v) = \lambda v\} = \ker (f- \lambda
 \operatorname{Id}_E).
@@ -423,19 +450,19 @@ Note&nbsp;5.2
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note&nbsp;5.3
+Note&nbsp;5.4
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>L’ensemble <span class="math inline">\(E_{\lambda}(f)\)</span>, lui, contient le vecteur nul, mais il n’est pas <em>réduit</em> au vecteur nul (par définition d’une valeur propre). Puisque c’est un sous espace vectoriel, il contient donc une <em>infinité</em> de vecteurs propres de <span class="math inline">\(f\)</span>, associés à la même valeur propre <span class="math inline">\(\lambda\)</span>.</p>
+<p>L’ensemble <span class="math inline">\(E_{\lambda}(f)\)</span> contient le vecteur nul (qui n’est pas un vecteur propre), mais il n’est pas <em>réduit</em> au vecteur nul (par définition d’une valeur propre), et tout élement <em>non nul</em> de <span class="math inline">\(E_{\lambda}(f)\)</span> est un vecteur propre de <span class="math inline">\(f\)</span>. Puisque c’est un sous espace vectoriel, il contient donc une <em>infinité</em> de vecteurs propres de <span class="math inline">\(f\)</span>, associés à la même valeur propre <span class="math inline">\(\lambda\)</span>.</p>
 </div>
 </div>
 <div id="prp-stabilite" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 5.5</strong></span> Si <span class="math inline">\(\lambda \in \mathbb{K}\)</span> est une valeur propre de <span class="math inline">\(f\)</span>, alors le sous-espace propre associé à la valeur propre <span class="math inline">\(\lambda\)</span> est <em>stable</em> par <span class="math inline">\(f\)</span> et <span class="math display">\[
+<p><span class="theorem-title"><strong>Proposition 5.4 (Stabilité)</strong></span> Si <span class="math inline">\(\lambda \in \mathbb{K}\)</span> est une valeur propre de <span class="math inline">\(f\)</span>, alors le sous-espace propre associé à la valeur propre <span class="math inline">\(\lambda\)</span> est <em>stable</em> par <span class="math inline">\(f\)</span> et <span class="math display">\[
     f_{|E_{\lambda}(f)} = \lambda \operatorname{Id}_{E_{\lambda}(f)}.
 \]</span></p>
 </div>
-<p>Autremenent dit, chacun des sous espace propres de <span class="math inline">\(f\)</span> est stable par <span class="math inline">\(f\)</span>, et <span class="math inline">\(f\)</span> restreint à chacun de ses sous espace propre est un multiple de l’identité ; c’est le premier pas en direction de la <em>réduction</em> de l’endomorphisme <span class="math inline">\(f\)</span>.</p>
+<p>Autremenent dit, chacun des sous espace propres de <span class="math inline">\(f\)</span> est stable par <span class="math inline">\(f\)</span>, et <span class="math inline">\(f\)</span> s’y restreint en un multiple de l’identité ; c’est le premier pas en direction de la <em>réduction</em> de l’endomorphisme <span class="math inline">\(f\)</span>.</p>
 <div id="exm-projecteur" class="theorem example">
 <p><span class="theorem-title"><strong>Exemple 5.1 (Les projecteurs)</strong></span> Soit <span class="math inline">\(p\)</span> le projecteur sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> où <span class="math inline">\(F\)</span> et <span class="math inline">\(G\)</span> sont deux sous espaces vectoriels non triviaux supplémentaires dans <span class="math inline">\(E\)</span>. Alors <span class="math inline">\(0\)</span> et <span class="math inline">\(1\)</span> sont valeurs propres de <span class="math inline">\(p\)</span> et</p>
 <p><span class="math display">\[
@@ -454,13 +481,12 @@ Note&nbsp;5.3
         E_{-1}(s) = \ker (s+ \operatorname{Id}_{E}) = G.
     \end{cases}
 \]</span></p>
-<p>A nouveau, ces scalaires sont bien des valeurs propres car ni <span class="math inline">\(F\)</span> ni <span class="math inline">\(G\)</span> ne sont réduit à <span class="math inline">\(\{0_{E}\}\)</span>.</p>
 </div>
 <div id="exm-derivation" class="theorem example">
 <p><span class="theorem-title"><strong>Exemple 5.3</strong></span> La fonction <span class="math inline">\(\operatorname{exp}: x \mapsto e^{x}\)</span> est un vecteur propre de l’endomorphisme <span class="math inline">\(D: C^{\infty}(\mathbb{R}) \to C^{\infty}(\mathbb{R})\)</span> qui à une fonction <span class="math inline">\(f\)</span> associe sa dérivée <span class="math inline">\(f'\)</span>. En effet, la fonction <span class="math inline">\(\operatorname{exp}\)</span> n’est pas la fonction nulle, et</p>
 <p><span class="math display">\[
     D(\operatorname{exp}) = \operatorname{exp} = 1 \cdot
-\operatorname{exp}
+\operatorname{exp}.
 \]</span></p>
 <p>Plus généralement, si <span class="math inline">\(\lambda \in \mathbb{R}\)</span>, la fonction <span class="math inline">\(x \mapsto
 \operatorname{exp}(\lambda x)\)</span> est un vecteur propre de la dérivation, associé à la valeur propre <span class="math inline">\(\lambda\)</span>. Donc <span class="math inline">\(\operatorname{Sp}(D) = \mathbb{R}\)</span>.</p>
@@ -471,7 +497,7 @@ Note&nbsp;5.3
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note&nbsp;5.4: Le cas des matrices
+Note&nbsp;5.5: Le cas des matrices
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -491,9 +517,9 @@ Note&nbsp;5.4: Le cas des matrices
 </ul>
 <p><span class="math display">\[
     E_{\lambda}(f_A) =\{X \in \mathcal{M}_{n,1}(\mathbb{K}),\ AX = \lambda
-X\} = \ker (A - \lambda \operatorname{I}_{n}).
+X\} = \ker (A - \lambda \operatorname{I}_{n}),
 \]</span></p>
-<p>se note simplement <span class="math inline">\(E_{\lambda}(A)\)</span> et s’appelle le <em>sous espace propre de <span class="math inline">\(A\)</span></em>, associé à la valeur propre <span class="math inline">\(\lambda\)</span>.</p>
+<p>se note simplement <span class="math inline">\(E_{\lambda}(A)\)</span> et s’appelle le <em>sous espace propre de <span class="math inline">\(A\)</span></em> associé à la valeur propre <span class="math inline">\(\lambda\)</span>.</p>
 </div>
 </div>
 <div id="exm-matrice-A" class="theorem example">
@@ -541,7 +567,7 @@ X\} = \ker (A - \lambda \operatorname{I}_{n}).
 \]</span></p>
 <p>Soit <span class="math inline">\(X = \begin{pmatrix}
     x\\y
-\end{pmatrix}\in \mathcal{M}_{2,1}(\mathbb{R})\)</span>. On a</p>
+\end{pmatrix}\in \mathcal{M}_{2,1}(\mathbb{R})\)</span>. On a donc</p>
 <p><span class="math display">\[
 \begin{aligned}
     X \in E_{4}(A) &amp;\Longleftrightarrow \begin{cases}
@@ -566,17 +592,17 @@ x -2y = 0
 <div id="rem-matrice-A" class="proof remark">
 <p><span class="proof-title"><em>Remarque 5.1</em>. </span>On retrouve en particulier le vecteur <span class="math inline">\(\begin{pmatrix}
     2\\1
-\end{pmatrix}\)</span>, mais tous les multpiles <em>non nuls</em> de ce vecteurs sont encore des vecteurs propres de <span class="math inline">\(A\)</span> associé à la valeur propre <span class="math inline">\(4\)</span> (comparer à la <a href="#nte-sous-espace-propre" class="quarto-xref">Note&nbsp;<span>5.3</span></a>).</p>
+\end{pmatrix}\)</span>, mais également tous les <em>multiples</em> de ce vecteur (cf <a href="#nte-sous-espace-propre" class="quarto-xref">Note&nbsp;<span>5.4</span></a> ).</p>
 </div>
 <p>On continue maintenant à avancer dans la réduction de l’endomorphisme <span class="math inline">\(f\)</span> en montrant l’aspect <em>directe</em> d’une somme de sous espaces propres.</p>
 <div id="prp-somme-directe" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 5.6</strong></span> Toute somme de sous espace propres de <span class="math inline">\(f\)</span> associés à des valeurs propres deux à deux distinctes est <em>directe</em>.</p>
+<p><span class="theorem-title"><strong>Proposition 5.5 (Somme directe des sous espaces propres)</strong></span> Toute somme de sous espace propres de <span class="math inline">\(f\)</span> associés à des valeurs propres deux à deux distinctes est <em>directe</em>.</p>
 </div>
 <div id="cor-liberte" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollaire 5.1</strong></span> Toute famille de vecteurs associés à des valeurs propres deux à deux distinctes de <span class="math inline">\(f\)</span> est <em>libre</em>.</p>
+<p><span class="theorem-title"><strong>Corollaire 5.1 (Liberté d’une famille de vecteurs propres)</strong></span> Toute famille de vecteurs associés à des valeurs propres deux à deux distinctes de <span class="math inline">\(f\)</span> est <em>libre</em>.</p>
 </div>
 <div id="cor-cardinal-spectre" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollaire 5.2</strong></span> Si <span class="math inline">\(E\)</span> est dimension finie, alors tout endormophisme <span class="math inline">\(f\)</span> de <span class="math inline">\(E\)</span> possède au maximum <span class="math inline">\(\dim E\)</span> valeurs propres distinctes.</p>
+<p><span class="theorem-title"><strong>Corollaire 5.2 (Cardinalité maximal du spectre)</strong></span> Si <span class="math inline">\(E\)</span> est dimension finie, tout endormophisme <span class="math inline">\(f\)</span> de <span class="math inline">\(E\)</span> possède au maximum <span class="math inline">\(\dim E\)</span> valeurs propres distinctes.</p>
 </div>
 <div id="nte-cardinal-spectre" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -584,7 +610,7 @@ x -2y = 0
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note&nbsp;5.5
+Note&nbsp;5.6
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -810,433 +836,316 @@ Note&nbsp;5.5
 <li><p>Quelle est la version matricielle de ce résultat ?</p></li>
 </ol>
 </div>
-<div id="exr-05-0005" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 5.5 (<span class="math inline">\(\star\)</span>)</strong></span> Montrer que toute matrice réelle <span class="math inline">\(3\times 3\)</span> possède au moins une valeur propre réelle.</p>
+<div id="exr-05-fk" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.5</strong></span> (Images successives d’un vecteur propre). Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span> et soit <span class="math inline">\(v\)</span> un vecteur propres de <span class="math inline">\(f\)</span>.</p>
+<ol type="1">
+<li><p>Calculer, pour tout <span class="math inline">\(k \in \mathbb{N}^{*}\)</span>, <span class="math inline">\(f^k(v)\)</span>.</p></li>
+<li><p>Montrer que pour tout <span class="math inline">\(k \in \mathbb{N}^{*}\)</span>, <span class="math inline">\(v\)</span> est un vecteur propre de <span class="math inline">\(f^k\)</span>, et préciser la valeur propre associée.</p></li>
+</ol>
 </div>
-<div id="exr-05-0006" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 5.6 (<span class="math inline">\(\star\)</span>)</strong></span> Soit <span class="math inline">\(M\in \mathcal{M}_n(\mathbb{R})\)</span>. Montrer que <span class="math inline">\(M\)</span> et <span class="math inline">\(M^T\)</span> ont le même polynôme caractéristique. En déduire qu’elles ont les mêmes valeurs propres, aux mêmes ordres de multiplicité.</p>
+<div id="exr-05-vp-complexe" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.6</strong></span> (Valeurs propres complexes d’une matrice réelle). Soit <span class="math inline">\(A \in
+\mathcal{M}_{n}(\mathbb{R})\)</span> et <span class="math inline">\(\lambda\)</span> une valeur propre <em>complexe</em> de <span class="math inline">\(A\)</span>.</p>
+<ol type="1">
+<li><p>Justifier que <span class="math inline">\(\bar{\lambda}\)</span> est valeur propre (complexe) de <span class="math inline">\(A\)</span>.</p></li>
+<li><p>Montrer que si <span class="math inline">\(Z \in \mathcal{M}_{n,1}(\mathbb{C})\)</span> est un vecteur propre (complexe) de <span class="math inline">\(A\)</span> associé à la valeur propre <span class="math inline">\(\lambda\)</span>, alors <span class="math inline">\(\bar{Z}\)</span> est un vecteur propre (complexe) associé à la valeur propre <span class="math inline">\(\bar{\lambda}\)</span>.</p></li>
+<li><p>(<span class="math inline">\(\star\)</span>) On note <span class="math inline">\(Z = U +iV\)</span> avec <span class="math inline">\(U,V \in \mathcal{M}_{n,1}(\mathbb{R})\)</span>. Montrer que le plan vectoriel <span class="math inline">\(P\)</span> engendré par <span class="math inline">\(U\)</span> et <span class="math inline">\(V\)</span> est stable par <span class="math inline">\(A\)</span> et déterminer la matrice de la restriction de <span class="math inline">\(A\)</span> à <span class="math inline">\(P\)</span>.</p></li>
+</ol>
 </div>
-<!-- ### Endomorphismes et matrices diagonalisables  -->
-<!---->
-<!-- ::: {#exr-05-diag} -->
-<!---->
-<!-- Diagonaliser les matrices suivantes -->
-<!---->
-<!-- $$ -->
-<!-- \begin{pmatrix} -->
-<!--             -2&2\\ -->
-<!--             -2&3 -->
-<!--         \end{pmatrix}, \quad \begin{pmatrix} -->
-<!-- 4&-3&0\\-2&5&2\\6&-9&-2 -->
-<!-- \end{pmatrix} -->
-<!-- $$ -->
-<!---->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-05-cns} -->
-<!---->
-<!-- La matrice $A = \begin{pmatrix} -->
-<!--     2&1&-4\\ -->
-<!--     0&2&1\\ -->
-<!--     0&0&2 -->
-<!--     \end{pmatrix}$ est-elle diagonalisable ? -->
-<!---->
-<!-- Même question pour la matrice $B = \begin{pmatrix} -->
-<!--     1&1&-2\\ -->
-<!--     0&2&3\\ -->
-<!--     0&0&-4 -->
-<!--     \end{pmatrix}$. -->
-<!---->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-endo-matrice} -->
-<!---->
-<!-- #### Diagonalisation d'un endomorphisme de $\mathcal{M}_{2}(\mathbb{R})$. -->
-<!---->
-<!-- On pose $A = \begin{pmatrix} -->
-<!--     -2&2\\ -->
-<!--     -2&3 -->
-<!-- \end{pmatrix}$ et on considère l'endomorphisme -->
-<!---->
-<!-- $$ -->
-<!--     \varphi : \mathcal{M}_{2}(\mathbb{R}) \to \mathcal{M}_{2}(\mathbb{R}) -->
-<!-- $$ -->
-<!---->
-<!-- définit par  -->
-<!---->
-<!-- $$ -->
-<!--     \forall M \in \mathcal{M}_{2}(\mathbb{R}),\ \varphi(M) =AM. -->
-<!-- $$ -->
-<!---->
-<!-- 1. Montrer que la matrice $A$ est diagonalisable.  -->
-<!---->
-<!-- 2. Déterminer la matrice de $\varphi$ dans la base canonique de $\mathcal{M}_{2}(\mathbb{R})$. -->
-<!---->
-<!-- 2. Montrer que l'endomorphisme $\varphi$ est diagonalisable, et préciser une -->
-<!--    base de diagonalisation.  -->
-<!---->
-<!-- ::: -->
-<!---->
-<!---->
-<!-- ::: {#exr-05-pointille-2} -->
+<div id="exr-05-multiplication-A" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.7</strong></span> (Multiplication par A). Soit <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span>. On considère l’endomorphisme <span class="math inline">\(\varphi : \mathcal{M}_{n}(\mathbb{K}) \to
+\mathcal{M}_{n}(\mathbb{K})\)</span> défini par</p>
+<p><span class="math display">\[
+    \forall M \in \mathcal{M}_{n}(\mathbb{K}),\ \varphi(M)=AM.
+\]</span></p>
+<ol type="1">
+<li>On note <span class="math inline">\((C_{1},\dots,C_{n})\)</span> les colonnes d’une matrice <span class="math inline">\(M \in
+\mathcal{M}_{n}(\mathbb{K})\)</span>. Montrer que</li>
+</ol>
+<p><span class="math display">\[
+    AM = (AC_{1},\dots,AC_{n}).
+\]</span></p>
+<ol start="2" type="1">
+<li>On suppose que <span class="math inline">\(X \in \mathcal{M}_{n,1}(\mathbb{K})\)</span> est un vecteur propre de <span class="math inline">\(A\)</span>, associé à la valeur propre <span class="math inline">\(\lambda \in \mathbb{K}\)</span>. Déduire de la questoin précédente <span class="math inline">\(n\)</span> vecteurs propres linéairement indépendants de l’endomorphisme <span class="math inline">\(\varphi\)</span>.</li>
+</ol>
+</div>
+<!-- ::: {#exr-05-0005} -->
 <!---->
 <!-- #### $\star$ -->
 <!---->
-<!-- (Matrice circulante). On note $(e_1,\dots,e_n)$ la base canonique de $\mathbb{R}^n$. On définit un -->
-<!-- endomorphisme $u$ de $\mathbb{R}^n$ par $u(e_i) = e_{i-1}$ si -->
-<!-- $i\in\{2,\dots,n\}$ et $u(e_1) = e_n$. -->
-<!---->
-<!-- 1.  Déterminer la matrice $J_n$ de $u$ dans la base canonique de $\mathbb{R}^n$. -->
-<!---->
-<!-- 2. Calculer le polynome caractéristique de $J_{n}$.   -->
-<!---->
-<!-- 3. Soit $z$ un nombre complexe tel que $z^{n}=1$.  -->
-<!---->
-<!--     a. Montrer que le vecteur $U_z = \begin{pmatrix} -->
-<!--         1\\z\\ \vdots z^{n-1} -->
-<!--     \end{pmatrix}$ est un vecteur propre de $J_{n}$, et préciser la valeur -->
-<!--     propre associée. -->
-<!---->
-<!--     b. En déduire que $J_{n}$ est diagonalisable sur $\mathbb{C}$, et -->
-<!--     préciser une base de diagonalisation de $J_{n}$. -->
+<!-- Montrer que toute matrice réelle $3\times 3$ possède au moins une valeur -->
+<!-- propre réelle. -->
 <!---->
 <!-- ::: -->
+<!-- ::: {#exr-05-0006} -->
 <!---->
+<!-- #### $\star$ -->
 <!---->
-<!-- ::: {#exr-05-pol-mat} -->
+<!-- Soit $M\in \mathcal{M}_n(\mathbb{R})$. Montrer que $M$ et $M^T$ ont le même polynôme -->
+<!-- caractéristique. En déduire qu'elles ont les mêmes valeurs propres, aux -->
+<!-- mêmes ordres de multiplicité.  -->
 <!---->
-<!-- #### Diagonalisation d'un polynôme en $A$ -->
-<!---->
-<!-- Soit $A\in\M_n(\mathbb{K})$ et $Q\in GL_n(\mathbb{K})$. -->
-<!---->
-<!-- 1.  Montrer que $$\forall k\in\N,\ Q^{-1}A^kQ = (Q^{-1}AQ)^k$$ -->
-<!---->
-<!-- 2.  En déduire que $$\forall P\in\mathbb{K}[X],\ Q^{-1}P(A)Q = P(Q^{-1}AQ)$$ -->
-<!---->
-<!-- 3.  Pour $P\in\mathbb{K}[X]$, calculer $P(D)$ si $D$ est une matrice diagonale. -->
-<!---->
-<!-- 4.  En déduire que si $Q$ diagonalise $A$ alors $Q$ diagonalise -->
-<!--     également tout polynôme en $A$. -->
 <!-- ::: -->
-<!---->
-<!-- ::: {#exr-05-stable} -->
-<!-- ## $\star$ -->
-<!---->
-<!-- Soit $f\in\mathcal{L}(E)$ et $v$ un élément non-nul de $E$. Montrer que -->
-<!-- $v$ est un vecteur propre de $f$ ssi la droite vectorielle engendrée par -->
-<!-- $v$ est stable par $f$. -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-com} -->
-<!-- ## $\star$ -->
-<!---->
-<!-- Soient $f$ et $g$ deux endomorphisme de $E$ qui commutent. Montrer que -->
-<!-- les sous-espaces propres de $f$ sont stables par $g$, et réciproquement. -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-05-0007} -->
-<!-- ## $\star$ -->
-<!---->
-<!-- Soit $f$ et $g$ deux endomorphismes qui commutent. On suppose que $f$ -->
-<!-- est diagonalisable et que $f$ possède des valeurs propres deux à deux -->
-<!-- distinctes. En utilisant les exercices -->
-<!-- [\[stable\]](#stable){reference-type="ref" reference="stable"} et -->
-<!-- [\[com\]](#com){reference-type="ref" reference="com"}, montrer que $g$ -->
-<!-- et diagonalisable, et que toute base de diagonalisation de $f$ est -->
-<!-- également une base de diagonalisation de $g$. -->
-<!-- ::: -->
-<!---->
+</section>
+<section id="endomorphismes-et-matrices-diagonalisables" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="endomorphismes-et-matrices-diagonalisables"><span class="header-section-number">5.2.3</span> Endomorphismes et matrices diagonalisables</h3>
+<div id="exr-05-diag" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.8</strong></span> Justifier que les matrices suivantes sont diagonalisables, et les diagonaliser.</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+            -2&amp;2\\
+            -2&amp;3
+        \end{pmatrix}, \quad \begin{pmatrix}
+4&amp;-3&amp;0\\-2&amp;5&amp;2\\6&amp;-9&amp;-2
+\end{pmatrix}
+\]</span></p>
+</div>
+<div id="exr-05-cns" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.9</strong></span> La matrice <span class="math inline">\(A = \begin{pmatrix}
+    2&amp;1&amp;-4\\
+    0&amp;2&amp;1\\
+    0&amp;0&amp;2
+    \end{pmatrix}\)</span> est-elle diagonalisable ?</p>
+<p>Même question pour la matrice <span class="math inline">\(B = \begin{pmatrix}
+    1&amp;1&amp;-2\\
+    0&amp;2&amp;3\\
+    0&amp;0&amp;-4
+    \end{pmatrix}\)</span>.</p>
+</div>
+<div id="exr-05-0009" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.10</strong></span> La somme de deux matrices diagonalisables est-elle diagonalisable ? Si non, donner un contre-exemple.</p>
+</div>
+<div id="exr-05-red-endo-mat" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.11</strong></span> (Diagonalisation d’un endomorphisme de <span class="math inline">\(\mathcal{M}_{2}(\mathbb{R})\)</span>). Montrer que l’endomorphisme <span class="math inline">\(\varphi :\mathcal{M}_{2}(\mathbb{R})\to \mathcal{M}_{2}(\mathbb{R})\)</span> défini par : <span class="math display">\[\varphi(M) = AM-MA\]</span> avec <span class="math inline">\(A = \begin{pmatrix} 1&amp;1\\ 0&amp;3 \end{pmatrix}\)</span> est diagonalisable, et déterminer une base de diagonalisation de <span class="math inline">\(\varphi\)</span>.</p>
+</div>
+<div id="exr-05-red-endo-pol" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.12</strong></span> (Diagonalisation d’un endomorphisme <span class="math inline">\(\mathbb{R}_{2}[X]\)</span>). On pose <span class="math inline">\(E=\mathbb{R}_2[X]\)</span> et on définit l’application <span class="math inline">\(f\)</span> de <span class="math inline">\(E\)</span> dans <span class="math inline">\(E\)</span> par :</p>
+<p><span class="math display">\[
+\forall P\in E,\ f(P) = 2XP - (X^2-1)P'
+\]</span></p>
+<ol type="1">
+<li><p>Montrer que <span class="math inline">\(f\)</span> est un endomorphisme de <span class="math inline">\(E\)</span> et que sa matrice dans la base canonique de <span class="math inline">\(E\)</span> est <span class="math inline">\(C =  \begin{pmatrix}
+0&amp;1&amp;0\\
+2&amp;0&amp;2\\
+0&amp;1&amp;0
+\end{pmatrix}\)</span>.</p></li>
+<li><p>Déterminer une matrice inversible <span class="math inline">\(R\)</span> dont les coefficients de la première ligne sont égaux à <span class="math inline">\(1\)</span>, telle que <span class="math inline">\(R^{-1}CR = \begin{pmatrix}
+-2&amp;0&amp;0\\
+0&amp;0&amp;0\\
+0&amp;0&amp;2
+\end{pmatrix}\)</span></p></li>
+<li><p>En déduire que <span class="math inline">\(f\)</span> est diagonalisable, et donner une base de diagonalisation de <span class="math inline">\(f\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-05-pointille-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.13 (<span class="math inline">\(\star\)</span>)</strong></span> (Matrice circulante). On note <span class="math inline">\((e_1,\dots,e_n)\)</span> la base canonique de <span class="math inline">\(\mathbb{R}^n\)</span>. On définit un endomorphisme <span class="math inline">\(u\)</span> de <span class="math inline">\(\mathbb{R}^n\)</span> par <span class="math inline">\(u(e_i) =
+e_{i-1}\)</span> si <span class="math inline">\(i\in\{2,\dots,n\}\)</span> et <span class="math inline">\(u(e_1) = e_n\)</span>.</p>
+<ol type="1">
+<li><p>Déterminer la matrice <span class="math inline">\(J_n\)</span> de <span class="math inline">\(u\)</span> dans la base canonique de <span class="math inline">\(\mathbb{R}^n\)</span>.</p></li>
+<li><p>Calculer le polynome caractéristique de <span class="math inline">\(J_{n}\)</span>.</p></li>
+<li><p>Soit <span class="math inline">\(z\)</span> un nombre complexe tel que <span class="math inline">\(z^{n}=1\)</span>.</p>
+<ol type="a">
+<li><p>Montrer que le vecteur <span class="math inline">\(U_z = \begin{pmatrix}
+1\\z\\ \vdots \\z^{n-1}
+\end{pmatrix}\)</span> est un vecteur propre de <span class="math inline">\(J_{n}\)</span>, et préciser la valeur propre associée.</p></li>
+<li><p>En déduire que <span class="math inline">\(J_{n}\)</span> est diagonalisable sur <span class="math inline">\(\mathbb{C}\)</span>, et préciser une base de diagonalisation de <span class="math inline">\(J_{n}\)</span>.</p></li>
+</ol></li>
+</ol>
+</div>
+<div id="exr-05-pol-mat" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.14</strong></span> (Diagonalisation d’un polynômes en <span class="math inline">\(A\)</span>). Soit <span class="math inline">\(A\in\mathcal{M}_n(\mathbb{K})\)</span> et <span class="math inline">\(Q\in GL_n(\mathbb{K})\)</span>.</p>
+<ol type="1">
+<li><p>Montrer que <span class="math display">\[\forall k\in\mathcal{N},\ Q^{-1}A^kQ = (Q^{-1}AQ)^k\]</span></p></li>
+<li><p>En déduire que <span class="math display">\[\forall P\in\mathbb{K}[X],\ Q^{-1}P(A)Q = P(Q^{-1}AQ)\]</span></p></li>
+<li><p>Pour <span class="math inline">\(P\in\mathbb{K}[X]\)</span>, calculer <span class="math inline">\(P(D)\)</span> si <span class="math inline">\(D\)</span> est une matrice diagonale.</p></li>
+<li><p>En déduire que si <span class="math inline">\(Q\)</span> diagonalise <span class="math inline">\(A\)</span> alors <span class="math inline">\(Q\)</span> diagonalise également tout polynôme en <span class="math inline">\(A\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-05-stable" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.15 (<span class="math inline">\(\star\)</span>)</strong></span> (Vecteurs propres et droites stables). Soit <span class="math inline">\(f\in\mathcal{L}(E)\)</span> et <span class="math inline">\(v\)</span> un élément non-nul de <span class="math inline">\(E\)</span>. Montrer que <span class="math inline">\(v\)</span> est un vecteur propre de <span class="math inline">\(f\)</span> ssi la droite vectorielle engendrée par <span class="math inline">\(v\)</span> est stable par <span class="math inline">\(f\)</span>.</p>
+</div>
+<div id="exr-com" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.16 (<span class="math inline">\(\star\)</span>)</strong></span> (Stabilité des sous espaces propres d’endomorphismes commutant). Soient <span class="math inline">\(f\)</span> et <span class="math inline">\(g\)</span> deux endomorphisme de <span class="math inline">\(E\)</span> qui commutent. Montrer que les sous-espaces propres de <span class="math inline">\(f\)</span> sont stables par <span class="math inline">\(g\)</span>, et réciproquement.</p>
+</div>
+<div id="exr-05-commute" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.17 (<span class="math inline">\(\star\)</span>)</strong></span> (Diagonalisation simultanée). Soit <span class="math inline">\(f\)</span> et <span class="math inline">\(g\)</span> deux endomorphismes qui commutent. On suppose que <span class="math inline">\(f\)</span> est diagonalisable et que <span class="math inline">\(f\)</span> possède des valeurs propres deux à deux distinctes. En utilisant les <a href="#exr-05-stable" class="quarto-xref">Exercice&nbsp;<span>5.15</span></a> et <a href="#exr-05-commute" class="quarto-xref">Exercice&nbsp;<span>5.17</span></a>, montrer que <span class="math inline">\(g\)</span> et diagonalisable, et que toute base de diagonalisation de <span class="math inline">\(f\)</span> est également une base de diagonalisation de <span class="math inline">\(g\)</span>.</p>
+</div>
+</section>
+<section id="trigonalisation" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="trigonalisation"><span class="header-section-number">5.2.4</span> Trigonalisation</h3>
+<div id="exr-05-sans-calc" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.18</strong></span> (Sans calcul (1)). On considère la matrice <span class="math display">\[A=\begin{pmatrix}
+4&amp;-3&amp;2\\6&amp;-5&amp;4\\4&amp;-4&amp;4 \end{pmatrix}\]</span></p>
+<ol type="1">
+<li><p>Montrer que le vecteur <span class="math inline">\(\begin{pmatrix}
+1\\1\\0
+\end{pmatrix}\)</span> est un vecteur propre de <span class="math inline">\(A\)</span>. Quelle est la valeur propre associée ?</p></li>
+<li><p>Déterminer le rang de <span class="math inline">\(A\)</span>. En déduire que <span class="math inline">\(0\)</span> est valeur propre de <span class="math inline">\(A\)</span> et déterminer le sous-espace propre associé.</p></li>
+<li><p>Déterminer sans aucun calcul le polynôme caractéristique de <span class="math inline">\(A\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-05-sans-calc-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.19</strong></span> (Sans calcul (2)). Déterminer, avec le moins de calculs possible, les éléments propres des matrices :</p>
+<p><span class="math display">\[
+A = \begin{pmatrix}
+        1&amp;1&amp;1\\
+        1&amp;1&amp;1\\
+        1&amp;1&amp;1
+    \end{pmatrix},\quad \text{et} \quad B =\begin{pmatrix}
+    1&amp;0&amp;0&amp;-1\\
+    1&amp;-2&amp;0&amp;-1\\
+    -1&amp;0&amp;0&amp;1\\
+    1&amp;0&amp;0&amp;-1
+    \end{pmatrix}.
+\]</span></p>
+</div>
+<div id="exr-05-trig" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.20</strong></span> (Trigonalisation). On pose <span class="math inline">\(A=\displaystyle\left(\begin{matrix} 5&amp;-8&amp;4\\
+1&amp;0&amp;0\\ 0&amp;1&amp;0 \end{matrix}\right)\)</span>.</p>
+<ol type="1">
+<li><p>La matrice <span class="math inline">\(A\)</span> est elle diagonalisable ?</p></li>
+<li><p>Montrer que la matrice <span class="math inline">\(A\)</span> est semblable à la matrice <span class="math inline">\(\displaystyle T=\left(\begin{matrix}
+1&amp;0&amp;0\\
+0&amp;2&amp;1\\
+0&amp;0&amp;2
+\end{matrix}\right).\)</span></p></li>
+<li><p>Déterminer l’expression de <span class="math inline">\(T^n\)</span> pour tout <span class="math inline">\(n\in\mathbb{N}\)</span>.<br>
+<em>On pourra écrire <span class="math inline">\(T\)</span> sous la forme <span class="math inline">\(D+N\)</span> où <span class="math inline">\(D\)</span> une matrice diagonale et <span class="math inline">\(N\)</span> vérifie <span class="math inline">\(N^2=0\)</span></em>.</p></li>
+</ol>
+</div>
+<div id="exr-05-matrice-taille-2-trig" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.21</strong></span> (Trigonalisation dans <span class="math inline">\(\mathcal{M}_{2}(\mathbb{K})\)</span>). Soit <span class="math inline">\(A \in
+\mathcal{M}_{2}(\mathbb{K})\)</span>. On suppose que <span class="math inline">\(A\)</span> n’est pas un multiple de <span class="math inline">\(\operatorname{I}_{2}\)</span> et que <span class="math inline">\(A\)</span> possède une valeur propre double <span class="math inline">\(\lambda\)</span>.</p>
+<ol type="1">
+<li><p>Justifier que <span class="math inline">\(A\)</span> est semblable à une matrice du type <span class="math inline">\(T = \begin{pmatrix}
+\lambda &amp; \alpha\\ 0 &amp; \lambda \end{pmatrix}\)</span> avec <span class="math inline">\(\alpha \neq 0\)</span>.</p></li>
+<li><p>Pour <span class="math inline">\(\beta \neq 0\)</span>, on pose</p>
+<p><span class="math display">\[
+Q = \begin{pmatrix}
+    1&amp;0\\
+    0&amp; \beta
+\end{pmatrix}
+\]</span></p>
+<ol type="a">
+<li><p>Montrer que <span class="math inline">\(Q\)</span> est inversible et calculer <span class="math inline">\(Q^{-1}TQ\)</span>.</p></li>
+<li><p>En déduire que <span class="math inline">\(A\)</span> est semblable à <span class="math inline">\(\begin{pmatrix}
+\lambda &amp;1\\
+0&amp;\lambda
+\end{pmatrix}\)</span>.</p></li>
+</ol></li>
+</ol>
+</div>
+</section>
+<section id="applications-de-la-réduction" class="level3" data-number="5.2.5">
+<h3 data-number="5.2.5" class="anchored" data-anchor-id="applications-de-la-réduction"><span class="header-section-number">5.2.5</span> Applications de la réduction</h3>
+<div id="exr-05-syst" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.22</strong></span> (Etude d’un système de suites récurrentes linéaires d’ordre <span class="math inline">\(1\)</span>). On considère le système</p>
+<p><span class="math display">\[
+\left\{ \begin{array}{l} u_{n+1} = -4u_n - 6v_n\\ v_{n+1} = 3u_n +
+5v_n\\ w_{n+1} = 3u_n + 6v_n + 5w_n \end{array} \right.
+\]</span></p>
+<p>Pour tout <span class="math inline">\(n\in\mathbb{N}\)</span>, on pose <span class="math inline">\(X_n = \begin{pmatrix} u_{n}\\v_n\\w_n \end{pmatrix}\)</span>.</p>
+<ol type="1">
+<li><p>Montrer qu’il existe une matrice <span class="math inline">\(A\in\mathcal{M}_3(\mathbb{R})\)</span> telle que <span class="math display">\[\forall n\in\mathbb{N},\ X_{n+1}AX_n.\]</span></p></li>
+<li><p>Montrer que la matrice <span class="math inline">\(A\)</span> est diagonalisable et déterminer une matrice <span class="math inline">\(P\in GL_3(\mathbb{R})\)</span> et une matrice diagonale <span class="math inline">\(D\in\mathcal{M}_3(\mathbb{R})\)</span> tels que <span class="math inline">\(P^{-1}AP=D\)</span>.</p></li>
+<li><p>En déduire <span class="math inline">\(u_n,v_n\)</span> et <span class="math inline">\(w_n\)</span> en fonction de <span class="math inline">\(u_0,v_0\)</span> et <span class="math inline">\(w_0\)</span>.</p></li>
+<li><p>A quelle condition nécessaire et suffisante sur <span class="math inline">\(u_0,v_0\)</span> et <span class="math inline">\(w_0\)</span> les suites <span class="math inline">\(u_n\)</span>, <span class="math inline">\(v_n\)</span> et <span class="math inline">\(w_n\)</span> sont-elle bornées ?</p></li>
+</ol>
+</div>
+<div id="exr-05-suite-rec-2-const" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.23</strong></span> (Suites récurrentes linéaires d’ordre <span class="math inline">\(2\)</span>). Dans chacun des cas, déterminer <span class="math inline">\(u_n\)</span> pour tout <span class="math inline">\(n\)</span> :</p>
+<ol type="1">
+<li><p><span class="math inline">\(u_{0}=1\)</span>, <span class="math inline">\(u_1=3\)</span>, <span class="math inline">\(\forall n\in \mathbb{N}\)</span>, <span class="math inline">\(u_{n+2}  =3u_{n+1} - 2u_n\)</span>,</p></li>
+<li><p><span class="math inline">\(u_0=u_1=1\)</span>, <span class="math inline">\(\forall n\geqslant 2\)</span>, <span class="math inline">\(u_{n} = 4u_{n-1} - 4u_{n-2}\)</span>,</p></li>
+<li><p><span class="math inline">\(u_0=u_1=1\)</span>, <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, <span class="math inline">\(u_{n+2} = 2\cos(\theta)u_{n+1} - u_n\)</span>, <span class="math inline">\(\theta\in]0,\pi[\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-05-0010" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.24</strong></span> (Polynôme annulateur). On considère la matrice <span class="math display">\[
+A = \begin{pmatrix}
+1&amp;0&amp;0&amp;0\\
+2&amp;3&amp;2&amp;0\\
+-1&amp;-1&amp;0&amp;0\\
+0&amp;0&amp;0&amp;2
+\end{pmatrix}
+\]</span></p>
+<ol type="1">
+<li><p>Déterminer les valeurs propres de <span class="math inline">\(A\)</span> et montrer que <span class="math inline">\(A\)</span> est diagonalisable.</p></li>
+<li><p>En déduire un polynôme annulateur de <span class="math inline">\(A\)</span> de degré <span class="math inline">\(2\)</span>.</p></li>
+<li><p>A l’aide d’une division euclidienne, en déduire <span class="math inline">\(A^n\)</span> pour tout <span class="math inline">\(n\in\mathbb{N}^*\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-05-eq-mat" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.25</strong></span> (Une équation matricielle). On considère la matrice <span class="math inline">\(A =\begin{pmatrix}
+3&amp;0&amp;-1\\
+2&amp;4&amp;2\\
+-1&amp;0&amp;3
+\end{pmatrix}\)</span></p>
+<ol type="1">
+<li><p>Justifier qu’il existe <span class="math inline">\(P\in GL_n(\mathbb{K})\)</span> telle que <span class="math inline">\(P^{-1}AP=D\)</span> avec <span class="math inline">\(D = \mathrm{diag}(2,4,4)\)</span>.</p></li>
+<li><p>En déduire, en fonction de <span class="math inline">\(P\)</span> et <span class="math inline">\(P^{-1}\)</span>, des solutions à l’équation matricielle <span class="math inline">\(M^2=A\)</span> d’inconnue <span class="math inline">\(M\in\mathcal{M}_3(\mathbb{R})\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-05-suite-rec-3-const" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.26 (<span class="math inline">\(\star\)</span>)</strong></span> (Une suite récurrente linéaire d’ordre <span class="math inline">\(3\)</span>). On considère la suite <span class="math inline">\((u_n)_{n\in\mathbb{N}}\)</span> définie par <span class="math inline">\(u_0=1\)</span>, <span class="math inline">\(u_1=0\)</span> et <span class="math inline">\(u_2 = 2\)</span> et</p>
+<p><span class="math display">\[
+\forall n\in\mathbb{N},\ u_{n+3} = -\frac{1}{2}u_{n+2} + \frac{5}{2}u_{n+1}-u_n
+\]</span></p>
+<p>En s’inspirant du cas des suites récurrentes linéaires d’ordre <span class="math inline">\(2\)</span>, déterminer <span class="math inline">\(u_n\)</span>, pour tout <span class="math inline">\(n\in\mathbb{N}\)</span>.</p>
+</div>
+<div id="exr-05-comm" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.27</strong></span> (Commutant). On considère la matrice <span class="math inline">\(A = \begin{pmatrix}
+0&amp;2&amp;-1\\
+3&amp;-2&amp;0\\
+-2&amp;2&amp;1
+\end{pmatrix}\)</span></p>
+<ol type="1">
+<li><p>Montrer que la matrice <span class="math inline">\(A\)</span> est diagonalisable dans <span class="math inline">\(\mathcal{M}_3(\mathbb{R})\)</span> et déterminer une matrice <span class="math inline">\(P\)</span> inversible telle que <span class="math inline">\(P^{-1}AP = D\)</span> avec <span class="math inline">\(D\)</span> diagonale.</p></li>
+<li><p>Montrer qu’une matrice <span class="math inline">\(M'\)</span> de <span class="math inline">\(\mathcal{M}_3(\mathbb{R})\)</span> commute avec <span class="math inline">\(D\)</span> ssi <span class="math inline">\(M'\)</span> est diagonale.</p></li>
+<li><p>Montrer que <span class="math inline">\(M\)</span> commute avec <span class="math inline">\(A\)</span> ssi <span class="math inline">\(P^{-1}MP\)</span> commute avec <span class="math inline">\(D\)</span>.</p></li>
+<li><p>En déduire l’ensemble des matrices commutant avec <span class="math inline">\(A\)</span>. On exprimera ces matrices à l’aide des matrices <span class="math inline">\(P\)</span> et <span class="math inline">\(P^{-1}\)</span> et de matrices de la base canonique de <span class="math inline">\(\mathcal{M}_3(\mathbb{R})\)</span>.</p></li>
+</ol>
+</div>
 <!-- ::: {#exr-05-0008} -->
 <!-- ## $\star$ -->
 <!---->
-<!-- Soient $A,B\in\M_n(\mathbb{K})$. On considère l'endomorphisme de $\M_n(\mathbb{K})$ -->
+<!-- Soient $A,B\in\mathcal{M}_n(\mathbb{K})$. On considère l'endomorphisme de $\mathcal{M}_n(\mathbb{K})$ -->
 <!-- $$\varphi :M\mapsto AMB$$ Expliquer comment construire un vecteur propre -->
 <!-- de $\varphi$ à partir d'un couple $(X,Y)$ de colonnes propres de $A$ et -->
 <!-- $B^T$. -->
 <!-- ::: -->
 <!---->
-<!-- ##  -->
-<!---->
-<!---->
-<!-- ::: {#exr-05-0009} -->
-<!-- La somme de deux matrices diagonalisables est-elle diagonalisable ? Si -->
-<!-- non, donner un contre-exemple. -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-05-red-endo-mat} -->
-<!-- Montrer que l'endomorphisme $\varphi :\M_{2}(\mathbb{R})\to \M_{2}(\mathbb{R})$ défini -->
-<!-- par : $$\varphi(M) = AM-MA$$ avec $A = \begin{pmatrix} -->
-<!-- 1&1\\ -->
-<!-- 0&3 -->
-<!-- \end{pmatrix}$ est diagonalisable, et déterminer une base de -->
-<!-- diagonalisation de $\varphi$. -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-05-red-endo-pol} -->
-<!-- On pose $E=\mathbb{R}_2[X]$ et on définit l'application $f$ de $E$ dans $E$ par -->
-<!-- : $$\forall P\in E,\ f(P) = 2XP - (X^2-1)P'$$ -->
-<!---->
-<!-- 1.  Montrer que $f$ est un endomorphisme de $E$ et que sa matrice dans -->
-<!--     la base canonique de $E$ est $C =  \begin{pmatrix} -->
-<!--     0&1&0\\ -->
-<!--     2&0&2\\ -->
-<!--     0&1&0 -->
-<!--     \end{pmatrix}$. -->
-<!---->
-<!-- 2.  Déterminer une matrice inversible $R$ dont les coefficients de la -->
-<!--     première ligne sont égaux à $1$ telle que -->
-<!--     $R^{-1}CR = \begin{pmatrix} -->
-<!--     -2&0&0\\ -->
-<!--     0&0&0\\ -->
-<!--     0&0&2 -->
-<!--     \end{pmatrix}$ -->
-<!---->
-<!-- 3.  En déduire que $f$ est diagonalisable, et donner une base de -->
-<!--     diagonalisation de $f$. -->
-<!-- ::: -->
-<!---->
-<!-- ##  -->
-<!---->
-<!-- ::: {#exr-05-sans-calc} -->
-<!-- On considère la matrice $$A=\begin{pmatrix} -->
-<!-- 4&-3&2\\6&-5&4\\4&-4&4 -->
-<!-- \end{pmatrix}$$ -->
-<!---->
-<!-- 1.  Montrer que le vecteur $\begin{pmatrix} -->
-<!--     1\\1\\0 -->
-<!--     \end{pmatrix}$ est un vecteur propre de $A$. Quelle est la valeur -->
-<!--     propre associée ? -->
-<!---->
-<!-- 2.  Déterminer le rang de $A$. En déduire que $0$ est valeur propre de -->
-<!--     $A$ et déterminer le sous-espace propre associé. -->
-<!---->
-<!-- 3.  Déterminer sans aucun calcul le polynôme caractéristique de $A$. -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-05-sans-calc-2} -->
-<!-- Déterminer, avec le moins de calculs possible, les éléments propres des -->
-<!-- matrices :\ -->
-<!---->
-<!-- ::: enumerate* -->
-<!-- $A = \begin{pmatrix} -->
-<!--         1&1&1\\ -->
-<!--         1&1&1\\ -->
-<!--         1&1&1 -->
-<!--     \end{pmatrix}$, -->
-<!---->
-<!-- $B =\begin{pmatrix} -->
-<!--     1&0&0&-1\\ -->
-<!--     1&-2&0&-1\\ -->
-<!--     -1&0&0&1\\ -->
-<!--     1&0&0&-1 -->
-<!--     \end{pmatrix}.$ -->
-<!-- ::: -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-05-trig} -->
-<!-- ## $\star$ -->
-<!---->
-<!-- Soit $f$ un endomorphisme d'un $\mathbb{K}$-espace vectoriel $E$ de dimension -->
-<!-- $2$. On suppose que le polynôme caractéristique de $f$ est -->
-<!-- $(X-\lambda)^2$ avec $\lambda\in\mathbb{K}$.\ -->
-<!---->
-<!-- 1.  Montrer qu'il existe une base $\mathcal{B}$ de $E$ dans laquelle la -->
-<!--     matrice de $f$ est $\begin{pmatrix} -->
-<!--              \lambda&1\\ -->
-<!--              0&\lambda -->
-<!--             \end{pmatrix}$ ou $\begin{pmatrix} -->
-<!--                 \lambda&0\\ -->
-<!--                 0&\lambda -->
-<!--             \end{pmatrix}$. -->
-<!---->
-<!-- 2.  En déduire que toute matrice $A\in\mathcal{M}_2(\mathbb{K})$ possédant une -->
-<!--     seule valeur propre $\lambda$ est semblable à $\lambda I_2$ ou -->
-<!--     $\begin{pmatrix} -->
-<!--             \lambda&1\\ -->
-<!--             0&\lambda -->
-<!--         \end{pmatrix}$. -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-05-trig} -->
-<!-- ## $\star$ -->
-<!---->
-<!-- On pose $A=\displaystyle\left(\begin{matrix} -->
-<!-- 5&-8&4\\ -->
-<!-- 1&0&0\\ -->
-<!-- 0&1&0 -->
-<!-- \end{matrix}\right)$. -->
-<!---->
-<!-- 1.  La matrice $A$ est elle diagonalisable ? -->
-<!---->
-<!-- 2.  Montrer que la matrice $A$ est semblable à la matrice -->
-<!--     $\displaystyle T=\left(\begin{matrix} -->
-<!--     1&0&0\\ -->
-<!--     0&2&1\\ -->
-<!--     0&0&2 -->
-<!--     \end{matrix}\right).$ -->
-<!---->
-<!-- 3.  Déterminer l'expression de $T^n$ pour tout $n\in\mathbb{N}$.\ -->
-<!--     *On pourra écrire $T$ sous la forme $D+N$ où $D$ une matrice -->
-<!--     diagonale et $N$ vérifie $N^2=0$*. -->
-<!-- ::: -->
-<!---->
-<!-- ##  -->
-<!---->
-<!-- ::: {#exr-05-syst} -->
-<!-- On considère le système $$\left\{ -->
-<!-- \begin{array}{l} -->
-<!-- u_{n+1} = -4u_n - 6v_n\\ -->
-<!-- v_{n+1} = 3u_n + 5v_n\\ -->
-<!-- w_{n+1} = 3u_n + 6v_n + 5w_n -->
-<!-- \end{array} -->
-<!-- \right.$$ Pour tout $n\in\N$, on pose $X_n = \begin{pmatrix} -->
-<!--     u_{n}\\v_n\\w_n -->
-<!-- \end{pmatrix}$. -->
-<!---->
-<!-- 1.  Montrer qu'il existe une matrice $A\in\M_3(\mathbb{R})$ telle que -->
-<!--     $$\forall n\in\N,\ X_{n+1}AX_n.$$ -->
-<!---->
-<!-- 2.  Montrer que la matrice $A$ est diagonalisable et déterminer une -->
-<!--     matrice $P\in GL_3(\mathbb{R})$ et une matrice diagonale $D\in\M_3(\mathbb{R})$ tels -->
-<!--     que $P^{-1}AP=D$. -->
-<!---->
-<!-- 3.  En déduire $u_n,v_n$ et $w_n$ en fonction de $u_0,v_0$ et $w_0$. -->
-<!---->
-<!-- 4.  A quelle condition nécessaire et suffisante sur $u_0,v_0$ et $w_0$ -->
-<!--     les suites $u_n$, $v_n$ et $w_n$ sont-elle bornées ? -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-05-0010} -->
-<!-- On considère la matrice $$A = \begin{pmatrix} -->
-<!-- 1&0&0&0\\ -->
-<!-- 2&3&2&0\\ -->
-<!-- -1&-1&0&0\\ -->
-<!-- 0&0&0&2 -->
-<!-- \end{pmatrix}$$ -->
-<!---->
-<!-- 1.  Déterminer les valeurs propres de $A$ et montrer que $A$ est -->
-<!--     diagonalisable. -->
-<!---->
-<!-- 2.  En déduire un polynôme annulateur de $A$ de degré $2$. -->
-<!---->
-<!-- 3.  A l'aide d'une division euclidienne, en déduire $A^n$ pour tout -->
-<!--     $n\in\N^*$. -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-05-eq-mat} -->
-<!-- On considère la matrice $A =\begin{pmatrix} -->
-<!-- 3&0&-1\\ -->
-<!-- 2&4&2\\ -->
-<!-- -1&0&3 -->
-<!-- \end{pmatrix}$ -->
-<!---->
-<!-- 1.  Justifier qu'il existe $P\in GL_n(\mathbb{K})$ telle que $P^{-1}AP=D$ avec -->
-<!--     $D = \mathrm{diag}(2,4,4)$. -->
-<!---->
-<!-- 2.  En déduire, en fonction de $P$ et $P^{-1}$, des solutions à -->
-<!--     l'équation matricielle $M^2=A$ d'inconnue $M\in\M_3(\mathbb{R})$. -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-05-suite-rec-2-const} -->
-<!-- Dans chacun des cas, déterminer $u_n$ pour tout $n$ : -->
-<!---->
-<!-- 1.  $u_{0}=1$, $u_1=3$, $\forall n\in \N$, $u_{n+2}  =3u_{n+1} - 2u_n$, -->
-<!---->
-<!-- 2.  $u_0=u_1=1$, $\forall n\geqslant 2$, $u_{n} = 4u_{n-1} - 4u_{n-2}$, -->
-<!---->
-<!-- 3.  $u_0=u_1=1$, $\forall n\in\N$, -->
-<!--     $u_{n+2} = 2\cos(\theta)u_{n+1} - u_n$, $\theta\in]0,\pi[$. -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-05-suite-rec-3-const} -->
-<!-- ## $\star$ -->
-<!---->
-<!-- On considère la suite $(u_n)_{n\in\N}$ définie par $u_0=1$, $u_1=0$ et -->
-<!-- $u_2 = 2$ et -->
-<!-- $$\forall n\in\N,\ u_{n+3} = -\frac{1}{2}u_{n+2} + \frac{5}{2}u_{n+1}-u_n$$ -->
-<!-- En s'inspirant du cas des suites récurrentes linéaires d'ordre $2$, -->
-<!-- déterminer $u_n$, pour tout $n\in\N$. -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-05-comm} -->
-<!-- On considère la matrice $A = \begin{pmatrix} -->
-<!-- 0&2&-1\\ -->
-<!-- 3&-2&0\\ -->
-<!-- -2&2&1 -->
-<!-- \end{pmatrix}$ -->
-<!---->
-<!-- 1.  Montrer que la matrice $A$ est diagonalisable dans $\M_3(\mathbb{R})$ et -->
-<!--     déterminer une matrice $P$ inversible telle que $P^{-1}AP = D$ avec -->
-<!--     $D$ diagonale. -->
-<!---->
-<!-- 2.  Montrer qu'une matrice $M'$ de $\M_3(\mathbb{R})$ commute avec $D$ ssi $M'$ -->
-<!--     est diagonale. -->
-<!---->
-<!-- 3.  Montrer que $M$ commute avec $A$ ssi $P^{-1}MP$ commute avec $D$. -->
-<!---->
-<!-- 4.  En déduire l'ensemble des matrices commutant avec $A$. On exprimera -->
-<!--     ces matrices à l'aide des matrices $P$ et $P^{-1}$ et de matrices de -->
-<!--     la base canonique de $\M_3(\mathbb{R})$. -->
-<!-- ::: -->
-<!---->
-<!-- ## Problèmes divers -->
-<!---->
-<!-- ::: {#exr-05-nil} -->
-<!-- ## $\star$ -->
-<!---->
-<!-- Une matrice non-nulle $N\in\M_n(\mathbb{R})$ est dite *nilpotente* s'il existe -->
-<!-- $k\in\N^*$ telle que $N^k = 0$. Dans la suite, $N$ désigne une matrice -->
-<!-- nilpotente de $\M_n(\mathbb{R})$. -->
-<!---->
-<!-- 1.  Montrer que la seule valeur propre possible d'une matrice nilpotente -->
-<!--     est  $0$. Étudier la réciproque. -->
-<!---->
-<!-- 2.  Montrer que $\det(I_n + N) = 1$. -->
-<!---->
-<!-- 3.  Montrer que $I_n -N$ est inversible et déterminer $(I_n-N)^{-1}$.\ -->
-<!--     *On pourra calculer le produit $(1-X)(1+X+\cdots+X^{k-1})$*. -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-05-similitude} -->
-<!-- ## $\star$ -->
-<!---->
-<!-- Soit $M\in\mathcal{M}_2(\mathbb{R})$. On suppose que $M$ ne possède pas -->
-<!-- de valeurs propres réelles. On note $f$ l'endomorphisme canoniquement -->
-<!-- associé à $M$. -->
-<!---->
-<!-- 1.  Montrer que $M$ possède deux valeurs propres complexes conjuguées -->
-<!--     $\lambda = a + ib$ et $\overline{\lambda}=a-ib$. -->
-<!---->
-<!-- 2.  Si $Z\in\M_{2,1}(\mathbb{C})$ est un vecteur propre de $M$ associé à la -->
-<!--     valeur propre $\lambda$, montrer que $\overline{Z}$ est un vecteur -->
-<!--     propre de $M$ associé à la valeur propre $\overline{\lambda}$. -->
-<!---->
-<!-- 3.  En déduire que la famille $(Z,\overline{Z})$ est une base de -->
-<!--     $\M_{2,1}(\mathbb{C})$. -->
-<!---->
-<!-- 4.  Montrer que la famille -->
-<!--     $\mathcal{B} = \left(\frac{Z + \overline{Z}}{2},-\frac{Z - \overline{Z}}{2i}\right) = (\mathrm{Re}(Z),-\mathrm{Im}(Z))$ -->
-<!--     est une base de $\M_{2,1}(\mathbb{C})$ et préciser la matrice de $f$ dans -->
-<!--     cette base. -->
-<!---->
-<!-- 5.  En déduire que $M$ est semblable sur $\mathbb{R}$ à la matrice -->
-<!--     $S = \begin{pmatrix} -->
-<!--     a&-b\\ -->
-<!--     b&a -->
-<!--     \end{pmatrix}$. -->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exr-05-0002} -->
-<!---->
-<!-- #### Réduction des matrices de taille $2$  -->
-<!---->
-<!-- Soit $A\in\M_{2}(\mathbb{K})$. Montrer que -->
-<!-- $P_A(X) = X^2 - \mathrm{Tr}(A)X + \det(A)$. -->
-<!---->
-<!-- ::: -->
-
-
 </section>
+</section>
+<section id="problèmes-divers" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="problèmes-divers"><span class="header-section-number">5.3</span> Problèmes divers</h2>
+<div id="exr-05-nil" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.28 (<span class="math inline">\(\star\)</span>)</strong></span> (Matrice nilpotente). Une matrice non-nulle <span class="math inline">\(N\in\mathcal{M}_n(\mathbb{R})\)</span> est dite <em>nilpotente</em> s’il existe <span class="math inline">\(k\in\mathbb{N}^*\)</span> telle que <span class="math inline">\(N^k = 0\)</span>. Dans la suite, <span class="math inline">\(N\)</span> désigne une matrice nilpotente de <span class="math inline">\(\mathcal{M}_n(\mathbb{R})\)</span>.</p>
+<ol type="1">
+<li><p>Montrer que la seule valeur propre possible d’une matrice nilpotente est <span class="math inline">\(0\)</span>.</p></li>
+<li><p>Montrer qu’une matrice nilpotente est semblable à une matrice triangulaire de trace nulle.</p></li>
+<li><p>Montrer que <span class="math inline">\(\det(I_n - N) = 1\)</span>.</p></li>
+<li><p>Montrer que <span class="math inline">\(I_n - N\)</span> est inversible et déterminer <span class="math inline">\((I_n-N)^{-1}\)</span>.<br>
+<em>On pourra calculer le produit <span class="math inline">\((1-X)(1+X+\cdots+X^{k-1})\)</span></em>.</p></li>
+</ol>
+</div>
+<div id="exr-05-similitude" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.29</strong></span> (Similitude). Soit <span class="math inline">\(A \in \mathcal{M}_{2}(\mathbb{R})\)</span>. On suppose que <span class="math inline">\(A\)</span> possède deux valeurs propres complexes conjuguées distinctes <span class="math inline">\(\lambda=a+ib\)</span> et <span class="math inline">\(\bar{\lambda}\)</span>, <span class="math inline">\(a,b \in \mathbb{R}\)</span>.</p>
+<p>En utilisant l’exercice <a href="#exr-05-vp-complexe" class="quarto-xref">Exercice&nbsp;<span>5.6</span></a>, montrer que <span class="math inline">\(A\)</span> est semblable à la matrice <span class="math inline">\(\begin{pmatrix}
+    a&amp;-b\\
+    b&amp;a
+\end{pmatrix}\)</span>.</p>
+</div>
+<div id="exr-05-classe-similitude-M2R" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 5.30 (<span class="math inline">\(\star\)</span>)</strong></span> (Classes de similitudes de <span class="math inline">\(\mathcal{M}_{2}(\mathbb{R})\)</span>). Soit <span class="math inline">\(A \in
+\mathcal{M}_{2}(\mathbb{R})\)</span>.</p>
+<ol type="1">
+<li><p>Montrer que <span class="math inline">\(P_{A}(X) = X^{2}-\operatorname{Tr}(A)X + \det A\)</span>.</p></li>
+<li><p>Etudier, en fonction de la quantité <span class="math inline">\(\operatorname{Tr}(A)^{2}-4 \det A\)</span>, la réduction de la matrice <span class="math inline">\(A\)</span>.</p></li>
+</ol>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
