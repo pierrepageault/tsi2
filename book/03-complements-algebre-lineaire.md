@@ -87,7 +87,7 @@ triviale i.e. pour toute famille $(\lambda_{i})_{i \in I}$ de $\mathbb{K}$ à
 support fini,  
 
 $$
-    \sum_{i \in I} \lambda_i v_{i} = 0_{E} \mathbb{R}ightarrow \forall i \in I,\
+    \sum_{i \in I} \lambda_i v_{i} = 0_{E} \Rightarrow \forall i \in I,\
 \lambda_{i}=0.
 $$
 
@@ -122,7 +122,7 @@ $E=\mathbb{K}[X]$.
 
 :::
 
-### Bases
+### Bases 
 
 ::: {#def-base}
 
@@ -316,7 +316,7 @@ somme $F$ est unique i.e.
 
 $$
     \forall v_{1} \in F_{1},\dots, v_{n} \in F_{n},\ v_{1}+\dots + v_{n} =
-0_{E} \mathbb{R}ightarrow v_{1}= \dots = v_{n}=0_{E}.
+0_{E} \Rightarrow v_{1}= \dots = v_{n}=0_{E}.
 $$
 
 :::

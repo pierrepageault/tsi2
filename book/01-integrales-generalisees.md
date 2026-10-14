@@ -1,6 +1,5 @@
 # Intégrales généralisées
 
-
 ## Introduction {.unnumbered}
 
 Le but de ce chapitre est de généraliser la théorie de l'intégration vue en

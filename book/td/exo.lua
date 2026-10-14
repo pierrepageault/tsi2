@@ -3,7 +3,7 @@
 -- pandoc ton_fichier.tex -o ton_fichier.md --lua-filter=exo.lua
 
 -- à modifier selon le chapitrea
-local chapter_prefix = "02"
+local chapter_prefix = "05"
 
 ------------------------------------------------------------
 -- Création d'un slug à partir d'un label
