@@ -581,9 +581,18 @@ L'exemple précédent se généralise en fait à toute matrice $A \in
 ::: {#prp-degre}
 
 Le polynôme caractéristique d'une matrice $A \in \mathcal{M}_{n}(\mathbb{K})$
-est un polynôme *unitaire* de degré $n$.
+est un polynôme *unitaire*, de degré $n$.
 
 :::
+
+::: {#tip-verification .callout-tip}
+
+Ce résultat permet de vérifier que ses calculs ne sont pas grossièrement
+faux !
+
+:::
+
+
 
 Le lien avec les valeurs propres de $A$ s'effectue via la caractérisation de
 l'inversibilité à l'aide du déterminant, et de la proposition suivante :
@@ -604,6 +613,8 @@ $$
 
 ::: {#cor-racine}
 
+#### Spectre et racines du polynôme caractéristique
+
 Les valeurs propres d'une matrice $A \in \mathcal{M}_{n}(\mathbb{K})$ sont
 exactement les racines de son polynôme caractéristique.
 
@@ -616,16 +627,34 @@ Puisque $X^{2} - 3X -4 = (X+1)(X-4)$, les valeurs propres de $A =
 
 :::
 
+::: {#nte-spectre-corps .callout-note} 
+
+Puisque les racines d'un polynôme dépendent du corps considéré ($\mathbb{R}$ ou
+$\mathbb{C}$), le spectre d'un endomorphisme (ou d'une matrice) dépend du
+*corps* $\mathbb{K}$ sur lequel on se place. Par exemple, la matrice $B =
+\begin{pmatrix} 0&1\\ -1&0 \end{pmatrix}$ n'a pas de valeur propre réelle, mais
+vue comme elément de $\mathcal{M}_{2}(\mathbb{C})$, elle a deux valeurs propres
+complexes (conjuguées) : 
+
+$$
+    P_{B}(X) = X^{2}+1 =(X-i)(X+i).
+$$
+
+:::
 Le polynôme caractéristique hérite du déterminant l'invariance par similitude,
 ce qui permet de l'étendre aux endomorphismes (en dimension finie).
 
 ::: {#prp-invariant-similitude}
 
-Deux matrices semblables on même polynôme caractéristique.
+#### Invariance par similitude
+
+Deux matrices semblables ont même polynôme caractéristique.
 
 :::
 
 ::: {#def-polynome-caractéristique-endomorphisme}
+
+#### Polynôme caractéristique d'un endomorphisme
 
 Le **polynôme caractéristique** d'un *endomorphisme* $f \in \mathcal{L}(E)$ est
 le polynôme caractéristique de n'importe quelle matrice représentant $f$ dans
@@ -642,8 +671,11 @@ racines de son polynôme caractéristique.
 
 ::: {#rem-lien-matrice}
 
-En particulier, les valeurs propres de $f$ coincident avec les valeurs propres
-de n'importe quelle *matrice* représentant $f$.
+En particulier : 
+
+- les valeurs propres d'un endomorphisme $f$ coincident avec les valeurs
+  propres de n'importe quelle *matrice* représentant $f$.
+- pour tout $A \in \mathcal{M}_{n}(\mathbb{K})$, $P_{f_A}(X) = P_{A}(X)$,
 
 :::
 
@@ -666,7 +698,7 @@ avec $r = \dim F$. Le polynôme caractéristique de $p$ est dont celui de $M$
 i.e. (déterminant diagonal)
 
 $$
-    P_{p}(X)=(X-1)^{r}X^{n-r}.
+    P_{p}(X)=(X-1)^{r}X^{n-r}=(X-1)^{\dim F}X^{\dim G}.
 $$
 
 Les seules valeurs propres d'un projecteur sont donc $1$ et
@@ -674,20 +706,6 @@ $0$.
 
 :::
 
-::: {#nte-spectre-corps .callout-note} 
-
-Puisque les racines d'un polynôme dépendent du corps considéré ($\mathbb{R}$ ou
-$\mathbb{C}$), le spectre d'un endomorphisme (ou d'une matrice) dépend du
-*corps* $\mathbb{K}$ sur lequel on se place. Par exemple, la matrice $A =
-\begin{pmatrix} 0&1\\ -1&0 \end{pmatrix}$ n'a pas de valeur propre réelle, mais
-vue comme elément de $\mathcal{M}_{2}(\mathbb{C})$, elle a deux valeurs propres
-complexes (conjuguées) : 
-
-$$
-    P_{A}(X) = X^{2}+1 =(X-i)(X+i).
-$$
-
-:::
 
 
 ::: {#def-multiplicite}
@@ -696,7 +714,7 @@ $$
 
 Si $\lambda\in \operatorname{Sp}f$, l'**ordre de multiplicité** de $\lambda$
 est l'ordre de multiplicité de $\lambda$ en tant que racine de $P_{f}(X)$ i.e.
-le plus grand entier $k\in\N^*$ tel que $(X-\lambda)^k$ divise $P_{f}(X)$. On
+le plus grand entier $k\in\mathbb{N}^*$ tel que $(X-\lambda)^k$ divise $P_{f}(X)$. On
 le note $m(\lambda)$.
 
 :::
@@ -794,6 +812,8 @@ Pour les matrices triangulaires, la situation est particulièrement simple :
 
 ::: {#prp-matrice-triangulaire}
 
+#### Cas des matrices triangulaires
+
 Si 
 $$
 T = \begin{pmatrix}
@@ -801,17 +821,17 @@ T = \begin{pmatrix}
 0 &\ddots&\ddots&\vdots\\
 \vdots&\ddots&\ddots&*\\
 0&\ldots&0&\lambda_{n}
-\end{pmatrix}
+\end{pmatrix} \in \mathcal{M}_{n}(\mathbb{K}),
 $$
 
-Alors les valeurs propres de $T$ sont $\lambda_{1},\dots,\lambda_{n}$.
+alors les valeurs propres de $T$ sont $\lambda_{1},\dots,\lambda_{n}$.
 
 :::
 
 ::: {#tip-triangulaire .callout-tip}
 
-Pour une matrice *triangulaire*, on lit ses valeurs propres, ainsi que leur
-multiplicité, sur la diagonale.
+Pour une matrice *triangulaire*, on lit les valeurs propres, ainsi que leur
+ordre de multiplicité, sur la diagonale.
 
 :::
 
@@ -851,31 +871,4 @@ caractéristique est $(X-1)(X-3)^{2}$.
 ## Exercices {.unnumbered}
 
 {{< include ./td/05.md >}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

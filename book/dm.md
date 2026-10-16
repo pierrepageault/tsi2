@@ -12,4 +12,11 @@
 
 [DM 03 - Algèbre linéaire (Type CCS)](./pdf/dm/03-ccs.pdf)
 
+---
+
+[DM 04 - Elements propres et diagonalisation (Type
+CCINP)](./pdf/dm/04-ccinp.pdf)
+
+[DM 04 - Elements propres et diagonalisation (Type CCS)](./pdf/dm/04-ccs.pdf)
+
 
