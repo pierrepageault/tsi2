@@ -222,14 +222,15 @@ window.Quarto = {
   <li><a href="#sec-05-elements-propres" id="toc-sec-05-elements-propres" class="nav-link" data-scroll-target="#sec-05-elements-propres"><span class="header-section-number">5.2</span> Eléments propres d’un endomorphisme</a>
   <ul class="collapse">
   <li><a href="#valeurs-propres-vecteurs-propres-sous-espaces-propres" id="toc-valeurs-propres-vecteurs-propres-sous-espaces-propres" class="nav-link" data-scroll-target="#valeurs-propres-vecteurs-propres-sous-espaces-propres"><span class="header-section-number">5.2.1</span> Valeurs propres, vecteurs propres, sous espaces propres</a></li>
+  <li><a href="#polynôme-caractéristique" id="toc-polynôme-caractéristique" class="nav-link" data-scroll-target="#polynôme-caractéristique"><span class="header-section-number">5.2.2</span> Polynôme caractéristique</a></li>
   </ul></li>
   <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
   <ul class="collapse">
-  <li><a href="#elements-propres-dun-endomorphisme" id="toc-elements-propres-dun-endomorphisme" class="nav-link" data-scroll-target="#elements-propres-dun-endomorphisme"><span class="header-section-number">5.2.2</span> Elements propres d’un endomorphisme</a></li>
-  <li><a href="#endomorphismes-et-matrices-diagonalisables" id="toc-endomorphismes-et-matrices-diagonalisables" class="nav-link" data-scroll-target="#endomorphismes-et-matrices-diagonalisables"><span class="header-section-number">5.2.3</span> Endomorphismes et matrices diagonalisables</a></li>
-  <li><a href="#trigonalisation" id="toc-trigonalisation" class="nav-link" data-scroll-target="#trigonalisation"><span class="header-section-number">5.2.4</span> Trigonalisation</a></li>
-  <li><a href="#applications-de-la-réduction" id="toc-applications-de-la-réduction" class="nav-link" data-scroll-target="#applications-de-la-réduction"><span class="header-section-number">5.2.5</span> Applications de la réduction</a></li>
-  <li><a href="#problèmes-divers" id="toc-problèmes-divers" class="nav-link" data-scroll-target="#problèmes-divers"><span class="header-section-number">5.2.6</span> Problèmes divers</a></li>
+  <li><a href="#elements-propres-dun-endomorphisme" id="toc-elements-propres-dun-endomorphisme" class="nav-link" data-scroll-target="#elements-propres-dun-endomorphisme"><span class="header-section-number">5.2.3</span> Elements propres d’un endomorphisme</a></li>
+  <li><a href="#endomorphismes-et-matrices-diagonalisables" id="toc-endomorphismes-et-matrices-diagonalisables" class="nav-link" data-scroll-target="#endomorphismes-et-matrices-diagonalisables"><span class="header-section-number">5.2.4</span> Endomorphismes et matrices diagonalisables</a></li>
+  <li><a href="#trigonalisation" id="toc-trigonalisation" class="nav-link" data-scroll-target="#trigonalisation"><span class="header-section-number">5.2.5</span> Trigonalisation</a></li>
+  <li><a href="#applications-de-la-réduction" id="toc-applications-de-la-réduction" class="nav-link" data-scroll-target="#applications-de-la-réduction"><span class="header-section-number">5.2.6</span> Applications de la réduction</a></li>
+  <li><a href="#problèmes-divers" id="toc-problèmes-divers" class="nav-link" data-scroll-target="#problèmes-divers"><span class="header-section-number">5.2.7</span> Problèmes divers</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -618,7 +619,7 @@ Note&nbsp;5.6
 </div>
 </div>
 <div id="exm-matrice-A-sp" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 5.5</strong></span> On a vu dans l’<a href="#exm-matrice-A" class="quarto-xref">Exemple&nbsp;<span>5.4</span></a> que <span class="math inline">\(-1\)</span> et <span class="math inline">\(4\)</span> étaient valeur propre de la matrice <span class="math inline">\(A = \begin{pmatrix}
+<p><span class="theorem-title"><strong>Exemple 5.5</strong></span> On a vu dans l’<a href="#exm-matrice-A" class="quarto-xref">Exemple&nbsp;<span>5.7</span></a> que <span class="math inline">\(-1\)</span> et <span class="math inline">\(4\)</span> étaient valeur propre de la matrice <span class="math inline">\(A = \begin{pmatrix}
     1&amp;6\\
 1&amp;2
 \end{pmatrix}\)</span>. Donc <span class="math inline">\(\operatorname{Sp} A =\{-1,4\}\)</span> ; il n’y a pas d’autres valeurs propres possibles !</p>
@@ -626,167 +627,212 @@ Note&nbsp;5.6
 <div id="rem-cardinal-spectre" class="proof remark">
 <p><span class="proof-title"><em>Remarque 5.2</em>. </span>Si <span class="math inline">\(E\)</span> est de dimension infinie, un endomorphisme peut tout à fait avoir une infinité de valeurs propres ; un exemple a été vu dans l’<a href="#exm-derivation" class="quarto-xref">Exemple&nbsp;<span>5.3</span></a>.</p>
 </div>
-<!-- ### Polynôme caractéristique -->
-<!---->
-<!-- Une question demeure ; comment trouver les valeurs propres d'un endomorphisme ? -->
-<!-- En dimension finie, une réponse est apportée par le *polynôme -->
-<!-- caractéristique*. Elle n'est pas miraculeuse car elle revient à chercher les -->
-<!-- racines d'un polynôme de degré égal à la dimension de $\dim E$ ; au dela du degré $4$ inclu, il n'existe malheureusement plus de -->
-<!-- formule par radicaux permettant de calculer systématiquement les racines d'un polynôme^[C'est un théorème du au mathématicien norvégien Niels Henrik Abel, en 1824].  -->
-<!---->
-<!-- Avant de donner la définition du polynôme caractéristique, on énonce un -->
-<!-- résultat prélimibaire très important.  -->
-<!---->
-<!-- ::: {#prp-caracterisation-rang} -->
-<!---->
-<!-- Soit $f\in\mathcal{L}(E)$ et $\lambda\in\mathbb{K}$. Alors $\lambda$ est valeur propre de $f$ ssi $f-\lambda \operatorname{Id}_E$ n'est pas de rang maximal. Dans ce cas, on a   -->
-<!---->
-<!-- $$ -->
-<!-- \dim(E_{\lambda}(f))=\dim(E) - \mathrm{rg}(f-\lambda \mathrm{Id}_E). -->
-<!-- $$ -->
-<!---->
-<!---->
-<!-- ::: -->
-<!---->
-<!---->
-<!-- ::: {#def-polynome-carctéristique} -->
-<!---->
-<!-- Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension $n$ et soit $f \in \mathcal{L}(E)$. Le **polynôme caractéristique** de $f$ est le -->
-<!-- polynôme unitaire de degré $n$ défini par  -->
-<!---->
-<!-- $$ -->
-<!-- P_{f}(X) = \det (X \operatorname{Id}_E-f). -->
-<!-- $$ -->
-<!---->
-<!-- ::: -->
-<!---->
-<!-- ::: {#prp-valeur-propre} -->
-<!---->
-<!-- Les valeurs propres de $f \in \mathcal{L}(E)$ sont exactement les racines de -->
-<!-- sont polynôme caractéristique.  -->
-<!---->
-<!-- ::: -->
-<!---->
-<!---->
-<!-- ::: {#rem-polynome-caracteristique} -->
-<!---->
-<!-- Concrètement, pour calculer le polynôme caractéristique d'un endomorphisme $f$ -->
-<!-- de $E$, on choisit une base $\mathcal{B}$ de $E$ et on utilise l'égalité  -->
-<!---->
-<!-- $$ -->
-<!--     \det (X \operatorname{Id} - f) = \det (\mathcal{M}_{\mathcal{B}}(X -->
-<!-- \operatorname{Id}_E - f)) = \det (X \operatorname{I}_{n}-\mathcal{M}_{\mathcal{B}}(f)) -->
-<!-- $$ -->
-<!---->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exm-polynome-caractéristique-projecteur} -->
-<!---->
-<!-- #### Polynôme caractéristique d'un projecteur -->
-<!---->
-<!-- On suppose que $F$ et $G$ sont deux espaces supplémentaires non triviaux de -->
-<!-- $E$. Si $p$ est le projecteur sur $F$ parallèlement à $G$, la matrice de $p$ -->
-<!-- dans une base adaptée à la somme directe est  -->
-<!---->
-<!-- $$ -->
-<!-- M = \begin{pmatrix} -->
-<!--     \boldsymbol{\operatorname{I_r}}&\boldsymbol{0}\\ -->
-<!-- \boldsymbol{0}&\boldsymbol{0} -->
-<!-- \end{pmatrix} -->
-<!-- $$ -->
-<!---->
-<!-- avec $r = \dim F$. Le polynôme caractéristique de $p$ est dont celui de $M$ -->
-<!-- i.e. (déterminant diagonal) -->
-<!---->
-<!-- $$ -->
-<!--     P_{p}(X)=(X-1)^{r}X^{n-r}. -->
-<!-- $$ -->
-<!---->
-<!-- Les seules valeurs propres d'un projecteur sont donc $1$ et -->
-<!-- $0$. -->
-<!---->
-<!-- ::: -->
-<!---->
-<!-- ::: {#nte-polynome-caracteristique-matrice .callout-note} -->
-<!---->
-<!-- #### Polynôme caractéristique d'une matrice $A \in \mathcal{M}_{n}(\mathbb{K})$ -->
-<!---->
-<!-- Dans le cas de l'endomorphisme $f_A$ canoniquement associé à une matrice $A \in -->
-<!-- \mathcal{M}_{n}(\mathbb{K})$, le polynôme caractéristique de $f_A$ sest -->
-<!-- simplement noté $P_{A}(X)$ et s'appelle -->
-<!-- le *polynôme caractéristique de $A$*.  -->
-<!---->
-<!-- Puisque la matrice de $f_A$ dans la base canonique de $f_A$ est $A$, on a en -->
-<!-- particulier -->
-<!---->
-<!-- $$ -->
-<!--     P_{A}(X) = \det (X \operatorname{I}_{n}-A). -->
-<!-- $$ -->
-<!---->
-<!-- C'est la formule que l'on utilise concrètement pour calculer le polynôme -->
-<!-- caractéristique d'une matrice. -->
-<!---->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exm-polynome-caracteristique-A} -->
-<!---->
-<!-- Le polynôme caractéristique de la matrice $A = \begin{pmatrix} -->
-<!--     1&6\\1&2 -->
-<!-- \end{pmatrix}$ est  -->
-<!---->
-<!-- $$ -->
-<!-- \begin{aligned} -->
-<!--     P_{A}(X) = \left|\begin{matrix}X-1&-6\\-1& X-2\end{matrix}\right|&= (X-1)(X-2)-6\\ -->
-<!-- &=X^{2}-3X-4\\ -->
-<!-- &=(X-1)(X-4). -->
-<!-- \end{aligned} -->
-<!-- $$ -->
-<!---->
-<!-- Les valeurs propres de $A$ sont donc exactement $-1$ et $4$. -->
-<!---->
-<!-- ::: -->
-<!---->
-<!-- ::: {#nte-spectre-corps .callout-note} -->
-<!---->
-<!-- Le spectre d'un endomorphisme (ou d'une matrice) dépend du *corps* $\mathbb{K}$ sur lequel on se place. Par exemple, la matrice $A = \begin{pmatrix} -->
-<!--     0&1\\ -->
-<!--     -1&0 -->
-<!-- \end{pmatrix}$ n'a pas de valeur propre réelle, mais elle a deux valeurs propres complexes (conjuguées). -->
-<!---->
-<!-- ::: -->
-<!---->
-<!-- ::: {#def-multiplicite} -->
-<!---->
-<!-- #### Multiplicite algebrique d'une valeur propre -->
-<!---->
-<!-- Si $\lambda\in \operatorname{Sp}f$, l'**ordre de multiplicité** de $\lambda$ le plus grand entier $k\in\N^*$ tel que $(X-\lambda)^k$ divise $P_{f}(X)$. On la note $m(\lambda)$. -->
-<!---->
-<!-- ::: -->
-<!---->
-<!---->
-<!-- ::: {#exm-multiplicite-projecteur} -->
-<!---->
-<!-- Si $p$ est le projecteur sur $F$ parallèlement à $G$, alors $0$ est valeur -->
-<!-- propre d'ordre $\dim G$, et $0$ est valeur propre d'ordre $\dim F$.  -->
-<!---->
-<!---->
-<!-- ::: -->
-<!---->
-<!-- ::: {#exm-multiplicite-matrice} -->
-<!---->
-<!-- Les valeurs propres de $A = \begin{pmatrix} -->
-<!--     1&6\\1&2 -->
-<!-- \end{pmatrix}$ sont $-1$ et $4$, toute d'eux d'ordre $1$. On dit que ce sont -->
-<!-- des valeurs propres **simples**.  -->
-<!---->
-<!-- ::: -->
-<!-- Triangulaire -->
-<!---->
+</section>
+<section id="polynôme-caractéristique" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="polynôme-caractéristique"><span class="header-section-number">5.2.2</span> Polynôme caractéristique</h3>
+<p>Une question demeure ; comment trouver les valeurs propres d’un endomorphisme ? En dimension finie, une réponse est apportée par le <em>polynôme caractéristique</em>. Elle n’est pas miraculeuse car elle revient à chercher les racines d’un polynôme de degré <span class="math inline">\(\dim E\)</span> ; au dela du degré <span class="math inline">\(4\)</span> inclu, il n’existe malheureusement plus de formule par radicaux permettant de calculer systématiquement les racines d’un polynôme<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<div id="def-polynome-caracteristique-matrice" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 5.9 (Polynôme caractéristique)</strong></span> Soit <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span>. Le <strong>polynôme caractéristique</strong> de <span class="math inline">\(A\)</span> est le polynôme</p>
+<p><span class="math display">\[
+    P_{A}(X) = \det(X \operatorname{I}_{n}-A).
+\]</span></p>
+</div>
+<div id="exm-polynome-caracteristique-1" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 5.6</strong></span> Le polynôme caractéristique de la matrice <span class="math inline">\(A = \begin{pmatrix}
+    1&amp;6\\1&amp;2
+\end{pmatrix}\)</span> est</p>
+<p><span class="math display">\[
+P_{A}(X) = \left|\begin{matrix}X-1&amp;-6\\ -1 &amp; X-2\end{matrix}\right| = X^{2} - 3X -4
+\]</span></p>
+<p>On remarque que le polynôme caractéristique de <span class="math inline">\(A\)</span> est :</p>
+<ul>
+<li>unitaire,</li>
+<li>de degré <span class="math inline">\(2\)</span>.</li>
+</ul>
+</div>
+<p>L’exemple précédent se généralise en fait à toute matrice <span class="math inline">\(A \in
+\mathcal{M}_{n}(\mathbb{K})\)</span> :</p>
+<div id="prp-degre" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.6</strong></span> Le polynôme caractéristique d’une matrice <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span> est un polynôme <em>unitaire</em>, de degré <span class="math inline">\(n\)</span>.</p>
+</div>
+<div id="tip-verification" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce&nbsp;5.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ce résultat permet de vérifier que ses calculs ne sont pas grossièrement faux !</p>
+</div>
+</div>
+<p>Le lien avec les valeurs propres de <span class="math inline">\(A\)</span> s’effectue via la caractérisation de l’inversibilité à l’aide du déterminant, et de la proposition suivante :</p>
+<div id="prp-caracterisation-rang" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.7 (Caractérisation à l’aide du rang)</strong></span> Soit <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span> et <span class="math inline">\(\lambda\in\mathbb{K}\)</span>. Alors <span class="math inline">\(\lambda\)</span> est valeur propre de <span class="math inline">\(A\)</span> ssi <span class="math inline">\(A-\lambda \operatorname{I}_n\)</span> n’est pas inversible i.e. n’est de rang maximal. Dans ce cas, on a</p>
+<p><span class="math display">\[
+\dim(E_{\lambda}(A))=n - \mathrm{rg}(A-\lambda \operatorname{I}_{n}).
+\]</span></p>
+</div>
+<div id="cor-racine" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollaire 5.3 (Spectre et racines du polynôme caractéristique)</strong></span> Les valeurs propres d’une matrice <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span> sont exactement les racines de son polynôme caractéristique.</p>
+</div>
+<div id="exm-matrice-A" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 5.7</strong></span> Puisque <span class="math inline">\(X^{2} - 3X -4 = (X+1)(X-4)\)</span>, les valeurs propres de <span class="math inline">\(A =
+\begin{pmatrix} 1&amp;6\\1&amp;2 \end{pmatrix}\)</span> sont <span class="math inline">\(-1\)</span> et <span class="math inline">\(4\)</span>.</p>
+</div>
+<div id="nte-spectre-corps" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;5.7
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Puisque les racines d’un polynôme dépendent du corps considéré (<span class="math inline">\(\mathbb{R}\)</span> ou <span class="math inline">\(\mathbb{C}\)</span>), le spectre d’un endomorphisme (ou d’une matrice) dépend du <em>corps</em> <span class="math inline">\(\mathbb{K}\)</span> sur lequel on se place. Par exemple, la matrice <span class="math inline">\(B =
+\begin{pmatrix} 0&amp;1\\ -1&amp;0 \end{pmatrix}\)</span> n’a pas de valeur propre réelle, mais vue comme elément de <span class="math inline">\(\mathcal{M}_{2}(\mathbb{C})\)</span>, elle a deux valeurs propres complexes (conjuguées) :</p>
+<p><span class="math display">\[
+    P_{B}(X) = X^{2}+1 =(X-i)(X+i).
+\]</span></p>
+</div>
+</div>
+<p>Le polynôme caractéristique hérite du déterminant l’invariance par similitude, ce qui permet de l’étendre aux endomorphismes (en dimension finie).</p>
+<div id="prp-invariant-similitude" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.8 (Invariance par similitude)</strong></span> Deux matrices semblables ont même polynôme caractéristique.</p>
+</div>
+<div id="def-polynome-caractéristique-endomorphisme" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 5.10 (Polynôme caractéristique d’un endomorphisme)</strong></span> Le <strong>polynôme caractéristique</strong> d’un <em>endomorphisme</em> <span class="math inline">\(f \in \mathcal{L}(E)\)</span> est le polynôme caractéristique de n’importe quelle matrice représentant <span class="math inline">\(f\)</span> dans une base <span class="math inline">\(\mathcal{B}\)</span> de <span class="math inline">\(E\)</span>. On le note <span class="math inline">\(P_{f}(X)\)</span>.</p>
+</div>
+<div id="prp-racine-endo" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.9</strong></span> Les valeurs propres d’un endomorphisme <span class="math inline">\(f \in \mathcal{L}(E)\)</span> sont exactement les racines de son polynôme caractéristique.</p>
+</div>
+<div id="rem-lien-matrice" class="proof remark">
+<p><span class="proof-title"><em>Remarque 5.3</em>. </span>En particulier :</p>
+<ul>
+<li>les valeurs propres d’un endomorphisme <span class="math inline">\(f\)</span> coincident avec les valeurs propres de n’importe quelle <em>matrice</em> représentant <span class="math inline">\(f\)</span>.</li>
+<li>pour tout <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span>, <span class="math inline">\(P_{f_A}(X) = P_{A}(X)\)</span>,</li>
+</ul>
+</div>
+<div id="exm-polynome-caractéristique-projecteur" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 5.8 (Polynôme caractéristique d’un projecteur)</strong></span> On suppose que <span class="math inline">\(F\)</span> et <span class="math inline">\(G\)</span> sont deux espaces supplémentaires non triviaux de <span class="math inline">\(E\)</span>. Si <span class="math inline">\(p\)</span> est le projecteur sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span>, la matrice de <span class="math inline">\(p\)</span> dans une base adaptée à la somme directe est</p>
+<p><span class="math display">\[
+M = \begin{pmatrix}
+    \boldsymbol{\operatorname{I_r}}&amp;\boldsymbol{0}\\
+\boldsymbol{0}&amp;\boldsymbol{0}
+\end{pmatrix}
+\]</span></p>
+<p>avec <span class="math inline">\(r = \dim F\)</span>. Le polynôme caractéristique de <span class="math inline">\(p\)</span> est dont celui de <span class="math inline">\(M\)</span> i.e.&nbsp;(déterminant diagonal)</p>
+<p><span class="math display">\[
+    P_{p}(X)=(X-1)^{r}X^{n-r}=(X-1)^{\dim F}X^{\dim G}.
+\]</span></p>
+<p>Les seules valeurs propres d’un projecteur sont donc <span class="math inline">\(1\)</span> et <span class="math inline">\(0\)</span>.</p>
+</div>
+<div id="def-multiplicite" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 5.11 (Multiplicite algebrique d’une valeur propre)</strong></span> Si <span class="math inline">\(\lambda\in \operatorname{Sp}f\)</span>, l’<strong>ordre de multiplicité</strong> de <span class="math inline">\(\lambda\)</span> est l’ordre de multiplicité de <span class="math inline">\(\lambda\)</span> en tant que racine de <span class="math inline">\(P_{f}(X)\)</span> i.e. le plus grand entier <span class="math inline">\(k\in\mathbb{N}^*\)</span> tel que <span class="math inline">\((X-\lambda)^k\)</span> divise <span class="math inline">\(P_{f}(X)\)</span>. On le note <span class="math inline">\(m(\lambda)\)</span>.</p>
+</div>
+<div id="exm-multiplicite-projecteur" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 5.9</strong></span> Si <span class="math inline">\(p\)</span> est le projecteur sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span>, alors <span class="math inline">\(0\)</span> est valeur propre d’ordre <span class="math inline">\(\dim G\)</span>, et <span class="math inline">\(1\)</span> est valeur propre d’ordre <span class="math inline">\(\dim F\)</span>.</p>
+</div>
+<div id="exm-multiplicite-matrice" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 5.10</strong></span> Les valeurs propres de <span class="math inline">\(A = \begin{pmatrix}
+    1&amp;6\\1&amp;2
+\end{pmatrix}\)</span> sont <span class="math inline">\(-1\)</span> et <span class="math inline">\(4\)</span>, toute d’eux d’ordre <span class="math inline">\(1\)</span>. On dit que ce sont des valeurs propres <strong>simples</strong>.</p>
+</div>
+<div id="exm-matrice-3" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 5.11</strong></span> Spectre de la matrice <span class="math inline">\(A = \begin{pmatrix}
+        -1 &amp; 3 &amp; -3 \\
+        -3 &amp; 5 &amp; -3 \\
+        -3 &amp; 3 &amp; -1
+      \end{pmatrix}.\)</span></p>
+<details>
+<div>
+<p>Par définition,</p>
+<p><span class="math inline">\(P_{A}(X) = \left|\begin{matrix}
+        X+1 &amp; -3 &amp; 3 \\
+        3 &amp; X-5 &amp; 3 \\
+        3 &amp; -3 &amp; X+1
+\end{matrix}\right|\)</span></p>
+<p>Ici, il serai <em>catastrophique</em> de développer ce déterminant sans faire apparaitre préalablement des <span class="math inline">\(0\)</span> : le polynôme (que l’on cherche à <em>factoriser</em>) apparaitrait alors sous forme développée, et les nombreuses manipulations de signes apporteraient inévitablement des erreurs de calcul. On effectue donc des opérations élémentaires sur les lignes et les colones :</p>
+<p><span class="math display">\[
+\begin{aligned}
+    P_{A}(X)&amp;= \left|\begin{matrix}
+        X+1 &amp; -3 &amp; 3 \\
+        3 &amp; X-5 &amp; 3 \\
+        3 &amp; -3 &amp; X+1
+\end{matrix}\right| \quad C_{2}\gets C_{2}+C_{3}\\
+&amp;= \left|\begin{matrix}
+        X+1 &amp; 0 &amp; 3 \\
+        3 &amp; X-2&amp; 3 \\
+        3 &amp; X-2 &amp; X+1
+\end{matrix}\right|
+\end{aligned}
+\]</span></p>
+<p>On voit ici tout l’intérêt de faire des opérations sur les lignes et les colonnes : on vient de trouver une racine de <span class="math inline">\(P_A\)</span> dans la deuxième colonne !</p>
+<p><span class="math display">\[
+\begin{aligned}
+    P_{A}(X) &amp;= (X-2)\left|\begin{matrix}
+        X+1 &amp; 0 &amp; 3 \\
+        3 &amp; 1&amp; 3 \\
+        3 &amp; 1 &amp; X+1
+\end{matrix}\right| \quad L_{2} \gets L_{2}-L_{3}\\
+&amp;= (X-2)\left|\begin{matrix}
+        X+1 &amp; 0 &amp; 3 \\
+        0 &amp; 0&amp; 2-X \\
+        3 &amp; 1 &amp; X+1
+\end{matrix}\right|
+\end{aligned}
+\]</span></p>
+<p>En développant par rapport à la deuxième ligne, on obtient donc <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p><span class="math display">\[
+    P_{A}(X)= (X-2)^{2}(X+1).
+\]</span></p>
+<p>Les valeurs propres de <span class="math inline">\(A\)</span> sont <span class="math inline">\(2\)</span>, d’ordre <span class="math inline">\(2\)</span> (on dit que <span class="math inline">\(2\)</span> est une valeur propre <em>double</em>), et <span class="math inline">\(1\)</span> d’ordre <span class="math inline">\(1\)</span> (valeur propre <em>simple</em>).</p>
+</div>
+</details>
+</div>
+<p>Pour les matrices triangulaires, la situation est particulièrement simple :</p>
+<div id="prp-matrice-triangulaire" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.10 (Cas des matrices triangulaires)</strong></span> Si <span class="math display">\[
+T = \begin{pmatrix}
+\lambda_{1}&amp; *&amp; \ldots&amp;*\\
+0 &amp;\ddots&amp;\ddots&amp;\vdots\\
+\vdots&amp;\ddots&amp;\ddots&amp;*\\
+0&amp;\ldots&amp;0&amp;\lambda_{n}
+\end{pmatrix} \in \mathcal{M}_{n}(\mathbb{K}),
+\]</span></p>
+<p>alors les valeurs propres de <span class="math inline">\(T\)</span> sont <span class="math inline">\(\lambda_{1},\dots,\lambda_{n}\)</span>.</p>
+</div>
+<div id="tip-triangulaire" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce&nbsp;5.4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Pour une matrice <em>triangulaire</em>, on lit les valeurs propres, ainsi que leur ordre de multiplicité, sur la diagonale.</p>
+</div>
+</div>
+<div id="exm-triangulaire" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 5.12</strong></span> Les valeurs propres de la matrice</p>
+<p><span class="math display">\[
+    \begin{pmatrix}
+        1&amp;-1&amp;2\\
+        0&amp;3&amp;5\\
+        0&amp;0&amp;3
+    \end{pmatrix}
+\]</span></p>
+<p>sont <span class="math inline">\(1\)</span> d’ordre <span class="math inline">\(1\)</span> et <span class="math inline">\(3\)</span> d’ordre <span class="math inline">\(2\)</span>. En particulier, son polynôme caractéristique est <span class="math inline">\((X-1)(X-3)^{2}\)</span>.</p>
+</div>
 <!-- encadrement multiplicité géom et alg. -->
 <!---->
 <!-- Cas particulier des valeurs propres simples. -->
 <!---->
-<!-- Invariants de similitude + réciproque fausse. -->
 <!---->
 <!-- Polynôme en $A$ est spectre.  -->
 <!---->
@@ -799,8 +845,8 @@ Note&nbsp;5.6
 </section>
 <section id="exercices" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="exercices">Exercices</h2>
-<section id="elements-propres-dun-endomorphisme" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="elements-propres-dun-endomorphisme"><span class="header-section-number">5.2.2</span> Elements propres d’un endomorphisme</h3>
+<section id="elements-propres-dun-endomorphisme" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="elements-propres-dun-endomorphisme"><span class="header-section-number">5.2.3</span> Elements propres d’un endomorphisme</h3>
 <div id="exr-matrice-J" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 5.1</strong></span> (Spectre réel et complexe).</p>
 <ol type="1">
@@ -887,8 +933,8 @@ Note&nbsp;5.6
 <!---->
 <!-- ::: -->
 </section>
-<section id="endomorphismes-et-matrices-diagonalisables" class="level3" data-number="5.2.3">
-<h3 data-number="5.2.3" class="anchored" data-anchor-id="endomorphismes-et-matrices-diagonalisables"><span class="header-section-number">5.2.3</span> Endomorphismes et matrices diagonalisables</h3>
+<section id="endomorphismes-et-matrices-diagonalisables" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="endomorphismes-et-matrices-diagonalisables"><span class="header-section-number">5.2.4</span> Endomorphismes et matrices diagonalisables</h3>
 <div id="exr-05-diag" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 5.8</strong></span> Justifier que les matrices suivantes sont diagonalisables, et les diagonaliser.</p>
 <p><span class="math display">\[
@@ -971,8 +1017,8 @@ e_{i-1}\)</span> si <span class="math inline">\(i\in\{2,\dots,n\}\)</span> et <s
 <p><span class="theorem-title"><strong>Exercice 5.17 (<span class="math inline">\(\star\)</span>)</strong></span> (Diagonalisation simultanée). Soit <span class="math inline">\(f\)</span> et <span class="math inline">\(g\)</span> deux endomorphismes qui commutent. On suppose que <span class="math inline">\(f\)</span> est diagonalisable et que <span class="math inline">\(f\)</span> possède des valeurs propres deux à deux distinctes. En utilisant les <a href="#exr-05-stable" class="quarto-xref">Exercice&nbsp;<span>5.15</span></a> et <a href="#exr-05-commute" class="quarto-xref">Exercice&nbsp;<span>5.17</span></a>, montrer que <span class="math inline">\(g\)</span> et diagonalisable, et que toute base de diagonalisation de <span class="math inline">\(f\)</span> est également une base de diagonalisation de <span class="math inline">\(g\)</span>.</p>
 </div>
 </section>
-<section id="trigonalisation" class="level3" data-number="5.2.4">
-<h3 data-number="5.2.4" class="anchored" data-anchor-id="trigonalisation"><span class="header-section-number">5.2.4</span> Trigonalisation</h3>
+<section id="trigonalisation" class="level3" data-number="5.2.5">
+<h3 data-number="5.2.5" class="anchored" data-anchor-id="trigonalisation"><span class="header-section-number">5.2.5</span> Trigonalisation</h3>
 <div id="exr-05-sans-calc" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 5.18</strong></span> (Sans calcul (1)). On considère la matrice <span class="math display">\[A=\begin{pmatrix}
 4&amp;-3&amp;2\\6&amp;-5&amp;4\\4&amp;-4&amp;4 \end{pmatrix}\]</span></p>
@@ -1036,8 +1082,8 @@ Q = \begin{pmatrix}
 </ol>
 </div>
 </section>
-<section id="applications-de-la-réduction" class="level3" data-number="5.2.5">
-<h3 data-number="5.2.5" class="anchored" data-anchor-id="applications-de-la-réduction"><span class="header-section-number">5.2.5</span> Applications de la réduction</h3>
+<section id="applications-de-la-réduction" class="level3" data-number="5.2.6">
+<h3 data-number="5.2.6" class="anchored" data-anchor-id="applications-de-la-réduction"><span class="header-section-number">5.2.6</span> Applications de la réduction</h3>
 <div id="exr-05-syst" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 5.22</strong></span> (Etude d’un système de suites récurrentes linéaires d’ordre <span class="math inline">\(1\)</span>). On considère le système</p>
 <p><span class="math display">\[
@@ -1116,8 +1162,8 @@ A = \begin{pmatrix}
 <!-- ::: -->
 <!---->
 </section>
-<section id="problèmes-divers" class="level3" data-number="5.2.6">
-<h3 data-number="5.2.6" class="anchored" data-anchor-id="problèmes-divers"><span class="header-section-number">5.2.6</span> Problèmes divers</h3>
+<section id="problèmes-divers" class="level3" data-number="5.2.7">
+<h3 data-number="5.2.7" class="anchored" data-anchor-id="problèmes-divers"><span class="header-section-number">5.2.7</span> Problèmes divers</h3>
 <div id="exr-05-nil" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 5.28 (<span class="math inline">\(\star\)</span>)</strong></span> (Matrice nilpotente). Une matrice non-nulle <span class="math inline">\(N\in\mathcal{M}_n(\mathbb{R})\)</span> est dite <em>nilpotente</em> s’il existe <span class="math inline">\(k\in\mathbb{N}^*\)</span> telle que <span class="math inline">\(N^k = 0\)</span>. Dans la suite, <span class="math inline">\(N\)</span> désigne une matrice nilpotente de <span class="math inline">\(\mathcal{M}_n(\mathbb{R})\)</span>.</p>
 <ol type="1">
@@ -1146,6 +1192,13 @@ A = \begin{pmatrix}
 
 
 </section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>C’est un théorème du au mathématicien norvégien Niels Henrik Abel, en 1824<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Ce polynôme est directement factorisé : c’est le cas le plus favorable. Quand il reste un facteur de degré <span class="math inline">\(2\)</span>, on peut toujours utiliser les formules donnant les racines d’un polynôme de degré <span class="math inline">\(2\)</span>, ou chercher des racines simples (à vue).<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
