@@ -852,19 +852,426 @@ caractéristique est $(X-1)(X-3)^{2}$.
 
 :::
 
-<!-- encadrement multiplicité géom et alg. -->
-<!---->
-<!-- Cas particulier des valeurs propres simples. -->
-<!---->
-<!---->
-<!-- Polynôme en $A$ est spectre.  -->
-<!---->
-<!-- ## Endomorphismes et matrices diagonalisables {#sec-05-diagonalisation} -->
-<!---->
-<!-- ## Trigonalisation {#sec-05-trigonalisation}  -->
-<!---->
+La multiplicité d'une valeur propre est de nature *algébrique* -- elle est
+définie à l'aide d'un polynôme. On peut aussi lui associer une multiplicité
+*géométrique* égale à la dimension du sous-esapce propre associé. La
+proposition suivante stipule que la multiplicité géométrique est toujours
+inférieure à la multiplicité algébrique. La cas d'égalité sera étudié en détail
+dans la section suivante.
+
+::: {#prp-multiplicites-alg-geom}
+
+Soit $f \in \mathcal{L}(E)$ et $\lambda \in \operatorname{Sp}f$. Alors 
+$$
+    1 \leqslant \dim E_{\lambda}(f) \leqslant m(\lambda).
+$$
+
+:::
+
+::: {#exm-valeur-propre-simple}
+
+#### Cas des valeurs propres simples
+
+Si $\lambda$ est une valeur propre simple de $f$, alors $E_{\lambda}(f)$ est
+une *droite vectorielle*.
+
+:::
+
+
+
+
+## Endomorphismes et matrices diagonalisables {#sec-05-diagonalisation}
+
+### Le cas des endomorphismes
+
+::: {#def-endomorphisme-diag}
+
+#### Endomorphisme diagonalisable
+
+Un endomorphisme $f \in \mathcal{L}(E)$ est **diagonalisable** s'il existe une
+base $\mathcal{B}$ de $E$ dans laquelle la matrice de $f$ est diagonale.Une
+telle base s'appelle alors une **base de diagonalisation** de $f$.
+
+:::
+
+::: {#nte-endo-diag .callout-note}
+
+Par définition de la matrice d'un endomorphisme dans une base, la matrice de
+$f$ dans la base $\mathcal{B}$ est diagonale ssi $\mathcal{B}$ est constituée
+de *vecteurs propres* de $f$. 
+
+:::
+
+::: {#exm-projecteurs}
+
+#### Projecteurs et symétrie
+
+Si $p$ est le projecteur sur $F$ parallèlement à $G$, la matrice de $p$ dans
+toute base adaptée à la somme directe $E= F \oplus G$ est diagonale. Un
+projecteur est donc par définition diagonalisable. De même, toute symétrie est
+diagonalisable.
+
+:::
+
+On énonce maintenant les deux résultats principaux concernant la
+diagonalisation des endomorphismes ; une condition nécessaire et une condition
+nécessaire et suffisante. C'est pour énoncer cette dernière que nous avons
+défini la somme d'un nombre quelconque de sous espaces vectoriels. 
+
+::: {#thm-cs}
+
+#### Condition suffisante de diagonalisation
+
+Si $f \in \mathcal{L}(E)$ possède $\dim E$ valeurs propres *distinctes*, alors
+$f$ est diagonalisable.
+
+:::
+
+::: {#thm-cns}
+
+#### Condition nécessaire et suffisante de diagonalisation
+
+Soit $f \in \mathcal{L}(E)$. Les propriétés suivantes sont équivalentes :
+
+1. $f$ est diagonalisable,
+
+2. le polynôme caracréristique de $f$ est scindé sur $\mathbb{K}$, et 
+$$
+    \forall \lambda \in \operatorname{Sp}(f),\ \dim E_{\lambda}(f) =
+    m(\lambda),
+$$
+
+3. l'espace $E$ est la somme directe des sous espaces propres de $f$ : 
+$$
+    E = \bigoplus_{\lambda \in \operatorname{Sp}(f)} E_{\lambda}(f).
+$$
+
+:::
+
+::: {#rem-philo}
+
+En substance, le deuxième point siginfie que $f$ possède *autant de valeurs
+propres que possible* (polynôme caractéristique scindé), et que ses sous espaces
+propres sont de *dimension maximale*.
+
+:::
+
+::: {#nte-base-diag .callout-note}
+
+Concrètement, on obtient un base de diagonalisation de $f$ en *mettant bout à
+bout* des bases de chacun des sous espaces propres de $f$ i.e. en considérant
+une base *adaptée* à la somme directe $E = \bigoplus_{\lambda \in
+\operatorname{Sp}(f)} E_{\lambda}(f)$.
+
+:::
+
+::: {#exm-proj-sym}
+
+#### Projecteurs et symétries
+
+Si $p$ est un projecteur de $E$, l'égalité
+
+$$
+    E = \ker p \oplus \operatorname{Im}p
+$$
+
+se lit dorénavant
+
+$$
+    E = E_{0}(p)\oplus E_{1}(p),
+$$
+
+et traduit le fait qu'un projecteur est diagonalisable !
+
+Demême, si $s$ est une symétrie de $E$, l'égalité un peu mystérieuse
+
+$$
+    E = \ker (s- \operatorname{Id}_{E})\oplus \ker(s+\operatorname{Id}_{E})
+$$
+
+se lit simplement
+
+$$
+    s = E_{1}(s)\oplus E_{-1}(s),
+$$
+
+et traduit la diagonalisabilité de $s$.
+
+:::
+
+
+
+### Le cas des matrices
+
+On commence par donner la définition d'une matrice diagonalisable sans faire
+référence à l'endomorphisme canoniquement associé. On effectue ensuite le lien
+entre matrices et endomorphismes (via la formule de changement de base.)
+
+::: {#def-matrice-diag}
+
+#### Matrice diagonalisable
+
+Une matrice $A \in \mathcal{M}_{n}(\mathbb{K})$ est **diagonalisable** si $A$ est
+semblable à une matrice diagonale.
+
+:::
+
+::: {#exm-matrice-diag}
+
+Une matrice diagonale est diagonalisable ; elle est semblable à elle-même !
+
+:::
+
+
+
+::: {#prp-lien-endomorphisme}
+
+#### Lien matrices & endomorphismes
+
+Soit $f \in \mathcal{L}(E)$ et $\mathcal{B}$ une base de $E$. Alors $f$ est
+diagonalisable ssi $\mathcal{M}_{\mathcal{B}}(f)$ est diagonalisable.  
+
+:::
+
+::: {#rem-matrice-diag}
+
+En particulier, une matrice $A$ est diagonalisable ssi l'endomorphisme
+$f_{A}$ canoniquement associé à $A$ est diagonalisable (cette équivalence
+aurait pu servir de définition à la diagonalisabilité de $A$).
+
+:::
+
+On déduit de la proposition précédente les versions matricielles des 
+@thm-cs et @thm-cns :
+
+::: {#thm-cs-A}
+
+#### Condition suffisante de diagonalisation
+
+Si une matrice $A \in \mathcal{M}_{n}(\mathbb{K})$ possède $n$ valeurs propres
+distinctes dans $\mathbb{K}$, alors elle est diagonalisable.
+
+:::
+
+::: {#thm-cns-A}
+
+#### Condition nécessaire et suffisante de diagonalisation
+
+Soit $A \in \mathcal{M}_{n}(\mathbb{K})$. Les propositions suivantes sont
+équivalentes :
+
+1. $A$ est diagonalisable, 
+
+2. le polynôme caractéristique de $A$ est sincdé sur $\mathbb{K}$, et 
+
+$$
+\forall \lambda \in \operatorname{Sp}(A),\ \dim E_{\lambda}(A)=m(\lambda),    
+$$
+
+3. on a 
+
+$$
+\mathcal{M}_{n,1}(\mathbb{K})= \bigoplus_{\lambda \in \mathbb{K}}
+E_{\lambda}(A).    
+$$
+
+:::
+
+::: {#nte-base-diag .callout-note}
+
+On obtient une base de diagonalisation $\mathcal{B}=(u_{1},\dots,u_{n})$ de
+$f_{A}$ en mettant bout à bout des bases des sous espaces propres de $A$. En
+notant $P$ la matrice de passage de la base canonique de
+$\mathcal{M}_{n,1}(\mathbb{K})$ à $\mathcal{B}$ (c'est à dire la matrice dont
+les colonnes sont $u_1,\dots,u_{n}$), la formule de changement de
+base donne alors :
+
+$$
+    P^{-1}AP = P^{-1}\mathcal{M}_{\mathcal{B}_{\text{can}}}(f_{A})P = \mathcal{M}_{\mathcal{B}}(f)= 
+ \begin{array}{cccc}
+  Au_{1} & \dots & Au_{n} & \\
+  \left( \begin{array}{c} \lambda_{1} \\ \vdots \\ 0 \end{array} \right. &
+  \begin{array}{c} \ldots \\ \ddots \\ \ldots \end{array} &
+  \left. \begin{array}{c} 0 \\ \vdots \\ \lambda_{n} \end{array} \right) &
+  \begin{array}{c} u_{1} \\ \vdots \\ u_{n} \end{array}
+\end{array}
+$$
+
+On dit que la matrice $P$ **diagonalise** $A$.
+
+:::
+
+::: {#exm-diagonalisation-A}
+
+#### Diagonalisation de la matrice $A = \begin{pmatrix}1&6\\1&2\end{pmatrix}$
+
+Les valeurs propres de $A$ sont $4$ et $-1$ ; la matrice $A$ est diagonalisable
+par condition *suffisante* (deux valeurs propres distinctes). De plus
+$E_{-1}(A)= \operatorname{Vect}(U)$ avec $U = \begin{pmatrix}
+    2\\1
+\end{pmatrix}$ et $E_{4}(A)=\operatorname{Vect}(V)$ avec $V=\begin{pmatrix}
+    2\\1
+\end{pmatrix}$. Une base de diagonalisation de $A$ est $\mathcal{B}=(U,V)$. Ainsi, en posant 
+
+$$
+P = \begin{array}{ccc}
+    U&V&\\
+    \left(\begin{array}{c}
+       -3\\1 
+    \end{array}\right. &
+    \left.\begin{array}{c}
+       2\\1 
+    \end{array}\right) &
+    \begin{array}{c}
+       e_1\\e_2 
+    \end{array}
+\end{array}
+$$
+
+on a 
+
+$$
+    P^{-1}AP = \begin{array}{ccc}
+    AU&AV&\\
+    \left(\begin{array}{c}
+       -1\\0 
+    \end{array}\right. &
+    \left.\begin{array}{c}
+       0\\4 
+    \end{array}\right) &
+    \begin{array}{c}
+       U\\V 
+    \end{array}
+\end{array}
+$$
+
+:::
+
+::: {#nte-diagonaliser-A .callout-note}
+
+*Diagonaliser* une matrice $A$, c'est trouver un couple $(P,D)$ tel que
+$P^{-1}AP = D$.
+
+:::
+
+::: {#wrn-cs .callout-warning}
+
+La condition suffisante n'est pas une condition nécessaire ! Pa exemple, la
+matrice $I_{n}$ est diagonalisable car diagonale, bien qu'elle ne possède pas
+$n$ valeurs propres distinctes (bien au contraire !).
+
+:::
+
+## Trigonalisation
+
+Lorsqu'un endomorphisme $f$ n'est pas diagonalisable, on peut tout de même
+essayer de trouver une base dans laquelle la matrice de $f$ est simple
+, par exemple triangulaire. Lorsque cela est possible, on dira que l'
+endomorphisme est *trigonalisable*. Cette notion est moins forte que la
+diagonalisabilité, mais elle sera plus souvent satisfaite ! Elle permet
+notamment de relier la trace et le déterminant d'une matrice à son spectre
+*complexe*, ce qui permet souvent de simplifier les calculs. 
+
+### Endomorphismes trigonalisables
+
+::: {#def-endo-trig}
+
+#### Endomorphismes trigonalisables
+
+Un endomorphisme $f \in \mathcal{L}(E)$ est dit **trigonalisable** s'il existe
+une base $\mathcal{B}$ de $E$ dans laquelle la matrice de $f$ est triangulaire
+(supérieure). Une telle base s'appelle une **base de trigonalisation** de $f$.
+
+:::
+
+::: {#prp-base-trig}
+
+Une base $\mathcal{B}=(u_1,\dots,u_{n})$ est une base de trigonalisation de $f
+\in \mathcal{L}(E)$ ssi 
+
+$$
+    \forall k \in \{1,\dots,n\},\ f(u_{k})\in
+    \operatorname{Vect}(u_{1},\dots,u_{k}).
+$$
+
+:::
+
+::: {#thm-cns-trig}
+
+#### Condition nécessaire et suffisante de trigonalisation
+
+Un endomorphisme $f \in \mathcal{L}(E)$ est trigonalisable ssi son polynôme
+caractéristique est scindé sur $\mathbb{K}$.
+
+:::
+
+### Matrices trigonalisables
+
+::: {#def-matrice-trig}
+
+#### Matrices trigonalisables
+
+Une matrice $A \in \mathcal{M}_{n}(\mathbb{K})$ est trigonalisable si elle est
+semblable à une matrice triangulaire. 
+
+:::
+
+::: {#prp-lien-matrice-endo-trig}
+
+Soit $f \in \mathcal{L}(E)$ et $\mathcal{B}$ une base de $E$. Alors $f$ est
+trigonalisable ssi $\mathcal{M}_{\mathcal{B}}(f)$ est trigonalisable. 
+
+:::
+
+::: {#rem-A-trig}
+
+En particuiler, une matrice $A$ est trigonalisable ssi l'endomorphisme $f_{A}$
+canoniquement associé à $A$ est trigonalisable.
+
+:::
+
+::: {#thm-cns-trig-A}
+
+#### Condition nécessaire et suffisante de trigonalisation
+
+Une matrice $A \in \mathcal{M}_{n}(\mathbb{K})$ est trigonalisable ssi son
+polynôme caractéristique est scindé sur $K$
+
+:::
+
+::: {#cor-trig-C}
+
+Toute matrice carrée est trigonalisable sur $\mathbb{C}$.
+
+:::
+
+::: {#cor-trace-det}
+
+#### Trace, déterminant et spectre
+
+Soit $A \in \mathcal{M}_{n}(\mathbb{K})$. On note $\lambda_{1},\dots,\lambda_{n}$ les valeurs propres, éventuellement complexes, de $A$. Alors
+
+$$
+    \begin{cases}
+        \operatorname{Tr}A = \sum_{i=1}^{n}\lambda_{i},\\
+        \det A = \prod_{i=1}^{n}\lambda_i.
+    \end{cases}
+$$
+
+:::
+
+::: {#tip-derniere .callout-tip}
+
+Ce résultat est très efficace pour trouver la dernière valeur propre d'une
+matrice ; il suffit de calculer sa trace ! Il permet aussi de vérifier son
+spectre.
+
+:::
+
 <!-- ## Application de la réduction {#sec-05-applications} -->
 
+<!-- Polynôme en $A$ est spectre.  -->
+<!---->
 
 \newpage
 
