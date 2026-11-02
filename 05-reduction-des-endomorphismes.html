@@ -224,13 +224,23 @@ window.Quarto = {
   <li><a href="#valeurs-propres-vecteurs-propres-sous-espaces-propres" id="toc-valeurs-propres-vecteurs-propres-sous-espaces-propres" class="nav-link" data-scroll-target="#valeurs-propres-vecteurs-propres-sous-espaces-propres"><span class="header-section-number">5.2.1</span> Valeurs propres, vecteurs propres, sous espaces propres</a></li>
   <li><a href="#polynôme-caractéristique" id="toc-polynôme-caractéristique" class="nav-link" data-scroll-target="#polynôme-caractéristique"><span class="header-section-number">5.2.2</span> Polynôme caractéristique</a></li>
   </ul></li>
+  <li><a href="#sec-05-diagonalisation" id="toc-sec-05-diagonalisation" class="nav-link" data-scroll-target="#sec-05-diagonalisation"><span class="header-section-number">5.3</span> Endomorphismes et matrices diagonalisables</a>
+  <ul class="collapse">
+  <li><a href="#le-cas-des-endomorphismes" id="toc-le-cas-des-endomorphismes" class="nav-link" data-scroll-target="#le-cas-des-endomorphismes"><span class="header-section-number">5.3.1</span> Le cas des endomorphismes</a></li>
+  <li><a href="#le-cas-des-matrices-1" id="toc-le-cas-des-matrices-1" class="nav-link" data-scroll-target="#le-cas-des-matrices-1"><span class="header-section-number">5.3.2</span> Le cas des matrices</a></li>
+  </ul></li>
+  <li><a href="#trigonalisation" id="toc-trigonalisation" class="nav-link" data-scroll-target="#trigonalisation"><span class="header-section-number">5.4</span> Trigonalisation</a>
+  <ul class="collapse">
+  <li><a href="#endomorphismes-trigonalisables" id="toc-endomorphismes-trigonalisables" class="nav-link" data-scroll-target="#endomorphismes-trigonalisables"><span class="header-section-number">5.4.1</span> Endomorphismes trigonalisables</a></li>
+  <li><a href="#matrices-trigonalisables" id="toc-matrices-trigonalisables" class="nav-link" data-scroll-target="#matrices-trigonalisables"><span class="header-section-number">5.4.2</span> Matrices trigonalisables</a></li>
+  </ul></li>
   <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
   <ul class="collapse">
-  <li><a href="#elements-propres-dun-endomorphisme" id="toc-elements-propres-dun-endomorphisme" class="nav-link" data-scroll-target="#elements-propres-dun-endomorphisme"><span class="header-section-number">5.2.3</span> Elements propres d’un endomorphisme</a></li>
-  <li><a href="#endomorphismes-et-matrices-diagonalisables" id="toc-endomorphismes-et-matrices-diagonalisables" class="nav-link" data-scroll-target="#endomorphismes-et-matrices-diagonalisables"><span class="header-section-number">5.2.4</span> Endomorphismes et matrices diagonalisables</a></li>
-  <li><a href="#trigonalisation" id="toc-trigonalisation" class="nav-link" data-scroll-target="#trigonalisation"><span class="header-section-number">5.2.5</span> Trigonalisation</a></li>
-  <li><a href="#applications-de-la-réduction" id="toc-applications-de-la-réduction" class="nav-link" data-scroll-target="#applications-de-la-réduction"><span class="header-section-number">5.2.6</span> Applications de la réduction</a></li>
-  <li><a href="#problèmes-divers" id="toc-problèmes-divers" class="nav-link" data-scroll-target="#problèmes-divers"><span class="header-section-number">5.2.7</span> Problèmes divers</a></li>
+  <li><a href="#elements-propres-dun-endomorphisme" id="toc-elements-propres-dun-endomorphisme" class="nav-link" data-scroll-target="#elements-propres-dun-endomorphisme"><span class="header-section-number">5.4.3</span> Elements propres d’un endomorphisme</a></li>
+  <li><a href="#endomorphismes-et-matrices-diagonalisables" id="toc-endomorphismes-et-matrices-diagonalisables" class="nav-link" data-scroll-target="#endomorphismes-et-matrices-diagonalisables"><span class="header-section-number">5.4.4</span> Endomorphismes et matrices diagonalisables</a></li>
+  <li><a href="#trigonalisation-1" id="toc-trigonalisation-1" class="nav-link" data-scroll-target="#trigonalisation-1"><span class="header-section-number">5.4.5</span> Trigonalisation</a></li>
+  <li><a href="#applications-de-la-réduction" id="toc-applications-de-la-réduction" class="nav-link" data-scroll-target="#applications-de-la-réduction"><span class="header-section-number">5.4.6</span> Applications de la réduction</a></li>
+  <li><a href="#problèmes-divers" id="toc-problèmes-divers" class="nav-link" data-scroll-target="#problèmes-divers"><span class="header-section-number">5.4.7</span> Problèmes divers</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -829,24 +839,287 @@ Astuce&nbsp;5.4
 \]</span></p>
 <p>sont <span class="math inline">\(1\)</span> d’ordre <span class="math inline">\(1\)</span> et <span class="math inline">\(3\)</span> d’ordre <span class="math inline">\(2\)</span>. En particulier, son polynôme caractéristique est <span class="math inline">\((X-1)(X-3)^{2}\)</span>.</p>
 </div>
-<!-- encadrement multiplicité géom et alg. -->
-<!---->
-<!-- Cas particulier des valeurs propres simples. -->
-<!---->
-<!---->
+<p>La multiplicité d’une valeur propre est de nature <em>algébrique</em> – elle est définie à l’aide d’un polynôme. On peut aussi lui associer une multiplicité <em>géométrique</em> égale à la dimension du sous-esapce propre associé. La proposition suivante stipule que la multiplicité géométrique est toujours inférieure à la multiplicité algébrique. La cas d’égalité sera étudié en détail dans la section suivante.</p>
+<div id="prp-multiplicites-alg-geom" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.11</strong></span> Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span> et <span class="math inline">\(\lambda \in \operatorname{Sp}f\)</span>. Alors <span class="math display">\[
+    1 \leqslant \dim E_{\lambda}(f) \leqslant m(\lambda).
+\]</span></p>
+</div>
+<div id="exm-valeur-propre-simple" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 5.13 (Cas des valeurs propres simples)</strong></span> Si <span class="math inline">\(\lambda\)</span> est une valeur propre simple de <span class="math inline">\(f\)</span>, alors <span class="math inline">\(E_{\lambda}(f)\)</span> est une <em>droite vectorielle</em>.</p>
+</div>
+</section>
+</section>
+<section id="sec-05-diagonalisation" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="sec-05-diagonalisation"><span class="header-section-number">5.3</span> Endomorphismes et matrices diagonalisables</h2>
+<section id="le-cas-des-endomorphismes" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="le-cas-des-endomorphismes"><span class="header-section-number">5.3.1</span> Le cas des endomorphismes</h3>
+<div id="def-endomorphisme-diag" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 5.12 (Endomorphisme diagonalisable)</strong></span> Un endomorphisme <span class="math inline">\(f \in \mathcal{L}(E)\)</span> est <strong>diagonalisable</strong> s’il existe une base <span class="math inline">\(\mathcal{B}\)</span> de <span class="math inline">\(E\)</span> dans laquelle la matrice de <span class="math inline">\(f\)</span> est diagonale.Une telle base s’appelle alors une <strong>base de diagonalisation</strong> de <span class="math inline">\(f\)</span>.</p>
+</div>
+<div id="nte-endo-diag" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;5.8
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Par définition de la matrice d’un endomorphisme dans une base, la matrice de <span class="math inline">\(f\)</span> dans la base <span class="math inline">\(\mathcal{B}\)</span> est diagonale ssi <span class="math inline">\(\mathcal{B}\)</span> est constituée de <em>vecteurs propres</em> de <span class="math inline">\(f\)</span>.</p>
+</div>
+</div>
+<div id="exm-projecteurs" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 5.14 (Projecteurs et symétrie)</strong></span> Si <span class="math inline">\(p\)</span> est le projecteur sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span>, la matrice de <span class="math inline">\(p\)</span> dans toute base adaptée à la somme directe <span class="math inline">\(E= F \oplus G\)</span> est diagonale. Un projecteur est donc par définition diagonalisable. De même, toute symétrie est diagonalisable.</p>
+</div>
+<p>On énonce maintenant les deux résultats principaux concernant la diagonalisation des endomorphismes ; une condition nécessaire et une condition nécessaire et suffisante. C’est pour énoncer cette dernière que nous avons défini la somme d’un nombre quelconque de sous espaces vectoriels.</p>
+<div id="thm-cs" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 5.1 (Condition suffisante de diagonalisation)</strong></span> Si <span class="math inline">\(f \in \mathcal{L}(E)\)</span> possède <span class="math inline">\(\dim E\)</span> valeurs propres <em>distinctes</em>, alors <span class="math inline">\(f\)</span> est diagonalisable.</p>
+</div>
+<div id="thm-cns" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 5.2 (Condition nécessaire et suffisante de diagonalisation)</strong></span> Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span>. Les propriétés suivantes sont équivalentes :</p>
+<ol type="1">
+<li><p><span class="math inline">\(f\)</span> est diagonalisable,</p></li>
+<li><p>le polynôme caracréristique de <span class="math inline">\(f\)</span> est scindé sur <span class="math inline">\(\mathbb{K}\)</span>, et <span class="math display">\[
+\forall \lambda \in \operatorname{Sp}(f),\ \dim E_{\lambda}(f) =
+m(\lambda),
+\]</span></p></li>
+<li><p>l’espace <span class="math inline">\(E\)</span> est la somme directe des sous espaces propres de <span class="math inline">\(f\)</span> : <span class="math display">\[
+E = \bigoplus_{\lambda \in \operatorname{Sp}(f)} E_{\lambda}(f).
+\]</span></p></li>
+</ol>
+</div>
+<div id="rem-philo" class="proof remark">
+<p><span class="proof-title"><em>Remarque 5.4</em>. </span>En substance, le deuxième point siginfie que <span class="math inline">\(f\)</span> possède <em>autant de valeurs propres que possible</em> (polynôme caractéristique scindé), et que ses sous espaces propres sont de <em>dimension maximale</em>.</p>
+</div>
+<div id="nte-base-diag" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;5.9
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Concrètement, on obtient un base de diagonalisation de <span class="math inline">\(f\)</span> en <em>mettant bout à bout</em> des bases de chacun des sous espaces propres de <span class="math inline">\(f\)</span> i.e.&nbsp;en considérant une base <em>adaptée</em> à la somme directe <span class="math inline">\(E = \bigoplus_{\lambda \in
+\operatorname{Sp}(f)} E_{\lambda}(f)\)</span>.</p>
+</div>
+</div>
+<div id="exm-proj-sym" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 5.15 (Projecteurs et symétries)</strong></span> Si <span class="math inline">\(p\)</span> est un projecteur de <span class="math inline">\(E\)</span>, l’égalité</p>
+<p><span class="math display">\[
+    E = \ker p \oplus \operatorname{Im}p
+\]</span></p>
+<p>se lit dorénavant</p>
+<p><span class="math display">\[
+    E = E_{0}(p)\oplus E_{1}(p),
+\]</span></p>
+<p>et traduit le fait qu’un projecteur est diagonalisable !</p>
+<p>Demême, si <span class="math inline">\(s\)</span> est une symétrie de <span class="math inline">\(E\)</span>, l’égalité un peu mystérieuse</p>
+<p><span class="math display">\[
+    E = \ker (s- \operatorname{Id}_{E})\oplus \ker(s+\operatorname{Id}_{E})
+\]</span></p>
+<p>se lit simplement</p>
+<p><span class="math display">\[
+    s = E_{1}(s)\oplus E_{-1}(s),
+\]</span></p>
+<p>et traduit la diagonalisabilité de <span class="math inline">\(s\)</span>.</p>
+</div>
+</section>
+<section id="le-cas-des-matrices-1" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="le-cas-des-matrices-1"><span class="header-section-number">5.3.2</span> Le cas des matrices</h3>
+<p>On commence par donner la définition d’une matrice diagonalisable sans faire référence à l’endomorphisme canoniquement associé. On effectue ensuite le lien entre matrices et endomorphismes (via la formule de changement de base.)</p>
+<div id="def-matrice-diag" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 5.13 (Matrice diagonalisable)</strong></span> Une matrice <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span> est <strong>diagonalisable</strong> si <span class="math inline">\(A\)</span> est semblable à une matrice diagonale.</p>
+</div>
+<div id="exm-matrice-diag" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 5.16</strong></span> Une matrice diagonale est diagonalisable ; elle est semblable à elle-même !</p>
+</div>
+<div id="prp-lien-endomorphisme" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.12 (Lien matrices &amp; endomorphismes)</strong></span> Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span> et <span class="math inline">\(\mathcal{B}\)</span> une base de <span class="math inline">\(E\)</span>. Alors <span class="math inline">\(f\)</span> est diagonalisable ssi <span class="math inline">\(\mathcal{M}_{\mathcal{B}}(f)\)</span> est diagonalisable.</p>
+</div>
+<div id="rem-matrice-diag" class="proof remark">
+<p><span class="proof-title"><em>Remarque 5.5</em>. </span>En particulier, une matrice <span class="math inline">\(A\)</span> est diagonalisable ssi l’endomorphisme <span class="math inline">\(f_{A}\)</span> canoniquement associé à <span class="math inline">\(A\)</span> est diagonalisable (cette équivalence aurait pu servir de définition à la diagonalisabilité de <span class="math inline">\(A\)</span>).</p>
+</div>
+<p>On déduit de la proposition précédente les versions matricielles des <a href="#thm-cs" class="quarto-xref">Théorème&nbsp;<span>5.1</span></a> et <a href="#thm-cns" class="quarto-xref">Théorème&nbsp;<span>5.2</span></a> :</p>
+<div id="thm-cs-A" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 5.3 (Condition suffisante de diagonalisation)</strong></span> Si une matrice <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span> possède <span class="math inline">\(n\)</span> valeurs propres distinctes dans <span class="math inline">\(\mathbb{K}\)</span>, alors elle est diagonalisable.</p>
+</div>
+<div id="thm-cns-A" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 5.4 (Condition nécessaire et suffisante de diagonalisation)</strong></span> Soit <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span>. Les propositions suivantes sont équivalentes :</p>
+<ol type="1">
+<li><p><span class="math inline">\(A\)</span> est diagonalisable,</p></li>
+<li><p>le polynôme caractéristique de <span class="math inline">\(A\)</span> est sincdé sur <span class="math inline">\(\mathbb{K}\)</span>, et</p></li>
+</ol>
+<p><span class="math display">\[
+\forall \lambda \in \operatorname{Sp}(A),\ \dim E_{\lambda}(A)=m(\lambda),    
+\]</span></p>
+<ol start="3" type="1">
+<li>on a</li>
+</ol>
+<p><span class="math display">\[
+\mathcal{M}_{n,1}(\mathbb{K})= \bigoplus_{\lambda \in \mathbb{K}}
+E_{\lambda}(A).    
+\]</span></p>
+</div>
+<div id="nte-base-diag" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;5.10
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On obtient une base de diagonalisation <span class="math inline">\(\mathcal{B}=(u_{1},\dots,u_{n})\)</span> de <span class="math inline">\(f_{A}\)</span> en mettant bout à bout des bases des sous espaces propres de <span class="math inline">\(A\)</span>. En notant <span class="math inline">\(P\)</span> la matrice de passage de la base canonique de <span class="math inline">\(\mathcal{M}_{n,1}(\mathbb{K})\)</span> à <span class="math inline">\(\mathcal{B}\)</span> (c’est à dire la matrice dont les colonnes sont <span class="math inline">\(u_1,\dots,u_{n}\)</span>), la formule de changement de base donne alors :</p>
+<p><span class="math display">\[
+    P^{-1}AP = P^{-1}\mathcal{M}_{\mathcal{B}_{\text{can}}}(f_{A})P = \mathcal{M}_{\mathcal{B}}(f)=
+\begin{array}{cccc}
+  Au_{1} &amp; \dots &amp; Au_{n} &amp; \\
+  \left( \begin{array}{c} \lambda_{1} \\ \vdots \\ 0 \end{array} \right. &amp;
+  \begin{array}{c} \ldots \\ \ddots \\ \ldots \end{array} &amp;
+  \left. \begin{array}{c} 0 \\ \vdots \\ \lambda_{n} \end{array} \right) &amp;
+  \begin{array}{c} u_{1} \\ \vdots \\ u_{n} \end{array}
+\end{array}
+\]</span></p>
+<p>On dit que la matrice <span class="math inline">\(P\)</span> <strong>diagonalise</strong> <span class="math inline">\(A\)</span>.</p>
+</div>
+</div>
+<div id="exm-diagonalisation-A" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 5.17 (Diagonalisation de la matrice <span class="math inline">\(A = \begin{pmatrix}1&amp;6\\1&amp;2\end{pmatrix}\)</span>)</strong></span> Les valeurs propres de <span class="math inline">\(A\)</span> sont <span class="math inline">\(4\)</span> et <span class="math inline">\(-1\)</span> ; la matrice <span class="math inline">\(A\)</span> est diagonalisable par condition <em>suffisante</em> (deux valeurs propres distinctes). De plus <span class="math inline">\(E_{-1}(A)= \operatorname{Vect}(U)\)</span> avec <span class="math inline">\(U = \begin{pmatrix}
+    2\\1
+\end{pmatrix}\)</span> et <span class="math inline">\(E_{4}(A)=\operatorname{Vect}(V)\)</span> avec <span class="math inline">\(V=\begin{pmatrix}
+    2\\1
+\end{pmatrix}\)</span>. Une base de diagonalisation de <span class="math inline">\(A\)</span> est <span class="math inline">\(\mathcal{B}=(U,V)\)</span>. Ainsi, en posant</p>
+<p><span class="math display">\[
+P = \begin{array}{ccc}
+    U&amp;V&amp;\\
+    \left(\begin{array}{c}
+       -3\\1
+    \end{array}\right. &amp;
+    \left.\begin{array}{c}
+       2\\1
+    \end{array}\right) &amp;
+    \begin{array}{c}
+       e_1\\e_2
+    \end{array}
+\end{array}
+\]</span></p>
+<p>on a</p>
+<p><span class="math display">\[
+    P^{-1}AP = \begin{array}{ccc}
+    AU&amp;AV&amp;\\
+    \left(\begin{array}{c}
+       -1\\0
+    \end{array}\right. &amp;
+    \left.\begin{array}{c}
+       0\\4
+    \end{array}\right) &amp;
+    \begin{array}{c}
+       U\\V
+    \end{array}
+\end{array}
+\]</span></p>
+</div>
+<div id="nte-diagonaliser-A" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;5.11
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>Diagonaliser</em> une matrice <span class="math inline">\(A\)</span>, c’est trouver un couple <span class="math inline">\((P,D)\)</span> tel que <span class="math inline">\(P^{-1}AP = D\)</span>.</p>
+</div>
+</div>
+<div id="wrn-cs" class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Avertissement&nbsp;5.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La condition suffisante n’est pas une condition nécessaire ! Pa exemple, la matrice <span class="math inline">\(I_{n}\)</span> est diagonalisable car diagonale, bien qu’elle ne possède pas <span class="math inline">\(n\)</span> valeurs propres distinctes (bien au contraire !).</p>
+</div>
+</div>
+</section>
+</section>
+<section id="trigonalisation" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="trigonalisation"><span class="header-section-number">5.4</span> Trigonalisation</h2>
+<p>Lorsqu’un endomorphisme <span class="math inline">\(f\)</span> n’est pas diagonalisable, on peut tout de même essayer de trouver une base dans laquelle la matrice de <span class="math inline">\(f\)</span> est simple , par exemple triangulaire. Lorsque cela est possible, on dira que l’ endomorphisme est <em>trigonalisable</em>. Cette notion est moins forte que la diagonalisabilité, mais elle sera plus souvent satisfaite ! Elle permet notamment de relier la trace et le déterminant d’une matrice à son spectre <em>complexe</em>, ce qui permet souvent de simplifier les calculs.</p>
+<section id="endomorphismes-trigonalisables" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="endomorphismes-trigonalisables"><span class="header-section-number">5.4.1</span> Endomorphismes trigonalisables</h3>
+<div id="def-endo-trig" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 5.14 (Endomorphismes trigonalisables)</strong></span> Un endomorphisme <span class="math inline">\(f \in \mathcal{L}(E)\)</span> est dit <strong>trigonalisable</strong> s’il existe une base <span class="math inline">\(\mathcal{B}\)</span> de <span class="math inline">\(E\)</span> dans laquelle la matrice de <span class="math inline">\(f\)</span> est triangulaire (supérieure). Une telle base s’appelle une <strong>base de trigonalisation</strong> de <span class="math inline">\(f\)</span>.</p>
+</div>
+<div id="prp-base-trig" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.13</strong></span> Une base <span class="math inline">\(\mathcal{B}=(u_1,\dots,u_{n})\)</span> est une base de trigonalisation de <span class="math inline">\(f
+\in \mathcal{L}(E)\)</span> ssi</p>
+<p><span class="math display">\[
+    \forall k \in \{1,\dots,n\},\ f(u_{k})\in
+    \operatorname{Vect}(u_{1},\dots,u_{k}).
+\]</span></p>
+</div>
+<div id="thm-cns-trig" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 5.5 (Condition nécessaire et suffisante de trigonalisation)</strong></span> Un endomorphisme <span class="math inline">\(f \in \mathcal{L}(E)\)</span> est trigonalisable ssi son polynôme caractéristique est scindé sur <span class="math inline">\(\mathbb{K}\)</span>.</p>
+</div>
+</section>
+<section id="matrices-trigonalisables" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="matrices-trigonalisables"><span class="header-section-number">5.4.2</span> Matrices trigonalisables</h3>
+<div id="def-matrice-trig" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 5.15 (Matrices trigonalisables)</strong></span> Une matrice <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span> est trigonalisable si elle est semblable à une matrice triangulaire.</p>
+</div>
+<div id="prp-lien-matrice-endo-trig" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.14</strong></span> Soit <span class="math inline">\(f \in \mathcal{L}(E)\)</span> et <span class="math inline">\(\mathcal{B}\)</span> une base de <span class="math inline">\(E\)</span>. Alors <span class="math inline">\(f\)</span> est trigonalisable ssi <span class="math inline">\(\mathcal{M}_{\mathcal{B}}(f)\)</span> est trigonalisable.</p>
+</div>
+<div id="rem-A-trig" class="proof remark">
+<p><span class="proof-title"><em>Remarque 5.6</em>. </span>En particuiler, une matrice <span class="math inline">\(A\)</span> est trigonalisable ssi l’endomorphisme <span class="math inline">\(f_{A}\)</span> canoniquement associé à <span class="math inline">\(A\)</span> est trigonalisable.</p>
+</div>
+<div id="thm-cns-trig-A" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 5.6 (Condition nécessaire et suffisante de trigonalisation)</strong></span> Une matrice <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span> est trigonalisable ssi son polynôme caractéristique est scindé sur <span class="math inline">\(K\)</span></p>
+</div>
+<div id="cor-trig-C" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollaire 5.4</strong></span> Toute matrice carrée est trigonalisable sur <span class="math inline">\(\mathbb{C}\)</span>.</p>
+</div>
+<div id="cor-trace-det" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollaire 5.5 (Trace, déterminant et spectre)</strong></span> Soit <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span>. On note <span class="math inline">\(\lambda_{1},\dots,\lambda_{n}\)</span> les valeurs propres, éventuellement complexes, de <span class="math inline">\(A\)</span>. Alors</p>
+<p><span class="math display">\[
+    \begin{cases}
+        \operatorname{Tr}A = \sum_{i=1}^{n}\lambda_{i},\\
+        \det A = \prod_{i=1}^{n}\lambda_i.
+    \end{cases}
+\]</span></p>
+</div>
+<div id="tip-derniere" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce&nbsp;5.5
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ce résultat est très efficace pour trouver la dernière valeur propre d’une matrice ; il suffit de calculer sa trace ! Il permet aussi de vérifier son spectre.</p>
+</div>
+</div>
+<!-- ## Application de la réduction {#sec-05-applications} -->
 <!-- Polynôme en $A$ est spectre.  -->
 <!---->
-<!-- ## Endomorphismes et matrices diagonalisables {#sec-05-diagonalisation} -->
-<!---->
-<!-- ## Trigonalisation {#sec-05-trigonalisation}  -->
-<!---->
-<!-- ## Application de la réduction {#sec-05-applications} -->
 </section>
 </section>
 <section id="exercices" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="exercices">Exercices</h2>
-<section id="elements-propres-dun-endomorphisme" class="level3" data-number="5.2.3">
-<h3 data-number="5.2.3" class="anchored" data-anchor-id="elements-propres-dun-endomorphisme"><span class="header-section-number">5.2.3</span> Elements propres d’un endomorphisme</h3>
+<section id="elements-propres-dun-endomorphisme" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="elements-propres-dun-endomorphisme"><span class="header-section-number">5.4.3</span> Elements propres d’un endomorphisme</h3>
 <div id="exr-matrice-J" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 5.1</strong></span> (Spectre réel et complexe).</p>
 <ol type="1">
@@ -933,8 +1206,8 @@ Astuce&nbsp;5.4
 <!---->
 <!-- ::: -->
 </section>
-<section id="endomorphismes-et-matrices-diagonalisables" class="level3" data-number="5.2.4">
-<h3 data-number="5.2.4" class="anchored" data-anchor-id="endomorphismes-et-matrices-diagonalisables"><span class="header-section-number">5.2.4</span> Endomorphismes et matrices diagonalisables</h3>
+<section id="endomorphismes-et-matrices-diagonalisables" class="level3" data-number="5.4.4">
+<h3 data-number="5.4.4" class="anchored" data-anchor-id="endomorphismes-et-matrices-diagonalisables"><span class="header-section-number">5.4.4</span> Endomorphismes et matrices diagonalisables</h3>
 <div id="exr-05-diag" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 5.8</strong></span> Justifier que les matrices suivantes sont diagonalisables, et les diagonaliser.</p>
 <p><span class="math display">\[
@@ -1017,8 +1290,8 @@ e_{i-1}\)</span> si <span class="math inline">\(i\in\{2,\dots,n\}\)</span> et <s
 <p><span class="theorem-title"><strong>Exercice 5.17 (<span class="math inline">\(\star\)</span>)</strong></span> (Diagonalisation simultanée). Soit <span class="math inline">\(f\)</span> et <span class="math inline">\(g\)</span> deux endomorphismes qui commutent. On suppose que <span class="math inline">\(f\)</span> est diagonalisable et que <span class="math inline">\(f\)</span> possède des valeurs propres deux à deux distinctes. En utilisant les <a href="#exr-05-stable" class="quarto-xref">Exercice&nbsp;<span>5.15</span></a> et <a href="#exr-05-commute" class="quarto-xref">Exercice&nbsp;<span>5.17</span></a>, montrer que <span class="math inline">\(g\)</span> et diagonalisable, et que toute base de diagonalisation de <span class="math inline">\(f\)</span> est également une base de diagonalisation de <span class="math inline">\(g\)</span>.</p>
 </div>
 </section>
-<section id="trigonalisation" class="level3" data-number="5.2.5">
-<h3 data-number="5.2.5" class="anchored" data-anchor-id="trigonalisation"><span class="header-section-number">5.2.5</span> Trigonalisation</h3>
+<section id="trigonalisation-1" class="level3" data-number="5.4.5">
+<h3 data-number="5.4.5" class="anchored" data-anchor-id="trigonalisation-1"><span class="header-section-number">5.4.5</span> Trigonalisation</h3>
 <div id="exr-05-sans-calc" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 5.18</strong></span> (Sans calcul (1)). On considère la matrice <span class="math display">\[A=\begin{pmatrix}
 4&amp;-3&amp;2\\6&amp;-5&amp;4\\4&amp;-4&amp;4 \end{pmatrix}\]</span></p>
@@ -1082,8 +1355,8 @@ Q = \begin{pmatrix}
 </ol>
 </div>
 </section>
-<section id="applications-de-la-réduction" class="level3" data-number="5.2.6">
-<h3 data-number="5.2.6" class="anchored" data-anchor-id="applications-de-la-réduction"><span class="header-section-number">5.2.6</span> Applications de la réduction</h3>
+<section id="applications-de-la-réduction" class="level3" data-number="5.4.6">
+<h3 data-number="5.4.6" class="anchored" data-anchor-id="applications-de-la-réduction"><span class="header-section-number">5.4.6</span> Applications de la réduction</h3>
 <div id="exr-05-syst" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 5.22</strong></span> (Etude d’un système de suites récurrentes linéaires d’ordre <span class="math inline">\(1\)</span>). On considère le système</p>
 <p><span class="math display">\[
@@ -1162,8 +1435,8 @@ A = \begin{pmatrix}
 <!-- ::: -->
 <!---->
 </section>
-<section id="problèmes-divers" class="level3" data-number="5.2.7">
-<h3 data-number="5.2.7" class="anchored" data-anchor-id="problèmes-divers"><span class="header-section-number">5.2.7</span> Problèmes divers</h3>
+<section id="problèmes-divers" class="level3" data-number="5.4.7">
+<h3 data-number="5.4.7" class="anchored" data-anchor-id="problèmes-divers"><span class="header-section-number">5.4.7</span> Problèmes divers</h3>
 <div id="exr-05-nil" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 5.28 (<span class="math inline">\(\star\)</span>)</strong></span> (Matrice nilpotente). Une matrice non-nulle <span class="math inline">\(N\in\mathcal{M}_n(\mathbb{R})\)</span> est dite <em>nilpotente</em> s’il existe <span class="math inline">\(k\in\mathbb{N}^*\)</span> telle que <span class="math inline">\(N^k = 0\)</span>. Dans la suite, <span class="math inline">\(N\)</span> désigne une matrice nilpotente de <span class="math inline">\(\mathcal{M}_n(\mathbb{R})\)</span>.</p>
 <ol type="1">
