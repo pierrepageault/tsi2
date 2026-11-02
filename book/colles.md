@@ -71,7 +71,7 @@ $\mathbb{R}^{2},\mathbb{R}^{3}, \mathbb{R}_{2}[X], \mathcal{M}_{2   }(\mathbb{R}
   matrice par blocs, définition d'un endomorphisme via ses restrictions aux
 facteurs d'une somme directe, supplémentaires en dimension infinie,...
 
-## Programme 06 - du 19/10 au 23/10
+## Programme 06 - du 2/11 au 6/11
 
 @sec-05-rappels
 
