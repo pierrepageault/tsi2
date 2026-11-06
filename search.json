@@ -380,11 +380,21 @@
     ]
   },
   {
+    "objectID": "colles.html#programme-07---du-911-au-1311",
+    "href": "colles.html#programme-07---du-911-au-1311",
+    "title": "Programmes de colle",
+    "section": "Programme 07 - du 9/11 au 13/11",
+    "text": "Programme 07 - du 9/11 au 13/11\nEndomorphismes et matrices diagonalisables\n\nLe coeur de la colle porte sur la maitrise des conditions suffisante et nécessaire et suffisante de diagonalisabilité, dans le cas d’une matrice ou d’un endomorphisme.\nLa trigonalisation n’est pas encore au programme mais les étudiants (et les colleurs !) pourront dès à présent utiliser le Corollaire 5.5.\nLa colle ne doit pas se borner à calculer un polynôme caractéristique pendant une heure. Il peut être plus pertinent de déterminer le polynôme caractéristique “sans calcul” (calcul de rang, trace,…).",
+    "crumbs": [
+      "Programmes de colle"
+    ]
+  },
+  {
     "objectID": "dm.html",
     "href": "dm.html",
     "title": "DM",
     "section": "",
-    "text": "DM 01 - Intégrales généralisées\n\nDM 02 - Séries numériques\n\nDM 03 - Algèbre linéaire (Type CCINP)\nDM 03 - Algèbre linéaire (Type CCS)\n\nDM 04 - Elements propres et diagonalisation (Type CCINP)\nDM 04 - Elements propres et diagonalisation (Type CCS)",
+    "text": "DM 01 - Intégrales généralisées \n\nDM 02 - Séries numériques \n\nDM 03 - Algèbre linéaire (Type CCINP) \nDM 03 - Algèbre linéaire (Type CCS) \n\nDM 04 - Elements propres et diagonalisation (Type CCINP) \nDM 04 - Elements propres et diagonalisation (Type CCS)",
     "crumbs": [
       "DM"
     ]
