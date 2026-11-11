@@ -229,18 +229,24 @@ window.Quarto = {
   <li><a href="#le-cas-des-endomorphismes" id="toc-le-cas-des-endomorphismes" class="nav-link" data-scroll-target="#le-cas-des-endomorphismes"><span class="header-section-number">5.3.1</span> Le cas des endomorphismes</a></li>
   <li><a href="#le-cas-des-matrices-1" id="toc-le-cas-des-matrices-1" class="nav-link" data-scroll-target="#le-cas-des-matrices-1"><span class="header-section-number">5.3.2</span> Le cas des matrices</a></li>
   </ul></li>
-  <li><a href="#trigonalisation" id="toc-trigonalisation" class="nav-link" data-scroll-target="#trigonalisation"><span class="header-section-number">5.4</span> Trigonalisation</a>
+  <li><a href="#sec-05-trigonalisation" id="toc-sec-05-trigonalisation" class="nav-link" data-scroll-target="#sec-05-trigonalisation"><span class="header-section-number">5.4</span> Trigonalisation</a>
   <ul class="collapse">
   <li><a href="#endomorphismes-trigonalisables" id="toc-endomorphismes-trigonalisables" class="nav-link" data-scroll-target="#endomorphismes-trigonalisables"><span class="header-section-number">5.4.1</span> Endomorphismes trigonalisables</a></li>
   <li><a href="#matrices-trigonalisables" id="toc-matrices-trigonalisables" class="nav-link" data-scroll-target="#matrices-trigonalisables"><span class="header-section-number">5.4.2</span> Matrices trigonalisables</a></li>
   </ul></li>
+  <li><a href="#sec-05-applications" id="toc-sec-05-applications" class="nav-link" data-scroll-target="#sec-05-applications"><span class="header-section-number">5.5</span> Application de la réduction</a>
+  <ul class="collapse">
+  <li><a href="#polynômes-de-matrices" id="toc-polynômes-de-matrices" class="nav-link" data-scroll-target="#polynômes-de-matrices"><span class="header-section-number">5.5.1</span> Polynômes de matrices</a></li>
+  <li><a href="#puissances-de-matrices" id="toc-puissances-de-matrices" class="nav-link" data-scroll-target="#puissances-de-matrices"><span class="header-section-number">5.5.2</span> Puissances de matrices</a></li>
+  <li><a href="#suites-récurrents-linéaires-dordre-2-à-coefficients-constants" id="toc-suites-récurrents-linéaires-dordre-2-à-coefficients-constants" class="nav-link" data-scroll-target="#suites-récurrents-linéaires-dordre-2-à-coefficients-constants"><span class="header-section-number">5.5.3</span> Suites récurrents linéaires d’ordre <span class="math inline">\(2\)</span> à coefficients constants</a></li>
+  </ul></li>
   <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
   <ul class="collapse">
-  <li><a href="#elements-propres-dun-endomorphisme" id="toc-elements-propres-dun-endomorphisme" class="nav-link" data-scroll-target="#elements-propres-dun-endomorphisme"><span class="header-section-number">5.4.3</span> Elements propres d’un endomorphisme</a></li>
-  <li><a href="#endomorphismes-et-matrices-diagonalisables" id="toc-endomorphismes-et-matrices-diagonalisables" class="nav-link" data-scroll-target="#endomorphismes-et-matrices-diagonalisables"><span class="header-section-number">5.4.4</span> Endomorphismes et matrices diagonalisables</a></li>
-  <li><a href="#trigonalisation-1" id="toc-trigonalisation-1" class="nav-link" data-scroll-target="#trigonalisation-1"><span class="header-section-number">5.4.5</span> Trigonalisation</a></li>
-  <li><a href="#applications-de-la-réduction" id="toc-applications-de-la-réduction" class="nav-link" data-scroll-target="#applications-de-la-réduction"><span class="header-section-number">5.4.6</span> Applications de la réduction</a></li>
-  <li><a href="#problèmes-divers" id="toc-problèmes-divers" class="nav-link" data-scroll-target="#problèmes-divers"><span class="header-section-number">5.4.7</span> Problèmes divers</a></li>
+  <li><a href="#elements-propres-dun-endomorphisme" id="toc-elements-propres-dun-endomorphisme" class="nav-link" data-scroll-target="#elements-propres-dun-endomorphisme"><span class="header-section-number">5.5.4</span> Elements propres d’un endomorphisme</a></li>
+  <li><a href="#endomorphismes-et-matrices-diagonalisables" id="toc-endomorphismes-et-matrices-diagonalisables" class="nav-link" data-scroll-target="#endomorphismes-et-matrices-diagonalisables"><span class="header-section-number">5.5.5</span> Endomorphismes et matrices diagonalisables</a></li>
+  <li><a href="#trigonalisation" id="toc-trigonalisation" class="nav-link" data-scroll-target="#trigonalisation"><span class="header-section-number">5.5.6</span> Trigonalisation</a></li>
+  <li><a href="#applications-de-la-réduction" id="toc-applications-de-la-réduction" class="nav-link" data-scroll-target="#applications-de-la-réduction"><span class="header-section-number">5.5.7</span> Applications de la réduction</a></li>
+  <li><a href="#problèmes-divers" id="toc-problèmes-divers" class="nav-link" data-scroll-target="#problèmes-divers"><span class="header-section-number">5.5.8</span> Problèmes divers</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -393,30 +399,6 @@ Note&nbsp;5.2
 <div id="prp-matrice-f_A" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 5.3 (Matrice dans la base canonique de <span class="math inline">\(f_{A}\)</span>)</strong></span> La matrice dans la base canonique de <span class="math inline">\(\mathcal{M}_{n,1}(\mathbb{K})\)</span> de <span class="math inline">\(f_A\)</span> est <span class="math inline">\(A\)</span>.</p>
 </div>
-<!-- ::: {#def-polynome} -->
-<!---->
-<!-- #### Polynômes de matrices  -->
-<!---->
-<!-- Pour tout polynôme $P= \sum_{k=0}^{n}a_{k}X^{k}$ et toute matrice $A \in \mathcal{M}_{n}(\mathbb{K})$, on pose  -->
-<!---->
-<!-- $$ -->
-<!--     P(A)= \sum_{k=0}^{n} a_{k}A^{k} -->
-<!-- $$ -->
-<!---->
-<!-- où, par convention, $A^{0}=\operatorname{I}_{n}$. On dit que la matrice $P(A)$ -->
-<!-- est un **polynôme en $A$**. -->
-<!---->
-<!-- ::: -->
-<!---->
-<!-- ::: {#prp-polynome} -->
-<!---->
-<!-- Pour tout polyôme $P,Q \in \mathbb{R}[X]$, toute matrice $A \in \mathcal{M}_{n}(\mathbb{K})$, et tout $\lambda \in \mathbb{K}$, on a  -->
-<!---->
-<!-- 1. $(P+\lambda Q)(A)= P(A) + \lambda Q(A)$, -->
-<!---->
-<!-- 2. $(PQ)(A)= P(A)Q(A)$. -->
-<!---->
-<!-- ::: -->
 </section>
 <section id="sec-05-elements-propres" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="sec-05-elements-propres"><span class="header-section-number">5.2</span> Eléments propres d’un endomorphisme</h2>
@@ -1052,8 +1034,8 @@ Avertissement&nbsp;5.1
 </div>
 </section>
 </section>
-<section id="trigonalisation" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="trigonalisation"><span class="header-section-number">5.4</span> Trigonalisation</h2>
+<section id="sec-05-trigonalisation" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="sec-05-trigonalisation"><span class="header-section-number">5.4</span> Trigonalisation</h2>
 <p>Lorsqu’un endomorphisme <span class="math inline">\(f\)</span> n’est pas diagonalisable, on peut tout de même essayer de trouver une base dans laquelle la matrice de <span class="math inline">\(f\)</span> est simple , par exemple triangulaire. Lorsque cela est possible, on dira que l’ endomorphisme est <em>trigonalisable</em>. Cette notion est moins forte que la diagonalisabilité, mais elle sera plus souvent satisfaite ! Elle permet notamment de relier la trace et le déterminant d’une matrice à son spectre <em>complexe</em>, ce qui permet souvent de simplifier les calculs.</p>
 <section id="endomorphismes-trigonalisables" class="level3" data-number="5.4.1">
 <h3 data-number="5.4.1" class="anchored" data-anchor-id="endomorphismes-trigonalisables"><span class="header-section-number">5.4.1</span> Endomorphismes trigonalisables</h3>
@@ -1111,15 +1093,238 @@ Astuce&nbsp;5.5
 <p>Ce résultat est très efficace pour trouver la dernière valeur propre d’une matrice ; il suffit de calculer sa trace ! Il permet aussi de vérifier son spectre.</p>
 </div>
 </div>
-<!-- ## Application de la réduction {#sec-05-applications} -->
-<!-- Polynôme en $A$ est spectre.  -->
-<!---->
+</section>
+</section>
+<section id="sec-05-applications" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="sec-05-applications"><span class="header-section-number">5.5</span> Application de la réduction</h2>
+<section id="polynômes-de-matrices" class="level3" data-number="5.5.1">
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="polynômes-de-matrices"><span class="header-section-number">5.5.1</span> Polynômes de matrices</h3>
+<div id="def-polynome" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 5.16 (Polynômes de matrices)</strong></span> Pour tout polynôme <span class="math inline">\(P= \sum_{k=0}^{n}a_{k}X^{k}\in \mathbb{K}[X]\)</span>, et toute matrice <span class="math inline">\(A \in
+\mathcal{M}_{n}(\mathbb{K})\)</span>, on pose</p>
+<p><span class="math display">\[
+    P(A)= \sum_{k=0}^{n} a_{k}A^{k}
+\]</span></p>
+<p>où, par convention, <span class="math inline">\(A^{0}=\operatorname{I}_{n}\)</span>. On dit que la matrice <span class="math inline">\(P(A)\)</span> est un <strong>polynôme en <span class="math inline">\(A\)</span></strong>.</p>
+</div>
+<div id="prp-polynome" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.15</strong></span> Pour tout polyôme <span class="math inline">\(P,Q \in \mathbb{R}[X]\)</span>, pour toute matrice <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span>, et pour tout <span class="math inline">\(\lambda \in \mathbb{K}\)</span>, on a</p>
+<ol type="1">
+<li><p><span class="math inline">\((P+\lambda Q)(A)= P(A) + \lambda Q(A)\)</span>,</p></li>
+<li><p><span class="math inline">\((PQ)(A)= P(A)Q(A)\)</span>.</p></li>
+</ol>
+</div>
+<div id="def-annulateur" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 5.17 (Polynôme annulateur)</strong></span> On dit que <span class="math inline">\(P \in \mathbb{K}[X]\)</span> est un <strong>polynome annulateur</strong> de <span class="math inline">\(A \in
+\mathcal{M}_{n}(\mathbb{K})\)</span> si <span class="math inline">\(P(A)=0_{\mathcal{M}_{n}(\mathbb{K})}\)</span>.</p>
+</div>
+<div id="prp-localisation-spectre" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.16 (Spectre et polynôme annulateur)</strong></span> Si <span class="math inline">\(P\)</span> est un polynôme annulateur de <span class="math inline">\(A\)</span>, alors les valeurs propres de <span class="math inline">\(A\)</span> sont incluses dans les racines de <span class="math inline">\(P\)</span>.</p>
+</div>
+<div id="rem-inclusion" class="proof remark">
+<p><span class="proof-title"><em>Remarque 5.7</em>. </span>Le résultat précédent fournit seulement une <em>inclusion</em> i.e.&nbsp;des <em>candidats</em> pour les valeurs propres de <span class="math inline">\(A\)</span> ; toutes les racines de <span class="math inline">\(P\)</span> ne sont pas nécessairement valeurs propres de <span class="math inline">\(A\)</span>.</p>
+</div>
+<div id="exm-projeteur" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 5.18</strong></span> Si <span class="math inline">\(A\)</span> est la matrice d’un projecteur <span class="math inline">\(p\)</span>, alors <span class="math inline">\(A^{2}-A=0\)</span> donc <span class="math inline">\(X^{2}-X =
+X(X-1)\)</span> est un polynôme annulateur de <span class="math inline">\(A\)</span>. On retrouve le fait que les valeurs propres d’un projecteur sont incluses dans <span class="math inline">\(\{0,1\}\)</span>. Ce n’est pas toujours une égalité (par exemple si <span class="math inline">\(p\)</span> est le projecteur nul).</p>
+</div>
+<div id="exm-nilpotente" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 5.19 (Matrices nilpotentes)</strong></span> S’il existe <span class="math inline">\(k \in \mathbb{N}^{*}\)</span> tel que <span class="math inline">\(A^{k} = 0\)</span>, alors la seule valeur propre possible de <span class="math inline">\(A\)</span> est <span class="math inline">\(0\)</span> (une telle matrice est dite <em>nilpotente</em>).</p>
+</div>
+<div id="exm-unipotente" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 5.20 (Matrice unipotente)</strong></span> S’il existe <span class="math inline">\(k \in \mathbb{N}^{*}\)</span> tel que <span class="math inline">\(A^{k}=\operatorname{I}_{n}\)</span>, les valeurs propres de <span class="math inline">\(A\)</span> sont parmi les racines <span class="math inline">\(k\)</span>-ème de l’unité. Une telle matrice est dite <em>unipotente</em>.</p>
+<p>Par exemple, une matrice de symétrie est unipotente car <span class="math inline">\(A^{2} = \operatorname{I}_{n}\)</span> ; on retrouve le fait que les valeurs propres d’une symétries sont incluses dans <span class="math inline">\(\{-1,1\}\)</span>.</p>
+</div>
+<div id="nte-division-euclidienne" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;5.12: Rappel : division euclidienne
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Pour tout <span class="math inline">\(P \in \mathbb{K}[X]\)</span>, et pour tout <span class="math inline">\(S \in \mathbb{K}[X]\{0\}\)</span>, il existe un unique couple <span class="math inline">\((Q,R)\in \mathbb{K}[X]^{2}\)</span> tel que</p>
+<p><span class="math display">\[
+    \begin{cases}
+        P = QS +R,\\
+        \deg R &lt; \deg S.
+    \end{cases}
+\]</span></p>
+</div>
+</div>
+<div id="rem-div-euc" class="proof remark">
+<p><span class="proof-title"><em>Remarque 5.8</em>. </span>On utilise typiquement ce résultat en divisant <span class="math inline">\(X^{n}\)</span> par un <em>polynôme annulateur</em> de <span class="math inline">\(A\)</span>, de petit degré (typiquement <span class="math inline">\(2\)</span>). On obtient alors une expression de <span class="math inline">\(A^{n}\)</span> comme combinaison linéaire des premières puissances de <span class="math inline">\(A\)</span> (cf TD).</p>
+</div>
+</section>
+<section id="puissances-de-matrices" class="level3" data-number="5.5.2">
+<h3 data-number="5.5.2" class="anchored" data-anchor-id="puissances-de-matrices"><span class="header-section-number">5.5.2</span> Puissances de matrices</h3>
+<p>On rencontre fréquement dans les applications des suites géométriques <em>matricielle</em>, qui conduisent à calculer les puissances successives d’une matrice donnée. Ce calcul est immédiat pour une matrice diagonale, et très simple pour une matrice <em>diagonalisable</em>. C’est une première application très importante de la diagonalisation.</p>
+<div id="prp-puissance-diag" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.17 (Puissance d’une matrice diagonale)</strong></span> Si <span class="math inline">\(D=\mathrm{diag}(\lambda_1,\dots,\lambda_n)\)</span> alors <span class="math inline">\(D^k = \mathrm{diag}(\lambda_1^k,\dots,\lambda_n^k)\)</span>.</p>
+</div>
+<p>Associé au résultat suivant, il permet de calculer très facilement les puissances successives d’une matrice diagonalisable.</p>
+<div id="prp-puissance-semblable" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.18 (Puissances de matrices sembblables)</strong></span> Pour tout <span class="math inline">\(A\in\mathcal{M}_n(\mathbb{K})\)</span>, <span class="math inline">\(P\in GL_n(\mathbb{K})\)</span> et <span class="math inline">\(k\in\mathbb{N}^*\)</span>, on a [ (P<sup>{-1}AP)</sup>k = P<sup>{-1}A</sup>kP. ]</p>
+</div>
+<div id="prp-suite-geometrique-matricielle" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.19</strong></span> Si <span class="math inline">\((X_k)_{k\in\mathbb{N}}\)</span> est une suite de <span class="math inline">\(\mathcal{M}_{n,1}(\mathbb{K})\)</span> telle que <span class="math inline">\(X_{k+1}=AX_k\)</span> pour tout <span class="math inline">\(k\in\mathbb{N}\)</span>, avec <span class="math inline">\(A\in\mathcal{M}_n(\mathbb{K})\)</span>, alors <span class="math inline">\(X_k = A^kX_0\)</span>.</p>
+</div>
+<div id="nte-cas-diag" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;5.13: Cas d’une matrice diagonalisable
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si <span class="math inline">\(P^{-1}AP=D\)</span>, on a alors</p>
+<p><span class="math display">\[
+  X_{n}=PD^{n}P^{-1}X_{0}.
+\]</span></p>
+<p>Le calcul de <span class="math inline">\(X_{n}\)</span> est immédiat (compléxité linéaire versus complexité cubique).</p>
+</div>
+</div>
+</section>
+<section id="suites-récurrents-linéaires-dordre-2-à-coefficients-constants" class="level3" data-number="5.5.3">
+<h3 data-number="5.5.3" class="anchored" data-anchor-id="suites-récurrents-linéaires-dordre-2-à-coefficients-constants"><span class="header-section-number">5.5.3</span> Suites récurrents linéaires d’ordre <span class="math inline">\(2\)</span> à coefficients constants</h3>
+<p>On donne dans cette sous section un exemple d’application des suites géométriques matricielles, très fréquent en pratique : les suites récurrentes linéaires d’ordre <span class="math inline">\(2\)</span> à coefficients constant.</p>
+<div id="thm-complexe" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 5.7 (Cas complexe)</strong></span> Soient <span class="math inline">\(a,b \in \mathbb{C}\)</span>. L’ensemble <span class="math inline">\(\mathcal{F}\)</span> des suites <span class="math inline">\((u_{n})_{n
+\in \mathbb{N}} \in \mathbb{C}^{\mathbb{N}}\)</span> vérifiant la relation de récurrence</p>
+<p><span class="math display">\[
+    \forall n \in \mathbb{N},\ u_{n+2} + au_{n+1} + bu_{n}=0
+\]</span></p>
+<p>et un <span class="math inline">\(\mathbb{C}\)</span>-espace vectoriel de dimension <span class="math inline">\(2\)</span>.</p>
+<p>De plus, si <span class="math inline">\(b \neq 0\)</span>, en notant <span class="math inline">\((e)\)</span> l’<em>équation caractéristique</em></p>
+<p><span class="math display">\[
+    X^{2}+aX+b = 0
+\]</span></p>
+<p>alors :</p>
+<ol type="1">
+<li>si <span class="math inline">\((e)\)</span> possède deux racines distinctes <span class="math inline">\(\lambda_{1},\lambda_{2}\in \mathbb{C}\)</span>, on a <span class="math display">\[
+\mathcal{F} = \operatorname{Vect}(\lambda_{1}^{n},\lambda_{2}^{n}),
+\]</span></li>
+<li>si <span class="math inline">\((e)\)</span> possède une racine double <span class="math inline">\(\lambda \in \mathbb{C}\)</span>, on a <span class="math display">\[
+\mathcal{F} = \operatorname{Vect}(\lambda^{n},n \lambda^{n}).
+\]</span></li>
+</ol>
+</div>
+<div id="nte-ci" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;5.14
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Concrètement, dans le premier cas, il existe deux constantes <span class="math inline">\(\alpha,\beta \in
+\mathbb{C}\)</span> telle que</p>
+<p><span class="math display">\[
+    \forall n \in \mathbb{N},\ u_{n} = \alpha \lambda_{1}^{n}+ \beta
+\lambda_{2}^{n}.
+\]</span></p>
+<p>Les constantes <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\beta\)</span> sont déterminées à l’aide des <em>conditions initiales</em> <span class="math inline">\(u_{0}\)</span> et <span class="math inline">\(u_{1}\)</span>.</p>
+<p>Le deuxième cas est similaire.</p>
+</div>
+</div>
+<p>Dans le cas réel (le plus fréquent en pratique), on raffine le résultat précédent en distinguant un troisième cas.</p>
+<div id="thm-reel" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 5.8 (Cas réel)</strong></span> Soient <span class="math inline">\(a,b \in \mathbb{R}\)</span>. L’ensemble <span class="math inline">\(\mathcal{G}\)</span> des suites <span class="math inline">\((u_{n})_{n
+\in \mathbb{N}}\in \mathbb{R}^{\mathbb{N}}\)</span> vérifiant la relation de récurrence</p>
+<p><span class="math display">\[
+    \forall n \in \mathbb{N},\ u_{n+2} + au_{n+1}+ bu_{n}=0
+\]</span></p>
+<p>est un <span class="math inline">\(\mathbb{R}\)</span>-espace vectoriel de dimension <span class="math inline">\(2\)</span>.</p>
+<p>De plus, si <span class="math inline">\(b \neq 0\)</span>, en notant <span class="math inline">\((e)\)</span> l’*équation caractéristique</p>
+<p><span class="math display">\[
+    X^{2}+aX+b=0,
+\]</span></p>
+<p>alors :</p>
+<ol type="1">
+<li>si <span class="math inline">\((e)\)</span> possède deux racines réelles distinctes <span class="math inline">\(\lambda_{1}\)</span> et <span class="math inline">\(\lambda_{2}\)</span>, on a</li>
+</ol>
+<p><span class="math display">\[
+    \mathcal{G} = \operatorname{Vect}(\lambda_{1}^{n},\lambda_{2}^{n}),
+\]</span></p>
+<ol start="2" type="1">
+<li>si <span class="math inline">\((e)\)</span> possède une racine réelle double <span class="math inline">\(\lambda\)</span>, on a</li>
+</ol>
+<p><span class="math display">\[
+    \mathcal{G} = \operatorname{Vect}(\lambda^{n},n \lambda^{n}),
+\]</span></p>
+<ol start="3" type="1">
+<li>si <span class="math inline">\((e)\)</span> possède deux racines complexes conjuguées <span class="math inline">\(\lambda = \rho e^{i
+\theta}\)</span> et <span class="math inline">\(\bar{\lambda} = \rho e^{-i \theta}\)</span>, alors</li>
+</ol>
+<p><span class="math display">\[
+    \mathcal{G} = \operatorname{Vect}(\rho^{n} \cos(n \theta),\rho^{n}
+\sin(n \theta)).
+\]</span></p>
+</div>
+<div id="exm-reel" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 5.21</strong></span> Déterminer l’expression du terme général de la suite <span class="math inline">\((u_{n})_{n \in
+\mathbb{N}}\)</span> définie par <span class="math inline">\(u_{0} = 1\)</span>, <span class="math inline">\(u_{1}=0\)</span> et</p>
+<p><span class="math display">\[
+    \forall n \in \mathbb{N},\ u_{n+2} = -u_{n+1}-u_{n}.
+\]</span></p>
+<details>
+<div>
+<p>L’équation caractéristique de cette suite récurrente linéaire est</p>
+<p><span class="math display">\[
+    X^{2}+X+1.
+\]</span></p>
+<p>Elle possède deux racines complexe conjuguées qui sont <span class="math inline">\(j=e^{2i\pi/3}\)</span> et <span class="math inline">\(\bar{j}\)</span>. Il existe donc <span class="math inline">\(\alpha,\beta\in \mathbb{R}\)</span> tels que</p>
+<p><span class="math display">\[
+    \forall n \in \mathbb{N},\ u_{n} = \alpha \cos(2 n\pi/3) + \beta
+\sin(2n \pi/3).
+\]</span></p>
+<p>Les conditions initiales donnent</p>
+<p><span class="math display">\[
+    \begin{cases}
+        \alpha = 1,\\
+        -\frac{1}{2}\alpha + \beta \frac{\sqrt{3}}{2} = 0
+    \end{cases}
+\]</span></p>
+<p>i.e.</p>
+<p><span class="math display">\[
+    \begin{cases}
+        \alpha=1,\\
+        \beta = \frac{1}{\sqrt{3}}
+    \end{cases}
+\]</span></p>
+<p>donc</p>
+<p><span class="math display">\[
+    \forall n \in \mathbb{N},\ u_{n} = \cos(2 n \pi/3) +
+\frac{1}{\sqrt{3}}\sin(2 n\pi/3 ).
+\]</span></p>
+</div>
+</details>
+</div>
+<div id="nte-dem" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;5.15
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La technique utilisée dans la démonstration (mise sous forme matricielle et réduction) permet d’étudier des suites récurrentes linéaires d’ordre quelconque. Des exemples seront vus en TD.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="exercices" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="exercices">Exercices</h2>
-<section id="elements-propres-dun-endomorphisme" class="level3" data-number="5.4.3">
-<h3 data-number="5.4.3" class="anchored" data-anchor-id="elements-propres-dun-endomorphisme"><span class="header-section-number">5.4.3</span> Elements propres d’un endomorphisme</h3>
+<section id="elements-propres-dun-endomorphisme" class="level3" data-number="5.5.4">
+<h3 data-number="5.5.4" class="anchored" data-anchor-id="elements-propres-dun-endomorphisme"><span class="header-section-number">5.5.4</span> Elements propres d’un endomorphisme</h3>
 <div id="exr-matrice-J" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 5.1</strong></span> (Spectre réel et complexe).</p>
 <ol type="1">
@@ -1206,8 +1411,8 @@ Astuce&nbsp;5.5
 <!---->
 <!-- ::: -->
 </section>
-<section id="endomorphismes-et-matrices-diagonalisables" class="level3" data-number="5.4.4">
-<h3 data-number="5.4.4" class="anchored" data-anchor-id="endomorphismes-et-matrices-diagonalisables"><span class="header-section-number">5.4.4</span> Endomorphismes et matrices diagonalisables</h3>
+<section id="endomorphismes-et-matrices-diagonalisables" class="level3" data-number="5.5.5">
+<h3 data-number="5.5.5" class="anchored" data-anchor-id="endomorphismes-et-matrices-diagonalisables"><span class="header-section-number">5.5.5</span> Endomorphismes et matrices diagonalisables</h3>
 <div id="exr-05-diag" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 5.8</strong></span> Justifier que les matrices suivantes sont diagonalisables, et les diagonaliser.</p>
 <p><span class="math display">\[
@@ -1290,8 +1495,8 @@ e_{i-1}\)</span> si <span class="math inline">\(i\in\{2,\dots,n\}\)</span> et <s
 <p><span class="theorem-title"><strong>Exercice 5.17 (<span class="math inline">\(\star\)</span>)</strong></span> (Diagonalisation simultanée). Soit <span class="math inline">\(f\)</span> et <span class="math inline">\(g\)</span> deux endomorphismes qui commutent. On suppose que <span class="math inline">\(f\)</span> est diagonalisable et que <span class="math inline">\(f\)</span> possède des valeurs propres deux à deux distinctes. En utilisant les <a href="#exr-05-stable" class="quarto-xref">Exercice&nbsp;<span>5.15</span></a> et <a href="#exr-05-commute" class="quarto-xref">Exercice&nbsp;<span>5.17</span></a>, montrer que <span class="math inline">\(g\)</span> et diagonalisable, et que toute base de diagonalisation de <span class="math inline">\(f\)</span> est également une base de diagonalisation de <span class="math inline">\(g\)</span>.</p>
 </div>
 </section>
-<section id="trigonalisation-1" class="level3" data-number="5.4.5">
-<h3 data-number="5.4.5" class="anchored" data-anchor-id="trigonalisation-1"><span class="header-section-number">5.4.5</span> Trigonalisation</h3>
+<section id="trigonalisation" class="level3" data-number="5.5.6">
+<h3 data-number="5.5.6" class="anchored" data-anchor-id="trigonalisation"><span class="header-section-number">5.5.6</span> Trigonalisation</h3>
 <div id="exr-05-sans-calc" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 5.18</strong></span> (Sans calcul (1)). On considère la matrice <span class="math display">\[A=\begin{pmatrix}
 4&amp;-3&amp;2\\6&amp;-5&amp;4\\4&amp;-4&amp;4 \end{pmatrix}\]</span></p>
@@ -1355,8 +1560,8 @@ Q = \begin{pmatrix}
 </ol>
 </div>
 </section>
-<section id="applications-de-la-réduction" class="level3" data-number="5.4.6">
-<h3 data-number="5.4.6" class="anchored" data-anchor-id="applications-de-la-réduction"><span class="header-section-number">5.4.6</span> Applications de la réduction</h3>
+<section id="applications-de-la-réduction" class="level3" data-number="5.5.7">
+<h3 data-number="5.5.7" class="anchored" data-anchor-id="applications-de-la-réduction"><span class="header-section-number">5.5.7</span> Applications de la réduction</h3>
 <div id="exr-05-syst" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 5.22</strong></span> (Etude d’un système de suites récurrentes linéaires d’ordre <span class="math inline">\(1\)</span>). On considère le système</p>
 <p><span class="math display">\[
@@ -1435,8 +1640,8 @@ A = \begin{pmatrix}
 <!-- ::: -->
 <!---->
 </section>
-<section id="problèmes-divers" class="level3" data-number="5.4.7">
-<h3 data-number="5.4.7" class="anchored" data-anchor-id="problèmes-divers"><span class="header-section-number">5.4.7</span> Problèmes divers</h3>
+<section id="problèmes-divers" class="level3" data-number="5.5.8">
+<h3 data-number="5.5.8" class="anchored" data-anchor-id="problèmes-divers"><span class="header-section-number">5.5.8</span> Problèmes divers</h3>
 <div id="exr-05-nil" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 5.28 (<span class="math inline">\(\star\)</span>)</strong></span> (Matrice nilpotente). Une matrice non-nulle <span class="math inline">\(N\in\mathcal{M}_n(\mathbb{R})\)</span> est dite <em>nilpotente</em> s’il existe <span class="math inline">\(k\in\mathbb{N}^*\)</span> telle que <span class="math inline">\(N^k = 0\)</span>. Dans la suite, <span class="math inline">\(N\)</span> désigne une matrice nilpotente de <span class="math inline">\(\mathcal{M}_n(\mathbb{R})\)</span>.</p>
 <ol type="1">
