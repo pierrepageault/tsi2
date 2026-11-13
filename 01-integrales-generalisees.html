@@ -233,7 +233,7 @@ window.Quarto = {
   <li><a href="#sec-01-calculer" id="toc-sec-01-calculer" class="nav-link" data-scroll-target="#sec-01-calculer"><span class="header-section-number">1.3</span> Calculer avec des intégrales convergentes</a>
   <ul class="collapse">
   <li><a href="#propriétés-des-intégrales-convergentes" id="toc-propriétés-des-intégrales-convergentes" class="nav-link" data-scroll-target="#propriétés-des-intégrales-convergentes"><span class="header-section-number">1.3.1</span> Propriétés des intégrales convergentes</a></li>
-  <li><a href="#intégrations-pas-parties-et-changement-de-variable" id="toc-intégrations-pas-parties-et-changement-de-variable" class="nav-link" data-scroll-target="#intégrations-pas-parties-et-changement-de-variable"><span class="header-section-number">1.3.2</span> Intégrations pas parties et changement de variable</a></li>
+  <li><a href="#intégrations-par-parties-et-changement-de-variable" id="toc-intégrations-par-parties-et-changement-de-variable" class="nav-link" data-scroll-target="#intégrations-par-parties-et-changement-de-variable"><span class="header-section-number">1.3.2</span> Intégrations par parties et changement de variable</a></li>
   </ul></li>
   <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
   <ul class="collapse">
@@ -382,7 +382,7 @@ Note&nbsp;1.2
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>On dit aussi qu’une intégrale généralisée <strong>bien définie</strong> ou <strong>existe</strong> (en référence à la limite qui la définie) pour signifier qu’elle <em>converge</em> ; ce sont des synonymes.</p>
+<p>On dit aussi qu’une intégrale généralisée <strong>bien définie</strong> ou <strong>existe</strong> (en référence à la limite qui la définit) pour signifier qu’elle <em>converge</em> ; ce sont des synonymes.</p>
 </div>
 </div>
 <div id="exm-riemann-1" class="theorem example">
@@ -469,7 +469,7 @@ Avertissement&nbsp;1.1
 <img src="./tikz/svg/01-1b.svg" id="fig-integrale-partielle-gauche" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-convergence-ouvert-gauche-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.4: Intégrale partielle et intégrable généralisée dans le cas <span class="math inline">\(a=0\)</span>.
+Figure&nbsp;1.4: Intégrale partielle et intégrale généralisée dans le cas <span class="math inline">\(a=0\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -485,7 +485,7 @@ Figure&nbsp;1.4: Intégrale partielle et intégrable généralisée dans le cas 
 </div>
 </details>
 </div>
-<p>On vient d’associer à certaine intégrales une valeur numérique. On va donc pouvoir commencer à <em>calculer</em> avec des intégrales généralisées. Ce point sera abordé plus en détail dans la <a href="#sec-01-calculer" class="quarto-xref"><span>Section 1.3</span></a> mais nous énonçons dès maintenant la <em>relation de Chasles</em>, attendue de toute théorie satisfaisante de l’intégration.</p>
+<p>On vient d’associer à certaines intégrales une valeur numérique. On va donc pouvoir commencer à <em>calculer</em> avec des intégrales généralisées. Ce point sera abordé plus en détail dans la <a href="#sec-01-calculer" class="quarto-xref"><span>Section 1.3</span></a> mais nous énonçons dès maintenant la <em>relation de Chasles</em>, attendue de toute théorie satisfaisante de l’intégration.</p>
 <div id="prp-Chasles-semi-ouvert-droite" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 1.1 (Relation de Chasles sur un intervalle semi ouvert)</strong></span> Soit <span class="math inline">\(f:[a,b[ \to \mathbb{K}\)</span> une fonction continue. Alors pour tout point <span class="math inline">\(c \in [a,b[\)</span>, les intégrales <span class="math inline">\(\int_{a}^{b}f(t)dt\)</span> et <span class="math inline">\(\int_{c}^{b}f(t)dt\)</span> ont <em>même nature</em> et, <em>en cas de convergence</em>, on a <span class="math display">\[
 \int_{a}^{b}f(t)dt = \int_{a}^{c}f(t)dt + \int_{c}^{b}f(t)dt.
@@ -651,13 +651,13 @@ Note&nbsp;1.5
     \forall t \geqslant 1,\ 0 \leqslant \frac{1- \cos(t)}{t^{2}} \leqslant
 \frac{2}{t^{2}}\tag{1},
 \]</span></p>
-<p>et l’intégrale <span class="math inline">\(\int_{1}^{+\infty}\frac{dt}{t^{2}}\)</span> converge. Donc par compraison de fonctions <em>positives</em>, l’intégrale <span class="math inline">\(\int_{0}^{+\infty}\frac{1 - \cos(t)}{t^{2}}dt\)</span> converge en <span class="math inline">\(+\infty\)</span><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Donc par définition l’intégrale converge.</p>
+<p>et l’intégrale <span class="math inline">\(\int_{1}^{+\infty}\frac{dt}{t^{2}}\)</span> converge. Donc par comparaison de fonctions <em>positives</em>, l’intégrale <span class="math inline">\(\int_{0}^{+\infty}\frac{1 - \cos(t)}{t^{2}}dt\)</span> converge en <span class="math inline">\(+\infty\)</span><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Donc par définition l’intégrale converge.</p>
 <p><em>Attention, on ne peut pas utiliser directement la majoration <span class="math inline">\((1)\)</span> et le <a href="#thm-comparaison-relation-leqslant" class="quarto-xref">Théorème&nbsp;<span>1.1</span></a> sur l’intervalle <span class="math inline">\(]0,+\infty[\)</span> car l’intégrale <span class="math inline">\(\int_{0}^{+\infty}\frac{dt}{t^{2}}\)</span> diverge.</em></p>
 </div>
 </details>
 </div>
 <div id="rem-contraposee" class="proof remark">
-<p><span class="proof-title"><em>Remarque 1.6</em>. </span>On peut aussi utiliser la <em>contraposée</em> de ce théorème ; si l’intégrale de <span class="math inline">\(f\)</span> du <span class="math inline">\(I\)</span> diverge, alors l’intégrale de <span class="math inline">\(g\)</span> sur <span class="math inline">\(I\)</span> diverge. On utilisera ce résulat en TD pour montrer la divergence de l’intégrale de Dirichlet.</p>
+<p><span class="proof-title"><em>Remarque 1.6</em>. </span>On peut aussi utiliser la <em>contraposée</em> de ce théorème ; si l’intégrale de <span class="math inline">\(f\)</span> du <span class="math inline">\(I\)</span> diverge, alors l’intégrale de <span class="math inline">\(g\)</span> sur <span class="math inline">\(I\)</span> diverge. On utilisera ce résultat en TD pour montrer la divergence de l’intégrale de Dirichlet.</p>
 </div>
 </section>
 <section id="intégrales-absolument-convergentes-et-fonctions-intégrables" class="level3" data-number="1.2.2">
@@ -722,7 +722,7 @@ Avertissement&nbsp;1.2
 </div>
 <p>On énonce maintenant les théorèmes de comparaison pour les fonctions intégrables. Ce sont eux que l’on utilisera le plus souvent en pratique pour montrer qu’une intégrale converge.</p>
 <div id="thm-theoreme-de-comparaison-o" class="theorem">
-<p><span class="theorem-title"><strong>Théorème 1.2 (Comparaison à l’aide des relations <span class="math inline">\(o\)</span> et <span class="math inline">\(O\)</span>)</strong></span> Soient <span class="math inline">\(f,g:I \to \mathbb{K}\)</span> deux fonctions continues sur <span class="math inline">\(I\)</span> et soit <span class="math inline">\(\alpha\)</span> une extremité ouverte de <span class="math inline">\(I\)</span>. On suppose que <span class="math inline">\(g\)</span> est intégrable au voisinage de <span class="math inline">\(\alpha\)</span> et que <span class="math inline">\(f = o_{\alpha}(g)\)</span> ou <span class="math inline">\(f=O_{\alpha}(g)\)</span>. Alors <span class="math inline">\(f\)</span> est intégrable au voisinage de <span class="math inline">\(\alpha\)</span>.</p>
+<p><span class="theorem-title"><strong>Théorème 1.2 (Comparaison à l’aide des relations <span class="math inline">\(o\)</span> et <span class="math inline">\(O\)</span>)</strong></span> Soient <span class="math inline">\(f,g:I \to \mathbb{K}\)</span> deux fonctions continues sur <span class="math inline">\(I\)</span> et soit <span class="math inline">\(\alpha\)</span> une extrémité ouverte de <span class="math inline">\(I\)</span>. On suppose que <span class="math inline">\(g\)</span> est intégrable au voisinage de <span class="math inline">\(\alpha\)</span> et que <span class="math inline">\(f = o_{\alpha}(g)\)</span> ou <span class="math inline">\(f=O_{\alpha}(g)\)</span>. Alors <span class="math inline">\(f\)</span> est intégrable au voisinage de <span class="math inline">\(\alpha\)</span>.</p>
 </div>
 <div id="thm-theorem-comparaison-equiv" class="theorem">
 <p><span class="theorem-title"><strong>Théorème 1.3 (Comparaison à l’aide de la relation <span class="math inline">\(\sim\)</span>)</strong></span> Soient <span class="math inline">\(f,g:I \to \mathbb{K}\)</span> deux fonctions continues sur <span class="math inline">\(I\)</span> et soit <span class="math inline">\(\alpha\)</span> une extrémité ouverte de <span class="math inline">\(I\)</span>. On suppose que <span class="math inline">\(f \underset{\alpha}{\sim} g\)</span>. Alors <span class="math inline">\(f\)</span> est intégrable au voisinage de <span class="math inline">\(\alpha\)</span> ssi <span class="math inline">\(g\)</span> est intégrable au voisinage de <span class="math inline">\(\alpha\)</span>.</p>
@@ -760,7 +760,7 @@ Note&nbsp;1.7: Rappels sur les relations de comparaison
 <li>la fonction <span class="math inline">\(f\)</span> est <strong>négligeable</strong> devant <span class="math inline">\(g\)</span> au voisinage de <span class="math inline">\(\alpha\)</span>, et on note <span class="math inline">\(f = o_{\alpha}(g)\)</span>, si <span class="math display">\[
 \left|\frac{f(t)}{g(t)}\right|\underset{\substack{t \to \alpha \\ t \in I}}{\longrightarrow} 0,
 \]</span></li>
-<li>la fonction <span class="math inline">\(f\)</span> est <strong>dominée</strong> par <span class="math inline">\(g\)</span> au voisinage de <span class="math inline">\(\alpha\)</span>, et on note <span class="math inline">\(f = O_{\alpha}(g)\)</span>, si le quotient <span class="math inline">\(f/g\)</span> est borné au voisinage de <span class="math inline">\(\alpha\)</span> i.e.&nbsp;s’il existe un voisinage <span class="math inline">\(V\)</span> de <span class="math inline">\(\alpha\)</span> dans <span class="math inline">\(I\)</span> et une constante <span class="math inline">\(M \geqslant 0\)</span> tels que<br>
+<li>la fonction <span class="math inline">\(f\)</span> est <strong>dominée</strong> par <span class="math inline">\(g\)</span> au voisinage de <span class="math inline">\(\alpha\)</span>, et on note <span class="math inline">\(f = O_{\alpha}(g)\)</span>, si le quotient <span class="math inline">\(f/g\)</span> est borné au voisinage de <span class="math inline">\(\alpha\)</span>, i.e.&nbsp;s’il existe un voisinage <span class="math inline">\(V\)</span> de <span class="math inline">\(\alpha\)</span> dans <span class="math inline">\(I\)</span> et une constante <span class="math inline">\(M \geqslant 0\)</span> tels que<br>
 <span class="math display">\[
 \forall t \in V,\ \left|\frac{f(t)}{g(t)}\right|\leqslant M
 \]</span></li>
@@ -791,7 +791,7 @@ Astuce&nbsp;1.3
 </section>
 <section id="intégrales-et-fonctions-intégrables-de-références" class="level3" data-number="1.2.3">
 <h3 data-number="1.2.3" class="anchored" data-anchor-id="intégrales-et-fonctions-intégrables-de-références"><span class="header-section-number">1.2.3</span> Intégrales et fonctions intégrables de références</h3>
-<p>Maintenant que l’on dispose de théorèmes de comparaison, il reste à se constituer une collection de fonctions intégrables dites de <em>références</em>, suffisamment riches pour être comparées aux fonctions rencontrées en pratique ; en l’occurence les fonctions puissances, la fonction logarithme et les exponentielles décroissantes.</p>
+<p>Maintenant que l’on dispose de théorèmes de comparaison, il reste à se constituer une collection de fonctions intégrables dites de <em>références</em>, suffisamment riches pour être comparées aux fonctions rencontrées en pratique ; en l’occurrence les fonctions puissances, la fonction logarithme et les exponentielles décroissantes.</p>
 <div id="thm-riemann" class="theorem">
 <p><span class="theorem-title"><strong>Théorème 1.4 (Intégrales de Riemann)</strong></span> Soit <span class="math inline">\(\alpha \in \mathbb{R}\)</span>. Alors la fonction <span class="math inline">\(t \mapsto
 \frac{1}{t^{\alpha}}\)</span> est</p>
@@ -1003,19 +1003,19 @@ Astuce
 \mathbb{R}[X]\)</span>, l’intégrale <span class="math inline">\(\int_{0}^{+\infty}P(t)e^{-t}dt\)</span> converge comme combinaison linéaire d’intégrales convergentes.</p>
 </div>
 <div id="exm-majoration" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 1.17</strong></span> Si l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\([a,+\infty[\)</span> converge et si <span class="math inline">\(f \geqslant 0\)</span> sur <span class="math inline">\([a,+\infty[\)</span>, alors la relation de Chalses et la positivité de l’intégrale montre que</p>
+<p><span class="theorem-title"><strong>Exemple 1.17</strong></span> Si l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\([a,+\infty[\)</span> converge et si <span class="math inline">\(f \geqslant 0\)</span> sur <span class="math inline">\([a,+\infty[\)</span>, alors la relation de Chasles et la positivité de l’intégrale montre que</p>
 <p><span class="math display">\[
     \forall x \geqslant a,\ \int_{a}^{x}f(t)dt \leqslant \int_{a}^{+\infty}f(t)dt.
 \]</span></p>
-<p>Cette propriétée est par ailleurs claire graphiquement, <a href="#fig-integrale-partielle-droite" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>.</p>
+<p>Cette propriété est par ailleurs claire graphiquement, <a href="#fig-integrale-partielle-droite" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>.</p>
 </div>
 <div id="exm-contrapose" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 1.18</strong></span> Si l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> converge, et si l’intégrale de <span class="math inline">\(g\)</span> sur <span class="math inline">\(I\)</span> diverge, alors l’intégrale de <span class="math inline">\(f+g\)</span> sur <span class="math inline">\(I\)</span> diverge<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Sinon, par différence d”intégrales convergentes, l’intégrale de <span class="math inline">\(g\)</span> sur <span class="math inline">\(I\)</span> serait convergente.</p>
+<p><span class="theorem-title"><strong>Exemple 1.18</strong></span> Si l’intégrale de <span class="math inline">\(f\)</span> sur <span class="math inline">\(I\)</span> converge, et si l’intégrale de <span class="math inline">\(g\)</span> sur <span class="math inline">\(I\)</span> diverge, alors l’intégrale de <span class="math inline">\(f+g\)</span> sur <span class="math inline">\(I\)</span> diverge<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Sinon, par différence d’intégrales convergentes, l’intégrale de <span class="math inline">\(g\)</span> sur <span class="math inline">\(I\)</span> serait convergente.</p>
 </div>
 <p>En pratique, ces propriétés permettent de <em>calculer</em> avec des intégrales généralisées. Il faut leur ajouter deux outils d’usage constant: le théorème d’<em>intégration par parties</em> et le <em>théorème de changement de variable</em>.</p>
 </section>
-<section id="intégrations-pas-parties-et-changement-de-variable" class="level3" data-number="1.3.2">
-<h3 data-number="1.3.2" class="anchored" data-anchor-id="intégrations-pas-parties-et-changement-de-variable"><span class="header-section-number">1.3.2</span> Intégrations pas parties et changement de variable</h3>
+<section id="intégrations-par-parties-et-changement-de-variable" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="intégrations-par-parties-et-changement-de-variable"><span class="header-section-number">1.3.2</span> Intégrations par parties et changement de variable</h3>
 <div id="nte-ipp" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1026,7 +1026,7 @@ Note&nbsp;1.9: Intégration par parties
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Concernant l’intégration pas parties, il n’y a pas (en TSI) d’énoncé propre aux intégrales généralisées. Il faudra systématiquement :</p>
+<p>Concernant l’intégration par parties, il n’y a pas (en TSI) d’énoncé propre aux intégrales généralisées. Il faudra systématiquement :</p>
 <ol type="1">
 <li>revenir à une intégrale partielle,</li>
 <li>effectuer une intégration par parties classique,</li>
@@ -1085,7 +1085,7 @@ Avertissement&nbsp;1.3
 \int_{0}^{x}t^{n+1}e^{-t}dt = \left[-t^{n+1}e^{-t}\right]_0^{x}
     + (n+1) \int_{0}^{x}t^{n}e^{-t}dt.
 \]</span></p>
-<p>Le crochet tends vers <span class="math inline">\(0\)</span> quand <span class="math inline">\(n \to +\infty\)</span> par croissance comparée. Les deux intégrales étant convergentes, on obtient en passant à la limite dans l’égalité précédente</p>
+<p>Le crochet tend vers <span class="math inline">\(0\)</span> quand <span class="math inline">\(n \to +\infty\)</span> par croissance comparée. Les deux intégrales étant convergentes, on obtient en passant à la limite dans l’égalité précédente</p>
 <p><span class="math display">\[
 I_{n+1}= n I_{n}.
 \]</span></p>
@@ -1187,7 +1187,7 @@ I = \int_{0}^{1}\frac{dt}{\sqrt{t(1-t)}}dt
 <details>
 <div>
 <p>Cette intégrale n’est pas généralisée car l’intégrande est continue sur <span class="math inline">\([0,\pi/2]\)</span>. Elle est donc convergente.</p>
-<p>On connait l’espace de départ du changement de variable <span class="math inline">\(x=\tan(t)\)</span>, au extrémités près. Il faut les choisir de telle sorte que celui-ci soit bijectif et de classe <span class="math inline">\(C^{1}\)</span> sur son image. En l’occurence, bien que les extrémités <span class="math inline">\(0\)</span> et <span class="math inline">\(\pi/2\)</span> soient incluses dans l’intégrale, on va choisir d’exclure <span class="math inline">\(\pi/2\)</span> (on utilise implicitement à nouveau la <a href="#prp-integrale-faussement-generalisee" class="quarto-xref">Proposition&nbsp;<span>1.2</span></a>).</p>
+<p>On connait l’espace de départ du changement de variable <span class="math inline">\(x=\tan(t)\)</span>, au extrémités près. Il faut les choisir de telle sorte que celui-ci soit bijectif et de classe <span class="math inline">\(C^{1}\)</span> sur son image. En l’occurrence, bien que les extrémités <span class="math inline">\(0\)</span> et <span class="math inline">\(\pi/2\)</span> soient incluses dans l’intégrale, on va choisir d’exclure <span class="math inline">\(\pi/2\)</span> (on utilise implicitement à nouveau la <a href="#prp-integrale-faussement-generalisee" class="quarto-xref">Proposition&nbsp;<span>1.2</span></a>).</p>
 <p>La rédaction devient:</p>
 <p>La fonction <span class="math inline">\(\tan\)</span> est une bijection de classe <span class="math inline">\(C^{1}\)</span> de <span class="math inline">\([0,\pi/2[\)</span> dans <span class="math inline">\([0,+\infty[\)</span>. De plus</p>
 <p><span class="math display">\[
@@ -1288,7 +1288,7 @@ I = \displaystyle\int_0^{+\infty}te^{-t^{2}}dt,\quad J = \displaystyle\int_0^{+\
 <section id="calculer-avec-des-intégrales-convergentes" class="level3" data-number="1.3.5">
 <h3 data-number="1.3.5" class="anchored" data-anchor-id="calculer-avec-des-intégrales-convergentes"><span class="header-section-number">1.3.5</span> Calculer avec des intégrales convergentes</h3>
 <div id="exr-01-ipp" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 1.10</strong></span> (Intégrations par parties). A l’aide d’intégrations pas parties, calculer les intégrales suivantes :</p>
+<p><span class="theorem-title"><strong>Exercice 1.10</strong></span> (Intégrations par parties). A l’aide d’intégrations par parties, calculer les intégrales suivantes :</p>
 <p><span class="math display">\[
 \displaystyle\int_0^1 t\ln(t)dt,\quad \displaystyle\int_0^{+\infty} te^{-t}dt,\quad \displaystyle\int_1^{+\infty}\frac{\ln(t)}{t^3}dt.
 \]</span></p>

@@ -277,7 +277,7 @@ window.Quarto = {
 <p>Dans tout ce chapitre, <span class="math inline">\(E\)</span> désigne un <span class="math inline">\(\mathbb{K}\)</span>-espace vectoriel avec <span class="math inline">\(\mathbb{K}=\mathbb{R}\)</span> ou <span class="math inline">\(\mathbb{C}\)</span>, et <span class="math inline">\(I\)</span> désigne un ensemble quelconque d’<em>indices</em>.</p>
 <section id="introduction" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Un espace vectoriel est essentiellement un ensemble dans lequel on est capable d’additionner les éléments et de les mutltiplier par un scalaire, avec les mêmes règles de distributivité et de commutativité que la multiplication et l’addition usuelles.</p>
+<p>Un espace vectoriel est essentiellement un ensemble dans lequel on est capable d’additionner les éléments et de les multiplier par un scalaire, avec les mêmes règles de distributivité et de commutativité que la multiplication et l’addition usuelles.</p>
 <p>La notion centrale de l’algèbre linéaire est donc celle de <em>combinaison linéaire</em>. C’est elle qui permet de définir les familles libres, les familles génératrices, les sous-espaces vectoriels, et les applications linéaires.</p>
 <p>La notion de combinaison linéaire a été vue en première année dans le cas des familles <em>finies</em> de <span class="math inline">\(E\)</span> ; on l’étend cette année au cas des familles quelconques.</p>
 </section>
@@ -295,7 +295,7 @@ window.Quarto = {
 <p><span class="theorem-title"><strong>Définition 3.2</strong></span> Soit <span class="math inline">\(E\)</span> un <span class="math inline">\(\mathbb{K}\)</span>-espace vectoriel et <span class="math inline">\(\mathcal{F}=(v_{i})_{i \in I}\)</span> une famille d’éléments de <span class="math inline">\(E\)</span>. Une <strong>combinaison linéaire</strong> de <span class="math inline">\(\mathcal{F}\)</span> est une somme de la forme <span class="math inline">\(\sum_{i \in I}\lambda_{i}v_{i}\)</span> où <span class="math inline">\((\lambda_{i})_{i
 \in I}\)</span> est une famille à support <em>fini</em> d’éléments de <span class="math inline">\(\mathbb{K}\)</span>, appelés <strong>coefficients</strong> de la combinaison linéaire.</p>
 </div>
-<p>Dans cas d’un ensemble <em>fini</em> <span class="math inline">\(I\)</span>, les familles à support fini coincident avec les familles, et on retrouve la définition vue en première année.</p>
+<p>Dans le cas d’un ensemble <em>fini</em> <span class="math inline">\(I\)</span>, les familles à support fini coïncident avec les familles, et on retrouve la définition vue en première année.</p>
 <div id="exm-cas-fini" class="theorem example">
 <p><span class="theorem-title"><strong>Exemple 3.1</strong></span> Une combinaison linéaire d’une famille <span class="math inline">\(v_1,\dots,v_{n}\)</span> de <span class="math inline">\(E\)</span> est une somme de la forme <span class="math inline">\(\sum_{i=1}^{n}\lambda_{i}  v_{i}\)</span> avec <span class="math inline">\(\lambda_1,\dots,\lambda_{n}\in \mathbb{K}\)</span>.</p>
 </div>
@@ -315,7 +315,7 @@ window.Quarto = {
 \]</span></p>
 </div>
 <div id="exm-famille-libre" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 3.3</strong></span> La famille <span class="math inline">\(\{X^{k},\ k \in \mathbb{N}\}\)</span> est une famille libre de <span class="math inline">\(\mathbb{K}[X]\)</span> car elle est <em>échelonnée en degrée</em> (les polynômes qui composent cette famille ont des degrés <em>deux à deux distincts</em>).</p>
+<p><span class="theorem-title"><strong>Exemple 3.3</strong></span> La famille <span class="math inline">\(\{X^{k},\ k \in \mathbb{N}\}\)</span> est une famille libre de <span class="math inline">\(\mathbb{K}[X]\)</span> car elle est <em>échelonnée en degré</em> (les polynômes qui composent cette famille ont des degrés <em>deux à deux distincts</em>).</p>
 </div>
 <div id="prp-sous-famille" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 3.1</strong></span> Toute sous-famille d’une famille libre est libre.</p>
@@ -352,7 +352,7 @@ Note&nbsp;3.1: Dimension d’un espace vectoriel
 <p><span class="theorem-title"><strong>Proposition 3.2 (Caractérisation des bases en dimension finie)</strong></span> Soit <span class="math inline">\(E\)</span> un <span class="math inline">\(\mathbb{K}\)</span>-espace vectoriel de dimension finie et <span class="math inline">\(\mathcal{F}\)</span> une famille de <span class="math inline">\(E\)</span>. Alors</p>
 <ol type="1">
 <li><p>toute famille libre de <span class="math inline">\(E\)</span> a au plus <span class="math inline">\(\dim E\)</span> éléments et une famille libre à <span class="math inline">\(\dim E\)</span> éléments est automatiquement une base,</p></li>
-<li><p>toute famille génératrice de <span class="math inline">\(E\)</span> à au moins <span class="math inline">\(\dim E\)</span> éléments, et une famille génératrice à <span class="math inline">\(\dim E\)</span> élément est automatiquement une base de <span class="math inline">\(E\)</span>.</p></li>
+<li><p>toute famille génératrice de <span class="math inline">\(E\)</span> a au moins <span class="math inline">\(\dim E\)</span> éléments, et une famille génératrice à <span class="math inline">\(\dim E\)</span> éléments est automatiquement une base de <span class="math inline">\(E\)</span>.</p></li>
 </ol>
 </div>
 <div id="prp-base-canonique" class="theorem proposition">
@@ -365,7 +365,7 @@ i\,j\in\{1,\dots,j\}\}\)</span> où <span class="math inline">\(E_{ij}\)</span> 
 </ol>
 </div>
 <div id="rem-cas-particulier" class="proof remark">
-<p><span class="proof-title"><em>Remarque 3.1</em>. </span>Le premier cas engloble les cas <span class="math inline">\(\mathcal{M}_{1,n}(\mathbb{K})=\mathbb{K}^{n}\)</span> (matrices lignes) et <span class="math inline">\(\mathcal{M}_{n,1}(\mathbb{K})\)</span> (matrices colonnes), souvent identifiés à tort.</p>
+<p><span class="proof-title"><em>Remarque 3.1</em>. </span>Le premier cas englobe les cas <span class="math inline">\(\mathcal{M}_{1,n}(\mathbb{K})=\mathbb{K}^{n}\)</span> (matrices lignes) et <span class="math inline">\(\mathcal{M}_{n,1}(\mathbb{K})\)</span> (matrices colonnes), souvent identifiés à tort.</p>
 </div>
 </section>
 </section>
@@ -415,7 +415,7 @@ Astuce&nbsp;3.1
 </section>
 <section id="somme-de-sous-espaces-vectoriels" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="somme-de-sous-espaces-vectoriels"><span class="header-section-number">3.2.2</span> Somme de sous espaces vectoriels</h3>
-<p>Les sous espaces vectoriels sont stables par intersection mais par par réunion (considérer par exemple la réunion de deux droites dans le plan, qui n’est clairement pas stable par somme). En algèbre linéaire, la réunion est remplacée par la notion de <em>somme</em>.</p>
+<p>Les sous-espaces vectoriels sont stables par intersection mais pas par réunion (considérer par exemple la réunion de deux droites dans le plan, qui n’est clairement pas stable par somme). En algèbre linéaire, la réunion est remplacée par la notion de <em>somme</em>.</p>
 <div id="def-somme" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 3.7</strong></span> Soient <span class="math inline">\(F_{1},\dots,F_{n}\)</span> des sous espaces vectoriel de <span class="math inline">\(E\)</span>. On appelle <strong>somme</strong> des sous espaces <span class="math inline">\(F_1,\dots,F_{n}\)</span> le sous ensemble</p>
 <p><span class="math display">\[
@@ -459,7 +459,7 @@ Avertissement&nbsp;3.1
 </div>
 </div>
 <div id="def-supplementaire" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 3.9</strong></span> Deux sous espaces vectoriels <span class="math inline">\(F\)</span> et <span class="math inline">\(G\)</span> de <span class="math inline">\(E\)</span> sont <strong>suplémentaires</strong> dans <span class="math inline">\(E\)</span> si <span class="math inline">\(E=F \oplus G\)</span>.</p>
+<p><span class="theorem-title"><strong>Définition 3.9</strong></span> Deux sous-espaces vectoriels <span class="math inline">\(F\)</span> et <span class="math inline">\(G\)</span> de <span class="math inline">\(E\)</span> sont <strong>supplémentaires</strong> dans <span class="math inline">\(E\)</span> si <span class="math inline">\(E=F \oplus G\)</span>.</p>
 </div>
 <div id="prp-caracterisation-supplementaire" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 3.8 (Caractérisation des supplémentaires en dimension finie)</strong></span> Si <span class="math inline">\(E\)</span> est un <span class="math inline">\(\mathbb{K}\)</span>-espace vectoriel de dimension <em>finie</em> et si <span class="math inline">\(F\)</span> et <span class="math inline">\(G\)</span> sont deux sous espaces vectoriels de <span class="math inline">\(E\)</span>, alors <span class="math inline">\(E=F \oplus G\)</span> ssi <span class="math inline">\(F \cap
@@ -486,11 +486,11 @@ Note&nbsp;3.2
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Autrement dit, l’<em>action</em> de <span class="math inline">\(f_{|F}\)</span> est la même que <span class="math inline">\(f\)</span>, mais l’espace de <em>départ</em> change. Or, changer l’espace de départ (ou d’arrivée) d’une fonction, c’est changer la fonction. Par exemple, réduire l’espace de départ (on dit <em>restreindre</em>) peut rendre une fonction injective. De même, reduire l’espace d’arrivée (on dit <em>corestreindre</em>) peut rendre une fonction surjective. Dès lors, il est légitime de distinguer <span class="math inline">\(f\)</span> et <span class="math inline">\(f_{|F}\)</span>.</p>
+<p>Autrement dit, l’<em>action</em> de <span class="math inline">\(f_{|F}\)</span> est la même que <span class="math inline">\(f\)</span>, mais l’espace de <em>départ</em> change. Or, changer l’espace de départ (ou d’arrivée) d’une fonction, c’est changer la fonction. Par exemple, réduire l’espace de départ (on dit <em>restreindre</em>) peut rendre une fonction injective. De même, réduire l’espace d’arrivée (on dit <em>corestreindre</em>) peut rendre une fonction surjective. Dès lors, il est légitime de distinguer <span class="math inline">\(f\)</span> et <span class="math inline">\(f_{|F}\)</span>.</p>
 </div>
 </div>
 <div id="prp-definition-somme-directe" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.9 (Définition d’une application linéaire sur une somme directe)</strong></span> Soient <span class="math inline">\(E\)</span> et <span class="math inline">\(E'\)</span> deux <span class="math inline">\(\mathbb{K}\)</span>-espaces vectoriels. On suppose que <span class="math inline">\(E=\bigoplus_{i=1}^{n}F_{i}\)</span>. On se donne, pour tout <span class="math inline">\(i \in \{1,\dots,n\}\)</span>, une application linéaire <span class="math inline">\(f_i:F_i \to E'\)</span>. Alors il existe une unique application linéaire <span class="math inline">\(f\)</span> de <span class="math inline">\(E\)</span> dans <span class="math inline">\(E'\)</span> tel que <span class="math inline">\(f_{|F_{i}}=f_i\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 3.9 (Définition d’une application linéaire sur une somme directe)</strong></span> Soient <span class="math inline">\(E\)</span> et <span class="math inline">\(E'\)</span> deux <span class="math inline">\(\mathbb{K}\)</span>-espaces vectoriels. On suppose que <span class="math inline">\(E=\bigoplus_{i=1}^{n}F_{i}\)</span>. On se donne, pour tout <span class="math inline">\(i \in \{1,\dots,n\}\)</span>, une application linéaire <span class="math inline">\(f_i:F_i \to E'\)</span>. Alors il existe une unique application linéaire <span class="math inline">\(f\)</span> de <span class="math inline">\(E\)</span> dans <span class="math inline">\(E'\)</span> telle que <span class="math inline">\(f_{|F_{i}}=f_i\)</span>.</p>
 </div>
 <div id="nte-definition-somme-directe" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -504,13 +504,13 @@ Note&nbsp;3.3
 <div class="callout-body-container callout-body">
 <p>Il faut comprendre cette proposition de deux manières :</p>
 <ol type="1">
-<li><p>c’est un résultat d’<em>unicité</em> ; si deux applications linéaires <span class="math inline">\(f\)</span> et <span class="math inline">\(g\)</span> coincident sur chaque facteur d’une somme directe (c.-à.d si <span class="math inline">\(f_{|F_{i}}=g_{|F_{i}}\)</span> pour tout <span class="math inline">\(i\)</span>), alors <span class="math inline">\(f=g\)</span>,</p></li>
-<li><p>c’est un un résultat d’existence : pour <em>définir</em> une application linéaire de <span class="math inline">\(E\)</span> dans <span class="math inline">\(E'\)</span>, il suffit de la définir sur chaque facteur de la somme directe (ce qui est en général plus simple que de la définir partout).</p></li>
+<li><p>c’est un résultat d’<em>unicité</em> ; si deux applications linéaires <span class="math inline">\(f\)</span> et <span class="math inline">\(g\)</span> coïncident sur chaque facteur d’une somme directe (c.-à.d si <span class="math inline">\(f_{|F_{i}}=g_{|F_{i}}\)</span> pour tout <span class="math inline">\(i\)</span>), alors <span class="math inline">\(f=g\)</span>,</p></li>
+<li><p>c’est un résultat d’existence : pour <em>définir</em> une application linéaire de <span class="math inline">\(E\)</span> dans <span class="math inline">\(E'\)</span>, il suffit de la définir sur chaque facteur de la somme directe (ce qui est en général plus simple que de la définir partout).</p></li>
 </ol>
 </div>
 </div>
 <div id="def-base-adapte" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 3.11 (Base adaptée)</strong></span> Si <span class="math inline">\(E=\bigoplus_{i=1}^{n} F_{i}\)</span> et si <span class="math inline">\(\mathcal{B}_i\)</span> est une base de <span class="math inline">\(F_{i}\)</span> pour <span class="math inline">\(i=1,\dots,n\)</span>, alors la famille <span class="math inline">\(\mathcal{B}=(\mathcal{B}_{1},\dots,\mathcal{B}_{n})\)</span> obtenue en mettant bout à bout les bases <span class="math inline">\(B_{1},\dots,\mathcal{B}_{n}\)</span> est une base de <span class="math inline">\(E\)</span>, dite <strong>adaptée</strong> à la somme directe <span class="math inline">\(E=\bigoplus_{i=1}^{n}F_{i}\)</span>.</p>
+<p><span class="theorem-title"><strong>Définition 3.11 (Base adaptée)</strong></span> Si <span class="math inline">\(E=\bigoplus_{i=1}^{n} F_{i}\)</span> et si <span class="math inline">\(\mathcal{B}_i\)</span> est une base de <span class="math inline">\(F_{i}\)</span> pour <span class="math inline">\(i=1,\dots,n\)</span>, alors la famille <span class="math inline">\(\mathcal{B}=(\mathcal{B}_{1},\dots,\mathcal{B}_{n})\)</span> obtenue en mettant bout à bout les bases <span class="math inline">\(\mathcal{B}_{1},\dots,\mathcal{B}_{n}\)</span> est une base de <span class="math inline">\(E\)</span>, dite <strong>adaptée</strong> à la somme directe <span class="math inline">\(E=\bigoplus_{i=1}^{n}F_{i}\)</span>.</p>
 </div>
 <p>La notion de base adaptée mêne à l’écriture des matrices d’applications linéaires par <em>blocs</em>, ce que nous expliquons maintenant.</p>
 <div id="def-matrice-par-bloc" class="theorem definition">
@@ -601,7 +601,7 @@ Figure&nbsp;3.2
 </div>
 </div>
 <div id="exm-homotethie" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 3.10</strong></span> Si <span class="math inline">\(F\)</span> est un sous-espace vectoriel de <span class="math inline">\(E\)</span>, alors <span class="math inline">\(F\)</span> est stable par n’importe quel multiple de l’identité i.e.&nbsp;pour tout <span class="math inline">\(\lambda \in \mathbb{K}\)</span>, <span class="math inline">\(F\)</span> est stable par <span class="math inline">\(\lambda \operatorname{Id}\)</span>. Cet exemple semble trivial, mais c’est pourtant la situation que nous rencontrerons le plus fréquement !</p>
+<p><span class="theorem-title"><strong>Exemple 3.10</strong></span> Si <span class="math inline">\(F\)</span> est un sous-espace vectoriel de <span class="math inline">\(E\)</span>, alors <span class="math inline">\(F\)</span> est stable par n’importe quel multiple de l’identité i.e.&nbsp;pour tout <span class="math inline">\(\lambda \in \mathbb{K}\)</span>, <span class="math inline">\(F\)</span> est stable par <span class="math inline">\(\lambda \operatorname{Id}\)</span>. Cet exemple semble trivial, mais c’est pourtant la situation que nous rencontrerons le plus fréquemment !</p>
 </div>
 <div id="exm-derivation" class="theorem example">
 <p><span class="theorem-title"><strong>Exemple 3.11</strong></span> Le sous espace <span class="math inline">\(\mathbb{R}_{n}[X]\)</span> est stable par dérivation.</p>
@@ -616,7 +616,7 @@ Figure&nbsp;3.2
 <p><span class="theorem-title"><strong>Définition 3.14 (Endomorphisme induit par restriction)</strong></span> Si <span class="math inline">\(F\)</span> est un sous espace vectoriel de <span class="math inline">\(E\)</span> stable par un endomorphisme <span class="math inline">\(f\)</span> de <span class="math inline">\(E\)</span>, alors la restriction de <span class="math inline">\(f\)</span> à <span class="math inline">\(F\)</span> définit un endomorphisme de <span class="math inline">\(F\)</span>. On l’appelle l’endomorphisme <strong>induit par restriction</strong> de <span class="math inline">\(f\)</span> à <span class="math inline">\(F\)</span>.</p>
 </div>
 <div id="exm-derivation" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 3.14</strong></span> Puisque <span class="math inline">\(\mathbb{R}_{n}[X]\)</span> est stable par dérivation, on peut restreindre la dérivation à <span class="math inline">\(\mathbb{R}_{n}[X]\)</span>. On obtient ainsi un endomorphisme de <span class="math inline">\(\mathbb{R}_{n}[X]\)</span> définit par <span class="math inline">\(P \mapsto P'\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemple 3.14</strong></span> Puisque <span class="math inline">\(\mathbb{R}_{n}[X]\)</span> est stable par dérivation, on peut restreindre la dérivation à <span class="math inline">\(\mathbb{R}_{n}[X]\)</span>. On obtient ainsi un endomorphisme de <span class="math inline">\(\mathbb{R}_{n}[X]\)</span> défini par <span class="math inline">\(P \mapsto P'\)</span>.</p>
 </div>
 <div id="nte-restriction" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -631,13 +631,13 @@ Note&nbsp;3.4
 <p>Restreindre un endomorphisme peut présenter plusieurs avantages, notamment :</p>
 <ol type="1">
 <li><p>l’espace <span class="math inline">\(F\)</span> peut être de dimension <em>finie</em>,</p></li>
-<li><p>l’endomorphisme <span class="math inline">\(f_{|F}\)</span> peut-être plus simple que l’endomorphisme <span class="math inline">\(f\)</span>.</p></li>
+<li><p>l’endomorphisme <span class="math inline">\(f_{|F}\)</span> peut être plus simple que l’endomorphisme <span class="math inline">\(f\)</span>.</p></li>
 </ol>
 </div>
 </div>
 <p>Lorsque l’on cherche à montrer qu’un sous espace est stable par un endomorphisme, on peut avantageusement utiliser une famille <em>génératrice</em> (notamment, une <em>base</em>) de <span class="math inline">\(F\)</span> :</p>
 <div id="prp-caractérisation-stabilite" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.12 (Caractérisation de la stabilité à l’aide d’une famille génératrice)</strong></span> Soit <span class="math inline">\(F\)</span> un sous espace vectoriel de <span class="math inline">\(E\)</span> et <span class="math inline">\(f \in \mathcal{L}(E)\)</span>. Soit <span class="math inline">\(\mathcal{G}\)</span> ne famille génératrice de <span class="math inline">\(F\)</span>. Alors <span class="math inline">\(F\)</span> est stable par <span class="math inline">\(f\)</span> ssi</p>
+<p><span class="theorem-title"><strong>Proposition 3.12 (Caractérisation de la stabilité à l’aide d’une famille génératrice)</strong></span> Soit <span class="math inline">\(F\)</span> un sous espace vectoriel de <span class="math inline">\(E\)</span> et <span class="math inline">\(f \in \mathcal{L}(E)\)</span>. Soit <span class="math inline">\(\mathcal{G}\)</span> une famille génératrice de <span class="math inline">\(F\)</span>. Alors <span class="math inline">\(F\)</span> est stable par <span class="math inline">\(f\)</span> ssi</p>
 <p><span class="math display">\[
     \forall v \in \mathcal{G}, f(v) \in F.
 \]</span></p>
@@ -676,7 +676,7 @@ Note&nbsp;3.5
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Concrètement, si les composante de <span class="math inline">\(v\)</span> suivant <span class="math inline">\(F\)</span> et <span class="math inline">\(G\)</span> sont notées <span class="math inline">\(v_{F}\)</span> et <span class="math inline">\(v_{g}\)</span> c.-à.d</p>
+<p>Concrètement, si les composantes de <span class="math inline">\(v\)</span> suivant <span class="math inline">\(F\)</span> et <span class="math inline">\(G\)</span> sont notées <span class="math inline">\(v_{F}\)</span> et <span class="math inline">\(v_{G}\)</span> c.-à.d</p>
 <p><span class="math display">\[
 v=v_{F}+v_{G}
 \]</span></p>
@@ -719,12 +719,12 @@ Astuce&nbsp;3.2
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Si <span class="math inline">\(E=F \oplus G\)</span> et si on note <span class="math inline">\(p\)</span> et <span class="math inline">\(q\)</span> les projecteurs sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> et inversement, alors <span class="math inline">\(p+q=\operatorname{Id}\)</span> ; connaitre un des deux projecteurs, c’est donc connaitre les deux.</p>
+<p>Si <span class="math inline">\(E=F \oplus G\)</span> et si on note <span class="math inline">\(p\)</span> et <span class="math inline">\(q\)</span> les projecteurs sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> et inversement, alors <span class="math inline">\(p+q=\operatorname{Id}\)</span> ; connaître un des deux projecteurs, c’est donc connaître les deux.</p>
 </div>
 </div>
-<p>Concrètement, pour calculer la projection d’un vecteur <span class="math inline">\(v\)</span> sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(F\)</span>, on détermine la composante <span class="math inline">\(v_{F}\)</span> de <span class="math inline">\(v\)</span> dans la somme directe <span class="math inline">\(E=F \oplus G\)</span>. On utilise pour cela la caractérisation suivante :</p>
+<p>Concrètement, pour calculer la projection d’un vecteur <span class="math inline">\(v\)</span> sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span>, on détermine la composante <span class="math inline">\(v_{F}\)</span> de <span class="math inline">\(v\)</span> dans la somme directe <span class="math inline">\(E=F \oplus G\)</span>. On utilise pour cela la caractérisation suivante :</p>
 <div id="prp-caracterisation-du-projete" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.14 (Caractérisation du projeté)</strong></span> On suppose que <span class="math inline">\(E=F \oplus G\)</span>. Alors pour tout <span class="math inline">\(v \in E\)</span>, le projeté <span class="math inline">\(v_{F}\)</span> de <span class="math inline">\(v\)</span> sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> est caractérisée par</p>
+<p><span class="theorem-title"><strong>Proposition 3.14 (Caractérisation du projeté)</strong></span> On suppose que <span class="math inline">\(E=F \oplus G\)</span>. Alors pour tout <span class="math inline">\(v \in E\)</span>, le projeté <span class="math inline">\(v_{F}\)</span> de <span class="math inline">\(v\)</span> sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> est caractérisé par</p>
 <p><span class="math display">\[
     \begin{cases}
         v_{F} \in F,\\
@@ -745,7 +745,7 @@ Astuce&nbsp;3.3
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Suivant les cas (notamment si la dimension de <span class="math inline">\(G\)</span> est inférieure à celle de <span class="math inline">\(F\)</span>), il peux être plus simple de calculer <span class="math inline">\(v_G\)</span> et d’utiliser la relation <span class="math inline">\(v_{F}+v_{G}=v\)</span>.</p>
+<p>Suivant les cas (notamment si la dimension de <span class="math inline">\(G\)</span> est inférieure à celle de <span class="math inline">\(F\)</span>), il peut être plus simple de calculer <span class="math inline">\(v_G\)</span> et d’utiliser la relation <span class="math inline">\(v_{F}+v_{G}=v\)</span>.</p>
 </div>
 </div>
 <div id="exm-projecteur-F-2" class="theorem example">
@@ -755,7 +755,7 @@ Astuce&nbsp;3.3
 <div id="def-projecteur" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 3.16 (Projecteur)</strong></span> Un endomorphisme <span class="math inline">\(p\)</span> de <span class="math inline">\(E\)</span> est un <strong>projecteur</strong> si <span class="math inline">\(p \circ p = p\)</span>.</p>
 </div>
-<p>Toute somme directe définie donc naturellement deux projecteurs, dont les images et les noyaux permettent de reconstituer les facteurs. Le théorème fondamental des projecteurs établit la réciproque.</p>
+<p>Toute somme directe définit donc naturellement deux projecteurs, dont les images et les noyaux permettent de reconstituer les facteurs. Le théorème fondamental des projecteurs établit la réciproque.</p>
 <div id="thm-projecteur" class="theorem">
 <p><span class="theorem-title"><strong>Théorème 3.1 (Théorème fondamental des projecteurs)</strong></span> Si <span class="math inline">\(p\)</span> est un projecteur de <span class="math inline">\(E\)</span>, alors</p>
 <p><span class="math display">\[
@@ -817,7 +817,7 @@ Astuce&nbsp;3.4
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Si <span class="math inline">\(E=F \oplus G\)</span> et si on note <span class="math inline">\(p\)</span> et <span class="math inline">\(q\)</span> les projecteurs sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> et inversement, <span class="math inline">\(s\)</span> et <span class="math inline">\(t\)</span> les symétries par rapport à <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> et inversement, alors <span class="math inline">\(s+t = 0\)</span>, <span class="math inline">\(p+q = \operatorname{Id}\)</span> et <span class="math inline">\(s=p-q\)</span> ; connaitre <em>une</em> des quatre applications linéaires, c’est donc <em>toutes</em> les connaitre.</p>
+<p>Si <span class="math inline">\(E=F \oplus G\)</span> et si on note <span class="math inline">\(p\)</span> et <span class="math inline">\(q\)</span> les projecteurs sur <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> et inversement, <span class="math inline">\(s\)</span> et <span class="math inline">\(t\)</span> les symétries par rapport à <span class="math inline">\(F\)</span> parallèlement à <span class="math inline">\(G\)</span> et inversement, alors <span class="math inline">\(s+t = 0\)</span>, <span class="math inline">\(p+q = \operatorname{Id}\)</span> et <span class="math inline">\(s=p-q\)</span> ; connaître <em>une</em> des quatre applications linéaires, c’est donc <em>toutes</em> les connaître.</p>
 <div id="fig-projecteur-symetrie" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-projecteur-symetrie-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -864,7 +864,7 @@ s = 2p - \operatorname{Id}\quad \text{ou}\quad s = \operatorname{Id}-2q
 <div id="prp-linearité-transpose" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 3.15 (Linéarité de la transposée)</strong></span> La transposition est une application linéaire de <span class="math inline">\(\mathcal{M}_{n,p}(\mathbb{R})\)</span> dans <span class="math inline">\(\mathcal{M}_{p,n}(\mathbb{R})\)</span>.</p>
 </div>
-<p>Certaines matrices jouissent de propriétés de symétries remarquables vis à vis de la transposition. Elles interviendront notamment dans l’énoncé du théorème spectral dans le cours sur les espaces préhilbertiens réels.</p>
+<p>Certaines matrices jouissent de propriétés de symétries remarquables vis-à-vis de la transposition. Elles interviendront notamment dans l’énoncé du théorème spectral dans le cours sur les espaces préhilbertiens réels.</p>
 <div id="def-matrice-symetrique-antisymetrique" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 3.20 (Matrices symétriques et antisymétriques)</strong></span> Une matrice <span class="math inline">\(A\in\mathcal{M}_n(\mathbb{R})\)</span> est dite si <span class="math inline">\(A^T=A\)</span> et si <span class="math inline">\(A^T=-A\)</span>. On note <span class="math inline">\(\mathcal{S}_n(\mathbb{R})\)</span> (resp. <span class="math inline">\(\mathcal{A}_n(\mathbb{R})\)</span>) l’ensemble des matrices symétriques (resp. antisymétriques) de <span class="math inline">\(\mathcal{M}_n(\mathbb{R})\)</span>.</p>
 </div>
@@ -884,7 +884,7 @@ Note&nbsp;3.7
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Il est bon de connaitre la décomposition d’une matrice quelconque comme somme (unique) d’une matrice symétrique et antisymétrique :</p>
+<p>Il est bon de connaître la décomposition d’une matrice quelconque comme somme (unique) d’une matrice symétrique et antisymétrique :</p>
 <p><span class="math display">\[
     \forall A \in \mathcal{M}_{n}(\mathbb{R}),\ A = \frac{A+A^{T}}{2} +
 \frac{A-A^{T}}{2}.
@@ -927,11 +927,11 @@ Note&nbsp;3.8
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Si <span class="math inline">\(E\)</span> est un <span class="math inline">\(\mathbb{K}\)</span>-espace vectoriel, une application linéraie de <span class="math inline">\(E\)</span> dans <span class="math inline">\(\mathbb{K}\)</span> s’appelle une <em>forme linéaire</em> sur <span class="math inline">\(E\)</span>. L’ensemble des formes linéaires sur <span class="math inline">\(E\)</span> (c’est à dire l’ensemble <span class="math inline">\(\mathcal{L}(E,\mathbb{K})\)</span>) s’appelle le <em>dual</em> de <span class="math inline">\(E\)</span>.</p>
+<p>Si <span class="math inline">\(E\)</span> est un <span class="math inline">\(\mathbb{K}\)</span>-espace vectoriel, une application linéaire de <span class="math inline">\(E\)</span> dans <span class="math inline">\(\mathbb{K}\)</span> s’appelle une <em>forme linéaire</em> sur <span class="math inline">\(E\)</span>. L’ensemble des formes linéaires sur <span class="math inline">\(E\)</span> (c’est à dire l’ensemble <span class="math inline">\(\mathcal{L}(E,\mathbb{K})\)</span>) s’appelle le <em>dual</em> de <span class="math inline">\(E\)</span>.</p>
 </div>
 </div>
 <div id="prp-trace-transpose" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.19 (Trace d’une transposée)</strong></span> Une matrice (carrée) et sa transposée on même trace.</p>
+<p><span class="theorem-title"><strong>Proposition 3.19 (Trace d’une transposée)</strong></span> Une matrice (carrée) et sa transposée ont même trace.</p>
 </div>
 <p>Enfin, la trace ne fait pas la différence entre les produits <span class="math inline">\(AB\)</span> et <span class="math inline">\(BA\)</span> :</p>
 <div id="prp-trace-produit" class="theorem proposition">
@@ -976,7 +976,7 @@ b&amp;c&amp;a
 \end{pmatrix},\ a,b,c\in\mathbb{R}\right\}\)</span> est un sous-espace vectoriel de <span class="math inline">\(\mathcal{M}_3(\mathbb{R})\)</span> et en donner une base.</p>
 </div>
 <div id="exr-03-sev-carac-1" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 3.5</strong></span> (Caractéristion des sous espaces vectoriels). Montrer que l’ensemble des fonctions continues <span class="math inline">\(f:\mathbb{R} \to \mathbb{R}\)</span> s’annulant en <span class="math inline">\(0\)</span> forment un sous-espace vectoriel de <span class="math inline">\(C^{0}(\mathbb{R})\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercice 3.5</strong></span> (Caractérisation des sous-espaces vectoriels). Montrer que l’ensemble des fonctions continues <span class="math inline">\(f:\mathbb{R} \to \mathbb{R}\)</span> s’annulant en <span class="math inline">\(0\)</span> forment un sous-espace vectoriel de <span class="math inline">\(C^{0}(\mathbb{R})\)</span>.</p>
 </div>
 <div id="exr-03-sev-carac-2" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 3.6 (<span class="math inline">\(\star\)</span>)</strong></span> (Fonctions à croissance sous linéaire).</p>
@@ -1008,7 +1008,7 @@ b&amp;c&amp;a
 <p><span class="theorem-title"><strong>Exercice 3.8 (<span class="math inline">\(\star\)</span>)</strong></span> (Une somme directe en dimension infinie).</p>
 <ol type="1">
 <li><p>Montrer que l’ensemble <span class="math inline">\(H=\{P\in\mathbb{R}[X],\ \int_0^1P(x)dx=0\}\)</span> est un sous-espace vectoriel de <span class="math inline">\(\mathbb{R}[X]\)</span> et que <span class="math inline">\(\mathbb{R}[X] = H\oplus\mathbb{R}\)</span>.</p></li>
-<li><p>On note <span class="math inline">\(D\)</span> l’endormphisme de <span class="math inline">\(\mathbb{R}[X]\)</span> défini par</p>
+<li><p>On note <span class="math inline">\(D\)</span> l’endomorphisme de <span class="math inline">\(\mathbb{R}[X]\)</span> défini par</p>
 <p><span class="math display">\[
 \forall P \in \mathbb{R}[X],\ D(P)=P'.
 \]</span></p>
@@ -1101,7 +1101,7 @@ b&amp;c&amp;a
 <p><span class="theorem-title"><strong>Exercice 3.19</strong></span> (Trace et transposée). Montrer que, pour tout <span class="math inline">\(A,B\in\mathcal{M}_n(\mathbb{R})\)</span>, on a <span class="math inline">\(\mathrm{Tr}(A^TB)=\mathrm{Tr}(AB^T)\)</span>.</p>
 </div>
 <div id="exr-03-sn-2" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 3.20</strong></span> (Un exemple de matrices symétriques). Soit <span class="math inline">\(A\in\mathcal{M}_{n,p(}\mathbb{R})\)</span>. Montrer que <span class="math inline">\(AA^T\in \mathcal{S}_n(\mathbb{R})\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercice 3.20</strong></span> (Un exemple de matrices symétriques). Soit <span class="math inline">\(A\in\mathcal{M}_{n,p}(\mathbb{R})\)</span>. Montrer que <span class="math inline">\(AA^T\in \mathcal{S}_n(\mathbb{R})\)</span>.</p>
 </div>
 <div id="exr-03-sn" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercice 3.21</strong></span> (Composantes symétrique et antisymétrique). Donner la décomposition de <span class="math inline">\(\begin{pmatrix} 1&amp;-1\\ 2&amp;3 \end{pmatrix}\)</span> comme somme d’une matrice symétrique et d’une matrice antisymétrique.</p>
@@ -1121,7 +1121,7 @@ b&amp;c&amp;a
 <p><span class="theorem-title"><strong>Exercice 3.24 (<span class="math inline">\(\star\)</span>)</strong></span> (Rang d’un projecteur). Soit <span class="math inline">\(p\)</span> un projecteur d’un espace vectoriel <span class="math inline">\(E\)</span> de dimension finie. Montrer que <span class="math inline">\(\mathrm{rg}(p) = \mathrm{Tr}(p)\)</span>.</p>
 </div>
 <div id="exr-03-dual" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 3.25 (<span class="math inline">\(\star\)</span>)</strong></span> (Dual de <span class="math inline">\(\mathcal{M}_{n}(\mathbb{K})\)</span>). Pour tout <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span>, on définie l’application <span class="math inline">\(\varphi_{A}: \mathcal{M}_{n}(\mathbb{K}) \to \mathbb{K}\)</span> par</p>
+<p><span class="theorem-title"><strong>Exercice 3.25 (<span class="math inline">\(\star\)</span>)</strong></span> (Dual de <span class="math inline">\(\mathcal{M}_{n}(\mathbb{K})\)</span>). Pour tout <span class="math inline">\(A \in \mathcal{M}_{n}(\mathbb{K})\)</span>, on définit l’application <span class="math inline">\(\varphi_{A}: \mathcal{M}_{n}(\mathbb{K}) \to \mathbb{K}\)</span> par</p>
 <p><span class="math display">\[
    \forall M \in \mathcal{M}_{n}(\mathbb{K}),\ \varphi_A (M) = \mathrm{Tr}(AM).
 \]</span></p>
@@ -1142,7 +1142,7 @@ b&amp;c&amp;a
 <section id="divers" class="level3" data-number="3.4.7">
 <h3 data-number="3.4.7" class="anchored" data-anchor-id="divers"><span class="header-section-number">3.4.7</span> Divers</h3>
 <div id="exr-03-sym" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercice 3.26 (<span class="math inline">\(\star\)</span>)</strong></span> (Une symétrie de de <span class="math inline">\(M_{n}(\mathbb{R})\)</span>). On considère l’application <span class="math inline">\(\varphi:\mathcal{M}_{n}(\mathbb{R})\to \mathcal{M}_n(\mathbb{R})\)</span> définie par <span class="math display">\[\forall M\in\mathcal{M}_{n}(\mathbb{R}),\quad \varphi(M) = M - \frac{2}{n}\operatorname{Tr}(M)I_n.\]</span></p>
+<p><span class="theorem-title"><strong>Exercice 3.26 (<span class="math inline">\(\star\)</span>)</strong></span> (Une symétrie de <span class="math inline">\(M_{n}(\mathbb{R})\)</span>). On considère l’application <span class="math inline">\(\varphi:\mathcal{M}_{n}(\mathbb{R})\to \mathcal{M}_n(\mathbb{R})\)</span> définie par <span class="math display">\[\forall M\in\mathcal{M}_{n}(\mathbb{R}),\quad \varphi(M) = M - \frac{2}{n}\operatorname{Tr}(M)I_n.\]</span></p>
 <ol type="1">
 <li>Montrer que <span class="math inline">\(\varphi\)</span> est un isomorphisme de <span class="math inline">\(\mathcal{M}_n(\mathbb{R})\)</span>.</li>
 </ol>
