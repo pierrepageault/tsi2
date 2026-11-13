@@ -9,7 +9,7 @@ d'*indices*.
 ## Introduction {.unnumbered}
 
 Un espace vectoriel est essentiellement un ensemble dans lequel on est capable
-d'additionner les éléments et de les mutltiplier par un scalaire, avec les
+d'additionner les éléments et de les multiplier par un scalaire, avec les
 mêmes règles de distributivité et de commutativité que la multiplication et
 l'addition usuelles. 
 
@@ -55,7 +55,7 @@ est une somme de la forme $\sum_{i \in I}\lambda_{i}v_{i}$ où $(\lambda_{i})_{i
 
 :::
 
-Dans cas d'un ensemble *fini* $I$, les familles à support fini coincident
+Dans le cas d'un ensemble *fini* $I$, les familles à support fini coïncident
 avec les familles, et on retrouve la définition vue en première année. 
 
 ::: {#exm-cas-fini} 
@@ -96,7 +96,7 @@ $$
 ::: {#exm-famille-libre}
 
 La famille $\{X^{k},\ k \in \mathbb{N}\}$ est une famille libre de
-$\mathbb{K}[X]$ car elle est *échelonnée en degrée* (les polynômes qui
+$\mathbb{K}[X]$ car elle est *échelonnée en degré* (les polynômes qui
 composent cette famille ont des degrés *deux à deux distincts*).
 
 :::
@@ -157,8 +157,8 @@ une famille de $E$. Alors
 1. toute famille libre de $E$ a au plus $\dim E$ éléments et une famille libre à
    $\dim E$ éléments est automatiquement une base,
 
-2. toute famille génératrice de $E$ à au moins $\dim E$ éléments, et une
-   famille génératrice à $\dim E$ élément est automatiquement une base de $E$.
+2. toute famille génératrice de $E$ a au moins $\dim E$ éléments, et une
+   famille génératrice à $\dim E$ éléments est automatiquement une base de $E$.
 
 :::
 
@@ -180,7 +180,7 @@ Les bases suivantes, dites *canoniques*, sont à connaître :
 
 ::: {#rem-cas-particulier}
 
-Le premier cas engloble les cas $\mathcal{M}_{1,n}(\mathbb{K})=\mathbb{K}^{n}$
+Le premier cas englobe les cas $\mathcal{M}_{1,n}(\mathbb{K})=\mathbb{K}^{n}$
 (matrices lignes) et $\mathcal{M}_{n,1}(\mathbb{K})$ (matrices colonnes),
 souvent identifiés à tort. 
 
@@ -259,7 +259,7 @@ vectoriel de $\mathcal{M}_{2}(\mathbb{R})$.
 
 ### Somme de sous espaces vectoriels
 
-Les sous espaces vectoriels sont stables par intersection mais par par réunion
+Les sous-espaces vectoriels sont stables par intersection mais pas par réunion
 (considérer par exemple la réunion de deux droites dans le plan, qui n'est
 clairement pas stable par somme). En algèbre linéaire, la réunion est remplacée
 par la notion de *somme*. 
@@ -342,7 +342,7 @@ droites coplanaires).
 
 ::: {#def-supplementaire}
 
-Deux sous espaces vectoriels $F$ et $G$ de $E$ sont **suplémentaires** dans $E$
+Deux sous-espaces vectoriels $F$ et $G$ de $E$ sont **supplémentaires** dans $E$
 si $E=F \oplus G$. 
 
 :::
@@ -385,7 +385,7 @@ Autrement dit, l'*action* de $f_{|F}$ est la même que $f$, mais l'espace de
 *départ* change. Or, changer l'espace de départ (ou d'arrivée) d'une fonction,
 c'est changer la
 fonction. Par exemple, réduire l'espace de départ (on dit *restreindre*) peut
-rendre une fonction injective. De même, reduire l'espace d'arrivée (on dit
+rendre une fonction injective. De même, réduire l'espace d'arrivée (on dit
 *corestreindre*) peut rendre une fonction surjective. Dès lors, il est légitime
 de distinguer $f$ et $f_{|F}$.
 
@@ -398,7 +398,7 @@ de distinguer $f$ et $f_{|F}$.
 Soient $E$ et $E'$ deux $\mathbb{K}$-espaces vectoriels. On suppose que
 $E=\bigoplus_{i=1}^{n}F_{i}$. On se donne, pour tout $i \in \{1,\dots,n\}$, une
 application linéaire $f_i:F_i \to E'$. Alors il existe une unique application
-linéaire $f$ de $E$ dans $E'$ tel que $f_{|F_{i}}=f_i$. 
+linéaire $f$ de $E$ dans $E'$ telle que $f_{|F_{i}}=f_i$. 
 
 :::
 
@@ -407,10 +407,10 @@ linéaire $f$ de $E$ dans $E'$ tel que $f_{|F_{i}}=f_i$.
 Il faut comprendre cette proposition de deux manières :
 
 1. c'est un résultat d'*unicité* ; si deux applications linéaires $f$ et $g$
-   coincident sur chaque facteur d'une somme directe (c.-à.d si
+   coïncident sur chaque facteur d'une somme directe (c.-à.d si
    $f_{|F_{i}}=g_{|F_{i}}$ pour tout $i$), alors $f=g$,
 
-2. c'est un un résultat d'existence :  pour *définir*  une application linéaire
+2. c'est un résultat d'existence :  pour *définir*  une application linéaire
    de $E$ dans $E'$, il suffit de la définir sur chaque facteur de la somme
 directe (ce qui est en général plus simple que de la définir partout). 
 
@@ -423,7 +423,7 @@ directe (ce qui est en général plus simple que de la définir partout).
 Si $E=\bigoplus_{i=1}^{n} F_{i}$ et si $\mathcal{B}_i$ est une base de $F_{i}$
 pour $i=1,\dots,n$, alors la famille
 $\mathcal{B}=(\mathcal{B}_{1},\dots,\mathcal{B}_{n})$ obtenue en mettant bout à
-bout les bases $B_{1},\dots,\mathcal{B}_{n}$ est une base de $E$, dite
+bout les bases $\mathcal{B}_{1},\dots,\mathcal{B}_{n}$ est une base de $E$, dite
 **adaptée** à la somme directe $E=\bigoplus_{i=1}^{n}F_{i}$.
 
 :::
@@ -556,7 +556,7 @@ $$
 Si $F$ est un sous-espace vectoriel de $E$, alors $F$ est stable par n'importe
 quel multiple de l'identité i.e. pour tout $\lambda \in \mathbb{K}$, $F$ est
 stable par $\lambda \operatorname{Id}$. Cet exemple semble trivial, mais c'est
-pourtant la situation que nous rencontrerons le plus fréquement ! 
+pourtant la situation que nous rencontrerons le plus fréquemment ! 
 
 :::
 
@@ -592,7 +592,7 @@ l'appelle l'endomorphisme **induit par restriction** de $f$ à $F$.
 
 Puisque $\mathbb{R}_{n}[X]$ est stable par dérivation, on peut restreindre la
 dérivation à $\mathbb{R}_{n}[X]$. On obtient ainsi un endomorphisme de
-$\mathbb{R}_{n}[X]$ définit par $P \mapsto P'$. 
+$\mathbb{R}_{n}[X]$ défini par $P \mapsto P'$. 
 
 :::
 
@@ -602,7 +602,7 @@ Restreindre un endomorphisme peut présenter plusieurs avantages, notamment :
 
 1. l'espace $F$ peut être de dimension *finie*,
 
-2. l'endomorphisme $f_{|F}$ peut-être plus simple que l'endomorphisme $f$.
+2. l'endomorphisme $f_{|F}$ peut être plus simple que l'endomorphisme $f$.
 
 :::
 
@@ -615,7 +615,7 @@ endomorphisme, on peut avantageusement utiliser une famille *génératrice*
 #### Caractérisation de la stabilité à l'aide d'une famille génératrice
 
 Soit $F$ un sous espace vectoriel de $E$ et $f \in \mathcal{L}(E)$. Soit
-$\mathcal{G}$ ne famille génératrice de $F$. Alors $F$ est stable par $f$ ssi 
+$\mathcal{G}$ une famille génératrice de $F$. Alors $F$ est stable par $f$ ssi 
 
 $$
     \forall v \in \mathcal{G}, f(v) \in F.
@@ -669,8 +669,8 @@ $p_{|G}=0$.
 
 ::: {#nte-projecteur .callout-note}
 
-Concrètement, si les composante de $v$ suivant $F$ et $G$ sont notées $v_{F}$
-et $v_{g}$ c.-à.d 
+Concrètement, si les composantes de $v$ suivant $F$ et $G$ sont notées $v_{F}$
+et $v_{G}$ c.-à.d 
 
 $$
 v=v_{F}+v_{G}
@@ -706,13 +706,13 @@ avec $n_1= \dim F$.
 ::: {#tip-projecteur-F .callout-tip}
 
 Si $E=F \oplus G$ et si on note $p$ et $q$ les projecteurs sur $F$
-parallèlement à $G$ et inversement, alors $p+q=\id$ ; connaitre un des
-deux projecteurs, c'est donc connaitre les deux.
+parallèlement à $G$ et inversement, alors $p+q=\id$ ; connaître un des
+deux projecteurs, c'est donc connaître les deux.
 
 :::
 
 Concrètement, pour calculer la projection d'un vecteur $v$ sur $F$
-parallèlement à $F$, on détermine la composante $v_{F}$ de $v$ dans la somme
+parallèlement à $G$, on détermine la composante $v_{F}$ de $v$ dans la somme
 directe $E=F \oplus G$. On utilise pour cela la caractérisation suivante :
 
 ::: {#prp-caracterisation-du-projete}
@@ -720,7 +720,7 @@ directe $E=F \oplus G$. On utilise pour cela la caractérisation suivante :
 #### Caractérisation du projeté
 
 On suppose que $E=F \oplus G$. Alors pour tout $v \in E$, le projeté $v_{F}$ de
-$v$ sur $F$ parallèlement à $G$ est caractérisée par 
+$v$ sur $F$ parallèlement à $G$ est caractérisé par 
 
 $$
     \begin{cases}
@@ -743,7 +743,7 @@ vecteur $u=(1,1,-1)$.
 ::: {#tip-caracterisation .callout-tip}
 
 Suivant les cas (notamment si la dimension de $G$ est inférieure à celle de
-$F$), il peux être plus simple de calculer $v_G$ et d'utiliser la relation
+$F$), il peut être plus simple de calculer $v_G$ et d'utiliser la relation
 $v_{F}+v_{G}=v$.
 
 :::
@@ -770,7 +770,7 @@ Un endomorphisme $p$ de $E$ est un **projecteur** si $p \circ p = p$.
 
 :::
 
-Toute somme directe définie donc naturellement deux projecteurs, dont les
+Toute somme directe définit donc naturellement deux projecteurs, dont les
 images et les noyaux permettent de reconstituer les facteurs. Le théorème
 fondamental des projecteurs établit la réciproque. 
 
@@ -832,8 +832,8 @@ avec $n_{1}= \dim F$ et $n_{2}= \dim G$.
 Si $E=F \oplus G$ et si on note $p$ et $q$ les projecteurs sur $F$
 parallèlement à $G$ et inversement, $s$ et $t$ les symétries par rapport à
 $F$ parallèlement à $G$ et inversement, alors $s+t = 0$, $p+q = \id$ et
-$s=p-q$ ; connaitre *une* des quatre applications linéaires, c'est donc
-*toutes* les connaitre. 
+$s=p-q$ ; connaître *une* des quatre applications linéaires, c'est donc
+*toutes* les connaître. 
 
 ::: {#fig-projecteur-symetrie}
 
@@ -918,7 +918,7 @@ $\mathcal{M}_{n,p}(\mathbb{R})$ dans $\mathcal{M}_{p,n}(\mathbb{R})$.
 :::
 
 Certaines matrices jouissent de propriétés de symétries remarquables
-vis à vis de la
+vis-à-vis de la
 transposition. Elles interviendront notamment dans l'énoncé du théorème
 spectral dans le cours sur les espaces préhilbertiens réels.  
 
@@ -950,7 +950,7 @@ $$
 
 ::: {#nte-projete .callout-note}
 
-Il est bon de connaitre la décomposition d'une matrice quelconque comme
+Il est bon de connaître la décomposition d'une matrice quelconque comme
 somme (unique) d'une matrice symétrique et antisymétrique :
 
 $$
@@ -1020,7 +1020,7 @@ $\mathbb{K}$.
 
 ::: {#nte-forme .callout-note}
 
-Si $E$ est un $\mathbb{K}$-espace vectoriel, une application linéraie de $E$
+Si $E$ est un $\mathbb{K}$-espace vectoriel, une application linéaire de $E$
 dans $\mathbb{K}$ s'appelle une *forme linéaire* sur $E$. L'ensemble des formes
 linéaires sur $E$ (c'est à dire l'ensemble $\mathcal{L}(E,\mathbb{K})$)
 s'appelle le *dual* de $E$.
@@ -1031,7 +1031,7 @@ s'appelle le *dual* de $E$.
 
 #### Trace d'une transposée
 
-Une matrice (carrée) et sa transposée on même trace.
+Une matrice (carrée) et sa transposée ont même trace.
 
 :::
 

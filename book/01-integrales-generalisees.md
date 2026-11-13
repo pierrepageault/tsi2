@@ -174,7 +174,7 @@ Intégrale partielle et généralisée dans le cas $b=+\infty$.
 ::: {#nte-existe .callout-note}
 
 On dit aussi qu'une intégrale généralisée **bien définie** ou  **existe**
-(en référence à la limite qui la définie) pour signifier qu'elle *converge*
+(en référence à la limite qui la définit) pour signifier qu'elle *converge*
 ; ce sont des synonymes. 
 
 :::
@@ -277,7 +277,7 @@ $$
 
 ![](./tikz/svg/01-1b.svg){#fig-integrale-partielle-gauche}
 
-Intégrale partielle et intégrable généralisée dans le cas $a=0$.
+Intégrale partielle et intégrale généralisée dans le cas $a=0$.
 :::
 
 ::: {#exm-riemann-2}
@@ -298,7 +298,7 @@ Donc l'intégrale $\int_{0}^{1}\frac{dx}{x^{2}}$ diverge.
 
 :::
 
-On vient d'associer à certaine intégrales une valeur numérique. On va donc
+On vient d'associer à certaines intégrales une valeur numérique. On va donc
 pouvoir commencer à *calculer* avec des intégrales généralisées. Ce point sera
 abordé plus en détail dans la @sec-01-calculer mais nous énonçons dès maintenant la
 *relation de Chasles*, attendue de toute théorie satisfaisante de
@@ -558,7 +558,7 @@ $$
 $$
 
 et l'intégrale $\int_{1}^{+\infty}\frac{dt}{t^{2}}$ converge. Donc par
-compraison de fonctions *positives*, l'intégrale $\int_{0}^{+\infty}\frac{1 - \cos(t)}{t^{2}}dt$ converge en
+comparaison de fonctions *positives*, l'intégrale $\int_{0}^{+\infty}\frac{1 - \cos(t)}{t^{2}}dt$ converge en
 $+\infty$^[On utilise ici implicitement la linéarité de l'intégrale convergente
 : si l'intégrale de $f$ sur $I$ converge, alors l'intégrale de $\lambda f$ sur
 $I$ converge pour tout $\lambda \in \mathbb{K}$.]. Donc par définition
@@ -577,7 +577,7 @@ l'intégrale $\int_{0}^{+\infty}\frac{dt}{t^{2}}$ diverge.*
 
 On peut aussi utiliser la *contraposée* de ce théorème ; si l'intégrale de $f$
 du $I$ diverge, alors l'intégrale de $g$ sur $I$ diverge. On utilisera ce
-résulat en TD pour montrer la divergence de l'intégrale de Dirichlet.
+résultat en TD pour montrer la divergence de l'intégrale de Dirichlet.
 
 :::
 
@@ -704,7 +704,7 @@ montrer qu'une intégrale converge.
 #### Comparaison à l'aide des relations $o$ et $O$ 
 
 Soient $f,g:I \to \mathbb{K}$ deux fonctions continues sur $I$ et soit $\alpha$
-une extremité ouverte de $I$. On suppose que $g$ est intégrable au voisinage de
+une extrémité ouverte de $I$. On suppose que $g$ est intégrable au voisinage de
 $\alpha$ et que $f = o_{\alpha}(g)$ ou $f=O_{\alpha}(g)$. Alors $f$ est
 intégrable au voisinage de $\alpha$. 
 
@@ -757,8 +757,7 @@ $$
 	\left|\frac{f(t)}{g(t)}\right|\underset{\substack{t \to \alpha \\ t \in I}}{\longrightarrow} 0,
 $$
 2. la fonction $f$ est **dominée** par $g$ au voisinage de $\alpha$, et on note
-	 $f = O_{\alpha}(g)$, si le quotient $f/g$ est borné au voisinage de $\alpha$
-i.e. s'il existe un voisinage $V$ de $\alpha$ dans $I$ et une constante
+	 $f = O_{\alpha}(g)$, si le quotient $f/g$ est borné au voisinage de $\alpha$, i.e. s'il existe un voisinage $V$ de $\alpha$ dans $I$ et une constante
 $M \geqslant 0$ tels que   
 $$ 
 \forall t \in V,\ \left|\frac{f(t)}{g(t)}\right|\leqslant M 
@@ -793,7 +792,7 @@ $\sim  \Rightarrow O$
 Maintenant que l'on dispose de théorèmes de comparaison, il reste à se
 constituer une collection de fonctions intégrables dites de *références*,
 suffisamment riches pour être comparées aux fonctions rencontrées en pratique
-; en l'occurence les fonctions puissances, la fonction logarithme et les
+; en l'occurrence les fonctions puissances, la fonction logarithme et les
 exponentielles décroissantes.
 
 
@@ -1049,14 +1048,14 @@ combinaison linéaire d'intégrales convergentes.
 ::: {#exm-majoration}
 
 Si l'intégrale de $f$ sur $[a,+\infty[$ converge et si $f \geqslant 0$ sur
-$[a,+\infty[$, alors la relation de Chalses et la positivité de l'intégrale
+$[a,+\infty[$, alors la relation de Chasles et la positivité de l'intégrale
 montre que 
 
 $$
 	\forall x \geqslant a,\ \int_{a}^{x}f(t)dt \leqslant \int_{a}^{+\infty}f(t)dt.
 $$
 
-Cette propriétée est par ailleurs claire graphiquement, @fig-integrale-partielle-droite.
+Cette propriété est par ailleurs claire graphiquement, @fig-integrale-partielle-droite.
 :::
 
 ::: {#exm-contrapose}
@@ -1064,7 +1063,7 @@ Cette propriétée est par ailleurs claire graphiquement, @fig-integrale-partiel
 Si l'intégrale de $f$ sur $I$ converge, et si l'intégrale de $g$ sur $I$
 diverge, alors l'intégrale de $f+g$ sur $I$ diverge^[On retrouve une propriété
 usuelle des limites : *"convergent plus divergent égale divergent"*]. Sinon, par différence
-d"intégrales convergentes, l'intégrale de $g$ sur $I$ serait convergente.
+d'intégrales convergentes, l'intégrale de $g$ sur $I$ serait convergente.
 
 :::
 
@@ -1073,13 +1072,13 @@ En pratique, ces propriétés permettent de *calculer* avec des intégrales
 généralisées. Il faut leur ajouter deux outils d'usage constant: le théorème
 d'*intégration par parties* et le *théorème de changement de variable*.
 
-### Intégrations pas parties et changement de variable
+### Intégrations par parties et changement de variable
 
 ::: {#nte-ipp .callout-note}
 
 #### Intégration par parties
 
-Concernant l'intégration pas parties, il n'y a pas (en TSI) d'énoncé propre aux
+Concernant l'intégration par parties, il n'y a pas (en TSI) d'énoncé propre aux
 intégrales généralisées. Il faudra systématiquement :
 
 1. revenir à une intégrale partielle,
@@ -1163,7 +1162,7 @@ $$
 	+ (n+1) \int_{0}^{x}t^{n}e^{-t}dt.
 $$
 
-Le crochet tends vers $0$ quand $n \to +\infty$ par croissance comparée. Les
+Le crochet tend vers $0$ quand $n \to +\infty$ par croissance comparée. Les
 deux intégrales étant convergentes, on obtient en passant à la limite dans
 l'égalité précédente
 
@@ -1334,7 +1333,7 @@ $[0,\pi/2]$. Elle est donc convergente.
 
 On connait l'espace de départ du changement de variable $x=\tan(t)$, au
 extrémités près. Il faut les choisir de telle sorte que celui-ci soit bijectif
-et de classe $C^{1}$ sur son image. En l'occurence, bien que les extrémités $0$
+et de classe $C^{1}$ sur son image. En l'occurrence, bien que les extrémités $0$
 et $\pi/2$ soient incluses dans l'intégrale, on va choisir d'exclure $\pi/2$
 (on utilise implicitement à nouveau la @prp-integrale-faussement-generalisee).
 

@@ -18,4 +18,9 @@
 
 [DM 04 - Elements propres et diagonalisation (Type CCS)](./pdf/dm/04-ccs.pdf) <!-- TPC/2023 -->
 
+--- 
+
+[DM 05 - Diagonalisation (Type CCINP)](./pdf/dm/05-ccinp.pdf) <!-- CCP/1/2010 -->
+
+[DM 05 - Diagonalisation (Type CCS)](./pdf/dm/05-ccs.pdf) <!-- CCS/2/2013 -->
 

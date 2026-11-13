@@ -9,9 +9,9 @@ Le déterminant est un outil permettant d'étudier les matrices, notamment leur
 inversibilité. Malheureusement, les démonstrations de son existence et de ses
 propriétés nécessitent quelques notions de théorie des groupes qui dépassent le
 cadre de ce cours. Seul le cas $n=2$, accessible "à la main", sera traité
-entièrement ; il contient déja beaucoup d'idées intéressantes.
+entièrement ; il contient déjà beaucoup d'idées intéressantes.
 
-Dans ce cours, le déterminant est défini à l'aide de ses *propriétés* vis à vis
+Dans ce cours, le déterminant est défini à l'aide de ses *propriétés* vis-à-vis
 des lignes et des colonnes. Ainsi, même sans disposer d'une
 formule générale, on sera en mesure de *calculer* des déterminants, ce qui est
 l'objectif en TSI.
@@ -97,7 +97,7 @@ Dans le même ordre d'idée, il n'existe pas de formule simple donnant $\det
 
 ### Propriétés 
 
-On liste maintenant les propriété fondamentales du déterminant.
+On liste maintenant les propriétés fondamentales du déterminant.
 
 ::: {#prp-determinant-matrice-taille-2}
 
@@ -129,7 +129,7 @@ Pour tout $A \in \mathcal{M}_{n}(\mathbb{K})$, $\det A = \det A^{T}$
 
 ::: {#tip-transpose .callout-tip}
 
-Le déterminant jouit des mêmes propriétés vis à vis des *lignes* que des
+Le déterminant jouit des mêmes propriétés vis-à-vis des *lignes* que des
 *colonnes* ; échanger deux lignes change le déterminant en son opposé, etc. 
 
 :::
@@ -144,7 +144,7 @@ Pour tout $A,B \in \mathcal{M}_{n}(\mathbb{K})$, $\det(AB) = \det A \det B$.
 
 ::: {#prp-inversibilite}
 
-#### Determinant et inversibilité
+#### Déterminant et inversibilité
 
 Une matrice $A \in \mathcal{M}_{n}(\mathbb{K})$ est inversible ssi $\det A \neq
 0$.
@@ -187,7 +187,7 @@ $$
 ::: {#nte-developpement .callout-note}
 
 
-Une utilisation naive de ce résultat permet de calculer de proche en proche des
+Une utilisation naïve de ce résultat permet de calculer de proche en proche des
 déterminants de matrices de taille quelconque à partir de la formule pour une
 matrice de taille $2$. La figure suivante illustre un développement suivant la
 première colonne pour une matrice de taille $3$.
@@ -299,7 +299,7 @@ développer par rapport à cette ligne (ou cette colonne).
 Le développement par rapport à une ligne (ou une colonne) est aussi un outil très
 puissant pour établir des *relations de récurrence* entre déterminants.
 
-A titre d'exemple, on calcul le déterminants des matrices
+A titre d'exemple, on calcule le déterminant des matrices
 *triangulaires* (qui incluent les matrices *diagonales*) :
 
 ::: {#prp-triangulaire}
@@ -341,7 +341,7 @@ en pratique pour calculer numériquement les déterminants.
 On ne peut pas développer naivement un déterminant de taille $n$ de
 proche en proche. En effet, le premier développement fait apparaitre $n$
 déterminants de taille $n-1$, qui font eux même apparaitre $n-1$
-déterminants de taille $n-2$ etc. menant à une complexité *fatorielle* qui
+déterminants de taille $n-2$ etc. menant à une complexité *factorielle* qui
 dépasse les capacités de n'importe quel ordinateur, même pour de "petites"
 valeurs de $n$.
 
@@ -366,7 +366,7 @@ Deux matrices semblables ont même déterminant.
 
 Soit $E$ un espace vectoriel de dimension finie et $f \in \mathcal{L}(E)$. Le
 **déterminant** de $f$, noté $\det f$, est le déterminant de n'importe quelle
-matrice représentant $f$ dans une base $\mathcal{B}ns$ de $E$.
+matrice représentant $f$ dans une base $\mathcal{B}$ de $E$.
 
 :::
 
@@ -477,7 +477,7 @@ donc sont déterminant vaut $1 \cdots 1 = 1$.
 
 ::: {#nte-liaison .callout-note}
 
-On utilise également la proposition précédente pour traduire la *liason* d'une
+On utilise également la proposition précédente pour traduire la *liaison* d'une
 famille de vecteurs. Des exemples seront vus en TD.
 
 :::

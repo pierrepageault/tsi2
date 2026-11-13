@@ -3,11 +3,11 @@
 ## Introduction {.unnumbered}
 
 Ce chapitre est le pendant *discret* du chapitre précédent : les intégrales
-deviennent des sommmes, les dérivées des différences, et il n'est plus question
+deviennent des sommes, les dérivées des différences, et il n'est plus question
 de faire tendre $n$ vers autre chose que $+\infty$. A ce sujet, Euler écrit 
 dans ses *Institutiones Calculi differentialis (1755)* :
 
-> [...], en devenant infiniement petites, les différences finissent par être des
+> [...], en devenant infiniment petites, les différences finissent par être des
 différentielles. De même alors les quantités que l'on appelait des sommes
 prennent le nom d'intégrales.
 
@@ -16,9 +16,9 @@ somme infinie (une *série*) via ses *sommes partielles*, on établit les
 propriétés de ces nouvelles sommes, on démontre des théorèmes de
 comparaison, et on donne des séries de référence.
 
-L'abscence de technique de calcul infinitésimal dans le cadre discret (on ne
+L'absence de technique de calcul infinitésimal dans le cadre discret (on ne
 peut pas dériver ou primitiver une fonction définie sur $\mathbb{N}$) est
-compensé par des techniques d'*encadrement*.
+compensée par des techniques d'*encadrement*.
 
 La plupart des résultats disposent de leur analogue continue, ce qui facilite
 leur apprentissage. D'autres sont propres aux séries ; c'est notamment le cas
@@ -131,7 +131,7 @@ $$
     \forall n > n_{0},\ u_{n} = \sum_{k=n_{0}}^{n} - \sum_{k=n_{0}}^{n-1}.
 $$
 
-Cette égalité mène la condition *nécessaire* de convergence suivante.
+Cette égalité mène à la condition *nécessaire* de convergence suivante.
 
 ::: {#prp-condition-necessaire}
 
@@ -143,7 +143,7 @@ Le terme général d'une série convergente tend nécessairement vers $0$.
 
 ::: {#wrn-reciproque .callout-warning}
 
-La réciproque est fausse ; ce n'est pas parce que le terme général d'un série
+La réciproque est fausse ; ce n'est pas parce que le terme général d'une série
 tend vers $0$ que celle-ci converge. 
 
 On montrera par exemple que la série harmonique $\sum \frac{1}{n}$ *diverge*,
@@ -154,7 +154,7 @@ bien que $\frac{1}{n}$ tende vers $0$.
 
 ::: {#def-grosierement-divergente}
 
-On dit que qu'une série est *grossièrement divergente* si son terme général ne
+On dit qu'une série est *grossièrement divergente* si son terme général ne
 tend pas vers $0$.
 
 :::
@@ -178,7 +178,7 @@ des théorèmes de comparaison pour les séries; c'est l'objectif de la
 On peut néanmoins facilement *approximer* la somme d'une série convergente via
 ses sommes partielles qui, elles, sont calculables (au moins numériquement). La
 différence entre la somme totale et une somme partielle porte le nom de
-*reste*. Cette notion de sens que pour les séries convergentes.
+*reste*. Cette notion n'a de sens que pour les séries convergentes.
 
 ::: {#def-reste}
 
@@ -225,7 +225,7 @@ $$
 
 Le reste $R_{n}$ représente l'*erreur algébrique* (i.e. avec signe) commise en
 approximant $S$ par $S_n$. Il est donc intéressant de *majorer* $R_{n}$, à
-défault d'être capable de le calculer explicitement (les séries alternées sont
+défaut d'être capable de le calculer explicitement (les séries alternées sont
 remarquables sur ce point).
 
 :::
@@ -366,7 +366,7 @@ Nature de la série $\sum e^{-\alpha n}$ pour $\alpha \in \mathbb{R}$.
 
 ::: {.details}
 
-Il s'agit d'une série géométrique de raison $e^{-\alpha}$. Celle si converge
+Il s'agit d'une série géométrique de raison $e^{-\alpha}$. Celle-ci converge
 ssi $|e^{-\alpha}| = e^{-\alpha}<1$ i.e. $\alpha>0$. 
 
 Dans ce cas, on a d'ailleurs
@@ -380,7 +380,7 @@ $$
 :::
 
 Les *séries telescopiques* sont un autre exemple -- fréquent en pratique -- de
-séries dont on sait calculer les sommes parielles. 
+séries dont on sait calculer les sommes partielles. 
 
 ::: {#def-serie-telescopique}
 
@@ -441,7 +441,7 @@ $$
     \sum_{k=0}^{n} (u_{k+1}-u_{k}) = u_{n+1}-u_0
 $$
 
-un cas particulier discret du théorème fondamentale de l'analyse qui affirme
+un cas particulier discret du théorème fondamental de l'analyse qui affirme
 que si $f$ est une fonction de classe $C^{1}$ sur $[a,b]$, alors 
 
 $$
@@ -481,7 +481,7 @@ ou nul.
 
 ::: {#lem-croissante-majore}
 
-Si la serie $\sum u_{n}$ est à termes *positifs*, la suite de ses sommes
+Si la série $\sum u_{n}$ est à termes *positifs*, la suite de ses sommes
 partielles est *croissante*. La série $\sum u_{n}$ est donc convergente ssi ses sommes
 partielles sont *majorées*.
 
@@ -527,7 +527,7 @@ Donc par comparaison de séries à termes positifs, la série $\sum
 Puisque la nature d'une série ne dépend pas de ses premiers termes, il suffit
 que les hypothèses du théorème soient satisfaites *pour $n$ assez grand*.
 
-Rappelons à cette occasion que les équivalents *préseservent les signes* .
+Rappelons à cette occasion que les équivalents *préservent les signes* .
 Ainsi, si $u_{n} \sim v_{n}$ et si $u_{n} \geqslant 0$ pour $n$ assez grand,
 alors $v_{n}$ sera également positive ou nulle au voisinage de $+\infty$.
 
@@ -579,8 +579,8 @@ ne permettent pas de couvrir suffisamment de cas en pratique; il faut pouvoir
 dire quelque chose de la nature des *séries de Riemann* de la forme $\sum
 \frac{1}{n^\alpha}$. 
 
-Contrairement au cas des intégrales, on ne peux pas calculer explicitement les
-sommes partielles de ces séries. On se ramène au cas des intégrales de via le
+Contrairement au cas des intégrales, on ne peut pas calculer explicitement les
+sommes partielles de ces séries. On se ramène au cas des intégrales via le
 résultat suivant. 
 
 ::: {#thm-comparaison-integrale}
@@ -628,7 +628,7 @@ séries-intégrales.
 ::: {#tip-encadrement .callout-tip}
 
 On retiendra l'idée générale suivante : une somme partielle (ou un reste)
-s'*encadre*, à defaut de se calculer.
+s'*encadre*, à défaut de se calculer.
 
 :::
 
@@ -656,11 +656,11 @@ comparaison pour les séries à termes positifs restent incapables de traiter le
 séries à termes complexes, ou les séries dont le terme général n'est pas de
 signe constant au voisinage de $+\infty$.
 
-Le remède est le même que pour les intégrales via la notion d'*absolue convergentes*. 
+Le remède est le même que pour les intégrales via la notion d'*absolument convergentes*. 
 
 ::: {#def-serie-absolument-convergente}
 
-On dit que la série $\sum u_{n}$ est **absolument convergente** si a série
+On dit que la série $\sum u_{n}$ est **absolument convergente** si la série
 $\sum |u_{n}|$ converge.
 
 :::
@@ -689,7 +689,7 @@ $$
 
 De plus, la série $\sum \frac{1}{n^{2}}$ est une série de Riemann convergente.
 Donc par comparaison de séries à termes positifs, la série $\sum \frac{\cos
-n}{n^{2}}$ converge *absoluement*, donc converge.
+n}{n^{2}}$ converge *absolument*, donc converge.
 
 :::
 
@@ -698,7 +698,7 @@ n}{n^{2}}$ converge *absoluement*, donc converge.
 ::: {#rem-integrable}
 
 Contrairement au cas des fonctions, on ne dispose pas en TSI de la notion de suite
-*intégrable*. La situation est donc comparativement plus simple ; on se ramenera
+*intégrable*. La situation est donc comparativement plus simple ; on se ramènera
 systématiquement à la notion d'absolue convergence, avec *un seul* théorème de
 comparaison.
 
@@ -814,7 +814,7 @@ S_{999} = 0.6926...
 $$
 
 Donc une approximation^[On calculera la valeur exacte de cette somme en TD.] à
-$10^{-3}$ près de $S$ est $0,693$ (on a arrondit par *excès* pour se rapprocher
+$10^{-3}$ près de $S$ est $0,693$ (on a arrondi par *excès* pour se rapprocher
 de $S$).
 
 :::

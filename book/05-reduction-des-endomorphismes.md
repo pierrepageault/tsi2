@@ -22,11 +22,11 @@ immédiats.
 
 Les deux prototypes d'endomorphismes pour lesquels une telle réduction est
 possible sont les symétries et les projecteurs. Les endomorphismes
-diagonalisables, en un sens, généraliserons cette situation. 
+diagonalisables, en un sens, généraliseront cette situation. 
 
 Lorsqu'une telle décomposition s'avère impossible, on peut à défaut chercher
 une base dans laquelle la matrice de l'endomorphisme est la plus simple
-chapitre. 
+possible. 
 
 ## Rappels d'algèbre linéaire {#sec-05-rappels}
 
@@ -97,7 +97,7 @@ où $P = P_{\mathcal{B} \to \mathcal{B}'}$.
 
 
 Pour retenir la formule de changement de base (qu'il faut absolument
-connaitre), on peut utiliser un moyen mnémotechnique "chronologique" :
+connaître), on peut utiliser un moyen mnémotechnique "chronologique" :
 
 ::: {#tip-changement-base .callout-tip}
 
@@ -127,8 +127,8 @@ $$
 ::: {#nte-matrice-semblable .callout-note}
 
 Des matrices semblables sont donc des matrices représentant le *même*
-endomorphisme, dans des bases *différentes*. Elle hériterons de toutes les
-propriétés communes à l'*endomorphisme* sous jacent
+endomorphisme, dans des bases *différentes*. Elles hériteront de toutes les
+propriétés communes à l'*endomorphisme* sous-jacent
 (rang,trace,déterminant,...).
 
 :::
@@ -143,12 +143,12 @@ La relation d'équivalence est
    réciproquement,
 
 3. *transitive* ; si $A$ est semblable à $B$ est si $B$ est semblable à $C$,
-   alos $A$ semblable à $C$.
+   alors $A$ est semblable à $C$.
 
 :::
 
 Etant donnée une matrice $A \in \mathcal{M}_{n}(\mathbb{K})$, on peut
-réciproquement se poser la question suivante : existe t'il un endomorphisme
+réciproquement se poser la question suivante : existe-t-il un endomorphisme
 *naturel* dont la matrice serait $A$ ? La réponse est positive, et d'usage constant :
 
 ::: {#def-endomorphisme-canoniquement-associe}
@@ -185,30 +185,6 @@ $A$.
 :::
 
 
-<!-- ::: {#def-polynome} -->
-<!---->
-<!-- #### Polynômes de matrices  -->
-<!---->
-<!-- Pour tout polynôme $P= \sum_{k=0}^{n}a_{k}X^{k}$ et toute matrice $A \in \mathcal{M}_{n}(\mathbb{K})$, on pose  -->
-<!---->
-<!-- $$ -->
-<!--     P(A)= \sum_{k=0}^{n} a_{k}A^{k} -->
-<!-- $$ -->
-<!---->
-<!-- où, par convention, $A^{0}=\operatorname{I}_{n}$. On dit que la matrice $P(A)$ -->
-<!-- est un **polynôme en $A$**. -->
-<!---->
-<!-- ::: -->
-<!---->
-<!-- ::: {#prp-polynome} -->
-<!---->
-<!-- Pour tout polyôme $P,Q \in \mathbb{R}[X]$, toute matrice $A \in \mathcal{M}_{n}(\mathbb{K})$, et tout $\lambda \in \mathbb{K}$, on a  -->
-<!---->
-<!-- 1. $(P+\lambda Q)(A)= P(A) + \lambda Q(A)$, -->
-<!---->
-<!-- 2. $(PQ)(A)= P(A)Q(A)$. -->
-<!---->
-<!-- ::: -->
 
 
 
@@ -275,7 +251,7 @@ $$
 L'ensemble $E_{\lambda}(f)$ contient le vecteur nul (qui n'est pas un vecteur
 propre), mais il
 n'est pas *réduit* au vecteur nul (par définition d'une valeur propre), et tout
-élement *non nul* de $E_{\lambda}(f)$ est un vecteur propre de $f$. Puisque
+élément *non nul* de $E_{\lambda}(f)$ est un vecteur propre de $f$. Puisque
 c'est un sous espace vectoriel, il contient donc une *infinité* de vecteurs
 propres de $f$, associés à la même valeur propre $\lambda$. 
 
@@ -293,7 +269,7 @@ $$
 
 :::
 
-Autremenent dit, chacun des sous espace propres de $f$ est stable par $f$, et
+Autrement dit, chacun des sous-espaces propres de $f$ est stable par $f$, et
 $f$ s'y restreint en un multiple de l'identité
 ; c'est le premier pas en direction de la *réduction* de l'endomorphisme $f$.
 
@@ -313,7 +289,7 @@ $$
 $$
 
 Les scalaires $0$ et $1$ sont bien des valeurs propres de $p$ car $F$ et $G$
-sont on triviaux, donc ils contiennent des éléments *non nuls*.
+sont non triviaux, donc ils contiennent des éléments *non nuls*.
 
 :::
 
@@ -322,7 +298,7 @@ sont on triviaux, donc ils contiennent des éléments *non nuls*.
 #### Les symétries
 
 Soit $s$ la symétrie par rapport à $F$
-parallèllement à $G$ où à nouveau $F$ et $G$ sont des sous espaces vectoriel
+parallèlement à $G$ où à nouveau $F$ et $G$ sont des sous-espaces vectoriels
 supplémentaires de $E$, non triviaux. Alors $1$ et $-1$ sont deux valeurs
 propres de $s$ et 
 
@@ -501,9 +477,9 @@ Toute famille de vecteurs associés à des valeurs propres deux à deux distinct
 
 ::: {#cor-cardinal-spectre} 
 
-#### Cardinalité maximal du spectre
+#### Cardinalité maximale du spectre
 
-Si $E$ est dimension finie, tout endormophisme $f$ de $E$ possède au
+Si $E$ est dimension finie, tout endomorphisme $f$ de $E$ possède au
 maximum $\dim E$ valeurs propres distinctes.
 
 :::
@@ -633,7 +609,7 @@ Puisque les racines d'un polynôme dépendent du corps considéré ($\mathbb{R}$
 $\mathbb{C}$), le spectre d'un endomorphisme (ou d'une matrice) dépend du
 *corps* $\mathbb{K}$ sur lequel on se place. Par exemple, la matrice $B =
 \begin{pmatrix} 0&1\\ -1&0 \end{pmatrix}$ n'a pas de valeur propre réelle, mais
-vue comme elément de $\mathcal{M}_{2}(\mathbb{C})$, elle a deux valeurs propres
+vue comme élément de $\mathcal{M}_{2}(\mathbb{C})$, elle a deux valeurs propres
 complexes (conjuguées) : 
 
 $$
@@ -673,7 +649,7 @@ racines de son polynôme caractéristique.
 
 En particulier : 
 
-- les valeurs propres d'un endomorphisme $f$ coincident avec les valeurs
+- les valeurs propres d'un endomorphisme $f$ coïncident avec les valeurs
   propres de n'importe quelle *matrice* représentant $f$.
 - pour tout $A \in \mathcal{M}_{n}(\mathbb{K})$, $P_{f_A}(X) = P_{A}(X)$,
 
@@ -753,11 +729,11 @@ $P_{A}(X) = \left|\begin{matrix}
         3 & -3 & X+1
 \end{matrix}\right|$
 
-Ici, il serai *catastrophique* de développer ce déterminant sans faire
+Ici, il serait *catastrophique* de développer ce déterminant sans faire
 apparaitre préalablement des $0$ : le polynôme (que l'on cherche à
 *factoriser*) apparaitrait alors sous forme développée, et les nombreuses
 manipulations de signes apporteraient inévitablement des erreurs de calcul. On
-effectue donc des opérations élémentaires sur les lignes et les colones :
+effectue donc des opérations élémentaires sur les lignes et les colonnes :
 
 $$
 \begin{aligned}
@@ -854,9 +830,9 @@ caractéristique est $(X-1)(X-3)^{2}$.
 
 La multiplicité d'une valeur propre est de nature *algébrique* -- elle est
 définie à l'aide d'un polynôme. On peut aussi lui associer une multiplicité
-*géométrique* égale à la dimension du sous-esapce propre associé. La
+*géométrique* égale à la dimension du sous-espace propre associé. La
 proposition suivante stipule que la multiplicité géométrique est toujours
-inférieure à la multiplicité algébrique. La cas d'égalité sera étudié en détail
+inférieure à la multiplicité algébrique. Le cas d'égalité sera étudié en détail
 dans la section suivante.
 
 ::: {#prp-multiplicites-alg-geom}
@@ -889,7 +865,7 @@ une *droite vectorielle*.
 #### Endomorphisme diagonalisable
 
 Un endomorphisme $f \in \mathcal{L}(E)$ est **diagonalisable** s'il existe une
-base $\mathcal{B}$ de $E$ dans laquelle la matrice de $f$ est diagonale.Une
+base $\mathcal{B}$ de $E$ dans laquelle la matrice de $f$ est diagonale. Une
 telle base s'appelle alors une **base de diagonalisation** de $f$.
 
 :::
@@ -935,7 +911,7 @@ Soit $f \in \mathcal{L}(E)$. Les propriétés suivantes sont équivalentes :
 
 1. $f$ est diagonalisable,
 
-2. le polynôme caracréristique de $f$ est scindé sur $\mathbb{K}$, et 
+2. le polynôme caractéristique de $f$ est scindé sur $\mathbb{K}$, et 
 $$
     \forall \lambda \in \operatorname{Sp}(f),\ \dim E_{\lambda}(f) =
     m(\lambda),
@@ -950,7 +926,7 @@ $$
 
 ::: {#rem-philo}
 
-En substance, le deuxième point siginfie que $f$ possède *autant de valeurs
+En substance, le deuxième point signifie que $f$ possède *autant de valeurs
 propres que possible* (polynôme caractéristique scindé), et que ses sous espaces
 propres sont de *dimension maximale*.
 
@@ -958,7 +934,7 @@ propres sont de *dimension maximale*.
 
 ::: {#nte-base-diag .callout-note}
 
-Concrètement, on obtient un base de diagonalisation de $f$ en *mettant bout à
+Concrètement, on obtient une base de diagonalisation de $f$ en *mettant bout à
 bout* des bases de chacun des sous espaces propres de $f$ i.e. en considérant
 une base *adaptée* à la somme directe $E = \bigoplus_{\lambda \in
 \operatorname{Sp}(f)} E_{\lambda}(f)$.
@@ -983,7 +959,7 @@ $$
 
 et traduit le fait qu'un projecteur est diagonalisable !
 
-Demême, si $s$ est une symétrie de $E$, l'égalité un peu mystérieuse
+De même, si $s$ est une symétrie de $E$, l'égalité un peu mystérieuse
 
 $$
     E = \ker (s- \operatorname{Id}_{E})\oplus \ker(s+\operatorname{Id}_{E})
@@ -992,7 +968,7 @@ $$
 se lit simplement
 
 $$
-    s = E_{1}(s)\oplus E_{-1}(s),
+    E = E_{1}(s)\oplus E_{-1}(s),
 $$
 
 et traduit la diagonalisabilité de $s$.
@@ -1062,7 +1038,7 @@ Soit $A \in \mathcal{M}_{n}(\mathbb{K})$. Les propositions suivantes sont
 
 1. $A$ est diagonalisable, 
 
-2. le polynôme caractéristique de $A$ est sincdé sur $\mathbb{K}$, et 
+2. le polynôme caractéristique de $A$ est scindé sur $\mathbb{K}$, et 
 
 $$
 \forall \lambda \in \operatorname{Sp}(A),\ \dim E_{\lambda}(A)=m(\lambda),    
@@ -1162,7 +1138,7 @@ $n$ valeurs propres distinctes (bien au contraire !).
 
 :::
 
-## Trigonalisation
+## Trigonalisation {#sec-05-trigonalisation}
 
 Lorsqu'un endomorphisme $f$ n'est pas diagonalisable, on peut tout de même
 essayer de trouver une base dans laquelle la matrice de $f$ est simple
@@ -1225,7 +1201,7 @@ trigonalisable ssi $\mathcal{M}_{\mathcal{B}}(f)$ est trigonalisable.
 
 ::: {#rem-A-trig}
 
-En particuiler, une matrice $A$ est trigonalisable ssi l'endomorphisme $f_{A}$
+En particulier, une matrice $A$ est trigonalisable ssi l'endomorphisme $f_{A}$
 canoniquement associé à $A$ est trigonalisable.
 
 :::
@@ -1268,10 +1244,335 @@ spectre.
 
 :::
 
-<!-- ## Application de la réduction {#sec-05-applications} -->
+## Applications de la réduction {#sec-05-applications}
 
-<!-- Polynôme en $A$ est spectre.  -->
-<!---->
+### Polynômes de matrices
+
+::: {#def-polynome}
+
+#### Polynômes de matrices 
+
+Pour tout polynôme $P= \sum_{k=0}^{n}a_{k}X^{k}\in \mathbb{K}[X]$, et toute matrice $A \in
+\mathcal{M}_{n}(\mathbb{K})$, on pose 
+
+$$
+    P(A)= \sum_{k=0}^{n} a_{k}A^{k}
+$$
+
+où, par convention, $A^{0}=\operatorname{I}_{n}$. On dit que la matrice $P(A)$
+est un **polynôme en $A$**.
+
+:::
+
+::: {#prp-polynome}
+
+Pour tout polyôme $P,Q \in \mathbb{R}[X]$, pour toute matrice $A \in \mathcal{M}_{n}(\mathbb{K})$, et pour tout $\lambda \in \mathbb{K}$, on a 
+
+1. $(P+\lambda Q)(A)= P(A) + \lambda Q(A)$,
+
+2. $(PQ)(A)= P(A)Q(A)$.
+
+:::
+
+::: {#def-annulateur}
+
+#### Polynôme annulateur
+
+On dit que $P \in \mathbb{K}[X]$ est un **polynome annulateur** de $A \in
+\mathcal{M}_{n}(\mathbb{K})$ si $P(A)=0_{\mathcal{M}_{n}(\mathbb{K})}$.
+
+:::
+
+
+
+
+::: {#prp-localisation-spectre}
+
+#### Spectre et polynôme annulateur
+
+Si $P$ est un polynôme annulateur de $A$, alors les valeurs propres de $A$ sont
+incluses dans les racines de $P$.
+
+:::
+
+::: {#rem-inclusion}
+
+Le résultat précédent fournit seulement une *inclusion* i.e. des *candidats*
+pour les valeurs propres de $A$ ; toutes les racines de $P$ ne sont pas
+nécessairement valeurs propres de $A$.
+
+:::
+
+::: {#exm-projeteur}
+
+Si $A$ est la matrice d'un projecteur $p$, alors $A^{2}-A=0$ donc $X^{2}-X =
+X(X-1)$ est un polynôme annulateur de $A$. On retrouve le fait que les valeurs
+propres d'un projecteur sont incluses dans $\{0,1\}$. Ce n'est pas toujours une égalité (par exemple si
+$p$ est le projecteur nul).
+
+:::
+
+
+::: {#exm-nilpotente}
+
+#### Matrices nilpotentes
+
+S'il existe $k \in \mathbb{N}^{*}$ tel que $A^{k} = 0$, alors la seule valeur
+propre possible de $A$ est $0$ (une telle matrice est dite *nilpotente*).
+
+:::
+
+::: {#exm-unipotente}
+
+#### Matrice unipotente
+
+S'il existe $k \in \mathbb{N}^{*}$ tel que $A^{k}=\operatorname{I}_{n}$, les
+valeurs propres de $A$ sont parmi les racines $k$-ème de l'unité. Une telle
+matrice est dite *unipotente*. 
+
+Par exemple, une matrice de symétrie est
+unipotente car $A^{2} = \operatorname{I}_{n}$ ; on retrouve le fait que les
+valeurs propres d'une symétries sont incluses dans $\{-1,1\}$.
+
+:::
+
+::: {#nte-division-euclidienne .callout-note}
+
+#### Rappel : division euclidienne
+
+Pour tout $P \in \mathbb{K}[X]$, et pour tout $S \in \mathbb{K}[X]\{0\}$, il
+existe un unique couple $(Q,R)\in \mathbb{K}[X]^{2}$ tel que 
+
+$$
+    \begin{cases}
+        P = QS +R,\\
+        \deg R < \deg S.
+    \end{cases}
+$$
+
+:::
+
+::: {#rem-div-euc}
+
+On utilise typiquement ce résultat en divisant $X^{n}$ par un *polynôme
+annulateur* de $A$, de petit degré (typiquement $2$). On obtient alors une
+expression de $A^{n}$ comme combinaison linéaire des premières puissances de
+$A$ (cf TD). 
+
+:::
+
+
+
+### Puissances de matrices
+
+On rencontre fréquemment dans les applications des suites géométriques
+*matricielle*, qui conduisent à calculer les puissances successives d'une
+matrice donnée. Ce calcul est immédiat pour une matrice diagonale, et très
+simple pour une matrice *diagonalisable*. C'est une première application très
+importante de la diagonalisation.
+
+::: {#prp-puissance-diag}
+
+#### Puissance d'une matrice diagonale 
+
+Si $D=\mathrm{diag}(\lambda_1,\dots,\lambda_n)$ alors $D^k = \mathrm{diag}(\lambda_1^k,\dots,\lambda_n^k)$.
+
+:::
+
+Associé au résultat suivant, il permet de calculer très facilement les
+puissances successives d'une matrice diagonalisable. 
+
+::: {#prp-puissance-semblable}
+
+#### Puissances de matrices semblables
+
+Pour tout $A\in\mathcal{M}_n(\mathbb{K})$, $P\in GL_n(\mathbb{K})$ et $k\in\mathbb{N}^*$, on a 
+\[
+(P^{-1}AP)^k = P^{-1}A^kP.
+\]
+
+:::
+
+::: {#prp-suite-geometrique-matricielle}
+
+Si $(X_k)_{k\in\mathbb{N}}$ est une suite de $\mathcal{M}_{n,1}(\mathbb{K})$ telle que $X_{k+1}=AX_k$ pour tout $k\in\mathbb{N}$, avec $A\in\mathcal{M}_n(\mathbb{K})$, alors $X_k = A^kX_0$.
+
+:::
+
+::: {#nte-cas-diag .callout-note}
+
+#### Cas d'une matrice diagonalisable
+
+Si $P^{-1}AP=D$, on a alors 
+
+$$
+  X_{n}=PD^{n}P^{-1}X_{0}.
+$$
+
+Le calcul de $X_{n}$ est immédiat (complexité linéaire versus complexité cubique).
+
+:::
+
+### Suites récurrentes linéaires d'ordre $2$ à coefficients constantes
+
+On donne dans cette sous section un exemple d'application des suites
+géométriques matricielles, très fréquent en pratique : les suites récurrentes
+linéaires d'ordre $2$ à coefficients constant.
+
+::: {#thm-complexe}
+
+### Cas complexe
+
+Soient $a,b \in \mathbb{C}$. L'ensemble $\mathcal{F}$ des suites $(u_{n})_{n
+\in \mathbb{N}} \in \mathbb{C}^{\mathbb{N}}$ vérifiant la relation de récurrence
+
+$$
+    \forall n \in \mathbb{N},\ u_{n+2} + au_{n+1} + bu_{n}=0
+$$
+
+et un $\mathbb{C}$-espace vectoriel de dimension $2$. 
+
+De plus, si $b \neq 0$, en notant $(e)$ l'*équation caractéristique*
+
+$$
+    X^{2}+aX+b = 0
+$$
+
+alors :
+
+1. si $(e)$ possède deux racines distinctes $\lambda_{1},\lambda_{2}\in \mathbb{C}$, on a 
+   $$
+    \mathcal{F} = \operatorname{Vect}(\lambda_{1}^{n},\lambda_{2}^{n}),
+   $$
+2. si $(e)$ possède une racine double $\lambda \in \mathbb{C}$, on a 
+$$
+    \mathcal{F} = \operatorname{Vect}(\lambda^{n},n \lambda^{n}).
+$$
+:::
+
+::: {#nte-ci .callout-note}
+
+Concrètement, dans le premier cas, il existe deux constantes $\alpha,\beta \in
+\mathbb{C}$ telles que 
+
+$$
+    \forall n \in \mathbb{N},\ u_{n} = \alpha \lambda_{1}^{n}+ \beta
+\lambda_{2}^{n}.
+$$
+
+Les constantes $\alpha$ et $\beta$ sont déterminées à l'aide des *conditions initiales* $u_{0}$ et $u_{1}$.
+
+Le deuxième cas est similaire.
+
+:::
+
+Dans le cas réel (le plus fréquent en pratique), on raffine le résultat précédent en distinguant un troisième cas. 
+
+::: {#thm-reel}
+
+#### Cas réel
+
+Soient $a,b \in \mathbb{R}$. L'ensemble $\mathcal{G}$ des suites $(u_{n})_{n
+\in \mathbb{N}}\in \mathbb{R}^{\mathbb{N}}$ vérifiant la relation de récurrence 
+
+$$
+    \forall n \in \mathbb{N},\ u_{n+2} + au_{n+1}+ bu_{n}=0
+$$
+
+est un $\mathbb{R}$-espace vectoriel de dimension $2$. 
+
+De plus, si $b \neq 0$, en notant $(e)$ l'*équation caractéristique 
+
+$$
+    X^{2}+aX+b=0,
+$$
+
+alors :
+
+1. si $(e)$ possède deux racines réelles distinctes $\lambda_{1}$ et $\lambda_{2}$, on a 
+
+$$
+    \mathcal{G} = \operatorname{Vect}(\lambda_{1}^{n},\lambda_{2}^{n}),
+$$
+
+2. si $(e)$ possède une racine réelle double $\lambda$, on a 
+
+$$
+    \mathcal{G} = \operatorname{Vect}(\lambda^{n},n \lambda^{n}),
+$$
+
+3. si $(e)$ possède deux racines complexes conjuguées $\lambda = \rho e^{i
+   \theta}$ et $\bar{\lambda} = \rho e^{-i \theta}$, alors
+
+$$
+    \mathcal{G} = \operatorname{Vect}(\rho^{n} \cos(n \theta),\rho^{n}
+\sin(n \theta)).
+$$
+
+:::
+
+::: {#exm-reel}
+
+Déterminer l'expression du terme général de la suite $(u_{n})_{n \in
+\mathbb{N}}$ définie par $u_{0} = 1$, $u_{1}=0$ et 
+
+$$
+    \forall n \in \mathbb{N},\ u_{n+2} = -u_{n+1}-u_{n}.
+$$
+
+::: {.details}
+
+L'équation caractéristique de cette suite récurrente linéaire est 
+
+$$
+    X^{2}+X+1.
+$$
+
+Elle possède deux racines complexes conjuguées qui sont $j=e^{2i\pi/3}$ et
+$\bar{j}$. Il existe donc $\alpha,\beta\in \mathbb{R}$ tels que 
+
+$$
+    \forall n \in \mathbb{N},\ u_{n} = \alpha \cos(2 n\pi/3) + \beta
+\sin(2n \pi/3).
+$$
+
+Les conditions initiales donnent 
+
+$$
+    \begin{cases}
+        \alpha = 1,\\
+        -\frac{1}{2}\alpha + \beta \frac{\sqrt{3}}{2} = 0
+    \end{cases}
+$$
+
+i.e.
+
+$$
+    \begin{cases}
+        \alpha=1,\\
+        \beta = \frac{1}{\sqrt{3}}
+    \end{cases}
+$$
+
+donc
+
+$$
+    \forall n \in \mathbb{N},\ u_{n} = \cos(2 n \pi/3) +
+\frac{1}{\sqrt{3}}\sin(2 n\pi/3 ).
+$$
+:::
+
+:::
+
+::: {#nte-dem .callout-note}
+
+La technique utilisée dans la démonstration (mise sous forme matricielle et
+réduction) permet d'étudier des suites récurrentes linéaires d'ordre
+quelconque. Des exemples seront vus en TD.
+
+:::
+
+
 
 \newpage
 
