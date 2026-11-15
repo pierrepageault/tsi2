@@ -230,6 +230,21 @@ window.Quarto = {
   <li><a href="#rayon-de-convergence-dune-série-entière" id="toc-rayon-de-convergence-dune-série-entière" class="nav-link" data-scroll-target="#rayon-de-convergence-dune-série-entière"><span class="header-section-number">6.1.2</span> Rayon de convergence d’une série entière</a></li>
   <li><a href="#méthode-pratique-de-calcul-dun-rayon-de-convergence" id="toc-méthode-pratique-de-calcul-dun-rayon-de-convergence" class="nav-link" data-scroll-target="#méthode-pratique-de-calcul-dun-rayon-de-convergence"><span class="header-section-number">6.1.3</span> Méthode pratique de calcul d’un rayon de convergence</a></li>
   </ul></li>
+  <li><a href="#sec-06-somme" id="toc-sec-06-somme" class="nav-link" data-scroll-target="#sec-06-somme"><span class="header-section-number">6.2</span> Somme d’une série entière d’une variable réelle</a>
+  <ul class="collapse">
+  <li><a href="#définition-1" id="toc-définition-1" class="nav-link" data-scroll-target="#définition-1"><span class="header-section-number">6.2.1</span> Définition</a></li>
+  <li><a href="#le-théorème-de-dérivation-terme-à-terme" id="toc-le-théorème-de-dérivation-terme-à-terme" class="nav-link" data-scroll-target="#le-théorème-de-dérivation-terme-à-terme"><span class="header-section-number">6.2.2</span> Le théorème de dérivation terme à terme</a></li>
+  </ul></li>
+  <li><a href="#sec-06-dse" id="toc-sec-06-dse" class="nav-link" data-scroll-target="#sec-06-dse"><span class="header-section-number">6.3</span> Fonctions développables en série entière</a></li>
+  <li><a href="#sec-06-exponentielle-complexe" id="toc-sec-06-exponentielle-complexe" class="nav-link" data-scroll-target="#sec-06-exponentielle-complexe"><span class="header-section-number">6.4</span> L’exponentielle complexe</a></li>
+  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
+  <ul class="collapse">
+  <li><a href="#convergence-dune-série-entière-1" id="toc-convergence-dune-série-entière-1" class="nav-link" data-scroll-target="#convergence-dune-série-entière-1"><span class="header-section-number">6.4.1</span> Convergence d’une série entière</a></li>
+  <li><a href="#somme-dune-série-entière-dune-variable-réelle" id="toc-somme-dune-série-entière-dune-variable-réelle" class="nav-link" data-scroll-target="#somme-dune-série-entière-dune-variable-réelle"><span class="header-section-number">6.4.2</span> Somme d’une série entière d’une variable réelle</a></li>
+  <li><a href="#fonctions-développables-en-série-entière" id="toc-fonctions-développables-en-série-entière" class="nav-link" data-scroll-target="#fonctions-développables-en-série-entière"><span class="header-section-number">6.4.3</span> Fonctions développables en série entière</a></li>
+  <li><a href="#lexponentielle-complexe" id="toc-lexponentielle-complexe" class="nav-link" data-scroll-target="#lexponentielle-complexe"><span class="header-section-number">6.4.4</span> L’exponentielle complexe</a></li>
+  <li><a href="#divers" id="toc-divers" class="nav-link" data-scroll-target="#divers"><span class="header-section-number">6.4.5</span> Divers</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -258,15 +273,15 @@ window.Quarto = {
 <p>Dans ce chapitre, <span class="math inline">\(\mathbb{K}\)</span> désigne <span class="math inline">\(\mathbb{R}\)</span> ou <span class="math inline">\(\mathbb{C}\)</span>.</p>
 <section id="introduction" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Une série entière est un type particulier de série numérique, de la forme</p>
+<p>Une série entière est un type particulier de série numérique de la forme</p>
 <p><span class="math display">\[
     \sum a_{n}z^{n}
 \]</span></p>
-<p>où <span class="math inline">\((a_{n})\)</span> est une suite de <span class="math inline">\(\mathbb{K}\)</span> et <span class="math inline">\(z \in \mathbb{K}\)</span>. On peut donc penser à une série entière comme un “polynôme infini”.</p>
-<p>Comme toute série numérique, une série entière possède une <em>nature</em> ; elle peut converger, diverger, converger absolument, etc. Dans le cas des séries entières, la situation est particulièrement tranchée puisqu’on montrera l’existence d’un réel <span class="math inline">\(R \in \mathbb{R}_{+}\cup \{+\infty\}\)</span> tel que la série converge absolument si <span class="math inline">\(|z|&lt;R\)</span> et diverge grossièrement si <span class="math inline">\(|z|&gt;R\)</span>.</p>
-<p>Toute série entière définit donc naturellement sur son disque ouvert de convergence une <em>fonction</em>, avec laquelle il est très facile de <em>calculer</em>. En particulier, on pourra dériver ou intégrer la somme d’une série entière comme on le ferait avec un polynôme. Les séries entières se prêtent donc particulièrement bien à la résolution d’<em>équations différentielles</em>, et ce sera pour nous leur principale application.</p>
+<p>où <span class="math inline">\((a_{n})\)</span> est une suite de <span class="math inline">\(\mathbb{K}\)</span> et <span class="math inline">\(z \in \mathbb{K}\)</span>. On peut donc penser à une série entière comme un « polynôme infini ».</p>
+<p>Comme toute série numérique, une série entière possède une <em>nature</em> ; elle peut converger, diverger, converger absolument, etc. Dans le cas des séries entières, la situation est particulièrement tranchée puisqu’on montre l’existence d’un réel <span class="math inline">\(R \in \mathbb{R}_{+}\cup \{+\infty\}\)</span>, le <em>rayon de convergence</em>, tel que la série converge absolument si <span class="math inline">\(|z|&lt;R\)</span> et diverge grossièrement si <span class="math inline">\(|z|&gt;R\)</span>.</p>
+<p>Toute série entière définit donc naturellement sur son disque ouvert de convergence une <em>fonction</em>, avec laquelle il est très facile de <em>calculer</em>. En particulier, on peut dériver ou intégrer la somme d’une série entière comme on le ferait avec un polynôme. Les séries entières se prêtent donc particulièrement bien à la résolution d’<em>équations différentielles</em>, et ce sera pour nous leur principale application.</p>
 <p>Les séries entières permettent également des raisonnements plus algébriques et combinatoires, via l’unicité de leurs <em>coefficients</em> <span class="math inline">\((a_{n})_{n\in
-\mathbb{N}}\)</span>, comme dans le cas des polynômes. Malheureusement, le <em>produit</em> de deux séries entières n’est pas au programme en TSI, ce qui vient affaiblir cette utilisation en ne conférant pas à l’ensemble des séries entières sa structure la plus générale.</p>
+\mathbb{N}}\)</span>, comme dans le cas des polynômes. Malheureusement, le <em>produit</em> de deux séries entières n’est pas au programme en TSI, ce qui vient affaiblir cet aspect algébrique en ne conférant pas à l’ensemble des séries entières sa structure la plus générale.</p>
 </section>
 <section id="sec-06-convergence" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="sec-06-convergence"><span class="header-section-number">6.1</span> Convergence d’une série entière</h2>
@@ -332,14 +347,22 @@ Note&nbsp;6.1: Borne supérieure
 \]</span></p>
 </div>
 <div id="thm-convergence" class="theorem">
-<p><span class="theorem-title"><strong>Théorème 6.1</strong></span> Soit <span class="math inline">\(\sum a_{n}z^{n}\)</span> une série entière de rayon de convergence <span class="math inline">\(R&gt;0\)</span>. Alors</p>
-<ol type="1">
+<p><span class="theorem-title"><strong>Théorème 6.1 (Convergence d’une série entière)</strong></span> Soit <span class="math inline">\(\sum a_{n}z^{n}\)</span> une série entière de rayon de convergence <span class="math inline">\(R&gt;0\)</span>. Alors</p>
+<ul>
 <li><p>la série <span class="math inline">\(\sum a_{n}z^{n}\)</span> <em>converge absolument</em> pour tout <span class="math inline">\(z \in \mathbb{K}\)</span> avec <span class="math inline">\(|z|&lt;R\)</span>,</p></li>
 <li><p>la série <span class="math inline">\(\sum a_{n}z^{n}\)</span> <em>diverge grossièrement</em> pour tout <span class="math inline">\(z \in \mathbb{K}\)</span> avec <span class="math inline">\(|z|&gt;R\)</span>,</p></li>
-</ol>
+<li><p>si <span class="math inline">\(|z|=R\)</span>, tous les scénarios sont possibles (convergence, divergence, divergence grossière,…).</p></li>
+</ul>
 </div>
-<div id="rem-bord" class="proof remark">
-<p><span class="proof-title"><em>Remarque 6.2</em>. </span>Si <span class="math inline">\(|z| = R\)</span>, tous les scénarios sont possibles (convergence, divergence, divergence grossière,…).</p>
+<div id="fig-disque-convergence" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-disque-convergence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./tikz/svg/06-1.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-disque-convergence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.1: Disque ouvert de convergence : convergence absolue à l’intérieur, divergence grossière à l’extérieur, et tous les scénarios possibles sur le cercle <span class="math inline">\(|z|=R\)</span>.
+</figcaption>
+</figure>
 </div>
 <div id="def-disque" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 6.3 (Disque ouvert de convergence)</strong></span> Le <strong>disque ouvert de convergence</strong> d’une série entière <span class="math inline">\(\sum a_{n}z^{n}\)</span> de rayon de convergence <span class="math inline">\(R&gt;0\)</span> est l’ensemble</p>
@@ -348,17 +371,17 @@ Note&nbsp;6.1: Borne supérieure
 \]</span></p>
 </div>
 <div id="rem-R-infini" class="proof remark">
-<p><span class="proof-title"><em>Remarque 6.3</em>. </span>Si <span class="math inline">\(R=+\infty\)</span>, la série converge pour tout <span class="math inline">\(z \in \mathbb{K}\)</span>.</p>
+<p><span class="proof-title"><em>Remarque 6.2</em>. </span>Si <span class="math inline">\(R=+\infty\)</span>, la série converge pour tout <span class="math inline">\(z \in \mathbb{K}\)</span>.</p>
 </div>
 <div id="rem-intervalle" class="proof remark">
-<p><span class="proof-title"><em>Remarque 6.4</em>. </span>Si la variable est réelle, le disque ouvert de convergence est un <em>intervalle</em> ouvert de convergence, égal à <span class="math inline">\(]-R,R[\)</span>.</p>
+<p><span class="proof-title"><em>Remarque 6.3</em>. </span>Si la variable est réelle, le disque ouvert de convergence est un <em>intervalle</em> ouvert de convergence, égal à <span class="math inline">\(]-R,R[\)</span>.</p>
 </div>
 <div id="exm-geometrique" class="theorem example">
 <p><span class="theorem-title"><strong>Exemple 6.4</strong></span> La série entière <span class="math inline">\(\sum z^{n}\)</span> est une série géométrique qui converge ssi <span class="math inline">\(|z|&lt;1\)</span>. Donc <span class="math inline">\(R=1\)</span>. De plus</p>
 <p><span class="math display">\[
     \forall |z|&lt;1,\ \sum_{n=0}^{+\infty} z^{n}=\frac{1}{1-z}
 \]</span></p>
-<p>Cet exemple montre que la classe des séries entières englobe des fonctions bien plus générales que les polynômes.</p>
+<p>Cet exemple montre que les séries entières englobent des fonctions bien plus générales que les polynômes.</p>
 </div>
 </section>
 <section id="méthode-pratique-de-calcul-dun-rayon-de-convergence" class="level3" data-number="6.1.3">
@@ -370,15 +393,15 @@ Note&nbsp;6.1: Borne supérieure
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note&nbsp;6.2: Rappel (critère de d’Alembert)
+Note&nbsp;6.2: Critère de d’Alembert
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Soit <span class="math inline">\(\sum u_n\)</span> une série à termes strictement positifs. On suppose que <span class="math inline">\(\frac{u_{n+1}}{u_n}\to \lambda\)</span> quand <span class="math inline">\(n\to +\infty\)</span>. Alors</p>
-<ol type="1">
+<ul>
 <li><p>si <span class="math inline">\(\lambda&lt;1\)</span>, la série <span class="math inline">\(\sum u_n\)</span> converge absolument,</p></li>
 <li><p>si <span class="math inline">\(\lambda&gt;1\)</span>, la série diverge grossièrement.</p></li>
-</ol>
+</ul>
 </div>
 </div>
 <div id="exm-d-alembert-1" class="theorem example">
@@ -451,18 +474,18 @@ Astuce&nbsp;6.1
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Il faut traduire la condition donnée par le critère de d’Alembert en une condition sur le <em>module</em> de la variable.</p>
+<p>Pour calculer un rayon de convergence, il faut traduire la condition donnée par le critère de d’Alembert en une condition sur le <em>module</em> de la variable.</p>
 </div>
 </div>
-<p>Quand on ne dispose pas de formule explicite pour <span class="math inline">\(a_{n}\)</span>, mais seulement d’informations <em>qualitatives</em> (par exemple une majoration ou un équivalent), on peut utiliser l’un des résultats suivants.</p>
+<p>Quand on ne dispose pas de formule explicite pour les coefficients, mais seulement d’informations <em>qualitatives</em> (par exemple une majoration ou un équivalent), on peut utiliser l’un des résultats suivants.</p>
 <div id="prp-majoration" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 6.1 (<span class="math inline">\(|a_{n}| \leqslant |b_{n}|\)</span>)</strong></span> Si <span class="math inline">\(|a_{n}|\leqslant |b_{n}|\)</span> pour tout <span class="math inline">\(n \in \mathbb{N}\)</span>, alors le rayon de convergence <span class="math inline">\(R_{a}\)</span> de la série entière <span class="math inline">\(\sum a_{n}z^{n}\)</span> est <em>supérieur ou égal</em> au rayon de convergence <span class="math inline">\(R_{b}\)</span> de la série entière <span class="math inline">\(\sum b_{n}z^{n}\)</span> i.e.</p>
+<p><span class="theorem-title"><strong>Proposition 6.1</strong></span> Si <span class="math inline">\(|a_{n}|\leqslant |b_{n}|\)</span> pour tout <span class="math inline">\(n \in \mathbb{N}\)</span>, alors le rayon de convergence <span class="math inline">\(R_{a}\)</span> de la série entière <span class="math inline">\(\sum a_{n}z^{n}\)</span> est <em>supérieur ou égal</em> au rayon de convergence <span class="math inline">\(R_{b}\)</span> de la série entière <span class="math inline">\(\sum b_{n}z^{n}\)</span> i.e.</p>
 <p><span class="math display">\[
     R_{a} \geqslant R_{b}.
 \]</span></p>
 </div>
 <div id="prp-equivalence" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 6.2 (<span class="math inline">\(a_{n} \sim b_{n}\)</span>)</strong></span> Si <span class="math inline">\(a_{n} \sim b_{n}\)</span> alors les séries entières <span class="math inline">\(\sum a_{n}z^{n}\)</span> et <span class="math inline">\(\sum
+<p><span class="theorem-title"><strong>Proposition 6.2</strong></span> Si <span class="math inline">\(a_{n} \sim b_{n}\)</span> alors les séries entières <span class="math inline">\(\sum a_{n}z^{n}\)</span> et <span class="math inline">\(\sum
 b_{n}z^{n}\)</span> ont même rayon de convergence.</p>
 </div>
 <div id="exm-equivalence" class="theorem example">
@@ -506,11 +529,361 @@ Note&nbsp;6.3
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Bien sûr, on dispose toujours de la définition du rayon de convergence ; si <span class="math inline">\((a_{n}z^{n})\)</span> est bornée pour un certain <span class="math inline">\(z \in \mathbb{K}\)</span> (par exemple si la série converge en <span class="math inline">\(z\)</span> !), alors <span class="math inline">\(R \geqslant |z|\)</span>.</p>
+<p>Bien sûr, on dispose toujours de la définition du rayon de convergence ; si <span class="math inline">\((a_{n}z^{n})\)</span> est bornée pour un certain <span class="math inline">\(z \in \mathbb{K}\)</span> (par exemple si la série converge en <span class="math inline">\(z\)</span>), alors <span class="math inline">\(R \geqslant |z|\)</span>.</p>
 </div>
 </div>
 <div id="exm-R-def" class="theorem example">
 <p><span class="theorem-title"><strong>Exemple 6.10</strong></span> Si la suite <span class="math inline">\((a_{n})\)</span> est bornée alors la suite <span class="math inline">\((a_{n}1^{n})\)</span> est bornée. Donc le rayon de convergence de la série <span class="math inline">\(\sum a_{n}z^{n}\)</span> est supérieur ou égal à <span class="math inline">\(1\)</span>.</p>
+<p>Par exemple, la série entière <span class="math inline">\(\sum \cos(n) x^{n}\)</span> possède un rayon de convergence supérieur ou égal à <span class="math inline">\(1\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="sec-06-somme" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="sec-06-somme"><span class="header-section-number">6.2</span> Somme d’une série entière d’une variable réelle</h2>
+<section id="définition-1" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="définition-1"><span class="header-section-number">6.2.1</span> Définition</h3>
+<div id="def-somme-serie-entiere" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 6.4 (Somme d’une série entière)</strong></span> La <strong>somme</strong> d’une série entière <span class="math inline">\(\sum_{n \geqslant 0} a_n x^n\)</span>, de rayon de convergence <span class="math inline">\(R&gt;0\)</span>, est la fonction <span class="math inline">\(f\)</span> définie sur <span class="math inline">\(]-R,R[\)</span> par</p>
+<p><span class="math display">\[
+\forall x \in ]-R,R[,\ f(x) = \sum_{n=0}^{+\infty} a_n x^n.
+\]</span></p>
+</div>
+<div id="exm-somme-geometrique" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 6.11</strong></span> La série géométrique <span class="math inline">\(\sum x^{n}\)</span> a pour somme la fonction <span class="math inline">\(x \mapsto \frac{1}{1-x}\)</span> sur <span class="math inline">\(]-1,1[\)</span> (voir <a href="#exm-geometrique" class="quarto-xref">Exemple&nbsp;<span>6.4</span></a>).</p>
+</div>
+</section>
+<section id="le-théorème-de-dérivation-terme-à-terme" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="le-théorème-de-dérivation-terme-à-terme"><span class="header-section-number">6.2.2</span> Le théorème de dérivation terme à terme</h3>
+<p>On explique maintenant comment dériver la somme d’une série entière. Le résultat semble évident (on sait depuis longtemps que la dérivée d’une somme <em>finie</em> est la somme des dérivées) mais il n’en n’est rien. Ce théorème est d’ailleurs admis.</p>
+<p>Il s’agit en fait d’un résultat d’<em>interversion de limites</em>, une dérivée étant une limite d’un <em>taux d’accroissement</em>, et la somme d’une série éntière étant la limite de ses <em>sommes parielles</em>.</p>
+<p>Une telle intervertion n’est pas toujours possible. Elle l’est pour les séries entières.</p>
+<div id="prp-rayon-serie-derivee" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 6.3 (Série dérivée)</strong></span> Une série entière <span class="math inline">\(\sum_{n \geqslant 0} a_n z^n\)</span> et sa <strong>série dérivée</strong> <span class="math inline">\(\sum_{n \geqslant 1} n a_n z^{n-1}\)</span> ont le même rayon de convergence.</p>
+</div>
+<div id="thm-derivation-terme-a-terme" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 6.2 (Dérivation terme à terme)</strong></span> La somme <span class="math inline">\(f\)</span> d’une série entière <span class="math inline">\(\sum_{n \geqslant 0} a_n x^n\)</span>, de rayon de convergence <span class="math inline">\(R&gt;0\)</span>, est dérivable sur <span class="math inline">\(]-R,R[\)</span> et</p>
+<p><span class="math display">\[
+\forall x \in ]-R,R[,\ f'(x) = \sum_{n=1}^{+\infty} n a_n x^{n-1}.
+\]</span></p>
+</div>
+<div id="tip-derivation-terme-a-terme" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce&nbsp;6.2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On peut donc <em>dériver terme à terme</em> la somme d’une série entière sur son intervalle ouvert de convergence <em>sans changer</em> son rayon de convergence.</p>
+</div>
+</div>
+<div id="cor-derivees-successives" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollaire 6.1 (Classe <span class="math inline">\(C^{\infty}\)</span>)</strong></span> La somme <span class="math inline">\(f\)</span> d’une série entière <span class="math inline">\(\sum a_n x^n\)</span>, de rayon de convergence <span class="math inline">\(R&gt;0\)</span>, est de classe <span class="math inline">\(C^{\infty}\)</span> sur <span class="math inline">\(]-R,R[\)</span> et</p>
+<p><span class="math display">\[
+\forall k \in \mathbb{N},\ \forall x \in ]-R,R[,\ f^{(k)}(x) = \sum_{n=k}^{+\infty} n(n-1)\cdots(n-k+1) a_n x^{n-k} = \sum_{n=k}^{+\infty} \frac{n!}{(n-k)!} a_n x^{n-k}.
+\]</span></p>
+</div>
+<div id="exm-derivees-geometrique" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 6.12 (Dérivées successives de la série géométrique)</strong></span> On sait que la série entière <span class="math inline">\(\sum x^{n}\)</span> possède un rayon de convergence égal à <span class="math inline">\(1\)</span> et</p>
+<p><span class="math display">\[
+    \forall x \in ]-1,1[,\ f(x) = \sum_{n=0}^{+\infty} x^{n}=
+\frac{1}{1-x}.
+\]</span></p>
+<p>Par dérivations terme à terme consécutives, on obtient</p>
+<p><span class="math display">\[
+\forall k \in \mathbb{N},\ \forall x \in ]-1,1[,\ f^{(k)}(x) = \frac{k!}{(1-x)^{k+1}} = \sum_{n=k}^{+\infty} \frac{n!}{(n-k)!} x^{n-k},
+\]</span></p>
+</div>
+<div id="cor-integration-terme-a-terme" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollaire 6.2 (Intégration terme à terme)</strong></span> Soit <span class="math inline">\(\sum a_n x^n\)</span> une série entière de rayon de convergence <span class="math inline">\(R&gt;0\)</span> et de somme <span class="math inline">\(f\)</span>. Alors toute primitive <span class="math inline">\(F\)</span> de <span class="math inline">\(f\)</span> sur <span class="math inline">\(]-R,R[\)</span> est de la forme</p>
+<p><span class="math display">\[
+\forall x \in ]-R,R[,\ F(x) = F(0) + \sum_{n=0}^{+\infty} a_n \frac{x^{n+1}}{n+1}.
+\]</span></p>
+</div>
+<div id="exm-integration-geometrique" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 6.13 (Intégration terme à terme de la série géométrique)</strong></span> En intégrant terme à terme la série géométrique, on obtient</p>
+<p><span class="math display">\[
+\forall x \in ]-1,1[,\ -\ln(1-x) = 0 + \sum_{n=0}^{+\infty} \frac{x^{n+1}}{n+1}.
+\]</span></p>
+</div>
+</section>
+</section>
+<section id="sec-06-dse" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="sec-06-dse"><span class="header-section-number">6.3</span> Fonctions développables en série entière</h2>
+<p>On a vu dans la section précédente que certaines fonctions peuvent s’écrire comme somme d’une série entière sur un certain intervalle ouvert centré en <span class="math inline">\(0\)</span>. C’est par exemple le cas des fonctions <span class="math inline">\(x \mapsto \frac{1}{1-x}\)</span> et <span class="math inline">\(x
+\mapsto -\ln(1-x)\)</span> sur <span class="math inline">\(]-1,1[\)</span>.</p>
+<p>On dit que de telles fonctions sont <em>développables en série entière</em>.</p>
+<div id="def-developpee-en-serie-entiere" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 6.5 (Fonction développable en série entière)</strong></span> Soit <span class="math inline">\(r&gt;0\)</span>. On dit qu’une fonction <span class="math inline">\(f\)</span> est <strong>développable en série entière</strong> sur <span class="math inline">\(]-r,r[\)</span> s’il existe une série entière <span class="math inline">\(\sum a_n x^n\)</span> de rayon de convergence <span class="math inline">\(R \geqslant r &gt; 0\)</span> telle que</p>
+<p><span class="math display">\[
+\forall x \in ]-r,r[,\ f(x) = \sum_{n=0}^{+\infty} a_n x^n.
+\]</span></p>
+</div>
+<div id="prp-unicite-dse" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 6.4 (Développement de Taylor)</strong></span> Soit <span class="math inline">\(r&gt;0\)</span> tel que</p>
+<p><span class="math display">\[
+    \forall x \in ]-r,r[,\ f(x) = \sum_{n=0}^{+\infty}a_{n}x^{n}.
+\]</span></p>
+<p>Alors <span class="math inline">\(f\)</span> est de classe <span class="math inline">\(C^{\infty}\)</span> sur <span class="math inline">\(]-r,r[\)</span> et</p>
+<p><span class="math display">\[
+    \forall n \in \mathbb{N},\ a_{n}= \frac{f^{(n)}(0)}{n!}.
+\]</span></p>
+</div>
+<div id="cor-unicite" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollaire 6.3 (Unicité du développement en série entière)</strong></span> S’il existe, le développement en série entière d’une fonction <span class="math inline">\(f\)</span> est unique.</p>
+</div>
+<div id="exm-unicite" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 6.14</strong></span> Si <span class="math inline">\(\sum a_n x^n\)</span> est une série entière de rayon de convergence <span class="math inline">\(R \geqslant r&gt; 0\)</span> telle que</p>
+<p><span class="math display">\[
+\forall x \in ]-r,r[,\ \sum_{n=0}^{+\infty} a_n x^n = 0,
+\]</span></p>
+<p>alors <span class="math inline">\(a_n = 0\)</span> pour tout <span class="math inline">\(n \in \mathbb{N}\)</span>.</p>
+</div>
+<div id="prp-dse-reference" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 6.5 (Développements en série entière de références)</strong></span> &nbsp;</p>
+<ol type="1">
+<li>La fonction <span class="math inline">\(x \mapsto \frac{1}{1-x}\)</span> est développable en série entière sur <span class="math inline">\(]-1,1[\)</span> et</li>
+</ol>
+<p><span class="math display">\[
+\forall x \in ]-1,1[,\ \frac{1}{1-x} = \sum_{n=0}^{+\infty} x^n \quad \text{(avec $R=1$)}.
+\]</span></p>
+<ol start="2" type="1">
+<li>La fonction <span class="math inline">\(x \mapsto e^x\)</span> est développable en série entière sur <span class="math inline">\(\mathbb{R}\)</span> et</li>
+</ol>
+<p><span class="math display">\[
+\forall x \in \mathbb{R},\ e^x = \sum_{n=0}^{+\infty} \frac{x^n}{n!} \quad \text{(avec $R=+\infty$)}.
+\]</span></p>
+<ol start="3" type="1">
+<li><p>Pour tout <span class="math inline">\(\alpha \in \mathbb{R}\)</span>, la fonction <span class="math inline">\(x \mapsto (1+x)^{\alpha}\)</span> est développable en série entière sur <span class="math inline">\(]-1,1[\)</span> et</p>
+<p><span class="math display">\[
+\forall x \in ]-1,1[,\ (1+x)^{\alpha}= 1 + \sum_{n=1}^{+\infty}
+\frac{\alpha(\alpha-1)\cdots (\alpha-n+1)}{n!}x^{n},\ \quad \text{(avec
+$R=1$).}
+\]</span></p></li>
+</ol>
+</div>
+<div id="tip-reference" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce&nbsp;6.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ces trois développements permettent de retrouver les développements limités des fonctions usuelles par intégration, dérivation ou substitution.</p>
+</div>
+</div>
+<div id="exm-ln" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 6.15 (Développement en série entière de <span class="math inline">\(ln(1+x)\)</span>)</strong></span> Montrer que la fonction <span class="math inline">\(x \mapsto \ln(1+x)\)</span> est développable en série entière sur <span class="math inline">\(]-1,1[\)</span>, et donner son développement en série entière.</p>
+<details>
+<div>
+<p>On sait que</p>
+<p><span class="math display">\[
+    \forall u \in ]-1,1[,\ \frac{1}{1-u} = \sum_{n=0}^{+\infty} u^{n}.
+\]</span></p>
+<p>De plus, pour tout <span class="math inline">\(x \in ]-1,1[\)</span>, <span class="math inline">\(-x \in ]-1,1[\)</span>. Donc par <em>substitution</em>,</p>
+<p><span class="math display">\[
+    \forall x \in ]-1,1[,\ \frac{1}{1+x} = \sum_{n=0}^{+\infty}(-x)^{n}
+    = \sum_{n=0}^{+\infty}(-1)^{n}x^{n}.
+\]</span></p>
+<p>Par intégration terme à terme, on en déduit <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p><span class="math display">\[
+    \forall x \in ]-1,1[,\ \ln(1+x) = \sum_{n=0}^{+\infty} (-1)^{n}\frac{x^{n+1}}{n+1} = \sum_{n=1}^{+\infty} \frac{(-1)^{n-1}}{n}x^{n}.
+\]</span></p>
+</div>
+</details>
+</div>
+<div id="tip-dl" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce&nbsp;6.4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Un développement en série entière fournit, par troncature, un développement limité à tout ordre en <span class="math inline">\(0\)</span> ; c’est en pratique la manière la plus commode de retrouver les développements limités usuels.</p>
+</div>
+</div>
+</section>
+<section id="sec-06-exponentielle-complexe" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="sec-06-exponentielle-complexe"><span class="header-section-number">6.4</span> L’exponentielle complexe</h2>
+<div id="def-exponentielle-complexe" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 6.6 (Exponentielle complexe)</strong></span> La série entière <span class="math inline">\(\sum_{n \in \mathbb{N}} \frac{z^n}{n!}\)</span> possède un rayon de convergence égal à <span class="math inline">\(+\infty\)</span>, et on pose</p>
+<p><span class="math display">\[
+\forall z \in \mathbb{C},\ \exp(z) = \sum_{n=0}^{+\infty} \frac{z^n}{n!}.
+\]</span></p>
+</div>
+<div id="cor-dse-cos-sin" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollaire 6.4 (Développements en série entière des fonctions sinus et cosinus)</strong></span> Les fonctions <span class="math inline">\(\cos\)</span> et <span class="math inline">\(\sin\)</span> sont développables en série entière sur <span class="math inline">\(\mathbb{R}\)</span> et</p>
+<p><span class="math display">\[
+\forall x \in \mathbb{R},\
+\begin{cases}
+    \cos(x) = \displaystyle\sum_{n=0}^{+\infty} (-1)^n \frac{x^{2n}}{(2n)!},\\
+    \sin(x) = \displaystyle\sum_{n=0}^{+\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!}.
+\end{cases}
+\]</span></p>
+</div>
+</section>
+<section id="exercices" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercices">Exercices</h2>
+<section id="convergence-dune-série-entière-1" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="convergence-dune-série-entière-1"><span class="header-section-number">6.4.1</span> Convergence d’une série entière</h3>
+<div id="exr-06-alembert" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 6.1</strong></span> (Critère de d’Alembert). Déterminer les rayons de convergence des séries entières suivantes :</p>
+<p><span class="math display">\[
+    \begin{array}{ll}
+    \sum_{n \geqslant 0} \frac{2^{n}}{n!} x^{n}&amp;\sum_{n \in \mathbb{N}} \frac{t^{2n+1}}{(2n+1)!}\\
+     \sum_{n \geqslant 1} \sqrt{n}\, t^{n}&amp;\sum_{n \in \mathbb{N}} \frac{x^{n}}{n^{n}}\\
+    \sum_{k \in \mathbb{N}} (-1)^{k} k!\, t^{k+1}&amp;\sum_{n \in \mathbb{N}} \frac{x^{2n}}{3^{n}}\\    
+    \end{array}
+\]</span></p>
+</div>
+<div id="exr-06-equivalent" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 6.2</strong></span> (Equivalent). Déterminer un équivalent simple de <span class="math inline">\(\sqrt{n+1} - \sqrt{n}\)</span> en <span class="math inline">\(+\infty\)</span>, et en déduire le rayon de convergence de la série entière <span class="math inline">\(\sum_{n \geqslant 1} (\sqrt{n+1} - \sqrt{n}) x^{n}\)</span>.</p>
+</div>
+<div id="exr-06-encadrement" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 6.3</strong></span> (Encadrement). On suppose que <span class="math inline">\((a_n)_{n \in \mathbb{N}}\)</span> est une suite de réels vérifiant, pour tout <span class="math inline">\(n \in \mathbb{N}\)</span>, <span class="math inline">\(1 \leqslant a_n \leqslant n^{2}\)</span>. Déterminer le rayon de convergence de la série entière <span class="math inline">\(\sum a_n x^{n}\)</span>.</p>
+</div>
+<div id="exr-06-polynome" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 6.4</strong></span> Soit <span class="math inline">\(P\)</span> un polynôme non nul de <span class="math inline">\(\mathbb{R}[X]\)</span>. Déterminer les rayons de convergence des séries entières <span class="math inline">\(\sum P(n) x^{n}\)</span> et <span class="math inline">\(\sum \frac{P(n)}{n!} x^{n}\)</span>.</p>
+</div>
+<div id="exr-06-nul-a-partir-rang" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 6.5</strong></span> Que dire d’une série entière <span class="math inline">\(\sum a_n x^{n}\)</span> pour laquelle il existe un entier <span class="math inline">\(N \in \mathbb{N}\)</span> tel que, pour tout <span class="math inline">\(n \geqslant N\)</span>, <span class="math inline">\(a_n = 0\)</span> ? Quel est alors son rayon de convergence ?</p>
+</div>
+<div id="exr-06-somme-deux" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 6.6</strong></span> (Rayon d’une somme). Que peut-on dire du rayon de convergence de la somme de deux séries entières ?</p>
+</div>
+</section>
+<section id="somme-dune-série-entière-dune-variable-réelle" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="somme-dune-série-entière-dune-variable-réelle"><span class="header-section-number">6.4.2</span> Somme d’une série entière d’une variable réelle</h3>
+<div id="exr-06-derivee" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 6.7</strong></span> (Dérivation terme à terme). 1. Déterminer le rayon de convergence de la série entière <span class="math inline">\(\sum_{n \geqslant 0} \frac{x^{2n}}{2n+1}\)</span>. On note <span class="math inline">\(S\)</span> sa somme.</p>
+<ol start="2" type="1">
+<li>En dérivant la fonction <span class="math inline">\(x \mapsto x S(x)\)</span>, déterminer <span class="math inline">\(S(x)\)</span>.</li>
+</ol>
+</div>
+<div id="exr-06-harmonique" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 6.8</strong></span> (Fonction génératrice de la série harmonique). Pour <span class="math inline">\(n \geqslant 1\)</span>, on pose <span class="math inline">\(S_n = \sum_{k=1}^{n} \frac{1}{k}\)</span> et on s’intéresse à la série entière <span class="math inline">\(\sum_{n \geqslant 1} S_n x^{n}\)</span>.</p>
+<ol type="1">
+<li>Montrer que <span class="math inline">\(1 \leqslant S_n \leqslant n\)</span>.</li>
+<li>En déduire que le rayon de convergence de la série entière <span class="math inline">\(\sum_{n \geqslant 1} S_n x^{n}\)</span> est égal à <span class="math inline">\(1\)</span>.</li>
+</ol>
+<p>On pose, pour tout <span class="math inline">\(x \in ]-1,1[\)</span>, <span class="math inline">\(f(x) = \sum_{n \geqslant 1} S_n x^{n}\)</span>.</p>
+<ol start="3" type="1">
+<li>Montrer que pour tout <span class="math inline">\(x \in ]-1,1[\)</span>, on a</li>
+</ol>
+<p><span class="math display">\[
+(1-x)f(x) = \sum_{n=1}^{+\infty} \frac{x^{n}}{n}.
+\]</span></p>
+<ol start="4" type="1">
+<li>En déduire la valeur de <span class="math inline">\(f(x)\)</span>.</li>
+</ol>
+</div>
+</section>
+<section id="fonctions-développables-en-série-entière" class="level3" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="fonctions-développables-en-série-entière"><span class="header-section-number">6.4.3</span> Fonctions développables en série entière</h3>
+<div id="exr-06-ln-arctan" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 6.9</strong></span> (Developpement en série entière de <span class="math inline">\(\arctan\)</span>). Montrer que la fonction <span class="math inline">\(x \mapsto \arctan(x)\)</span> est développable en série entière sur <span class="math inline">\(]-1,1[\)</span> et donner son développement en série entière.</p>
+</div>
+<div id="exr-06-geometrique" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 6.10</strong></span> (Développements en série entière autour de la série géométrique). Soit <span class="math inline">\(c \in \mathbb{R}^{*}_{+}\)</span>. Calculer les développements en série entière en <span class="math inline">\(0\)</span> des fonctions <span class="math inline">\(x \mapsto \frac{1}{1-cx}\)</span> et <span class="math inline">\(x \mapsto \frac{1}{x+c}\)</span>, et donner leur rayon de convergence.</p>
+</div>
+<div id="exr-06-decomposition" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 6.11</strong></span> (Développement en série entière d’une fraction rationnelle). Déterminer des réels <span class="math inline">\(a, b \in \mathbb{R}\)</span> tels que</p>
+<p><span class="math display">\[
+\forall x \in \mathbb{R} \setminus \{1,2\},\ \frac{1}{(x-1)(x-2)} = \frac{a}{x-1} + \frac{b}{x-2},
+\]</span></p>
+<p>puis en déduire que la fonction <span class="math inline">\(x \mapsto \frac{x}{(x-1)(x-2)}\)</span> est développable en série entière au voisinage de <span class="math inline">\(0\)</span>.</p>
+</div>
+<div id="exr-06-erreur" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 6.12</strong></span> (Intégration terme à terme). Montrer que la fonction <span class="math inline">\(x \mapsto \int_{0}^{x} e^{-t^{2}} dt\)</span> est développable en série entière sur <span class="math inline">\(\mathbb{R}\)</span>, et donner son développement en série entière.</p>
+</div>
+<div id="exr-06-geometrique-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 6.13</strong></span> &nbsp;</p>
+<ol type="1">
+<li><p>Donner les développements en série entière des fonctions <span class="math inline">\(x \mapsto \frac{1}{1-x}\)</span>, <span class="math inline">\(x \mapsto \frac{x}{(1-x)^{2}}\)</span> et <span class="math inline">\(x \mapsto \frac{2x^{2}}{(1-x)^{3}}\)</span>.</p></li>
+<li><p>Déterminer le rayon de convergence de la série entière <span class="math inline">\(\sum_{n \geqslant 0} n^{2} x^{n}\)</span> et, en écrivant <span class="math inline">\(n^{2}\)</span> sous la forme <span class="math inline">\(a + bn + cn(n-1)\)</span>, calculer sa somme.</p></li>
+</ol>
+</div>
+<div id="exr-06-exponentielle" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 6.14</strong></span> &nbsp;</p>
+<ol type="1">
+<li><p>Donner les développements en série entière des fonctions <span class="math inline">\(x \mapsto e^{x}\)</span>, <span class="math inline">\(x \mapsto x e^{x}\)</span> et <span class="math inline">\(x \mapsto x^{2} e^{x}\)</span>.</p></li>
+<li><p>En écrivant <span class="math inline">\((n+1)(n-2)\)</span> sous la forme <span class="math inline">\(an(n-1) + bn + c\)</span>, <span class="math inline">\(a,b,c \in
+\mathbb{R}\)</span>, calculer la somme et le rayon de convergence de la série <span class="math inline">\(\sum_{n \geqslant 0} \frac{(n+1)(n-2)}{n!} x^{n}\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-06-prolongeable" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 6.15</strong></span> (Une fonction de classe <span class="math inline">\(C^{\infty}\)</span>). Montrer que la fonction <span class="math inline">\(f\)</span> de <span class="math inline">\(\mathbb{R}\)</span> dans <span class="math inline">\(\mathbb{R}\)</span> définie par</p>
+<p><span class="math display">\[
+f(x) = \begin{cases}
+    \dfrac{e^{x}-1}{x} &amp; \text{si $x \neq 0$},\\
+    1 &amp; \text{si $x = 0$}
+\end{cases}
+\]</span></p>
+<p>est de classe <span class="math inline">\(C^{\infty}\)</span> sur <span class="math inline">\(\mathbb{R}\)</span> et calculer sa dérivée <span class="math inline">\(n\)</span>-ième en <span class="math inline">\(0\)</span> pour tout <span class="math inline">\(n \in \mathbb{N}\)</span>.</p>
+</div>
+</section>
+<section id="lexponentielle-complexe" class="level3" data-number="6.4.4">
+<h3 data-number="6.4.4" class="anchored" data-anchor-id="lexponentielle-complexe"><span class="header-section-number">6.4.4</span> L’exponentielle complexe</h3>
+<div id="exr-06-j" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 6.16</strong></span> (Exponentielle complexe). On note <span class="math inline">\(j\)</span> le nombre complexe <span class="math inline">\(e^{2i\pi/3}\)</span>.</p>
+<ol type="1">
+<li>Rappeler la valeur de <span class="math inline">\(1 + j + j^{2}\)</span>.</li>
+<li>En déduire que, pour tout <span class="math inline">\(k \in \mathbb{N}\)</span>,</li>
+</ol>
+<p><span class="math display">\[
+1 + j^{k} + (j^{2})^{k} = \begin{cases}
+    3 &amp; \text{si $k$ est un multiple de $3$},\\
+    0 &amp; \text{sinon.}
+\end{cases}
+\]</span></p>
+<ol start="3" type="1">
+<li>Montrer que le rayon de convergence de la série entière <span class="math inline">\(\sum_{n \in \mathbb{N}} \frac{t^{3n}}{(3n)!}\)</span> est égal à <span class="math inline">\(+\infty\)</span> et déterminer sa somme à l’aide de la fonction <span class="math inline">\(t \mapsto e^{t} + e^{jt} + e^{j^{2}t}\)</span>.</li>
+</ol>
+</div>
+</section>
+<section id="divers" class="level3" data-number="6.4.5">
+<h3 data-number="6.4.5" class="anchored" data-anchor-id="divers"><span class="header-section-number">6.4.5</span> Divers</h3>
+<div id="exr-06-serie-generatrice" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 6.17</strong></span> (Série génératrice). On considère la suite <span class="math inline">\((s_n)_{n \geqslant 0}\)</span> définie par :</p>
+<p><span class="math display">\[
+\left\{
+\begin{array}{l}
+    s_0 = 0,\\
+    \forall n \geqslant 0,\quad s_{n+1} = 2 s_n + 1.
+\end{array}
+\right.
+\]</span></p>
+<p>On appelle <em>série génératrice</em> de la suite <span class="math inline">\((s_n)_{n \in \mathbb{N}}\)</span> la série entière <span class="math inline">\(\sum_{n \geqslant 0} s_n x^{n}\)</span>. On note <span class="math inline">\(R\)</span> le rayon de convergence de cette série.</p>
+<ol type="1">
+<li>Montrer par récurrence que <span class="math inline">\(0 \leqslant s_n \leqslant 3^{n}\)</span> pour tout <span class="math inline">\(n \geqslant 0\)</span>. En déduire que <span class="math inline">\(R \geqslant \frac{1}{3}\)</span>.</li>
+</ol>
+<p>On pose alors, pour tout <span class="math inline">\(x \in ]-1/3, 1/3[\)</span> :</p>
+<p><span class="math display">\[
+\forall x \in ]-1/3,1/3[,\quad f(x) = \sum_{n=0}^{+\infty} s_n x^{n}.
+\]</span></p>
+<ol start="2" type="1">
+<li>Montrer que</li>
+</ol>
+<p><span class="math display">\[
+\forall x \in ]-1/3,1/3[,\quad (1-2x)f(x) = \frac{1}{1-x} - 1.
+\]</span></p>
+<ol start="3" type="1">
+<li>En déduire qu’il existe deux réels <span class="math inline">\(a\)</span> et <span class="math inline">\(b\)</span> tels que</li>
+</ol>
+<p><span class="math display">\[
+\forall x \in ]-1/3,1/3[,\quad f(x) = \frac{a}{1-x} + \frac{b}{1-2x}.
+\]</span></p>
+<ol start="4" type="1">
+<li>En déduire <span class="math inline">\(s_n\)</span> pour tout <span class="math inline">\(n \in \mathbb{N}\)</span>.</li>
+</ol>
 </div>
 
 
@@ -520,6 +893,7 @@ Note&nbsp;6.3
 <hr>
 <ol>
 <li id="fn1"><p>La convergence d’une série entière est toujours acquise en <span class="math inline">\(0\)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Ce résultat peut être considéré comme un résultat du cours.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
