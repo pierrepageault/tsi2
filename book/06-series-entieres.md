@@ -101,7 +101,7 @@ Soit $r>0$ tel que la suite $(a_{n}r^{n})$ soit bornée. Alors pour tout $z \in
 #### Borne supérieure
 
 Soit $A$ un ensemble *non vide* et *majoré* de $\mathbb{R}$. Alors $A$ possède une
-**borne supérieure** $m \in \mathbb{R}$ définie par les deux propriétées
+**borne supérieure** $m \in \mathbb{R}$ définie par les deux propriétés
 suivantes :
 
 1. la borne supérieure $m$ de $A$ est un *majorant* de $A$ i.e.
@@ -129,7 +129,7 @@ Le **rayon de convergence** de la série entière $\sum a_{n}z^{n}$ est le réel
 $R \in \mathbb{R}_+ \cup \{+\infty\}$ défini par 
 
 $$
-    R = \sup \left\{ z \geqslant 0,\ \text{$(a_{n}r^{n})$ bornée}\right\}
+    R = \sup \left\{ r \geqslant 0,\ \text{$(a_{n}r^{n})$ bornée}\right\}
 $$
 
 :::
@@ -184,7 +184,7 @@ ouvert de convergence, égal à $]-R,R[$.
 La série entière $\sum z^{n}$ est une série géométrique qui converge ssi $|z|<1$. Donc $R=1$. De plus 
 
 $$
-    \forall |z|<1,\ \sum_{n=0}^{+\infty}=\frac{1}{1-z}
+    \forall |z|<1,\ \sum_{n=0}^{+\infty} z^{n}=\frac{1}{1-z}
 $$
 
 Cet exemple montre que la classe des séries entières englobe des fonctions bien
@@ -195,14 +195,14 @@ plus générales que les polynômes.
 ### Méthode pratique de calcul d'un rayon de convergence
 
 Lorsque l'on dispose d'une formule explicite pour les coefficients d'une série
-entière, la manière la plus efficace est en générale d'utilisé le critère de
+entière, la manière la plus efficace est en général d'utiliser le critère de
 d'Alembert pour les séries numériques. 
 
 ::: {#nte-critere-d-alembert .callout-note}
 
 #### Rappel (critère de d'Alembert)
 
-Soit $\sum u_n$ une série à terme strictement positifs. On suppose que $\frac{u_{n+1}}{u_n}\to \lambda $ quand $n\to +\infty$. Alors 
+Soit $\sum u_n$ une série à termes strictement positifs. On suppose que $\frac{u_{n+1}}{u_n}\to \lambda $ quand $n\to +\infty$. Alors 
 
 1. si $\lambda<1$, la série $\sum u_n$ converge absolument,
 
@@ -259,7 +259,7 @@ $$
     \forall n \in \mathbb{N},\ \frac{u_{n+1}}{u_{n}} = \frac{|z|}{n+1} \underset{n \to +\infty}{\to} 0 <1.
 $$
 
-Donc, par le critère de d'Alemnbert, la série $\sum \frac{z^{n}}{n!}$ converge
+Donc, par le critère de d'Alembert, la série $\sum \frac{z^{n}}{n!}$ converge
 (absolument)
 pour tout $z \in \mathbb{C}$. Donc le rayon de convergence de cette série est
 égal à $+\infty$.
@@ -287,8 +287,7 @@ $$
     \forall n \in \mathbb{N},\ \frac{u_{n+1}}{u_{n}}= |x^{2}|\frac{3^{n+1}+1}{3^{n}+1} \sim 3|x|^{2} \underset{n \to +\infty}{\to} 3|x|^{2}.
 $$
 
-Donc, par le critère de d'Alemnbert, la série $\sum \frac{x^{
-2n}}{3^{n}+1}$
+Donc, par le critère de d'Alembert, la série $\sum \frac{x^{2n}}{3^{n}+1}$
 
 - converge (absolument) si $3|x|^{2}<1$ i.e. si $|x|<\frac{1}{\sqrt{3}}$,
 
@@ -308,14 +307,14 @@ condition sur le *module* de la variable.
 :::
 
 Quand on ne dispose pas de formule explicite pour $a_{n}$, mais seulement
-d'information *qualitative* (par exemple une majoration ou un équivalent), on
-peut utiliser l'un des résultats suivant. 
+d'informations *qualitatives* (par exemple une majoration ou un équivalent), on
+peut utiliser l'un des résultats suivants. 
 
 ::: {#prp-majoration}
 
 #### $|a_{n}| \leqslant |b_{n}|$ 
 
-Si $|a_{n}|\leqslant ||b_{n}$ pour tout $n \in \mathbb{N}$, alors le rayon de
+Si $|a_{n}|\leqslant |b_{n}|$ pour tout $n \in \mathbb{N}$, alors le rayon de
 convergence $R_{a}$ de la série entière $\sum a_{n}z^{n}$ est *supérieur ou
 égal* au rayon de convergence $R_{b}$ de la série entière $\sum b_{n}z^{n}$ i.e.
 
@@ -329,7 +328,7 @@ $$
 
 #### $a_{n} \sim b_{n}$
 
-Si $a_{n} \sim b_{n}$ alors les séries entière $\sum a_{n}z^{n}$ et $\sum
+Si $a_{n} \sim b_{n}$ alors les séries entières $\sum a_{n}z^{n}$ et $\sum
 b_{n}z^{n}$ ont même rayon de convergence. 
 
 :::
@@ -388,7 +387,7 @@ convergence de la série entière $\sum a_{n}z^{n}$ est au moins égal à $1$.
 
 ::: {#nte-R-def .callout-note}
 
-Bien sur, on dispose toujours de la définition du rayon de convergence ; si
+Bien sûr, on dispose toujours de la définition du rayon de convergence ; si
 $(a_{n}z^{n})$ est bornée pour un certain $z \in \mathbb{K}$ (par exemple si
 la série converge en $z$ !), alors $R \geqslant |z|$.
 
