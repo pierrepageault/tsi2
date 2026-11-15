@@ -4,7 +4,7 @@ Dans ce chapitre, $\mathbb{K}$ désigne $\mathbb{R}$ ou $\mathbb{C}$.
 
 ## Introduction {.unnumbered}
 
-Une série entière est un type particulier de série numérique, de la forme
+Une série entière est un type particulier de série numérique de la forme
 
 $$
     \sum a_{n}z^{n}
@@ -12,17 +12,18 @@ $$
 
 
 où $(a_{n})$ est une suite de $\mathbb{K}$ et $z \in \mathbb{K}$. On peut donc
-penser à une série entière comme un "polynôme infini". 
+penser à une série entière comme un &laquo; polynôme infini &raquo;. 
 
 Comme toute série numérique, une série entière possède une *nature* ; elle peut
 converger, diverger, converger absolument, etc. Dans le cas des séries
-entières, la situation est particulièrement tranchée puisqu'on montrera
-l'existence d'un réel $R \in \mathbb{R}_{+}\cup \{+\infty\}$ tel que la série
+entières, la situation est particulièrement tranchée puisqu'on montre
+l'existence d'un réel $R \in \mathbb{R}_{+}\cup \{+\infty\}$, le *rayon de
+convergence*, tel que la série
 converge absolument si $|z|<R$ et diverge grossièrement si $|z|>R$. 
 
 Toute série entière définit donc naturellement sur son disque ouvert de
 convergence une *fonction*, avec laquelle il est très facile de *calculer*. En
-particulier, on pourra dériver ou intégrer la somme d'une série entière comme
+particulier, on peut dériver ou intégrer la somme d'une série entière comme
 on le ferait avec un polynôme. Les séries entières se prêtent donc
 particulièrement bien à la résolution d'*équations différentielles*, et ce sera
 pour nous leur principale application.
@@ -31,7 +32,7 @@ Les séries entières permettent également des raisonnements plus algébriques 
 combinatoires, via l'unicité de leurs *coefficients* $(a_{n})_{n\in
 \mathbb{N}}$, comme dans le cas des polynômes. Malheureusement, le *produit* de
 deux séries entières n'est pas au programme en TSI, ce qui vient affaiblir
-cette utilisation en ne conférant pas à l'ensemble des séries entières sa
+cet aspect algébrique en ne conférant pas à l'ensemble des séries entières sa
 structure la plus générale. 
 
 ## Convergence d'une série entière {#sec-06-convergence}
@@ -187,7 +188,7 @@ $$
     \forall |z|<1,\ \sum_{n=0}^{+\infty} z^{n}=\frac{1}{1-z}
 $$
 
-Cet exemple montre que la classe des séries entières englobe des fonctions bien
+Cet exemple montre que les séries entières englobent des fonctions bien
 plus générales que les polynômes. 
 
 :::
@@ -200,13 +201,13 @@ d'Alembert pour les séries numériques.
 
 ::: {#nte-critere-d-alembert .callout-note}
 
-#### Rappel (critère de d'Alembert)
+#### Critère de d'Alembert
 
 Soit $\sum u_n$ une série à termes strictement positifs. On suppose que $\frac{u_{n+1}}{u_n}\to \lambda$ quand $n\to +\infty$. Alors
 
-1. si $\lambda<1$, la série $\sum u_n$ converge absolument,
+- si $\lambda<1$, la série $\sum u_n$ converge absolument,
 
-2. si $\lambda>1$, la série diverge grossièrement.
+- si $\lambda>1$, la série diverge grossièrement.
 
 :::
 
@@ -301,18 +302,16 @@ Donc le rayon de convergence de cette série est $\frac{1}{\sqrt{3}}$.
 
 ::: {#tip-d-alembert .callout-tip}
 
-Il faut traduire la condition donnée par le critère de d'Alembert en une
-condition sur le *module* de la variable. 
+Pour calculer un rayon de convergence, il faut traduire la condition donnée par
+le critère de d'Alembert en une condition sur le *module* de la variable. 
 
 :::
 
-Quand on ne dispose pas de formule explicite pour $a_{n}$, mais seulement
+Quand on ne dispose pas de formule explicite pour les coefficients, mais seulement
 d'informations *qualitatives* (par exemple une majoration ou un équivalent), on
 peut utiliser l'un des résultats suivants. 
 
 ::: {#prp-majoration}
-
-#### $|a_{n}| \leqslant |b_{n}|$ 
 
 Si $|a_{n}|\leqslant |b_{n}|$ pour tout $n \in \mathbb{N}$, alors le rayon de
 convergence $R_{a}$ de la série entière $\sum a_{n}z^{n}$ est *supérieur ou
@@ -325,8 +324,6 @@ $$
 :::
 
 ::: {#prp-equivalence}
-
-#### $a_{n} \sim b_{n}$
 
 Si $a_{n} \sim b_{n}$ alors les séries entières $\sum a_{n}z^{n}$ et $\sum
 b_{n}z^{n}$ ont même rayon de convergence. 
@@ -389,7 +386,7 @@ convergence de la série entière $\sum a_{n}z^{n}$ est au moins égal à $1$.
 
 Bien sûr, on dispose toujours de la définition du rayon de convergence ; si
 $(a_{n}z^{n})$ est bornée pour un certain $z \in \mathbb{K}$ (par exemple si
-la série converge en $z$ !), alors $R \geqslant |z|$.
+la série converge en $z$), alors $R \geqslant |z|$.
 
 :::
 
@@ -397,9 +394,310 @@ la série converge en $z$ !), alors $R \geqslant |z|$.
 
 Si la suite $(a_{n})$ est bornée alors la suite $(a_{n}1^{n})$ est bornée. Donc
 le rayon de convergence de la série $\sum a_{n}z^{n}$ est supérieur ou égal à
-$1$.
+$1$. 
+
+Par exemple, la série entière $\sum \cos(n) x^{n}$ possède un rayon de
+convergence supérieur ou égal à $1$.
 
 :::
 
 ## Somme d'une série entière d'une variable réelle {#sec-06-somme}
+
+### Définition
+
+::: {#def-somme-serie-entiere}
+
+#### Somme d'une série entière
+
+La **somme** d'une série entière $\sum_{n \geqslant 0} a_n x^n$, de rayon de
+convergence $R>0$, est la fonction $f$ définie sur $]-R,R[$ par
+
+$$
+\forall x \in ]-R,R[,\ f(x) = \sum_{n=0}^{+\infty} a_n x^n.
+$$
+
+:::
+
+::: {#exm-somme-geometrique}
+
+La série géométrique $\sum x^{n}$ a pour somme la fonction
+$x \mapsto \frac{1}{1-x}$ sur $]-1,1[$ (voir @exm-geometrique).
+
+:::
+
+### Le théorème de dérivation terme à terme
+
+On explique maintenant comment dériver la somme d'une série entière. Le
+résultat semble évident (on sait depuis longtemps que la dérivée d'une somme
+*finie*
+est la somme des dérivées) mais il n'en n'est rien. Ce théorème est d'ailleurs
+admis.
+
+Il s'agit en fait d'un
+résultat d'*interversion de limites*, une dérivée étant une limite d'un *taux
+d'accroissement*, et la somme d'une série éntière étant la limite de ses *sommes
+parielles*.
+
+Une telle intervertion n'est pas toujours possible. Elle l'est pour les séries
+entières. 
+
+::: {#prp-rayon-serie-derivee}
+
+#### Série dérivée
+
+Une série entière $\sum_{n \geqslant 0} a_n z^n$ et sa **série dérivée**
+$\sum_{n \geqslant 1} n a_n z^{n-1}$ ont le même rayon de convergence.
+
+:::
+
+::: {#thm-derivation-terme-a-terme}
+
+#### Dérivation terme à terme
+
+La somme $f$ d'une série entière $\sum_{n \geqslant 0} a_n x^n$, de rayon de
+convergence $R>0$, est dérivable sur $]-R,R[$ et
+
+$$
+\forall x \in ]-R,R[,\ f'(x) = \sum_{n=1}^{+\infty} n a_n x^{n-1}.
+$$
+
+:::
+
+::: {#tip-derivation-terme-a-terme .callout-tip}
+
+On peut donc *dériver terme à terme* la somme d'une série entière sur son
+intervalle ouvert de convergence *sans changer* son rayon de convergence.
+
+:::
+
+
+
+::: {#cor-derivees-successives}
+
+#### Classe $C^{\infty}$ 
+
+La somme $f$ d'une série entière $\sum a_n x^n$, de rayon de convergence $R>0$,
+est de classe $C^{\infty}$ sur $]-R,R[$ et
+
+$$
+\forall k \in \mathbb{N},\ \forall x \in ]-R,R[,\ f^{(k)}(x) = \sum_{n=k}^{+\infty} n(n-1)\cdots(n-k+1) a_n x^{n-k} = \sum_{n=k}^{+\infty} \frac{n!}{(n-k)!} a_n x^{n-k}.
+$$
+
+:::
+
+::: {#exm-derivees-geometrique}
+
+#### Dérivées successives de la série géométrique
+
+On sait que la série entière $\sum x^{n}$ possède un rayon de convergence égal à $1$ et 
+
+$$
+    \forall x \in ]-1,1[,\ f(x) = \sum_{n=0}^{+\infty} x^{n}=
+\frac{1}{1-x}.
+$$
+
+Par dérivations terme à terme consécutives, on obtient
+
+$$
+\forall k \in \mathbb{N},\ \forall x \in ]-1,1[,\ f^{(k)}(x) = \frac{k!}{(1-x)^{k+1}} = \sum_{n=k}^{+\infty} \frac{n!}{(n-k)!} x^{n-k},
+$$
+
+:::
+
+::: {#cor-integration-terme-a-terme}
+
+#### Intégration terme à terme
+
+Soit $\sum a_n x^n$ une série entière de rayon de convergence $R>0$ et de somme
+$f$. Alors toute primitive $F$ de $f$ sur $]-R,R[$ est de la forme
+
+$$
+\forall x \in ]-R,R[,\ F(x) = F(0) + \sum_{n=0}^{+\infty} a_n \frac{x^{n+1}}{n+1}.
+$$
+
+:::
+
+::: {#exm-integration-geometrique}
+
+#### Intégration terme à terme de la série géométrique
+
+En intégrant terme à terme la série géométrique, on obtient 
+
+$$
+\forall x \in ]-1,1[,\ -\ln(1-x) = 0 + \sum_{n=0}^{+\infty} \frac{x^{n+1}}{n+1}.
+$$
+
+:::
+
+## Fonctions développables en série entière {#sec-06-dse}
+
+On a vu dans la section précédente que certaines fonctions peuvent s'écrire
+comme somme d'une série entière sur un certain intervalle ouvert centré en
+$0$. C'est par exemple le cas des fonctions $x \mapsto \frac{1}{1-x}$ et $x
+\mapsto -\ln(1-x)$ sur $]-1,1[$. 
+
+On dit que de telles fonctions sont
+*développables en série entière*.
+
+::: {#def-developpee-en-serie-entiere}
+
+#### Fonction développable en série entière
+
+Soit $r>0$. On dit qu'une fonction $f$ est **développable en série entière**
+sur $]-r,r[$ s'il existe une série entière $\sum a_n x^n$ de rayon de
+convergence $R \geqslant r > 0$ telle que
+
+$$
+\forall x \in ]-r,r[,\ f(x) = \sum_{n=0}^{+\infty} a_n x^n.
+$$
+
+:::
+
+::: {#prp-unicite-dse}
+
+#### Développement de Taylor  
+
+Soit $r>0$ tel que 
+
+$$
+    \forall x \in ]-r,r[,\ f(x) = \sum_{n=0}^{+\infty}a_{n}x^{n}.
+$$
+
+Alors $f$ est de classe $C^{\infty}$ sur $]-r,r[$ et
+
+$$
+    \forall n \in \mathbb{N},\ a_{n}= \frac{f^{(n)}(0)}{n!}.
+$$
+
+:::
+
+::: {#cor-unicite}
+
+#### Unicité du développement en série entière
+
+S'il existe, le développement en série entière d'une fonction $f$ est unique. 
+
+:::
+
+::: {#exm-unicite}
+
+Si $\sum a_n x^n$ est une série
+entière de rayon de convergence $R \geqslant r> 0$ telle que
+
+$$
+\forall x \in ]-r,r[,\ \sum_{n=0}^{+\infty} a_n x^n = 0,
+$$
+
+alors $a_n = 0$ pour tout $n \in \mathbb{N}$.
+
+:::
+
+::: {#prp-dse-reference}
+
+#### Développements en série entière de références
+
+1. La fonction $x \mapsto \frac{1}{1-x}$ est développable en série entière
+   sur $]-1,1[$ et
+
+$$
+\forall x \in ]-1,1[,\ \frac{1}{1-x} = \sum_{n=0}^{+\infty} x^n \quad \text{(avec $R=1$)}.
+$$
+
+2. La fonction $x \mapsto e^x$ est développable en série entière sur
+   $\mathbb{R}$ et
+
+$$
+\forall x \in \mathbb{R},\ e^x = \sum_{n=0}^{+\infty} \frac{x^n}{n!} \quad \text{(avec $R=+\infty$)}.
+$$
+
+3. Pour tout $\alpha \in \mathbb{R}$, la fonction $x \mapsto (1+x)^{\alpha}$
+   est développable en série entière sur $]-1,1[$ et 
+
+   $$
+    \forall x \in ]-1,1[,\ (1+x)^{\alpha}= 1 + \sum_{n=1}^{+\infty}
+    \frac{\alpha(\alpha-1)\cdots (\alpha-n+1)}{n!}x^{n},\ \quad \text{(avec
+    $R=1$).}
+   $$
+
+:::
+
+::: {#tip-reference .callout-tip}
+
+Ces trois développements permettent de retrouver les développements limités des
+fonctions usuelles par intégration, dérivation ou substitution.
+
+:::
+
+::: {#exm-ln}
+
+#### Développement en série entière de $ln(1+x)$
+
+Montrer que la fonction $x \mapsto \ln(1+x)$ est développable en série entière
+sur $]-1,1[$, et donner son développement en série entière.
+
+::: {.details}
+
+On sait que 
+
+$$
+    \forall u \in ]-1,1[,\ \frac{1}{1-u} = \sum_{n=0}^{+\infty} u^{n}.
+$$
+
+De plus, pour tout $x \in ]-1,1[$, $-x \in ]-1,1[$. Donc par *substitution*,
+
+$$
+    \forall x \in ]-1,1[,\ \frac{1}{1+x} = \sum_{n=0}^{+\infty}(-x)^{n}
+    = \sum_{n=0}^{+\infty}(-1)^{n}x^{n}.
+$$
+
+Par intégration terme à terme, on en déduit ^[Ce résultat peut être considéré
+comme un résultat du cours.]
+
+$$
+    \forall x \in ]-1,1[,\ \ln(1+x) = \sum_{n=0}^{+\infty} (-1)^{n}\frac{x^{n+1}}{n+1} = \sum_{n=1}^{+\infty} \frac{(-1)^{n-1}}{n}x^{n}.
+$$
+
+:::
+
+:::
+
+::: {#tip-dl .callout-tip}
+
+Un développement en série entière fournit, par troncature, un développement
+limité à tout ordre en $0$ ; c'est en pratique la manière la plus commode de
+retrouver les développements limités usuels.  
+
+:::
+
+## L'exponentielle complexe {#sec-06-exponentielle-complexe}
+
+::: {#def-exponentielle-complexe}
+
+#### Exponentielle complexe
+
+La série entière $\sum_{n \in \mathbb{N}} \frac{z^n}{n!}$ possède un rayon de
+convergence égal à $+\infty$, et on pose
+
+$$
+\forall z \in \mathbb{C},\ \exp(z) = \sum_{n=0}^{+\infty} \frac{z^n}{n!}.
+$$
+
+:::
+
+::: {#cor-dse-cos-sin}
+
+#### Développements en série entière des fonctions sinus et cosinus
+
+Les fonctions $\cos$ et $\sin$ sont développables en série entière sur
+$\mathbb{R}$ et
+
+$$
+\forall x \in \mathbb{R},\
+\begin{cases}
+    \cos(x) = \displaystyle\sum_{n=0}^{+\infty} (-1)^n \frac{x^{2n}}{(2n)!},\\
+    \sin(x) = \displaystyle\sum_{n=0}^{+\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!}.
+\end{cases}
+$$
+
+:::
 
