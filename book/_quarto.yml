@@ -14,6 +14,7 @@ book:
     - 03-complements-algebre-lineaire.md
     - 04-determinants.md
     - 05-reduction-des-endomorphismes.md
+    - 06-series-entieres.md
     - colles.md
     - dm.md
   downloads: [pdf, epub]

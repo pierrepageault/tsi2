@@ -202,7 +202,7 @@ d'Alembert pour les séries numériques.
 
 #### Rappel (critère de d'Alembert)
 
-Soit $\sum u_n$ une série à termes strictement positifs. On suppose que $\frac{u_{n+1}}{u_n}\to \lambda $ quand $n\to +\infty$. Alors 
+Soit $\sum u_n$ une série à termes strictement positifs. On suppose que $\frac{u_{n+1}}{u_n}\to \lambda$ quand $n\to +\infty$. Alors
 
 1. si $\lambda<1$, la série $\sum u_n$ converge absolument,
 
@@ -401,33 +401,5 @@ $1$.
 
 :::
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## Somme d'une série entière d'une variable réelle {#sec-06-somme}
 
