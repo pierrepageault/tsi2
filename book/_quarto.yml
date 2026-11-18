@@ -9,7 +9,7 @@ book:
   date: today 
   chapters:
     - index.md
-    - 01-integrales-generalisees.md
+    - 01-integrales-generalisees.qmd
     - 02-series-numeriques.md
     - 03-complements-algebre-lineaire.md
     - 04-determinants.md

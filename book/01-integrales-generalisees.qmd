@@ -1389,6 +1389,55 @@ d'*arrivée* pour vérifier les hypothèses du théorème de changement de varia
 
 \newpage
 
+## Calcul numérique d'intégrales généralisées (Python) {#sec-01-numerique}
+
+La fonction `quad` du module `scipy.integrate` renvoie la valeur approchée de
+l'intégrale ainsi qu'un majorant de l'erreur commise sous forme d'un *couple*.
+Elle accepte des bornes infinies (`np.inf`) — elle convient donc directement
+aux intégrales généralisées.
+
+```{python}
+import numpy as np
+import scipy.integrate as integr
+```
+
+Pour récupérer uniquement la valeur numérique de l'intégrale (sans l'erreur), on utilise `[0]`. 
+
+```{python}
+# Exemple d'évaluation numérique de l'intégrale de Gauss ∫₀^∞ e^{-t²} dt = √π/2
+
+integr.quad(lambda t: np.exp(-t**2), 0, np.inf)[0]
+```
+
+Pour les intégrales dépendant d'un paramètre, comme l'intégrale $I_{n}$
+de l'@exm-In ou la fonction Gamma d'Euler vue dans l'@exr-01-gamma, on utilise un `def` et un `lambda`
+*imbriqués*.
+
+
+```{python}
+# Intégrale I_{n}
+def I(n):
+    return integr.quad(lambda t: np.exp(-t) * t**(n), 0, np.inf)[0]
+```
+
+```{python}
+# I(3) 
+I(3)
+```
+
+```{python}
+# Fonction Γ d'Euler : Γ(x) = ∫₀^∞ e^{-t} t^{x-1} dt
+def gamma(x):
+    return integr.quad(lambda t: np.exp(-t) * t**(x-1), 0, np.inf)[0]
+```
+
+```{python}
+# Γ(1/2) = √π
+gamma(0.5)
+```
+
+\newpage
+
 ## Exercices {.unnumbered}
 
 {{< include ./td/01.md >}}
