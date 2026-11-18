@@ -137,18 +137,24 @@ $$
 
 ::: {#thm-convergence}
 
+#### Convergence d'une série entière
+
 Soit $\sum a_{n}z^{n}$ une série entière de rayon de convergence $R>0$. Alors
 
-1. la série $\sum a_{n}z^{n}$ *converge absolument* pour tout $z \in \mathbb{K}$
+- la série $\sum a_{n}z^{n}$ *converge absolument* pour tout $z \in \mathbb{K}$
    avec $|z|<R$,
 
-2. la série $\sum a_{n}z^{n}$ *diverge grossièrement* pour tout $z \in \mathbb{K}$ avec $|z|>R$,
+- la série $\sum a_{n}z^{n}$ *diverge grossièrement* pour tout $z \in \mathbb{K}$ avec $|z|>R$,
 
+- si $|z|=R$, tous les scénarios sont possibles (convergence, divergence, divergence grossière,...).
 :::
 
-::: {#rem-bord}
+::: {#fig-disque-convergence}
 
-Si $|z| = R$, tous les scénarios sont possibles (convergence, divergence, divergence grossière,...).
+![](./tikz/svg/06-1.svg)
+
+Disque ouvert de convergence : convergence absolue à l'intérieur, divergence
+grossière à l'extérieur, et tous les scénarios possibles sur le cercle $|z|=R$.
 
 :::
 
@@ -164,6 +170,7 @@ $$
 $$
 
 :::
+
 
 ::: {#rem-R-infini}
 
@@ -700,4 +707,10 @@ $$
 $$
 
 :::
+
+\newpage
+
+## Exercices {.unnumbered}
+
+{{< include ./td/06.md >}}
 

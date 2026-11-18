@@ -1,0 +1,33 @@
+\documentclass[tikz,border=5pt]{standalone}
+\input{./style/style.tex}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    axes,
+    xlabel={$\mathbb{R}$},
+    ylabel={$i\mathbb{R}$},
+    xmin=-4.4, xmax=4.6,
+    ymin=-3.8, ymax=3.8,
+    xticklabels={$R$},
+    xtick={2.6},
+    xticklabel style ={xshift=5pt},
+    ytick=\empty,
+    extra x ticks = {-2.6},
+    extra x tick labels={$-R$},
+    extra x tick style ={tick label style ={xshift=-15pt}},
+    clip=false,
+]
+
+% Disque ouvert de convergence (rempli, frontière en pointillés)
+\fill[pattern=north east lines, pattern color = monBleu] (axis cs:0,0) circle (2.6);
+\draw[dashed, thick] (axis cs:0,0) circle (2.6);
+
+
+% Comportement de la série
+% \node[align=center, monBleu] at (axis cs:3,2.6) {convergence\\absolue};
+% \node[align=center] at (axis cs:3.0,-2.6) {divergence\\grossière};
+
+\end{axis}
+\end{tikzpicture}
+\end{document}
