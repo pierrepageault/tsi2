@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>7&nbsp; Équations différentielles linéaires – Mathématiques en TSI2</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./colles.html" rel="next">
+<link href="./06-series-entieres.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-452fedebf206357581fb8f02f36bbb8c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07-equations-differentielles.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Équations différentielles linéaires</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Mathématiques en TSI2</a> 
+        <div class="sidebar-tools-main">
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Mathématiques-en-TSI2.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Mathématiques-en-TSI2.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Recherche"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-integrales-generalisees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intégrales généralisées</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-series-numeriques.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Séries numériques</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-complements-algebre-lineaire.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Compléments d’algèbre linéaire</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-determinants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Déterminants</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-reduction-des-endomorphismes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Réduction des endomorphismes</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-series-entieres.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Séries entières</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-equations-differentielles.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Équations différentielles linéaires</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./colles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programmes de colle</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DM</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table des matières</h2>
+   
+  <ul>
+  <li><a href="#sec-07-ordre1" id="toc-sec-07-ordre1" class="nav-link active" data-scroll-target="#sec-07-ordre1"><span class="header-section-number">7.1</span> Équations différentielles linéaires d’ordre <span class="math inline">\(1\)</span></a></li>
+  <li><a href="#sec-07-systemes" id="toc-sec-07-systemes" class="nav-link" data-scroll-target="#sec-07-systemes"><span class="header-section-number">7.2</span> Systèmes différentiels linéaires homogènes à coefficients constants</a></li>
+  <li><a href="#sec-07-ordre2" id="toc-sec-07-ordre2" class="nav-link" data-scroll-target="#sec-07-ordre2"><span class="header-section-number">7.3</span> Équations différentielles linéaires d’ordre <span class="math inline">\(2\)</span></a></li>
+  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
+  <ul class="collapse">
+  <li><a href="#équations-différentielles-linéaires-dordre-1" id="toc-équations-différentielles-linéaires-dordre-1" class="nav-link" data-scroll-target="#équations-différentielles-linéaires-dordre-1"><span class="header-section-number">7.3.1</span> Équations différentielles linéaires d’ordre <span class="math inline">\(1\)</span></a></li>
+  <li><a href="#systèmes-différentiels-linéaires-homogènes-à-coefficients-constants" id="toc-systèmes-différentiels-linéaires-homogènes-à-coefficients-constants" class="nav-link" data-scroll-target="#systèmes-différentiels-linéaires-homogènes-à-coefficients-constants"><span class="header-section-number">7.3.2</span> Systèmes différentiels linéaires homogènes à coefficients constants</a></li>
+  <li><a href="#équations-différentielles-linéaires-dordre-2" id="toc-équations-différentielles-linéaires-dordre-2" class="nav-link" data-scroll-target="#équations-différentielles-linéaires-dordre-2"><span class="header-section-number">7.3.3</span> Équations différentielles linéaires d’ordre <span class="math inline">\(2\)</span></a></li>
+  <li><a href="#divers" id="toc-divers" class="nav-link" data-scroll-target="#divers"><span class="header-section-number">7.3.4</span> Divers</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Équations différentielles linéaires</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Dans ce chapitre, <span class="math inline">\(\mathbb{K}\)</span> désigne <span class="math inline">\(\mathbb{R}\)</span> ou <span class="math inline">\(\mathbb{C}\)</span> et <span class="math inline">\(I\)</span> est un intervalle non vide de <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<section id="sec-07-ordre1" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="sec-07-ordre1"><span class="header-section-number">7.1</span> Équations différentielles linéaires d’ordre <span class="math inline">\(1\)</span></h2>
+<div id="def-edl1" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 7.1 (Équation différentielle linéaire d’ordre <span class="math inline">\(1\)</span>)</strong></span> On appelle équation différentielle linéaire d’ordre <span class="math inline">\(1\)</span> une équation de la forme</p>
+<p><span class="math display">\[
+\forall t \in I,\quad y'(t) + a(t)y(t) = b(t) \tag{E1}
+\]</span></p>
+<p>où <span class="math inline">\(t \mapsto a(t)\)</span> (le <em>coefficient</em>) et <span class="math inline">\(t \mapsto b(t)\)</span> (le <em>second membre</em>) sont des fonctions de <span class="math inline">\(I\)</span> dans <span class="math inline">\(\mathbb{K}\)</span>, et <span class="math inline">\(t \mapsto y(t)\)</span> est la fonction <em>inconnue</em>.</p>
+</div>
+<div id="rem-muette" class="proof remark">
+<p><span class="proof-title"><em>Remarque 7.1</em>. </span>La variable <span class="math inline">\(t\)</span> et le nom de la fonction inconnue <span class="math inline">\(y\)</span> sont muets. Par exemple, les équations</p>
+<p><span class="math display">\[
+\forall t \geqslant 0,\quad \frac{dU}{dt} + \frac{1}{RC}U(t) = 0
+\]</span></p>
+<p>et</p>
+<p><span class="math display">\[
+\forall x \geqslant 0,\quad y'(x) + \frac{1}{RC}y(x) = 0
+\]</span></p>
+<p>représentent la même équation différentielle.</p>
+</div>
+<div id="def-solution-ordre-1" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 7.2 (Solution)</strong></span> Une solution de <span class="math inline">\((E1)\)</span> est une fonction <span class="math inline">\(y:I \to \mathbb{R}\)</span> <em>dérivable</em>, telle que</p>
+<p><span class="math display">\[
+    \forall t \in I,\ y'(t) + a(t)y(t) = b(t).
+\]</span></p>
+</div>
+<div id="rem-regularite" class="proof remark">
+<p><span class="proof-title"><em>Remarque 7.2</em>. </span>Une solution de <span class="math inline">\((E1)\)</span> hérite de la régularité de <span class="math inline">\(a\)</span> et <span class="math inline">\(b\)</span> sur <span class="math inline">\(I\)</span>. Par exemple, si <span class="math inline">\(a\)</span> et <span class="math inline">\(b\)</span> sont de classe <span class="math inline">\(C^{+\infty}\)</span>, l’égalité</p>
+<p><span class="math display">\[
+   \forall t \in I,\ y'(t) = -a(t)y(t) + b(t)
+\]</span></p>
+<p>montre que <span class="math inline">\(y'\)</span> est continue sur <span class="math inline">\(I\)</span>, donc <span class="math inline">\(y\)</span> est de classe <span class="math inline">\(C^{1}\)</span> sur <span class="math inline">\(I\)</span> par somme et produit. La même égalité montre alors que <span class="math inline">\(y'\)</span> est de classe <span class="math inline">\(C^{1}\)</span> sur <span class="math inline">\(I\)</span> i.e.&nbsp;que <span class="math inline">\(y\)</span> est de classe <span class="math inline">\(C^{2}\)</span> sur <span class="math inline">\(I\)</span>, etc.</p>
+</div>
+<div id="def-h1" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 7.3 (Équation homogène associée)</strong></span> On appelle équation homogène associée à (E1) l’équation différentielle</p>
+<p><span class="math display">\[
+\forall t \in I,\quad y'(t) + a(t)y(t) = 0. \tag{H1}
+\]</span></p>
+</div>
+<div id="prp-sol-h1" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7.1 (Ensemble des solutions de l’équation homogène)</strong></span> Si <span class="math inline">\(a\)</span> est <em>continue</em> sur <span class="math inline">\(I\)</span>, l’ensemble des solutions de l’équation homogène (H1) est un <span class="math inline">\(\mathbb{K}\)</span>-espace vectoriel de dimension <span class="math inline">\(1\)</span>, dont une base est <span class="math inline">\(t \mapsto e^{-A(t)}\)</span> où <span class="math inline">\(A\)</span> est une primitive de <span class="math inline">\(a\)</span> sur <span class="math inline">\(I\)</span>.</p>
+</div>
+<div id="rem-sol-h1" class="proof remark">
+<p><span class="proof-title"><em>Remarque 7.3</em>. </span>Autrement dit, l’ensemble <span class="math inline">\(\mathcal{S}_{(H1)}\)</span> des solutions de (H1) sur <span class="math inline">\(I\)</span> est</p>
+<p><span class="math display">\[
+\mathcal{S}_{(H1)}\{t \mapsto \alpha e^{-A(t)},\ \alpha \in \mathbb{K}\}
+\]</span></p>
+<p>où <span class="math inline">\(A\)</span> est une primitive de <span class="math inline">\(a\)</span> sur <span class="math inline">\(I\)</span>.</p>
+</div>
+<div id="exm-ordre1-hom" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 7.1</strong></span> Résolution de l’équation différentielle</p>
+<p><span class="math display">\[
+\forall t&gt;0,\quad ty'(t) + y(t) = 0.
+\]</span></p>
+<details>
+<div>
+<p>L’équation se réécrit</p>
+<p><span class="math display">\[
+\forall t &gt;0,\ y'(t) + \frac{1}{t}y(t) = 0.
+\]</span></p>
+<p>Une primitive de <span class="math inline">\(t \mapsto \frac{1}{t}\)</span> sur <span class="math inline">\(]0,+\infty[\)</span> est <span class="math inline">\(t \mapsto \ln
+t\)</span>.</p>
+<p>Donc les solutions sont les fonctions de la forme</p>
+<p><span class="math display">\[
+t \mapsto \alpha e^{-A(t)} = \alpha e^{-\ln(t)} = \frac{\alpha}{t},\quad \alpha \in \mathbb{K}.
+\]</span></p>
+</div>
+</details>
+</div>
+<div id="tip-resoudre-edo" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Astuce&nbsp;7.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Résoudre une équation homogène, c’est donc essentiellement un problème de calcule de <em>primitive</em>.</p>
+</div>
+</div>
+<div id="prp-structure-sol" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7.2 (Structure de l’ensemble des solutions de l’équation complète)</strong></span> Si <span class="math inline">\(y_p\)</span> est une solution <em>particulière</em> de l’équation (E1), alors les solutions de (E1) sont les fonctions de la forme <span class="math inline">\(y_p + y\)</span> où <span class="math inline">\(y\)</span> est une solution de l’équation homogène (H1).</p>
+</div>
+<div id="rem-espace-affine" class="proof remark">
+<p><span class="proof-title"><em>Remarque 7.4</em>. </span>On dit que l’ensemble des solutions de (E1) est un <em>espace affine</em> dirigé par l’ensemble des solutions de (H1).</p>
+</div>
+<div id="exm-ordre1-avec-second-membre" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 7.2</strong></span> Déterminer l’ensemble des solutions de l’équation différentielle</p>
+<p><span class="math display">\[
+\forall t&gt;0,\quad ty'(t) + y(t) = 2t.
+\]</span></p>
+<details>
+<div>
+<p>L’équation s’écrit</p>
+<p><span class="math display">\[
+    \forall t &gt;0,\ y' + \frac{1}{t}y = 2.
+\]</span></p>
+<p>D’après l’exemple précédent, l’équation homogène associée a pour solutionsles fonctions de la forme <span class="math inline">\(t \mapsto \frac{\alpha}{t}\)</span>, <span class="math inline">\(\alpha \in \mathbb{R}\)</span>.</p>
+<p>On remarque que <span class="math inline">\(t \mapsto t\)</span> est une solution particuilère de l’équatoin complète.</p>
+<p>Dons les solutions sont les fonctions de la forme</p>
+<p><span class="math display">\[
+y(t) = t + \frac{\alpha}{t},\quad \alpha \in \mathbb{K}.
+\]</span></p>
+</div>
+</details>
+</div>
+<div id="prp-variation-constante" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7.3 (Méthode de variation de la constante)</strong></span> La <em>méthode de variation de la constante</em> consiste à chercher une solution particulière de l’équation (E1) <em>sous la forme</em> <span class="math inline">\(y(t) = \alpha(t)e^{-A(t)}\)</span>, où <span class="math inline">\(A\)</span> est une primitive de <span class="math inline">\(a\)</span> sur <span class="math inline">\(I\)</span> et <span class="math inline">\(\alpha\)</span> est une fonction dérivable sur <span class="math inline">\(I\)</span>.</p>
+</div>
+<div id="exm-variation-constante" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 7.3</strong></span> A l’aide de la méthode de variation de la constante, déterminer une solution particulière de l’équation différentielle</p>
+<p><span class="math display">\[
+\forall x&gt;0,\quad xy' - y = x^{2}e^{x}.
+\]</span></p>
+<details>
+<div>
+<p>L’équation s’écrit</p>
+<p><span class="math display">\[
+    \forall x&gt;0,\ y' - \frac{1}{x}y = xe^{x}.
+\]</span></p>
+<p>L’équation homogène associée a pour solutions <span class="math inline">\(x \mapsto \alpha x\)</span> (une primitive de <span class="math inline">\(-\frac{1}{x}\)</span> sur <span class="math inline">\(]0,+\infty[\)</span> est <span class="math inline">\(-\ln(x)\)</span>).</p>
+<p>On cherche alors une solution particulière <em>sous la forme</em> <span class="math inline">\(y(x) = \alpha(x)x\)</span>, où <span class="math inline">\(\alpha\)</span> est une fonction de classe <span class="math inline">\(C^{1}\)</span> sur <span class="math inline">\(]0,+\infty[\)</span>. On a alors</p>
+<p><span class="math display">\[
+    \forall x &gt;0,\ y'(x) = \alpha'(x)x + \alpha(x),
+\]</span></p>
+<p>de sorte que <span class="math inline">\(y\)</span> est solution ssi</p>
+<p><span class="math display">\[
+\forall x&gt;0,\ xy'(x) - y(x) = \alpha'(x)x^{2} = x^{2}e^{x},
+\]</span></p>
+<p>Il <em>suffit</em> donc que <span class="math inline">\(\alpha'(x)=e^{x}\)</span>, par exemple <span class="math inline">\(\alpha(x) = e^{x}\)</span>.</p>
+<p>Une solution particulière de l’équation complète est donc <span class="math inline">\(y_p(x) = xe^{x}\)</span>.</p>
+</div>
+</details>
+</div>
+<div id="prp-superposition" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7.4 (Principe de superposition)</strong></span> Si <span class="math inline">\(y_1\)</span> et <span class="math inline">\(y_2\)</span> sont des solutions particulières des équations respectives <span class="math inline">\(y' + a(t)y = b_1(t)\)</span> et <span class="math inline">\(y' + a(t)y = b_2(t)\)</span>, alors pour tout <span class="math inline">\(\alpha,\beta \in \mathbb{K}\)</span>, la fonction <span class="math inline">\(\alpha y_1 + \beta y_2\)</span> est une solution particulière sur <span class="math inline">\(I\)</span> de l’équation <span class="math inline">\(y' + a(t)y = \alpha b_1(t) + \beta b_2(t)\)</span>.</p>
+</div>
+<div id="thm-cauchy-lipschitz-1" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 7.1 (Théorème de Cauchy-Lipschitz)</strong></span> Si <span class="math inline">\(a\)</span> et <span class="math inline">\(b\)</span> sont continues sur <span class="math inline">\(I\)</span> alors, pour tout <span class="math inline">\(t_0 \in I\)</span> et <span class="math inline">\(y_0 \in \mathbb{K}\)</span>, le <em>problème de Cauchy</em></p>
+<p><span class="math display">\[
+\begin{cases}
+    \text{(E1)}\\
+    y(t_0) = y_0
+\end{cases}
+\]</span></p>
+<p>admet une unique solution sur <span class="math inline">\(I\)</span>.</p>
+</div>
+<div id="def-courbe-integrale" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 7.4 (Courbe intégrale)</strong></span> Une <em>courbe intégrale</em> de l’équation <span class="math inline">\((E1)\)</span> est le graphe d’une solution de <span class="math inline">\((E1)\)</span>.</p>
+</div>
+<div id="nte-cauchy-lipschitz-1" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;7.1: Interprétation graphique du théorème de Cauchy-Lipschitz
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Par chaque point <span class="math inline">\((t_{0},y_0) \in I \times \mathbb{R}\)</span>, il passe une unique courbe intégrale.</p>
+</div>
+</div>
+<div id="fig-cauchy-lipschitz" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cauchy-lipschitz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./tikz/svg/07-1.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cauchy-lipschitz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.1: Courbes intégrales de l’équation <span class="math inline">\(ty' + y = 0\)</span> ; par chaque point du demi-plan <span class="math inline">\(t&gt;0\)</span> passe une unique courbe intégrale.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-07-systemes" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="sec-07-systemes"><span class="header-section-number">7.2</span> Systèmes différentiels linéaires homogènes à coefficients constants</h2>
+<div id="def-systeme" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 7.5 (Système différentiel linéaire homogène à coefficients constants)</strong></span> Un <strong>système différentiel linéaire homogène à coefficients constants</strong> est un système du type</p>
+<p><span class="math display">\[
+\forall t \in I,\quad
+\begin{cases}
+    x_1'(t) = a_{11}x_1(t) + \dots + a_{1n}x_n(t),\\
+    \vdots\\
+    x_n'(t) = a_{n1}x_1(t) + \dots + a_{nn}x_n(t),
+\end{cases} \tag{S}
+\]</span></p>
+<p>où <span class="math inline">\(a_{ij} \in \mathbb{K}\)</span>.</p>
+<p>Si on pose</p>
+<p><span class="math display">\[
+X(t) = \begin{pmatrix} x_1(t)\\ \vdots \\ x_n(t) \end{pmatrix}
+\quad\text{et}\quad
+A = (a_{ij})_{1 \leqslant i,j \leqslant n} \in \mathcal{M}_n(\mathbb{K}),
+\]</span></p>
+<p>alors ce système s’écrit matriciellement</p>
+<p><span class="math display">\[
+X' = AX,
+\]</span></p>
+<p>où, par définition, <span class="math inline">\(X' = \begin{pmatrix} x_1'\\ \vdots \\ x_n' \end{pmatrix}\)</span>.</p>
+</div>
+<div id="prp-cauchy-lipschitz-systeme" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7.5 (Théorème de Cauchy-Lipschitz)</strong></span> Pour tout <span class="math inline">\(t_0 \in I\)</span> et <span class="math inline">\(X_0 \in \mathcal{M}_{n,1}(\mathbb{K})\)</span>, le problème de Cauchy</p>
+<p><span class="math display">\[
+\begin{cases}
+    \text{(S)}\\
+    X(t_0) = X_0
+\end{cases}
+\]</span></p>
+<p>admet une unique solution sur <span class="math inline">\(I\)</span>.</p>
+</div>
+<div id="prp-sol-systeme" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7.6 (Structure de l’ensemble des solutions)</strong></span> L’ensemble des solutions de (S) sur <span class="math inline">\(I\)</span> est un <span class="math inline">\(\mathbb{K}\)</span>-espace vectoriel de dimension <span class="math inline">\(n\)</span>.</p>
+</div>
+<div id="exm-systeme-2x2" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 7.4</strong></span> Résolution pratique du système différentiel</p>
+<p><span class="math display">\[
+\begin{cases}
+    x' = 2x - 3y,\\
+    y' = x - 2y.
+\end{cases}
+\]</span></p>
+<details>
+<div>
+<p>Le système s’écrit <span class="math inline">\(X' = AX\)</span> avec <span class="math inline">\(A = \begin{pmatrix} 2&amp;-3\\ 1&amp;-2 \end{pmatrix}\)</span>. Son polynôme caractéristique est</p>
+<p><span class="math display">\[
+P_A(X) = (X-2)(X+2) + 3 = X^{2} - 1 = (X-1)(X+1),
+\]</span></p>
+<p>les valeurs propres sont <span class="math inline">\(1\)</span> et <span class="math inline">\(-1\)</span>. Des vecteurs propres associés sont <span class="math inline">\(U_1 = \begin{pmatrix} 3\\ 1 \end{pmatrix}\)</span> (pour <span class="math inline">\(1\)</span>) et <span class="math inline">\(U_2 = \begin{pmatrix} 1\\ 1 \end{pmatrix}\)</span> (pour <span class="math inline">\(-1\)</span>). La matrice <span class="math inline">\(P = \begin{pmatrix} 3&amp;1\\ 1&amp;1 \end{pmatrix}\)</span> diagonalise donc <span class="math inline">\(A\)</span> : <span class="math inline">\(P^{-1}AP = \mathrm{diag}(1,-1)\)</span>. Les solutions du système sont</p>
+<p><span class="math display">\[
+X(t) = c_1 e^{t}U_1 + c_2 e^{-t}U_2,
+\]</span></p>
+<p>soit</p>
+<p><span class="math display">\[
+\begin{cases}
+    x(t) = 3c_1 e^{t} + c_2 e^{-t},\\
+    y(t) = c_1 e^{t} + c_2 e^{-t},
+\end{cases}
+\quad c_1,c_2 \in \mathbb{K}.
+\]</span></p>
+</div>
+</details>
+</div>
+<div id="prp-edl2-coef-const" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7.7 (Équation différentielle linéaire d’ordre <span class="math inline">\(2\)</span> à coefficients constants)</strong></span> Soit <span class="math inline">\(a,b \in \mathbb{R}\)</span>. L’ensemble des solutions de l’équation différentielle linéaire</p>
+<p><span class="math display">\[
+y'' + ay' + by = 0 \tag{H}
+\]</span></p>
+<p>est un <span class="math inline">\(\mathbb{R}\)</span>-espace vectoriel de dimension <span class="math inline">\(2\)</span>. L’<strong>équation caractéristique</strong> associée à (H) est l’équation</p>
+<p><span class="math display">\[
+X^{2} + aX + b = 0. \tag{e}
+\]</span></p>
+<p>Alors :</p>
+<ol type="1">
+<li>si <span class="math inline">\((e)\)</span> possède deux racines distinctes <span class="math inline">\(\lambda_1\)</span> et <span class="math inline">\(\lambda_2\)</span> dans <span class="math inline">\(\mathbb{K}\)</span>, les solutions de (H) sont de la forme</li>
+</ol>
+<p><span class="math display">\[
+\forall t \in \mathbb{R},\quad y(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t},\quad c_1,c_2 \in \mathbb{R},
+\]</span></p>
+<ol start="2" type="1">
+<li>si <span class="math inline">\((e)\)</span> possède une racine double <span class="math inline">\(\lambda\)</span> dans <span class="math inline">\(\mathbb{K}\)</span>, les solutions de (H) sont de la forme</li>
+</ol>
+<p><span class="math display">\[
+\forall t \in \mathbb{R},\quad y(t) = c_1 e^{\lambda t} + c_2 t e^{\lambda t},\quad c_1,c_2 \in \mathbb{R},
+\]</span></p>
+<ol start="3" type="1">
+<li>si <span class="math inline">\((e)\)</span> possède deux racines complexes conjuguées <span class="math inline">\(\lambda = r + i\omega\)</span> et <span class="math inline">\(\bar{\lambda} = r - i\omega\)</span>, les solutions de
+<ol start="8" type="A">
+<li>sont de la forme</li>
+</ol></li>
+</ol>
+<p><span class="math display">\[
+\forall t \in \mathbb{R},\quad y(t) = e^{rt}\bigl(\alpha\cos(\omega t) + \beta\sin(\omega t)\bigr),\quad \alpha,\beta \in \mathbb{R}.
+\]</span></p>
+</div>
+<div id="rem-base-sol-h" class="proof remark">
+<p><span class="proof-title"><em>Remarque 7.5</em>. </span>Autrement dit, dans le premier cas, une base de l’ensemble des solutions est <span class="math inline">\((t \mapsto e^{\lambda_1 t},\ t \mapsto e^{\lambda_2 t})\)</span> ; dans le deuxième cas, <span class="math inline">\((t \mapsto e^{\lambda t},\ t \mapsto te^{\lambda t})\)</span> ; etc.</p>
+</div>
+<div id="rem-ordre-n" class="proof remark">
+<p><span class="proof-title"><em>Remarque 7.6</em>. </span>On peut utiliser les mêmes techniques pour étudier une équation différentielle scalaire d’ordre <span class="math inline">\(n\)</span> du type</p>
+<p><span class="math display">\[
+y^{(n)} - a_{n-1}y^{(n-1)} - \dots - a_1 y' - a_0 y = 0,\quad a_0,\dots,a_{n-1} \in \mathbb{K},
+\]</span></p>
+<p>en posant</p>
+<p><span class="math display">\[
+X = \begin{pmatrix}
+    y\\ y'\\ \vdots\\ y^{(n-1)}
+\end{pmatrix}
+\quad\text{et}\quad
+A = \begin{pmatrix}
+    0&amp;1&amp;0&amp;\dots&amp;0\\
+    \vdots&amp;\ddots&amp;\ddots&amp;\ddots&amp;\vdots\\
+    \vdots&amp;&amp;\ddots&amp;\ddots&amp;0\\
+    0&amp;\dots&amp;\dots&amp;0&amp;1\\
+    a_0&amp;a_1&amp;\dots&amp;\dots&amp;a_{n-1}
+\end{pmatrix}.
+\]</span></p>
+</div>
+</section>
+<section id="sec-07-ordre2" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="sec-07-ordre2"><span class="header-section-number">7.3</span> Équations différentielles linéaires d’ordre <span class="math inline">\(2\)</span></h2>
+<div id="def-edl2" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 7.6 (Équation différentielle linéaire d’ordre <span class="math inline">\(2\)</span>)</strong></span> Une <strong>équation différentielle linéaire d’ordre <span class="math inline">\(2\)</span></strong> est une équation de la forme</p>
+<p><span class="math display">\[
+\forall t \in I,\quad y''(t) + a(t)y'(t) + b(t)y(t) = c(t) \tag{E2}
+\]</span></p>
+<p>où <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> et <span class="math inline">\(c\)</span> sont des fonctions de <span class="math inline">\(I\)</span> dans <span class="math inline">\(\mathbb{K}\)</span>.</p>
+</div>
+<div id="def-h2" class="theorem definition">
+<p><span class="theorem-title"><strong>Définition 7.7 (Équation homogène associée)</strong></span> L’<strong>équation homogène</strong> associée à (E2) est l’équation</p>
+<p><span class="math display">\[
+\forall t \in I,\quad y''(t) + a(t)y'(t) + b(t)y(t) = 0. \tag{H2}
+\]</span></p>
+</div>
+<div id="thm-cauchy-lipschitz-2" class="theorem">
+<p><span class="theorem-title"><strong>Théorème 7.2 (Théorème de Cauchy-Lipschitz)</strong></span> Si les fonctions <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> et <span class="math inline">\(c\)</span> sont continues sur <span class="math inline">\(I\)</span> alors, pour tout <span class="math inline">\(t_0 \in I\)</span> et pour tout <span class="math inline">\(y_0, v_0 \in \mathbb{K}\)</span>, le <em>problème de Cauchy</em></p>
+<p><span class="math display">\[
+\begin{cases}
+    \text{(E2)}\\
+    y(t_0) = y_0,\\ y'(t_0) = v_0
+\end{cases}
+\]</span></p>
+<p>admet une unique solution sur <span class="math inline">\(I\)</span>.</p>
+</div>
+<div id="rem-cauchy-lipschitz-2" class="proof remark">
+<p><span class="proof-title"><em>Remarque 7.7</em>. </span>Interprétation graphique du théorème de Cauchy-Lipschitz.</p>
+</div>
+<div id="prp-sol-h2" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7.8 (Ensemble des solutions de l’équation homogène)</strong></span> L’ensemble des solutions de l’équation homogène (H2) est un <span class="math inline">\(\mathbb{K}\)</span>-espace vectoriel de dimension <span class="math inline">\(2\)</span>.</p>
+</div>
+<div id="rem-pas-de-methode-h2" class="proof remark">
+<p><span class="proof-title"><em>Remarque 7.8</em>. </span>Contrairement aux équations d’ordre <span class="math inline">\(1\)</span>, il n’existe pas de méthode au programme pour déterminer une base de solutions de (H2).</p>
+</div>
+<div id="exm-euler-hom" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 7.5</strong></span> Déterminer l’ensemble des solutions de l’équation</p>
+<p><span class="math display">\[
+\forall x&gt;0,\quad x^{2}y''(x) + xy'(x) - y(x) = 0
+\]</span></p>
+<p>en cherchant des solutions particulières sous la forme <span class="math inline">\(x \mapsto x^{\alpha}\)</span>, <span class="math inline">\(\alpha \in \mathbb{R}\)</span>.</p>
+<details>
+<div>
+<p>Si <span class="math inline">\(y(x) = x^{\alpha}\)</span>, alors <span class="math inline">\(y'(x) = \alpha x^{\alpha-1}\)</span> et <span class="math inline">\(y''(x) = \alpha(\alpha-1)x^{\alpha-2}\)</span>, donc</p>
+<p><span class="math display">\[
+x^{2}y''(x) + xy'(x) - y(x)
+= \bigl(\alpha(\alpha-1) + \alpha - 1\bigr)x^{\alpha}
+= (\alpha^{2}-1)x^{\alpha}.
+\]</span></p>
+<p>La fonction <span class="math inline">\(x \mapsto x^{\alpha}\)</span> est donc solution ssi <span class="math inline">\(\alpha = \pm 1\)</span>. Les fonctions <span class="math inline">\(x \mapsto x\)</span> et <span class="math inline">\(x \mapsto \frac{1}{x}\)</span> forment une base de l’ensemble des solutions (leur wronskien en <span class="math inline">\(1\)</span> vaut <span class="math inline">\(-2 \neq 0\)</span>), donc les solutions sur <span class="math inline">\(]0,+\infty[\)</span> sont</p>
+<p><span class="math display">\[
+y(x) = Ax + \frac{B}{x},\quad A,B \in \mathbb{K}.
+\]</span></p>
+</div>
+</details>
+</div>
+<div id="prp-structure-sol-2" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7.9 (Structure de l’ensemble des solutions)</strong></span> Si <span class="math inline">\(y_p\)</span> est une solution <em>particulière</em> de l’équation (E2), alors les solutions de (E2) sont les fonctions de la forme <span class="math inline">\(y_p + y\)</span> où <span class="math inline">\(y\)</span> est une solution de l’équation <em>homogène</em> (H2) associée à (E2).</p>
+</div>
+<div id="rem-pas-de-methode-particuliere" class="proof remark">
+<p><span class="proof-title"><em>Remarque 7.9</em>. </span>Contrairement aux équations d’ordre <span class="math inline">\(1\)</span>, il n’existe pas de méthode au programme pour déterminer une solution particulière de (E2).</p>
+</div>
+<div id="rem-superposition-2" class="proof remark">
+<p><span class="proof-title"><em>Remarque 7.10</em>. </span>Le principe de superposition reste valable pour les équations différentielles linéaires d’ordre <span class="math inline">\(2\)</span>.</p>
+</div>
+<div id="prp-abaissement-ordre" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7.10 (Méthode d’abaissement de l’ordre)</strong></span> Si <span class="math inline">\(h\)</span> est une solution particulière de l’équation homogène (H2) associée à (E2), <em>qui ne s’annule pas sur <span class="math inline">\(I\)</span></em>, on détermine l’ensemble des solutions de l’équation (E2) en posant</p>
+<p><span class="math display">\[
+\forall t \in I,\quad y(t) = z(t)h(t).
+\]</span></p>
+</div>
+<div id="rem-abaissement-ordre" class="proof remark">
+<p><span class="proof-title"><em>Remarque 7.11</em>. </span>La fonction <span class="math inline">\(z\)</span> est bien définie par</p>
+<p><span class="math display">\[
+\forall t \in I,\quad z(t) = \frac{y(t)}{h(t)}
+\]</span></p>
+<p>car la fonction <span class="math inline">\(h\)</span> ne s’annule pas sur <span class="math inline">\(I\)</span> par hypothèse. Cependant, on ne retient pas cette relation car on préfère toujours dériver un <em>produit</em>.</p>
+</div>
+<div id="exm-abaissement-ordre" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 7.6</strong></span> En remarquant que <span class="math inline">\(x \mapsto x^{2}\)</span> est une solution particulière de l’équation holmogène</p>
+<p><span class="math display">\[
+\forall x&gt;0,\quad x^{2}y'' - 2y = 0,
+\]</span></p>
+<p>déterminer l’ensemble des solutions de l’équation</p>
+<p><span class="math display">\[
+\forall x&gt;0,\quad x^{2}y'' - 2y = 3x^{2}.
+\]</span></p>
+<details>
+<div>
+<p>On vérifie que <span class="math inline">\(h(x) = x^{2}\)</span> est solution de l’équation homogène <span class="math inline">\(x^{2}y'' - 2y = 0\)</span>. On pose <span class="math inline">\(y = zh\)</span>, soit <span class="math inline">\(y(x) = z(x)x^{2}\)</span>. Alors <span class="math inline">\(y' = z'x^{2} + 2xz\)</span> et <span class="math inline">\(y'' = z''x^{2} + 4xz' + 2z\)</span>, donc</p>
+<p><span class="math display">\[
+x^{2}y'' - 2y = x^{4}z'' + 4x^{3}z' = x^{4}\left(z'' + \frac{4}{x}z'\right).
+\]</span></p>
+<p>En posant <span class="math inline">\(Z = z'\)</span>, l’équation <span class="math inline">\(x^{2}y'' - 2y = 3x^{2}\)</span> équivaut à l’équation linéaire d’ordre <span class="math inline">\(1\)</span></p>
+<p><span class="math display">\[
+Z' + \frac{4}{x}Z = \frac{3}{x^{2}}.
+\]</span></p>
+<p>L’équation homogène associée a pour solutions <span class="math inline">\(Z(x) = \frac{\beta}{x^{4}}\)</span> ; par variation de la constante (<span class="math inline">\(Z = \beta(x)x^{-4}\)</span>), on obtient <span class="math inline">\(\beta'(x) = 3x^{2}\)</span>, soit <span class="math inline">\(\beta(x) = x^{3}\)</span>. Ainsi</p>
+<p><span class="math display">\[
+Z(x) = \frac{1}{x} + \frac{\beta}{x^{4}},\quad
+z(x) = \ln(x) - \frac{\beta}{3x^{3}} + \gamma,
+\]</span></p>
+<p>et finalement</p>
+<p><span class="math display">\[
+y(x) = z(x)x^{2} = x^{2}\ln(x) + \gamma x^{2} - \frac{\beta}{3x}.
+\]</span></p>
+<p>Les solutions sur <span class="math inline">\(]0,+\infty[\)</span> sont donc <span class="math inline">\(y(x) = x^{2}\ln(x) + Ax^{2} + \frac{B}{x}\)</span>, <span class="math inline">\(A,B \in \mathbb{K}\)</span>.</p>
+</div>
+</details>
+</div>
+</section>
+<section id="exercices" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercices">Exercices</h2>
+<section id="équations-différentielles-linéaires-dordre-1" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="équations-différentielles-linéaires-dordre-1"><span class="header-section-number">7.3.1</span> Équations différentielles linéaires d’ordre <span class="math inline">\(1\)</span></h3>
+<div id="exr-07-ordre1-hom" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 7.1</strong></span> (Équation homogène). Déterminer l’ensemble des solutions des équations différentielles suivantes :</p>
+<ol type="1">
+<li><span class="math inline">\(\forall t&gt;0\)</span>, <span class="math inline">\(2ty' + y = 0\)</span></li>
+<li><span class="math inline">\(\forall t \in \mathbb{R}\)</span>, <span class="math inline">\((t^2+1)^2 y' + 2t(t^2+1)y = 0\)</span></li>
+<li><span class="math inline">\(\forall x \in ]-\pi/2,\pi/2[\)</span>, <span class="math inline">\(y' + \tan(x)y = 0\)</span></li>
+</ol>
+</div>
+<div id="exr-07-var-const" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 7.2</strong></span> (Variation de la constante). A l’aide de la méthode de la variation de la constante, résoudre les équations différentielles suivantes :</p>
+<ol type="1">
+<li><span class="math inline">\(\forall x \in \mathbb{R},\ y' + y = \frac{1}{1+e^x}\)</span></li>
+<li><span class="math inline">\(\forall t&gt;0,\ 2ty' + y = \frac{1}{t}\)</span></li>
+<li><span class="math inline">\(\forall x&gt;-1,\ (1+x)y' + y = \ln(1+x)\)</span></li>
+</ol>
+</div>
+<div id="exr-07-sol-poly" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 7.3</strong></span> (Solution polynomiale). Déterminer une solution particulière polynomiale de l’équation différentielle <span class="math inline">\(y' + 2y = x^2 - 2x + 3\)</span>, et en déduire l’ensemble des solutions sur <span class="math inline">\(\mathbb{R}\)</span>.</p>
+</div>
+<div id="exr-07-sol-par" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 7.4</strong></span> &nbsp;</p>
+<ol type="1">
+<li>En cherchant une solution particulière sous la forme <span class="math inline">\(e^{-t}(a\cos(t) + b\sin(t))\)</span>, déterminer l’unique solution du problème de Cauchy</li>
+</ol>
+<p><span class="math display">\[
+\begin{cases}
+    \forall t \in \mathbb{R},\ h'(t) - h(t) = e^{-t}(\cos(t) - 2\sin(t)),\\
+    h(0) = 0.
+\end{cases}
+\]</span></p>
+<ol start="2" type="1">
+<li>Montrer que cette solution est développable en série entière sur <span class="math inline">\(\mathbb{R}\)</span>.</li>
+</ol>
+</div>
+<div id="exr-07-pb-cauchy" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 7.5</strong></span> (Un développement en série entière). Soit <span class="math inline">\(\alpha \in \mathbb{R}\)</span>. Le but de cet exercice est de montrer que la fonction <span class="math inline">\(f: x \mapsto (1+x)^{\alpha}\)</span> est développable en série entière sur <span class="math inline">\(]-1,1[\)</span>.</p>
+<p>On considère le problème de Cauchy</p>
+<p><span class="math display">\[
+\begin{cases}
+    \forall x \in ]-1,1[,\ (1+x)y' - \alpha y = 0,\\
+    y(0) = 1.
+\end{cases}
+\]</span></p>
+<ol type="1">
+<li><p>Montrer que <span class="math inline">\(f\)</span> est solution de ce problème.</p></li>
+<li><p>Soit <span class="math inline">\(\sum_{n \in \mathbb{N}} a_n x^n\)</span> une série entière de rayon de convergence <span class="math inline">\(R \geqslant 1\)</span>. On pose</p></li>
+</ol>
+<p><span class="math display">\[
+\forall x \in ]-R,R[,\quad y(x) = \sum_{n=0}^{+\infty} a_n x^n.
+\]</span></p>
+<ol type="a">
+<li>Montrer que <span class="math inline">\(y\)</span> est solution du problème de Cauchy ssi</li>
+</ol>
+<p><span class="math display">\[
+\begin{cases}
+    a_0 = 1,\\
+    \forall n \in \mathbb{N},\ a_{n+1} = \frac{\alpha - n}{n+1} a_n.
+\end{cases}
+\]</span></p>
+<ol start="2" type="a">
+<li>En déduire que le problème de Cauchy possède une solution développable en série entière.</li>
+</ol>
+<ol start="3" type="1">
+<li>Conclure.</li>
+</ol>
+</div>
+</section>
+<section id="systèmes-différentiels-linéaires-homogènes-à-coefficients-constants" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="systèmes-différentiels-linéaires-homogènes-à-coefficients-constants"><span class="header-section-number">7.3.2</span> Systèmes différentiels linéaires homogènes à coefficients constants</h3>
+<div id="exr-07-syst-diag" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 7.6</strong></span> (Un système diagonalisable). On considère la matrice</p>
+<p><span class="math display">\[
+A = \begin{pmatrix}
+    -7&amp;0&amp;-6\\
+    -3&amp;-4&amp;-6\\
+    3&amp;0&amp;2
+\end{pmatrix}.
+\]</span></p>
+<ol type="1">
+<li><p>Déterminer une matrice <span class="math inline">\(P \in GL_3(\mathbb{R})\)</span> telle que <span class="math inline">\(P^{-1}AP = D\)</span> avec <span class="math inline">\(D = \mathrm{diag}(-4,-4,-1)\)</span>.</p></li>
+<li><p>En déduire une base de l’ensemble des solutions du système différentiel <span class="math inline">\(X' = AX\)</span>.</p></li>
+<li><p>Montrer que toutes les solutions du système différentiel <span class="math inline">\(X' = AX\)</span> tendent vers <span class="math inline">\(0\)</span> en <span class="math inline">\(+\infty\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-07-syst-trig" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 7.7</strong></span> (Un système trigonalisable). On considère le système différentiel linéaire</p>
+<p><span class="math display">\[
+\forall t \in \mathbb{R},\quad
+\begin{cases}
+    x'(t) = -x(t) + 3y(t),\\
+    y'(t) = -3x(t) + 5y(t).
+\end{cases}
+\]</span></p>
+<ol type="1">
+<li><p>Montrer que ce système s’écrit matriciellement <span class="math inline">\(X' = AX\)</span> où <span class="math inline">\(X = \begin{pmatrix} x\\ y \end{pmatrix}\)</span> et <span class="math inline">\(A \in \mathcal{M}_2(\mathbb{R})\)</span> est une matrice à préciser.</p></li>
+<li><p>Montrer que <span class="math inline">\(A\)</span> est trigonalisable sur <span class="math inline">\(\mathbb{R}\)</span>. La matrice <span class="math inline">\(A\)</span> est-elle diagonalisable sur <span class="math inline">\(\mathbb{R}\)</span> ?</p></li>
+<li><p>Déterminer une matrice <span class="math inline">\(P \in GL_2(\mathbb{R})\)</span> telle que <span class="math inline">\(P^{-1}AP = T\)</span> avec <span class="math inline">\(T = \begin{pmatrix} 2&amp;1\\ 0&amp;2 \end{pmatrix}\)</span>.</p></li>
+<li><p>En déduire l’ensemble des solutions du système différentiel.</p></li>
+</ol>
+</div>
+<div id="exr-07-coef-const" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 7.8</strong></span> (Coefficients constants). Résoudre les équations différentielles suivantes :</p>
+<ol type="1">
+<li><span class="math inline">\(y'' - 2y' + y = t\)</span></li>
+<li><span class="math inline">\(y'' + y' + y = \cosh(t)\)</span></li>
+<li><span class="math inline">\(y'' + y = \sin(2t)\)</span></li>
+<li><span class="math inline">\(y'' - 4y' + ay = 0\)</span>, <span class="math inline">\(a \in \mathbb{R}\)</span></li>
+</ol>
+</div>
+<div id="exr-07-base-sol" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 7.9</strong></span> Soit <span class="math inline">\(A \in \mathcal{M}_n(\mathbb{K})\)</span> une matrice diagonalisable et <span class="math inline">\(\mathcal{B} = (U_1, \dots, U_n)\)</span> une base de vecteurs propres de <span class="math inline">\(A\)</span>, associés aux valeurs propres <span class="math inline">\(\lambda_1, \dots, \lambda_n\)</span>.</p>
+<ol type="1">
+<li><p>Montrer que pour tout <span class="math inline">\(i \in \{ 1,\dots,n \}\)</span>, la fonction <span class="math inline">\(t \mapsto e^{\lambda_i t} U_i\)</span> est une solution de l’équation <span class="math inline">\(X' = AX\)</span>.</p></li>
+<li><p>En déduire une base de l’ensemble des solutions de <span class="math inline">\(X' = AX\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-07-complexe" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 7.10 (<span class="math inline">\(\star\)</span>)</strong></span> Soit <span class="math inline">\(A \in \mathcal{M}_3(\mathbb{R})\)</span>. On suppose que <span class="math inline">\(A\)</span> possède une valeur propre réelle <span class="math inline">\(\lambda\)</span> et deux valeurs propres complexes conjuguées distinctes <span class="math inline">\(\mu\)</span> et <span class="math inline">\(\bar{\mu}\)</span>. On note <span class="math inline">\(U\)</span> (resp. <span class="math inline">\(V\)</span>) un vecteur propre réel (resp. complexe) associé à la valeur propre <span class="math inline">\(\lambda\)</span> (resp. <span class="math inline">\(\mu\)</span>), et <span class="math inline">\(f\)</span> l’endomorphisme canoniquement associé à <span class="math inline">\(A\)</span>.</p>
+<ol type="1">
+<li><p>Montrer que <span class="math inline">\(\bar{V}\)</span> est un vecteur propre de <span class="math inline">\(A\)</span> associé à la valeur propre <span class="math inline">\(\bar{\mu}\)</span>.</p></li>
+<li><p>En déduire une base de l’ensemble des solutions complexes de l’équation <span class="math inline">\(X' = AX\)</span>.</p></li>
+<li><p>Montrer que la famille <span class="math inline">\(\mathcal{B} = (U, \mathrm{Re}(V), \mathrm{Im}(V))\)</span> forme une base de <span class="math inline">\(\mathcal{M}_{3,1}(\mathbb{R})\)</span> et que le plan <span class="math inline">\(P = \mathrm{Vect}(\mathrm{Re}(V), \mathrm{Im}(V))\)</span> est stable par <span class="math inline">\(f\)</span>.</p></li>
+</ol>
+<p>On pose <span class="math inline">\(\mu = \sigma + i\omega\)</span>. Montrer que les fonctions</p>
+<p><span class="math display">\[
+\begin{aligned}
+    X_1 &amp;: t \mapsto e^{\lambda t} U,\\
+    X_2 &amp;: t \mapsto e^{\sigma t}\bigl(\cos(\omega t)\mathrm{Re}(V) - \sin(\omega t)\mathrm{Im}(V)\bigr),\\
+    X_3 &amp;: t \mapsto e^{\sigma t}\bigl(\sin(\omega t)\mathrm{Re}(V) + \cos(\omega t)\mathrm{Im}(V)\bigr)
+\end{aligned}
+\]</span></p>
+<p>forment une base de l’ensemble des solutions réelles de <span class="math inline">\(X' = AX\)</span>, et en déduire les coordonnées, dans la base <span class="math inline">\(\mathcal{B}\)</span>, d’une solution générale réelle de <span class="math inline">\(X' = AX\)</span>.</p>
+</div>
+</section>
+<section id="équations-différentielles-linéaires-dordre-2" class="level3" data-number="7.3.3">
+<h3 data-number="7.3.3" class="anchored" data-anchor-id="équations-différentielles-linéaires-dordre-2"><span class="header-section-number">7.3.3</span> Équations différentielles linéaires d’ordre <span class="math inline">\(2\)</span></h3>
+<div id="exr-07-abaissement" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 7.11</strong></span> (Abaissement de l’ordre). On considère l’équation différentielle</p>
+<p><span class="math display">\[
+\forall t&gt;0,\quad t^2 y'' - t y' + y = 1 - \ln(t).
+\]</span></p>
+<ol type="1">
+<li><p>Chercher une solution particulière de l’équation homogène associée sous la forme <span class="math inline">\(t \mapsto t^{\alpha}\)</span>, <span class="math inline">\(\alpha \in \mathbb{R}\)</span>.</p></li>
+<li><p>Montrer, à l’aide d’une méthode du cours, que la résolution de cette équation se ramène à la résolution de l’équation différentielle</p></li>
+</ol>
+<p><span class="math display">\[
+\forall t&gt;0,\quad Z' + \frac{1}{t} Z = \frac{1-\ln(t)}{t^3}.
+\]</span></p>
+<ol start="3" type="1">
+<li>Résoudre cette dernière équation, puis l’équation initiale.</li>
+</ol>
+</div>
+<div id="exr-07-chg-var" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 7.12</strong></span> (Changement de variable). On considère l’équation différentielle</p>
+<p><span class="math display">\[
+\forall t&gt;0,\quad t^2 y'' + 4t y' + 2y = 1.
+\]</span></p>
+<p>Si <span class="math inline">\(y\)</span> est une fonction deux fois dérivable sur <span class="math inline">\(]0,+\infty[\)</span>, on pose</p>
+<p><span class="math display">\[
+\forall x \in \mathbb{R},\quad z(x) = y(e^x).
+\]</span></p>
+<ol type="1">
+<li><p>Montrer que <span class="math inline">\(y\)</span> est solution de l’équation sur <span class="math inline">\(]0,+\infty[\)</span> ssi <span class="math inline">\(z\)</span> est solution d’une équation différentielle linéaire simple sur <span class="math inline">\(\mathbb{R}\)</span>, que l’on déterminera.</p></li>
+<li><p>En déduire l’ensemble des solutions de l’équation initiale sur <span class="math inline">\(]0,+\infty[\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-07-serie-ent" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 7.13 (<span class="math inline">\(\star\)</span>)</strong></span> Montrer que le problème de Cauchy</p>
+<p><span class="math display">\[
+\begin{cases}
+    \forall x \in \mathbb{R},\ y'' + xy' + y = 1,\\
+    y(0) = y'(0) = 1
+\end{cases}
+\]</span></p>
+<p>possède une unique solution développable en série entière, et la déterminer.</p>
+</div>
+</section>
+<section id="divers" class="level3" data-number="7.3.4">
+<h3 data-number="7.3.4" class="anchored" data-anchor-id="divers"><span class="header-section-number">7.3.4</span> Divers</h3>
+<div id="exr-07-recollement" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 7.14 (<span class="math inline">\(\star\)</span>)</strong></span> (Recollement de solutions). On considère l’équation</p>
+<p><span class="math display">\[
+\forall t \in \mathbb{R},\quad ty' + 2y = \frac{t}{t^2+1}.
+\]</span></p>
+<ol type="1">
+<li><p>Déterminer les solutions de cette équation sur <span class="math inline">\(]0,+\infty[\)</span> et sur <span class="math inline">\(]-\infty,0[\)</span>.</p></li>
+<li><p>En déduire l’ensemble des solutions sur <span class="math inline">\(\mathbb{R}\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-07-qualitatif" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 7.15 (<span class="math inline">\(\star\)</span>)</strong></span> Soit <span class="math inline">\(a \in \mathbb{R}\)</span>.</p>
+<ol type="1">
+<li><p>Donner les solutions sur <span class="math inline">\(\mathbb{R}\)</span> de <span class="math inline">\(y' + ay = 0\)</span>.</p></li>
+<li><p>Soit <span class="math inline">\(h\)</span> une fonction continue sur <span class="math inline">\(\mathbb{R}_+\)</span>. Résoudre sur <span class="math inline">\(\mathbb{R}_+\)</span> l’équation <span class="math inline">\(y' + ay = h\)</span>.</p></li>
+<li><p>On suppose <span class="math inline">\(h\)</span> bornée et <span class="math inline">\(a \geqslant 0\)</span>.</p>
+<ol type="a">
+<li><p>Les solutions sont-elles toutes bornées ?</p></li>
+<li><p>Donner une condition nécessaire et suffisante sur <span class="math inline">\(a\)</span> pour que toutes les solutions soient bornées.</p></li>
+</ol></li>
+<li><p>On suppose que <span class="math inline">\(h\)</span> est bornée et que <span class="math inline">\(a &lt; 0\)</span>.</p>
+<ol type="a">
+<li><p>Montrer que l’intégrale <span class="math inline">\(\displaystyle\int_0^{+\infty} h(t)e^{at}dt\)</span> converge.</p></li>
+<li><p>Montrer qu’il existe une unique solution bornée, et donner son expression à l’aide de <span class="math inline">\(\int_0^{+\infty} h(t)e^{at}dt\)</span>.</p></li>
+<li><p>On suppose que <span class="math inline">\(h(t) \to 0\)</span> quand <span class="math inline">\(t \to +\infty\)</span>. Montrer que l’unique solution bornée tend vers <span class="math inline">\(0\)</span> en <span class="math inline">\(+\infty\)</span>.</p></li>
+</ol></li>
+</ol>
+</div>
+<div id="exr-07-ordre3" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercice 7.16 (<span class="math inline">\(\star\)</span>)</strong></span> Résoudre sur <span class="math inline">\(\mathbb{R}\)</span> l’équation différentielle <span class="math inline">\(y^{(3)} = y\)</span>.</p>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copié");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copié");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./06-series-entieres.html" class="pagination-link" aria-label="Séries entières">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Séries entières</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./colles.html" class="pagination-link" aria-label="Programmes de colle">
+        <span class="nav-page-text">Programmes de colle</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
