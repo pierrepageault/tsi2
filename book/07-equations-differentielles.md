@@ -55,7 +55,7 @@ $$
 
 ::: {#rem-regularite}
 
-Une solution de $(E1)$ hérite de la régularité de $a$ et $b$ sur $I$. Par exemple, si $a$ et $b$ sont de classe $C^{+\infty}$, l'égalité
+Une solution de $(E1)$ hérite de la régularité de $a$ et $b$ sur $I$. Par exemple, si $a$ et $b$ sont de classe $C^{\infty}$, l'égalité
 
 $$
    \forall t \in I,\ y'(t) = -a(t)y(t) + b(t) 
@@ -93,7 +93,7 @@ $t \mapsto e^{-A(t)}$ où $A$ est une primitive de $a$ sur $I$.
 Autrement dit, l'ensemble $\mathcal{S}_{(H1)}$ des solutions de (H1) sur $I$ est
 
 $$
-\mathcal{S}_{(H1)}\{t \mapsto \alpha e^{-A(t)},\ \alpha \in \mathbb{K}\}
+\mathcal{S}_{(H1)} = \{t \mapsto \alpha e^{-A(t)},\ \alpha \in \mathbb{K}\}
 $$
 
 où $A$ est une primitive de $a$ sur $I$.
@@ -116,8 +116,7 @@ $$
 \forall t >0,\ y'(t) + \frac{1}{t}y(t) = 0.
 $$
 
-Une primitive de $t \mapsto \frac{1}{t}$ sur $]0,+\infty[$ est $t \mapsto \ln
-t$. 
+Une primitive de $t \mapsto \frac{1}{t}$ sur $]0,+\infty[$ est $t \mapsto \ln(t)$. 
 
 Donc les solutions sont les fonctions de la forme
 
@@ -132,7 +131,7 @@ $$
 ::: {#tip-resoudre-edo .callout-tip}
 
 Résoudre une équation homogène, c'est donc essentiellement un problème de
-calcule de *primitive*.
+calcul de *primitive*.
 
 :::
 
@@ -170,12 +169,13 @@ $$
     \forall t >0,\ y' + \frac{1}{t}y = 2.
 $$
 
-D'après l'exemple précédent, l'équation homogène associée a pour solutionsles fonctions de la forme $t \mapsto \frac{\alpha}{t}$, $\alpha \in \mathbb{R}$. 
+D'après l'exemple précédent, l'équation homogène associée a pour solutions les
+fonctions de la forme $t \mapsto \frac{\alpha}{t}$, $\alpha \in \mathbb{K}$.
 
-On remarque que $t \mapsto t$ est une solution particuilère de l'équatoin
-complète. 
+On remarque que $t \mapsto t$ est une solution particulière de l'équation
+complète.
 
-Dons les solutions sont les fonctions de la forme 
+Donc les solutions sont les fonctions de la forme 
 
 $$
 y(t) = t + \frac{\alpha}{t},\quad \alpha \in \mathbb{K}.
@@ -280,7 +280,7 @@ Une *courbe intégrale* de l'équation $(E1)$ est le graphe d'une solution de $(
 
 #### Interprétation graphique du théorème de Cauchy-Lipschitz
 
-Par chaque point $(t_{0},y_0) \in I \times \mathbb{R}$, il passe une unique
+Par chaque point $(t_{0},y_0) \in I \times \mathbb{K}$, il passe une unique
 courbe intégrale.
 
 :::
@@ -642,7 +642,7 @@ retient pas cette relation car on préfère toujours dériver un *produit*.
 ::: {#exm-abaissement-ordre}
 
 En remarquant que $x \mapsto x^{2}$ est une solution particulière de l'équation
-holmogène
+homogène
 
 $$
 \forall x>0,\quad x^{2}y'' - 2y = 0,
