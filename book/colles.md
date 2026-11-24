@@ -112,3 +112,15 @@ fait envisageable de donner directement un couple $(P,D)$ diagonalisant une
 matrice donnée $A$ comme point départ.
 
 Tout exercice de trigonalisation doit être *guidé*.
+
+## Programme 09 - du 23/11 au 27/11
+
+@sec-06-convergence
+
+@sec-06-somme
+
+@sec-06-dse
+
+**Attention**, dans la section @sec-06-dse, l'unicité et le développement en série de
+Taylor ne sont pas encore au programme : cette section est uniquement incluse pour
+pourvoir utiliser les développements en série entière de référence (@prp-dse-reference)

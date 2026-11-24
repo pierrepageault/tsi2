@@ -9,12 +9,13 @@ book:
   date: today 
   chapters:
     - index.md
-    - 01-integrales-generalisees.qmd
+    - 01-integrales-generalisees.md
     - 02-series-numeriques.md
     - 03-complements-algebre-lineaire.md
     - 04-determinants.md
     - 05-reduction-des-endomorphismes.md
     - 06-series-entieres.md
+    - 07-equations-differentielles.md
     - colles.md
     - dm.md
   downloads: [pdf, epub]

@@ -21,6 +21,9 @@
 --- 
 
 [DM 05 - Diagonalisation (Type CCINP)](./pdf/dm/05-ccinp.pdf) <!-- CCP/1/2010 -->
+[Correction](./pdf/dm/corrections/05-ccinp.pdf)
+
 
 [DM 05 - Diagonalisation (Type CCS)](./pdf/dm/05-ccs.pdf) <!-- CCS/2/2013 -->
+[Correction](./pdf/dm/corrections/05-ccs.pdf)
 
