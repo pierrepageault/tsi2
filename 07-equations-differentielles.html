@@ -268,11 +268,11 @@ window.Quarto = {
 <section id="sec-07-ordre1" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="sec-07-ordre1"><span class="header-section-number">7.1</span> Équations différentielles linéaires d’ordre <span class="math inline">\(1\)</span></h2>
 <div id="def-edl1" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 7.1 (Équation différentielle linéaire d’ordre <span class="math inline">\(1\)</span>)</strong></span> On appelle équation différentielle linéaire d’ordre <span class="math inline">\(1\)</span> une équation de la forme</p>
-<p><span class="math display">\[
+<p><span class="theorem-title"><strong>Définition 7.1 (Équation différentielle linéaire d’ordre <span class="math inline">\(1\)</span>)</strong></span> On appelle <em>équation différentielle linéaire d’ordre <span class="math inline">\(1\)</span></em> une équation de la forme</p>
+<p><span class="math display">\[\label{E1}
 \forall t \in I,\quad y'(t) + a(t)y(t) = b(t) \tag{E1}
 \]</span></p>
-<p>où <span class="math inline">\(t \mapsto a(t)\)</span> (le <em>coefficient</em>) et <span class="math inline">\(t \mapsto b(t)\)</span> (le <em>second membre</em>) sont des fonctions de <span class="math inline">\(I\)</span> dans <span class="math inline">\(\mathbb{K}\)</span>, et <span class="math inline">\(t \mapsto y(t)\)</span> est la fonction <em>inconnue</em>.</p>
+<p>La fonction <span class="math inline">\(t \mapsto a(t)\)</span> s’appelle le <em>coefficient</em> de l’équation et <span class="math inline">\(t \mapsto b(t)\)</span> s’appelle le <em>second membre</em>. La fonction <span class="math inline">\(t \mapsto y(t)\)</span> est l’<em>inconnue</em>.</p>
 </div>
 <div id="rem-muette" class="proof remark">
 <p><span class="proof-title"><em>Remarque 7.1</em>. </span>La variable <span class="math inline">\(t\)</span> et le nom de la fonction inconnue <span class="math inline">\(y\)</span> sont muets. Par exemple, les équations</p>
@@ -286,36 +286,46 @@ window.Quarto = {
 <p>représentent la même équation différentielle.</p>
 </div>
 <div id="def-solution-ordre-1" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 7.2 (Solution)</strong></span> Une solution de <span class="math inline">\((E1)\)</span> est une fonction <span class="math inline">\(y:I \to \mathbb{R}\)</span> <em>dérivable</em>, telle que</p>
+<p><span class="theorem-title"><strong>Définition 7.2 (Solution)</strong></span> Une <em>solution</em> de <span class="math inline">\(\eqref{E1}\)</span> est une fonction <span class="math inline">\(y:I \to \mathbb{K}\)</span> <em>dérivable</em>, telle que</p>
 <p><span class="math display">\[
     \forall t \in I,\ y'(t) + a(t)y(t) = b(t).
 \]</span></p>
 </div>
 <div id="rem-regularite" class="proof remark">
-<p><span class="proof-title"><em>Remarque 7.2</em>. </span>Une solution de <span class="math inline">\((E1)\)</span> hérite de la régularité de <span class="math inline">\(a\)</span> et <span class="math inline">\(b\)</span> sur <span class="math inline">\(I\)</span>. Par exemple, si <span class="math inline">\(a\)</span> et <span class="math inline">\(b\)</span> sont de classe <span class="math inline">\(C^{\infty}\)</span>, l’égalité</p>
+<p><span class="proof-title"><em>Remarque 7.2</em>. </span>Une solution de <span class="math inline">\(\eqref{E1}\)</span> hérite de la régularité de <span class="math inline">\(a\)</span> et <span class="math inline">\(b\)</span> sur <span class="math inline">\(I\)</span>. Par exemple, si <span class="math inline">\(a\)</span> et <span class="math inline">\(b\)</span> sont de classe <span class="math inline">\(C^{\infty}\)</span>, l’égalité</p>
 <p><span class="math display">\[
    \forall t \in I,\ y'(t) = -a(t)y(t) + b(t)
 \]</span></p>
 <p>montre que <span class="math inline">\(y'\)</span> est continue sur <span class="math inline">\(I\)</span>, donc <span class="math inline">\(y\)</span> est de classe <span class="math inline">\(C^{1}\)</span> sur <span class="math inline">\(I\)</span> par somme et produit. La même égalité montre alors que <span class="math inline">\(y'\)</span> est de classe <span class="math inline">\(C^{1}\)</span> sur <span class="math inline">\(I\)</span> i.e.&nbsp;que <span class="math inline">\(y\)</span> est de classe <span class="math inline">\(C^{2}\)</span> sur <span class="math inline">\(I\)</span>, etc.</p>
 </div>
 <div id="def-h1" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 7.3 (Équation homogène associée)</strong></span> On appelle équation homogène associée à (E1) l’équation différentielle</p>
-<p><span class="math display">\[
+<p><span class="theorem-title"><strong>Définition 7.3 (Équation homogène associée)</strong></span> L’<em>équation homogène</em> associée à l’équation <span class="math inline">\(\eqref{E1}\)</span> est l’équation différentielle</p>
+<p><span class="math display">\[\label{H1}
 \forall t \in I,\quad y'(t) + a(t)y(t) = 0. \tag{H1}
 \]</span></p>
 </div>
 <div id="prp-sol-h1" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 7.1 (Ensemble des solutions de l’équation homogène)</strong></span> Si <span class="math inline">\(a\)</span> est <em>continue</em> sur <span class="math inline">\(I\)</span>, l’ensemble des solutions de l’équation homogène (H1) est un <span class="math inline">\(\mathbb{K}\)</span>-espace vectoriel de dimension <span class="math inline">\(1\)</span>, dont une base est <span class="math inline">\(t \mapsto e^{-A(t)}\)</span> où <span class="math inline">\(A\)</span> est une primitive de <span class="math inline">\(a\)</span> sur <span class="math inline">\(I\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 7.1 (Ensemble des solutions de l’équation homogène)</strong></span> Si <span class="math inline">\(a\)</span> est <em>continue</em> sur <span class="math inline">\(I\)</span>, l’ensemble des solutions de l’équation homogène <span class="math inline">\(\eqref{H1}\)</span> est la <em>droite vectorielle</em> <span class="math inline">\(\operatorname{Vect}(e^{-A})\)</span>, où <span class="math inline">\(A\)</span> est <em>une</em> primitive de <span class="math inline">\(a\)</span> sur <span class="math inline">\(I\)</span>.</p>
 </div>
 <div id="rem-sol-h1" class="proof remark">
-<p><span class="proof-title"><em>Remarque 7.3</em>. </span>Autrement dit, l’ensemble <span class="math inline">\(\mathcal{S}_{(H1)}\)</span> des solutions de (H1) sur <span class="math inline">\(I\)</span> est</p>
+<p><span class="proof-title"><em>Remarque 7.3</em>. </span>Autrement dit, l’ensemble des solutions de <span class="math inline">\(\eqref{H1}\)</span> sur <span class="math inline">\(I\)</span> est</p>
 <p><span class="math display">\[
-\mathcal{S}_{(H1)} = \{t \mapsto \alpha e^{-A(t)},\ \alpha \in \mathbb{K}\}
+\{t \mapsto \alpha e^{-A(t)},\ \alpha \in \mathbb{K}\}
 \]</span></p>
 <p>où <span class="math inline">\(A\)</span> est une primitive de <span class="math inline">\(a\)</span> sur <span class="math inline">\(I\)</span>.</p>
 </div>
+<div id="exm-ex-fond" class="theorem example">
+<p><span class="theorem-title"><strong>Exemple 7.1</strong></span> Les équations homogènes d’ordre <span class="math inline">\(1\)</span> les plus simples (et les plus importantes !) à savoir résoudre sont les équations d’ordre <span class="math inline">\(1\)</span> à coefficients <em>constants</em></p>
+<p><span class="math display">\[
+    \forall t \in I,\ y'(t)+ay(t)=0,\quad \text{$a \in \mathbb{K}$}.
+\]</span></p>
+<p>Les solutions sont les fonctions de la forme</p>
+<p><span class="math display">\[
+    t \mapsto \alpha e^{-at},\ \alpha \in \mathbb{K}.
+\]</span></p>
+</div>
 <div id="exm-ordre1-hom" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 7.1</strong></span> Résolution de l’équation différentielle</p>
+<p><span class="theorem-title"><strong>Exemple 7.2</strong></span> Résolution de l’équation différentielle</p>
 <p><span class="math display">\[
 \forall t&gt;0,\quad ty'(t) + y(t) = 0.
 \]</span></p>
@@ -343,17 +353,31 @@ Astuce&nbsp;7.1
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Résoudre une équation homogène, c’est donc essentiellement un problème de calcul de <em>primitive</em>.</p>
+<p>Résoudre une équation homogène, c’est donc essentiellement calculer une <em>primitive</em>.</p>
 </div>
 </div>
 <div id="prp-structure-sol" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 7.2 (Structure de l’ensemble des solutions de l’équation complète)</strong></span> Si <span class="math inline">\(y_p\)</span> est une solution <em>particulière</em> de l’équation (E1), alors les solutions de (E1) sont les fonctions de la forme <span class="math inline">\(y_p + y\)</span> où <span class="math inline">\(y\)</span> est une solution de l’équation homogène (H1).</p>
+<p><span class="theorem-title"><strong>Proposition 7.2 (Structure de l’ensemble des solutions de l’équation complète)</strong></span> Si <span class="math inline">\(y_p\)</span> est <em>une</em> solution particulière de l’équation <span class="math inline">\(\eqref{E1}\)</span>, alors l’ensemble des solutions de <span class="math inline">\(\eqref{E1}\)</span> est <span class="math inline">\(y_{p} + \operatorname{Vect}(e^{-A})\)</span>.</p>
+<p>On dit que l’ensemble des solutions de <span class="math inline">\(\eqref{E1}\)</span> est une droite <em>affine</em> passant par <span class="math inline">\(y_p\)</span> et <em>dirigée</em> par l’ensemble des solutions de <span class="math inline">\(\eqref{H1}\)</span>.</p>
+<div id="fig-espace-affine" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-espace-affine-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./tikz/svg/07-2.svg" class="img-fluid figure-img">
 </div>
-<div id="rem-espace-affine" class="proof remark">
-<p><span class="proof-title"><em>Remarque 7.4</em>. </span>On dit que l’ensemble des solutions de (E1) est un <em>espace affine</em> dirigé par l’ensemble des solutions de (H1).</p>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-espace-affine-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.1: L’ensemble des solutions de <span class="math inline">\(\eqref{E1}\)</span> est la droite affine <span class="math inline">\(y_p + \mathrm{Vect}(e^{-A})\)</span>, translatée de la droite vectorielle <span class="math inline">\(\mathrm{Vect}(e^{-A})\)</span> des solutions de <span class="math inline">\(\eqref{H1}\)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="rem-droite-affine" class="proof remark">
+<p><span class="proof-title"><em>Remarque 7.4</em>. </span>Autrement dit, les solutions de <span class="math inline">\(\eqref{E1}\)</span> sont les fonctions de la forme</p>
+<p><span class="math display">\[
+    t \mapsto y_p(t) + \alpha e^{-A(t)},\quad \alpha \in \mathbb{K}.
+\]</span></p>
 </div>
 <div id="exm-ordre1-avec-second-membre" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 7.2</strong></span> Déterminer l’ensemble des solutions de l’équation différentielle</p>
+<p><span class="theorem-title"><strong>Exemple 7.3</strong></span> Déterminer l’ensemble des solutions de l’équation différentielle</p>
 <p><span class="math display">\[
 \forall t&gt;0,\quad ty'(t) + y(t) = 2t.
 \]</span></p>
@@ -372,11 +396,28 @@ y(t) = t + \frac{\alpha}{t},\quad \alpha \in \mathbb{K}.
 </div>
 </details>
 </div>
+<div id="nte-solution-particuliere" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;7.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Pour trouver une solution particulière de <span class="math inline">\(\eqref{E1}\)</span> on cherche celle-ci sous une forme <em>particulière</em> (constante, polynôme, quasi-polynôme, oscillations amorties, …) adaptée au second membre de <span class="math inline">\(\eqref{E1}\)</span>.</p>
+<p>En l’absence de suggestion de l’énoncé ou d’intuition, la méthode de <em>variation de la constante</em> (<a href="#prp-variation-constante" class="quarto-xref">Proposition&nbsp;<span>7.3</span></a>) propose une forme générale qui fonctionne toujours, mais qui mène souvent à des calculs plus compliqués.</p>
+</div>
+</div>
 <div id="prp-variation-constante" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 7.3 (Méthode de variation de la constante)</strong></span> La <em>méthode de variation de la constante</em> consiste à chercher une solution particulière de l’équation (E1) <em>sous la forme</em> <span class="math inline">\(y(t) = \alpha(t)e^{-A(t)}\)</span>, où <span class="math inline">\(A\)</span> est une primitive de <span class="math inline">\(a\)</span> sur <span class="math inline">\(I\)</span> et <span class="math inline">\(\alpha\)</span> est une fonction dérivable sur <span class="math inline">\(I\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 7.3 (Méthode de variation de la constante)</strong></span> La <em>méthode de variation de la constante</em> consiste à chercher une solution particulière de l’équation <span class="math inline">\(\eqref{E1}\)</span> <em>sous la forme</em> <span class="math inline">\(y(t) = z(t)e^{-A(t)}\)</span>, où <span class="math inline">\(z\)</span> est une fonction dérivable sur <span class="math inline">\(I\)</span>.</p>
+</div>
+<div id="rem-terminologie" class="proof remark">
+<p><span class="proof-title"><em>Remarque 7.5</em>. </span>La méthode de variation de la constante consiste donc à chercher une solution particulière à l’équation complète en remplaçant la constante apparaissant dans l’ensemble des solutions de l’équation homogène par une <em>fonction</em>, d’où son nom.</p>
 </div>
 <div id="exm-variation-constante" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 7.3</strong></span> A l’aide de la méthode de variation de la constante, déterminer une solution particulière de l’équation différentielle</p>
+<p><span class="theorem-title"><strong>Exemple 7.4</strong></span> A l’aide de la méthode de variation de la constante, déterminer une solution particulière de l’équation différentielle</p>
 <p><span class="math display">\[
 \forall x&gt;0,\quad xy' - y = x^{2}e^{x}.
 \]</span></p>
@@ -387,15 +428,15 @@ y(t) = t + \frac{\alpha}{t},\quad \alpha \in \mathbb{K}.
     \forall x&gt;0,\ y' - \frac{1}{x}y = xe^{x}.
 \]</span></p>
 <p>L’équation homogène associée a pour solutions <span class="math inline">\(x \mapsto \alpha x\)</span> (une primitive de <span class="math inline">\(-\frac{1}{x}\)</span> sur <span class="math inline">\(]0,+\infty[\)</span> est <span class="math inline">\(-\ln(x)\)</span>).</p>
-<p>On cherche alors une solution particulière <em>sous la forme</em> <span class="math inline">\(y(x) = \alpha(x)x\)</span>, où <span class="math inline">\(\alpha\)</span> est une fonction de classe <span class="math inline">\(C^{1}\)</span> sur <span class="math inline">\(]0,+\infty[\)</span>. On a alors</p>
+<p>On cherche alors une solution particulière <em>sous la forme</em> <span class="math inline">\(y(x) = z(x)x\)</span>, où <span class="math inline">\(z\)</span> est une fonction de classe <span class="math inline">\(C^{1}\)</span> sur <span class="math inline">\(]0,+\infty[\)</span>. On a alors</p>
 <p><span class="math display">\[
-    \forall x &gt;0,\ y'(x) = \alpha'(x)x + \alpha(x),
+    \forall x &gt;0,\ y'(x) = z'(x)x + z(x).
 \]</span></p>
-<p>de sorte que <span class="math inline">\(y\)</span> est solution ssi</p>
+<p>Donc</p>
 <p><span class="math display">\[
-\forall x&gt;0,\ xy'(x) - y(x) = \alpha'(x)x^{2} = x^{2}e^{x},
+\forall x&gt;0,\ xy'(x) - y(x) = z'(x)x^{2}.
 \]</span></p>
-<p>Il <em>suffit</em> donc que <span class="math inline">\(\alpha'(x)=e^{x}\)</span>, par exemple <span class="math inline">\(\alpha(x) = e^{x}\)</span>.</p>
+<p>Il <em>suffit</em> donc que <span class="math inline">\(z'(x)=e^{x}\)</span>, par exemple <span class="math inline">\(z(x) = e^{x}\)</span> <em>convient</em>.</p>
 <p>Une solution particulière de l’équation complète est donc <span class="math inline">\(y_p(x) = xe^{x}\)</span>.</p>
 </div>
 </details>
@@ -403,18 +444,19 @@ y(t) = t + \frac{\alpha}{t},\quad \alpha \in \mathbb{K}.
 <div id="prp-superposition" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 7.4 (Principe de superposition)</strong></span> Si <span class="math inline">\(y_1\)</span> et <span class="math inline">\(y_2\)</span> sont des solutions particulières des équations respectives <span class="math inline">\(y' + a(t)y = b_1(t)\)</span> et <span class="math inline">\(y' + a(t)y = b_2(t)\)</span>, alors pour tout <span class="math inline">\(\alpha,\beta \in \mathbb{K}\)</span>, la fonction <span class="math inline">\(\alpha y_1 + \beta y_2\)</span> est une solution particulière sur <span class="math inline">\(I\)</span> de l’équation <span class="math inline">\(y' + a(t)y = \alpha b_1(t) + \beta b_2(t)\)</span>.</p>
 </div>
+<p>Lorsque le coefficient et le second membre de <span class="math inline">\(\eqref{E1}\)</span> sont <em>continus</em>, la méthode de variation de la constante permet effectivement de montrer l’existence d’une solution particulière de <span class="math inline">\(\eqref{E1}\)</span>. La donnée d’une condition initiale permet alors de déterminer uniquement la solution ; c’est le théorème de <em>Cauchy-Lipschitz</em>.</p>
 <div id="thm-cauchy-lipschitz-1" class="theorem">
 <p><span class="theorem-title"><strong>Théorème 7.1 (Théorème de Cauchy-Lipschitz)</strong></span> Si <span class="math inline">\(a\)</span> et <span class="math inline">\(b\)</span> sont continues sur <span class="math inline">\(I\)</span> alors, pour tout <span class="math inline">\(t_0 \in I\)</span> et <span class="math inline">\(y_0 \in \mathbb{K}\)</span>, le <em>problème de Cauchy</em></p>
-<p><span class="math display">\[
+<p><span class="math display">\[\label{P1}\tag{P1}
 \begin{cases}
-    \text{(E1)}\\
+    \text{\eqref{E1}}\\
     y(t_0) = y_0
 \end{cases}
 \]</span></p>
 <p>admet une unique solution sur <span class="math inline">\(I\)</span>.</p>
 </div>
 <div id="def-courbe-integrale" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 7.4 (Courbe intégrale)</strong></span> Une <em>courbe intégrale</em> de l’équation <span class="math inline">\((E1)\)</span> est le graphe d’une solution de <span class="math inline">\((E1)\)</span>.</p>
+<p><span class="theorem-title"><strong>Définition 7.4 (Courbe intégrale)</strong></span> Le graphe d’une solution de <span class="math inline">\(\eqref{E1}\)</span> s’appelle une <em>courbe intégrale</em> de <span class="math inline">\(\eqref{E1}\)</span>.</p>
 </div>
 <div id="nte-cauchy-lipschitz-1" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -422,11 +464,11 @@ y(t) = t + \frac{\alpha}{t},\quad \alpha \in \mathbb{K}.
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note&nbsp;7.1: Interprétation graphique du théorème de Cauchy-Lipschitz
+Note&nbsp;7.2: Interprétation graphique du théorème de Cauchy-Lipschitz
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Par chaque point <span class="math inline">\((t_{0},y_0) \in I \times \mathbb{K}\)</span>, il passe une unique courbe intégrale.</p>
+<p>Par chaque point <span class="math inline">\((t_{0},y_0) \in I \times \mathbb{K}\)</span>, passe une unique courbe intégrale.</p>
 </div>
 </div>
 <div id="fig-cauchy-lipschitz" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -435,7 +477,7 @@ Note&nbsp;7.1: Interprétation graphique du théorème de Cauchy-Lipschitz
 <img src="./tikz/svg/07-1.svg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cauchy-lipschitz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.1: Courbes intégrales de l’équation <span class="math inline">\(ty' + y = 0\)</span> ; par chaque point du demi-plan <span class="math inline">\(t&gt;0\)</span> passe une unique courbe intégrale.
+Figure&nbsp;7.2: Courbes intégrales de l’équation <span class="math inline">\(ty' + y = 0\)</span> ; par chaque point du demi-plan <span class="math inline">\(t&gt;0\)</span> passe une unique courbe intégrale.
 </figcaption>
 </figure>
 </div>
@@ -443,28 +485,60 @@ Figure&nbsp;7.1: Courbes intégrales de l’équation <span class="math inline">
 <section id="sec-07-systemes" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="sec-07-systemes"><span class="header-section-number">7.2</span> Systèmes différentiels linéaires homogènes à coefficients constants</h2>
 <div id="def-systeme" class="theorem definition">
-<p><span class="theorem-title"><strong>Définition 7.5 (Système différentiel linéaire homogène à coefficients constants)</strong></span> Un <strong>système différentiel linéaire homogène à coefficients constants</strong> est un système du type</p>
-<p><span class="math display">\[
+<p><span class="theorem-title"><strong>Définition 7.5 (Système différentiel linéaire homogène à coefficients constants)</strong></span> Un <em>système différentiel linéaire homogène à coefficients constants</em> est un système du type</p>
+<p><span class="math display">\[\label{S}
 \forall t \in I,\quad
-\begin{cases}
-    x_1'(t) = a_{11}x_1(t) + \dots + a_{1n}x_n(t),\\
-    \vdots\\
-    x_n'(t) = a_{n1}x_1(t) + \dots + a_{nn}x_n(t),
-\end{cases} \tag{S}
+\left\{\begin{array}{clc}
+    x_1'(t) &amp;=&amp; a_{11}x_1(t) + \dots + a_{1n}x_n(t),\\
+    \vdots&amp; &amp;\vdots\\
+    x_n'(t) &amp;=&amp; a_{n1}x_1(t) + \dots + a_{nn}x_n(t),
+\end{array}\right. \tag{S}
 \]</span></p>
-<p>où <span class="math inline">\(a_{ij} \in \mathbb{K}\)</span>.</p>
-<p>Si on pose</p>
+<p>où <span class="math inline">\(a_{ij} \in \mathbb{K}\)</span>. En posant</p>
 <p><span class="math display">\[
 X(t) = \begin{pmatrix} x_1(t)\\ \vdots \\ x_n(t) \end{pmatrix}
 \quad\text{et}\quad
 A = (a_{ij})_{1 \leqslant i,j \leqslant n} \in \mathcal{M}_n(\mathbb{K}),
 \]</span></p>
-<p>alors ce système s’écrit matriciellement</p>
-<p><span class="math display">\[
-X' = AX,
+<p>le système <span class="math inline">\(\eqref{S}\)</span> s’écrit <em>matriciellement</em></p>
+<p><span class="math display">\[\tag{S}
+\forall t \in I,\ X'(t) = AX(t),
 \]</span></p>
-<p>où, par définition, <span class="math inline">\(X' = \begin{pmatrix} x_1'\\ \vdots \\ x_n' \end{pmatrix}\)</span>.</p>
+<p>où, par définition, <span class="math inline">\(X'(t) = \begin{pmatrix} x_1'(t)\\ \vdots \\ x_n'(t) \end{pmatrix}\)</span>.</p>
 </div>
+<div id="nte-cas-diagonalisable" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;7.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si <span class="math inline">\(A=\operatorname{diag}(\lambda_{1},\dots,\lambda_{n}) \in \mathcal{M}_{n}(\mathbb{K})\)</span> est une matrice <em>diagonale</em>, le système <span class="math inline">\(\eqref{S}\)</span> est <em>découplé</em></p>
+<p><span class="math display">\[
+\forall t \in I,\quad
+\left\{\begin{array}{clc}
+    x_1'(t) &amp;=&amp;\lambda_1 x_{1}(t),\\
+    \vdots&amp; &amp;\vdots\\
+    x_n'(t) &amp;=&amp; \lambda_{n}x_n(t).
+\end{array}\right.
+\]</span></p>
+<p>Sa résolution est immédiate (<a href="#exm-ex-fond" class="quarto-xref">Exemple&nbsp;<span>7.1</span></a>) :</p>
+<p><span class="math display">\[
+    \forall t \in I,\
+\left\{\begin{array}{l}
+    x_1(t) =\alpha_1e^{\lambda_1 t},\ \alpha_1 \in \mathbb{K}\\
+    \vdots \\
+    x_n(t)= \alpha_ne^{\lambda_{n}t},\ \alpha_{n} \in \mathbb{K}.
+\end{array}\right.
+\]</span></p>
+<p>On voit ainsi naturellement apparaître les <em>exponentielles</em> des valeurs propres de <span class="math inline">\(A\)</span>.</p>
+</div>
+</div>
+<p>L’exemple précédent montre que la résolution du système <span class="math inline">\(\eqref{S}\)</span> est immédiate lorsque la matrice <span class="math inline">\(A\)</span> est <em>diagonale</em>. Lorsque <span class="math inline">\(A\)</span> n’est pas diagonalisable, on peut espérer que la <em>diagonalisation</em> de <span class="math inline">\(A\)</span> permette de se ramener à un problème simple à résoudre.</p>
+<p>Cette approche permet de démontrer le théorème de Cauchy-Lipschitz pour les systèmes linéaires, et fournit une méthode effective de résolution.</p>
 <div id="prp-cauchy-lipschitz-systeme" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 7.5 (Théorème de Cauchy-Lipschitz)</strong></span> Pour tout <span class="math inline">\(t_0 \in I\)</span> et <span class="math inline">\(X_0 \in \mathcal{M}_{n,1}(\mathbb{K})\)</span>, le problème de Cauchy</p>
 <p><span class="math display">\[
@@ -475,11 +549,39 @@ X' = AX,
 \]</span></p>
 <p>admet une unique solution sur <span class="math inline">\(I\)</span>.</p>
 </div>
+<div id="rem-combinaison" class="proof remark">
+<p><span class="proof-title"><em>Remarque 7.6</em>. </span>La démonstration du théorème de Cauchy-Lipschitz montre que, dans le cas diagonalisable, les fonctions <span class="math inline">\(x_{i}\)</span> sont combinaison linéaire des <em>exponentielles</em> des valeurs propres de <span class="math inline">\(A\)</span>. Puisque</p>
+<p><span class="math display">\[
+    \forall z = a + ib \in \mathbb{C},\ \forall t \in \mathbb{R},\  |e^{zt}| = e^{at},
+\]</span></p>
+<p>la condition de <em>stabilité</em> des solutions de <span class="math inline">\(\eqref{S}\)</span> se traduit donc sur la partie réelle des valeurs propres de <span class="math inline">\(A\)</span> : celle-ci doit être négative ou nulle.</p>
+<div id="fig-stabilite-systeme" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-stabilite-systeme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./tikz/svg/07-3.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stabilite-systeme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.3: Condition de stabilité pour <span class="math inline">\(X' = AX\)</span> : les valeurs propres de <span class="math inline">\(A\)</span> appartiennent au demi-plan <span class="math inline">\(\operatorname{Re}(z) \leq 0\)</span>.
+</figcaption>
+</figure>
+</div>
+<p>Dans le cas des suites géométriques matricielles <span class="math inline">\(X_{n+1}=AX_{n}\)</span>, ce sont les puissances <span class="math inline">\(n\)</span>-ème des valeurs propres de <span class="math inline">\(A\)</span> qui entrent en jeu ; la condition de stabilité porte alors sur le <em>module</em> des valeurs propres de <span class="math inline">\(A\)</span>, qui doit être inférieur ou égal à <span class="math inline">\(1\)</span>.</p>
+<div id="fig-stabilite-suite" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-stabilite-suite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./tikz/svg/07-4.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stabilite-suite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.4: Condition de stabilité pour <span class="math inline">\(X_{n+1} = AX_n\)</span> : les valeurs propres de <span class="math inline">\(A\)</span> appartiennent au disque unité fermé <span class="math inline">\(|z| \leq 1\)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
 <div id="prp-sol-systeme" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 7.6 (Structure de l’ensemble des solutions)</strong></span> L’ensemble des solutions de (S) sur <span class="math inline">\(I\)</span> est un <span class="math inline">\(\mathbb{K}\)</span>-espace vectoriel de dimension <span class="math inline">\(n\)</span>.</p>
 </div>
 <div id="exm-systeme-2x2" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 7.4</strong></span> Résolution pratique du système différentiel</p>
+<p><span class="theorem-title"><strong>Exemple 7.5</strong></span> Déterminer l’ensemble des solutions sur <span class="math inline">\(\mathbb{R}\)</span> du système</p>
 <p><span class="math display">\[
 \begin{cases}
     x' = 2x - 3y,\\
@@ -540,10 +642,10 @@ X^{2} + aX + b = 0. \tag{e}
 \]</span></p>
 </div>
 <div id="rem-base-sol-h" class="proof remark">
-<p><span class="proof-title"><em>Remarque 7.5</em>. </span>Autrement dit, dans le premier cas, une base de l’ensemble des solutions est <span class="math inline">\((t \mapsto e^{\lambda_1 t},\ t \mapsto e^{\lambda_2 t})\)</span> ; dans le deuxième cas, <span class="math inline">\((t \mapsto e^{\lambda t},\ t \mapsto te^{\lambda t})\)</span> ; etc.</p>
+<p><span class="proof-title"><em>Remarque 7.7</em>. </span>Autrement dit, dans le premier cas, une base de l’ensemble des solutions est <span class="math inline">\((t \mapsto e^{\lambda_1 t},\ t \mapsto e^{\lambda_2 t})\)</span> ; dans le deuxième cas, <span class="math inline">\((t \mapsto e^{\lambda t},\ t \mapsto te^{\lambda t})\)</span> ; etc.</p>
 </div>
 <div id="rem-ordre-n" class="proof remark">
-<p><span class="proof-title"><em>Remarque 7.6</em>. </span>On peut utiliser les mêmes techniques pour étudier une équation différentielle scalaire d’ordre <span class="math inline">\(n\)</span> du type</p>
+<p><span class="proof-title"><em>Remarque 7.8</em>. </span>On peut utiliser les mêmes techniques pour étudier une équation différentielle scalaire d’ordre <span class="math inline">\(n\)</span> du type</p>
 <p><span class="math display">\[
 y^{(n)} - a_{n-1}y^{(n-1)} - \dots - a_1 y' - a_0 y = 0,\quad a_0,\dots,a_{n-1} \in \mathbb{K},
 \]</span></p>
@@ -589,16 +691,16 @@ A = \begin{pmatrix}
 <p>admet une unique solution sur <span class="math inline">\(I\)</span>.</p>
 </div>
 <div id="rem-cauchy-lipschitz-2" class="proof remark">
-<p><span class="proof-title"><em>Remarque 7.7</em>. </span>Interprétation graphique du théorème de Cauchy-Lipschitz.</p>
+<p><span class="proof-title"><em>Remarque 7.9</em>. </span>Interprétation graphique du théorème de Cauchy-Lipschitz.</p>
 </div>
 <div id="prp-sol-h2" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 7.8 (Ensemble des solutions de l’équation homogène)</strong></span> L’ensemble des solutions de l’équation homogène (H2) est un <span class="math inline">\(\mathbb{K}\)</span>-espace vectoriel de dimension <span class="math inline">\(2\)</span>.</p>
 </div>
 <div id="rem-pas-de-methode-h2" class="proof remark">
-<p><span class="proof-title"><em>Remarque 7.8</em>. </span>Contrairement aux équations d’ordre <span class="math inline">\(1\)</span>, il n’existe pas de méthode au programme pour déterminer une base de solutions de (H2).</p>
+<p><span class="proof-title"><em>Remarque 7.10</em>. </span>Contrairement aux équations d’ordre <span class="math inline">\(1\)</span>, il n’existe pas de méthode au programme pour déterminer une base de solutions de (H2).</p>
 </div>
 <div id="exm-euler-hom" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 7.5</strong></span> Déterminer l’ensemble des solutions de l’équation</p>
+<p><span class="theorem-title"><strong>Exemple 7.6</strong></span> Déterminer l’ensemble des solutions de l’équation</p>
 <p><span class="math display">\[
 \forall x&gt;0,\quad x^{2}y''(x) + xy'(x) - y(x) = 0
 \]</span></p>
@@ -622,10 +724,10 @@ y(x) = Ax + \frac{B}{x},\quad A,B \in \mathbb{K}.
 <p><span class="theorem-title"><strong>Proposition 7.9 (Structure de l’ensemble des solutions)</strong></span> Si <span class="math inline">\(y_p\)</span> est une solution <em>particulière</em> de l’équation (E2), alors les solutions de (E2) sont les fonctions de la forme <span class="math inline">\(y_p + y\)</span> où <span class="math inline">\(y\)</span> est une solution de l’équation <em>homogène</em> (H2) associée à (E2).</p>
 </div>
 <div id="rem-pas-de-methode-particuliere" class="proof remark">
-<p><span class="proof-title"><em>Remarque 7.9</em>. </span>Contrairement aux équations d’ordre <span class="math inline">\(1\)</span>, il n’existe pas de méthode au programme pour déterminer une solution particulière de (E2).</p>
+<p><span class="proof-title"><em>Remarque 7.11</em>. </span>Contrairement aux équations d’ordre <span class="math inline">\(1\)</span>, il n’existe pas de méthode au programme pour déterminer une solution particulière de (E2).</p>
 </div>
 <div id="rem-superposition-2" class="proof remark">
-<p><span class="proof-title"><em>Remarque 7.10</em>. </span>Le principe de superposition reste valable pour les équations différentielles linéaires d’ordre <span class="math inline">\(2\)</span>.</p>
+<p><span class="proof-title"><em>Remarque 7.12</em>. </span>Le principe de superposition reste valable pour les équations différentielles linéaires d’ordre <span class="math inline">\(2\)</span>.</p>
 </div>
 <div id="prp-abaissement-ordre" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 7.10 (Méthode d’abaissement de l’ordre)</strong></span> Si <span class="math inline">\(h\)</span> est une solution particulière de l’équation homogène (H2) associée à (E2), <em>qui ne s’annule pas sur <span class="math inline">\(I\)</span></em>, on détermine l’ensemble des solutions de l’équation (E2) en posant</p>
@@ -634,14 +736,14 @@ y(x) = Ax + \frac{B}{x},\quad A,B \in \mathbb{K}.
 \]</span></p>
 </div>
 <div id="rem-abaissement-ordre" class="proof remark">
-<p><span class="proof-title"><em>Remarque 7.11</em>. </span>La fonction <span class="math inline">\(z\)</span> est bien définie par</p>
+<p><span class="proof-title"><em>Remarque 7.13</em>. </span>La fonction <span class="math inline">\(z\)</span> est bien définie par</p>
 <p><span class="math display">\[
 \forall t \in I,\quad z(t) = \frac{y(t)}{h(t)}
 \]</span></p>
 <p>car la fonction <span class="math inline">\(h\)</span> ne s’annule pas sur <span class="math inline">\(I\)</span> par hypothèse. Cependant, on ne retient pas cette relation car on préfère toujours dériver un <em>produit</em>.</p>
 </div>
 <div id="exm-abaissement-ordre" class="theorem example">
-<p><span class="theorem-title"><strong>Exemple 7.6</strong></span> En remarquant que <span class="math inline">\(x \mapsto x^{2}\)</span> est une solution particulière de l’équation homogène</p>
+<p><span class="theorem-title"><strong>Exemple 7.7</strong></span> En remarquant que <span class="math inline">\(x \mapsto x^{2}\)</span> est une solution particulière de l’équation homogène</p>
 <p><span class="math display">\[
 \forall x&gt;0,\quad x^{2}y'' - 2y = 0,
 \]</span></p>
