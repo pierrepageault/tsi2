@@ -28,4 +28,5 @@
 <!-- [Correction](./pdf/dm/corrections/05-ccs.pdf) -->
 
 ---
-[DM 06 - Séries entières](./pdf/dm/06.pdf)
+
+[DM 06 - Séries entières](./pdf/dm/06.pdf) <!-- CCS/1/2019 -->
