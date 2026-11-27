@@ -9,15 +9,14 @@ intervalle non vide de $\mathbb{R}$.
 
 #### Équation différentielle linéaire d'ordre $1$
 
-On appelle équation différentielle linéaire d'ordre $1$ une équation de la
+On appelle *équation différentielle linéaire d'ordre $1$* une équation de la
 forme
 
-$$
+$$\label{E1}
 \forall t \in I,\quad y'(t) + a(t)y(t) = b(t) \tag{E1}
 $$
 
-où $t \mapsto a(t)$ (le *coefficient*) et $t \mapsto b(t)$ (le *second membre*) sont des fonctions de $I$ dans
-$\mathbb{K}$, et $t \mapsto y(t)$ est la fonction *inconnue*. 
+La fonction $t \mapsto a(t)$ s'appelle le *coefficient* de l'équation et $t \mapsto b(t)$ s'appelle le *second membre*. La fonction $t \mapsto y(t)$ est l'*inconnue*. 
 
 :::
 
@@ -44,7 +43,7 @@ représentent la même équation différentielle.
 
 #### Solution
 
-Une solution de $(E1)$ est une fonction $y:I \to \mathbb{R}$ *dérivable*,
+Une *solution* de \eqref{E1} est une fonction $y:I \to \mathbb{K}$ *dérivable*,
 telle que 
 
 $$
@@ -55,7 +54,7 @@ $$
 
 ::: {#rem-regularite}
 
-Une solution de $(E1)$ hérite de la régularité de $a$ et $b$ sur $I$. Par exemple, si $a$ et $b$ sont de classe $C^{\infty}$, l'égalité
+Une solution de \eqref{E1} hérite de la régularité de $a$ et $b$ sur $I$. Par exemple, si $a$ et $b$ sont de classe $C^{\infty}$, l'égalité
 
 $$
    \forall t \in I,\ y'(t) = -a(t)y(t) + b(t) 
@@ -70,9 +69,9 @@ $C^{1}$ sur $I$ i.e. que $y$ est de classe $C^{2}$ sur $I$, etc.
 
 #### Équation homogène associée
 
-On appelle équation homogène associée à (E1) l'équation différentielle
+L'*équation homogène* associée à l'équation \eqref{E1} est l'équation différentielle
 
-$$
+$$\label{H1}
 \forall t \in I,\quad y'(t) + a(t)y(t) = 0. \tag{H1}
 $$
 
@@ -83,22 +82,40 @@ $$
 #### Ensemble des solutions de l'équation homogène
 
 Si $a$ est *continue* sur $I$, l'ensemble des solutions de l'équation homogène
-(H1) est un $\mathbb{K}$-espace vectoriel de dimension $1$, dont une base est
-$t \mapsto e^{-A(t)}$ où $A$ est une primitive de $a$ sur $I$.
+\eqref{H1} est la *droite vectorielle* $\operatorname{Vect}(e^{-A})$, où $A$ est *une* primitive de $a$ sur $I$.
 
 :::
 
 ::: {#rem-sol-h1}
 
-Autrement dit, l'ensemble $\mathcal{S}_{(H1)}$ des solutions de (H1) sur $I$ est
+Autrement dit, l'ensemble des solutions de \eqref{H1} sur $I$ est
 
 $$
-\mathcal{S}_{(H1)} = \{t \mapsto \alpha e^{-A(t)},\ \alpha \in \mathbb{K}\}
+\{t \mapsto \alpha e^{-A(t)},\ \alpha \in \mathbb{K}\}
 $$
 
 où $A$ est une primitive de $a$ sur $I$.
 
 :::
+
+::: {#exm-ex-fond}
+
+Les équations homogènes d'ordre $1$ les plus simples (et les plus importantes !) à
+savoir résoudre sont les équations d'ordre $1$ à coefficients *constants* 
+
+$$
+    \forall t \in I,\ y'(t)+ay(t)=0,\quad \text{$a \in \mathbb{K}$}.
+$$
+
+Les solutions sont les fonctions de la forme 
+
+$$
+    t \mapsto \alpha e^{-at},\ \alpha \in \mathbb{K}.
+$$
+
+:::
+
+
 
 ::: {#exm-ordre1-hom}
 
@@ -130,29 +147,42 @@ $$
 
 ::: {#tip-resoudre-edo .callout-tip}
 
-Résoudre une équation homogène, c'est donc essentiellement un problème de
-calcul de *primitive*.
+Résoudre une équation homogène, c'est donc essentiellement calculer une *primitive*.
 
 :::
-
-
 
 ::: {#prp-structure-sol}
 
 #### Structure de l'ensemble des solutions de l'équation complète
 
-Si $y_p$ est une solution *particulière* de l'équation (E1), alors les
-solutions de (E1) sont les fonctions de la forme $y_p + y$ où $y$ est une
-solution de l'équation homogène (H1).
+Si $y_p$ est *une* solution particulière de l'équation \eqref{E1}, alors l'ensemble des solutions de \eqref{E1} est $y_{p} + \operatorname{Vect}(e^{-A})$. 
+
+On dit que l'ensemble des solutions de \eqref{E1} est une droite *affine* passant par
+$y_p$ et *dirigée* par l'ensemble des solutions de \eqref{H1}.
+
+
+::: {#fig-espace-affine}
+
+![](./tikz/svg/07-2.svg)
+
+L'ensemble des solutions de \eqref{E1} est la droite affine
+$y_p + \mathrm{Vect}(e^{-A})$, translatée de la droite vectorielle
+$\mathrm{Vect}(e^{-A})$ des solutions de \eqref{H1}.
 
 :::
 
-::: {#rem-espace-affine}
+:::
 
-On dit que l'ensemble des solutions de (E1) est un *espace affine* dirigé par
-l'ensemble des solutions de (H1).
+::: {#rem-droite-affine}
+
+Autrement dit, les solutions de \eqref{E1} sont les fonctions de la forme 
+
+$$
+    t \mapsto y_p(t) + \alpha e^{-A(t)},\quad \alpha \in \mathbb{K}.
+$$
 
 :::
+
 
 ::: {#exm-ordre1-avec-second-membre}
 
@@ -185,16 +215,39 @@ $$
 
 :::
 
+::: {#nte-solution-particuliere .callout-note}
+
+Pour trouver une solution particulière de \eqref{E1} on cherche celle-ci sous une
+forme *particulière* (constante, polynôme, quasi-polynôme, oscillations
+amorties, ...) adaptée au second membre de \eqref{E1}. 
+
+En l'absence de suggestion de l'énoncé ou d'intuition, la méthode de *variation de
+la constante* (@prp-variation-constante) propose une forme générale qui fonctionne toujours, mais qui mène
+souvent à des calculs plus compliqués.
+
+:::
+
+
+
 ::: {#prp-variation-constante}
 
 #### Méthode de variation de la constante
 
 La *méthode de variation de la constante* consiste à chercher une solution
-particulière de l'équation (E1) *sous la forme* $y(t) = \alpha(t)e^{-A(t)}$,
-où $A$ est une primitive de $a$ sur $I$ et $\alpha$ est une fonction dérivable
-sur $I$.
+particulière de l'équation \eqref{E1} *sous la forme* $y(t) = z(t)e^{-A(t)}$,
+où $z$ est une fonction dérivable sur $I$.
 
 :::
+
+::: {#rem-terminologie}
+
+La méthode de variation de la constante consiste donc à chercher une solution
+particulière à l'équation complète en remplaçant la constante apparaissant dans
+l'ensemble des solutions de l'équation homogène par une *fonction*, d'où son nom.
+
+:::
+
+
 
 ::: {#exm-variation-constante}
 
@@ -217,20 +270,20 @@ L'équation homogène associée a pour solutions $x \mapsto \alpha x$ (une primi
 $-\frac{1}{x}$ sur $]0,+\infty[$ est $-\ln(x)$). 
 
 On cherche alors une solution particulière *sous la forme*
-$y(x) = \alpha(x)x$, où $\alpha$ est une fonction de classe $C^{1}$ sur
+$y(x) = z(x)x$, où $z$ est une fonction de classe $C^{1}$ sur
 $]0,+\infty[$. On a alors
 
 $$
-    \forall x >0,\ y'(x) = \alpha'(x)x + \alpha(x),
+    \forall x >0,\ y'(x) = z'(x)x + z(x).
 $$
 
-de sorte que $y$ est solution ssi
+Donc 
 
 $$
-\forall x>0,\ xy'(x) - y(x) = \alpha'(x)x^{2} = x^{2}e^{x},
+\forall x>0,\ xy'(x) - y(x) = z'(x)x^{2}.
 $$
 
-Il *suffit* donc que $\alpha'(x)=e^{x}$, par exemple $\alpha(x) = e^{x}$.
+Il *suffit* donc que $z'(x)=e^{x}$, par exemple $z(x) = e^{x}$ *convient*.
 
 Une solution particulière de l'équation complète est donc $y_p(x) = xe^{x}$.
 
@@ -250,6 +303,12 @@ $y' + a(t)y = \alpha b_1(t) + \beta b_2(t)$.
 
 :::
 
+Lorsque le coefficient et le second membre de \eqref{E1} sont *continus*, la
+méthode de variation de la constante permet effectivement de montrer
+l'existence d'une solution particulière de \eqref{E1}. La donnée d'une
+condition initiale permet alors de déterminer uniquement la solution ; c'est le théorème de
+*Cauchy-Lipschitz*.
+
 ::: {#thm-cauchy-lipschitz-1}
 
 #### Théorème de Cauchy-Lipschitz
@@ -257,9 +316,9 @@ $y' + a(t)y = \alpha b_1(t) + \beta b_2(t)$.
 Si $a$ et $b$ sont continues sur $I$ alors, pour tout $t_0 \in I$ et
 $y_0 \in \mathbb{K}$, le *problème de Cauchy*
 
-$$
+$$\label{P1}\tag{P1}
 \begin{cases}
-    \text{(E1)}\\
+    \text{\eqref{E1}}\\
     y(t_0) = y_0
 \end{cases}
 $$
@@ -272,7 +331,8 @@ admet une unique solution sur $I$.
 
 #### Courbe intégrale
 
-Une *courbe intégrale* de l'équation $(E1)$ est le graphe d'une solution de $(E1)$.
+Le graphe d'une solution de \eqref{E1} s'appelle une *courbe intégrale* de
+\eqref{E1}.
 
 :::
 
@@ -280,7 +340,7 @@ Une *courbe intégrale* de l'équation $(E1)$ est le graphe d'une solution de $(
 
 #### Interprétation graphique du théorème de Cauchy-Lipschitz
 
-Par chaque point $(t_{0},y_0) \in I \times \mathbb{K}$, il passe une unique
+Par chaque point $(t_{0},y_0) \in I \times \mathbb{K}$, passe une unique
 courbe intégrale.
 
 :::
@@ -300,21 +360,19 @@ du demi-plan $t>0$ passe une unique courbe intégrale.
 
 #### Système différentiel linéaire homogène à coefficients constants
 
-Un **système différentiel linéaire homogène à coefficients constants** est un
+Un *système différentiel linéaire homogène à coefficients constants* est un
 système du type
 
-$$
+$$\label{S}
 \forall t \in I,\quad
-\begin{cases}
-    x_1'(t) = a_{11}x_1(t) + \dots + a_{1n}x_n(t),\\
-    \vdots\\
-    x_n'(t) = a_{n1}x_1(t) + \dots + a_{nn}x_n(t),
-\end{cases} \tag{S}
+\left\{\begin{array}{clc}
+    x_1'(t) &=& a_{11}x_1(t) + \dots + a_{1n}x_n(t),\\
+    \vdots& &\vdots\\
+    x_n'(t) &=& a_{n1}x_1(t) + \dots + a_{nn}x_n(t),
+\end{array}\right. \tag{S}
 $$
 
-où $a_{ij} \in \mathbb{K}$.
-
-Si on pose
+où $a_{ij} \in \mathbb{K}$. En posant
 
 $$
 X(t) = \begin{pmatrix} x_1(t)\\ \vdots \\ x_n(t) \end{pmatrix}
@@ -322,16 +380,55 @@ X(t) = \begin{pmatrix} x_1(t)\\ \vdots \\ x_n(t) \end{pmatrix}
 A = (a_{ij})_{1 \leqslant i,j \leqslant n} \in \mathcal{M}_n(\mathbb{K}),
 $$
 
-alors ce système s'écrit matriciellement
+le système \eqref{S} s'écrit *matriciellement*
 
-$$
-X' = AX,
+$$\tag{S}
+\forall t \in I,\ X'(t) = AX(t),
 $$
 
 où, par définition,
-$X' = \begin{pmatrix} x_1'\\ \vdots \\ x_n' \end{pmatrix}$.
+$X'(t) = \begin{pmatrix} x_1'(t)\\ \vdots \\ x_n'(t) \end{pmatrix}$.
 
 :::
+
+::: {#nte-cas-diagonalisable .callout-note}
+
+Si $A=\operatorname{diag}(\lambda_{1},\dots,\lambda_{n}) \in \mathcal{M}_{n}(\mathbb{K})$ est une matrice *diagonale*,
+le système \eqref{S} est *découplé*
+
+$$
+\forall t \in I,\quad
+\left\{\begin{array}{clc}
+    x_1'(t) &=&\lambda_1 x_{1}(t),\\ 
+    \vdots& &\vdots\\
+    x_n'(t) &=& \lambda_{n}x_n(t).
+\end{array}\right. 
+$$
+
+Sa résolution est immédiate (@exm-ex-fond) :
+
+$$
+    \forall t \in I,\ 
+\left\{\begin{array}{l}
+    x_1(t) =\alpha_1e^{\lambda_1 t},\ \alpha_1 \in \mathbb{K}\\ 
+    \vdots \\
+    x_n(t)= \alpha_ne^{\lambda_{n}t},\ \alpha_{n} \in \mathbb{K}.
+\end{array}\right. 
+$$
+
+On voit ainsi naturellement apparaître les *exponentielles* des valeurs propres
+de $A$. 
+
+:::
+
+L'exemple précédent montre que la résolution du système $\eqref{S}$ est
+immédiate lorsque la matrice $A$ est *diagonale*. Lorsque $A$ n'est pas diagonalisable, on peut espérer que la
+*diagonalisation* de $A$ permette de se ramener à un problème simple à
+résoudre. 
+
+Cette approche permet de démontrer le
+théorème de Cauchy-Lipschitz pour les systèmes linéaires, et fournit une
+méthode effective de résolution.
 
 ::: {#prp-cauchy-lipschitz-systeme}
 
@@ -351,6 +448,29 @@ admet une unique solution sur $I$.
 
 :::
 
+::: {#rem-combinaison}
+
+La démonstration du théorème de Cauchy-Lipschitz montre que, dans le cas
+diagonalisable, les fonctions $x_{i}$ sont combinaison linéaire des
+*exponentielles* des valeurs propres de $A$. Puisque 
+
+$$
+    \forall z = a + ib \in \mathbb{C},\ \forall t \in \mathbb{R},\  |e^{zt}| = e^{at},
+$$
+
+la condition de *stabilité* des solutions de $\eqref{S}$ se traduit donc sur la
+partie réelle des valeurs propres de $A$ : celle-ci doit être négative ou
+nulle.
+
+Dans le cas des suites géométriques matricielles $X_{n+1}=AX_{n}$, ce sont les puissances $n$-ème des
+valeurs propres de $A$ qui entrent en jeu ; la condition de stabilité porte
+alors sur le *module* des valeurs propres de $A$, qui doit être inférieur ou
+égal à $1$.
+
+:::
+
+
+
 ::: {#prp-sol-systeme}
 
 #### Structure de l'ensemble des solutions
@@ -362,7 +482,7 @@ dimension $n$.
 
 ::: {#exm-systeme-2x2}
 
-Résolution pratique du système différentiel
+Déterminer l'ensemble des solutions sur $\mathbb{R}$ du système
 
 $$
 \begin{cases}
