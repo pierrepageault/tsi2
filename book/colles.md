@@ -124,3 +124,24 @@ Tout exercice de trigonalisation doit être *guidé*.
 **Attention**, dans la section @sec-06-dse, l'unicité et le développement en série de
 Taylor ne sont pas encore au programme : cette section est uniquement incluse pour
 pourvoir utiliser les développements en série entière de référence (@prp-dse-reference)
+
+## Programme 10 - du 30/11 au 04/12
+
+@sec-06-dse
+
+@sec-07-ordre1
+
+Le programme de colle de la semaine précédente (séries entières) reste
+d'actualité, avec l'ajout de toute la section sur les fonctions développables
+en série entière.
+
+Les étudiants doivent être capables de résoudre une équation différentielle
+linéaire homogène d'ordre $1$, et de trouver une solution particulière à l'aide
+de la méthode de variation de la constante.
+
+Pour éviter les calculs trop pénibles, on pourra à la place suggérer une forme
+particulière plus adaptée pour rechercher une solution (c'est souvent
+l'approche prise aux concours).
+
+Les étudiant doivent être capables de chercher les solutions développables en
+série entière d'une équation différentielle. 

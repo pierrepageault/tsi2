@@ -1,0 +1,26 @@
+\documentclass[tikz,border=5pt]{standalone}
+\input{./style/style.tex}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    axes,
+    xlabel={$\mathbb{R}$},
+    ylabel={$i\mathbb{R}$},
+    xmin=-4.6, xmax=4.6,
+    ymin=-3.8, ymax=3.8,
+    xtick=\empty,
+    ytick=\empty,
+    clip=false,
+]
+
+% Demi-plan Re(z) <= 0 (hachuré), délimité par l'axe imaginaire
+\fill[pattern=north east lines, pattern color=monBleu] (axis cs:-4.6,-3.8) rectangle (axis cs:0,3.8);
+\draw[thick] (axis cs:0,-3.8) -- (axis cs:0,3.8);
+
+% Étiquette de la zone
+\node[monBleu, fill=white, inner sep=2pt] at (axis cs:-2.5,0) {$\operatorname{Re}(z) \leq 0$};
+
+\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -462,10 +462,26 @@ la condition de *stabilité* des solutions de $\eqref{S}$ se traduit donc sur la
 partie réelle des valeurs propres de $A$ : celle-ci doit être négative ou
 nulle.
 
+::: {#fig-stabilite-systeme}
+
+![](./tikz/svg/07-3.svg)
+
+Condition de stabilité pour $X' = AX$ : les valeurs propres de $A$ appartiennent au demi-plan $\operatorname{Re}(z) \leq 0$.
+
+:::
+
 Dans le cas des suites géométriques matricielles $X_{n+1}=AX_{n}$, ce sont les puissances $n$-ème des
 valeurs propres de $A$ qui entrent en jeu ; la condition de stabilité porte
 alors sur le *module* des valeurs propres de $A$, qui doit être inférieur ou
 égal à $1$.
+
+::: {#fig-stabilite-suite}
+
+![](./tikz/svg/07-4.svg)
+
+Condition de stabilité pour $X_{n+1} = AX_n$ : les valeurs propres de $A$ appartiennent au disque unité fermé $|z| \leq 1$.
+
+:::
 
 :::
 

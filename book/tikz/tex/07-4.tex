@@ -1,0 +1,29 @@
+\documentclass[tikz,border=5pt]{standalone}
+\input{./style/style.tex}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    axes,
+    xlabel={$\mathbb{R}$},
+    ylabel={$i\mathbb{R}$},
+    xmin=-3.8, xmax=4.0,
+    ymin=-3.2, ymax=3.2,
+    xtick={2.2},
+    xticklabels={$1$},
+    extra x ticks={-2.2},
+    extra x tick labels={$-1$},
+    ytick=\empty,
+    clip=false,
+]
+
+% Disque unité fermé (rempli, frontière en trait plein)
+\fill[pattern=north east lines, pattern color=monBleu] (axis cs:0,0) circle (2.2);
+\draw[thick] (axis cs:0,0) circle (2.2);
+
+% Étiquette de la zone
+\node[monBleu, fill=white, inner sep=2pt] at (axis cs:0,0) {$|z| \leq 1$};
+
+\end{axis}
+\end{tikzpicture}
+\end{document}
